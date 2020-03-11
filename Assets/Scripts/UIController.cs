@@ -1,24 +1,16 @@
-﻿// ----------------------------------------------------------------------
-// DMUIFramework
-// Copyright (c) 2018 Takuya Nishimura (tnishimu)
-//
-// This software is released under the MIT License.
-// https://opensource.org/licenses/mit-license.php
-// ----------------------------------------------------------------------
-
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.EventSystems;
-using UnityEngine.Serialization;
 
 namespace DM
 {
     public class UIController : MonoBehaviour
     {
-        public const string LayerTouchAreaName = "LayerTouchArea";
-        public GameObject[] m_RayCasters;
+        public const string LAYER_TOUCH_AREA_NAME = "LayerTouchArea";
+        public BaseRaycaster[] m_RayCasters;
         public Transform m_UiLayers;
         public Transform m_View3D;
         private List<BaseRaycaster> m_RayCasterComponents;
@@ -64,14 +56,18 @@ namespace DM
 
                 foreach (var item in s_Instance.m_RayCasters)
                 {
-                    BaseRaycaster rayCaster = item.GetComponent<BaseRaycaster>();
-                    s_Instance.m_RayCasterComponents.Add(rayCaster);
+                    s_Instance.m_RayCasterComponents.Add(item);
                 }
 
                 UIBackAble.Sort();
 
                 return s_Instance;
             }
+        }
+
+        public void FindRayCaster()
+        {
+            m_RayCasters = FindObjectsOfType<BaseRaycaster>();
         }
 
         public void AddFront(UIBase ui)
@@ -116,7 +112,7 @@ namespace DM
             }
         }
 
-        public void Replace(UIBase[] uiBases, UIGroup[] removeGroups = null)
+        public void Replace(IEnumerable<UIBase> uiBases, UIGroup[] removeGroups = null)
         {
             HashSet<UIGroup> removes =
                 (removeGroups == null) ? new HashSet<UIGroup>() : new HashSet<UIGroup>(removeGroups);
@@ -205,12 +201,8 @@ namespace DM
         public void DetachParts(UIBase uiBase, List<UIPart> parts)
         {
             UIBaseLayer layer = m_UiList.Find(uiBase);
-            if (layer == null)
-            {
-                return;
-            }
 
-            layer.DetachParts(parts);
+            layer?.DetachParts(parts);
         }
 
         public void SetScreenTouchable(UIBase uiBase, bool enable)
@@ -238,47 +230,42 @@ namespace DM
                     return;
                 }
 
-                --m_TouchOffCount;
-                --layer.ScreenTouchOffCount;
-                if (m_TouchOffCount == 0)
+                m_TouchOffCount--;
+                layer.ScreenTouchOffCount--;
+                if (m_TouchOffCount != 0)
                 {
-                    for (int i = 0; i < m_RayCasterComponents.Count; i++)
-                    {
-                        m_RayCasterComponents[i].enabled = true;
-                    }
+                    return;
+                }
+
+                foreach (var rayCaster in m_RayCasterComponents)
+                {
+                    rayCaster.enabled = true;
                 }
             }
             else
             {
                 if (m_TouchOffCount == 0)
                 {
-                    for (int i = 0; i < m_RayCasterComponents.Count; i++)
+                    foreach (var t in m_RayCasterComponents)
                     {
-                        m_RayCasterComponents[i].enabled = false;
+                        t.enabled = false;
                     }
                 }
 
-                ++m_TouchOffCount;
-                ++layer.ScreenTouchOffCount;
+                m_TouchOffCount++;
+                layer.ScreenTouchOffCount++;
             }
         }
 
-        public bool HasUI(string name)
+        public bool HasUIBase(string baseName)
         {
-            return m_UiList.Has(name);
+            return m_UiList.Has(baseName);
         }
 
         public string GetFrontUINameInGroup(UIGroup group)
         {
             UIBaseLayer layer = m_UiList.FindFrontLayerInGroup(group);
-            if (layer == null)
-            {
-                return "";
-            }
-            else
-            {
-                return layer.Base.Name;
-            }
+            return layer == null ? "" : layer.Base.Name;
         }
 
         public int GetUINumInGroup(UIGroup group)
@@ -336,7 +323,7 @@ namespace DM
 
         private void OnDestroy()
         {
-            UIController.s_Instance = null;
+            s_Instance = null;
         }
 
         private bool Insert()
@@ -426,7 +413,7 @@ namespace DM
                 bool preTouchable = layer.IsTouchable();
                 layer.SetVisible(isVisible);
                 layer.SetTouchable(isTouchable);
-                
+
                 if (!preVisible && isVisible)
                 {
                     layer.Base.OnReVisible();
@@ -543,13 +530,13 @@ namespace DM
             {
                 return;
             }
-            
+
             while (m_DispatchedEvents.Count > 0)
             {
                 DispatchedEvent e = m_DispatchedEvents.Dequeue();
                 m_UiList.ForEachOnlyActive(layer => { layer.Base.OnDispatchedEvent(e.EventName, e.Param); });
             }
-            
+
             m_DispatchedEvents.Clear();
         }
 
@@ -657,7 +644,7 @@ namespace DM
 
         private static void Unload()
         {
-            System.GC.Collect();
+            GC.Collect();
             Resources.UnloadUnusedAssets();
         }
 
@@ -695,6 +682,24 @@ namespace DM
             {
                 m_Implements.Sounder.PlayBGM(bgm);
             }
+        }
+    }
+
+    [CustomEditor(typeof(UIController))]
+    public class UIControllerEditor : Editor
+    {
+        public override void OnInspectorGUI()
+        {
+            UIController uiController = target as UIController;
+            if (uiController != null)
+            {
+                if (GUILayout.Button("FindRayCaster"))
+                {
+                    uiController.FindRayCaster();
+                }
+            }
+            
+            base.OnInspectorGUI();
         }
     }
 }

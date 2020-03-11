@@ -76,9 +76,9 @@ namespace DM {
 		public override bool OnClick(string name, GameObject gameObject, PointerEventData pointer, UISound uiSound) {
 			switch (name) {
 				case "ButtonCenter": {
-					Debug.Log("SceneA: " + UIController.Instance.HasUI("Sample19Scene"));
-					Debug.Log("SceneB: " + UIController.Instance.HasUI("Sample19SceneB"));
-					Debug.Log("SceneC: " + UIController.Instance.HasUI("Sample19SceneC"));
+					Debug.Log("SceneA: " + UIController.Instance.HasUIBase("Sample19Scene"));
+					Debug.Log("SceneB: " + UIController.Instance.HasUIBase("Sample19SceneB"));
+					Debug.Log("SceneC: " + UIController.Instance.HasUIBase("Sample19SceneC"));
 					Debug.Log("SceneFront: "   + UIController.Instance.GetFrontUINameInGroup(UIGroup.Scene));
 					Debug.Log("FloaterFront: " + UIController.Instance.GetFrontUINameInGroup(UIGroup.Floater));
 					Debug.Log("SystemFront: "  + UIController.Instance.GetFrontUINameInGroup(UIGroup.System));

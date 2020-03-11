@@ -103,12 +103,12 @@ namespace DM
 
         public UIBaseLayer FindFrontLayerInGroup(UIGroup group)
         {
-            return m_List.Find(l => { return (l.Base.Group == group); });
+            return m_List.Find(l => (l.Base.Group == @group));
         }
 
-        public bool Has(string name)
+        public bool Has(string baseName)
         {
-            return m_List.Exists(l => { return (l.Base.Name == name); });
+            return m_List.Exists(l => (l.Base.Name == baseName));
         }
 
         private int FindInsertPosition(UIGroup uiGroup)

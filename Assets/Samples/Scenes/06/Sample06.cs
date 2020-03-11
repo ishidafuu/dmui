@@ -69,14 +69,14 @@ namespace DM {
 		}
 
 		public override bool OnTouchDown(string name, GameObject gameObject, PointerEventData pointer) {
-			if (name == UIController.LayerTouchAreaName) {
+			if (name == UIController.LAYER_TOUCH_AREA_NAME) {
 				m_layerTouch = true;
 			}
 			return false;
 		}
 
 		public override bool OnTouchUp(string name, GameObject gameObject, PointerEventData pointer) {
-			if (name == UIController.LayerTouchAreaName) {
+			if (name == UIController.LAYER_TOUCH_AREA_NAME) {
 				if (m_layerTouch) {
 					UIController.Instance.Remove (this);
 					return true;
