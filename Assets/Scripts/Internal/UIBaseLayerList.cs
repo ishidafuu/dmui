@@ -38,7 +38,7 @@ namespace DM
         }
         public int Count => m_List.Count;
 
-        public void Insert(UIBaseLayer layer)
+        public void AddOrInsert(UIBaseLayer layer)
         {
             int index = FindInsertPosition(layer.Base.Group);
             if (index < 0)
@@ -51,7 +51,7 @@ namespace DM
             }
         }
 
-        public void Eject(UIBaseLayer layer)
+        public void Remove(UIBaseLayer layer)
         {
             int index = m_List.FindIndex(l => (l == layer));
             if (index >= 0)
@@ -87,7 +87,7 @@ namespace DM
             return m_List.Find(l => (l.Base == ui));
         }
 
-        public List<UIBaseLayer> FindLayers(UIGroup uiGroup)
+        public IEnumerable<UIBaseLayer> FindLayers(UIGroup uiGroup)
         {
             List<UIBaseLayer> list = new List<UIBaseLayer>();
             foreach (var item in m_List)

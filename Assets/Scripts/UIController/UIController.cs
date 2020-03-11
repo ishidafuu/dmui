@@ -10,13 +10,12 @@ namespace DM
     public class UIController : MonoBehaviour
     {
         public const string LAYER_TOUCH_AREA_NAME = "LayerTouchArea";
-        private BaseRaycaster[] m_RayCasters;
-        public Transform m_UiLayers;
+        private Transform m_UiLayers;
         public Transform m_View3D;
         private List<BaseRaycaster> m_RayCasterComponents;
-        private List<UIBaseLayer> m_AddingList;
-        private List<UIBaseLayer> m_RemovingList;
-        private UIBaseLayerList m_UiList;
+        private List<UIBaseLayer> m_AddingLayerList;
+        private List<UIBaseLayer> m_RemovingLayerList;
+        private UIBaseLayerList m_LayerList;
         private Queue<TouchEvent> m_TouchEvents;
         private Queue<DispatchedEvent> m_DispatchedEvents;
         private int m_TouchOffCount;
@@ -47,20 +46,20 @@ namespace DM
                     return s_Instance;
                 }
 
-                s_Instance = GameObject.Find("DMUICanvas").GetComponent<UIController>();
+                s_Instance = FindObjectOfType<UIController>();
 
-                s_Instance.m_RayCasterComponents = new List<BaseRaycaster>();
-                s_Instance.m_AddingList = new List<UIBaseLayer>();
-                s_Instance.m_RemovingList = new List<UIBaseLayer>();
-                s_Instance.m_UiList = new UIBaseLayerList();
+                s_Instance.m_AddingLayerList = new List<UIBaseLayer>();
+                s_Instance.m_RemovingLayerList = new List<UIBaseLayer>();
+                s_Instance.m_LayerList = new UIBaseLayerList();
                 s_Instance.m_TouchEvents = new Queue<TouchEvent>();
                 s_Instance.m_DispatchedEvents = new Queue<DispatchedEvent>();
-
                 s_Instance.m_FadeController = new UIFadeController();
 
-                foreach (var item in s_Instance.m_RayCasters)
+                if (s_Instance.m_RayCasterComponents == null
+                    || s_Instance.m_UiLayers == null
+                    || s_Instance.m_View3D == null)
                 {
-                    s_Instance.m_RayCasterComponents.Add(item);
+                    s_Instance.FindUIControllerItems();
                 }
 
                 UIBackAble.Sort();
@@ -69,9 +68,17 @@ namespace DM
             }
         }
 
-        public void FindRayCaster()
+        public void FindUIControllerItems()
         {
-            m_RayCasters = FindObjectsOfType<BaseRaycaster>();
+            m_UiLayers = FindObjectOfType<UILayers>().transform;
+            m_View3D = FindObjectOfType<View3D>().transform;
+
+            BaseRaycaster[] rayCasters = FindObjectsOfType<BaseRaycaster>();
+            m_RayCasterComponents = new List<BaseRaycaster>();
+            foreach (BaseRaycaster item in rayCasters)
+            {
+                m_RayCasterComponents.Add(item);
+            }
         }
 
         public void AddFront(UIBase ui)
@@ -88,13 +95,13 @@ namespace DM
                 StartCoroutine(layer.Load());
             }
 
-            if (m_FadeController.ShouldFadeByAdding(ui, m_UiList))
+            if (m_FadeController.ShouldFadeByAdding(ui, m_LayerList))
             {
-                m_FadeController.FadeIn(Implements, m_AddingList, AddFront);
+                m_FadeController.FadeIn(Implements, m_AddingLayerList, AddFront);
             }
 
-            m_AddingList.Add(layer);
-            m_UiList.Insert(layer);
+            m_AddingLayerList.Add(layer);
+            m_LayerList.AddOrInsert(layer);
         }
 
         public void Remove(UIBase uiBase)
@@ -104,31 +111,32 @@ namespace DM
                 return;
             }
 
-            UIBaseLayer layer = m_UiList.Find(uiBase);
+            UIBaseLayer layer = m_LayerList.Find(uiBase);
             if (layer != null && layer.Inactive())
             {
-                m_RemovingList.Add(layer);
+                m_RemovingLayerList.Add(layer);
             }
 
-            if (m_FadeController.ShouldFadeByRemoving(uiBase, m_UiList, m_RemovingList))
+            if (m_FadeController.ShouldFadeByRemoving(uiBase, m_LayerList, m_RemovingLayerList))
             {
-                m_FadeController.FadeIn(Implements, m_AddingList, AddFront);
+                m_FadeController.FadeIn(Implements, m_AddingLayerList, AddFront);
             }
         }
 
         public void Replace(IEnumerable<UIBase> uiBases, UIGroup[] removeGroups = null)
         {
-            HashSet<UIGroup> removes =
-                (removeGroups == null) ? new HashSet<UIGroup>() : new HashSet<UIGroup>(removeGroups);
+            HashSet<UIGroup> removes = (removeGroups == null)
+                ? new HashSet<UIGroup>()
+                : new HashSet<UIGroup>(removeGroups);
 
             foreach (var uiBase in uiBases)
             {
                 removes.Add(uiBase.Group);
             }
 
-            foreach (UIGroup group in removes)
+            foreach (UIGroup uiGroup in removes)
             {
-                List<UIBaseLayer> layers = m_UiList.FindLayers(group);
+                IEnumerable<UIBaseLayer> layers = m_LayerList.FindLayers(uiGroup);
                 foreach (var layer in layers)
                 {
                     Remove(layer.Base);
@@ -161,7 +169,7 @@ namespace DM
             UIBaseLayer layer = null;
             foreach (var group in UIBackAble.s_Groups)
             {
-                layer = m_UiList.FindFrontLayerInGroup(group);
+                layer = m_LayerList.FindFrontLayerInGroup(group);
                 if (layer != null)
                 {
                     break;
@@ -182,7 +190,7 @@ namespace DM
 
         public IEnumerator YieldAttachParts(UIBase uiBase, List<UIPart> parts)
         {
-            UIBaseLayer layer = m_UiList.Find(uiBase);
+            UIBaseLayer layer = m_LayerList.Find(uiBase);
             if (layer == null)
             {
                 yield break;
@@ -193,7 +201,7 @@ namespace DM
 
         public void AttachParts(UIBase uiBase, List<UIPart> parts)
         {
-            UIBaseLayer layer = m_UiList.Find(uiBase);
+            UIBaseLayer layer = m_LayerList.Find(uiBase);
             if (layer == null)
             {
                 return;
@@ -204,14 +212,14 @@ namespace DM
 
         public void DetachParts(UIBase uiBase, List<UIPart> parts)
         {
-            UIBaseLayer layer = m_UiList.Find(uiBase);
+            UIBaseLayer layer = m_LayerList.Find(uiBase);
 
             layer?.DetachParts(parts);
         }
 
         public void SetScreenTouchable(UIBase uiBase, bool enable)
         {
-            UIBaseLayer layer = m_UiList.Find(uiBase);
+            UIBaseLayer layer = m_LayerList.Find(uiBase);
             if (layer == null)
             {
                 return;
@@ -263,23 +271,23 @@ namespace DM
 
         public bool HasUIBase(string baseName)
         {
-            return m_UiList.Has(baseName);
+            return m_LayerList.Has(baseName);
         }
 
         public string GetFrontUINameInGroup(UIGroup group)
         {
-            UIBaseLayer layer = m_UiList.FindFrontLayerInGroup(group);
+            UIBaseLayer layer = m_LayerList.FindFrontLayerInGroup(group);
             return layer == null ? "" : layer.Base.Name;
         }
 
         public int GetUINumInGroup(UIGroup group)
         {
-            return m_UiList.GetNumInGroup(group);
+            return m_LayerList.GetNumInGroup(group);
         }
 
         private void Update()
         {
-            m_UiList.ForEachOnlyActive(layer =>
+            m_LayerList.ForEachOnlyActive(layer =>
             {
                 if (layer.Base.IsScheduleUpdate)
                 {
@@ -290,8 +298,8 @@ namespace DM
             RunTouchEvents();
             RunDispatchedEvents();
 
-            bool isInsert = Insert();
-            bool isEject = Eject();
+            bool isInsert = AddLayer();
+            bool isEject = RemoveLayer();
 
             if (!isEject && !isInsert)
             {
@@ -305,7 +313,7 @@ namespace DM
                 Unload();
             }
 
-            if (m_AddingList.Count != 0 || m_RemovingList.Count != 0)
+            if (m_AddingLayerList.Count != 0 || m_RemovingLayerList.Count != 0)
             {
                 return;
             }
@@ -316,7 +324,7 @@ namespace DM
 
         private void LateUpdate()
         {
-            m_UiList.ForEachOnlyActive(layer =>
+            m_LayerList.ForEachOnlyActive(layer =>
             {
                 if (layer.Base.IsScheduleUpdate)
                 {
@@ -330,21 +338,20 @@ namespace DM
             s_Instance = null;
         }
 
-        private bool Insert()
+        private bool AddLayer()
         {
             bool isInsert = false;
 
-            if (m_AddingList.Count <= 0)
+            if (m_AddingLayerList.Count <= 0)
             {
-                return isInsert;
+                return false;
             }
 
-            List<UIBaseLayer> list = m_AddingList;
-            m_AddingList = new List<UIBaseLayer>();
+            List<UIBaseLayer> list = m_AddingLayerList;
+            m_AddingLayerList = new List<UIBaseLayer>();
             bool isFadeIn = m_FadeController.IsFadeIn();
-            for (int i = 0; i < list.Count; i++)
+            foreach (var layer in list)
             {
-                UIBaseLayer layer = list[i];
                 if (!isFadeIn && layer.State == BaseLayerState.InFading)
                 {
                     StartCoroutine(layer.Load());
@@ -352,7 +359,7 @@ namespace DM
 
                 if (layer.IsNotYetLoaded() || (isFadeIn && !layer.Base.IsActiveWithoutFade()))
                 {
-                    m_AddingList.Add(layer);
+                    m_AddingLayerList.Add(layer);
                     continue;
                 }
 
@@ -365,18 +372,18 @@ namespace DM
             return isInsert;
         }
 
-        private bool Eject()
+        private bool RemoveLayer()
         {
-            if (m_RemovingList.Count <= 0)
+            if (m_RemovingLayerList.Count <= 0)
             {
                 return false;
             }
 
             bool isEject = false;
-            bool isLoading = m_AddingList.Exists(layer => { return (layer.IsNotYetLoaded()); });
+            bool isLoading = m_AddingLayerList.Exists(layer => (layer.IsNotYetLoaded()));
 
-            List<UIBaseLayer> list = m_RemovingList;
-            m_RemovingList = new List<UIBaseLayer>();
+            List<UIBaseLayer> list = m_RemovingLayerList;
+            m_RemovingLayerList = new List<UIBaseLayer>();
             bool isFadeIn = m_FadeController.IsFadeIn();
             foreach (var layer in list)
             {
@@ -387,11 +394,11 @@ namespace DM
 
                 if (layer.State != BaseLayerState.Removing || isLoading)
                 {
-                    m_RemovingList.Add(layer);
+                    m_RemovingLayerList.Add(layer);
                     continue;
                 }
 
-                m_UiList.Eject(layer);
+                m_LayerList.Remove(layer);
                 layer.Destroy();
                 isEject = true;
             }
@@ -406,7 +413,7 @@ namespace DM
             UIBaseLayer frontLayer = null;
             int index = m_UiLayers.childCount - 1;
 
-            m_UiList.ForEachAnything(layer =>
+            m_LayerList.ForEachAnything(layer =>
             {
                 if (layer.IsNotYetLoaded())
                 {
@@ -538,7 +545,7 @@ namespace DM
             while (m_DispatchedEvents.Count > 0)
             {
                 DispatchedEvent e = m_DispatchedEvents.Dequeue();
-                m_UiList.ForEachOnlyActive(layer => { layer.Base.OnDispatchedEvent(e.EventName, e.Param); });
+                m_LayerList.ForEachOnlyActive(layer => { layer.Base.OnDispatchedEvent(e.EventName, e.Param); });
             }
 
             m_DispatchedEvents.Clear();
@@ -552,7 +559,7 @@ namespace DM
         private int FindUntouchableIndex()
         {
             int index = -1;
-            m_UiList.ForEachOnlyActive(layer =>
+            m_LayerList.ForEachOnlyActive(layer =>
             {
                 if (index >= 0)
                 {
@@ -582,7 +589,7 @@ namespace DM
             }
 
             string bgm = "";
-            m_UiList.ForEachAnything(l =>
+            m_LayerList.ForEachAnything(l =>
             {
                 if (!StateFlags.s_Map[l.State].m_IsVisible)
                 {
@@ -621,7 +628,7 @@ namespace DM
             {
                 if (GUILayout.Button("FindRayCaster"))
                 {
-                    uiController.FindRayCaster();
+                    uiController.FindUIControllerItems();
                 }
             }
 
