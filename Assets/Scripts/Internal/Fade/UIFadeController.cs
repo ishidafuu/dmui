@@ -11,7 +11,7 @@ namespace DM
     {
         private UIBaseLayer m_Fade;
 
-        public bool ShouldFadeByAdding(UIBase uiBase, UIBaseLayerList uiList)
+        public bool ShouldFadeByAdding(UIBase uiBase, UIBaseLayerController uiController)
         {
             if (m_Fade != null)
             {
@@ -28,10 +28,10 @@ namespace DM
                 return false;
             }
             
-            return uiList.GetNumInGroup(uiBase.Group) <= UIFadeThreshold.s_Groups[uiBase.Group];
+            return uiController.GetNumInGroup(uiBase.Group) <= UIFadeThreshold.s_Groups[uiBase.Group];
         }
 
-        public bool ShouldFadeByRemoving(UIBase ui, UIBaseLayerList uiList, IEnumerable<UIBaseLayer> removingList)
+        public bool ShouldFadeByRemoving(UIBase ui, UIBaseLayerController uiController, IEnumerable<UIBaseLayer> removingList)
         {
             if (m_Fade != null)
             {
@@ -48,9 +48,9 @@ namespace DM
                 return false;
             }
 
-            int sceneNum = UIBaseLayerList.GetNumInGroup(ui.Group, removingList);
+            int sceneNum = UIBaseLayerController.GetNumInGroup(ui.Group, removingList);
 
-            return uiList.GetNumInGroup(ui.Group) - sceneNum <= UIFadeThreshold.s_Groups[ui.Group];
+            return uiController.GetNumInGroup(ui.Group) - sceneNum <= UIFadeThreshold.s_Groups[ui.Group];
         }
 
         public void FadeIn(UIImplements implements, List<UIBaseLayer> addingList,Action<UIBase> addFront)

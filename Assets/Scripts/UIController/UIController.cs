@@ -15,11 +15,10 @@ namespace DM
         private List<BaseRaycaster> m_RayCasterComponents;
         private List<UIBaseLayer> m_AddingLayerList;
         private List<UIBaseLayer> m_RemovingLayerList;
-        private UIBaseLayerList m_LayerList;
+        private UIBaseLayerController m_LayerController;
         private UIFadeController m_FadeController;
-        private UITouchEventController m_TouchEventController;
-        
-        private Queue<DispatchedEvent> m_DispatchedEvents;
+        private UITouchController m_TouchController;
+        private UIDispatchController m_DispatchController;
 
         private UIImplements m_Implements;
         public static UIImplements Implements => Instance.m_Implements;
@@ -49,10 +48,10 @@ namespace DM
 
                 s_Instance.m_AddingLayerList = new List<UIBaseLayer>();
                 s_Instance.m_RemovingLayerList = new List<UIBaseLayer>();
-                s_Instance.m_LayerList = new UIBaseLayerList();
+                s_Instance.m_LayerController = new UIBaseLayerController();
                 s_Instance.m_FadeController = new UIFadeController();
-                s_Instance.m_TouchEventController = new UITouchEventController();
-                s_Instance.m_DispatchedEvents = new Queue<DispatchedEvent>();
+                s_Instance.m_TouchController = new UITouchController();
+                s_Instance.m_DispatchController = new UIDispatchController();
                 
                 if (s_Instance.m_RayCasterComponents == null
                     || s_Instance.m_UiLayers == null
@@ -88,7 +87,7 @@ namespace DM
 
         private void Update()
         {
-            m_LayerList.ForEachOnlyActive(layer =>
+            m_LayerController.ForEachOnlyActive(layer =>
             {
                 if (layer.Base.IsScheduleUpdate)
                 {
@@ -96,8 +95,8 @@ namespace DM
                 }
             });
             
-            m_TouchEventController.RunTouchEvents(FindUntouchableIndex(), IsScreenTouchable(), Implements.Sounder);
-            RunDispatchedEvents();
+            m_TouchController.RunTouchEvents(FindUntouchableIndex(), IsScreenTouchable(), Implements.Sounder);
+            m_DispatchController.RunDispatchedEvents(m_LayerController);
 
             bool isAdd = AddLayer();
             bool isRemove = RemoveLayer();
@@ -126,7 +125,7 @@ namespace DM
         private int FindUntouchableIndex()
         {
             int index = -1;
-            m_LayerList.ForEachOnlyActive(layer =>
+            m_LayerController.ForEachOnlyActive(layer =>
             {
                 if (index >= 0)
                 {
@@ -140,22 +139,6 @@ namespace DM
             });
 
             return index;
-        }
-
-        private void RunDispatchedEvents()
-        {
-            if (m_DispatchedEvents.Count == 0)
-            {
-                return;
-            }
-
-            while (m_DispatchedEvents.Count > 0)
-            {
-                DispatchedEvent e = m_DispatchedEvents.Dequeue();
-                m_LayerList.ForEachOnlyActive(layer => { layer.Base.OnDispatchedEvent(e.EventName, e.Param); });
-            }
-
-            m_DispatchedEvents.Clear();
         }
 
         private bool IsScreenTouchable()
@@ -223,7 +206,7 @@ namespace DM
                     continue;
                 }
 
-                m_LayerList.Remove(layer);
+                m_LayerController.Remove(layer);
                 layer.Destroy();
                 isEject = true;
             }
@@ -238,7 +221,7 @@ namespace DM
             UIBaseLayer frontLayer = null;
             int index = m_UiLayers.childCount - 1;
 
-            m_LayerList.ForEachAnything(layer =>
+            m_LayerController.ForEachAnything(layer =>
             {
                 if (layer.IsNotYetLoaded())
                 {
@@ -287,7 +270,7 @@ namespace DM
             }
 
             string bgm = "";
-            m_LayerList.ForEachAnything(l =>
+            m_LayerController.ForEachAnything(l =>
             {
                 if (!StateFlags.s_Map[l.State].m_IsVisible)
                 {
@@ -317,7 +300,7 @@ namespace DM
 
         private void LateUpdate()
         {
-            m_LayerList.ForEachOnlyActive(layer =>
+            m_LayerController.ForEachOnlyActive(layer =>
             {
                 if (layer.Base.IsScheduleUpdate)
                 {
@@ -330,8 +313,7 @@ namespace DM
         {
             s_Instance = null;
         }
-
-
+        
         public void AddUIBase(UIBase uiBase)
         {
             if (uiBase == null)
@@ -346,13 +328,13 @@ namespace DM
                 StartCoroutine(layer.Load());
             }
 
-            if (m_FadeController.ShouldFadeByAdding(uiBase, m_LayerList))
+            if (m_FadeController.ShouldFadeByAdding(uiBase, m_LayerController))
             {
                 m_FadeController.FadeIn(Implements, m_AddingLayerList, AddUIBase);
             }
 
             m_AddingLayerList.Add(layer);
-            m_LayerList.AddOrInsert(layer);
+            m_LayerController.AddOrInsert(layer);
         }
 
         public void RemoveUIBase(UIBase uiBase)
@@ -362,13 +344,13 @@ namespace DM
                 return;
             }
 
-            UIBaseLayer layer = m_LayerList.Find(uiBase);
+            UIBaseLayer layer = m_LayerController.Find(uiBase);
             if (layer != null && layer.Inactive())
             {
                 m_RemovingLayerList.Add(layer);
             }
 
-            if (m_FadeController.ShouldFadeByRemoving(uiBase, m_LayerList, m_RemovingLayerList))
+            if (m_FadeController.ShouldFadeByRemoving(uiBase, m_LayerController, m_RemovingLayerList))
             {
                 m_FadeController.FadeIn(Implements, m_AddingLayerList, AddUIBase);
             }
@@ -387,7 +369,7 @@ namespace DM
 
             foreach (UIGroup uiGroup in removes)
             {
-                IEnumerable<UIBaseLayer> layers = m_LayerList.FindLayers(uiGroup);
+                IEnumerable<UIBaseLayer> layers = m_LayerController.FindLayers(uiGroup);
                 foreach (var layer in layers)
                 {
                     RemoveUIBase(layer.Base);
@@ -402,7 +384,7 @@ namespace DM
 
         public void ListenTouch(UITouchListener listener, TouchType type, PointerEventData pointer)
         {
-            m_TouchEventController.Enqueue(listener, type, pointer);
+            m_TouchController.Enqueue(listener, type, pointer);
         }
 
         public void Back()
@@ -410,7 +392,7 @@ namespace DM
             UIBaseLayer layer = null;
             foreach (var group in UIBackAble.s_Groups)
             {
-                layer = m_LayerList.FindFrontLayerInGroup(group);
+                layer = m_LayerController.FindFrontLayerInGroup(group);
                 if (layer != null)
                 {
                     break;
@@ -431,7 +413,7 @@ namespace DM
 
         public IEnumerator YieldAttachParts(UIBase uiBase, List<UIPart> parts)
         {
-            UIBaseLayer layer = m_LayerList.Find(uiBase);
+            UIBaseLayer layer = m_LayerController.Find(uiBase);
             if (layer == null)
             {
                 yield break;
@@ -442,7 +424,7 @@ namespace DM
 
         public void AttachParts(UIBase uiBase, List<UIPart> parts)
         {
-            UIBaseLayer layer = m_LayerList.Find(uiBase);
+            UIBaseLayer layer = m_LayerController.Find(uiBase);
             if (layer == null)
             {
                 return;
@@ -453,46 +435,46 @@ namespace DM
 
         public void DetachParts(UIBase uiBase, List<UIPart> parts)
         {
-            UIBaseLayer layer = m_LayerList.Find(uiBase);
+            UIBaseLayer layer = m_LayerController.Find(uiBase);
 
             layer?.DetachParts(parts);
         }
 
         public bool HasUIBase(string baseName)
         {
-            return m_LayerList.Has(baseName);
+            return m_LayerController.Has(baseName);
         }
 
         public string GetFrontUINameInGroup(UIGroup group)
         {
-            UIBaseLayer layer = m_LayerList.FindFrontLayerInGroup(group);
+            UIBaseLayer layer = m_LayerController.FindFrontLayerInGroup(group);
             return layer == null ? "" : layer.Base.Name;
         }
 
         public int GetUINumInGroup(UIGroup group)
         {
-            return m_LayerList.GetNumInGroup(group);
+            return m_LayerController.GetNumInGroup(group);
         }
 
         public void SetScreenTouchable(UIBase uiBase, bool enable)
         {
-            UIBaseLayer layer = m_LayerList.Find(uiBase);
+            UIBaseLayer layer = m_LayerController.Find(uiBase);
             if (layer == null)
             {
                 return;
             }
 
-            m_TouchEventController.SetScreenTouchableByLayer(layer, enable, m_RayCasterComponents);
+            m_TouchController.SetScreenTouchableByLayer(layer, enable, m_RayCasterComponents);
         }
-
-        public void Dispatch(string eventName, object param)
-        {
-            m_DispatchedEvents.Enqueue(new DispatchedEvent(eventName, param));
-        }
-
+        
         public void SetScreenTouchableByLayer(UIBaseLayer layer, bool enable)
         {
-            m_TouchEventController.SetScreenTouchableByLayer(layer, enable, m_RayCasterComponents);
+            m_TouchController.SetScreenTouchableByLayer(layer, enable, m_RayCasterComponents);
+        }
+ 
+        public void Dispatch(string eventName, object param)
+        {
+            m_DispatchController.Dispatch(eventName, param);
         }
     }
 

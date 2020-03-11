@@ -4,19 +4,18 @@ using UnityEngine.EventSystems;
 
 namespace DM
 {
-    public class UITouchEventController
+    public class UITouchController
     {
-
-        private Queue<TouchEvent> m_TouchEvents;
+        private readonly Queue<TouchEvent> m_TouchEvents;
         private int m_TouchOffCount;
 
-        public UITouchEventController()
+        public UITouchController()
         {
             m_TouchEvents = new Queue<TouchEvent>();
             
         }
 
-        public void RunTouchEvents(int untouchableIndex, bool isScreenTouchable, ISounder Sounder)
+        public void RunTouchEvents(int untouchableIndex, bool isScreenTouchable, ISounder sounder)
         {
             if (m_TouchEvents.Count == 0)
             {
@@ -52,15 +51,15 @@ namespace DM
                     {
                         UISound se = new UISound();
                         ret = part.OnClick(touch.Listener.gameObject.name, listenerObject, touch.Pointer, se);
-                        if (ret && Sounder != null)
+                        if (ret && sounder != null)
                         {
                             if (!string.IsNullOrEmpty(se.m_PlayName))
                             {
-                                Sounder.PlayClickSE(se.m_PlayName);
+                                sounder.PlayClickSE(se.m_PlayName);
                             }
                             else
                             {
-                                Sounder.PlayDefaultClickSE();
+                                sounder.PlayDefaultClickSE();
                             }
                         }
 
@@ -95,9 +94,7 @@ namespace DM
                 break;
             }
         }
-
-
-
+        
         public void SetScreenTouchableByLayer(UIBaseLayer layer, bool enable,
             IEnumerable<BaseRaycaster> rayCasterComponents)
         {
@@ -139,10 +136,7 @@ namespace DM
                 layer.ScreenTouchOffCount++;
             }
         }
-
-
-
-
+        
         public void Enqueue(UITouchListener listener, TouchType type, PointerEventData pointer)
         {
             if (listener.Layer == null)

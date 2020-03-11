@@ -14,7 +14,7 @@ using UnityEngine;
 
 namespace DM
 {
-    public class UIBaseLayerList
+    public class UIBaseLayerController
     {
         private readonly List<UIBaseLayer> m_List = new List<UIBaseLayer>();
 
