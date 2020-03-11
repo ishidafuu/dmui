@@ -31,7 +31,7 @@ namespace DM {
 
 		void Start () {
 			UIController.SetImplement(new PrefabLoader(), null, new FadeCreator());
-			UIController.Instance.AddFront(new Sample19Scene());
+			UIController.Instance.AddUIBase(new Sample19Scene());
 		}
 	}
 	class Sample19Scene : UIBase {
@@ -43,9 +43,9 @@ namespace DM {
 			Root.Find("Layer/ButtonCenter").gameObject.SetActive(false);
 			Root.Find("Layer/ButtonBottom").gameObject.SetActive(false);
 
-			UIController.Instance.AddFront(new Sample19SceneB());
-			UIController.Instance.AddFront(new Sample19Frame());
-			UIController.Instance.AddFront(new Sample19Dialog());
+			UIController.Instance.AddUIBase(new Sample19SceneB());
+			UIController.Instance.AddUIBase(new Sample19Frame());
+			UIController.Instance.AddUIBase(new Sample19Dialog());
 
 			yield break;
 		}

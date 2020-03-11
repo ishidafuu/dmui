@@ -8,6 +8,6 @@ public class MiniGame : MonoBehaviour {
 
 	void Start () {
 		UIController.SetImplement(new PrefabLoader(), null, new FadeCreator());
-		UIController.Instance.AddFront(new UIMiniGameTitle());
+		UIController.Instance.AddUIBase(new UIMiniGameTitle());
 	}
 }

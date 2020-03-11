@@ -23,21 +23,21 @@ namespace DM {
 
 		void Start () {
 			UIController.SetImplement(new PrefabLoader(), new Sounder(), new FadeCreator());
-			UIController.Instance.AddFront(new Sample04Scene());
+			UIController.Instance.AddUIBase(new Sample04Scene());
 		}
 	}
 
 	class Sample04Scene : UIBase {
 
 		public Sample04Scene() : base("UISceneA", UIGroup.Scene) {
-			UIController.Instance.AddFront(new Sample04Frame());
+			UIController.Instance.AddUIBase(new Sample04Frame());
 		}
 
 		public override IEnumerator OnLoaded() {
 			Root.Find("Layer/ButtonTop"   ).gameObject.SetActive(false);
 			Root.Find("Layer/ButtonBottom").gameObject.SetActive(false);
 
-			UIController.Instance.AddFront(new Sample04Dialog());
+			UIController.Instance.AddUIBase(new Sample04Dialog());
 			yield break;
 		}
 	}

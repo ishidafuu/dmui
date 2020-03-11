@@ -12,7 +12,7 @@ public class UIMiniGameTitle : UIBase {
 	public override bool OnClick(string name, GameObject gameObject, PointerEventData pointer, UISound uiSound) {
 		switch (name) {
 			case "HowToPlay": {
-				UIController.Instance.AddFront(new UIMiniGameHowToPlay());
+				UIController.Instance.AddUIBase(new UIMiniGameHowToPlay());
 				return true;
 			}
 			case "Panel": {

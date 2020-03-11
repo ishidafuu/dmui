@@ -18,7 +18,7 @@ namespace DM {
 	public class Sample02 : MonoBehaviour {
 		private void Start () {
 			UIController.SetImplement(new PrefabLoader(), new Sounder(), new FadeCreator());
-			UIController.Instance.AddFront(new Sample02Scene());
+			UIController.Instance.AddUIBase(new Sample02Scene());
 		}
 	}
 
@@ -37,7 +37,7 @@ namespace DM {
 		public override bool OnClick(string name, GameObject gameObject, PointerEventData pointer, UISound uiSound) {
 			switch (name) {
 				case "ButtonCenter": {
-					UIController.Instance.Remove(this);
+					UIController.Instance.RemoveUIBase(this);
 					return true;
 				}
 				default: {

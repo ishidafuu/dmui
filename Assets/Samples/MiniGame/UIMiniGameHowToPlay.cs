@@ -10,7 +10,7 @@ public class UIMiniGameHowToPlay : UIBase {
 	}
 
 	public override bool OnTouchUp(string name, GameObject gameObject, PointerEventData pointer) {
-		UIController.Instance.Remove(this);
+		UIController.Instance.RemoveUIBase(this);
 		return true;
 	}
 }

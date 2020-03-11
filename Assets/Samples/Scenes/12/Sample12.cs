@@ -24,7 +24,7 @@ namespace DM {
 
 		void Start () {
 			UIController.SetImplement(new PrefabLoader(), new Sounder(), new FadeCreator());
-			UIController.Instance.AddFront(new Sample12Scene());
+			UIController.Instance.AddUIBase(new Sample12Scene());
 		}
 	}
 
@@ -38,10 +38,10 @@ namespace DM {
 			Root.Find("Layer/ButtonCenter").gameObject.SetActive(false);
 			Root.Find("Layer/ButtonBottom").gameObject.SetActive(false);
 
-			UIController.Instance.AddFront(new Sample12SceneB());
-			UIController.Instance.AddFront(new Sample12Frame());
-			UIController.Instance.AddFront(new Sample12Dialog());
-			UIController.Instance.AddFront(new Sample12Back());
+			UIController.Instance.AddUIBase(new Sample12SceneB());
+			UIController.Instance.AddUIBase(new Sample12Frame());
+			UIController.Instance.AddUIBase(new Sample12Dialog());
+			UIController.Instance.AddUIBase(new Sample12Back());
 
 			yield break;
 		}

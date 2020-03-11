@@ -44,7 +44,7 @@ public class UIMiniGameMain : UIBase {
 		switch (name) {
 			case "HowToPlay": {
 				IsScheduleUpdate = false;
-				UIController.Instance.AddFront(new UIMiniGameHowToPlay());
+				UIController.Instance.AddUIBase(new UIMiniGameHowToPlay());
 				return true;
 			}
 		}
@@ -67,7 +67,7 @@ public class UIMiniGameMain : UIBase {
 		m_targetIndex++;
 		if (m_targetIndex == AlphabetNum) {
 			IsScheduleUpdate = false;
-			UIController.Instance.AddFront(new UIMiniGameResult(m_erapsedTime));
+			UIController.Instance.AddUIBase(new UIMiniGameResult(m_erapsedTime));
 		}
 		return true;
 	}
@@ -79,7 +79,7 @@ public class UIMiniGameMain : UIBase {
 	private void Initialize() {
 		m_targetIndex = 0;
 		SetTimeText(0.0f);
-		UIController.Instance.AddFront(new UIMiniGameStartEffect());
+		UIController.Instance.AddUIBase(new UIMiniGameStartEffect());
 		for (int i = 0; i < m_alphabets.Count; i++) {
 			m_alphabets[i].SetPosition(GetRandomPos());
 		}

@@ -28,7 +28,7 @@ public class UIMiniGameResult : UIBase {
 			}
 			case "Retry": {
 				UIController.Instance.Dispatch("retry", null);
-				UIController.Instance.Remove(this);
+				UIController.Instance.RemoveUIBase(this);
 				return true;
 			}
 		}

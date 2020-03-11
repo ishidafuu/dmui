@@ -100,14 +100,19 @@
           <e p="UIBase.cs" t="Include" />
           <e p="UIBehaviourController.cs" t="Include" />
           <e p="UIController" t="Include">
+            <e p="Fade" t="Include">
+              <e p="UIFade.cs" t="Include" />
+              <e p="UIFadeController.cs" t="Include" />
+              <e p="UIFadeTarget.cs" t="Include" />
+              <e p="UIFadeThreshold.cs" t="Include" />
+            </e>
+            <e p="Items" t="Include">
+              <e p="UiLayers.cs" t="Include" />
+              <e p="VIew3D.cs" t="Include" />
+            </e>
             <e p="UIController.cs" t="Include" />
-            <e p="UIFade.cs" t="Include" />
-            <e p="UIFadeController.cs" t="Include" />
-            <e p="UIFadeTarget.cs" t="Include" />
-            <e p="UIFadeThreshold.cs" t="Include" />
             <e p="UIImplements.cs" t="Include" />
-            <e p="UiLayers.cs" t="Include" />
-            <e p="VIew3D.cs" t="Include" />
+            <e p="UITouchEventController.cs" t="Include" />
           </e>
           <e p="UiDefine.cs" t="Include" />
           <e p="UILayerTouchListener.cs" t="Include" />

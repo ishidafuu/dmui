@@ -24,7 +24,7 @@ namespace DM {
 
 		void Start () {
 			UIController.SetImplement(new PrefabLoader(), new Sounder(), new FadeCreator());
-			UIController.Instance.AddFront(new Sample20Scene());
+			UIController.Instance.AddUIBase(new Sample20Scene());
 		}
 	}
 
@@ -33,13 +33,13 @@ namespace DM {
 		public Sample20Scene() : base("UI3D", UIGroup.View3D, UIPreset.View3D) {
 			AddVisibleBehaviourController<Terrain>();
 
-			UIController.Instance.AddFront(new Sample20Dialog(true));
-			UIController.Instance.AddFront(new Sample20Dialog(false));
+			UIController.Instance.AddUIBase(new Sample20Dialog(true));
+			UIController.Instance.AddUIBase(new Sample20Dialog(false));
 		}
 
 		public override bool OnClick(string name, GameObject gameObject, PointerEventData pointer, UISound uiSound) {
 			if (name == "Cube" || name == "Sphere") {
-				UIController.Instance.Remove(this);
+				UIController.Instance.RemoveUIBase(this);
 				Debug.Log("Scene20 : All Right");
 				return true;
 			}
@@ -56,7 +56,7 @@ namespace DM {
 		public override bool OnClick(string name, GameObject gameObject, PointerEventData pointer, UISound uiSound) {
 			switch (name) {
 				case "ButtonCenter": {
-					UIController.Instance.Remove(this);
+					UIController.Instance.RemoveUIBase(this);
 					return true;
 				}
 				default: {

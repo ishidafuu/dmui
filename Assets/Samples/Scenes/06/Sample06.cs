@@ -22,14 +22,14 @@ namespace DM {
 
 		void Start () {
 			UIController.SetImplement(new PrefabLoader(), new Sounder(), new FadeCreator());
-			UIController.Instance.AddFront(new Sample06Scene());
+			UIController.Instance.AddUIBase(new Sample06Scene());
 		}
 	}
 
 	class Sample06Scene : UIBase {
 
 		public Sample06Scene() : base("UISceneA", UIGroup.Scene) {
-			UIController.Instance.AddFront(new Sample06Dialog());
+			UIController.Instance.AddUIBase(new Sample06Dialog());
 		}
 
 		public override IEnumerator OnLoaded() {
@@ -42,7 +42,7 @@ namespace DM {
 		public override bool OnClick(string name, GameObject gameObject, PointerEventData pointer, UISound uiSound) {
 			switch (name) {
 				case "ButtonCenter": {
-					UIController.Instance.Remove(this);
+					UIController.Instance.RemoveUIBase(this);
 					return true;
 				}
 				default: {
@@ -78,7 +78,7 @@ namespace DM {
 		public override bool OnTouchUp(string name, GameObject gameObject, PointerEventData pointer) {
 			if (name == UIController.LAYER_TOUCH_AREA_NAME) {
 				if (m_layerTouch) {
-					UIController.Instance.Remove (this);
+					UIController.Instance.RemoveUIBase (this);
 					return true;
 				}
 			} else {

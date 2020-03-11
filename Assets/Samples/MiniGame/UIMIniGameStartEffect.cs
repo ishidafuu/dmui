@@ -10,6 +10,6 @@ public class UIMiniGameStartEffect : UIBase {
 
 	public override void OnActive() {
 		UIController.Instance.Dispatch("start", null);
-		UIController.Instance.Remove(this);
+		UIController.Instance.RemoveUIBase(this);
 	}
 }

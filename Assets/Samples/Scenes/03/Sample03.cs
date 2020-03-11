@@ -21,14 +21,14 @@ namespace DM {
 
 		void Start () {
 			UIController.SetImplement(new PrefabLoader(), new Sounder(), new FadeCreator());
-			UIController.Instance.AddFront(new Sample03Scene());
+			UIController.Instance.AddUIBase(new Sample03Scene());
 		}
 	}
 
 	class Sample03Scene : UIBase {
 
 		public Sample03Scene() : base("UISceneA", UIGroup.Scene) {
-			UIController.Instance.AddFront(new Sample03Frame());
+			UIController.Instance.AddUIBase(new Sample03Frame());
 		}
 
 		public override IEnumerator OnLoaded() {
@@ -36,7 +36,7 @@ namespace DM {
 			Root.Find("Layer/ButtonCenter").gameObject.SetActive(false);
 			Root.Find("Layer/ButtonBottom").gameObject.SetActive(false);
 
-			UIController.Instance.AddFront(new Sample03Dialog());
+			UIController.Instance.AddUIBase(new Sample03Dialog());
 			yield break;
 		}
 	}

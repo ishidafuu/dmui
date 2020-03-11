@@ -22,7 +22,7 @@ namespace DM {
 
 		void Start () {
 			UIController.SetImplement(new PrefabLoader(), new Sounder(), new FadeCreator());
-			UIController.Instance.AddFront(new Sample13Scene());
+			UIController.Instance.AddUIBase(new Sample13Scene());
 		}
 	}
 
@@ -41,7 +41,7 @@ namespace DM {
 		public override bool OnClick(string name, GameObject gameObject, PointerEventData pointer, UISound uiSound) {
 			switch (name) {
 				case "ButtonCenter": {
-					UIController.Instance.AddFront(new Sample13SceneB());
+					UIController.Instance.AddUIBase(new Sample13SceneB());
 
 					uiSound.m_PlayName = "Center SE";
 					return true;
@@ -69,7 +69,7 @@ namespace DM {
 		public override bool OnClick(string name, GameObject gameObject, PointerEventData pointer, UISound uiSound) {
 			switch (name) {
 				case "ButtonCenter": {
-					UIController.Instance.Remove(this);
+					UIController.Instance.RemoveUIBase(this);
 					Debug.Log("Scene13 : All Right");
 					return true;
 				}

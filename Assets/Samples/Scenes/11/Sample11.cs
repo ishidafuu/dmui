@@ -22,7 +22,7 @@ namespace DM {
 
 		void Start () {
 			UIController.SetImplement(new PrefabLoader(), new Sounder(), new FadeCreator());
-			UIController.Instance.AddFront(new Sample11Scene());
+			UIController.Instance.AddUIBase(new Sample11Scene());
 		}
 	}
 
@@ -44,7 +44,7 @@ namespace DM {
 			Root.Find("Layer/ButtonTop"   ).gameObject.SetActive(false);
 			Root.Find("Layer/ButtonCenter").gameObject.SetActive(false);
 
-			UIController.Instance.AddFront(new Sample11Dialog());
+			UIController.Instance.AddUIBase(new Sample11Dialog());
 
 			IsScheduleUpdate = true;
 

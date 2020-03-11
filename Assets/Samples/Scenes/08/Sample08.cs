@@ -24,7 +24,7 @@ namespace DM {
 
 		void Start () {
 			UIController.SetImplement(new PrefabLoader(), new Sounder(), new FadeCreator());
-			UIController.Instance.AddFront(new Sample08Scene());
+			UIController.Instance.AddUIBase(new Sample08Scene());
 		}
 	}
 
@@ -49,7 +49,7 @@ namespace DM {
 			switch (name) {
 				case "ButtonCenter": {
 					Debug.Log("start removing animation");
-					UIController.Instance.Remove(this);
+					UIController.Instance.RemoveUIBase(this);
 					return true;
 				}
 				default: {
