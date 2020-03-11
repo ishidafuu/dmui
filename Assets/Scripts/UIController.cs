@@ -97,20 +97,20 @@ namespace DM
             m_UiList.Insert(layer);
         }
 
-        public void Remove(UIBase ui)
+        public void Remove(UIBase uiBase)
         {
-            if (ui == null)
+            if (uiBase == null)
             {
                 return;
             }
 
-            UIBaseLayer layer = m_UiList.Find(ui);
+            UIBaseLayer layer = m_UiList.Find(uiBase);
             if (layer != null && layer.Inactive())
             {
                 m_RemovingList.Add(layer);
             }
 
-            if (ShouldFadeByRemoving(ui))
+            if (ShouldFadeByRemoving(uiBase))
             {
                 FadeIn();
             }
@@ -426,6 +426,7 @@ namespace DM
                 bool preTouchable = layer.IsTouchable();
                 layer.SetVisible(isVisible);
                 layer.SetTouchable(isTouchable);
+                
                 if (!preVisible && isVisible)
                 {
                     layer.Base.OnReVisible();
@@ -436,8 +437,8 @@ namespace DM
                     layer.Base.OnReTouchable();
                 }
 
-                isVisible = isVisible && layer.Base.IsBackVisible();
-                isTouchable = isTouchable && layer.Base.IsBackTouchable();
+                isVisible &= layer.Base.IsBackVisible();
+                isTouchable &= layer.Base.IsBackTouchable();
 
                 layer.SiblingIndex = index--;
 
@@ -542,15 +543,14 @@ namespace DM
             {
                 return;
             }
-
-            Queue<DispatchedEvent> queue = new Queue<DispatchedEvent>(m_DispatchedEvents);
-            m_DispatchedEvents.Clear();
-
-            while (queue.Count > 0)
+            
+            while (m_DispatchedEvents.Count > 0)
             {
-                DispatchedEvent e = queue.Dequeue();
+                DispatchedEvent e = m_DispatchedEvents.Dequeue();
                 m_UiList.ForEachOnlyActive(layer => { layer.Base.OnDispatchedEvent(e.EventName, e.Param); });
             }
+            
+            m_DispatchedEvents.Clear();
         }
 
         private bool ShouldFadeByAdding(UIBase uiBase)
