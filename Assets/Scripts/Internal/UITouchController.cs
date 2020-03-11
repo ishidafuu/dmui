@@ -15,7 +15,7 @@ namespace DM
             
         }
 
-        public void RunTouchEvents(int untouchableIndex, bool isScreenTouchable, ISounder sounder)
+        public void CallTouchEvents(int untouchableIndex, bool isScreenTouchable, ISounder sounder)
         {
             if (m_TouchEvents.Count == 0)
             {

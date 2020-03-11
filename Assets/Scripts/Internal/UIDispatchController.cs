@@ -15,7 +15,7 @@ namespace DM
             
         }
 
-        public void RunDispatchedEvents(UIBaseLayerController layerController)
+        public void CallDispatchedEvents(UIBaseLayerController layerController)
         {
             if (m_DispatchedEvents.Count == 0)
             {
