@@ -22,47 +22,24 @@ namespace DM
                 return;
             }
 
-            m_TouchEvents.Clear();
-
             while (m_TouchEvents.Count > 0)
             {
-                bool ret = false;
                 TouchEvent touch = m_TouchEvents.Dequeue();
 
-                if (touch.Listener.Layer == null)
-                {
-                    continue;
-                }
-
-                bool touchable = isScreenTouchable
-                                 && touch.Listener.Layer.IsTouchable()
-                                 && untouchableIndex < touch.Listener.Layer.SiblingIndex;
-
-                if (!touchable)
+                if (!CheckTouchable(untouchableIndex, isScreenTouchable, touch))
                 {
                     continue;
                 }
 
                 UIPart part = touch.Listener.Part;
                 GameObject listenerObject = touch.Listener.gameObject;
+                bool ret = false;
+                
                 switch (touch.Type)
                 {
                     case TouchType.Click:
                     {
-                        UISound se = new UISound();
-                        ret = part.OnClick(touch.Listener.gameObject.name, listenerObject, touch.Pointer, se);
-                        if (ret && sounder != null)
-                        {
-                            if (!string.IsNullOrEmpty(se.m_PlayName))
-                            {
-                                sounder.PlayClickSE(se.m_PlayName);
-                            }
-                            else
-                            {
-                                sounder.PlayDefaultClickSE();
-                            }
-                        }
-
+                        ret = OnClick(sounder, part, touch, listenerObject);
                         break;
                     }
                     case TouchType.Down:
@@ -94,7 +71,41 @@ namespace DM
                 break;
             }
         }
-        
+
+        private static bool OnClick(ISounder sounder, UIPart part, TouchEvent touch, GameObject listenerObject)
+        {
+            UISound se = new UISound();
+            bool ret = part.OnClick(touch.Listener.gameObject.name, listenerObject, touch.Pointer, se);
+            
+            if (!ret || sounder == null)
+            {
+                return ret;
+            }
+
+            if (!string.IsNullOrEmpty(se.m_PlayName))
+            {
+                sounder.PlayClickSE(se.m_PlayName);
+            }
+            else
+            {
+                sounder.PlayDefaultClickSE();
+            }
+
+            return true;
+        }
+
+        private static bool CheckTouchable(int untouchableIndex, bool isScreenTouchable, TouchEvent touch)
+        {
+            if (touch.Listener.Layer == null)
+            {
+                return false;
+            }
+
+            return isScreenTouchable
+                             && touch.Listener.Layer.IsTouchable()
+                             && untouchableIndex < touch.Listener.Layer.SiblingIndex;
+        }
+
         public void SetScreenTouchableByLayer(UIBaseLayer layer, bool enable,
             IEnumerable<BaseRaycaster> rayCasterComponents)
         {
