@@ -61,7 +61,7 @@ namespace DM
                 s_Instance.m_UiList = new UIBaseLayerList();
                 s_Instance.m_TouchEvents = new Queue<TouchEvent>();
                 s_Instance.m_DispatchedEvents = new Queue<DispatchedEvent>();
-                
+
                 foreach (var item in s_Instance.m_RayCasters)
                 {
                     BaseRaycaster rayCaster = item.GetComponent<BaseRaycaster>();
@@ -301,7 +301,7 @@ namespace DM
 
             bool isInsert = Insert();
             bool isEject = Eject();
-            
+
             if (!isEject && !isInsert)
             {
                 return;
@@ -376,21 +376,19 @@ namespace DM
 
         private bool Eject()
         {
-            bool isEject = false;
-
             if (m_RemovingList.Count <= 0)
             {
-                return isEject;
+                return false;
             }
 
+            bool isEject = false;
             bool isLoading = m_AddingList.Exists(layer => { return (layer.IsNotYetLoaded()); });
 
             List<UIBaseLayer> list = m_RemovingList;
             m_RemovingList = new List<UIBaseLayer>();
             bool isFadeIn = IsFadeIn();
-            for (int i = 0; i < list.Count; i++)
+            foreach (var layer in list)
             {
-                UIBaseLayer layer = list[i];
                 if (!isFadeIn && layer.State == BaseLayerState.OutFading)
                 {
                     layer.Remove();
@@ -412,10 +410,11 @@ namespace DM
 
         private void RefreshLayer()
         {
-            bool visible = true;
-            bool touchable = true;
+            bool isVisible = true;
+            bool isTouchable = true;
             UIBaseLayer frontLayer = null;
             int index = m_UiLayers.childCount - 1;
+
             m_UiList.ForEachAnything(layer =>
             {
                 if (layer.IsNotYetLoaded())
@@ -425,20 +424,20 @@ namespace DM
 
                 bool preVisible = layer.IsVisible();
                 bool preTouchable = layer.IsTouchable();
-                layer.SetVisible(visible);
-                layer.SetTouchable(touchable);
-                if (!preVisible && visible)
+                layer.SetVisible(isVisible);
+                layer.SetTouchable(isTouchable);
+                if (!preVisible && isVisible)
                 {
                     layer.Base.OnReVisible();
                 }
 
-                if (!preTouchable && touchable)
+                if (!preTouchable && isTouchable)
                 {
                     layer.Base.OnReTouchable();
                 }
 
-                visible = visible && layer.Base.IsBackVisible();
-                touchable = touchable && layer.Base.IsBackTouchable();
+                isVisible = isVisible && layer.Base.IsBackVisible();
+                isTouchable = isTouchable && layer.Base.IsBackTouchable();
 
                 layer.SiblingIndex = index--;
 
@@ -463,19 +462,13 @@ namespace DM
                 return;
             }
 
-            bool ret = false;
             int untouchableIndex = FindUntouchableIndex();
-            
             m_TouchEvents.Clear();
 
             while (m_TouchEvents.Count > 0)
             {
+                bool ret = false;
                 TouchEvent touch = m_TouchEvents.Dequeue();
-
-                if (ret)
-                {
-                    continue;
-                }
 
                 if (touch.Listener.Layer == null)
                 {
@@ -491,14 +484,14 @@ namespace DM
                     continue;
                 }
 
-                UIPart ui = touch.Listener.Part;
+                UIPart part = touch.Listener.Part;
                 GameObject listenerObject = touch.Listener.gameObject;
                 switch (touch.Type)
                 {
                     case TouchType.Click:
                     {
                         UISound se = new UISound();
-                        ret = ui.OnClick(touch.Listener.gameObject.name, listenerObject, touch.Pointer, se);
+                        ret = part.OnClick(touch.Listener.gameObject.name, listenerObject, touch.Pointer, se);
                         if (ret && m_Implements.Sounder != null)
                         {
                             if (!string.IsNullOrEmpty(se.m_PlayName))
@@ -515,23 +508,31 @@ namespace DM
                     }
                     case TouchType.Down:
                     {
-                        ret = ui.OnTouchDown(touch.Listener.gameObject.name, listenerObject, touch.Pointer);
+                        ret = part.OnTouchDown(touch.Listener.gameObject.name, listenerObject, touch.Pointer);
                         break;
                     }
                     case TouchType.Up:
                     {
-                        ret = ui.OnTouchUp(touch.Listener.gameObject.name, listenerObject, touch.Pointer);
+                        ret = part.OnTouchUp(touch.Listener.gameObject.name, listenerObject, touch.Pointer);
                         break;
                     }
                     case TouchType.Drag:
                     {
-                        ret = ui.OnDrag(touch.Listener.gameObject.name, listenerObject, touch.Pointer);
+                        ret = part.OnDrag(touch.Listener.gameObject.name, listenerObject, touch.Pointer);
                         break;
                     }
                     case TouchType.None:
                         break;
                     default: break;
                 }
+
+                if (!ret)
+                {
+                    continue;
+                }
+
+                m_TouchEvents.Clear();
+                break;
             }
         }
 
@@ -552,20 +553,20 @@ namespace DM
             }
         }
 
-        private bool ShouldFadeByAdding(UIBase ui)
+        private bool ShouldFadeByAdding(UIBase uiBase)
         {
             if (m_Fade != null)
             {
                 return false;
             }
 
-            if (UIFadeTarget.s_Groups.Contains(ui.Group))
+            if (UIFadeTarget.s_Groups.Contains(uiBase.Group))
             {
                 return true;
             }
 
-            bool has = UIFadeThreshold.s_Groups.ContainsKey(ui.Group);
-            return has && m_UiList.GetNumInGroup(ui.Group) <= UIFadeThreshold.s_Groups[ui.Group];
+            bool has = UIFadeThreshold.s_Groups.ContainsKey(uiBase.Group);
+            return has && m_UiList.GetNumInGroup(uiBase.Group) <= UIFadeThreshold.s_Groups[uiBase.Group];
         }
 
         private bool ShouldFadeByRemoving(UIBase ui)
