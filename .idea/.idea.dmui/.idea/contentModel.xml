@@ -110,7 +110,7 @@
           <e p="UIController" t="Include">
             <e p="Items" t="Include">
               <e p="UiLayers.cs" t="Include" />
-              <e p="VIew3D.cs" t="Include" />
+              <e p="UIView3D.cs" t="Include" />
             </e>
             <e p="UIController+Update.cs" t="Include" />
             <e p="UIController.cs" t="Include" />

@@ -97,7 +97,7 @@ namespace DM
 
             Base.Root = g.transform;
 
-            Transform parent = Base.IsView3D() ? UIController.Instance.m_View3D : m_Origin.transform;
+            Transform parent = Base.IsView3D() ? UIController.Instance.m_UIView3D : m_Origin.transform;
             Base.Root.SetParent(parent, false);
             Base.Root.gameObject.SetActive(false);
 

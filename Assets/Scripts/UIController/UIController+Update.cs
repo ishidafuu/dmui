@@ -38,7 +38,7 @@ namespace DM
             }
 
             RunPlayBgm();
-            m_FadeController.FadeOut(RemoveUIBase);
+            m_FadeController.FadeOut(Remove);
         }
         
         

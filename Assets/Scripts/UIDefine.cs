@@ -30,12 +30,19 @@ namespace DM
     public enum UIPreset
     {
         None = 0,
+        // 背面のレイヤを表示
         BackVisible = 1,
+        // 背面のタッチ有効
         BackTouchable = (1 << 1),
+        // レイヤのタッチ有効
         TouchEventCallable = (1 << 2),
+        // レイヤのタッチ無効（レイヤ削除時に再タッチ可能通知を送らない）
         SystemUntouchable = (1 << 3),
+        // フェード状態を無視してロード可能
         LoadingWithoutFade = (1 << 4),
+        // フェード状態を無視してアクティブ化可能
         ActiveWithoutFade = (1 << 5),
+        // 3Dグラフィックレイヤに配置
         View3D = (1 << 6),
 
         SystemIndicator = (BackVisible | BackTouchable | SystemUntouchable | LoadingWithoutFade | ActiveWithoutFade),

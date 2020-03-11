@@ -21,7 +21,7 @@ namespace DM {
 
 		void Start () {
 			UIController.SetImplement(new PrefabLoader(), new Sounder(), new FadeCreator());
-			UIController.Instance.AddUIBase(new Sample15Scene());
+			UIController.Instance.AddFront(new Sample15Scene());
 		}
 	}
 

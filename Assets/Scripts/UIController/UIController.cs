@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.Serialization;
 
 namespace DM
 {
@@ -11,7 +12,7 @@ namespace DM
     {
         public const string LAYER_TOUCH_AREA_NAME = "LayerTouchArea";
         private Transform m_UiLayers;
-        public Transform m_View3D;
+        [FormerlySerializedAs("m_View3D")] public Transform m_UIView3D;
         private List<BaseRaycaster> m_RayCasterComponents;
         private List<UIBaseLayer> m_AddingLayerList;
         private List<UIBaseLayer> m_RemovingLayerList;
@@ -55,7 +56,7 @@ namespace DM
                 
                 if (s_Instance.m_RayCasterComponents == null
                     || s_Instance.m_UiLayers == null
-                    || s_Instance.m_View3D == null)
+                    || s_Instance.m_UIView3D == null)
                 {
                     s_Instance.FindUIControllerItems();
                 }
@@ -75,7 +76,7 @@ namespace DM
         public void FindUIControllerItems()
         {
             m_UiLayers = FindObjectOfType<UILayers>().transform;
-            m_View3D = FindObjectOfType<View3D>().transform;
+            m_UIView3D = FindObjectOfType<UIView3D>().transform;
 
             BaseRaycaster[] rayCasters = FindObjectsOfType<BaseRaycaster>();
             m_RayCasterComponents = new List<BaseRaycaster>();
@@ -102,7 +103,7 @@ namespace DM
             s_Instance = null;
         }
         
-        public void AddUIBase(UIBase uiBase)
+        public void AddFront(UIBase uiBase)
         {
             if (uiBase == null)
             {
@@ -118,14 +119,14 @@ namespace DM
 
             if (m_FadeController.ShouldFadeByAdding(uiBase, m_LayerController))
             {
-                m_FadeController.FadeIn(Implements, m_AddingLayerList, AddUIBase);
+                m_FadeController.FadeIn(Implements, m_AddingLayerList, AddFront);
             }
 
             m_AddingLayerList.Add(layer);
             m_LayerController.AddOrInsert(layer);
         }
 
-        public void RemoveUIBase(UIBase uiBase)
+        public void Remove(UIBase uiBase)
         {
             if (uiBase == null)
             {
@@ -140,7 +141,7 @@ namespace DM
 
             if (m_FadeController.ShouldFadeByRemoving(uiBase, m_LayerController, m_RemovingLayerList))
             {
-                m_FadeController.FadeIn(Implements, m_AddingLayerList, AddUIBase);
+                m_FadeController.FadeIn(Implements, m_AddingLayerList, AddFront);
             }
         }
 
@@ -160,13 +161,13 @@ namespace DM
                 IEnumerable<UIBaseLayer> layers = m_LayerController.FindLayers(uiGroup);
                 foreach (var layer in layers)
                 {
-                    RemoveUIBase(layer.Base);
+                    Remove(layer.Base);
                 }
             }
 
             foreach (var uiBase in uiBases)
             {
-                AddUIBase(uiBase);
+                AddFront(uiBase);
             }
         }
 
@@ -195,7 +196,7 @@ namespace DM
             bool ret = layer.Base.OnBack();
             if (ret)
             {
-                RemoveUIBase(layer.Base);
+                Remove(layer.Base);
             }
         }
 
