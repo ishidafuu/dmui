@@ -32,7 +32,7 @@ namespace DM {
 		public Sample18Scene() : base("UISceneA", UIGroup.Scene) {
 		}
 
-		public override IEnumerator OnLoaded() {
+		public override IEnumerator OnLoadedBase() {
 			Root.Find("Layer/ButtonTop"   ).gameObject.SetActive(false);
 			Root.Find("Layer/ButtonCenter").gameObject.SetActive(false);
 

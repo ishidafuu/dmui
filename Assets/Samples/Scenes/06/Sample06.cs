@@ -32,7 +32,7 @@ namespace DM {
 			UIController.Instance.AddFront(new Sample06Dialog());
 		}
 
-		public override IEnumerator OnLoaded() {
+		public override IEnumerator OnLoadedBase() {
 			Root.Find("Layer/ButtonTop"   ).gameObject.SetActive(false);
 			Root.Find("Layer/ButtonBottom").gameObject.SetActive(false);
 
@@ -63,7 +63,7 @@ namespace DM {
 		: base("UIDialog", UIGroup.Dialog, UIPreset.BackVisible | UIPreset.TouchEventCallable) {
 		}
 
-		public override IEnumerator OnLoaded() {
+		public override IEnumerator OnLoadedBase() {
 			Root.Find("Layer/ButtonCenter").gameObject.SetActive(false);
 			yield break;
 		}

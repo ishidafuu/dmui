@@ -90,30 +90,40 @@ namespace DM
         // -----------------------------------------------------------------------------------------------------------------------------------------
         // virtual methods
 
-        public virtual IEnumerator OnLoaded()
+        // プレファブ読み込み完了時
+        public virtual IEnumerator OnLoadedBase()
         {
             yield break;
         }
 
+        // 毎フレーム呼び出し
         public virtual void OnUpdate() { }
 
+        // 毎フレーム呼び出し
         public virtual void OnLateUpdate() { }
 
+        // 再表示時
         public virtual void OnReVisible() { }
 
+        // 再タッチ可能時
         public virtual void OnReTouchable() { }
 
+        // 再アクティブ(BaseLayerState.Active)時
         public virtual void OnActive() { }
 
+        //　イベント受信時
         public virtual void OnDispatchedEvent(string eventName, object param) { }
 
+        // 戻るボタン処理
         public virtual bool OnBack()
         {
             return true;
         }
 
+        // 前面のレイヤ切り替わり
         public virtual void OnSwitchFrontUI(string uiName) { }
 
+        // 背面のレイヤ切り替わり
         public virtual void OnSwitchBackUI(string uiName) { }
     }
 }

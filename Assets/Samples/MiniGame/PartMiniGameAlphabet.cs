@@ -15,8 +15,8 @@ public class PartMiniGameAlphabet : UIPart {
 		m_alphabet = alphabet;
 	}
 
-	public override IEnumerator OnLoaded(UIBase uiBase) {
-		Root.SetParent(uiBase.Root.Find("Panel"));
+	public override IEnumerator OnLoaded(UIBase targetLayer) {
+		Root.SetParent(targetLayer.Root.Find("Panel"));
 		Root.localScale = Vector3.one;
 
 		Transform alphabet = Root.Find("Button/Alphabet");

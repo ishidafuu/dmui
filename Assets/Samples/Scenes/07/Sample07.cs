@@ -33,7 +33,7 @@ namespace DM {
 		public Sample07Scene() : base("UISceneAnimSlowlyA", UIGroup.Scene) {
 		}
 
-		public override IEnumerator OnLoaded() {
+		public override IEnumerator OnLoadedBase() {
 			Root.Find("Layer/ButtonTop"   ).gameObject.SetActive(false);
 			Root.Find("Layer/ButtonBottom").gameObject.SetActive(false);
 			Root.Find("Layer/Square").gameObject.SetActive(true);

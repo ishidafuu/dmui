@@ -4,6 +4,18 @@ namespace DM
 {
     public partial class UIController
     {
+        
+        private void LateUpdate()
+        {
+            m_LayerController.ForEachOnlyActive(layer =>
+            {
+                if (layer.Base.IsScheduleUpdate)
+                {
+                    layer.Base.OnLateUpdate();
+                }
+            });
+        }
+        
         private void Update()
         {
             m_LayerController.ForEachOnlyActive(layer =>

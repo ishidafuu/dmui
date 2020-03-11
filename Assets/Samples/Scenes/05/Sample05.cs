@@ -31,7 +31,7 @@ namespace DM {
 			UIController.Instance.AddFront(new UISample05TouchLayer1());
 		}
 
-		public override IEnumerator OnLoaded() {
+		public override IEnumerator OnLoadedBase() {
 			Root.Find("Layer/ButtonTop"   ).gameObject.SetActive(false);
 			Root.Find("Layer/ButtonBottom").gameObject.SetActive(false);
 

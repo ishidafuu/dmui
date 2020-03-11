@@ -18,10 +18,10 @@ namespace DM
     {
         private readonly List<UIBaseLayer> m_List = new List<UIBaseLayer>();
 
-        public static int GetNumInGroup(UIGroup group, IEnumerable<UIBaseLayer> list)
+        public static int GetCountInGroup(UIGroup group, IEnumerable<UIBaseLayer> list)
         {
             int count = 0;
-            foreach (var item in list)
+            foreach (UIBaseLayer item in list)
             {
                 if (group == item.Base.Group)
                 {
@@ -32,9 +32,9 @@ namespace DM
             return count;
         }
 
-        public int GetNumInGroup(UIGroup group)
+        public int GetCountInGroup(UIGroup group)
         {
-            return GetNumInGroup(group, m_List);
+            return GetCountInGroup(group, m_List);
         }
         public int Count => m_List.Count;
 

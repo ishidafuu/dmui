@@ -43,7 +43,7 @@ namespace DM {
 			UIController.Instance.AddFront(new Sample17Frame());
 		}
 
-		public override IEnumerator OnLoaded() {
+		public override IEnumerator OnLoadedBase() {
 			Root.Find("Layer/ButtonTop"   ).gameObject.SetActive(false);
 			Root.Find("Layer/ButtonBottom").gameObject.SetActive(false);
 
@@ -101,7 +101,7 @@ namespace DM {
 		public Sample17SceneB() : base("UISceneB", UIGroup.Scene) {
 		}
 
-		public override IEnumerator OnLoaded() {
+		public override IEnumerator OnLoadedBase() {
 			Root.Find("Layer/ButtonTop"   ).gameObject.SetActive(false);
 			Root.Find("Layer/ButtonCenter").gameObject.SetActive(false);
 			Root.Find("Layer/ButtonBottom").gameObject.SetActive(false);

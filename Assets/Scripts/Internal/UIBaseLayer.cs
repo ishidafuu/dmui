@@ -101,7 +101,7 @@ namespace DM
             Base.Root.SetParent(parent, false);
             Base.Root.gameObject.SetActive(false);
 
-            yield return Base.OnLoaded();
+            yield return Base.OnLoadedBase();
             Setup();
 
             if (State != BaseLayerState.Loading)
@@ -114,7 +114,7 @@ namespace DM
             ProgressState(BaseLayerState.Adding);
         }
 
-        public IEnumerator AttachParts(List<UIPart> parts)
+        public IEnumerator AttachParts(IEnumerable<UIPart> parts)
         {
             if (State > BaseLayerState.Active)
             {
@@ -128,7 +128,7 @@ namespace DM
             }
         }
 
-        public void DetachParts(List<UIPart> parts)
+        public void DetachParts(IEnumerable<UIPart> parts)
         {
             if (State != BaseLayerState.Active)
             {

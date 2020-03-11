@@ -13,7 +13,7 @@ public class UIMiniGameResult : UIBase {
 		m_score = score;
 	}
 
-	public override IEnumerator OnLoaded() {
+	public override IEnumerator OnLoadedBase() {
 		Text score = Root.Find("Panel/Score").GetComponent<Text>();
 		score.text = m_score.ToString("N2");
 

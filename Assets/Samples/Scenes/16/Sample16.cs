@@ -38,7 +38,7 @@ namespace DM {
 		public Sample16Scene() : base("UISceneA", UIGroup.Scene) {
 		}
 
-		public override IEnumerator OnLoaded() {
+		public override IEnumerator OnLoadedBase() {
 			Root.Find("Layer/ButtonCenter").gameObject.SetActive(false);
 
 			yield break;
@@ -73,7 +73,7 @@ namespace DM {
 			m_ui = ui;
 		}
 
-		public override IEnumerator OnLoaded(UIBase uiBase) {
+		public override IEnumerator OnLoaded(UIBase targetLayer) {
 			Text text = Root.Find("Text").GetComponent<Text>();
 			text.text = "create";
 			yield break;
@@ -103,7 +103,7 @@ namespace DM {
 			m_ui = ui;
 		}
 
-		public override IEnumerator OnLoaded(UIBase uiBase) {
+		public override IEnumerator OnLoaded(UIBase targetLayer) {
 			Text text = Root.Find("Text").GetComponent<Text>();
 			text.text = "delete";
 			yield break;

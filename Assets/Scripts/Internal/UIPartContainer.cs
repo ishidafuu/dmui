@@ -14,7 +14,7 @@ namespace DM
             Part = part;
         }
 
-        public IEnumerator LoadAndSetup(UIBaseLayer layer)
+        public IEnumerator LoadAndSetup(UIBaseLayer targetLayer)
         {
             if (Part.Root == null && !string.IsNullOrEmpty(Part.PrefabPath))
             {
@@ -36,9 +36,9 @@ namespace DM
 
             Part.Root.gameObject.SetActive(false);
 
-            CollectComponents(Part.Root.gameObject, layer);
+            CollectComponents(Part.Root.gameObject, targetLayer);
 
-            yield return Part.OnLoaded((UIBase)layer.Part);
+            yield return Part.OnLoaded(targetLayer.Base);
 
             Part.Root.gameObject.SetActive(true);
         }

@@ -27,7 +27,7 @@ namespace DM {
 		public Sample01Scene() : base("UISceneA", UIGroup.Scene) {
 		}
 
-		public override IEnumerator OnLoaded() {
+		public override IEnumerator OnLoadedBase() {
 			yield return new WaitForSeconds(2);
 
 			Text text = Root.Find("Layer/Text").GetComponent<Text>();

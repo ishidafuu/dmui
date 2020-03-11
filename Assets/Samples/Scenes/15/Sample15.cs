@@ -32,7 +32,7 @@ namespace DM {
 		public Sample15Scene() : base("UISceneA", UIGroup.Scene) {
 		}
 
-		public override IEnumerator OnLoaded() {
+		public override IEnumerator OnLoadedBase() {
 			Root.Find("Layer/ButtonCenter").gameObject.SetActive(false);
 			Root.Find("Layer/ButtonBottom").gameObject.SetActive(false);
 
@@ -61,11 +61,11 @@ namespace DM {
 			m_id = id;
 		}
 
-		public override IEnumerator OnLoaded(UIBase uiBase) {
+		public override IEnumerator OnLoaded(UIBase targetLayer) {
 			Text text = Root.Find("Text").GetComponent<Text>();
 			text.text = m_id.ToString();
 
-			Transform layer = uiBase.Root.Find("Layer");
+			Transform layer = targetLayer.Root.Find("Layer");
 			Root.SetParent(layer);
 			Root.localPosition = new Vector3(426, 100 * m_id, 0);
 			Root.localScale = Vector3.one;

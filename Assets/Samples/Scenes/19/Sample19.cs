@@ -38,7 +38,7 @@ namespace DM {
 		public Sample19Scene() : base("UISceneA", UIGroup.Scene) {
 		}
 
-		public override IEnumerator OnLoaded() {
+		public override IEnumerator OnLoadedBase() {
 			Root.Find("Layer/ButtonTop"   ).gameObject.SetActive(false);
 			Root.Find("Layer/ButtonCenter").gameObject.SetActive(false);
 			Root.Find("Layer/ButtonBottom").gameObject.SetActive(false);
@@ -55,7 +55,7 @@ namespace DM {
 		public Sample19SceneB() : base("UISceneB", UIGroup.Scene) {
 		}
 
-		public override IEnumerator OnLoaded() {
+		public override IEnumerator OnLoadedBase() {
 			Root.Find("Layer/ButtonTop"   ).gameObject.SetActive(false);
 			Root.Find("Layer/ButtonCenter").gameObject.SetActive(false);
 			Root.Find("Layer/ButtonBottom").gameObject.SetActive(false);
@@ -82,9 +82,9 @@ namespace DM {
 					Debug.Log("SceneFront: "   + UIController.Instance.GetFrontUINameInGroup(UIGroup.Scene));
 					Debug.Log("FloaterFront: " + UIController.Instance.GetFrontUINameInGroup(UIGroup.Floater));
 					Debug.Log("SystemFront: "  + UIController.Instance.GetFrontUINameInGroup(UIGroup.System));
-					Debug.Log("SceneNum: "   + UIController.Instance.GetUINumInGroup(UIGroup.Scene));
-					Debug.Log("FloaterNum: " + UIController.Instance.GetUINumInGroup(UIGroup.Floater));
-					Debug.Log("SystemNum: "  + UIController.Instance.GetUINumInGroup(UIGroup.System));
+					Debug.Log("SceneNum: "   + UIController.Instance.GetLayerCountInGroup(UIGroup.Scene));
+					Debug.Log("FloaterNum: " + UIController.Instance.GetLayerCountInGroup(UIGroup.Floater));
+					Debug.Log("SystemNum: "  + UIController.Instance.GetLayerCountInGroup(UIGroup.System));
 					return true;
 				}
 				default: {

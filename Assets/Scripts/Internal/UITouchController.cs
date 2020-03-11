@@ -7,6 +7,7 @@ namespace DM
     public class UITouchController
     {
         private readonly Queue<TouchEvent> m_TouchEvents;
+        // ON/OFFは回数カウントされているので、OFF2回入ったら、ONを2回呼ばないとタッチ可能に戻らない
         private int m_TouchOffCount;
 
         public UITouchController()

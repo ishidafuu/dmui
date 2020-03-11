@@ -4,6 +4,8 @@ namespace DM
 {
     internal static class UIBackAble
     {
+        // 戻るによる削除対象のグループ
+        // この中の最前面のグループのOnBackが呼ばれる
         public static readonly List<UIGroup> s_Groups = new List<UIGroup>()
         {
             UIGroup.Dialog,

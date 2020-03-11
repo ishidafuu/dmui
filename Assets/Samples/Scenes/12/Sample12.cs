@@ -33,7 +33,7 @@ namespace DM {
 		public Sample12Scene() : base("UISceneA", UIGroup.Scene) {
 		}
 
-		public override IEnumerator OnLoaded() {
+		public override IEnumerator OnLoadedBase() {
 			Root.Find("Layer/ButtonTop"   ).gameObject.SetActive(false);
 			Root.Find("Layer/ButtonCenter").gameObject.SetActive(false);
 			Root.Find("Layer/ButtonBottom").gameObject.SetActive(false);
@@ -58,7 +58,7 @@ namespace DM {
 		public Sample12SceneB() : base("UISceneB", UIGroup.Scene) {
 		}
 
-		public override IEnumerator OnLoaded() {
+		public override IEnumerator OnLoadedBase() {
 			Root.Find("Layer/ButtonTop"   ).gameObject.SetActive(false);
 			Root.Find("Layer/ButtonCenter").gameObject.SetActive(false);
 			Root.Find("Layer/ButtonBottom").gameObject.SetActive(false);
@@ -78,7 +78,7 @@ namespace DM {
 		public Sample12Dialog() : base("UIDialog", UIGroup.Dialog, UIPreset.BackVisible) {
 		}
 
-		public override IEnumerator OnLoaded() {
+		public override IEnumerator OnLoadedBase() {
 			Root.Find("Layer/ButtonCenter").gameObject.SetActive(false);
 
 			yield break;

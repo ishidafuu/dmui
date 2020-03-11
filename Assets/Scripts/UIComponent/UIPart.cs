@@ -18,11 +18,13 @@ namespace DM
 
         private bool m_Exit;
 
+        // 生成済みオブジェクトを渡して生成
         protected UIPart(Transform root)
         {
             Root = root;
         }
 
+        // 生成前オブジェクト（プレファブPath）を渡して生成
         protected UIPart(string path)
         {
             PrefabPath = path;
@@ -113,7 +115,7 @@ namespace DM
         // -----------------------------------------------------------------------------------------------------------------------------------------
         // virtual methods
 
-        public virtual IEnumerator OnLoaded(UIBase uiBase)
+        public virtual IEnumerator OnLoaded(UIBase targetLayer)
         {
             yield break;
         }

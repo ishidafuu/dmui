@@ -31,7 +31,7 @@ namespace DM {
 		public Sample13Scene() : base("UISceneA", UIGroup.Scene, UIPreset.None, "BGM_SceneA") {
 		}
 
-		public override IEnumerator OnLoaded() {
+		public override IEnumerator OnLoadedBase() {
 			Root.Find("Layer/ButtonTop"   ).gameObject.SetActive(false);
 			Root.Find("Layer/ButtonBottom").gameObject.SetActive(false);
 
@@ -59,7 +59,7 @@ namespace DM {
 		public Sample13SceneB() : base("UISceneAnimB", UIGroup.Scene, UIPreset.None, "BGM_SceneB") {
 		}
 
-		public override IEnumerator OnLoaded() {
+		public override IEnumerator OnLoadedBase() {
 			Root.Find("Layer/ButtonTop"   ).gameObject.SetActive(false);
 			Root.Find("Layer/ButtonBottom").gameObject.SetActive(false);
 

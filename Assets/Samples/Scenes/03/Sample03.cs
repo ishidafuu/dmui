@@ -31,7 +31,7 @@ namespace DM {
 			UIController.Instance.AddFront(new Sample03Frame());
 		}
 
-		public override IEnumerator OnLoaded() {
+		public override IEnumerator OnLoadedBase() {
 			Root.Find("Layer/ButtonTop"   ).gameObject.SetActive(false);
 			Root.Find("Layer/ButtonCenter").gameObject.SetActive(false);
 			Root.Find("Layer/ButtonBottom").gameObject.SetActive(false);
@@ -52,7 +52,7 @@ namespace DM {
 		public Sample03Dialog() : base("UIDialog", UIGroup.Dialog, UIPreset.BackVisible) {
 		}
 
-		public override IEnumerator OnLoaded() {
+		public override IEnumerator OnLoadedBase() {
 			Root.Find("Layer/ButtonCenter").gameObject.SetActive(false);
 
 			Debug.Log("Scene03 : All Right");

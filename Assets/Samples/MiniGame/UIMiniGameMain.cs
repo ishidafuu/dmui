@@ -16,7 +16,7 @@ public class UIMiniGameMain : UIBase {
 	public UIMiniGameMain() : base("MiniGame/MiniGameMain", UIGroup.MainScene) {
 	}
 
-	public override IEnumerator OnLoaded() {
+	public override IEnumerator OnLoadedBase() {
 		for (int i = AlphabetNum - 1; i >= 0; i--) {
 			char a = GetAlphabetByIndex(i);
 			m_alphabets.Add(new PartMiniGameAlphabet(this, a));
