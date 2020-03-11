@@ -20,7 +20,9 @@ namespace DM
         private Queue<TouchEvent> m_TouchEvents;
         private Queue<DispatchedEvent> m_DispatchedEvents;
         private int m_TouchOffCount;
-        private UIBaseLayer m_Fade;
+
+        private UIFadeController m_FadeController;
+
         private UIImplements m_Implements;
         public static UIImplements Implements => Instance.m_Implements;
 
@@ -54,6 +56,8 @@ namespace DM
                 s_Instance.m_TouchEvents = new Queue<TouchEvent>();
                 s_Instance.m_DispatchedEvents = new Queue<DispatchedEvent>();
 
+                s_Instance.m_FadeController = new UIFadeController();
+
                 foreach (var item in s_Instance.m_RayCasters)
                 {
                     s_Instance.m_RayCasterComponents.Add(item);
@@ -84,9 +88,9 @@ namespace DM
                 StartCoroutine(layer.Load());
             }
 
-            if (ShouldFadeByAdding(ui))
+            if (m_FadeController.ShouldFadeByAdding(ui, m_UiList))
             {
-                FadeIn();
+                m_FadeController.FadeIn(Implements, m_AddingList, AddFront);
             }
 
             m_AddingList.Add(layer);
@@ -106,9 +110,9 @@ namespace DM
                 m_RemovingList.Add(layer);
             }
 
-            if (ShouldFadeByRemoving(uiBase))
+            if (m_FadeController.ShouldFadeByRemoving(uiBase, m_UiList, m_RemovingList))
             {
-                FadeIn();
+                m_FadeController.FadeIn(Implements, m_AddingList, AddFront);
             }
         }
 
@@ -296,7 +300,7 @@ namespace DM
 
             RefreshLayer();
 
-            if (isEject && IsHidden())
+            if (isEject && m_FadeController.IsHidden())
             {
                 Unload();
             }
@@ -307,7 +311,7 @@ namespace DM
             }
 
             PlayBgm();
-            FadeOut();
+            m_FadeController.FadeOut(Remove);
         }
 
         private void LateUpdate()
@@ -337,7 +341,7 @@ namespace DM
 
             List<UIBaseLayer> list = m_AddingList;
             m_AddingList = new List<UIBaseLayer>();
-            bool isFadeIn = IsFadeIn();
+            bool isFadeIn = m_FadeController.IsFadeIn();
             for (int i = 0; i < list.Count; i++)
             {
                 UIBaseLayer layer = list[i];
@@ -373,7 +377,7 @@ namespace DM
 
             List<UIBaseLayer> list = m_RemovingList;
             m_RemovingList = new List<UIBaseLayer>();
-            bool isFadeIn = IsFadeIn();
+            bool isFadeIn = m_FadeController.IsFadeIn();
             foreach (var layer in list)
             {
                 if (!isFadeIn && layer.State == BaseLayerState.OutFading)
@@ -540,86 +544,6 @@ namespace DM
             m_DispatchedEvents.Clear();
         }
 
-        private bool ShouldFadeByAdding(UIBase uiBase)
-        {
-            if (m_Fade != null)
-            {
-                return false;
-            }
-
-            if (UIFadeTarget.s_Groups.Contains(uiBase.Group))
-            {
-                return true;
-            }
-            
-            if (!UIFadeThreshold.s_Groups.ContainsKey(uiBase.Group))
-            {
-                return false;
-            }
-            
-            return m_UiList.GetNumInGroup(uiBase.Group) <= UIFadeThreshold.s_Groups[uiBase.Group];
-        }
-
-        private bool ShouldFadeByRemoving(UIBase ui)
-        {
-            if (m_Fade != null)
-            {
-                return false;
-            }
-
-            if (UIFadeTarget.s_Groups.Contains(ui.Group))
-            {
-                return true;
-            }
-            
-            if (!UIFadeThreshold.s_Groups.ContainsKey(ui.Group))
-            {
-                return false;
-            }
-
-            int sceneNum = UIBaseLayerList.GetNumInGroup(ui.Group, m_RemovingList);
-
-            return m_UiList.GetNumInGroup(ui.Group) - sceneNum <= UIFadeThreshold.s_Groups[ui.Group];
-        }
-
-        private void FadeIn()
-        {
-            if (m_Fade != null)
-            {
-                return;
-            }
-
-            if (m_Implements.FadeCreator == null)
-            {
-                return;
-            }
-
-            UIFade fade = m_Implements.FadeCreator.Create();
-            AddFront(fade);
-            m_Fade = m_AddingList.Find(l => l.Base == fade);
-        }
-
-        private void FadeOut()
-        {
-            if (m_Fade == null)
-            {
-                return;
-            }
-
-            Remove(m_Fade.Base);
-            m_Fade = null;
-        }
-
-        private bool IsFadeIn()
-        {
-            return (m_Fade != null && m_Fade.State <= BaseLayerState.InAnimation);
-        }
-
-        private bool IsHidden()
-        {
-            return (m_Fade != null && m_Fade.State == BaseLayerState.Active);
-        }
-
         private bool IsScreenTouchable()
         {
             return m_RayCasterComponents.Count != 0 && m_RayCasterComponents[0].enabled;
@@ -700,7 +624,7 @@ namespace DM
                     uiController.FindRayCaster();
                 }
             }
-            
+
             base.OnInspectorGUI();
         }
     }

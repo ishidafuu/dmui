@@ -81,7 +81,11 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
-          <e p="IFadeCreator.cs" t="Include" />
+          <e p="Interface" t="Include">
+            <e p="IFadeCreator.cs" t="Include" />
+            <e p="IPrefabLoader.cs" t="Include" />
+            <e p="ISounder.cs" t="Include" />
+          </e>
           <e p="Internal" t="Include">
             <e p="DispatchedEvent.cs" t="Include" />
             <e p="StateFlags.cs" t="Include" />
@@ -91,20 +95,19 @@
             <e p="UIPartContainer.cs" t="Include" />
             <e p="UiStateBehaviour.cs" t="Include" />
           </e>
-          <e p="IPrefabLoader.cs" t="Include" />
-          <e p="ISounder.cs" t="Include" />
           <e p="PrefabReceiver.cs" t="Include" />
           <e p="UIBackAble.cs" t="Include" />
           <e p="UIBase.cs" t="Include" />
           <e p="UIBehaviourController.cs" t="Include" />
           <e p="UIController" t="Include">
             <e p="UIController.cs" t="Include" />
+            <e p="UIFade.cs" t="Include" />
+            <e p="UIFadeController.cs" t="Include" />
+            <e p="UIFadeTarget.cs" t="Include" />
+            <e p="UIFadeThreshold.cs" t="Include" />
+            <e p="UIImplements.cs" t="Include" />
           </e>
           <e p="UiDefine.cs" t="Include" />
-          <e p="UIFade.cs" t="Include" />
-          <e p="UIFadeTarget.cs" t="Include" />
-          <e p="UIFadeThreshold.cs" t="Include" />
-          <e p="UIImplements.cs" t="Include" />
           <e p="UILayerTouchListener.cs" t="Include" />
           <e p="UIPart.cs" t="Include" />
           <e p="UIRendererController.cs" t="Include" />
