@@ -106,6 +106,8 @@
             <e p="UIFadeTarget.cs" t="Include" />
             <e p="UIFadeThreshold.cs" t="Include" />
             <e p="UIImplements.cs" t="Include" />
+            <e p="UiLayers.cs" t="Include" />
+            <e p="VIew3D.cs" t="Include" />
           </e>
           <e p="UiDefine.cs" t="Include" />
           <e p="UILayerTouchListener.cs" t="Include" />

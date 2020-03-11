@@ -10,7 +10,7 @@ namespace DM
     public class UIController : MonoBehaviour
     {
         public const string LAYER_TOUCH_AREA_NAME = "LayerTouchArea";
-        public BaseRaycaster[] m_RayCasters;
+        private BaseRaycaster[] m_RayCasters;
         public Transform m_UiLayers;
         public Transform m_View3D;
         private List<BaseRaycaster> m_RayCasterComponents;
