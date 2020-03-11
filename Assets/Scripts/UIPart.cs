@@ -1,12 +1,4 @@
-﻿// ----------------------------------------------------------------------
-// DMUIFramework
-// Copyright (c) 2018 Takuya Nishimura (tnishimu)
-//
-// This software is released under the MIT License.
-// https://opensource.org/licenses/mit-license.php
-// ----------------------------------------------------------------------
-
-using System;
+﻿using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -79,12 +71,12 @@ namespace DM
 
         private int Play(string name)
         {
-            string playName = UiStateBehaviour.LayerName + name;
+            string playName = UIStateBehaviour.LAYER_NAME + name;
 
             int count = 0;
             foreach (var animator in Animators)
             {
-                UiStateBehaviour[] states = animator.GetBehaviours<UiStateBehaviour>();
+                UIStateBehaviour[] states = animator.GetBehaviours<UIStateBehaviour>();
                 foreach (var state in states)
                 {
                     state.ExitCallback = OnExit;

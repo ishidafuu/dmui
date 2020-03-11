@@ -301,21 +301,26 @@ namespace DM
 
             bool isInsert = Insert();
             bool isEject = Eject();
-            if (isEject || isInsert)
+            
+            if (!isEject && !isInsert)
             {
-                RefreshLayer();
-
-                if (isEject && IsHidden())
-                {
-                    Unload();
-                }
-
-                if (m_AddingList.Count == 0 && m_RemovingList.Count == 0)
-                {
-                    PlayBgm();
-                    FadeOut();
-                }
+                return;
             }
+
+            RefreshLayer();
+
+            if (isEject && IsHidden())
+            {
+                Unload();
+            }
+
+            if (m_AddingList.Count != 0 || m_RemovingList.Count != 0)
+            {
+                return;
+            }
+
+            PlayBgm();
+            FadeOut();
         }
 
         private void LateUpdate()
@@ -460,13 +465,12 @@ namespace DM
 
             bool ret = false;
             int untouchableIndex = FindUntouchableIndex();
-
-            Queue<TouchEvent> queue = new Queue<TouchEvent>(m_TouchEvents);
+            
             m_TouchEvents.Clear();
 
-            while (queue.Count > 0)
+            while (m_TouchEvents.Count > 0)
             {
-                TouchEvent touch = queue.Dequeue();
+                TouchEvent touch = m_TouchEvents.Dequeue();
 
                 if (ret)
                 {

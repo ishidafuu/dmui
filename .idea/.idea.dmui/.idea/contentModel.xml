@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\ishida.hiroaki\.Rider2019.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\ishida.hiroaki\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_dmui.-917219228.00" t="ExcludeRecursive" />
+    <e p="C:\Users\ishida.hiroaki\Documents\dmui" t="IncludeRecursive">
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="Samples" t="Include">
+          <e p="MiniGame" t="Include">
+            <e p="MiniGame.cs" t="Include" />
+            <e p="PartMiniGameAlphabet.cs" t="Include" />
+            <e p="UIMiniGameHowToPlay.cs" t="Include" />
+            <e p="UIMiniGameMain.cs" t="Include" />
+            <e p="UIMiniGameResult.cs" t="Include" />
+            <e p="UIMIniGameStartEffect.cs" t="Include" />
+            <e p="UIMIniGameTitle.cs" t="Include" />
+          </e>
+          <e p="SampleImplements.cs" t="Include" />
+          <e p="Scenes" t="Include">
+            <e p="01" t="Include">
+              <e p="Sample01.cs" t="Include" />
+            </e>
+            <e p="02" t="Include">
+              <e p="Sample02.cs" t="Include" />
+            </e>
+            <e p="03" t="Include">
+              <e p="Sample03.cs" t="Include" />
+            </e>
+            <e p="04" t="Include">
+              <e p="Sample04.cs" t="Include" />
+            </e>
+            <e p="05" t="Include">
+              <e p="Sample05.cs" t="Include" />
+            </e>
+            <e p="06" t="Include">
+              <e p="Sample06.cs" t="Include" />
+            </e>
+            <e p="07" t="Include">
+              <e p="Sample07.cs" t="Include" />
+            </e>
+            <e p="08" t="Include">
+              <e p="Sample08.cs" t="Include" />
+            </e>
+            <e p="09" t="Include">
+              <e p="Sample09.cs" t="Include" />
+            </e>
+            <e p="10" t="Include">
+              <e p="Sample10.cs" t="Include" />
+            </e>
+            <e p="11" t="Include">
+              <e p="Sample11.cs" t="Include" />
+            </e>
+            <e p="12" t="Include">
+              <e p="Sample12.cs" t="Include" />
+            </e>
+            <e p="13" t="Include">
+              <e p="Sample13.cs" t="Include" />
+            </e>
+            <e p="14" t="Include">
+              <e p="Sample14.cs" t="Include" />
+            </e>
+            <e p="15" t="Include">
+              <e p="Sample15.cs" t="Include" />
+            </e>
+            <e p="16" t="Include">
+              <e p="Sample16.cs" t="Include" />
+            </e>
+            <e p="17" t="Include">
+              <e p="Sample17.cs" t="Include" />
+            </e>
+            <e p="18" t="Include">
+              <e p="Sample18.cs" t="Include" />
+            </e>
+            <e p="19" t="Include">
+              <e p="Sample19.cs" t="Include" />
+            </e>
+            <e p="20" t="Include">
+              <e p="Sample20.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Scripts" t="Include">
+          <e p="IFadeCreator.cs" t="Include" />
+          <e p="Internal" t="Include">
+            <e p="DispatchedEvent.cs" t="Include" />
+            <e p="StateFlags.cs" t="Include" />
+            <e p="TouchEvents.cs" t="Include" />
+            <e p="UIBaseLayer.cs" t="Include" />
+            <e p="UIBaseLayerList.cs" t="Include" />
+            <e p="UIPartContainer.cs" t="Include" />
+            <e p="UiStateBehaviour.cs" t="Include" />
+          </e>
+          <e p="IPrefabLoader.cs" t="Include" />
+          <e p="ISounder.cs" t="Include" />
+          <e p="PrefabReceiver.cs" t="Include" />
+          <e p="UIBase.cs" t="Include" />
+          <e p="UIBehaviourController.cs" t="Include" />
+          <e p="UIController.cs" t="Include" />
+          <e p="UiDefine.cs" t="Include" />
+          <e p="UIFade.cs" t="Include" />
+          <e p="UIGroup.cs" t="Include" />
+          <e p="UIImplements.cs" t="Include" />
+          <e p="UILayerTouchListener.cs" t="Include" />
+          <e p="UIPart.cs" t="Include" />
+          <e p="UIRendererController.cs" t="Include" />
+          <e p="UISound.cs" t="Include" />
+          <e p="UITouchListener.cs" t="Include" />
+          <e p="UIVisibleController.cs" t="Include" />
+        </e>
+      </e>
+      <e p="dmui.sln" t="IncludeFlat" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="Packages" t="ExcludeRecursive" />
+      <e p="Temp\bin" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>

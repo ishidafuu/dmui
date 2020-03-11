@@ -3,9 +3,9 @@ using UnityEngine;
 
 namespace DM
 {
-    public class UiStateBehaviour : StateMachineBehaviour
+    public class UIStateBehaviour : StateMachineBehaviour
     {
-        public const string LayerName = "UI.";
+        public const string LAYER_NAME = "UI.";
 
         private Action<Animator> m_ExitCallback;
 

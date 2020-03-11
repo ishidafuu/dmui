@@ -1,13 +1,4 @@
-﻿// ----------------------------------------------------------------------
-// DMUIFramework
-// Copyright (c) 2018 Takuya Nishimura (tnishimu)
-//
-// This software is released under the MIT License.
-// https://opensource.org/licenses/mit-license.php
-// ----------------------------------------------------------------------
-
-using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -22,7 +13,7 @@ namespace DM
         private readonly UIPreset m_Preset;
         public string Bgm { get; }
 
-        protected UIBase(string prefabPath, UIGroup group, UIPreset preset = UIPreset.None, string bgm = "") 
+        protected UIBase(string prefabPath, UIGroup group, UIPreset preset = UIPreset.None, string bgm = "")
             : base(prefabPath)
         {
             Group = group;

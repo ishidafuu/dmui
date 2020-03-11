@@ -53,7 +53,7 @@ namespace DM
 
         public void Eject(UIBaseLayer layer)
         {
-            int index = m_List.FindIndex(l => { return (l == layer); });
+            int index = m_List.FindIndex(l => (l == layer));
             if (index >= 0)
             {
                 m_List.RemoveAt(index);
@@ -62,9 +62,13 @@ namespace DM
 
         public void ForEachOnlyActive(Action<UIBaseLayer> action)
         {
-            List<UIBaseLayer> list = new List<UIBaseLayer>(m_List);
-            foreach (var item in list.Where(item => item.State == BaseLayerState.Active))
+            foreach (UIBaseLayer item in m_List)
             {
+                if (item.State != BaseLayerState.Active)
+                {
+                    continue;
+                }
+                
                 action(item);
             }
         }
