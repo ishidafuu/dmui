@@ -116,28 +116,28 @@ namespace DM
             }
         }
 
-        public void Replace(UIBase[] uis, UIGroup[] removeGroups = null)
+        public void Replace(UIBase[] uiBases, UIGroup[] removeGroups = null)
         {
             HashSet<UIGroup> removes =
                 (removeGroups == null) ? new HashSet<UIGroup>() : new HashSet<UIGroup>(removeGroups);
 
-            for (int i = 0; i < uis.Length; i++)
+            foreach (var uiBase in uiBases)
             {
-                removes.Add(uis[i].Group);
+                removes.Add(uiBase.Group);
             }
 
             foreach (UIGroup group in removes)
             {
                 List<UIBaseLayer> layers = m_UiList.FindLayers(group);
-                for (int i = 0; i < layers.Count; i++)
+                foreach (var layer in layers)
                 {
-                    Remove(layers[i].Base);
+                    Remove(layer.Base);
                 }
             }
 
-            for (int i = 0; i < uis.Length; i++)
+            foreach (var uiBase in uiBases)
             {
-                AddFront(uis[i]);
+                AddFront(uiBase);
             }
         }
 
@@ -151,17 +151,17 @@ namespace DM
             m_TouchEvents.Enqueue(new TouchEvent(listener, type, pointer));
         }
 
-        public void Dispatch(string name, object param)
+        public void Dispatch(string eventName, object param)
         {
-            m_DispatchedEvents.Enqueue(new DispatchedEvent(name, param));
+            m_DispatchedEvents.Enqueue(new DispatchedEvent(eventName, param));
         }
 
         public void Back()
         {
             UIBaseLayer layer = null;
-            for (int i = 0; i < UIBackAble.s_Groups.Count; i++)
+            foreach (var group in UIBackAble.s_Groups)
             {
-                layer = m_UiList.FindFrontLayerInGroup(UIBackAble.s_Groups[i]);
+                layer = m_UiList.FindFrontLayerInGroup(group);
                 if (layer != null)
                 {
                     break;
@@ -549,7 +549,7 @@ namespace DM
             while (queue.Count > 0)
             {
                 DispatchedEvent e = queue.Dequeue();
-                m_UiList.ForEachOnlyActive(layer => { layer.Base.OnDispatchedEvent(e.Name, e.Param); });
+                m_UiList.ForEachOnlyActive(layer => { layer.Base.OnDispatchedEvent(e.EventName, e.Param); });
             }
         }
 

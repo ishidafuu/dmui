@@ -105,7 +105,7 @@ namespace DM
 
         public virtual void OnActive() { }
 
-        public virtual void OnDispatchedEvent(string name, object param) { }
+        public virtual void OnDispatchedEvent(string eventName, object param) { }
 
         public virtual bool OnBack()
         {

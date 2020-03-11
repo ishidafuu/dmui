@@ -80,8 +80,8 @@ namespace DM {
 			yield break;
 		}
 
-		public override void OnDispatchedEvent(string name, object param) {
-			if (name == "Sample") {
+		public override void OnDispatchedEvent(string eventName, object param) {
+			if (eventName == "Sample") {
 				Text text = Root.Find("Layer/Text").GetComponent<Text>();
 				text.text = ((DispachParams)param).count.ToString();
 				Debug.Log("Scene11 : All Right");

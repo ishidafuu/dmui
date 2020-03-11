@@ -1,12 +1,4 @@
-﻿// ----------------------------------------------------------------------
-// DMUIFramework
-// Copyright (c) 2018 Takuya Nishimura (tnishimu)
-//
-// This software is released under the MIT License.
-// https://opensource.org/licenses/mit-license.php
-// ----------------------------------------------------------------------
-
-using System;
+﻿using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 

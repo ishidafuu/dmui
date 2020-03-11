@@ -2,13 +2,13 @@
 {
     public class DispatchedEvent
     {
-        public string Name { get; }
+        public string EventName { get; }
 
         public object Param { get; }
 
-        public DispatchedEvent(string name, object param)
+        public DispatchedEvent(string eventName, object param)
         {
-            Name = name;
+            EventName = eventName;
             Param = param;
         }
     }
