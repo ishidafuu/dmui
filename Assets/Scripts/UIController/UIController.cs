@@ -551,9 +551,13 @@ namespace DM
             {
                 return true;
             }
-
-            bool has = UIFadeThreshold.s_Groups.ContainsKey(uiBase.Group);
-            return has && m_UiList.GetNumInGroup(uiBase.Group) <= UIFadeThreshold.s_Groups[uiBase.Group];
+            
+            if (!UIFadeThreshold.s_Groups.ContainsKey(uiBase.Group))
+            {
+                return false;
+            }
+            
+            return m_UiList.GetNumInGroup(uiBase.Group) <= UIFadeThreshold.s_Groups[uiBase.Group];
         }
 
         private bool ShouldFadeByRemoving(UIBase ui)
@@ -567,10 +571,8 @@ namespace DM
             {
                 return true;
             }
-
-            bool has = UIFadeThreshold.s_Groups.ContainsKey(ui.Group);
-
-            if (!has)
+            
+            if (!UIFadeThreshold.s_Groups.ContainsKey(ui.Group))
             {
                 return false;
             }
