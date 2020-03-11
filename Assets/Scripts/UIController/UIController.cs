@@ -249,7 +249,7 @@ namespace DM
                     return;
                 }
 
-                foreach (var rayCaster in m_RayCasterComponents)
+                foreach (BaseRaycaster rayCaster in m_RayCasterComponents)
                 {
                     rayCaster.enabled = true;
                 }
@@ -258,9 +258,9 @@ namespace DM
             {
                 if (m_TouchOffCount == 0)
                 {
-                    foreach (var t in m_RayCasterComponents)
+                    foreach (BaseRaycaster rayCaster in m_RayCasterComponents)
                     {
-                        t.enabled = false;
+                        rayCaster.enabled = false;
                     }
                 }
 
