@@ -29,31 +29,44 @@ namespace DM
             m_TouchController.CallTouchEvents(FindUntouchableIndex(), IsScreenTouchable(), Implements.Sounder);
             m_DispatchController.CallDispatchedEvents(m_LayerController);
 
-            bool isAdd = RunAddLayer();
-            bool isRemove = RunRemoveLayer();
+            bool isInsert = RunAddLayer();
+            bool isEject = RunRemoveLayer();
 
-            if (!isRemove && !isAdd)
+            if (isEject || isInsert)
             {
-                return;
+                RunRefresh(isEject);
             }
+        }
 
-            RunRefreshLayer();
+        private void RunRefresh(bool isEject)
+        {
+            RefreshLayer();
 
-            if (isRemove && m_FadeController.IsHidden())
+            if (IsUnloadTiming(isEject))
             {
                 Unload();
             }
 
-            if (m_AddingLayerList.Count != 0 || m_RemovingLayerList.Count != 0)
+            if (AnyChangingLayer())
             {
                 return;
             }
 
-            RunPlayBgm();
+            PlayBgm();
             m_FadeController.FadeOut(Remove);
         }
-        
-        
+
+        private bool AnyChangingLayer()
+        {
+            return m_AddingLayerList.Count != 0 || m_RemovingLayerList.Count != 0;
+        }
+
+        private bool IsUnloadTiming(bool isEject)
+        {
+            return isEject && m_FadeController.IsHidden() && m_RemovingLayerList.Count == 0;
+        }
+
+
         private int FindUntouchableIndex()
         {
             int index = -1;
@@ -234,7 +247,7 @@ namespace DM
             return isEject;
         }
 
-        private void RunRefreshLayer()
+        private void RefreshLayer()
         {
             bool isVisible = true;
             bool isTouchable = true;
@@ -282,7 +295,7 @@ namespace DM
             });
         }
 
-        private void RunPlayBgm()
+        private void PlayBgm()
         {
             if (m_Implements.Sounder == null)
             {
