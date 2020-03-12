@@ -175,7 +175,7 @@ namespace DM
             }
 
             ProgressState(EnumLayerState.InAnimation);
-            bool isPlay = Base.PlayAnimations(IN_ANIMATION_NAME, () => { ProgressState(EnumLayerState.Active); });
+            bool isPlay = Base.PlayAnimations(IN_ANIMATION_NAME, false, () => { ProgressState(EnumLayerState.Active); });
 
             if (!isPlay)
             {
@@ -207,11 +207,10 @@ namespace DM
             bool isPlay = IsVisible();
             if (isPlay)
             {
-                isPlay = Base.PlayAnimations(OUT_ANIMATION_NAME, () =>
+                isPlay = Base.PlayAnimations(OUT_ANIMATION_NAME, true, () =>
                     {
                         ProgressState(EnumLayerState.OutFading);
-                    },
-                    true);
+                    });
             }
 
             if (!isPlay)

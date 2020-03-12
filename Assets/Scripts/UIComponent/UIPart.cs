@@ -8,7 +8,7 @@ namespace DM
     public class UIPart
     {
         private Action m_StopCallback;
-        private bool m_Exit;
+        private bool m_IsExit;
         private int m_PlayCount;
 
         public Animator[] Animators { get; set; }
@@ -42,16 +42,16 @@ namespace DM
             m_StopCallback = null;
         }
 
-        public bool PlayAnimations(string name, Action callback = null, bool exit = false)
+        public bool PlayAnimations(string stateName, bool isExit, Action callback)
         {
             if (m_PlayCount > 0)
             {
                 return false;
             }
 
-            m_Exit = exit;
+            m_IsExit = isExit;
 
-            int count = Play(name);
+            int count = Play(stateName);
             if (count <= 0)
             {
                 return false;
@@ -68,9 +68,9 @@ namespace DM
             return true;
         }
 
-        private int Play(string name)
+        private int Play(string stateName)
         {
-            string playName = UIStateBehaviour.LAYER_NAME + name;
+            string playName = UIStateBehaviour.LAYER_NAME + stateName;
 
             int count = 0;
             foreach (var animator in Animators)
@@ -96,7 +96,7 @@ namespace DM
 
         private void OnExit(Animator animator)
         {
-            if (m_Exit)
+            if (m_IsExit)
             {
                 animator.enabled = false;
             }
