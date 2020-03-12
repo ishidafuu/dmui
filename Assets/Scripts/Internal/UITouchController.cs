@@ -18,11 +18,6 @@ namespace DM
 
         public void CallTouchEvents(int untouchableIndex, bool isScreenTouchable, ISounder sounder)
         {
-            if (m_TouchEvents.Count == 0)
-            {
-                return;
-            }
-
             while (m_TouchEvents.Count > 0)
             {
                 TouchEvent touch = m_TouchEvents.Dequeue();
@@ -31,33 +26,23 @@ namespace DM
                 {
                     continue;
                 }
-
-                UIPart part = touch.Listener.Part;
-                GameObject listenerObject = touch.Listener.gameObject;
+                
                 bool ret = false;
                 
                 switch (touch.Type)
                 {
                     case TouchType.Click:
-                    {
-                        ret = OnClick(sounder, part, touch);
+                        ret = OnClick(sounder, touch);
                         break;
-                    }
                     case TouchType.Down:
-                    {
-                        ret = part.OnTouchDown(touch);
+                        ret = touch.Listener.Part.OnTouchDown(touch);
                         break;
-                    }
                     case TouchType.Up:
-                    {
-                        ret = part.OnTouchUp(touch);
+                        ret = touch.Listener.Part.OnTouchUp(touch);
                         break;
-                    }
                     case TouchType.Drag:
-                    {
-                        ret = part.OnDrag(touch);
+                        ret = touch.Listener.Part.OnDrag(touch);
                         break;
-                    }
                     case TouchType.None:
                         break;
                     default: break;
@@ -73,10 +58,10 @@ namespace DM
             }
         }
 
-        private static bool OnClick(ISounder sounder, UIPart part, TouchEvent touch)
+        private static bool OnClick(ISounder sounder, TouchEvent touch)
         {
             UISound se = new UISound();
-            bool ret = part.OnClick(touch, se);
+            bool ret = touch.Listener.Part.OnClick(touch, se);
             
             if (!ret || sounder == null)
             {
@@ -107,7 +92,7 @@ namespace DM
                              && untouchableIndex < touch.Listener.Layer.SiblingIndex;
         }
 
-        public void SetScreenTouchableByLayer(UIBaseLayer layer, bool enable,
+        public void SetScreenTouchable(UIBaseLayer layer, bool enable,
             IEnumerable<BaseRaycaster> rayCasterComponents)
         {
             if (layer == null)
@@ -117,38 +102,48 @@ namespace DM
 
             if (enable)
             {
-                if (m_TouchOffCount <= 0)
-                {
-                    return;
-                }
-
-                m_TouchOffCount--;
-                layer.ScreenTouchOffCount--;
-                if (m_TouchOffCount != 0)
-                {
-                    return;
-                }
-
-                foreach (BaseRaycaster rayCaster in rayCasterComponents)
-                {
-                    rayCaster.enabled = true;
-                }
+                SetTouchableEnable(layer, rayCasterComponents);
             }
             else
             {
-                if (m_TouchOffCount == 0)
-                {
-                    foreach (BaseRaycaster rayCaster in rayCasterComponents)
-                    {
-                        rayCaster.enabled = false;
-                    }
-                }
-
-                m_TouchOffCount++;
-                layer.ScreenTouchOffCount++;
+                SetTouchableDisable(layer, rayCasterComponents);
             }
         }
-        
+
+        private void SetTouchableEnable(UIBaseLayer layer, IEnumerable<BaseRaycaster> rayCasterComponents)
+        {
+            if (m_TouchOffCount <= 0)
+            {
+                return;
+            }
+
+            m_TouchOffCount--;
+            layer.ScreenTouchOffCount--;
+            if (m_TouchOffCount != 0)
+            {
+                return;
+            }
+
+            foreach (BaseRaycaster rayCaster in rayCasterComponents)
+            {
+                rayCaster.enabled = true;
+            }
+        }
+
+        private void SetTouchableDisable(UIBaseLayer layer, IEnumerable<BaseRaycaster> rayCasterComponents)
+        {
+            if (m_TouchOffCount == 0)
+            {
+                foreach (BaseRaycaster rayCaster in rayCasterComponents)
+                {
+                    rayCaster.enabled = false;
+                }
+            }
+
+            m_TouchOffCount++;
+            layer.ScreenTouchOffCount++;
+        }
+
         public void Enqueue(UITouchListener listener, TouchType type, PointerEventData pointer)
         {
             if (listener.Layer == null)

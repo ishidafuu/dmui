@@ -248,13 +248,13 @@ namespace DM
         public void SetScreenTouchable(UIBase uiBase, bool enable)
         {
             UIBaseLayer layer = m_LayerController.Find(uiBase);
-            m_TouchController.SetScreenTouchableByLayer(layer, enable, m_RayCasterComponents);
+            m_TouchController.SetScreenTouchable(layer, enable, m_RayCasterComponents);
         }
 
         // タッチON／OFF切り替え（レイヤ指定）
         public void SetScreenTouchableByLayer(UIBaseLayer layer, bool enable)
         {
-            m_TouchController.SetScreenTouchableByLayer(layer, enable, m_RayCasterComponents);
+            m_TouchController.SetScreenTouchable(layer, enable, m_RayCasterComponents);
         }
     }
 
