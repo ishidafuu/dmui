@@ -8,6 +8,16 @@ namespace DM
 {
     public partial class UIController : MonoBehaviour
     {
+        // 戻るによる削除対象のグループ
+        // この中の最前面のグループのOnBackが呼ばれる
+        private static readonly List<EnumUIGroup> s_BackAbleGroups = new List<EnumUIGroup>()
+        {
+            EnumUIGroup.Dialog,
+            EnumUIGroup.Scene,
+            EnumUIGroup.MainScene,
+            EnumUIGroup.View3D,
+        };
+
         public const string LAYER_TOUCH_AREA_NAME = "LayerTouchArea";
 
         private List<BaseRaycaster> m_RayCasterComponents;
@@ -45,25 +55,28 @@ namespace DM
                     return s_Instance;
                 }
 
+                s_BackAbleGroups.Sort((x, y) => y - x);
                 s_Instance = FindObjectOfType<UIController>();
-
-                s_Instance.m_AddingLayerList = new List<UIBaseLayer>();
-                s_Instance.m_RemovingLayerList = new List<UIBaseLayer>();
-                s_Instance.m_LayerController = new UIBaseLayerController();
-                s_Instance.m_FadeController = new UIFadeController();
-                s_Instance.m_TouchController = new UITouchController();
-                s_Instance.m_DispatchController = new UIDispatchController();
-
-                if (s_Instance.m_RayCasterComponents == null
-                    || s_Instance.m_UILayers == null
-                    || s_Instance.m_UIView3D == null)
-                {
-                    s_Instance.FindUIControllerItems();
-                }
-
-                UIBackAble.Sort();
+                s_Instance.Init();
 
                 return s_Instance;
+            }
+        }
+
+        private void Init()
+        {
+            m_AddingLayerList = new List<UIBaseLayer>();
+            m_RemovingLayerList = new List<UIBaseLayer>();
+            m_LayerController = new UIBaseLayerController();
+            m_FadeController = new UIFadeController();
+            m_TouchController = new UITouchController();
+            m_DispatchController = new UIDispatchController();
+
+            if (m_RayCasterComponents == null
+                || m_UILayers == null
+                || m_UIView3D == null)
+            {
+                FindUIControllerItems();
             }
         }
 
@@ -167,7 +180,7 @@ namespace DM
         public void Back()
         {
             UIBaseLayer layer = null;
-            foreach (var group in UIBackAble.s_Groups)
+            foreach (var group in s_BackAbleGroups)
             {
                 layer = m_LayerController.FindFrontLayerInGroup(group);
                 if (layer != null)

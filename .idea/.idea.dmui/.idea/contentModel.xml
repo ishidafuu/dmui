@@ -82,11 +82,6 @@
         </e>
         <e p="Scripts" t="Include">
           <e p="Define" t="Include">
-            <e p="Static" t="Include">
-              <e p="UIBackAble.cs" t="Include" />
-              <e p="UIFadeTarget.cs" t="Include" />
-              <e p="UIFadeThreshold.cs" t="Include" />
-            </e>
             <e p="UiDefine.cs" t="Include" />
           </e>
           <e p="Interface" t="Include">
