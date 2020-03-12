@@ -30,7 +30,7 @@ namespace DM {
 
 	class Sample20Scene : UIBase {
 
-		public Sample20Scene() : base("UI3D", UIGroup.View3D, UIPreset.View3D) {
+		public Sample20Scene() : base("UI3D", EnumUIGroup.View3D, EnumUIPreset.View3D) {
 			AddVisibleBehaviourController<Terrain>();
 
 			UIController.Instance.AddFront(new Sample20Dialog(true));
@@ -50,7 +50,7 @@ namespace DM {
 	class Sample20Dialog : UIBase {
 
 		public Sample20Dialog(bool visible)
-		: base("UIDialog", UIGroup.Dialog, visible ? UIPreset.BackVisible | UIPreset.BackTouchable : UIPreset.None) {
+		: base("UIDialog", EnumUIGroup.Dialog, visible ? EnumUIPreset.BackVisible | EnumUIPreset.BackTouchable : EnumUIPreset.None) {
 		}
 
 		public override bool OnClick(TouchEvent touch, UISound uiSound) {

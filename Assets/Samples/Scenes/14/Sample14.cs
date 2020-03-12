@@ -27,7 +27,7 @@ namespace DM {
 
 	class Sample14Scene : UIBase {
 
-		public Sample14Scene() : base("UISceneA", UIGroup.Scene) {
+		public Sample14Scene() : base("UISceneA", EnumUIGroup.Scene) {
 		}
 
 		public override IEnumerator OnLoadedBase() {

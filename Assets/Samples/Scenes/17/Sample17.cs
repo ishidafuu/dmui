@@ -39,7 +39,7 @@ namespace DM {
 
 	class Sample17Scene : UIBase {
 
-		public Sample17Scene() : base("UISceneA", UIGroup.Scene) {
+		public Sample17Scene() : base("UISceneA", EnumUIGroup.Scene) {
 			UIController.Instance.AddFront(new Sample17Frame());
 		}
 
@@ -65,7 +65,7 @@ namespace DM {
 
 	class Sample17Frame : UIBase {
 
-		public Sample17Frame() : base("UIFrame", UIGroup.Floater, UIPreset.BackVisible | UIPreset.BackTouchable) {
+		public Sample17Frame() : base("UIFrame", EnumUIGroup.Floater, EnumUIPreset.BackVisible | EnumUIPreset.BackTouchable) {
 		}
 
 		public override void OnSwitchFrontUI(string uiName) {
@@ -79,7 +79,7 @@ namespace DM {
 
 	class Sample17Dialog : UIBase {
 
-		public Sample17Dialog() : base("UIDialog", UIGroup.Dialog, UIPreset.BackVisible) {
+		public Sample17Dialog() : base("UIDialog", EnumUIGroup.Dialog, EnumUIPreset.BackVisible) {
 		}
 
 		public override bool OnClick(TouchEvent touch, UISound uiSound) {
@@ -98,7 +98,7 @@ namespace DM {
 
 	class Sample17SceneB : UIBase {
 
-		public Sample17SceneB() : base("UISceneB", UIGroup.Scene) {
+		public Sample17SceneB() : base("UISceneB", EnumUIGroup.Scene) {
 		}
 
 		public override IEnumerator OnLoadedBase() {

@@ -6,7 +6,7 @@ using DM;
 
 public class UIMiniGameHowToPlay : UIBase {
 
-	public UIMiniGameHowToPlay() : base("MiniGame/MiniGameHowToPlay", UIGroup.Dialog, UIPreset.BackVisible | UIPreset.TouchEventCallable) {
+	public UIMiniGameHowToPlay() : base("MiniGame/MiniGameHowToPlay", EnumUIGroup.Dialog, EnumUIPreset.BackVisible | EnumUIPreset.TouchEventCallable) {
 	}
 
 	public override bool OnTouchUp(TouchEvent touch) {

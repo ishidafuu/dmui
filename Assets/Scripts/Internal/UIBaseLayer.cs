@@ -21,7 +21,7 @@ namespace DM
         private string m_LinkedBackName = "";
         private string m_LinkedFrontName = "";
 
-        public BaseLayerState State { get; private set; } = BaseLayerState.None;
+        public EnumLayerState State { get; private set; } = EnumLayerState.None;
         public UIBaseLayer FrontLayer { get; set; }
         public UIBaseLayer BackLayer { get; set; }
         public int ScreenTouchOffCount { get; set; }
@@ -30,7 +30,7 @@ namespace DM
         public UIBaseLayer(UIPart uiPart, Transform parent) : base(uiPart)
         {
             m_Parent = parent;
-            ProgressState(BaseLayerState.InFading);
+            ProgressState(EnumLayerState.InFading);
         }
 
         public int SiblingIndex
@@ -41,7 +41,7 @@ namespace DM
 
         public bool IsNotYetLoaded()
         {
-            return (State <= BaseLayerState.Loading || State == BaseLayerState.UselessLoading);
+            return (State <= EnumLayerState.Loading || State == EnumLayerState.UselessLoading);
         }
 
         public override void Destroy()
@@ -70,9 +70,9 @@ namespace DM
 
         public IEnumerator Load()
         {
-            if (!ProgressState(BaseLayerState.Loading))
+            if (!ProgressState(EnumLayerState.Loading))
             {
-                ProgressState(BaseLayerState.Removing);
+                ProgressState(EnumLayerState.Removing);
                 yield break;
             }
             
@@ -98,14 +98,14 @@ namespace DM
             yield return Base.OnLoadedBase();
             Setup();
 
-            if (State != BaseLayerState.Loading)
+            if (State != EnumLayerState.Loading)
             {
-                ProgressState(BaseLayerState.Removing);
+                ProgressState(EnumLayerState.Removing);
                 yield break;
             }
 
             Base.RootTransform.gameObject.SetActive(true);
-            ProgressState(BaseLayerState.Adding);
+            ProgressState(EnumLayerState.Adding);
         }
 
         private static GameObject CreateNonePrefabObject()
@@ -140,7 +140,7 @@ namespace DM
 
         public IEnumerator AttachParts(IEnumerable<UIPart> parts)
         {
-            if (State > BaseLayerState.Active)
+            if (State > EnumLayerState.Active)
             {
                 yield break;
             }
@@ -154,7 +154,7 @@ namespace DM
 
         public void DetachParts(IEnumerable<UIPart> parts)
         {
-            if (State != BaseLayerState.Active)
+            if (State != EnumLayerState.Active)
             {
                 return;
             }
@@ -168,21 +168,21 @@ namespace DM
 
         public bool SetActivate()
         {
-            if (State != BaseLayerState.Adding)
+            if (State != EnumLayerState.Adding)
             {
                 Remove();
                 return false;
             }
 
-            ProgressState(BaseLayerState.InAnimation);
+            ProgressState(EnumLayerState.InAnimation);
             bool isPlay = Base.PlayAnimations(IN_ANIMATION_NAME, () =>
             {
-                ProgressState(BaseLayerState.Active);
+                ProgressState(EnumLayerState.Active);
             });
             
             if (!isPlay)
             {
-                ProgressState(BaseLayerState.Active);
+                ProgressState(EnumLayerState.Active);
             }
 
             return true;
@@ -190,18 +190,18 @@ namespace DM
 
         public bool SetInactive()
         {
-            if (State < BaseLayerState.Active)
+            if (State < EnumLayerState.Active)
             {
                 Remove();
                 return true;
             }
 
-            if (State > BaseLayerState.Active)
+            if (State > EnumLayerState.Active)
             {
                 return false;
             }
 
-            bool ret = ProgressState(BaseLayerState.OutAnimation);
+            bool ret = ProgressState(EnumLayerState.OutAnimation);
             if (!ret)
             {
                 return false;
@@ -212,13 +212,13 @@ namespace DM
             {
                 isPlay = Base.PlayAnimations(OUT_ANIMATION_NAME, () =>
                 {
-                    ProgressState(BaseLayerState.OutFading);
+                    ProgressState(EnumLayerState.OutFading);
                 }, true);
             }
 
             if (!isPlay)
             {
-                ProgressState(BaseLayerState.OutFading);
+                ProgressState(EnumLayerState.OutFading);
             }
 
             return true;
@@ -226,14 +226,14 @@ namespace DM
 
         public void Remove()
         {
-            if (State == BaseLayerState.Removing || State == BaseLayerState.UselessLoading)
+            if (State == EnumLayerState.Removing || State == EnumLayerState.UselessLoading)
             {
                 return;
             }
 
-            var nextBaseLayerState = (State == BaseLayerState.Loading)
-                ? BaseLayerState.UselessLoading 
-                : BaseLayerState.Removing;
+            var nextBaseLayerState = (State == EnumLayerState.Loading)
+                ? EnumLayerState.UselessLoading 
+                : EnumLayerState.Removing;
             
             ProgressState(nextBaseLayerState);
         }
@@ -347,14 +347,14 @@ namespace DM
             return true;
         }
 
-        private bool ProgressState(BaseLayerState nextBaseLayerState)
+        private bool ProgressState(EnumLayerState nextEnumLayerState)
         {
-            if (State >= nextBaseLayerState)
+            if (State >= nextEnumLayerState)
             {
                 return false;
             }
 
-            State = nextBaseLayerState;
+            State = nextEnumLayerState;
             bool isTouchable = StateFlags.IsTouchable(State);
             if ((ScreenTouchOffCount == 0) != isTouchable)
             {
@@ -370,7 +370,7 @@ namespace DM
                 }
             }
 
-            if (nextBaseLayerState == BaseLayerState.Active)
+            if (nextEnumLayerState == EnumLayerState.Active)
             {
                 Base.OnActive();
             }

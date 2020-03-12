@@ -43,22 +43,22 @@ namespace DM
 
         public void OnPointerClick(PointerEventData pointer)
         {
-            UIController.Instance.ListenTouch(this, TouchType.Click, pointer);
+            UIController.Instance.ListenTouch(this, EnumTouchType.Click, pointer);
         }
 
         public void OnPointerDown(PointerEventData pointer)
         {
-            UIController.Instance.ListenTouch(this, TouchType.Down, pointer);
+            UIController.Instance.ListenTouch(this, EnumTouchType.Down, pointer);
         }
 
         public void OnPointerUp(PointerEventData pointer)
         {
-            UIController.Instance.ListenTouch(this, TouchType.Up, pointer);
+            UIController.Instance.ListenTouch(this, EnumTouchType.Up, pointer);
         }
 
         public void OnDrag(PointerEventData pointer)
         {
-            UIController.Instance.ListenTouch(this, TouchType.Drag, pointer);
+            UIController.Instance.ListenTouch(this, EnumTouchType.Drag, pointer);
         }
 
         private static int GetGeneration(Transform target, Object dest, int generation = 0)

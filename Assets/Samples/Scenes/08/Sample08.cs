@@ -30,7 +30,7 @@ namespace DM {
 
 	class Sample08Scene : UIBase {
 
-		public Sample08Scene() : base("UISceneAnimA", UIGroup.Scene) {
+		public Sample08Scene() : base("UISceneAnimA", EnumUIGroup.Scene) {
 		}
 
 		public override IEnumerator OnLoadedBase() {

@@ -18,12 +18,12 @@ namespace DM
     {
         private readonly List<UIBaseLayer> m_List = new List<UIBaseLayer>();
 
-        public static int GetCountInGroup(UIGroup uiGroup, IEnumerable<UIBaseLayer> list)
+        public static int GetCountInGroup(EnumUIGroup enumUIGroup, IEnumerable<UIBaseLayer> list)
         {
             int count = 0;
             foreach (UIBaseLayer item in list)
             {
-                if (uiGroup == item.Base.Group)
+                if (enumUIGroup == item.Base.Group)
                 {
                     ++count;
                 }
@@ -32,9 +32,9 @@ namespace DM
             return count;
         }
 
-        public int GetCountInGroup(UIGroup uiGroup)
+        public int GetCountInGroup(EnumUIGroup enumUIGroup)
         {
-            return GetCountInGroup(uiGroup, m_List);
+            return GetCountInGroup(enumUIGroup, m_List);
         }
 
         public void AddOrInsert(UIBaseLayer layer)
@@ -63,7 +63,7 @@ namespace DM
         {
             foreach (UIBaseLayer item in m_List)
             {
-                if (item.State != BaseLayerState.Active)
+                if (item.State != EnumLayerState.Active)
                 {
                     continue;
                 }
@@ -86,12 +86,12 @@ namespace DM
             return m_List.Find(layer => (layer.Base == uiBase));
         }
 
-        public IEnumerable<UIBaseLayer> FindLayers(UIGroup uiGroup)
+        public IEnumerable<UIBaseLayer> FindLayers(EnumUIGroup enumUIGroup)
         {
             List<UIBaseLayer> list = new List<UIBaseLayer>();
             foreach (UIBaseLayer layer in m_List)
             {
-                if (layer.Base.Group == uiGroup)
+                if (layer.Base.Group == enumUIGroup)
                 {
                     list.Add(layer);
                 }
@@ -100,9 +100,9 @@ namespace DM
             return list;
         }
 
-        public UIBaseLayer FindFrontLayerInGroup(UIGroup uiGroup)
+        public UIBaseLayer FindFrontLayerInGroup(EnumUIGroup enumUIGroup)
         {
-            return m_List.Find(layer => (layer.Base.Group == uiGroup));
+            return m_List.Find(layer => (layer.Base.Group == enumUIGroup));
         }
 
         public bool Has(string baseName)
@@ -110,24 +110,24 @@ namespace DM
             return m_List.Exists(layer => (layer.Base.Name == baseName));
         }
 
-        private int FindInsertPosition(UIGroup uiGroup)
+        private int FindInsertPosition(EnumUIGroup enumUIGroup)
         {
             while (true)
             {
-                if (uiGroup == UIGroup.None)
+                if (enumUIGroup == EnumUIGroup.None)
                 {
                     return -1;
                 }
 
-                int index = FindFrontIndexInGroup(uiGroup);
+                int index = FindFrontIndexInGroup(enumUIGroup);
                 if (index > -1) return index;
-                uiGroup -= 1;
+                enumUIGroup -= 1;
             }
         }
 
-        private int FindFrontIndexInGroup(UIGroup uiGroup)
+        private int FindFrontIndexInGroup(EnumUIGroup enumUIGroup)
         {
-            return m_List.FindIndex(layer => layer.Base.Group == uiGroup);
+            return m_List.FindIndex(layer => layer.Base.Group == enumUIGroup);
         }
     }
 }

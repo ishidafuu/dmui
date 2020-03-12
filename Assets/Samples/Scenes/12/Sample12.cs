@@ -30,7 +30,7 @@ namespace DM {
 
 	class Sample12Scene : UIBase {
 
-		public Sample12Scene() : base("UISceneA", UIGroup.Scene) {
+		public Sample12Scene() : base("UISceneA", EnumUIGroup.Scene) {
 		}
 
 		public override IEnumerator OnLoadedBase() {
@@ -55,7 +55,7 @@ namespace DM {
 
 	class Sample12SceneB : UIBase {
 
-		public Sample12SceneB() : base("UISceneB", UIGroup.Scene) {
+		public Sample12SceneB() : base("UISceneB", EnumUIGroup.Scene) {
 		}
 
 		public override IEnumerator OnLoadedBase() {
@@ -69,13 +69,13 @@ namespace DM {
 
 	class Sample12Frame : UIBase {
 
-		public Sample12Frame() : base("UIFrame", UIGroup.Floater, UIPreset.BackVisible) {
+		public Sample12Frame() : base("UIFrame", EnumUIGroup.Floater, EnumUIPreset.BackVisible) {
 		}
 	}
 
 	class Sample12Dialog : UIBase {
 
-		public Sample12Dialog() : base("UIDialog", UIGroup.Dialog, UIPreset.BackVisible) {
+		public Sample12Dialog() : base("UIDialog", EnumUIGroup.Dialog, EnumUIPreset.BackVisible) {
 		}
 
 		public override IEnumerator OnLoadedBase() {
@@ -87,7 +87,7 @@ namespace DM {
 
 	class Sample12Back : UIBase {
 
-		public Sample12Back() : base("UIBack", UIGroup.System, UIPreset.BackVisible) {
+		public Sample12Back() : base("UIBack", EnumUIGroup.System, EnumUIPreset.BackVisible) {
 		}
 
 		public override bool OnClick(TouchEvent touch, UISound uiSound) {

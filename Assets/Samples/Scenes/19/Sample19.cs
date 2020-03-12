@@ -35,7 +35,7 @@ namespace DM {
 		}
 	}
 	class Sample19Scene : UIBase {
-		public Sample19Scene() : base("UISceneA", UIGroup.Scene) {
+		public Sample19Scene() : base("UISceneA", EnumUIGroup.Scene) {
 		}
 
 		public override IEnumerator OnLoadedBase() {
@@ -52,7 +52,7 @@ namespace DM {
 	}
 
 	class Sample19SceneB : UIBase {
-		public Sample19SceneB() : base("UISceneB", UIGroup.Scene) {
+		public Sample19SceneB() : base("UISceneB", EnumUIGroup.Scene) {
 		}
 
 		public override IEnumerator OnLoadedBase() {
@@ -65,12 +65,12 @@ namespace DM {
 	}
 
 	class Sample19Frame : UIBase {
-		public Sample19Frame() : base("UIFrame", UIGroup.Floater, UIPreset.BackVisible) {
+		public Sample19Frame() : base("UIFrame", EnumUIGroup.Floater, EnumUIPreset.BackVisible) {
 		}
 	}
 
 	class Sample19Dialog : UIBase {
-		public Sample19Dialog() : base("UIDialog", UIGroup.Dialog, UIPreset.BackVisible) {
+		public Sample19Dialog() : base("UIDialog", EnumUIGroup.Dialog, EnumUIPreset.BackVisible) {
 		}
 
 		public override bool OnClick(TouchEvent touch, UISound uiSound) {
@@ -79,12 +79,12 @@ namespace DM {
 					Debug.Log("SceneA: " + UIController.Instance.HasUIBase("Sample19Scene"));
 					Debug.Log("SceneB: " + UIController.Instance.HasUIBase("Sample19SceneB"));
 					Debug.Log("SceneC: " + UIController.Instance.HasUIBase("Sample19SceneC"));
-					Debug.Log("SceneFront: "   + UIController.Instance.GetFrontUINameInGroup(UIGroup.Scene));
-					Debug.Log("FloaterFront: " + UIController.Instance.GetFrontUINameInGroup(UIGroup.Floater));
-					Debug.Log("SystemFront: "  + UIController.Instance.GetFrontUINameInGroup(UIGroup.System));
-					Debug.Log("SceneNum: "   + UIController.Instance.GetLayerCountInGroup(UIGroup.Scene));
-					Debug.Log("FloaterNum: " + UIController.Instance.GetLayerCountInGroup(UIGroup.Floater));
-					Debug.Log("SystemNum: "  + UIController.Instance.GetLayerCountInGroup(UIGroup.System));
+					Debug.Log("SceneFront: "   + UIController.Instance.GetFrontUINameInGroup(EnumUIGroup.Scene));
+					Debug.Log("FloaterFront: " + UIController.Instance.GetFrontUINameInGroup(EnumUIGroup.Floater));
+					Debug.Log("SystemFront: "  + UIController.Instance.GetFrontUINameInGroup(EnumUIGroup.System));
+					Debug.Log("SceneNum: "   + UIController.Instance.GetLayerCountInGroup(EnumUIGroup.Scene));
+					Debug.Log("FloaterNum: " + UIController.Instance.GetLayerCountInGroup(EnumUIGroup.Floater));
+					Debug.Log("SystemNum: "  + UIController.Instance.GetLayerCountInGroup(EnumUIGroup.System));
 					return true;
 				}
 				default: {

@@ -13,12 +13,12 @@ namespace DM
 
         public bool IsFadeIn()
         {
-            return (m_Fade != null && m_Fade.State <= BaseLayerState.InAnimation);
+            return (m_Fade != null && m_Fade.State <= EnumLayerState.InAnimation);
         }
 
         public bool IsHidden()
         {
-            return (m_Fade != null && m_Fade.State == BaseLayerState.Active);
+            return (m_Fade != null && m_Fade.State == EnumLayerState.Active);
         }
         
         public bool IsShouldFadeByAdding(UIBase uiBase, UIBaseLayerController uiController)

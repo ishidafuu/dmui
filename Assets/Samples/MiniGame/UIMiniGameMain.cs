@@ -13,7 +13,7 @@ public class UIMiniGameMain : UIBase {
 	private float m_erapsedTime = 0.0f;
 	private Text m_timeText;
 
-	public UIMiniGameMain() : base("MiniGame/MiniGameMain", UIGroup.MainScene) {
+	public UIMiniGameMain() : base("MiniGame/MiniGameMain", EnumUIGroup.MainScene) {
 	}
 
 	public override IEnumerator OnLoadedBase() {

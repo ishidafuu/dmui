@@ -35,7 +35,7 @@ namespace DM {
 
 		private bool m_attached = false;
 
-		public Sample16Scene() : base("UISceneA", UIGroup.Scene) {
+		public Sample16Scene() : base("UISceneA", EnumUIGroup.Scene) {
 		}
 
 		public override IEnumerator OnLoadedBase() {

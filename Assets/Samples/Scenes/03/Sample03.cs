@@ -27,7 +27,7 @@ namespace DM {
 
 	class Sample03Scene : UIBase {
 
-		public Sample03Scene() : base("UISceneA", UIGroup.Scene) {
+		public Sample03Scene() : base("UISceneA", EnumUIGroup.Scene) {
 			UIController.Instance.AddFront(new Sample03Frame());
 		}
 
@@ -43,13 +43,13 @@ namespace DM {
 
 	class Sample03Frame : UIBase {
 
-		public Sample03Frame() : base("UIFrame", UIGroup.Floater, UIPreset.BackVisible) {
+		public Sample03Frame() : base("UIFrame", EnumUIGroup.Floater, EnumUIPreset.BackVisible) {
 		}
 	}
 
 	class Sample03Dialog : UIBase {
 
-		public Sample03Dialog() : base("UIDialog", UIGroup.Dialog, UIPreset.BackVisible) {
+		public Sample03Dialog() : base("UIDialog", EnumUIGroup.Dialog, EnumUIPreset.BackVisible) {
 		}
 
 		public override IEnumerator OnLoadedBase() {

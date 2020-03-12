@@ -105,7 +105,7 @@
             bool isFadeIn = m_FadeController.IsFadeIn();
             foreach (var layer in m_AddingLayerList)
             {
-                if (!isFadeIn && layer.State == BaseLayerState.InFading)
+                if (!isFadeIn && layer.State == EnumLayerState.InFading)
                 {
                     StartCoroutine(layer.Load());
                 }
@@ -158,7 +158,7 @@
             bool isFadeIn = m_FadeController.IsFadeIn();
             foreach (var layer in m_RemovingLayerList)
             {
-                if (!isFadeIn && layer.State == BaseLayerState.OutFading)
+                if (!isFadeIn && layer.State == EnumLayerState.OutFading)
                 {
                     layer.Remove();
                 }
@@ -172,7 +172,7 @@
             {
                 var layer = m_RemovingLayerList[index];
 
-                if (layer.State != BaseLayerState.Removing || isLoading)
+                if (layer.State != EnumLayerState.Removing || isLoading)
                 {
                     index++;
                 }

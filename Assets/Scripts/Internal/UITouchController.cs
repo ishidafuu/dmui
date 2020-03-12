@@ -31,19 +31,19 @@ namespace DM
                 
                 switch (touch.Type)
                 {
-                    case TouchType.Click:
+                    case EnumTouchType.Click:
                         ret = OnClick(sounder, touch);
                         break;
-                    case TouchType.Down:
+                    case EnumTouchType.Down:
                         ret = touch.Listener.Part.OnTouchDown(touch);
                         break;
-                    case TouchType.Up:
+                    case EnumTouchType.Up:
                         ret = touch.Listener.Part.OnTouchUp(touch);
                         break;
-                    case TouchType.Drag:
+                    case EnumTouchType.Drag:
                         ret = touch.Listener.Part.OnDrag(touch);
                         break;
-                    case TouchType.None:
+                    case EnumTouchType.None:
                         break;
                     default: break;
                 }
@@ -149,7 +149,7 @@ namespace DM
             layer.ScreenTouchOffCount++;
         }
 
-        public void Enqueue(UITouchListener listener, TouchType type, PointerEventData pointer)
+        public void Enqueue(UITouchListener listener, EnumTouchType type, PointerEventData pointer)
         {
             if (listener.Layer == null)
             {

@@ -27,7 +27,7 @@ namespace DM {
 
 	class Sample05Scene : UIBase {
 
-		public Sample05Scene() : base("UISceneA", UIGroup.Scene) {
+		public Sample05Scene() : base("UISceneA", EnumUIGroup.Scene) {
 			UIController.Instance.AddFront(new UISample05TouchLayer1());
 		}
 
@@ -58,7 +58,7 @@ namespace DM {
 	class UISample05TouchLayer1 : UIBase {
 
 		public UISample05TouchLayer1()
-		: base("", UIGroup.System, UIPreset.BackVisible | UIPreset.SystemUntouchable | UIPreset.TouchEventCallable) {
+		: base("", EnumUIGroup.System, EnumUIPreset.BackVisible | EnumUIPreset.SystemUntouchable | EnumUIPreset.TouchEventCallable) {
 
 		}
 

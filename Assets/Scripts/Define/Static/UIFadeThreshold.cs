@@ -5,9 +5,9 @@ namespace DM
     // この数値以下のレイヤ数で追加削除が行われたときのみフェードが発生
     internal static class UIFadeThreshold
     {
-        public static readonly Dictionary<UIGroup, int> s_Groups = new Dictionary<UIGroup, int>()
+        public static readonly Dictionary<EnumUIGroup, int> s_Groups = new Dictionary<EnumUIGroup, int>()
         {
-            {UIGroup.Scene, 1},
+            {EnumUIGroup.Scene, 1},
         };
     }
 }

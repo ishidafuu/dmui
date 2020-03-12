@@ -28,7 +28,7 @@ namespace DM {
 
 	class Sample13Scene : UIBase {
 
-		public Sample13Scene() : base("UISceneA", UIGroup.Scene, UIPreset.None, "BGM_SceneA") {
+		public Sample13Scene() : base("UISceneA", EnumUIGroup.Scene, EnumUIPreset.None, "BGM_SceneA") {
 		}
 
 		public override IEnumerator OnLoadedBase() {
@@ -56,7 +56,7 @@ namespace DM {
 
 	class Sample13SceneB : UIBase {
 
-		public Sample13SceneB() : base("UISceneAnimB", UIGroup.Scene, UIPreset.None, "BGM_SceneB") {
+		public Sample13SceneB() : base("UISceneAnimB", EnumUIGroup.Scene, EnumUIPreset.None, "BGM_SceneB") {
 		}
 
 		public override IEnumerator OnLoadedBase() {

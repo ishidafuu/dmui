@@ -29,7 +29,7 @@ namespace DM {
 
 	class Sample04Scene : UIBase {
 
-		public Sample04Scene() : base("UISceneA", UIGroup.Scene) {
+		public Sample04Scene() : base("UISceneA", EnumUIGroup.Scene) {
 			UIController.Instance.AddFront(new Sample04Frame());
 		}
 
@@ -44,19 +44,19 @@ namespace DM {
 
 	class Sample04Frame : UIBase {
 
-		public Sample04Frame() : base("UIFrame", UIGroup.Floater, UIPreset.BackVisible) {
+		public Sample04Frame() : base("UIFrame", EnumUIGroup.Floater, EnumUIPreset.BackVisible) {
 		}
 	}
 
 	class Sample04Dialog : UIBase {
 
-		public Sample04Dialog() : base("UIDialog", UIGroup.Dialog, UIPreset.BackVisible) {
+		public Sample04Dialog() : base("UIDialog", EnumUIGroup.Dialog, EnumUIPreset.BackVisible) {
 		}
 
 		public override bool OnClick(TouchEvent touch, UISound uiSound) {
 			switch (touch.Listener.name) {
 				case "ButtonCenter": {
-					UIController.Instance.Replace(new UIBase[]{new Sample04Scene(), new Sample04SceneB()}, new UIGroup[]{UIGroup.Dialog});
+					UIController.Instance.Replace(new UIBase[]{new Sample04Scene(), new Sample04SceneB()}, new EnumUIGroup[]{EnumUIGroup.Dialog});
 					return true;
 				}
 				default: {
@@ -68,7 +68,7 @@ namespace DM {
 
 	class Sample04SceneB : UIBase {
 
-		public Sample04SceneB() : base("UISceneB", UIGroup.Scene) {
+		public Sample04SceneB() : base("UISceneB", EnumUIGroup.Scene) {
 		}
 
 		public override IEnumerator OnLoadedBase() {

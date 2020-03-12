@@ -13,22 +13,22 @@ namespace DM
             m_IsVisible = isIsVisible;
         }
 
-        private static readonly Dictionary<BaseLayerState, StateFlags> s_Map = new Dictionary<BaseLayerState, StateFlags>()
+        private static readonly Dictionary<EnumLayerState, StateFlags> s_Map = new Dictionary<EnumLayerState, StateFlags>()
         {
-            {BaseLayerState.None, new StateFlags(false, false)},
-            {BaseLayerState.InFading, new StateFlags(false, false)},
-            {BaseLayerState.Loading, new StateFlags(false, false)},
-            {BaseLayerState.Adding, new StateFlags(false, false)},
-            {BaseLayerState.InAnimation, new StateFlags(false, true)},
-            {BaseLayerState.Active, new StateFlags(true, true)},
-            {BaseLayerState.OutAnimation, new StateFlags(false, true)},
-            {BaseLayerState.OutFading, new StateFlags(false, true)},
-            {BaseLayerState.UselessLoading, new StateFlags(false, false)},
-            {BaseLayerState.Removing, new StateFlags(false, false)},
+            {EnumLayerState.None, new StateFlags(false, false)},
+            {EnumLayerState.InFading, new StateFlags(false, false)},
+            {EnumLayerState.Loading, new StateFlags(false, false)},
+            {EnumLayerState.Adding, new StateFlags(false, false)},
+            {EnumLayerState.InAnimation, new StateFlags(false, true)},
+            {EnumLayerState.Active, new StateFlags(true, true)},
+            {EnumLayerState.OutAnimation, new StateFlags(false, true)},
+            {EnumLayerState.OutFading, new StateFlags(false, true)},
+            {EnumLayerState.UselessLoading, new StateFlags(false, false)},
+            {EnumLayerState.Removing, new StateFlags(false, false)},
         };
 
-        public static bool IsVisible(BaseLayerState state) => s_Map[state].m_IsVisible;
-        public static bool IsTouchable(BaseLayerState state) => s_Map[state].m_IsTouchable;
+        public static bool IsVisible(EnumLayerState state) => s_Map[state].m_IsVisible;
+        public static bool IsTouchable(EnumLayerState state) => s_Map[state].m_IsTouchable;
         
     }
 }

@@ -28,7 +28,7 @@ namespace DM {
 
 	class Sample10Scene : UIBase {
 
-		public Sample10Scene() : base("UISceneA", UIGroup.Scene) {
+		public Sample10Scene() : base("UISceneA", EnumUIGroup.Scene) {
 		}
 
 		public override IEnumerator OnLoadedBase() {
@@ -57,7 +57,7 @@ namespace DM {
 
 	class Sample10Dialog : UIBase {
 
-		public Sample10Dialog() : base("UIDialog", UIGroup.Dialog, UIPreset.BackVisible) {
+		public Sample10Dialog() : base("UIDialog", EnumUIGroup.Dialog, EnumUIPreset.BackVisible) {
 		}
 
 		public override bool OnClick(TouchEvent touch, UISound uiSound) {

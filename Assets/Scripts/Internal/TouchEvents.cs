@@ -5,10 +5,10 @@ namespace DM
     public class TouchEvent
     {
         public UITouchListener Listener { get; }
-        public TouchType Type { get; }
+        public EnumTouchType Type { get; }
         public PointerEventData Pointer { get; }
 
-        public TouchEvent(UITouchListener listener, TouchType type, PointerEventData pointer)
+        public TouchEvent(UITouchListener listener, EnumTouchType type, PointerEventData pointer)
         {
             Listener = listener;
             Type = type;

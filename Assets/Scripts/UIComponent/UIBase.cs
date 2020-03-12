@@ -7,13 +7,13 @@ namespace DM
 {
     public class UIBase : UIPart
     {
-        private readonly UIPreset m_Preset;
+        private readonly EnumUIPreset m_Preset;
         public List<UIVisibleController> VisibleControllers { get; } = new List<UIVisibleController>();
         public bool IsScheduleUpdate { get; protected set; }
-        public UIGroup Group { get; }
+        public EnumUIGroup Group { get; }
         public string Bgm { get; }
 
-        protected UIBase(string prefabPath, UIGroup group, UIPreset preset = UIPreset.None, string bgm = "")
+        protected UIBase(string prefabPath, EnumUIGroup group, EnumUIPreset preset = EnumUIPreset.None, string bgm = "")
             : base(prefabPath)
         {
             Group = group;
@@ -34,37 +34,37 @@ namespace DM
 
         public bool IsBackVisible()
         {
-            return (m_Preset & UIPreset.BackVisible) > 0;
+            return (m_Preset & EnumUIPreset.BackVisible) > 0;
         }
 
         public bool IsBackTouchable()
         {
-            return (m_Preset & UIPreset.BackTouchable) > 0;
+            return (m_Preset & EnumUIPreset.BackTouchable) > 0;
         }
 
         public bool IsTouchEventCallable()
         {
-            return (m_Preset & UIPreset.TouchEventCallable) > 0;
+            return (m_Preset & EnumUIPreset.TouchEventCallable) > 0;
         }
 
         public bool IsSystemUntouchable()
         {
-            return (m_Preset & UIPreset.SystemUntouchable) > 0;
+            return (m_Preset & EnumUIPreset.SystemUntouchable) > 0;
         }
 
         public bool IsLoadingWithoutFade()
         {
-            return (m_Preset & UIPreset.LoadingWithoutFade) > 0;
+            return (m_Preset & EnumUIPreset.LoadingWithoutFade) > 0;
         }
 
         public bool IsActiveWithoutFade()
         {
-            return (m_Preset & UIPreset.ActiveWithoutFade) > 0;
+            return (m_Preset & EnumUIPreset.ActiveWithoutFade) > 0;
         }
 
         public bool IsView3D()
         {
-            return (m_Preset & UIPreset.View3D) > 0;
+            return (m_Preset & EnumUIPreset.View3D) > 0;
         }
 
         public override void Destroy()

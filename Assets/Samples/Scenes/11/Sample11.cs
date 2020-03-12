@@ -37,7 +37,7 @@ namespace DM {
 
 		private int m_count = 0;
 
-		public Sample11Scene() : base("UISceneA", UIGroup.Scene) {
+		public Sample11Scene() : base("UISceneA", EnumUIGroup.Scene) {
 		}
 
 		public override IEnumerator OnLoadedBase() {
@@ -71,7 +71,7 @@ namespace DM {
 
 	class Sample11Dialog : UIBase {
 
-		public Sample11Dialog() : base("UIDialog", UIGroup.Dialog, UIPreset.BackVisible | UIPreset.BackTouchable) {
+		public Sample11Dialog() : base("UIDialog", EnumUIGroup.Dialog, EnumUIPreset.BackVisible | EnumUIPreset.BackTouchable) {
 		}
 
 		public override IEnumerator OnLoadedBase() {

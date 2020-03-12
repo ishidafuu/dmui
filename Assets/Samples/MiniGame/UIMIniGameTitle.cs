@@ -6,7 +6,7 @@ using DM;
 
 public class UIMiniGameTitle : UIBase {
 
-	public UIMiniGameTitle() : base("MiniGame/MiniGameTitle", UIGroup.MainScene) {
+	public UIMiniGameTitle() : base("MiniGame/MiniGameTitle", EnumUIGroup.MainScene) {
 	}
 
 	public override bool OnClick(TouchEvent touch, UISound uiSound) {

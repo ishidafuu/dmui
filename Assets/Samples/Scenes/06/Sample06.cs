@@ -28,7 +28,7 @@ namespace DM {
 
 	class Sample06Scene : UIBase {
 
-		public Sample06Scene() : base("UISceneA", UIGroup.Scene) {
+		public Sample06Scene() : base("UISceneA", EnumUIGroup.Scene) {
 			UIController.Instance.AddFront(new Sample06Dialog());
 		}
 
@@ -60,7 +60,7 @@ namespace DM {
 		bool m_layerTouch = false;
 
 		public Sample06Dialog()
-		: base("UIDialog", UIGroup.Dialog, UIPreset.BackVisible | UIPreset.TouchEventCallable) {
+		: base("UIDialog", EnumUIGroup.Dialog, EnumUIPreset.BackVisible | EnumUIPreset.TouchEventCallable) {
 		}
 
 		public override IEnumerator OnLoadedBase() {

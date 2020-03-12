@@ -5,7 +5,7 @@ using DM;
 
 public class UIMiniGameStartEffect : UIBase {
 
-	public UIMiniGameStartEffect() : base("MiniGame/MiniGameStartEffect", UIGroup.Dialog, UIPreset.BackVisible) {
+	public UIMiniGameStartEffect() : base("MiniGame/MiniGameStartEffect", EnumUIGroup.Dialog, EnumUIPreset.BackVisible) {
 	}
 
 	public override void OnActive() {

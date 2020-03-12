@@ -6,11 +6,11 @@ namespace DM
     
     internal static class UIFadeTarget
     {
-        public static readonly List<UIGroup> s_Groups = new List<UIGroup>()
+        public static readonly List<EnumUIGroup> s_Groups = new List<EnumUIGroup>()
         {
-            UIGroup.Floater,
-            UIGroup.MainScene,
-            UIGroup.View3D,
+            EnumUIGroup.Floater,
+            EnumUIGroup.MainScene,
+            EnumUIGroup.View3D,
         };
     }
 }

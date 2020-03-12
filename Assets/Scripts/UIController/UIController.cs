@@ -133,18 +133,18 @@ namespace DM
             }
         }
 
-        public void Replace(IEnumerable<UIBase> uiBases, UIGroup[] removeGroups = null)
+        public void Replace(IEnumerable<UIBase> uiBases, EnumUIGroup[] removeGroups = null)
         {
-            HashSet<UIGroup> removes = (removeGroups == null)
-                ? new HashSet<UIGroup>()
-                : new HashSet<UIGroup>(removeGroups);
+            HashSet<EnumUIGroup> removes = (removeGroups == null)
+                ? new HashSet<EnumUIGroup>()
+                : new HashSet<EnumUIGroup>(removeGroups);
 
             foreach (var uiBase in uiBases)
             {
                 removes.Add(uiBase.Group);
             }
 
-            foreach (UIGroup uiGroup in removes)
+            foreach (EnumUIGroup uiGroup in removes)
             {
                 IEnumerable<UIBaseLayer> layers = m_LayerController.FindLayers(uiGroup);
                 foreach (var layer in layers)
@@ -159,7 +159,7 @@ namespace DM
             }
         }
 
-        public void ListenTouch(UITouchListener listener, TouchType type, PointerEventData pointer)
+        public void ListenTouch(UITouchListener listener, EnumTouchType type, PointerEventData pointer)
         {
             m_TouchController.Enqueue(listener, type, pointer);
         }
@@ -231,14 +231,14 @@ namespace DM
         }
 
         // 最前面レイヤ名取得
-        public string GetFrontUINameInGroup(UIGroup group)
+        public string GetFrontUINameInGroup(EnumUIGroup group)
         {
             UIBaseLayer layer = m_LayerController.FindFrontLayerInGroup(group);
             return layer == null ? "" : layer.Base.Name;
         }
 
         // レイヤカウント取得
-        public int GetLayerCountInGroup(UIGroup group)
+        public int GetLayerCountInGroup(EnumUIGroup group)
         {
             return m_LayerController.GetCountInGroup(group);
         }

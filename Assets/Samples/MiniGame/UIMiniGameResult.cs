@@ -9,7 +9,7 @@ public class UIMiniGameResult : UIBase {
 
 	private float m_score;
 
-	public UIMiniGameResult(float score) : base("MiniGame/MiniGameResult", UIGroup.Dialog, UIPreset.BackVisible) {
+	public UIMiniGameResult(float score) : base("MiniGame/MiniGameResult", EnumUIGroup.Dialog, EnumUIPreset.BackVisible) {
 		m_score = score;
 	}
 
@@ -23,7 +23,7 @@ public class UIMiniGameResult : UIBase {
 	public override bool OnClick(TouchEvent touch, UISound uiSound) {
 		switch (touch.Listener.name) {
 			case "Title": {
-				UIController.Instance.Replace(new UIBase[] { new UIMiniGameTitle() }, new UIGroup[]{ UIGroup.Dialog });
+				UIController.Instance.Replace(new UIBase[] { new UIMiniGameTitle() }, new EnumUIGroup[]{ EnumUIGroup.Dialog });
 				return true;
 			}
 			case "Retry": {
