@@ -9,6 +9,10 @@ namespace DM
     public class UIBaseLayer : UIPartContainer
     {
         private const string NONE_PREFAB_OBJECT_NAME = "root";
+        private const string IN_ANIMATION_NAME = "In";
+        private const string OUT_ANIMATION_NAME = "Out";
+        private const string TOUCH_OFF_LAYER_NAME = "LayerTouchOff";
+        private const string SYSTEM_TOUCH_OFF_LAYER_NAME = "SystemTouchOff";
         public BaseLayerState State { get; private set; } = BaseLayerState.None;
         public int ScreenTouchOffCount { get; set; }
         private GameObject m_Origin;
@@ -87,8 +91,11 @@ namespace DM
             GameObject rootObject = null;
             if (m_Prefab != null)
             {
-                rootObject = GameObject.Instantiate(m_Prefab) as GameObject;
-                rootObject.name = m_Prefab.name;
+                rootObject = Object.Instantiate(m_Prefab) as GameObject;
+                if (rootObject != null)
+                {
+                    rootObject.name = m_Prefab.name;
+                }
             }
             else
             {
@@ -96,7 +103,10 @@ namespace DM
                 SetupStretchAll(rootObject.AddComponent<RectTransform>());
             }
 
-            Base.Root = rootObject.transform;
+            if (rootObject != null)
+            {
+                Base.Root = rootObject.transform;
+            }
 
             Transform parent = Base.IsView3D() ? UIController.Instance.m_UIView3D : m_Origin.transform;
             Base.Root.SetParent(parent, false);
@@ -122,7 +132,7 @@ namespace DM
                 yield break;
             }
 
-            foreach (var container in parts.Select(item => new UIPartContainer(item)))
+            foreach (var container in parts.Select(part => new UIPartContainer(part)))
             {
                 m_PartContainers.Add(container);
                 yield return container.LoadAndSetup(this);
@@ -136,10 +146,10 @@ namespace DM
                 return;
             }
 
-            foreach (var item in parts)
+            foreach (UIPart part in parts)
             {
-                m_PartContainers.RemoveAll(container => container.Part == item);
-                item.Destroy();
+                m_PartContainers.RemoveAll(container => container.Part == part);
+                part.Destroy();
             }
         }
 
@@ -152,7 +162,10 @@ namespace DM
             }
 
             ProgressState(BaseLayerState.InAnimation);
-            bool isPlay = Base.PlayAnimations("In", () => { ProgressState(BaseLayerState.Active); });
+            bool isPlay = Base.PlayAnimations(IN_ANIMATION_NAME, () =>
+            {
+                ProgressState(BaseLayerState.Active);
+            });
             
             if (!isPlay)
             {
@@ -184,7 +197,10 @@ namespace DM
             bool isPlay = IsVisible();
             if (isPlay)
             {
-                isPlay = Base.PlayAnimations("Out", () => { ProgressState(BaseLayerState.OutFading); }, true);
+                isPlay = Base.PlayAnimations(OUT_ANIMATION_NAME, () =>
+                {
+                    ProgressState(BaseLayerState.OutFading);
+                }, true);
             }
 
             if (!isPlay)
@@ -208,7 +224,7 @@ namespace DM
         public void CallSwitchFront()
         {
             string pre = m_LinkedFrontName;
-            m_LinkedFrontName = (FrontLayer != null) ? FrontLayer.Base.Name : "";
+            m_LinkedFrontName = (FrontLayer != null) ? FrontLayer.Base.Name : string.Empty;
             if (pre != m_LinkedFrontName)
             {
                 Base.OnSwitchFrontUI(m_LinkedFrontName);
@@ -218,7 +234,7 @@ namespace DM
         public void CallSwitchBack()
         {
             string pre = m_LinkedBackName;
-            m_LinkedBackName = (BackLayer != null) ? BackLayer.Base.Name : "";
+            m_LinkedBackName = (BackLayer != null) ? BackLayer.Base.Name : string.Empty;
             if (pre != m_LinkedBackName)
             {
                 Base.OnSwitchBackUI(m_LinkedBackName);
@@ -232,7 +248,9 @@ namespace DM
                 return false;
             }
 
-            return Base.VisibleControllers.Count <= 0 ? m_Origin.activeSelf : Base.VisibleControllers[0].IsVisible();
+            return Base.VisibleControllers.Count <= 0 
+                ? m_Origin.activeSelf 
+                : Base.VisibleControllers[0].IsVisible();
         }
 
         public bool IsTouchable()
@@ -279,8 +297,8 @@ namespace DM
 
             m_TouchOff.SetActive(!enable);
         }
-
-        private bool CanVisible()
+        
+        private bool IsAllFrontLayerBackVisible()
         {
             UIBaseLayer layer = FrontLayer;
             while (layer != null)
@@ -296,7 +314,7 @@ namespace DM
             return true;
         }
 
-        private bool CanTouchable()
+        private bool IsAllFrontLayerBackTouchable()
         {
             UIBaseLayer layer = FrontLayer;
             while (layer != null)
@@ -334,7 +352,7 @@ namespace DM
             bool isVisible = StateFlags.IsVisible(State);
             if (isVisible != IsVisible())
             {
-                if (!isVisible || CanVisible())
+                if (!isVisible || IsAllFrontLayerBackVisible())
                 {
                     SetVisible(isVisible);
                 }
@@ -350,35 +368,24 @@ namespace DM
 
         private void Setup()
         {
-            m_TouchOff = CreateTouchPanel("LayerTouchOff");
+            m_TouchOff = CreateTouchPanel(TOUCH_OFF_LAYER_NAME);
             m_TouchOff.SetActive(false);
             m_TouchOff.transform.SetParent(m_Origin.transform, false);
 
-            GameObject touchArea = null;
-            if (Base.IsTouchEventCallable())
-            {
-                touchArea = CreateTouchPanel(UIController.LAYER_TOUCH_AREA_NAME);
-                UILayerTouchListener listener = touchArea.AddComponent<UILayerTouchListener>();
-                listener.SetUI(this, Base);
-                touchArea.transform.SetParent(m_Origin.transform, false);
-            }
+            GameObject touchArea = CreateTouchArea();
 
-            GameObject systemTouchOff = null;
-            if (Base.IsSystemUntouchable())
-            {
-                systemTouchOff = CreateTouchPanel("SystemTouchOff");
-                systemTouchOff.transform.SetParent(m_Origin.transform, false);
-            }
+            GameObject systemTouchOffArea = CreateSystemTouchOffArea();
 
             List<GameObject> innerIndex = new List<GameObject>()
             {
-                systemTouchOff,
+                systemTouchOffArea,
                 touchArea,
                 Base.Root.gameObject,
                 m_TouchOff,
-            };
+            };    
+            
             int index = 0;
-            foreach (var item in innerIndex.Where(item => item != null))
+            foreach (GameObject item in innerIndex.Where(item => item != null))
             {
                 item.transform.SetSiblingIndex(index++);
             }
@@ -386,7 +393,35 @@ namespace DM
             CollectComponents(Base.Root.gameObject, this);
         }
 
-        private GameObject CreateTouchPanel(string name)
+        private GameObject CreateSystemTouchOffArea()
+        {
+            if (!Base.IsSystemUntouchable())
+            {
+                return null;
+            }
+
+            GameObject systemTouchOff = CreateTouchPanel(SYSTEM_TOUCH_OFF_LAYER_NAME);
+            systemTouchOff.transform.SetParent(m_Origin.transform, false);
+
+            return systemTouchOff;
+        }
+
+        private GameObject CreateTouchArea()
+        {
+            if (!Base.IsTouchEventCallable())
+            {
+                return null;
+            }
+
+            GameObject touchArea = CreateTouchPanel(UIController.LAYER_TOUCH_AREA_NAME);
+            UILayerTouchListener listener = touchArea.AddComponent<UILayerTouchListener>();
+            listener.SetUI(this, Base);
+            touchArea.transform.SetParent(m_Origin.transform, false);
+
+            return touchArea;
+        }
+
+        private static GameObject CreateTouchPanel(string name)
         {
             GameObject gameObject = new GameObject(name);
             Image image = gameObject.AddComponent<Image>();
@@ -395,7 +430,7 @@ namespace DM
             return gameObject;
         }
 
-        private void SetupStretchAll(RectTransform rectTransform)
+        private static void SetupStretchAll(RectTransform rectTransform)
         {
             rectTransform.anchorMin = Vector2.zero;
             rectTransform.anchorMax = Vector2.one;
