@@ -144,7 +144,7 @@ namespace DM
             {
                 yield break;
             }
-
+            
             foreach (var container in parts.Select(part => new UIPartContainer(part)))
             {
                 m_PartContainers.Add(container);
@@ -207,7 +207,10 @@ namespace DM
             bool isPlay = IsVisible();
             if (isPlay)
             {
-                isPlay = Base.PlayAnimations(OUT_ANIMATION_NAME, () => { ProgressState(EnumLayerState.OutFading); },
+                isPlay = Base.PlayAnimations(OUT_ANIMATION_NAME, () =>
+                    {
+                        ProgressState(EnumLayerState.OutFading);
+                    },
                     true);
             }
 
