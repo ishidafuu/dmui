@@ -20,8 +20,8 @@ public class UIMiniGameResult : UIBase {
 		yield break;
 	}
 
-	public override bool OnClick(string name, GameObject gameObject, PointerEventData pointer, UISound uiSound) {
-		switch (name) {
+	public override bool OnClick(TouchEvent touch, UISound uiSound) {
+		switch (touch.Listener.name) {
 			case "Title": {
 				UIController.Instance.Replace(new UIBase[] { new UIMiniGameTitle() }, new UIGroup[]{ UIGroup.Dialog });
 				return true;

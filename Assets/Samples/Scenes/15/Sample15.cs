@@ -39,8 +39,8 @@ namespace DM {
 			yield break;
 		}
 
-		public override bool OnClick(string name, GameObject gameObject, PointerEventData pointer, UISound uiSound) {
-			switch (name) {
+		public override bool OnClick(TouchEvent touch, UISound uiSound) {
+			switch (touch.Listener.name) {
 				case "ButtonTop": {
 					m_count++;
 					UIController.Instance.AttachParts(this, new List<UIPart>(){new Sample15Button(m_count)});
@@ -73,7 +73,7 @@ namespace DM {
 			yield break;
 		}
 
-		public override bool OnClick(string name, GameObject gameObject, PointerEventData pointer, UISound uiSound) {
+		public override bool OnClick(TouchEvent touch, UISound uiSound) {
 			Debug.Log("push button: " + m_id);
 			Debug.Log("Scene15 : All Right");
 

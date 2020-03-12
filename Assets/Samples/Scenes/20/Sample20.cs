@@ -37,8 +37,8 @@ namespace DM {
 			UIController.Instance.AddFront(new Sample20Dialog(false));
 		}
 
-		public override bool OnClick(string name, GameObject gameObject, PointerEventData pointer, UISound uiSound) {
-			if (name == "Cube" || name == "Sphere") {
+		public override bool OnClick(TouchEvent touch, UISound uiSound) {
+			if (touch.Listener.name == "Cube" || touch.Listener.name == "Sphere") {
 				UIController.Instance.Remove(this);
 				Debug.Log("Scene20 : All Right");
 				return true;
@@ -53,8 +53,8 @@ namespace DM {
 		: base("UIDialog", UIGroup.Dialog, visible ? UIPreset.BackVisible | UIPreset.BackTouchable : UIPreset.None) {
 		}
 
-		public override bool OnClick(string name, GameObject gameObject, PointerEventData pointer, UISound uiSound) {
-			switch (name) {
+		public override bool OnClick(TouchEvent touch, UISound uiSound) {
+			switch (touch.Listener.name) {
 				case "ButtonCenter": {
 					UIController.Instance.Remove(this);
 					return true;

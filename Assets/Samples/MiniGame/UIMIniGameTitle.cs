@@ -9,8 +9,8 @@ public class UIMiniGameTitle : UIBase {
 	public UIMiniGameTitle() : base("MiniGame/MiniGameTitle", UIGroup.MainScene) {
 	}
 
-	public override bool OnClick(string name, GameObject gameObject, PointerEventData pointer, UISound uiSound) {
-		switch (name) {
+	public override bool OnClick(TouchEvent touch, UISound uiSound) {
+		switch (touch.Listener.name) {
 			case "HowToPlay": {
 				UIController.Instance.AddFront(new UIMiniGameHowToPlay());
 				return true;

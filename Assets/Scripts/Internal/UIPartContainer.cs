@@ -54,7 +54,7 @@ namespace DM
 
             foreach (var item in m_Listeners)
             {
-                item.ResetUI();
+                item.ClearUI();
             }
 
             m_Listeners = null;

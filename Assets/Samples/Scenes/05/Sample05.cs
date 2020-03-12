@@ -38,8 +38,8 @@ namespace DM {
 			yield break;
 		}
 
-		public override bool OnClick(string name, GameObject gameObject, PointerEventData pointer, UISound uiSound) {
-			switch (name) {
+		public override bool OnClick(TouchEvent touch, UISound uiSound) {
+			switch (touch.Listener.name) {
 				case "ButtonCenter": {
 					UIController.Instance.Remove(this);
 					return true;
@@ -62,18 +62,18 @@ namespace DM {
 
 		}
 
-		public override bool OnTouchDown(string name, GameObject gameObject, PointerEventData pointer) {
-			Debug.Log("touch down " + name + ": " + pointer.position);
+		public override bool OnTouchDown(TouchEvent touch) {
+			Debug.Log("touch down " + touch.Listener.name + ": " + touch.Pointer.position);
 			return false;
 		}
 
-		public override bool OnTouchUp(string name, GameObject gameObject, PointerEventData pointer) {
-			Debug.Log("touch up " + name + ": " + pointer.position);
+		public override bool OnTouchUp(TouchEvent touch) {
+			Debug.Log("touch up " + touch.Listener.name + ": " + touch.Pointer.position);
 			return false;
 		}
 
-		public override bool OnDrag(string name, GameObject gameObject, PointerEventData pointer) {
-			Debug.Log("touch drag " + name + ": " + pointer.position);
+		public override bool OnDrag(TouchEvent touch) {
+			Debug.Log("touch drag " + touch.Listener.name + ": " + touch.Pointer.position);
 			return false;
 		}
 	}

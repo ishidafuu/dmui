@@ -9,7 +9,7 @@ public class UIMiniGameHowToPlay : UIBase {
 	public UIMiniGameHowToPlay() : base("MiniGame/MiniGameHowToPlay", UIGroup.Dialog, UIPreset.BackVisible | UIPreset.TouchEventCallable) {
 	}
 
-	public override bool OnTouchUp(string name, GameObject gameObject, PointerEventData pointer) {
+	public override bool OnTouchUp(TouchEvent touch) {
 		UIController.Instance.Remove(this);
 		return true;
 	}

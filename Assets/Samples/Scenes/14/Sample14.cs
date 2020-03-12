@@ -65,7 +65,7 @@ namespace DM {
 			yield break;
 		}
 
-		public override bool OnClick(string name, GameObject gameObject, PointerEventData pointer, UISound uiSound) {
+		public override bool OnClick(TouchEvent touch, UISound uiSound) {
 			Debug.Log("push button: " + m_id);
 			Debug.Log("Scene14 : All Right");
 

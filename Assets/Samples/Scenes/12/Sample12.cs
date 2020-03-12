@@ -90,7 +90,7 @@ namespace DM {
 		public Sample12Back() : base("UIBack", UIGroup.System, UIPreset.BackVisible) {
 		}
 
-		public override bool OnClick(string name, GameObject gameObject, PointerEventData pointer, UISound uiSound) {
+		public override bool OnClick(TouchEvent touch, UISound uiSound) {
 			UIController.Instance.Back();
 			return true;
 		}

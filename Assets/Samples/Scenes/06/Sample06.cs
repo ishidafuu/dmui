@@ -39,8 +39,8 @@ namespace DM {
 			yield break;
 		}
 
-		public override bool OnClick(string name, GameObject gameObject, PointerEventData pointer, UISound uiSound) {
-			switch (name) {
+		public override bool OnClick(TouchEvent touch, UISound uiSound) {
+			switch (touch.Listener.name) {
 				case "ButtonCenter": {
 					UIController.Instance.Remove(this);
 					return true;
@@ -68,15 +68,15 @@ namespace DM {
 			yield break;
 		}
 
-		public override bool OnTouchDown(string name, GameObject gameObject, PointerEventData pointer) {
-			if (name == UIController.LAYER_TOUCH_AREA_NAME) {
+		public override bool OnTouchDown(TouchEvent touch) {
+			if (touch.Listener.name == UIController.LAYER_TOUCH_AREA_NAME) {
 				m_layerTouch = true;
 			}
 			return false;
 		}
 
-		public override bool OnTouchUp(string name, GameObject gameObject, PointerEventData pointer) {
-			if (name == UIController.LAYER_TOUCH_AREA_NAME) {
+		public override bool OnTouchUp(TouchEvent touch) {
+			if (touch.Listener.name == UIController.LAYER_TOUCH_AREA_NAME) {
 				if (m_layerTouch) {
 					UIController.Instance.Remove (this);
 					return true;

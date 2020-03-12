@@ -40,8 +40,8 @@ public class UIMiniGameMain : UIBase {
 		}
 	}
 
-	public override bool OnClick(string name, GameObject gameObject, PointerEventData pointer, UISound uiSound) {
-		switch (name) {
+	public override bool OnClick(TouchEvent touch, UISound uiSound) {
+		switch (touch.Listener.name) {
 			case "HowToPlay": {
 				IsScheduleUpdate = false;
 				UIController.Instance.AddFront(new UIMiniGameHowToPlay());

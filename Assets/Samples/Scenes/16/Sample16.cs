@@ -44,8 +44,8 @@ namespace DM {
 			yield break;
 		}
 
-		public override bool OnClick(string name, GameObject gameObject, PointerEventData pointer, UISound uiSound) {
-			switch (name) {
+		public override bool OnClick(TouchEvent touch, UISound uiSound) {
+			switch (touch.Listener.name) {
 				case "ButtonTop": {
 					if (m_attached) { return false; }
 
@@ -79,7 +79,7 @@ namespace DM {
 			yield break;
 		}
 
-		public override bool OnClick(string name, GameObject gameObject, PointerEventData pointer, UISound uiSound) {
+		public override bool OnClick(TouchEvent touch, UISound uiSound) {
 			GameObject button = GameObject.Instantiate(this.Root.gameObject);
 			button.transform.SetParent(Root.parent);
 			button.transform.localPosition = new Vector3(426, 568, 0);
@@ -109,7 +109,7 @@ namespace DM {
 			yield break;
 		}
 
-		public override bool OnClick(string name, GameObject gameObject, PointerEventData pointer, UISound uiSound) {
+		public override bool OnClick(TouchEvent touch, UISound uiSound) {
 			UIController.Instance.DetachParts(m_ui, new List<UIPart>(){this});
 			return true;
 		}

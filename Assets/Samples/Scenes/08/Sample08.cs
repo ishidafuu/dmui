@@ -45,8 +45,8 @@ namespace DM {
 			Debug.Log("in animation end");
 		}
 
-		public override bool OnClick(string name, GameObject gameObject, PointerEventData pointer, UISound uiSound) {
-			switch (name) {
+		public override bool OnClick(TouchEvent touch, UISound uiSound) {
+			switch (touch.Listener.name) {
 				case "ButtonCenter": {
 					Debug.Log("start removing animation");
 					UIController.Instance.Remove(this);

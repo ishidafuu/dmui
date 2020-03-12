@@ -28,7 +28,7 @@ public class PartMiniGameAlphabet : UIPart {
 		yield break;
 	}
 
-	public override bool OnClick(string name, GameObject gameObject, PointerEventData pointer, UISound uiSound) {
+	public override bool OnClick(TouchEvent touch, UISound uiSound) {
 		if (m_main.Check(m_alphabet)) {
 			Root.Find("Button").gameObject.SetActive(false);
 		}

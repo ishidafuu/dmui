@@ -40,22 +40,22 @@ namespace DM
                 {
                     case TouchType.Click:
                     {
-                        ret = OnClick(sounder, part, touch, listenerObject);
+                        ret = OnClick(sounder, part, touch);
                         break;
                     }
                     case TouchType.Down:
                     {
-                        ret = part.OnTouchDown(touch.Listener.gameObject.name, listenerObject, touch.Pointer);
+                        ret = part.OnTouchDown(touch);
                         break;
                     }
                     case TouchType.Up:
                     {
-                        ret = part.OnTouchUp(touch.Listener.gameObject.name, listenerObject, touch.Pointer);
+                        ret = part.OnTouchUp(touch);
                         break;
                     }
                     case TouchType.Drag:
                     {
-                        ret = part.OnDrag(touch.Listener.gameObject.name, listenerObject, touch.Pointer);
+                        ret = part.OnDrag(touch);
                         break;
                     }
                     case TouchType.None:
@@ -73,10 +73,10 @@ namespace DM
             }
         }
 
-        private static bool OnClick(ISounder sounder, UIPart part, TouchEvent touch, GameObject listenerObject)
+        private static bool OnClick(ISounder sounder, UIPart part, TouchEvent touch)
         {
             UISound se = new UISound();
-            bool ret = part.OnClick(touch.Listener.gameObject.name, listenerObject, touch.Pointer, se);
+            bool ret = part.OnClick(touch, se);
             
             if (!ret || sounder == null)
             {

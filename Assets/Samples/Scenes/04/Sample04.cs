@@ -53,8 +53,8 @@ namespace DM {
 		public Sample04Dialog() : base("UIDialog", UIGroup.Dialog, UIPreset.BackVisible) {
 		}
 
-		public override bool OnClick(string name, GameObject gameObject, PointerEventData pointer, UISound uiSound) {
-			switch (name) {
+		public override bool OnClick(TouchEvent touch, UISound uiSound) {
+			switch (touch.Listener.name) {
 				case "ButtonCenter": {
 					UIController.Instance.Replace(new UIBase[]{new Sample04Scene(), new Sample04SceneB()}, new UIGroup[]{UIGroup.Dialog});
 					return true;

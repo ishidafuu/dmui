@@ -13,8 +13,8 @@ using UnityEngine.EventSystems;
 
 namespace DM
 {
-    public class UITouchListener : MonoBehaviour, IPointerClickHandler, IPointerDownHandler, IPointerUpHandler,
-        IDragHandler
+    public class UITouchListener : MonoBehaviour, 
+        IPointerClickHandler, IPointerDownHandler, IPointerUpHandler, IDragHandler
     {
         public UIBaseLayer Layer { get; private set; }
         public UIPart Part { get; private set; }
@@ -34,7 +34,7 @@ namespace DM
             m_Generation = generation;
         }
 
-        public void ResetUI()
+        public void ClearUI()
         {
             Layer = null;
             Part = null;

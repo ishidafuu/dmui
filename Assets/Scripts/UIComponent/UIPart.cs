@@ -120,22 +120,22 @@ namespace DM
             yield break;
         }
 
-        public virtual bool OnClick(string name, GameObject gameObject, PointerEventData pointer, UISound uiSound)
+        public virtual bool OnClick(TouchEvent touch, UISound uiSound)
         {
             return false;
         }
 
-        public virtual bool OnTouchDown(string name, GameObject gameObject, PointerEventData pointer)
+        public virtual bool OnTouchDown(TouchEvent touch)
         {
             return false;
         }
 
-        public virtual bool OnTouchUp(string name, GameObject gameObject, PointerEventData pointer)
+        public virtual bool OnTouchUp(TouchEvent touch)
         {
             return false;
         }
 
-        public virtual bool OnDrag(string name, GameObject gameObject, PointerEventData pointer)
+        public virtual bool OnDrag(TouchEvent touch)
         {
             return false;
         }
