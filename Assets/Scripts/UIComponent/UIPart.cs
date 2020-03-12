@@ -81,8 +81,8 @@ namespace DM
                 UIStateBehaviour[] states = animator.GetBehaviours<UIStateBehaviour>();
                 foreach (var state in states)
                 {
-                    state.ExitCallback = OnExit;
-                    state.PlayName = playName;
+                    state.SetExitCallback(OnExit);
+                    state.SetPlayName(playName);
                 }
 
                 if (states.Length <= 0)

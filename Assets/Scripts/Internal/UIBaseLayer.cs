@@ -8,11 +8,12 @@ namespace DM
 {
     public class UIBaseLayer : UIPartContainer
     {
+        private const string NONE_PREFAB_OBJECT_NAME = "root";
         public BaseLayerState State { get; private set; } = BaseLayerState.None;
         public int ScreenTouchOffCount { get; set; }
         private GameObject m_Origin;
         private GameObject m_TouchOff;
-        private readonly List<UIPartContainer> m_UiParts = new List<UIPartContainer>();
+        private readonly List<UIPartContainer> m_PartContainers = new List<UIPartContainer>();
         public UIBaseLayer BackLayer { get; set; }
         public UIBaseLayer FrontLayer { get; set; }
 
@@ -54,9 +55,9 @@ namespace DM
                 m_Origin = null;
             }
 
-            foreach (var item in m_UiParts)
+            foreach (UIPartContainer partContainer in m_PartContainers)
             {
-                item.Destroy();
+                partContainer.Destroy();
             }
 
             m_Parent = null;
@@ -83,19 +84,19 @@ namespace DM
             SetupStretchAll(m_Origin.AddComponent<RectTransform>());
             m_Origin.transform.SetParent(m_Parent, false);
 
-            GameObject g = null;
+            GameObject rootObject = null;
             if (m_Prefab != null)
             {
-                g = GameObject.Instantiate(m_Prefab) as GameObject;
-                g.name = m_Prefab.name;
+                rootObject = GameObject.Instantiate(m_Prefab) as GameObject;
+                rootObject.name = m_Prefab.name;
             }
             else
             {
-                g = new GameObject("root");
-                SetupStretchAll(g.AddComponent<RectTransform>());
+                rootObject = new GameObject(NONE_PREFAB_OBJECT_NAME);
+                SetupStretchAll(rootObject.AddComponent<RectTransform>());
             }
 
-            Base.Root = g.transform;
+            Base.Root = rootObject.transform;
 
             Transform parent = Base.IsView3D() ? UIController.Instance.m_UIView3D : m_Origin.transform;
             Base.Root.SetParent(parent, false);
@@ -123,7 +124,7 @@ namespace DM
 
             foreach (var container in parts.Select(item => new UIPartContainer(item)))
             {
-                m_UiParts.Add(container);
+                m_PartContainers.Add(container);
                 yield return container.LoadAndSetup(this);
             }
         }
@@ -137,7 +138,7 @@ namespace DM
 
             foreach (var item in parts)
             {
-                m_UiParts.RemoveAll(container => container.Part == item);
+                m_PartContainers.RemoveAll(container => container.Part == item);
                 item.Destroy();
             }
         }
@@ -162,13 +163,13 @@ namespace DM
 
         public bool Inactive()
         {
-            if (this.State < BaseLayerState.Active)
+            if (State < BaseLayerState.Active)
             {
-                this.ExceptState();
+                ExceptState();
                 return true;
             }
 
-            if (this.State > BaseLayerState.Active)
+            if (State > BaseLayerState.Active)
             {
                 return false;
             }
@@ -206,20 +207,20 @@ namespace DM
         public void CallSwitchFront()
         {
             string pre = m_LinkedFrontName;
-            m_LinkedFrontName = (this.FrontLayer != null) ? this.FrontLayer.Base.Name : "";
+            m_LinkedFrontName = (FrontLayer != null) ? FrontLayer.Base.Name : "";
             if (pre != m_LinkedFrontName)
             {
-                this.Base.OnSwitchFrontUI(m_LinkedFrontName);
+                Base.OnSwitchFrontUI(m_LinkedFrontName);
             }
         }
 
         public void CallSwitchBack()
         {
             string pre = m_LinkedBackName;
-            m_LinkedBackName = (this.BackLayer != null) ? this.BackLayer.Base.Name : "";
+            m_LinkedBackName = (BackLayer != null) ? BackLayer.Base.Name : "";
             if (pre != m_LinkedBackName)
             {
-                this.Base.OnSwitchBackUI(m_LinkedBackName);
+                Base.OnSwitchBackUI(m_LinkedBackName);
             }
         }
 
@@ -357,7 +358,7 @@ namespace DM
             {
                 touchArea = CreateTouchPanel(UIController.LAYER_TOUCH_AREA_NAME);
                 UILayerTouchListener listener = touchArea.AddComponent<UILayerTouchListener>();
-                listener.SetUI(this, this.Base);
+                listener.SetUI(this, Base);
                 touchArea.transform.SetParent(m_Origin.transform, false);
             }
 

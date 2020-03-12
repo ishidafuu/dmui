@@ -202,9 +202,9 @@ namespace DM
             }
 
             string bgm = "";
-            m_LayerController.ForEachAnything(l =>
+            m_LayerController.ForEachAnything(layer =>
             {
-                if (!StateFlags.s_Map[l.State].m_IsVisible)
+                if (!StateFlags.s_Map[layer.State].m_IsVisible)
                 {
                     return;
                 }
@@ -214,9 +214,9 @@ namespace DM
                     return;
                 }
 
-                if (!string.IsNullOrEmpty(l.Base.Bgm))
+                if (!string.IsNullOrEmpty(layer.Base.Bgm))
                 {
-                    bgm = l.Base.Bgm;
+                    bgm = layer.Base.Bgm;
                 }
             });
 

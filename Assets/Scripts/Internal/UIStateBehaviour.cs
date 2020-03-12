@@ -6,20 +6,12 @@ namespace DM
     public class UIStateBehaviour : StateMachineBehaviour
     {
         public const string LAYER_NAME = "UI.";
-
-        private Action<Animator> m_ExitCallback;
-
-        public Action<Animator> ExitCallback
-        {
-            set => m_ExitCallback = value;
-        }
-
         private string m_PlayName;
-
-        public string PlayName
-        {
-            set => m_PlayName = value;
-        }
+        private Action<Animator> m_ExitCallback;
+        
+        public void SetExitCallback(Action<Animator> value) => m_ExitCallback = value;
+        
+        public void SetPlayName(string value) => m_PlayName = value;
 
         public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
