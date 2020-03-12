@@ -7,10 +7,10 @@ namespace DM
 {
     public class UIBase : UIPart
     {
+        private readonly UIPreset m_Preset;
         public List<UIVisibleController> VisibleControllers { get; } = new List<UIVisibleController>();
         public bool IsScheduleUpdate { get; protected set; }
         public UIGroup Group { get; }
-        private readonly UIPreset m_Preset;
         public string Bgm { get; }
 
         protected UIBase(string prefabPath, UIGroup group, UIPreset preset = UIPreset.None, string bgm = "")

@@ -196,7 +196,7 @@ namespace DM
             bool isVisible = true;
             bool isTouchable = true;
             UIBaseLayer frontLayer = null;
-            int index = m_UiLayers.childCount - 1;
+            int index = m_UILayers.childCount - 1;
 
             m_LayerController.ForEachAnything(layer =>
             {

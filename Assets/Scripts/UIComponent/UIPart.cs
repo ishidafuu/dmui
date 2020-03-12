@@ -8,14 +8,14 @@ namespace DM
 {
     public class UIPart
     {
-        private int m_PlayCount = 0;
         private Action m_StopCallback = null;
+        private bool m_Exit;
+        private int m_PlayCount = 0;
         
-        public Transform RootTransform { get; set; }
         public Animator[] Animators { get; set; }
+        public Transform RootTransform { get; set; }
         public string PrefabPath { get; }
 
-        private bool m_Exit;
 
         // 生成済みオブジェクトを渡して生成
         protected UIPart(Transform rootTransform)
@@ -114,7 +114,7 @@ namespace DM
         // -----------------------------------------------------------------------------------------------------------------------------------------
         // virtual methods
 
-        public virtual IEnumerator OnLoaded(UIBase targetLayer)
+        public virtual IEnumerator OnLoadedPart(UIBase targetLayer)
         {
             yield break;
         }

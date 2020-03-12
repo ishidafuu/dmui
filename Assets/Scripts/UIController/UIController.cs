@@ -11,17 +11,19 @@ namespace DM
     public partial class UIController : MonoBehaviour
     {
         public const string LAYER_TOUCH_AREA_NAME = "LayerTouchArea";
-        private Transform m_UiLayers;
-        public Transform m_UIView3D;
+        
         private List<BaseRaycaster> m_RayCasterComponents;
         private List<UIBaseLayer> m_AddingLayerList;
         private List<UIBaseLayer> m_RemovingLayerList;
         private UIBaseLayerController m_LayerController;
-        private UIFadeController m_FadeController;
-        private UITouchController m_TouchController;
         private UIDispatchController m_DispatchController;
-
+        private UIFadeController m_FadeController;
         private UIImplements m_Implements;
+        private UITouchController m_TouchController;
+        
+        private Transform m_UILayers;
+        public Transform m_UIView3D;
+
         public static UIImplements Implements => Instance.m_Implements;
 
         public UIController(UIImplements implements)
@@ -55,7 +57,7 @@ namespace DM
                 s_Instance.m_DispatchController = new UIDispatchController();
 
                 if (s_Instance.m_RayCasterComponents == null
-                    || s_Instance.m_UiLayers == null
+                    || s_Instance.m_UILayers == null
                     || s_Instance.m_UIView3D == null)
                 {
                     s_Instance.FindUIControllerItems();
@@ -75,7 +77,7 @@ namespace DM
 
         public void FindUIControllerItems()
         {
-            m_UiLayers = FindObjectOfType<UILayers>().transform;
+            m_UILayers = FindObjectOfType<UILayers>().transform;
             m_UIView3D = FindObjectOfType<UIView3D>().transform;
 
             BaseRaycaster[] rayCasters = FindObjectsOfType<BaseRaycaster>();
@@ -98,14 +100,14 @@ namespace DM
                 return;
             }
 
-            UIBaseLayer layer = new UIBaseLayer(uiBase, m_UiLayers);
+            UIBaseLayer layer = new UIBaseLayer(uiBase, m_UILayers);
 
             if (layer.Base.IsLoadingWithoutFade())
             {
                 StartCoroutine(layer.Load());
             }
 
-            if (m_FadeController.ShouldFadeByAdding(uiBase, m_LayerController))
+            if (m_FadeController.IsShouldFadeByAdding(uiBase, m_LayerController))
             {
                 m_FadeController.FadeIn(Implements, m_AddingLayerList, AddFront);
             }
@@ -127,7 +129,7 @@ namespace DM
                 m_RemovingLayerList.Add(layer);
             }
 
-            if (m_FadeController.ShouldFadeByRemoving(uiBase, m_LayerController, m_RemovingLayerList))
+            if (m_FadeController.IsShouldFadeByRemoving(uiBase, m_LayerController, m_RemovingLayerList))
             {
                 m_FadeController.FadeIn(Implements, m_AddingLayerList, AddFront);
             }
@@ -192,7 +194,6 @@ namespace DM
         {
             m_DispatchController.Dispatch(eventName, param);
         }
-
 
         public IEnumerator YieldAttachParts(UIBase targetUIBase, IEnumerable<UIPart> parts)
         {

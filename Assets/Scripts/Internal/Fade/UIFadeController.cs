@@ -11,7 +11,17 @@ namespace DM
     {
         private UIBaseLayer m_Fade;
 
-        public bool ShouldFadeByAdding(UIBase uiBase, UIBaseLayerController uiController)
+        public bool IsFadeIn()
+        {
+            return (m_Fade != null && m_Fade.State <= BaseLayerState.InAnimation);
+        }
+
+        public bool IsHidden()
+        {
+            return (m_Fade != null && m_Fade.State == BaseLayerState.Active);
+        }
+        
+        public bool IsShouldFadeByAdding(UIBase uiBase, UIBaseLayerController uiController)
         {
             if (m_Fade != null)
             {
@@ -22,38 +32,39 @@ namespace DM
             {
                 return true;
             }
-            
+
             if (!UIFadeThreshold.s_Groups.ContainsKey(uiBase.Group))
             {
                 return false;
             }
-            
+
             return uiController.GetCountInGroup(uiBase.Group) <= UIFadeThreshold.s_Groups[uiBase.Group];
         }
 
-        public bool ShouldFadeByRemoving(UIBase ui, UIBaseLayerController uiController, IEnumerable<UIBaseLayer> removingList)
+        public bool IsShouldFadeByRemoving(UIBase uiBase, UIBaseLayerController uiController,
+            IEnumerable<UIBaseLayer> removingList)
         {
             if (m_Fade != null)
             {
                 return false;
             }
 
-            if (UIFadeTarget.s_Groups.Contains(ui.Group))
+            if (UIFadeTarget.s_Groups.Contains(uiBase.Group))
             {
                 return true;
             }
-            
-            if (!UIFadeThreshold.s_Groups.ContainsKey(ui.Group))
+
+            if (!UIFadeThreshold.s_Groups.ContainsKey(uiBase.Group))
             {
                 return false;
             }
 
-            int sceneNum = UIBaseLayerController.GetCountInGroup(ui.Group, removingList);
+            int sceneNum = UIBaseLayerController.GetCountInGroup(uiBase.Group, removingList);
 
-            return uiController.GetCountInGroup(ui.Group) - sceneNum <= UIFadeThreshold.s_Groups[ui.Group];
+            return uiController.GetCountInGroup(uiBase.Group) - sceneNum <= UIFadeThreshold.s_Groups[uiBase.Group];
         }
 
-        public void FadeIn(UIImplements implements, List<UIBaseLayer> addingList,Action<UIBase> addFront)
+        public void FadeIn(UIImplements implements, List<UIBaseLayer> addingList, Action<UIBase> addFront)
         {
             if (m_Fade != null)
             {
@@ -79,16 +90,6 @@ namespace DM
 
             remove.Invoke(m_Fade.Base);
             m_Fade = null;
-        }
-
-        public bool IsFadeIn()
-        {
-            return (m_Fade != null && m_Fade.State <= BaseLayerState.InAnimation);
-        }
-
-        public bool IsHidden()
-        {
-            return (m_Fade != null && m_Fade.State == BaseLayerState.Active);
         }
     }
 }

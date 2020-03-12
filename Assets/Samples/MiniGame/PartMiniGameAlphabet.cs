@@ -15,7 +15,7 @@ public class PartMiniGameAlphabet : UIPart {
 		m_alphabet = alphabet;
 	}
 
-	public override IEnumerator OnLoaded(UIBase targetLayer) {
+	public override IEnumerator OnLoadedPart(UIBase targetLayer) {
 		RootTransform.SetParent(targetLayer.RootTransform.Find("Panel"));
 		RootTransform.localScale = Vector3.one;
 

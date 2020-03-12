@@ -16,31 +16,41 @@ namespace DM
 
             if (enable)
             {
-                if (IsVisible())
-                {
-                    return;
-                }
-
-                foreach (KeyValuePair<Component, bool> pair in m_Components)
-                {
-                    SetEnable(pair.Key, pair.Value);
-                }
-
-                m_Components.Clear();
+                SetVisibleEnable();
             }
             else
             {
-                if (!IsVisible())
-                {
-                    return;
-                }
+                SetVisibleDisable(target);
+            }
+        }
 
-                IEnumerable<Component> components = GetComponents(target);
-                foreach (var component in components)
-                {
-                    m_Components.Add(component, IsEnable(component));
-                    SetEnable(component, false);
-                }
+        private void SetVisibleEnable()
+        {
+            if (IsVisible())
+            {
+                return;
+            }
+
+            foreach (KeyValuePair<Component, bool> pair in m_Components)
+            {
+                SetEnable(pair.Key, pair.Value);
+            }
+
+            m_Components.Clear();
+        }
+
+        private void SetVisibleDisable(GameObject target)
+        {
+            if (!IsVisible())
+            {
+                return;
+            }
+
+            IEnumerable<Component> components = GetComponents(target);
+            foreach (var component in components)
+            {
+                m_Components.Add(component, IsEnable(component));
+                SetEnable(component, false);
             }
         }
 

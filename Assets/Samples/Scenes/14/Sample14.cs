@@ -52,7 +52,7 @@ namespace DM {
 			m_id = id;
 		}
 
-		public override IEnumerator OnLoaded(UIBase targetLayer) {
+		public override IEnumerator OnLoadedPart(UIBase targetLayer) {
 			Text text = RootTransform.Find("Text").GetComponent<Text>();
 			text.text = m_id.ToString();
 

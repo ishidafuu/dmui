@@ -6,8 +6,9 @@ namespace DM
     public class UIPartContainer
     {
         private const string NONE_ROOT_OBJECT_NAME = "root";
-        protected Object m_Prefab;
         private UITouchListener[] m_Listeners;
+        
+        protected Object m_Prefab;
         
         public UIPart Part { get; private set; }
 
@@ -33,7 +34,7 @@ namespace DM
 
             CollectComponents(rootGameObject, targetLayer);
 
-            yield return Part.OnLoaded(targetLayer.Base);
+            yield return Part.OnLoadedPart(targetLayer.Base);
 
             rootGameObject.SetActive(true);
         }

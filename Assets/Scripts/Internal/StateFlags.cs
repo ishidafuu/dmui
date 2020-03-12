@@ -4,8 +4,8 @@ namespace DM
 {
     public class StateFlags
     {
-        public readonly bool m_IsTouchable;
-        public readonly bool m_IsVisible;
+        private readonly bool m_IsTouchable;
+        private readonly bool m_IsVisible;
 
         private StateFlags(bool isTouchable, bool isIsVisible)
         {

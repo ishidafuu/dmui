@@ -73,7 +73,7 @@ namespace DM {
 			m_ui = ui;
 		}
 
-		public override IEnumerator OnLoaded(UIBase targetLayer) {
+		public override IEnumerator OnLoadedPart(UIBase targetLayer) {
 			Text text = RootTransform.Find("Text").GetComponent<Text>();
 			text.text = "create";
 			yield break;
@@ -103,7 +103,7 @@ namespace DM {
 			m_ui = ui;
 		}
 
-		public override IEnumerator OnLoaded(UIBase targetLayer) {
+		public override IEnumerator OnLoadedPart(UIBase targetLayer) {
 			Text text = RootTransform.Find("Text").GetComponent<Text>();
 			text.text = "delete";
 			yield break;

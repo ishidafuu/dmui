@@ -8,18 +8,18 @@ namespace DM
 {
     public class UIBaseLayer : UIPartContainer
     {
-        private const string NONE_PREFAB_OBJECT_NAME = "root";
         private const string IN_ANIMATION_NAME = "In";
+        private const string NONE_PREFAB_OBJECT_NAME = "root";
         private const string OUT_ANIMATION_NAME = "Out";
-        private const string TOUCH_OFF_LAYER_NAME = "LayerTouchOff";
         private const string SYSTEM_TOUCH_OFF_LAYER_NAME = "SystemTouchOff";
+        private const string TOUCH_OFF_LAYER_NAME = "LayerTouchOff";
+        
         private GameObject m_Origin;
         private GameObject m_TouchOff;
-        private readonly List<UIPartContainer> m_PartContainers = new List<UIPartContainer>();
-
-        private string m_LinkedFrontName = "";
-        private string m_LinkedBackName = "";
         private Transform m_Parent;
+        private readonly List<UIPartContainer> m_PartContainers = new List<UIPartContainer>();
+        private string m_LinkedBackName = "";
+        private string m_LinkedFrontName = "";
 
         public BaseLayerState State { get; private set; } = BaseLayerState.None;
         public UIBaseLayer FrontLayer { get; set; }
