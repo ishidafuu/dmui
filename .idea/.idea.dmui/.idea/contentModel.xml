@@ -95,16 +95,14 @@
           <e p="UIController" t="Include">
             <e p="Internal" t="Include">
               <e p="DispatchedEvent.cs" t="Include" />
-              <e p="Fade" t="Include">
-                <e p="UIFade.cs" t="Include" />
-                <e p="UIFadeController.cs" t="Include" />
-              </e>
               <e p="PrefabReceiver.cs" t="Include" />
               <e p="StateFlags.cs" t="Include" />
               <e p="TouchEvents.cs" t="Include" />
               <e p="UIBaseLayer.cs" t="Include" />
               <e p="UIBaseLayerController.cs" t="Include" />
               <e p="UIDispatchController.cs" t="Include" />
+              <e p="UIFade.cs" t="Include" />
+              <e p="UIFadeController.cs" t="Include" />
               <e p="UIPartContainer.cs" t="Include" />
               <e p="UIRendererController.cs" t="Include" />
               <e p="UISound.cs" t="Include" />

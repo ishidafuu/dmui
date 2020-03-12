@@ -8,9 +8,9 @@ namespace DM
 {
     public class UIPart
     {
-        private Action m_StopCallback = null;
+        private Action m_StopCallback;
         private bool m_Exit;
-        private int m_PlayCount = 0;
+        private int m_PlayCount;
         
         public Animator[] Animators { get; set; }
         public Transform RootTransform { get; set; }

@@ -8,7 +8,7 @@ namespace DM
     public class UIBase : UIPart
     {
         private readonly EnumUIPreset m_Preset;
-        public List<UIVisibleController> VisibleControllers { get; } = new List<UIVisibleController>();
+        public List<UIVisibleController> VisibleControllers { get; } 
         public bool IsScheduleUpdate { get; protected set; }
         public EnumUIGroup Group { get; }
         public string Bgm { get; }
@@ -16,6 +16,7 @@ namespace DM
         protected UIBase(string prefabPath, EnumUIGroup group, EnumUIPreset preset = EnumUIPreset.None, string bgm = "")
             : base(prefabPath)
         {
+            VisibleControllers = new List<UIVisibleController>();
             Group = group;
             m_Preset = preset;
             Bgm = bgm;

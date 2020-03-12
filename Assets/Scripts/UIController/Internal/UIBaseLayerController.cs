@@ -1,16 +1,5 @@
-﻿// ----------------------------------------------------------------------
-// DMUIFramework
-// Copyright (c) 2018 Takuya Nishimura (tnishimu)
-//
-// This software is released under the MIT License.
-// https://opensource.org/licenses/mit-license.php
-// ----------------------------------------------------------------------
-
-using System;
-using System.Collections;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using UnityEngine;
 
 namespace DM
 {
@@ -67,7 +56,7 @@ namespace DM
                 {
                     continue;
                 }
-                
+
                 action(item);
             }
         }
@@ -75,7 +64,7 @@ namespace DM
         public void ForEachAnything(Action<UIBaseLayer> action)
         {
             List<UIBaseLayer> list = new List<UIBaseLayer>(m_List);
-            foreach (var item in list)
+            foreach (UIBaseLayer item in list)
             {
                 action(item);
             }
@@ -120,7 +109,11 @@ namespace DM
                 }
 
                 int index = FindFrontIndexInGroup(enumUIGroup);
-                if (index > -1) return index;
+                if (index > -1)
+                {
+                    return index;
+                }
+                
                 enumUIGroup -= 1;
             }
         }
