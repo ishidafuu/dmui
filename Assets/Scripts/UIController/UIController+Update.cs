@@ -98,40 +98,12 @@ namespace DM
                 return false;
             }
 
-            bool isInsert = InsertLayer2();
+            bool isInsert = InsertLayer();
 
             return isInsert;
         }
 
         private bool InsertLayer()
-        {
-            bool isInsert = false;
-            List<UIBaseLayer> list = m_AddingLayerList;
-            m_AddingLayerList = new List<UIBaseLayer>();
-            bool isFadeIn = m_FadeController.IsFadeIn();
-            foreach (var layer in list)
-            {
-                if (!isFadeIn && layer.State == BaseLayerState.InFading)
-                {
-                    StartCoroutine(layer.Load());
-                }
-
-                if (layer.IsNotYetLoaded() || (isFadeIn && !layer.Base.IsActiveWithoutFade()))
-                {
-                    m_AddingLayerList.Add(layer);
-                    continue;
-                }
-
-                if (layer.SetActivate())
-                {
-                    isInsert = true;
-                }
-            }
-
-            return isInsert;
-        }
-        
-        private bool InsertLayer2()
         {
             bool isFadeIn = m_FadeController.IsFadeIn();
             foreach (var layer in m_AddingLayerList)
@@ -178,41 +150,13 @@ namespace DM
                 return false;
             }
 
-            bool isEject = EjectLayer2();
+            bool isEject = EjectLayer();
             
             return isEject;
         }
-
-        private bool EjectLayer()
-        {
-            bool isEject = false;
-            bool isLoading = m_AddingLayerList.Exists(layer => (layer.IsNotYetLoaded()));
-
-            List<UIBaseLayer> list = m_RemovingLayerList;
-            m_RemovingLayerList = new List<UIBaseLayer>();
-            bool isFadeIn = m_FadeController.IsFadeIn();
-            foreach (var layer in list)
-            {
-                if (!isFadeIn && layer.State == BaseLayerState.OutFading)
-                {
-                    layer.Remove();
-                }
-
-                if (layer.State != BaseLayerState.Removing || isLoading)
-                {
-                    m_RemovingLayerList.Add(layer);
-                    continue;
-                }
-
-                m_LayerController.Remove(layer);
-                layer.Destroy();
-                isEject = true;
-            }
-
-            return isEject;
-        }
         
-        private bool EjectLayer2()
+        
+        private bool EjectLayer()
         {
             bool isFadeIn = m_FadeController.IsFadeIn();
             foreach (var layer in m_RemovingLayerList)
