@@ -1,10 +1,7 @@
-﻿using System.Collections.Generic;
-
-namespace DM
+﻿namespace DM
 {
     public partial class UIController
     {
-        
         private void LateUpdate()
         {
             m_LayerController.ForEachOnlyActive(layer =>
@@ -15,7 +12,7 @@ namespace DM
                 }
             });
         }
-        
+
         private void Update()
         {
             m_LayerController.ForEachOnlyActive(layer =>
@@ -85,7 +82,7 @@ namespace DM
 
             return index;
         }
-        
+
         private bool IsScreenTouchable()
         {
             return m_RayCasterComponents.Count != 0 && m_RayCasterComponents[0].enabled;
@@ -139,7 +136,7 @@ namespace DM
                     }
                 }
             }
-            
+
             return isInsert;
         }
 
@@ -151,11 +148,11 @@ namespace DM
             }
 
             bool isEject = EjectLayer();
-            
+
             return isEject;
         }
-        
-        
+
+
         private bool EjectLayer()
         {
             bool isFadeIn = m_FadeController.IsFadeIn();
@@ -166,7 +163,7 @@ namespace DM
                     layer.Remove();
                 }
             }
-            
+
             bool isLoading = m_AddingLayerList.Exists(layer => (layer.IsNotYetLoaded()));
             bool isEject = false;
             int listCount = m_AddingLayerList.Count;
@@ -174,7 +171,7 @@ namespace DM
             for (int i = 0; i < listCount; i++)
             {
                 var layer = m_RemovingLayerList[index];
-                
+
                 if (layer.State != BaseLayerState.Removing || isLoading)
                 {
                     index++;

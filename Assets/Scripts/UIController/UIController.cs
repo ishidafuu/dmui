@@ -1,17 +1,15 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.Serialization;
 
 namespace DM
 {
     public partial class UIController : MonoBehaviour
     {
         public const string LAYER_TOUCH_AREA_NAME = "LayerTouchArea";
-        
+
         private List<BaseRaycaster> m_RayCasterComponents;
         private List<UIBaseLayer> m_AddingLayerList;
         private List<UIBaseLayer> m_RemovingLayerList;
@@ -20,7 +18,7 @@ namespace DM
         private UIFadeController m_FadeController;
         private UIImplements m_Implements;
         private UITouchController m_TouchController;
-        
+
         private Transform m_UILayers;
         public Transform m_UIView3D;
 
@@ -189,7 +187,7 @@ namespace DM
                 Remove(layer.Base);
             }
         }
-        
+
         public void Dispatch(string eventName, object param)
         {
             m_DispatchController.Dispatch(eventName, param);
@@ -256,24 +254,6 @@ namespace DM
         public void SetScreenTouchableByLayer(UIBaseLayer layer, bool enable)
         {
             m_TouchController.SetScreenTouchable(layer, enable, m_RayCasterComponents);
-        }
-    }
-
-    [CustomEditor(typeof(UIController))]
-    public class UIControllerEditor : Editor
-    {
-        public override void OnInspectorGUI()
-        {
-            UIController uiController = target as UIController;
-            if (uiController != null)
-            {
-                if (GUILayout.Button("FindRayCaster"))
-                {
-                    uiController.FindUIControllerItems();
-                }
-            }
-
-            base.OnInspectorGUI();
         }
     }
 }
