@@ -13,19 +13,18 @@ namespace DM
         private const string OUT_ANIMATION_NAME = "Out";
         private const string TOUCH_OFF_LAYER_NAME = "LayerTouchOff";
         private const string SYSTEM_TOUCH_OFF_LAYER_NAME = "SystemTouchOff";
-        public BaseLayerState State { get; private set; } = BaseLayerState.None;
-        public int ScreenTouchOffCount { get; set; }
         private GameObject m_Origin;
         private GameObject m_TouchOff;
         private readonly List<UIPartContainer> m_PartContainers = new List<UIPartContainer>();
-        public UIBaseLayer BackLayer { get; set; }
-        public UIBaseLayer FrontLayer { get; set; }
 
         private string m_LinkedFrontName = "";
         private string m_LinkedBackName = "";
-
         private Transform m_Parent;
 
+        public BaseLayerState State { get; private set; } = BaseLayerState.None;
+        public UIBaseLayer FrontLayer { get; set; }
+        public UIBaseLayer BackLayer { get; set; }
+        public int ScreenTouchOffCount { get; set; }
         public UIBase Base => (UIBase)Part;
 
         public UIBaseLayer(UIPart uiPart, Transform parent) : base(uiPart)

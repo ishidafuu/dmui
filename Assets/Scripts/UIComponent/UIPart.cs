@@ -8,12 +8,11 @@ namespace DM
 {
     public class UIPart
     {
-        public Animator[] Animators { get; set; }
-
         private int m_PlayCount = 0;
         private Action m_StopCallback = null;
+        
         public Transform RootTransform { get; set; }
-
+        public Animator[] Animators { get; set; }
         public string PrefabPath { get; }
 
         private bool m_Exit;
