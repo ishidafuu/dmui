@@ -122,7 +122,7 @@ namespace DM
             }
 
             UIBaseLayer layer = m_LayerController.Find(uiBase);
-            if (layer != null && layer.Inactive())
+            if (layer != null && layer.SetInactive())
             {
                 m_RemovingLayerList.Add(layer);
             }

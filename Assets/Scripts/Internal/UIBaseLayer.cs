@@ -143,7 +143,7 @@ namespace DM
             }
         }
 
-        public bool Activate()
+        public bool SetActivate()
         {
             if (State != BaseLayerState.Adding)
             {
@@ -153,6 +153,7 @@ namespace DM
 
             ProgressState(BaseLayerState.InAnimation);
             bool isPlay = Base.PlayAnimations("In", () => { ProgressState(BaseLayerState.Active); });
+            
             if (!isPlay)
             {
                 ProgressState(BaseLayerState.Active);
@@ -161,7 +162,7 @@ namespace DM
             return true;
         }
 
-        public bool Inactive()
+        public bool SetInactive()
         {
             if (State < BaseLayerState.Active)
             {

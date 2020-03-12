@@ -80,13 +80,19 @@ namespace DM
 
         private bool RunAddLayer()
         {
-            bool isInsert = false;
-
             if (m_AddingLayerList.Count <= 0)
             {
                 return false;
             }
 
+            bool isInsert = InsertLayer2();
+
+            return isInsert;
+        }
+
+        private bool InsertLayer()
+        {
+            bool isInsert = false;
             List<UIBaseLayer> list = m_AddingLayerList;
             m_AddingLayerList = new List<UIBaseLayer>();
             bool isFadeIn = m_FadeController.IsFadeIn();
@@ -103,12 +109,52 @@ namespace DM
                     continue;
                 }
 
-                if (layer.Activate())
+                if (layer.SetActivate())
                 {
                     isInsert = true;
                 }
             }
 
+            return isInsert;
+        }
+        
+        private bool InsertLayer2()
+        {
+            bool isFadeIn = m_FadeController.IsFadeIn();
+            foreach (var layer in m_AddingLayerList)
+            {
+                if (!isFadeIn && layer.State == BaseLayerState.InFading)
+                {
+                    StartCoroutine(layer.Load());
+                }
+            }
+
+            bool isInsert = false;
+            int listCount = m_AddingLayerList.Count;
+            int index = 0;
+            for (int i = 0; i < listCount; i++)
+            {
+                var layer = m_AddingLayerList[index];
+
+                // ロード中・ロード待ち、もしくはフェード待ち
+                if (layer.IsNotYetLoaded() || (isFadeIn && !layer.Base.IsActiveWithoutFade()))
+                {
+                    index++;
+                }
+                else
+                {
+                    if (layer.SetActivate())
+                    {
+                        isInsert = true;
+                        m_AddingLayerList.RemoveAt(index);
+                    }
+                    else
+                    {
+                        index++;
+                    }
+                }
+            }
+            
             return isInsert;
         }
 
@@ -119,6 +165,13 @@ namespace DM
                 return false;
             }
 
+            bool isEject = EjectLayer2();
+            
+            return isEject;
+        }
+
+        private bool EjectLayer()
+        {
             bool isEject = false;
             bool isLoading = m_AddingLayerList.Exists(layer => (layer.IsNotYetLoaded()));
 
@@ -141,6 +194,41 @@ namespace DM
                 m_LayerController.Remove(layer);
                 layer.Destroy();
                 isEject = true;
+            }
+
+            return isEject;
+        }
+        
+        private bool EjectLayer2()
+        {
+            bool isFadeIn = m_FadeController.IsFadeIn();
+            foreach (var layer in m_RemovingLayerList)
+            {
+                if (!isFadeIn && layer.State == BaseLayerState.OutFading)
+                {
+                    layer.Remove();
+                }
+            }
+            
+            bool isLoading = m_AddingLayerList.Exists(layer => (layer.IsNotYetLoaded()));
+            bool isEject = false;
+            int listCount = m_AddingLayerList.Count;
+            int index = 0;
+            for (int i = 0; i < listCount; i++)
+            {
+                var layer = m_RemovingLayerList[index];
+                
+                if (layer.State != BaseLayerState.Removing || isLoading)
+                {
+                    index++;
+                }
+                else
+                {
+                    m_RemovingLayerList.RemoveAt(index);
+                    m_LayerController.Remove(layer);
+                    layer.Destroy();
+                    isEject = true;
+                }
             }
 
             return isEject;
