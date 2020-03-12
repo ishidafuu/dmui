@@ -165,7 +165,7 @@
 
             bool isLoading = m_AddingLayerList.Exists(layer => (layer.IsNotYetLoaded()));
             bool isEject = false;
-            int listCount = m_AddingLayerList.Count;
+            int listCount = m_RemovingLayerList.Count;
             int index = 0;
             for (int i = 0; i < listCount; i++)
             {
