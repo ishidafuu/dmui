@@ -146,13 +146,13 @@ namespace DM
             }
         }
 
-        public void Replace(IEnumerable<UIBase> uiBases, EnumUIGroup[] removeGroups = null)
+        public void Replace(UIBase[] uiBases, EnumUIGroup[] removeGroups = null)
         {
             HashSet<EnumUIGroup> removes = (removeGroups == null)
                 ? new HashSet<EnumUIGroup>()
                 : new HashSet<EnumUIGroup>(removeGroups);
 
-            foreach (var uiBase in uiBases)
+            foreach (UIBase uiBase in uiBases)
             {
                 removes.Add(uiBase.Group);
             }
@@ -214,7 +214,7 @@ namespace DM
                 yield break;
             }
 
-            // 処理を待つ
+            // 処理を待つ（OnLoadedBase内で呼ばれる）
             yield return layer.AttachParts(parts);
         }
 
@@ -247,7 +247,7 @@ namespace DM
         public string GetFrontUINameInGroup(EnumUIGroup group)
         {
             UIBaseLayer layer = m_LayerController.FindFrontLayerInGroup(group);
-            return layer == null ? "" : layer.Base.Name;
+            return layer == null ? string.Empty : layer.Base.Name;
         }
 
         // レイヤカウント取得
