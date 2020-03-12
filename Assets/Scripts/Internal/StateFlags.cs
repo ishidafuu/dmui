@@ -13,7 +13,7 @@ namespace DM
             m_IsVisible = isIsVisible;
         }
 
-        public static readonly Dictionary<BaseLayerState, StateFlags> s_Map = new Dictionary<BaseLayerState, StateFlags>()
+        private static readonly Dictionary<BaseLayerState, StateFlags> s_Map = new Dictionary<BaseLayerState, StateFlags>()
         {
             {BaseLayerState.None, new StateFlags(false, false)},
             {BaseLayerState.InFading, new StateFlags(false, false)},
@@ -26,5 +26,9 @@ namespace DM
             {BaseLayerState.UselessLoading, new StateFlags(false, false)},
             {BaseLayerState.Removing, new StateFlags(false, false)},
         };
+
+        public static bool IsVisible(BaseLayerState state) => s_Map[state].m_IsVisible;
+        public static bool IsTouchable(BaseLayerState state) => s_Map[state].m_IsTouchable;
+        
     }
 }

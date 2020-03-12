@@ -247,7 +247,7 @@ namespace DM
 
         public void SetVisible(bool enable)
         {
-            if (enable && !StateFlags.s_Map[State].m_IsVisible)
+            if (enable && !StateFlags.IsTouchable(State))
             {
                 return;
             }
@@ -325,18 +325,18 @@ namespace DM
             }
 
             State = nextBaseLayerState;
-            StateFlags flags = StateFlags.s_Map[nextBaseLayerState];
-
-            if ((ScreenTouchOffCount == 0) != flags.m_IsTouchable)
+            bool isTouchable = StateFlags.IsTouchable(State);
+            if ((ScreenTouchOffCount == 0) != isTouchable)
             {
-                UIController.Instance.SetScreenTouchableByLayer(this, flags.m_IsTouchable);
+                UIController.Instance.SetScreenTouchableByLayer(this, isTouchable);
             }
 
-            if (flags.m_IsVisible != IsVisible())
+            bool isVisible = StateFlags.IsVisible(State);
+            if (isVisible != IsVisible())
             {
-                if (!flags.m_IsVisible || CanVisible())
+                if (!isVisible || CanVisible())
                 {
-                    SetVisible(flags.m_IsVisible);
+                    SetVisible(isVisible);
                 }
             }
 

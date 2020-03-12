@@ -305,7 +305,7 @@ namespace DM
             string bgm = "";
             m_LayerController.ForEachAnything(layer =>
             {
-                if (!StateFlags.s_Map[layer.State].m_IsVisible)
+                if (!StateFlags.IsVisible(layer.State))
                 {
                     return;
                 }
