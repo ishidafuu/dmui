@@ -130,6 +130,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 532896812}
+  - component: {fileID: 532896813}
   m_Layer: 8
   m_Name: 3D
   m_TagString: Untagged
@@ -151,6 +152,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &532896813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 532896811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aebbb846778ae8c41a33df721aa7883f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &724597755
 GameObject:
   m_ObjectHideFlags: 0
@@ -250,11 +263,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a6ba4143cf1443ba84e87577b526576, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_raycasters:
-  - {fileID: 975655757}
-  - {fileID: 1808735588}
-  m_uiLayers: {fileID: 1056993831}
-  m_view3D: {fileID: 532896812}
+  m_UIView3D: {fileID: 532896812}
 --- !u!114 &975655759
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -356,6 +365,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1056993831}
+  - component: {fileID: 1056993832}
   m_Layer: 0
   m_Name: UILayers
   m_TagString: Untagged
@@ -382,6 +392,18 @@ RectTransform:
   m_AnchoredPosition: {x: -426, y: 0}
   m_SizeDelta: {x: 852, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1056993832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1056993830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44e0a5ce043ce944f8389d79d0ba490f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1808735588
 GameObject:
   m_ObjectHideFlags: 0

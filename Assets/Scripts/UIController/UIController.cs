@@ -88,15 +88,38 @@ namespace DM
 
         public void FindUIControllerItems()
         {
-            m_UILayers = FindObjectOfType<UILayers>().transform;
-            m_UIView3D = FindObjectOfType<UIView3D>().transform;
-
+            m_UILayers = FindObjectOfType<UILayers>()?.transform;
+            if (m_UILayers == null)
+            {
+                var uiLayers = GameObject.Find("UILayers");
+                m_UILayers = uiLayers.AddComponent<UILayers>().transform;
+                Debug.Log("add UILayers");
+            }
+            else
+            {
+                Debug.Log("found UILayers");
+            }
+            
+            m_UIView3D = FindObjectOfType<UIView3D>()?.transform;
+            if (m_UIView3D == null)
+            {
+                var uiView3D = GameObject.Find("3D");
+                m_UIView3D = uiView3D.AddComponent<UIView3D>().transform;
+                Debug.Log("add UIView3D");
+            }
+            else
+            {
+                Debug.Log("found UIView3D");
+            }
+            
             BaseRaycaster[] rayCasters = FindObjectsOfType<BaseRaycaster>();
             m_RayCasterComponents = new List<BaseRaycaster>();
             foreach (BaseRaycaster item in rayCasters)
             {
                 m_RayCasterComponents.Add(item);
             }
+            
+            Debug.Log("Complete FindUIControllerItems");
         }
 
         private void OnDestroy()
