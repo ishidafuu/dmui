@@ -280,7 +280,7 @@ namespace DM
 
         public void SetVisible(bool enable)
         {
-            if (enable && !StateFlags.IsTouchable(State))
+            if (enable && !StateFlags.IsVisible(State))
             {
                 return;
             }
