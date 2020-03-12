@@ -7,8 +7,9 @@ namespace DM
     {
         private const string NONE_ROOT_OBJECT_NAME = "root";
         protected Object m_Prefab;
-        public UIPart Part { get; private set; }
         private UITouchListener[] m_Listeners;
+        
+        public UIPart Part { get; private set; }
 
         public UIPartContainer(UIPart part)
         {
@@ -27,13 +28,14 @@ namespace DM
                 Part.Root = new GameObject(NONE_ROOT_OBJECT_NAME).transform;
             }
 
-            Part.Root.gameObject.SetActive(false);
+            var rootGameObject = Part.Root.gameObject;
+            rootGameObject.SetActive(false);
 
-            CollectComponents(Part.Root.gameObject, targetLayer);
+            CollectComponents(rootGameObject, targetLayer);
 
             yield return Part.OnLoaded(targetLayer.Base);
 
-            Part.Root.gameObject.SetActive(true);
+            rootGameObject.SetActive(true);
         }
 
         private IEnumerator LoadPrefab()
@@ -49,7 +51,10 @@ namespace DM
             }
 
             GameObject gameObject = Object.Instantiate(m_Prefab) as GameObject;
-            Part.Root = gameObject.transform;
+            if (gameObject != null)
+            {
+                Part.Root = gameObject.transform;
+            }
         }
 
         public virtual void Destroy()
@@ -60,8 +65,7 @@ namespace DM
             Part.Destroy();
             Part = null;
 
-
-            foreach (var item in m_Listeners)
+            foreach (UITouchListener item in m_Listeners)
             {
                 item.ClearUI();
             }
@@ -72,7 +76,7 @@ namespace DM
         protected void CollectComponents(GameObject target, UIBaseLayer layer)
         {
             m_Listeners = target.GetComponentsInChildren<UITouchListener>();
-            foreach (var item in m_Listeners)
+            foreach (UITouchListener item in m_Listeners)
             {
                 item.SetUI(layer, Part);
             }
