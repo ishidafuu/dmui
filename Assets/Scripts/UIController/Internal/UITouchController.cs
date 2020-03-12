@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using UnityEngine;
 using UnityEngine.EventSystems;
 
 namespace DM
@@ -7,13 +6,13 @@ namespace DM
     public class UITouchController
     {
         private readonly Queue<TouchEvent> m_TouchEvents;
+
         // ON/OFFは回数カウントされているので、OFF2回入ったら、ONを2回呼ばないとタッチ可能に戻らない
         private int m_TouchOffCount;
 
         public UITouchController()
         {
             m_TouchEvents = new Queue<TouchEvent>();
-            
         }
 
         public void CallTouchEvents(int untouchableIndex, bool isScreenTouchable, ISounder sounder)
@@ -26,9 +25,9 @@ namespace DM
                 {
                     continue;
                 }
-                
+
                 bool ret = false;
-                
+
                 switch (touch.Type)
                 {
                     case EnumTouchType.Click:
@@ -62,7 +61,7 @@ namespace DM
         {
             UISound se = new UISound();
             bool ret = touch.Listener.Part.OnClick(touch, se);
-            
+
             if (!ret || sounder == null)
             {
                 return ret;
@@ -93,8 +92,8 @@ namespace DM
             }
 
             return isScreenTouchable
-                             && touch.Listener.Layer.IsTouchable()
-                             && untouchableIndex < touch.Listener.Layer.SiblingIndex;
+                   && touch.Listener.Layer.IsTouchable()
+                   && untouchableIndex < touch.Listener.Layer.SiblingIndex;
         }
 
         public void SetScreenTouchable(UIBaseLayer layer, bool enable,

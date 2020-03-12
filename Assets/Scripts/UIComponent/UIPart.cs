@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using Object = UnityEngine.Object;
 
 namespace DM
@@ -11,12 +10,11 @@ namespace DM
         private Action m_StopCallback;
         private bool m_Exit;
         private int m_PlayCount;
-        
+
         public Animator[] Animators { get; set; }
         public Transform RootTransform { get; set; }
         public string PrefabPath { get; }
-
-
+        
         // 生成済みオブジェクトを渡して生成
         protected UIPart(Transform rootTransform)
         {

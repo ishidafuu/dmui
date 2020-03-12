@@ -14,7 +14,7 @@ namespace DM
             {
                 if (enumUIGroup == item.Base.Group)
                 {
-                    ++count;
+                    count++;
                 }
             }
 
@@ -113,7 +113,7 @@ namespace DM
                 {
                     return index;
                 }
-                
+
                 enumUIGroup -= 1;
             }
         }

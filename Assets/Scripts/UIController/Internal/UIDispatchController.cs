@@ -12,7 +12,6 @@ namespace DM
         public UIDispatchController()
         {
             m_DispatchedEvents = new Queue<DispatchedEvent>();
-            
         }
 
         public void CallDispatchedEvents(UIBaseLayerController layerController)

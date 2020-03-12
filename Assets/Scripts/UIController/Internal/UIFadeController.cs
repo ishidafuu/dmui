@@ -1,16 +1,12 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
-using UnityEngine;
-using UnityEngine.EventSystems;
 
 namespace DM
 {
     public class UIFadeController
     {
         private UIBaseLayer m_Fade;
-        
+
         // このグループのレイヤが追加／削除されるとフェードが発生
         private static readonly List<EnumUIGroup> s_FadeTargetGroups = new List<EnumUIGroup>()
         {
@@ -18,7 +14,7 @@ namespace DM
             EnumUIGroup.MainScene,
             EnumUIGroup.View3D,
         };
-        
+
         // この数値以下のレイヤ数で追加削除が行われたときのみフェードが発生
         private static readonly Dictionary<EnumUIGroup, int> s_FadeThresholdGroups = new Dictionary<EnumUIGroup, int>()
         {
@@ -34,7 +30,7 @@ namespace DM
         {
             return (m_Fade != null && m_Fade.State == EnumLayerState.Active);
         }
-        
+
         public bool IsShouldFadeByAdding(UIBase uiBase, UIBaseLayerController uiController)
         {
             if (m_Fade != null)

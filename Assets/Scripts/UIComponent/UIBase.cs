@@ -8,7 +8,7 @@ namespace DM
     public class UIBase : UIPart
     {
         private readonly EnumUIPreset m_Preset;
-        public List<UIVisibleController> VisibleControllers { get; } 
+        public List<UIVisibleController> VisibleControllers { get; }
         public bool IsScheduleUpdate { get; protected set; }
         public EnumUIGroup Group { get; }
         public string Bgm { get; }

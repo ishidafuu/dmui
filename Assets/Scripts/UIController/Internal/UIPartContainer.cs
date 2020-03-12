@@ -8,7 +8,7 @@ namespace DM
         private const string NONE_ROOT_OBJECT_NAME = "root";
         protected Object m_Prefab;
         private UITouchListener[] m_Listeners;
-        
+
         public UIPart Part { get; private set; }
 
         public UIPartContainer(UIPart part)
@@ -44,7 +44,7 @@ namespace DM
             yield return UIController.Implements.PrefabLoader.Load(Part.PrefabPath, receiver);
 
             m_Prefab = receiver.m_Prefab;
-            
+
             if (m_Prefab == null)
             {
                 yield break;

@@ -8,7 +8,7 @@ namespace DM
         public const string LAYER_NAME = "UI.";
         private Action<Animator> m_ExitCallback;
         private string m_PlayName;
-        
+
         public void SetExitCallback(Action<Animator> value) => m_ExitCallback = value;
         public void SetPlayName(string value) => m_PlayName = value;
 

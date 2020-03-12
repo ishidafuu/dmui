@@ -152,7 +152,6 @@
             return isEject;
         }
 
-
         private bool EjectLayer()
         {
             bool isFadeIn = m_FadeController.IsFadeIn();

@@ -13,22 +13,22 @@ namespace DM
             m_IsVisible = isIsVisible;
         }
 
-        private static readonly Dictionary<EnumLayerState, StateFlags> s_Map = new Dictionary<EnumLayerState, StateFlags>()
-        {
-            {EnumLayerState.None, new StateFlags(false, false)},
-            {EnumLayerState.InFading, new StateFlags(false, false)},
-            {EnumLayerState.Loading, new StateFlags(false, false)},
-            {EnumLayerState.Adding, new StateFlags(false, false)},
-            {EnumLayerState.InAnimation, new StateFlags(false, true)},
-            {EnumLayerState.Active, new StateFlags(true, true)},
-            {EnumLayerState.OutAnimation, new StateFlags(false, true)},
-            {EnumLayerState.OutFading, new StateFlags(false, true)},
-            {EnumLayerState.UselessLoading, new StateFlags(false, false)},
-            {EnumLayerState.Removing, new StateFlags(false, false)},
-        };
+        private static readonly Dictionary<EnumLayerState, StateFlags> s_Map =
+            new Dictionary<EnumLayerState, StateFlags>()
+            {
+                {EnumLayerState.None, new StateFlags(false, false)},
+                {EnumLayerState.InFading, new StateFlags(false, false)},
+                {EnumLayerState.Loading, new StateFlags(false, false)},
+                {EnumLayerState.Adding, new StateFlags(false, false)},
+                {EnumLayerState.InAnimation, new StateFlags(false, true)},
+                {EnumLayerState.Active, new StateFlags(true, true)},
+                {EnumLayerState.OutAnimation, new StateFlags(false, true)},
+                {EnumLayerState.OutFading, new StateFlags(false, true)},
+                {EnumLayerState.UselessLoading, new StateFlags(false, false)},
+                {EnumLayerState.Removing, new StateFlags(false, false)},
+            };
 
         public static bool IsVisible(EnumLayerState state) => s_Map[state].m_IsVisible;
         public static bool IsTouchable(EnumLayerState state) => s_Map[state].m_IsTouchable;
-        
     }
 }

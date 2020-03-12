@@ -1,24 +1,14 @@
-﻿// ----------------------------------------------------------------------
-// DMUIFramework
-// Copyright (c) 2018 Takuya Nishimura (tnishimu)
-//
-// This software is released under the MIT License.
-// https://opensource.org/licenses/mit-license.php
-// ----------------------------------------------------------------------
-
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.EventSystems;
 
 namespace DM
 {
-    public class UITouchListener : MonoBehaviour, 
+    public class UITouchListener : MonoBehaviour,
         IPointerClickHandler, IPointerDownHandler, IPointerUpHandler, IDragHandler
     {
         public UIBaseLayer Layer { get; private set; }
         public UIPart Part { get; private set; }
-        
+
         private int m_Generation = int.MaxValue;
 
         public void SetLayerAndPart(UIBaseLayer layer, UIPart part)

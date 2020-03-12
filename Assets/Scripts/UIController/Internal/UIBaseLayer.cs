@@ -13,7 +13,7 @@ namespace DM
         private const string OUT_ANIMATION_NAME = "Out";
         private const string SYSTEM_TOUCH_OFF_LAYER_NAME = "SystemTouchOff";
         private const string TOUCH_OFF_LAYER_NAME = "LayerTouchOff";
-        
+
         private GameObject m_Origin;
         private GameObject m_TouchOff;
         private Transform m_Parent;
@@ -75,15 +75,15 @@ namespace DM
                 ProgressState(EnumLayerState.Removing);
                 yield break;
             }
-            
+
             yield return LoadPrefab();
 
             m_Origin = new GameObject(Base.Name);
             SetupStretchAll(m_Origin.AddComponent<RectTransform>());
             m_Origin.transform.SetParent(m_Parent, false);
 
-            GameObject rootObject = m_Prefab != null 
-                ? CreatePrefabObject() 
+            GameObject rootObject = m_Prefab != null
+                ? CreatePrefabObject()
                 : CreateNonePrefabObject();
 
             if (rootObject != null)
@@ -175,11 +175,8 @@ namespace DM
             }
 
             ProgressState(EnumLayerState.InAnimation);
-            bool isPlay = Base.PlayAnimations(IN_ANIMATION_NAME, () =>
-            {
-                ProgressState(EnumLayerState.Active);
-            });
-            
+            bool isPlay = Base.PlayAnimations(IN_ANIMATION_NAME, () => { ProgressState(EnumLayerState.Active); });
+
             if (!isPlay)
             {
                 ProgressState(EnumLayerState.Active);
@@ -210,10 +207,8 @@ namespace DM
             bool isPlay = IsVisible();
             if (isPlay)
             {
-                isPlay = Base.PlayAnimations(OUT_ANIMATION_NAME, () =>
-                {
-                    ProgressState(EnumLayerState.OutFading);
-                }, true);
+                isPlay = Base.PlayAnimations(OUT_ANIMATION_NAME, () => { ProgressState(EnumLayerState.OutFading); },
+                    true);
             }
 
             if (!isPlay)
@@ -232,9 +227,9 @@ namespace DM
             }
 
             var nextBaseLayerState = (State == EnumLayerState.Loading)
-                ? EnumLayerState.UselessLoading 
+                ? EnumLayerState.UselessLoading
                 : EnumLayerState.Removing;
-            
+
             ProgressState(nextBaseLayerState);
         }
 
@@ -265,8 +260,8 @@ namespace DM
                 return false;
             }
 
-            return Base.VisibleControllers.Count <= 0 
-                ? m_Origin.activeSelf 
+            return Base.VisibleControllers.Count <= 0
+                ? m_Origin.activeSelf
                 : Base.VisibleControllers[0].IsVisible();
         }
 
@@ -314,7 +309,7 @@ namespace DM
 
             m_TouchOff.SetActive(!enable);
         }
-        
+
         private bool IsAllFrontLayerBackVisible()
         {
             UIBaseLayer layer = FrontLayer;
@@ -394,8 +389,8 @@ namespace DM
                 touchArea,
                 Base.RootTransform.gameObject,
                 m_TouchOff,
-            };    
-            
+            };
+
             int index = 0;
             foreach (GameObject item in innerIndex.Where(item => item != null))
             {
