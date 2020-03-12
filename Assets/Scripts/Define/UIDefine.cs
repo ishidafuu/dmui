@@ -2,7 +2,7 @@
 
 namespace DM
 {
-    public enum BaseLayerState
+    public enum EnumLayerState
     {
         None, // 初期値
 
@@ -27,7 +27,7 @@ namespace DM
     }
 
     [Flags]
-    public enum UIPreset
+    public enum EnumUIPreset
     {
         None = 0,
         // 背面のレイヤを表示
@@ -48,7 +48,7 @@ namespace DM
         SystemIndicator = (BackVisible | BackTouchable | SystemUntouchable | LoadingWithoutFade | ActiveWithoutFade),
     }
     
-    public enum UIGroup
+    public enum EnumUIGroup
     {
         None = 0,
         View3D,
@@ -61,7 +61,7 @@ namespace DM
         System,
     }
     
-    public enum TouchType
+    public enum EnumTouchType
     {
         None = 0,
         Click,

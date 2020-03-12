@@ -6,12 +6,12 @@ namespace DM
     {
         // 戻るによる削除対象のグループ
         // この中の最前面のグループのOnBackが呼ばれる
-        public static readonly List<UIGroup> s_Groups = new List<UIGroup>()
+        public static readonly List<EnumUIGroup> s_Groups = new List<EnumUIGroup>()
         {
-            UIGroup.Dialog,
-            UIGroup.Scene,
-            UIGroup.MainScene,
-            UIGroup.View3D,
+            EnumUIGroup.Dialog,
+            EnumUIGroup.Scene,
+            EnumUIGroup.MainScene,
+            EnumUIGroup.View3D,
         };
 
         public static void Sort()
