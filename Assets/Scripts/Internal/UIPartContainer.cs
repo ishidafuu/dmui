@@ -5,6 +5,7 @@ namespace DM
 {
     public class UIPartContainer
     {
+        private const string NONE_ROOT_OBJECT_NAME = "root";
         protected Object m_Prefab;
         public UIPart Part { get; private set; }
         private UITouchListener[] m_Listeners;
@@ -18,20 +19,12 @@ namespace DM
         {
             if (Part.Root == null && !string.IsNullOrEmpty(Part.PrefabPath))
             {
-                PrefabReceiver receiver = new PrefabReceiver();
-                yield return UIController.Implements.PrefabLoader.Load(Part.PrefabPath, receiver);
-                m_Prefab = receiver.m_Prefab;
-
-                if (m_Prefab != null)
-                {
-                    GameObject g = Object.Instantiate(m_Prefab) as GameObject;
-                    Part.Root = g.transform;
-                }
+                yield return LoadPrefab();
             }
 
             if (Part.Root == null)
             {
-                Part.Root = new GameObject("root").transform;
+                Part.Root = new GameObject(NONE_ROOT_OBJECT_NAME).transform;
             }
 
             Part.Root.gameObject.SetActive(false);
@@ -41,6 +34,22 @@ namespace DM
             yield return Part.OnLoaded(targetLayer.Base);
 
             Part.Root.gameObject.SetActive(true);
+        }
+
+        private IEnumerator LoadPrefab()
+        {
+            PrefabReceiver receiver = new PrefabReceiver();
+            yield return UIController.Implements.PrefabLoader.Load(Part.PrefabPath, receiver);
+
+            m_Prefab = receiver.m_Prefab;
+            
+            if (m_Prefab == null)
+            {
+                yield break;
+            }
+
+            GameObject gameObject = Object.Instantiate(m_Prefab) as GameObject;
+            Part.Root = gameObject.transform;
         }
 
         public virtual void Destroy()

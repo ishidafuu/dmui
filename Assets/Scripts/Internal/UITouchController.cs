@@ -68,6 +68,13 @@ namespace DM
                 return ret;
             }
 
+            PlayClickSound(sounder, se);
+
+            return true;
+        }
+
+        private static void PlayClickSound(ISounder sounder, UISound se)
+        {
             if (!string.IsNullOrEmpty(se.m_PlayName))
             {
                 sounder.PlayClickSE(se.m_PlayName);
@@ -76,8 +83,6 @@ namespace DM
             {
                 sounder.PlayDefaultClickSE();
             }
-
-            return true;
         }
 
         private static bool CheckTouchable(int untouchableIndex, bool isScreenTouchable, TouchEvent touch)
