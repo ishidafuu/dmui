@@ -12,16 +12,16 @@ namespace DM
 
         private int m_PlayCount = 0;
         private Action m_StopCallback = null;
-        public Transform Root { get; set; }
+        public Transform RootTransform { get; set; }
 
         public string PrefabPath { get; }
 
         private bool m_Exit;
 
         // 生成済みオブジェクトを渡して生成
-        protected UIPart(Transform root)
+        protected UIPart(Transform rootTransform)
         {
-            Root = root;
+            RootTransform = rootTransform;
         }
 
         // 生成前オブジェクト（プレファブPath）を渡して生成
@@ -34,11 +34,11 @@ namespace DM
         {
             OnDestroy();
 
-            if (Root != null)
+            if (RootTransform != null)
             {
-                Root.SetParent(null);
-                Object.Destroy(Root.gameObject);
-                Root = null;
+                RootTransform.SetParent(null);
+                Object.Destroy(RootTransform.gameObject);
+                RootTransform = null;
             }
 
             Animators = null;

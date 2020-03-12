@@ -76,41 +76,25 @@ namespace DM
                 ProgressState(BaseLayerState.Removing);
                 yield break;
             }
-
-            if (!string.IsNullOrEmpty(Base.PrefabPath))
-            {
-                PrefabReceiver receiver = new PrefabReceiver();
-                yield return UIController.Implements.PrefabLoader.Load(Base.PrefabPath, receiver);
-                m_Prefab = receiver.m_Prefab;
-            }
+            
+            yield return LoadPrefab();
 
             m_Origin = new GameObject(Base.Name);
             SetupStretchAll(m_Origin.AddComponent<RectTransform>());
             m_Origin.transform.SetParent(m_Parent, false);
 
-            GameObject rootObject = null;
-            if (m_Prefab != null)
-            {
-                rootObject = Object.Instantiate(m_Prefab) as GameObject;
-                if (rootObject != null)
-                {
-                    rootObject.name = m_Prefab.name;
-                }
-            }
-            else
-            {
-                rootObject = new GameObject(NONE_PREFAB_OBJECT_NAME);
-                SetupStretchAll(rootObject.AddComponent<RectTransform>());
-            }
+            GameObject rootObject = m_Prefab != null 
+                ? CreatePrefabObject() 
+                : CreateNonePrefabObject();
 
             if (rootObject != null)
             {
-                Base.Root = rootObject.transform;
+                Base.RootTransform = rootObject.transform;
             }
 
             Transform parent = Base.IsView3D() ? UIController.Instance.m_UIView3D : m_Origin.transform;
-            Base.Root.SetParent(parent, false);
-            Base.Root.gameObject.SetActive(false);
+            Base.RootTransform.SetParent(parent, false);
+            Base.RootTransform.gameObject.SetActive(false);
 
             yield return Base.OnLoadedBase();
             Setup();
@@ -121,8 +105,38 @@ namespace DM
                 yield break;
             }
 
-            Base.Root.gameObject.SetActive(true);
+            Base.RootTransform.gameObject.SetActive(true);
             ProgressState(BaseLayerState.Adding);
+        }
+
+        private static GameObject CreateNonePrefabObject()
+        {
+            var rootObject = new GameObject(NONE_PREFAB_OBJECT_NAME);
+            SetupStretchAll(rootObject.AddComponent<RectTransform>());
+            return rootObject;
+        }
+
+        private GameObject CreatePrefabObject()
+        {
+            var rootObject = Object.Instantiate(m_Prefab) as GameObject;
+            if (rootObject != null)
+            {
+                rootObject.name = m_Prefab.name;
+            }
+
+            return rootObject;
+        }
+
+        private IEnumerator LoadPrefab()
+        {
+            if (string.IsNullOrEmpty(Base.PrefabPath))
+            {
+                yield break;
+            }
+
+            PrefabReceiver receiver = new PrefabReceiver();
+            yield return UIController.Implements.PrefabLoader.Load(Base.PrefabPath, receiver);
+            m_Prefab = receiver.m_Prefab;
         }
 
         public IEnumerator AttachParts(IEnumerable<UIPart> parts)
@@ -157,7 +171,7 @@ namespace DM
         {
             if (State != BaseLayerState.Adding)
             {
-                ExceptState();
+                Remove();
                 return false;
             }
 
@@ -179,7 +193,7 @@ namespace DM
         {
             if (State < BaseLayerState.Active)
             {
-                ExceptState();
+                Remove();
                 return true;
             }
 
@@ -218,7 +232,11 @@ namespace DM
                 return;
             }
 
-            ProgressState(State == BaseLayerState.Loading ? BaseLayerState.UselessLoading : BaseLayerState.Removing);
+            var nextBaseLayerState = (State == BaseLayerState.Loading)
+                ? BaseLayerState.UselessLoading 
+                : BaseLayerState.Removing;
+            
+            ProgressState(nextBaseLayerState);
         }
 
         public void CallSwitchFront()
@@ -277,13 +295,13 @@ namespace DM
 
             if (Base.VisibleControllers.Count <= 0)
             {
-                Base.Root.gameObject.SetActive(enable);
+                Base.RootTransform.gameObject.SetActive(enable);
             }
             else
             {
                 foreach (var item in Base.VisibleControllers)
                 {
-                    item.SetVisible(Base.Root.gameObject, enable);
+                    item.SetVisible(Base.RootTransform.gameObject, enable);
                 }
             }
         }
@@ -328,11 +346,6 @@ namespace DM
             }
 
             return true;
-        }
-
-        private void ExceptState()
-        {
-            Remove();
         }
 
         private bool ProgressState(BaseLayerState nextBaseLayerState)
@@ -380,7 +393,7 @@ namespace DM
             {
                 systemTouchOffArea,
                 touchArea,
-                Base.Root.gameObject,
+                Base.RootTransform.gameObject,
                 m_TouchOff,
             };    
             
@@ -390,7 +403,7 @@ namespace DM
                 item.transform.SetSiblingIndex(index++);
             }
 
-            CollectComponents(Base.Root.gameObject, this);
+            CollectComponents(Base.RootTransform.gameObject, this);
         }
 
         private GameObject CreateSystemTouchOffArea()

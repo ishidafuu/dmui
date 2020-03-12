@@ -33,8 +33,8 @@ namespace DM {
 		}
 
 		public override IEnumerator OnLoadedBase() {
-			Root.Find("Layer/ButtonTop"   ).gameObject.SetActive(false);
-			Root.Find("Layer/ButtonCenter").gameObject.SetActive(false);
+			RootTransform.Find("Layer/ButtonTop"   ).gameObject.SetActive(false);
+			RootTransform.Find("Layer/ButtonCenter").gameObject.SetActive(false);
 
 			yield break;
 		}
@@ -58,7 +58,7 @@ namespace DM {
 				UIController.Instance.SetScreenTouchable(this, true);
 				IsScheduleUpdate = false;
 			}
-			Text text = Root.Find("Layer/Text").GetComponent<Text>();
+			Text text = RootTransform.Find("Layer/Text").GetComponent<Text>();
 			text.text = m_count.ToString();
 		}
 	}

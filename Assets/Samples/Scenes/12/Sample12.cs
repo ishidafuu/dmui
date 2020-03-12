@@ -34,9 +34,9 @@ namespace DM {
 		}
 
 		public override IEnumerator OnLoadedBase() {
-			Root.Find("Layer/ButtonTop"   ).gameObject.SetActive(false);
-			Root.Find("Layer/ButtonCenter").gameObject.SetActive(false);
-			Root.Find("Layer/ButtonBottom").gameObject.SetActive(false);
+			RootTransform.Find("Layer/ButtonTop"   ).gameObject.SetActive(false);
+			RootTransform.Find("Layer/ButtonCenter").gameObject.SetActive(false);
+			RootTransform.Find("Layer/ButtonBottom").gameObject.SetActive(false);
 
 			UIController.Instance.AddFront(new Sample12SceneB());
 			UIController.Instance.AddFront(new Sample12Frame());
@@ -59,9 +59,9 @@ namespace DM {
 		}
 
 		public override IEnumerator OnLoadedBase() {
-			Root.Find("Layer/ButtonTop"   ).gameObject.SetActive(false);
-			Root.Find("Layer/ButtonCenter").gameObject.SetActive(false);
-			Root.Find("Layer/ButtonBottom").gameObject.SetActive(false);
+			RootTransform.Find("Layer/ButtonTop"   ).gameObject.SetActive(false);
+			RootTransform.Find("Layer/ButtonCenter").gameObject.SetActive(false);
+			RootTransform.Find("Layer/ButtonBottom").gameObject.SetActive(false);
 
 			yield break;
 		}
@@ -79,7 +79,7 @@ namespace DM {
 		}
 
 		public override IEnumerator OnLoadedBase() {
-			Root.Find("Layer/ButtonCenter").gameObject.SetActive(false);
+			RootTransform.Find("Layer/ButtonCenter").gameObject.SetActive(false);
 
 			yield break;
 		}

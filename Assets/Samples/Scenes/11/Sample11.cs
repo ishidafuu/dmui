@@ -41,8 +41,8 @@ namespace DM {
 		}
 
 		public override IEnumerator OnLoadedBase() {
-			Root.Find("Layer/ButtonTop"   ).gameObject.SetActive(false);
-			Root.Find("Layer/ButtonCenter").gameObject.SetActive(false);
+			RootTransform.Find("Layer/ButtonTop"   ).gameObject.SetActive(false);
+			RootTransform.Find("Layer/ButtonCenter").gameObject.SetActive(false);
 
 			UIController.Instance.AddFront(new Sample11Dialog());
 
@@ -75,14 +75,14 @@ namespace DM {
 		}
 
 		public override IEnumerator OnLoadedBase() {
-			Root.Find("Layer/ButtonCenter").gameObject.SetActive(false);
+			RootTransform.Find("Layer/ButtonCenter").gameObject.SetActive(false);
 
 			yield break;
 		}
 
 		public override void OnDispatchedEvent(string eventName, object param) {
 			if (eventName == "Sample") {
-				Text text = Root.Find("Layer/Text").GetComponent<Text>();
+				Text text = RootTransform.Find("Layer/Text").GetComponent<Text>();
 				text.text = ((DispachParams)param).count.ToString();
 				Debug.Log("Scene11 : All Right");
 			}

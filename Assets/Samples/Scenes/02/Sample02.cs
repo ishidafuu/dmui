@@ -28,8 +28,8 @@ namespace DM {
 		}
 
 		public override IEnumerator OnLoadedBase() {
-			Root.Find("Layer/ButtonTop"   ).gameObject.SetActive(false);
-			Root.Find("Layer/ButtonBottom").gameObject.SetActive(false);
+			RootTransform.Find("Layer/ButtonTop"   ).gameObject.SetActive(false);
+			RootTransform.Find("Layer/ButtonBottom").gameObject.SetActive(false);
 
 			yield break;
 		}

@@ -34,9 +34,9 @@ namespace DM {
 		}
 
 		public override IEnumerator OnLoadedBase() {
-			Root.Find("Layer/ButtonTop"   ).gameObject.SetActive(false);
-			Root.Find("Layer/ButtonBottom").gameObject.SetActive(false);
-			Root.Find("Layer/Square").gameObject.SetActive(true);
+			RootTransform.Find("Layer/ButtonTop"   ).gameObject.SetActive(false);
+			RootTransform.Find("Layer/ButtonBottom").gameObject.SetActive(false);
+			RootTransform.Find("Layer/Square").gameObject.SetActive(true);
 
 			yield break;
 		}

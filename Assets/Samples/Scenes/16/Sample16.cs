@@ -39,7 +39,7 @@ namespace DM {
 		}
 
 		public override IEnumerator OnLoadedBase() {
-			Root.Find("Layer/ButtonCenter").gameObject.SetActive(false);
+			RootTransform.Find("Layer/ButtonCenter").gameObject.SetActive(false);
 
 			yield break;
 		}
@@ -49,7 +49,7 @@ namespace DM {
 				case "ButtonTop": {
 					if (m_attached) { return false; }
 
-					Transform bottom = Root.Find("Layer/ButtonBottom");
+					Transform bottom = RootTransform.Find("Layer/ButtonBottom");
 					UIController.Instance.AttachParts(this, new List<UIPart>(){new Sample16Factory(this, bottom)});
 					m_attached = true;
 					return true;
@@ -74,14 +74,14 @@ namespace DM {
 		}
 
 		public override IEnumerator OnLoaded(UIBase targetLayer) {
-			Text text = Root.Find("Text").GetComponent<Text>();
+			Text text = RootTransform.Find("Text").GetComponent<Text>();
 			text.text = "create";
 			yield break;
 		}
 
 		public override bool OnClick(TouchEvent touch, UISound uiSound) {
-			GameObject button = GameObject.Instantiate(this.Root.gameObject);
-			button.transform.SetParent(Root.parent);
+			GameObject button = GameObject.Instantiate(this.RootTransform.gameObject);
+			button.transform.SetParent(RootTransform.parent);
 			button.transform.localPosition = new Vector3(426, 568, 0);
 			button.transform.localScale = Vector3.one;
 
@@ -104,7 +104,7 @@ namespace DM {
 		}
 
 		public override IEnumerator OnLoaded(UIBase targetLayer) {
-			Text text = Root.Find("Text").GetComponent<Text>();
+			Text text = RootTransform.Find("Text").GetComponent<Text>();
 			text.text = "delete";
 			yield break;
 		}

@@ -23,7 +23,7 @@ public class UIMiniGameMain : UIBase {
 		}
 		yield return UIController.Instance.YieldAttachParts(this, m_alphabets.ConvertAll<UIPart>(x => x));
 
-		m_timeText = Root.Find("Panel/Time").GetComponent<Text>();
+		m_timeText = RootTransform.Find("Panel/Time").GetComponent<Text>();
 		Initialize();
 	}
 

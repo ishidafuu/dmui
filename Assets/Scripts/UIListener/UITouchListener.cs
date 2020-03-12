@@ -23,7 +23,7 @@ namespace DM
 
         public void SetUI(UIBaseLayer layer, UIPart part)
         {
-            int generation = GetGeneration(transform, part.Root);
+            int generation = GetGeneration(transform, part.RootTransform);
             if (m_Generation < generation)
             {
                 return;

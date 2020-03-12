@@ -16,31 +16,31 @@ public class PartMiniGameAlphabet : UIPart {
 	}
 
 	public override IEnumerator OnLoaded(UIBase targetLayer) {
-		Root.SetParent(targetLayer.Root.Find("Panel"));
-		Root.localScale = Vector3.one;
+		RootTransform.SetParent(targetLayer.RootTransform.Find("Panel"));
+		RootTransform.localScale = Vector3.one;
 
-		Transform alphabet = Root.Find("Button/Alphabet");
+		Transform alphabet = RootTransform.Find("Button/Alphabet");
 		Image img = alphabet.GetComponent<Image>();
 		img.sprite = Resources.Load<Sprite>("MiniGame/Images/" + m_alphabet.ToString());
 
-		Root.Find("Button").gameObject.SetActive(false);
+		RootTransform.Find("Button").gameObject.SetActive(false);
 
 		yield break;
 	}
 
 	public override bool OnClick(TouchEvent touch, UISound uiSound) {
 		if (m_main.Check(m_alphabet)) {
-			Root.Find("Button").gameObject.SetActive(false);
+			RootTransform.Find("Button").gameObject.SetActive(false);
 		}
 		return true;
 	}
 
 	public void SetPosition(Vector2 pos) {
-		Root.localPosition = pos;
+		RootTransform.localPosition = pos;
 	}
 
 	public void Open() {
-		Root.Find("Button").gameObject.SetActive(true);
-		Root.GetComponent<Animation>().Play();
+		RootTransform.Find("Button").gameObject.SetActive(true);
+		RootTransform.GetComponent<Animation>().Play();
 	}
 }

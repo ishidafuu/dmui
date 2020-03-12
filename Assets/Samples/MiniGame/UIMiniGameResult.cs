@@ -14,7 +14,7 @@ public class UIMiniGameResult : UIBase {
 	}
 
 	public override IEnumerator OnLoadedBase() {
-		Text score = Root.Find("Panel/Score").GetComponent<Text>();
+		Text score = RootTransform.Find("Panel/Score").GetComponent<Text>();
 		score.text = m_score.ToString("N2");
 
 		yield break;

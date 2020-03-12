@@ -34,8 +34,8 @@ namespace DM {
 		}
 
 		public override IEnumerator OnLoadedBase() {
-			Root.Find("Layer/ButtonTop"   ).gameObject.SetActive(false);
-			Root.Find("Layer/ButtonBottom").gameObject.SetActive(false);
+			RootTransform.Find("Layer/ButtonTop"   ).gameObject.SetActive(false);
+			RootTransform.Find("Layer/ButtonBottom").gameObject.SetActive(false);
 
 			UIController.Instance.AddFront(new Sample04Dialog());
 			yield break;
@@ -72,9 +72,9 @@ namespace DM {
 		}
 
 		public override IEnumerator OnLoadedBase() {
-			Root.Find("Layer/ButtonTop"   ).gameObject.SetActive(false);
-			Root.Find("Layer/ButtonCenter").gameObject.SetActive(false);
-			Root.Find("Layer/ButtonBottom").gameObject.SetActive(false);
+			RootTransform.Find("Layer/ButtonTop"   ).gameObject.SetActive(false);
+			RootTransform.Find("Layer/ButtonCenter").gameObject.SetActive(false);
+			RootTransform.Find("Layer/ButtonBottom").gameObject.SetActive(false);
 
 			Debug.Log("Scene04 : All Right");
 			yield break;

@@ -18,17 +18,17 @@ namespace DM
 
         public IEnumerator LoadAndSetup(UIBaseLayer targetLayer)
         {
-            if (Part.Root == null && !string.IsNullOrEmpty(Part.PrefabPath))
+            if (Part.RootTransform == null && !string.IsNullOrEmpty(Part.PrefabPath))
             {
                 yield return LoadPrefab();
             }
 
-            if (Part.Root == null)
+            if (Part.RootTransform == null)
             {
-                Part.Root = new GameObject(NONE_ROOT_OBJECT_NAME).transform;
+                Part.RootTransform = new GameObject(NONE_ROOT_OBJECT_NAME).transform;
             }
 
-            var rootGameObject = Part.Root.gameObject;
+            var rootGameObject = Part.RootTransform.gameObject;
             rootGameObject.SetActive(false);
 
             CollectComponents(rootGameObject, targetLayer);
@@ -53,7 +53,7 @@ namespace DM
             GameObject gameObject = Object.Instantiate(m_Prefab) as GameObject;
             if (gameObject != null)
             {
-                Part.Root = gameObject.transform;
+                Part.RootTransform = gameObject.transform;
             }
         }
 
