@@ -427,7 +427,7 @@ namespace DM
 
             GameObject touchArea = CreateTouchPanel(UIController.LAYER_TOUCH_AREA_NAME);
             UILayerTouchListener listener = touchArea.AddComponent<UILayerTouchListener>();
-            listener.SetUI(this, Base);
+            listener.SetLayerAndPart(this, Base);
             touchArea.transform.SetParent(m_Origin.transform, false);
 
             return touchArea;

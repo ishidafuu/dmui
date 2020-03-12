@@ -20,7 +20,7 @@ namespace DM
                 return;
             }
 
-            m_ExitCallback(animator);
+            m_ExitCallback.Invoke(animator);
             m_ExitCallback = null;
         }
 
@@ -31,7 +31,7 @@ namespace DM
                 return;
             }
 
-            m_ExitCallback(animator);
+            m_ExitCallback.Invoke(animator);
             m_ExitCallback = null;
         }
     }

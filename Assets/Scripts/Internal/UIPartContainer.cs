@@ -6,9 +6,8 @@ namespace DM
     public class UIPartContainer
     {
         private const string NONE_ROOT_OBJECT_NAME = "root";
-        private UITouchListener[] m_Listeners;
-        
         protected Object m_Prefab;
+        private UITouchListener[] m_Listeners;
         
         public UIPart Part { get; private set; }
 
@@ -68,7 +67,7 @@ namespace DM
 
             foreach (UITouchListener item in m_Listeners)
             {
-                item.ClearUI();
+                item.ClearLayerAndPart();
             }
 
             m_Listeners = null;
@@ -79,7 +78,7 @@ namespace DM
             m_Listeners = target.GetComponentsInChildren<UITouchListener>();
             foreach (UITouchListener item in m_Listeners)
             {
-                item.SetUI(layer, Part);
+                item.SetLayerAndPart(layer, Part);
             }
 
             Animator[] animators = target.GetComponentsInChildren<Animator>();

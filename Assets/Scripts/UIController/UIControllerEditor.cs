@@ -11,7 +11,7 @@ namespace DM
             UIController uiController = target as UIController;
             if (uiController != null)
             {
-                if (GUILayout.Button("FindRayCaster"))
+                if (GUILayout.Button("FindUIControllerItems"))
                 {
                     uiController.FindUIControllerItems();
                 }

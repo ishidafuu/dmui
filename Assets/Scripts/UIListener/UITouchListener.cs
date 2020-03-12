@@ -21,7 +21,7 @@ namespace DM
         
         private int m_Generation = int.MaxValue;
 
-        public void SetUI(UIBaseLayer layer, UIPart part)
+        public void SetLayerAndPart(UIBaseLayer layer, UIPart part)
         {
             int generation = GetGeneration(transform, part.RootTransform);
             if (m_Generation < generation)
@@ -34,7 +34,7 @@ namespace DM
             m_Generation = generation;
         }
 
-        public void ClearUI()
+        public void ClearLayerAndPart()
         {
             Layer = null;
             Part = null;

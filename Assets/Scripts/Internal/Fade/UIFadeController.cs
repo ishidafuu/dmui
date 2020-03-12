@@ -78,7 +78,7 @@ namespace DM
 
             UIFade fade = implements.FadeCreator.Create();
             addFront.Invoke(fade);
-            m_Fade = addingList.Find(l => l.Base == fade);
+            m_Fade = addingList.Find(layer => layer.Base == fade);
         }
 
         public void FadeOut(Action<UIBase> remove)
