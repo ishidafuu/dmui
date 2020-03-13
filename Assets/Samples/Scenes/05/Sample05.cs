@@ -57,7 +57,7 @@ namespace DM {
 	class UISample05TouchLayer1 : UIBase {
 
 		public UISample05TouchLayer1()
-		: base("", EnumUIGroup.System, EnumUIPreset.BackVisible | EnumUIPreset.SystemUntouchable | EnumUIPreset.TouchEventCallable) {
+		: base("", EnumUIGroup.System, EnumUIPreset.BackVisible | EnumUIPreset.BackTouchable | EnumUIPreset.TouchEventCallable) {
 
 		}
 
