@@ -95,14 +95,17 @@
                 return false;
             }
 
-            bool isInsert = InsertLayer();
+            bool isFadeIn = m_FadeController.IsFadeIn();
+            
+            InsertAddingLayers(isFadeIn);
+
+            bool isInsert = RemoveInsertedLayers(isFadeIn);
 
             return isInsert;
         }
 
-        private bool InsertLayer()
+        private void InsertAddingLayers(bool isFadeIn)
         {
-            bool isFadeIn = m_FadeController.IsFadeIn();
             foreach (var layer in m_AddingLayerList)
             {
                 if (!isFadeIn && layer.State == EnumLayerState.InFading)
@@ -110,7 +113,10 @@
                     StartCoroutine(layer.Load());
                 }
             }
+        }
 
+        private bool RemoveInsertedLayers(bool isFadeIn)
+        {
             bool isInsert = false;
             int listCount = m_AddingLayerList.Count;
             int index = 0;
@@ -147,12 +153,14 @@
                 return false;
             }
 
-            bool isEject = EjectLayer();
+            EjectRemovingLayers();
+
+            var isEject = RemoveEjectedLayers();
 
             return isEject;
         }
 
-        private bool EjectLayer()
+        private void EjectRemovingLayers()
         {
             bool isFadeIn = m_FadeController.IsFadeIn();
             foreach (var layer in m_RemovingLayerList)
@@ -162,7 +170,10 @@
                     layer.Remove();
                 }
             }
+        }
 
+        private bool RemoveEjectedLayers()
+        {
             bool isLoading = m_AddingLayerList.Exists(layer => (layer.IsNotYetLoaded()));
             bool isEject = false;
             int listCount = m_RemovingLayerList.Count;
@@ -203,7 +214,7 @@
                 
                 layer.Refresh(frontLayer, isVisible, isTouchable, siblingIndex);
                 
-                isVisible &= layer.Base.IsBackVisible();;
+                isVisible &= layer.Base.IsBackVisible();
                 isTouchable &= layer.Base.IsBackTouchable();
                 siblingIndex = layer.SiblingIndex - 1;
                 frontLayer = layer;
