@@ -33,11 +33,9 @@ namespace DM {
 		public Sample15Scene() : base("UISceneA", EnumUIGroup.Scene) {
 		}
 
-		public override IEnumerator OnLoadedBase() {
+		public override async UniTask OnLoadedBase() {
 			RootTransform.Find("Layer/ButtonCenter").gameObject.SetActive(false);
 			RootTransform.Find("Layer/ButtonBottom").gameObject.SetActive(false);
-
-			yield break;
 		}
 
 		public override bool OnClick(TouchEvent touch, UISound uiSound) {
@@ -62,7 +60,7 @@ namespace DM {
 			m_id = id;
 		}
 
-		public override UniTask OnLoadedPart(UIBase targetLayer) {
+		public override async UniTask OnLoadedPart(UIBase targetLayer) {
 			Text text = RootTransform.Find("Text").GetComponent<Text>();
 			text.text = m_id.ToString();
 
@@ -70,8 +68,6 @@ namespace DM {
 			RootTransform.SetParent(layer);
 			RootTransform.localPosition = new Vector3(426, 100 * m_id, 0);
 			RootTransform.localScale = Vector3.one;
-
-			yield break;
 		}
 
 		public override bool OnClick(TouchEvent touch, UISound uiSound) {

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using UniRx.Async;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -219,15 +220,15 @@ namespace DM
         }
         
         // UIパーツ追加（処理待ち（OnLoadedBase内で呼ばれる））
-        public IEnumerator YieldAttachParts(UIBase targetUIBase, IEnumerable<UIPart> parts)
+        public async UniTask YieldAttachParts(UIBase targetUIBase, IEnumerable<UIPart> parts)
         {
             UIBaseLayer layer = m_LayerController.Find(targetUIBase);
             if (layer == null)
             {
-                yield break;
+                return;
             }
             
-            yield return layer.AttachParts(parts);
+            await layer.AttachParts(parts);
         }
 
         // 即時UIパーツ追加

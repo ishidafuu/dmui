@@ -39,10 +39,8 @@ namespace DM {
 		public Sample16Scene() : base("UISceneA", EnumUIGroup.Scene) {
 		}
 
-		public override IEnumerator OnLoadedBase() {
+		public override async UniTask OnLoadedBase() {
 			RootTransform.Find("Layer/ButtonCenter").gameObject.SetActive(false);
-
-			yield break;
 		}
 
 		public override bool OnClick(TouchEvent touch, UISound uiSound) {
@@ -74,10 +72,9 @@ namespace DM {
 			m_ui = ui;
 		}
 
-		public override UniTask OnLoadedPart(UIBase targetLayer) {
+		public override async UniTask OnLoadedPart(UIBase targetLayer) {
 			Text text = RootTransform.Find("Text").GetComponent<Text>();
 			text.text = "create";
-			yield break;
 		}
 
 		public override bool OnClick(TouchEvent touch, UISound uiSound) {
@@ -104,10 +101,9 @@ namespace DM {
 			m_ui = ui;
 		}
 
-		public override UniTask OnLoadedPart(UIBase targetLayer) {
+		public override async UniTask OnLoadedPart(UIBase targetLayer) {
 			Text text = RootTransform.Find("Text").GetComponent<Text>();
 			text.text = "delete";
-			yield break;
 		}
 
 		public override bool OnClick(TouchEvent touch, UISound uiSound) {

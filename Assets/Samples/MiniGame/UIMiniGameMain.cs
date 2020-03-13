@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using DM;
+using UniRx.Async;
 
 public class UIMiniGameMain : UIBase {
 	private const int AlphabetNum = 26;
@@ -16,12 +17,13 @@ public class UIMiniGameMain : UIBase {
 	public UIMiniGameMain() : base("MiniGame/MiniGameMain", EnumUIGroup.MainScene) {
 	}
 
-	public override IEnumerator OnLoadedBase() {
+	public override async UniTask OnLoadedBase() {
 		for (int i = AlphabetNum - 1; i >= 0; i--) {
 			char a = GetAlphabetByIndex(i);
 			m_alphabets.Add(new PartMiniGameAlphabet(this, a));
 		}
-		yield return UIController.Instance.YieldAttachParts(this, m_alphabets.ConvertAll<UIPart>(x => x));
+		
+		await UIController.Instance.YieldAttachParts(this, m_alphabets.ConvertAll<UIPart>(x => x));
 
 		m_timeText = RootTransform.Find("Panel/Time").GetComponent<Text>();
 		Initialize();

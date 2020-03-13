@@ -13,6 +13,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using DMUIFramework.Samples;
+using UniRx.Async;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
@@ -33,12 +34,11 @@ namespace DM {
 			UIController.Instance.AddFront(new Sample04Frame());
 		}
 
-		public override IEnumerator OnLoadedBase() {
+		public override async UniTask OnLoadedBase() {
 			RootTransform.Find("Layer/ButtonTop"   ).gameObject.SetActive(false);
 			RootTransform.Find("Layer/ButtonBottom").gameObject.SetActive(false);
 
 			UIController.Instance.AddFront(new Sample04Dialog());
-			yield break;
 		}
 	}
 
@@ -71,13 +71,12 @@ namespace DM {
 		public Sample04SceneB() : base("UISceneB", EnumUIGroup.Scene) {
 		}
 
-		public override IEnumerator OnLoadedBase() {
+		public override async UniTask OnLoadedBase() {
 			RootTransform.Find("Layer/ButtonTop"   ).gameObject.SetActive(false);
 			RootTransform.Find("Layer/ButtonCenter").gameObject.SetActive(false);
 			RootTransform.Find("Layer/ButtonBottom").gameObject.SetActive(false);
 
 			Debug.Log("Scene04 : All Right");
-			yield break;
 		}
 	}
 }

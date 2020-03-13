@@ -9,6 +9,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using DMUIFramework.Samples;
+using UniRx.Async;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -27,8 +28,9 @@ namespace DM {
 		public Sample01Scene() : base("UISceneA", EnumUIGroup.Scene) {
 		}
 
-		public override IEnumerator OnLoadedBase() {
-			yield return new WaitForSeconds(2);
+		public override async UniTask OnLoadedBase() {
+			
+			await UniTask.DelayFrame(120); 
 
 			Text text = RootTransform.Find("Layer/Text").GetComponent<Text>();
 			text.text = "Scene";

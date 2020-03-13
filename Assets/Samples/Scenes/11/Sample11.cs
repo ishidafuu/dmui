@@ -12,6 +12,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using DMUIFramework.Samples;
+using UniRx.Async;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
@@ -40,15 +41,13 @@ namespace DM {
 		public Sample11Scene() : base("UISceneA", EnumUIGroup.Scene) {
 		}
 
-		public override IEnumerator OnLoadedBase() {
+		public override async UniTask OnLoadedBase() {
 			RootTransform.Find("Layer/ButtonTop"   ).gameObject.SetActive(false);
 			RootTransform.Find("Layer/ButtonCenter").gameObject.SetActive(false);
 
 			UIController.Instance.AddFront(new Sample11Dialog());
 
 			IsScheduleUpdate = true;
-
-			yield break;
 		}
 
 		public override bool OnClick(TouchEvent touch, UISound uiSound) {
@@ -74,10 +73,8 @@ namespace DM {
 		public Sample11Dialog() : base("UIDialog", EnumUIGroup.Dialog, EnumUIPreset.BackVisible | EnumUIPreset.BackTouchable) {
 		}
 
-		public override IEnumerator OnLoadedBase() {
+		public override async UniTask OnLoadedBase() {
 			RootTransform.Find("Layer/ButtonCenter").gameObject.SetActive(false);
-
-			yield break;
 		}
 
 		public override void OnDispatchedEvent(DispatchedEvent dispatchedEvent) {

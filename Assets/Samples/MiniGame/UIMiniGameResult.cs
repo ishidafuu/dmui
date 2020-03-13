@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using DM;
+using UniRx.Async;
 
 public class UIMiniGameResult : UIBase {
 
@@ -13,11 +14,9 @@ public class UIMiniGameResult : UIBase {
 		m_score = score;
 	}
 
-	public override IEnumerator OnLoadedBase() {
+	public override async UniTask OnLoadedBase() {
 		Text score = RootTransform.Find("Panel/Score").GetComponent<Text>();
 		score.text = m_score.ToString("N2");
-
-		yield break;
 	}
 
 	public override bool OnClick(TouchEvent touch, UISound uiSound) {

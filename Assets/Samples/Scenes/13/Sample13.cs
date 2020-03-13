@@ -12,6 +12,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using DMUIFramework.Samples;
+using UniRx.Async;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
@@ -31,11 +32,9 @@ namespace DM {
 		public Sample13Scene() : base("UISceneA", EnumUIGroup.Scene, EnumUIPreset.None, "BGM_SceneA") {
 		}
 
-		public override IEnumerator OnLoadedBase() {
+		public override async UniTask OnLoadedBase() {
 			RootTransform.Find("Layer/ButtonTop"   ).gameObject.SetActive(false);
 			RootTransform.Find("Layer/ButtonBottom").gameObject.SetActive(false);
-
-			yield break;
 		}
 
 		public override bool OnClick(TouchEvent touch, UISound uiSound) {
@@ -59,11 +58,9 @@ namespace DM {
 		public Sample13SceneB() : base("UISceneAnimB", EnumUIGroup.Scene, EnumUIPreset.None, "BGM_SceneB") {
 		}
 
-		public override IEnumerator OnLoadedBase() {
+		public override async UniTask OnLoadedBase() {
 			RootTransform.Find("Layer/ButtonTop"   ).gameObject.SetActive(false);
 			RootTransform.Find("Layer/ButtonBottom").gameObject.SetActive(false);
-
-			yield break;
 		}
 
 		public override bool OnClick(TouchEvent touch, UISound uiSound) {

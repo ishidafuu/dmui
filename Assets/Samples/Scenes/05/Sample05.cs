@@ -11,6 +11,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using DMUIFramework.Samples;
+using UniRx.Async;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
@@ -31,11 +32,9 @@ namespace DM {
 			UIController.Instance.AddFront(new UISample05TouchLayer1());
 		}
 
-		public override IEnumerator OnLoadedBase() {
+		public override async UniTask OnLoadedBase() {
 			RootTransform.Find("Layer/ButtonTop"   ).gameObject.SetActive(false);
 			RootTransform.Find("Layer/ButtonBottom").gameObject.SetActive(false);
-
-			yield break;
 		}
 
 		public override bool OnClick(TouchEvent touch, UISound uiSound) {

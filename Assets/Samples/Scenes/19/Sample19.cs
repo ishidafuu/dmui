@@ -21,6 +21,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using DMUIFramework.Samples;
+using UniRx.Async;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
@@ -38,7 +39,7 @@ namespace DM {
 		public Sample19Scene() : base("UISceneA", EnumUIGroup.Scene) {
 		}
 
-		public override IEnumerator OnLoadedBase() {
+		public override async UniTask OnLoadedBase() {
 			RootTransform.Find("Layer/ButtonTop"   ).gameObject.SetActive(false);
 			RootTransform.Find("Layer/ButtonCenter").gameObject.SetActive(false);
 			RootTransform.Find("Layer/ButtonBottom").gameObject.SetActive(false);
@@ -46,8 +47,6 @@ namespace DM {
 			UIController.Instance.AddFront(new Sample19SceneB());
 			UIController.Instance.AddFront(new Sample19Frame());
 			UIController.Instance.AddFront(new Sample19Dialog());
-
-			yield break;
 		}
 	}
 
@@ -55,12 +54,10 @@ namespace DM {
 		public Sample19SceneB() : base("UISceneB", EnumUIGroup.Scene) {
 		}
 
-		public override IEnumerator OnLoadedBase() {
+		public override async UniTask OnLoadedBase() {
 			RootTransform.Find("Layer/ButtonTop"   ).gameObject.SetActive(false);
 			RootTransform.Find("Layer/ButtonCenter").gameObject.SetActive(false);
 			RootTransform.Find("Layer/ButtonBottom").gameObject.SetActive(false);
-
-			yield break;
 		}
 	}
 
