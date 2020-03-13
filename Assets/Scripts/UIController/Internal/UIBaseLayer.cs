@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UniRx.Async;
 using UnityEngine;
 using UnityEngine.UI;
@@ -161,7 +160,7 @@ namespace DM
             
             foreach (var part in parts)
             {
-                var container = new UIPartContainer(part);
+                UIPartContainer container = new UIPartContainer(part);
                 m_PartContainers.Add(container);
                 
                 await container.LoadAndSetup(this);
@@ -454,7 +453,7 @@ namespace DM
             }
             else
             {
-                foreach (var item in Base.VisibleControllers)
+                foreach (UIVisibleController item in Base.VisibleControllers)
                 {
                     item.SetVisible(Base.RootTransform.gameObject, enable);
                 }

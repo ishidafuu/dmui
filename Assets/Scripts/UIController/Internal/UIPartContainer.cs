@@ -44,7 +44,6 @@ namespace DM
             await UIController.Implements.PrefabLoader.Load(Part.PrefabPath, receiver);
 
             m_Prefab = receiver.m_Prefab;
-
             if (m_Prefab == null)
             {
                 return;

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using UniRx.Async;
 using UnityEngine;
 using Object = UnityEngine.Object;
@@ -15,7 +14,7 @@ namespace DM
         public Animator[] Animators { get; set; }
         public Transform RootTransform { get; set; }
         public string PrefabPath { get; }
-        
+
         // 生成済みオブジェクトを渡して生成
         protected UIPart(Transform rootTransform)
         {
@@ -110,11 +109,11 @@ namespace DM
 
             m_StopCallback?.Invoke();
         }
-        
+
         // -----------------------------------------------------------------------------------------------------------------------------------------
         // Viewから呼ばれるPublicメソッド
         // -----------------------------------------------------------------------------------------------------------------------------------------
-        
+
         // -----------------------------------------------------------------------------------------------------------------------------------------
         // virtual methods
 
