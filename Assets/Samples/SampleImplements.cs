@@ -1,14 +1,16 @@
 ﻿using System.Collections;
 using DM;
+using UniRx.Async;
 using UnityEngine;
 
 namespace DMUIFramework.Samples {
     public class PrefabLoader : IPrefabLoader
     {
-        public IEnumerator Load(string path, PrefabReceiver receiver)
+        public async UniTask Load(string path, PrefabReceiver receiver)
         {
             ResourceRequest req = Resources.LoadAsync(path);
-            yield return req;
+            
+            await req;
 
             receiver.m_Prefab = req.asset;
         }

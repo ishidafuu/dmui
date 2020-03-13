@@ -1,11 +1,12 @@
 ﻿using System.Collections;
+using UniRx.Async;
 using UnityEngine;
 
 namespace DM
 {
     public interface IPrefabLoader
     {
-        IEnumerator Load(string path, PrefabReceiver receiver);
+        UniTask Load(string path, PrefabReceiver receiver);
         void Release(string path, Object prefab);
     }
 }

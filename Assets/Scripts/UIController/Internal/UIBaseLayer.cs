@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UniRx.Async;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -77,15 +78,16 @@ namespace DM
             base.Destroy();
         }
 
-        public IEnumerator Load()
+        public async UniTask Load()
         {
             if (!ProgressState(EnumLayerState.Loading))
             {
                 ProgressState(EnumLayerState.Removing);
-                yield break;
+                
+                return;
             }
 
-            yield return LoadPrefab();
+            await LoadPrefab();
 
             m_Origin = new GameObject(Base.Name);
             SetupStretchAll(m_Origin.AddComponent<RectTransform>());
@@ -104,13 +106,14 @@ namespace DM
             Base.RootTransform.SetParent(parent, false);
             Base.RootTransform.gameObject.SetActive(false);
 
-            yield return Base.OnLoadedBase();
+            await Base.OnLoadedBase();
+            
             Setup();
 
             if (State != EnumLayerState.Loading)
             {
                 ProgressState(EnumLayerState.Removing);
-                yield break;
+                return;
             }
 
             Base.RootTransform.gameObject.SetActive(true);
@@ -119,14 +122,14 @@ namespace DM
 
         private static GameObject CreateNonePrefabObject()
         {
-            var rootObject = new GameObject(NONE_PREFAB_OBJECT_NAME);
+            GameObject rootObject = new GameObject(NONE_PREFAB_OBJECT_NAME);
             SetupStretchAll(rootObject.AddComponent<RectTransform>());
             return rootObject;
         }
 
         private GameObject CreatePrefabObject()
         {
-            var rootObject = Object.Instantiate(m_Prefab) as GameObject;
+            GameObject rootObject = Object.Instantiate(m_Prefab) as GameObject;
             if (rootObject != null)
             {
                 rootObject.name = m_Prefab.name;
@@ -135,31 +138,34 @@ namespace DM
             return rootObject;
         }
 
-        private IEnumerator LoadPrefab()
+        private async UniTask LoadPrefab()
         {
             if (string.IsNullOrEmpty(Base.PrefabPath))
             {
-                yield break;
+                return;
             }
 
             PrefabReceiver receiver = new PrefabReceiver();
-            yield return UIController.Implements.PrefabLoader.Load(Base.PrefabPath, receiver);
+            
+            await UIController.Implements.PrefabLoader.Load(Base.PrefabPath, receiver);
+            
             m_Prefab = receiver.m_Prefab;
         }
 
 
-        public IEnumerator AttachParts(IEnumerable<UIPart> parts)
+        public async UniTask AttachParts(IEnumerable<UIPart> parts)
         {
             if (State > EnumLayerState.Active)
             {
-                yield break;
+                return;
             }
             
             foreach (var part in parts)
             {
                 var container = new UIPartContainer(part);
                 m_PartContainers.Add(container);
-                yield return container.LoadAndSetup(this);
+                
+                await container.LoadAndSetup(this);
             }
         }
 

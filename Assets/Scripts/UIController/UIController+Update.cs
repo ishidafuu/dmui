@@ -110,9 +110,9 @@
             {
                 if (!isFadeIn && layer.State == EnumLayerState.InFading)
                 {
-                    StartCoroutine(layer.Load());
+                    layer.Load();
                 }
-            }
+            }            
         }
 
         private bool RemoveInsertedLayers(bool isFadeIn)

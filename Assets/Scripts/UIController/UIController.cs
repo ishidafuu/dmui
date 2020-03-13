@@ -152,7 +152,7 @@ namespace DM
 
             if (layer.Base.IsLoadingWithoutFade())
             {
-                StartCoroutine(layer.Load());
+                layer?.Load();    
             }
 
             if (m_FadeController.IsShouldFadeByAdding(uiBase, m_LayerController))
@@ -235,12 +235,8 @@ namespace DM
         public void AttachParts(UIBase uiBase, IEnumerable<UIPart> parts)
         {
             UIBaseLayer layer = m_LayerController.Find(uiBase);
-            if (layer == null)
-            {
-                return;
-            }
 
-            StartCoroutine(layer.AttachParts(parts));
+            layer?.AttachParts(parts);
         }
 
         // UIパーツ削除
