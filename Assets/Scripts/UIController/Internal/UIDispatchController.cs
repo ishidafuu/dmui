@@ -24,15 +24,12 @@ namespace DM
             while (m_DispatchedEvents.Count > 0)
             {
                 DispatchedEvent dispatchedEvent = m_DispatchedEvents.Dequeue();
-                layerController.ForEachOnlyActive(layer =>
-                {
-                    layer.Base.OnDispatchedEvent(dispatchedEvent);
-                });
+                layerController.ForEachOnlyActive(layer => layer.Base.OnDispatchedEvent(dispatchedEvent));
             }
 
             m_DispatchedEvents.Clear();
         }
-        
+
         public void Dispatch(string eventName, object param)
         {
             m_DispatchedEvents.Enqueue(new DispatchedEvent(eventName, param));
