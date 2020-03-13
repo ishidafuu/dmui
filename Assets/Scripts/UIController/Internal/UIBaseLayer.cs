@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -147,8 +146,9 @@ namespace DM
                 yield break;
             }
             
-            foreach (var container in parts.Select(part => new UIPartContainer(part)))
+            foreach (var part in parts)
             {
+                var container = new UIPartContainer(part);
                 m_PartContainers.Add(container);
                 yield return container.LoadAndSetup(this);
             }
@@ -354,6 +354,7 @@ namespace DM
             }
 
             State = nextEnumLayerState;
+            
             bool isTouchable = StateFlags.IsTouchable(State);
             if ((ScreenTouchOffCount == 0) != isTouchable)
             {
@@ -381,7 +382,6 @@ namespace DM
         {
             m_TouchOff = CreateTouchPanel(TOUCH_OFF_LAYER_NAME);
             m_TouchOff.SetActive(false);
-            m_TouchOff.transform.SetParent(m_Origin.transform, false);
 
             GameObject touchArea = CreateTouchArea();
 
@@ -396,8 +396,13 @@ namespace DM
             };
 
             int index = 0;
-            foreach (GameObject item in innerIndex.Where(item => item != null))
+            foreach (GameObject item in innerIndex)
             {
+                if (item == null)
+                {
+                    continue;    
+                }
+
                 item.transform.SetSiblingIndex(index++);
             }
 
@@ -412,7 +417,6 @@ namespace DM
             }
 
             GameObject systemTouchOff = CreateTouchPanel(SYSTEM_TOUCH_OFF_LAYER_NAME);
-            systemTouchOff.transform.SetParent(m_Origin.transform, false);
 
             return systemTouchOff;
         }
@@ -427,18 +431,19 @@ namespace DM
             GameObject touchArea = CreateTouchPanel(LAYER_TOUCH_AREA_NAME);
             UILayerTouchListener listener = touchArea.AddComponent<UILayerTouchListener>();
             listener.SetLayerAndPart(this, Base);
-            touchArea.transform.SetParent(m_Origin.transform, false);
 
             return touchArea;
         }
 
-        private static GameObject CreateTouchPanel(string name)
+        private GameObject CreateTouchPanel(string name)
         {
-            GameObject gameObject = new GameObject(name);
-            Image image = gameObject.AddComponent<Image>();
+            GameObject touchPanel = new GameObject(name);
+            touchPanel.transform.SetParent(m_Origin.transform, false);
+            Image image = touchPanel.AddComponent<Image>();
             image.color = new Color(0f, 0f, 0f, 0f);
-            SetupStretchAll(gameObject.GetComponent<RectTransform>());
-            return gameObject;
+            SetupStretchAll(touchPanel.GetComponent<RectTransform>());
+            
+            return touchPanel;
         }
 
         private static void SetupStretchAll(RectTransform rectTransform)
