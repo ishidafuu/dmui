@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿using UniRx.Async;
 using UnityEngine;
 
 namespace DM
@@ -16,11 +16,11 @@ namespace DM
             Part = part;
         }
 
-        public IEnumerator LoadAndSetup(UIBaseLayer targetLayer)
+        public async UniTask LoadAndSetup(UIBaseLayer targetLayer)
         {
             if (Part.RootTransform == null && !string.IsNullOrEmpty(Part.PrefabPath))
             {
-                yield return LoadPrefab();
+                await LoadPrefab();
             }
 
             if (Part.RootTransform == null)
@@ -33,21 +33,21 @@ namespace DM
 
             CollectComponents(rootGameObject, targetLayer);
 
-            yield return Part.OnLoadedPart(targetLayer.Base);
+            await Part.OnLoadedPart(targetLayer.Base);
 
             rootGameObject.SetActive(true);
         }
 
-        private IEnumerator LoadPrefab()
+        private async UniTask LoadPrefab()
         {
             PrefabReceiver receiver = new PrefabReceiver();
-            yield return UIController.Implements.PrefabLoader.Load(Part.PrefabPath, receiver);
+            await UIController.Implements.PrefabLoader.Load(Part.PrefabPath, receiver);
 
             m_Prefab = receiver.m_Prefab;
 
             if (m_Prefab == null)
             {
-                yield break;
+                return;
             }
 
             GameObject gameObject = Object.Instantiate(m_Prefab) as GameObject;

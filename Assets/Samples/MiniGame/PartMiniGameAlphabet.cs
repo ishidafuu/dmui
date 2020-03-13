@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using DM;
+using UniRx.Async;
 
 public class PartMiniGameAlphabet : UIPart {
 
@@ -15,7 +16,7 @@ public class PartMiniGameAlphabet : UIPart {
 		m_alphabet = alphabet;
 	}
 
-	public override IEnumerator OnLoadedPart(UIBase targetLayer) {
+	public override async UniTask OnLoadedPart(UIBase targetLayer) {
 		RootTransform.SetParent(targetLayer.RootTransform.Find("Panel"));
 		RootTransform.localScale = Vector3.one;
 
@@ -24,8 +25,8 @@ public class PartMiniGameAlphabet : UIPart {
 		img.sprite = Resources.Load<Sprite>("MiniGame/Images/" + m_alphabet.ToString());
 
 		RootTransform.Find("Button").gameObject.SetActive(false);
-
-		yield break;
+		
+		await UniTask.Yield();
 	}
 
 	public override bool OnClick(TouchEvent touch, UISound uiSound) {

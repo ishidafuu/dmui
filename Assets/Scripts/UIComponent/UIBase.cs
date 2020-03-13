@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UniRx.Async;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -96,10 +97,7 @@ namespace DM
         // virtual methods
 
         // プレファブ読み込み完了時
-        public virtual IEnumerator OnLoadedBase()
-        {
-            yield break;
-        }
+        public virtual async UniTask OnLoadedBase() { }
 
         // 毎フレーム呼び出し
         public virtual void OnUpdate() { }

@@ -17,6 +17,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using DMUIFramework.Samples;
+using UniRx.Async;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
@@ -73,7 +74,7 @@ namespace DM {
 			m_ui = ui;
 		}
 
-		public override IEnumerator OnLoadedPart(UIBase targetLayer) {
+		public override UniTask OnLoadedPart(UIBase targetLayer) {
 			Text text = RootTransform.Find("Text").GetComponent<Text>();
 			text.text = "create";
 			yield break;
@@ -103,7 +104,7 @@ namespace DM {
 			m_ui = ui;
 		}
 
-		public override IEnumerator OnLoadedPart(UIBase targetLayer) {
+		public override UniTask OnLoadedPart(UIBase targetLayer) {
 			Text text = RootTransform.Find("Text").GetComponent<Text>();
 			text.text = "delete";
 			yield break;

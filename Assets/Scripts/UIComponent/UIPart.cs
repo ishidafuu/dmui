@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using UniRx.Async;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
@@ -116,10 +117,7 @@ namespace DM
         // -----------------------------------------------------------------------------------------------------------------------------------------
         // virtual methods
 
-        public virtual IEnumerator OnLoadedPart(UIBase targetLayer)
-        {
-            yield break;
-        }
+        public virtual async UniTask OnLoadedPart(UIBase targetLayer) { }
 
         public virtual bool OnClick(TouchEvent touch, UISound uiSound)
         {
