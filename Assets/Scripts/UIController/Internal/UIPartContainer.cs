@@ -28,9 +28,8 @@ namespace DM
                 Part.RootTransform = new GameObject(NONE_ROOT_OBJECT_NAME).transform;
             }
 
-            var rootGameObject = Part.RootTransform.gameObject;
+            GameObject rootGameObject = Part.RootTransform.gameObject;
             rootGameObject.SetActive(false);
-
             CollectComponents(rootGameObject, targetLayer);
 
             await Part.OnLoadedPart(targetLayer.Base);
@@ -41,6 +40,7 @@ namespace DM
         private async UniTask LoadPrefab()
         {
             PrefabReceiver receiver = new PrefabReceiver();
+            
             await UIController.Implements.PrefabLoader.Load(Part.PrefabPath, receiver);
 
             m_Prefab = receiver.m_Prefab;

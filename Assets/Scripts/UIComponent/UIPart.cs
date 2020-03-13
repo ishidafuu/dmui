@@ -89,7 +89,7 @@ namespace DM
                 }
 
                 animator.Play(playName);
-                ++count;
+                count++;
             }
 
             return count;
@@ -102,7 +102,8 @@ namespace DM
                 animator.enabled = false;
             }
 
-            if (--m_PlayCount > 0)
+            m_PlayCount--;
+            if (m_PlayCount > 0)
             {
                 return;
             }

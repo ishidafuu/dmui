@@ -83,7 +83,6 @@ namespace DM
             if (!ProgressState(EnumLayerState.Loading))
             {
                 ProgressState(EnumLayerState.Removing);
-                
                 return;
             }
 
