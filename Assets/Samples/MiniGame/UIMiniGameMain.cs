@@ -27,8 +27,8 @@ public class UIMiniGameMain : UIBase {
 		Initialize();
 	}
 
-	public override void OnDispatchedEvent(string eventName, object param) {
-		switch (eventName) {
+	public override void OnDispatchedEvent(DispatchedEvent dispatchedEvent) {
+		switch (dispatchedEvent.EventName) {
 			case "start": {
 				Start();
 				break;

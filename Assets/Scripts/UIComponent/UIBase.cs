@@ -117,7 +117,7 @@ namespace DM
         public virtual void OnActive() { }
 
         //　イベント受信時
-        public virtual void OnDispatchedEvent(string eventName, object param) { }
+        public virtual void OnDispatchedEvent(DispatchedEvent dispatchedEvent) { }
 
         // 戻るボタン処理
         public virtual bool OnBack()

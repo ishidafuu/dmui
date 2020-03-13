@@ -26,7 +26,7 @@ namespace DM
                 DispatchedEvent dispatchedEvent = m_DispatchedEvents.Dequeue();
                 layerController.ForEachOnlyActive(layer =>
                 {
-                    layer.Base.OnDispatchedEvent(dispatchedEvent.EventName, dispatchedEvent.Param);
+                    layer.Base.OnDispatchedEvent(dispatchedEvent);
                 });
             }
 
