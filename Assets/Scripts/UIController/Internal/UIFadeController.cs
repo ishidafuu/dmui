@@ -5,7 +5,7 @@ namespace DM
 {
     public class UIFadeController
     {
-        private UIBaseLayer m_Fade;
+        private UIBaseLayer m_FadeBaseLayer;
 
         // このグループのレイヤが追加／削除されるとフェードが発生
         private static readonly List<EnumUIGroup> s_FadeTargetGroups = new List<EnumUIGroup>()
@@ -23,17 +23,17 @@ namespace DM
 
         public bool IsFadeIn()
         {
-            return (m_Fade != null && m_Fade.State <= EnumLayerState.InAnimation);
+            return (m_FadeBaseLayer != null && m_FadeBaseLayer.State <= EnumLayerState.InAnimation);
         }
 
         public bool IsHidden()
         {
-            return (m_Fade != null && m_Fade.State == EnumLayerState.Active);
+            return (m_FadeBaseLayer != null && m_FadeBaseLayer.State == EnumLayerState.Active);
         }
 
         public bool IsShouldFadeByAdding(UIBase uiBase, UIBaseLayerController uiController)
         {
-            if (m_Fade != null)
+            if (m_FadeBaseLayer != null)
             {
                 return false;
             }
@@ -54,7 +54,7 @@ namespace DM
         public bool IsShouldFadeByRemoving(UIBase uiBase, UIBaseLayerController uiController,
             IEnumerable<UIBaseLayer> removingList)
         {
-            if (m_Fade != null)
+            if (m_FadeBaseLayer != null)
             {
                 return false;
             }
@@ -76,7 +76,7 @@ namespace DM
 
         public void FadeIn(UIImplements implements, List<UIBaseLayer> addingList, Action<UIBase> addFront)
         {
-            if (m_Fade != null)
+            if (m_FadeBaseLayer != null)
             {
                 return;
             }
@@ -88,18 +88,18 @@ namespace DM
 
             UIFade fade = implements.FadeCreator.Create();
             addFront.Invoke(fade);
-            m_Fade = addingList.Find(layer => layer.Base == fade);
+            m_FadeBaseLayer = addingList.Find(layer => layer.Base == fade);
         }
 
         public void FadeOut(Action<UIBase> remove)
         {
-            if (m_Fade == null)
+            if (m_FadeBaseLayer == null)
             {
                 return;
             }
 
-            remove.Invoke(m_Fade.Base);
-            m_Fade = null;
+            remove.Invoke(m_FadeBaseLayer.Base);
+            m_FadeBaseLayer = null;
         }
     }
 }

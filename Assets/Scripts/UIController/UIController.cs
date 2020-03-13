@@ -17,9 +17,7 @@ namespace DM
             EnumUIGroup.MainScene,
             EnumUIGroup.View3D,
         };
-
-        public const string LAYER_TOUCH_AREA_NAME = "LayerTouchArea";
-
+        
         private List<BaseRaycaster> m_RayCasterComponents;
         private List<UIBaseLayer> m_AddingLayerList;
         private List<UIBaseLayer> m_RemovingLayerList;
@@ -127,6 +125,21 @@ namespace DM
             s_Instance = null;
         }
 
+        public void ListenTouch(UITouchListener listener, EnumTouchType type, PointerEventData pointer)
+        {
+            m_TouchController.Enqueue(listener, type, pointer);
+        }
+        
+        public void SetScreenTouchableByLayer(UIBaseLayer layer, bool enable)
+        {
+            m_TouchController.SetScreenTouchable(layer, enable, m_RayCasterComponents);
+        }
+
+        // -----------------------------------------------------------------------------------------------------------------------------------------
+        // Viewから呼ばれるPublicメソッド
+        // -----------------------------------------------------------------------------------------------------------------------------------------
+
+        // レイヤ追加
         public void AddFront(UIBase uiBase)
         {
             if (uiBase == null)
@@ -150,6 +163,7 @@ namespace DM
             m_LayerController.AddOrInsert(layer);
         }
 
+        // レイヤ削除
         public void Remove(UIBase uiBase)
         {
             if (uiBase == null)
@@ -177,6 +191,7 @@ namespace DM
             }
         }
 
+        // レイヤ再配置
         public void Replace(UIBase[] uiBases, EnumUIGroup[] removeGroups = null)
         {
             HashSet<EnumUIGroup> removes = (removeGroups == null)
@@ -202,12 +217,46 @@ namespace DM
                 AddFront(uiBase);
             }
         }
-
-        public void ListenTouch(UITouchListener listener, EnumTouchType type, PointerEventData pointer)
+        
+        // UIパーツ追加（処理待ち（OnLoadedBase内で呼ばれる））
+        public IEnumerator YieldAttachParts(UIBase targetUIBase, IEnumerable<UIPart> parts)
         {
-            m_TouchController.Enqueue(listener, type, pointer);
+            UIBaseLayer layer = m_LayerController.Find(targetUIBase);
+            if (layer == null)
+            {
+                yield break;
+            }
+            
+            yield return layer.AttachParts(parts);
         }
 
+        // 即時UIパーツ追加
+        public void AttachParts(UIBase uiBase, IEnumerable<UIPart> parts)
+        {
+            UIBaseLayer layer = m_LayerController.Find(uiBase);
+            if (layer == null)
+            {
+                return;
+            }
+
+            StartCoroutine(layer.AttachParts(parts));
+        }
+
+        // UIパーツ削除
+        public void DetachParts(UIBase targetUIBase, IEnumerable<UIPart> parts)
+        {
+            UIBaseLayer layer = m_LayerController.Find(targetUIBase);
+
+            layer?.DetachParts(parts);
+        }
+        
+        // イベント発行
+        public void Dispatch(string eventName, object param)
+        {
+            m_DispatchController.Dispatch(eventName, param);
+        }
+        
+        // Backボタン
         public void Back()
         {
             UIBaseLayer layer = null;
@@ -231,43 +280,14 @@ namespace DM
                 Remove(layer.Base);
             }
         }
-
-        public void Dispatch(string eventName, object param)
-        {
-            m_DispatchController.Dispatch(eventName, param);
-        }
-
-        public IEnumerator YieldAttachParts(UIBase targetUIBase, IEnumerable<UIPart> parts)
-        {
-            UIBaseLayer layer = m_LayerController.Find(targetUIBase);
-            if (layer == null)
-            {
-                yield break;
-            }
-
-            // 処理を待つ（OnLoadedBase内で呼ばれる）
-            yield return layer.AttachParts(parts);
-        }
-
-        public void AttachParts(UIBase uiBase, IEnumerable<UIPart> parts)
+        
+        // タッチON／OFF切り替え（UIBase指定）
+        public void SetScreenTouchable(UIBase uiBase, bool enable)
         {
             UIBaseLayer layer = m_LayerController.Find(uiBase);
-            if (layer == null)
-            {
-                return;
-            }
-
-            // 処理を待たない
-            StartCoroutine(layer.AttachParts(parts));
+            SetScreenTouchableByLayer(layer, enable);
         }
-
-        public void DetachParts(UIBase targetUIBase, IEnumerable<UIPart> parts)
-        {
-            UIBaseLayer layer = m_LayerController.Find(targetUIBase);
-
-            layer?.DetachParts(parts);
-        }
-
+        
         // レイヤの存在チェック
         public bool HasUIBase(string baseName)
         {
@@ -285,19 +305,6 @@ namespace DM
         public int GetLayerCountInGroup(EnumUIGroup group)
         {
             return m_LayerController.GetCountInGroup(group);
-        }
-
-        // タッチON／OFF切り替え（UIBase指定）
-        public void SetScreenTouchable(UIBase uiBase, bool enable)
-        {
-            UIBaseLayer layer = m_LayerController.Find(uiBase);
-            m_TouchController.SetScreenTouchable(layer, enable, m_RayCasterComponents);
-        }
-
-        // タッチON／OFF切り替え（レイヤ指定）
-        public void SetScreenTouchableByLayer(UIBaseLayer layer, bool enable)
-        {
-            m_TouchController.SetScreenTouchable(layer, enable, m_RayCasterComponents);
         }
     }
 }

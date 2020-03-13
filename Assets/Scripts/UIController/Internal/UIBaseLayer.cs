@@ -8,11 +8,12 @@ namespace DM
 {
     public class UIBaseLayer : UIPartContainer
     {
-        private const string IN_ANIMATION_NAME = "In";
-        private const string NONE_PREFAB_OBJECT_NAME = "root";
-        private const string OUT_ANIMATION_NAME = "Out";
-        private const string SYSTEM_TOUCH_OFF_LAYER_NAME = "SystemTouchOff";
         private const string TOUCH_OFF_LAYER_NAME = "LayerTouchOff";
+        private const string LAYER_TOUCH_AREA_NAME = "LayerTouchArea";
+        private const string SYSTEM_TOUCH_OFF_LAYER_NAME = "SystemTouchOff";
+        private const string NONE_PREFAB_OBJECT_NAME = "root";
+        private const string IN_ANIMATION_NAME = "In";
+        private const string OUT_ANIMATION_NAME = "Out";
 
         private GameObject m_Origin;
         private GameObject m_TouchOff;
@@ -21,14 +22,15 @@ namespace DM
         private string m_LinkedBackName = "";
         private string m_LinkedFrontName = "";
 
-        public EnumLayerState State { get; private set; } = EnumLayerState.None;
+        public UIBase Base => (UIBase)Part;
+        public EnumLayerState State { get; private set; } 
         public UIBaseLayer FrontLayer { get; set; }
         public UIBaseLayer BackLayer { get; set; }
         public int ScreenTouchOffCount { get; set; }
-        public UIBase Base => (UIBase)Part;
 
         public UIBaseLayer(UIPart uiPart, Transform parent) : base(uiPart)
         {
+            State　= EnumLayerState.None;
             m_Parent = parent;
             ProgressState(EnumLayerState.InFading);
         }
@@ -422,7 +424,7 @@ namespace DM
                 return null;
             }
 
-            GameObject touchArea = CreateTouchPanel(UIController.LAYER_TOUCH_AREA_NAME);
+            GameObject touchArea = CreateTouchPanel(LAYER_TOUCH_AREA_NAME);
             UILayerTouchListener listener = touchArea.AddComponent<UILayerTouchListener>();
             listener.SetLayerAndPart(this, Base);
             touchArea.transform.SetParent(m_Origin.transform, false);

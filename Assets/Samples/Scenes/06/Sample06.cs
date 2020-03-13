@@ -58,6 +58,7 @@ namespace DM {
 
 	class Sample06Dialog : UIBase {
 		bool m_layerTouch = false;
+		 const string LAYER_TOUCH_AREA_NAME = "LayerTouchArea";
 
 		public Sample06Dialog()
 		: base("UIDialog", EnumUIGroup.Dialog, EnumUIPreset.BackVisible | EnumUIPreset.TouchEventCallable) {
@@ -69,14 +70,14 @@ namespace DM {
 		}
 
 		public override bool OnTouchDown(TouchEvent touch) {
-			if (touch.Listener.name == UIController.LAYER_TOUCH_AREA_NAME) {
+			if (touch.Listener.name == LAYER_TOUCH_AREA_NAME) {
 				m_layerTouch = true;
 			}
 			return false;
 		}
 
 		public override bool OnTouchUp(TouchEvent touch) {
-			if (touch.Listener.name == UIController.LAYER_TOUCH_AREA_NAME) {
+			if (touch.Listener.name == LAYER_TOUCH_AREA_NAME) {
 				if (m_layerTouch) {
 					UIController.Instance.Remove (this);
 					return true;
