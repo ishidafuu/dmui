@@ -35,7 +35,7 @@ namespace DM {
 
 			UIController.Instance.AddFront(new Sample20Dialog(true));
 			UIController.Instance.AddFront(new Sample20Dialog(false));
-		}
+		}														
 
 		public override bool OnClick(TouchEvent touch, UISound uiSound) {
 			if (touch.Listener.name == "Cube" || touch.Listener.name == "Sphere") {
