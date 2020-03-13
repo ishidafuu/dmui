@@ -192,7 +192,7 @@
             bool isVisible = true;
             bool isTouchable = true;
             UIBaseLayer frontLayer = null;
-            int index = m_UILayers.childCount - 1;
+            int siblingIndex = m_UILayers.childCount - 1;
 
             m_LayerController.ForEachAnything(layer =>
             {
@@ -219,7 +219,8 @@
                 isVisible &= layer.Base.IsBackVisible();
                 isTouchable &= layer.Base.IsBackTouchable();
 
-                layer.SiblingIndex = index--;
+                layer.SiblingIndex = siblingIndex;
+                siblingIndex--;
 
                 if (frontLayer != null)
                 {
@@ -242,7 +243,7 @@
                 return;
             }
 
-            string bgm = "";
+            string bgm = string.Empty;
             m_LayerController.ForEachAnything(layer =>
             {
                 if (!StateFlags.IsVisible(layer.State))
