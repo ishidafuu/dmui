@@ -200,38 +200,12 @@
                 {
                     return;
                 }
-
-                bool preVisible = layer.IsVisible();
-                bool preTouchable = layer.IsTouchable();
-                layer.SetVisible(isVisible);
-                layer.SetTouchable(isTouchable);
-
-                if (!preVisible && isVisible)
-                {
-                    layer.Base.OnReVisible();
-                }
-
-                if (!preTouchable && isTouchable)
-                {
-                    layer.Base.OnReTouchable();
-                }
-
-                isVisible &= layer.Base.IsBackVisible();
+                
+                layer.Refresh(frontLayer, isVisible, isTouchable, siblingIndex);
+                
+                isVisible &= layer.Base.IsBackVisible();;
                 isTouchable &= layer.Base.IsBackTouchable();
-
-                layer.SiblingIndex = siblingIndex;
-                siblingIndex--;
-
-                if (frontLayer != null)
-                {
-                    frontLayer.BackLayer = layer;
-                    frontLayer.CallSwitchBack();
-                }
-
-                layer.FrontLayer = frontLayer;
-                layer.CallSwitchFront();
-
-                layer.BackLayer = null;
+                siblingIndex = layer.SiblingIndex - 1;
                 frontLayer = layer;
             });
         }

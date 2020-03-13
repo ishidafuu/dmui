@@ -17,14 +17,14 @@ namespace DM
         private GameObject m_Origin;
         private GameObject m_TouchOff;
         private Transform m_Parent;
+        private UIBaseLayer m_FrontLayer;
+        private UIBaseLayer m_BackLayer;
         private readonly List<UIPartContainer> m_PartContainers = new List<UIPartContainer>();
         private string m_LinkedBackName = "";
         private string m_LinkedFrontName = "";
 
         public UIBase Base => (UIBase)Part;
-        public EnumLayerState State { get; private set; } 
-        public UIBaseLayer FrontLayer { get; set; }
-        public UIBaseLayer BackLayer { get; set; }
+        public EnumLayerState State { get; private set; }
         public int ScreenTouchOffCount { get; set; }
 
         public UIBaseLayer(UIPart uiPart, Transform parent) : base(uiPart)
@@ -34,9 +34,17 @@ namespace DM
             ProgressState(EnumLayerState.InFading);
         }
 
+        private static void SetupStretchAll(RectTransform rectTransform)
+        {
+            rectTransform.anchorMin = Vector2.zero;
+            rectTransform.anchorMax = Vector2.one;
+            rectTransform.pivot = Vector2.zero;
+            rectTransform.sizeDelta = Vector2.zero;
+        }
+
         public int SiblingIndex
         {
-            set => m_Origin.transform.SetSiblingIndex(value);
+            private set => m_Origin.transform.SetSiblingIndex(value);
             get => m_Origin.transform.GetSiblingIndex();
         }
 
@@ -139,6 +147,7 @@ namespace DM
             m_Prefab = receiver.m_Prefab;
         }
 
+
         public IEnumerator AttachParts(IEnumerable<UIPart> parts)
         {
             if (State > EnumLayerState.Active)
@@ -237,86 +246,9 @@ namespace DM
             ProgressState(nextBaseLayerState);
         }
 
-        public void CallSwitchFront()
-        {
-            string pre = m_LinkedFrontName;
-            m_LinkedFrontName = (FrontLayer != null) ? FrontLayer.Base.Name : string.Empty;
-            if (pre != m_LinkedFrontName)
-            {
-                Base.OnSwitchFrontUI(m_LinkedFrontName);
-            }
-        }
-
-        public void CallSwitchBack()
-        {
-            string pre = m_LinkedBackName;
-            m_LinkedBackName = (BackLayer != null) ? BackLayer.Base.Name : string.Empty;
-            if (pre != m_LinkedBackName)
-            {
-                Base.OnSwitchBackUI(m_LinkedBackName);
-            }
-        }
-
-        public bool IsVisible()
-        {
-            if (m_Origin == null)
-            {
-                return false;
-            }
-
-            return Base.VisibleControllers.Count <= 0
-                ? m_Origin.activeSelf
-                : Base.VisibleControllers[0].IsVisible();
-        }
-
-        public bool IsTouchable()
-        {
-            if (m_TouchOff == null)
-            {
-                return false;
-            }
-
-            return !m_TouchOff.activeSelf;
-        }
-
-        public void SetVisible(bool enable)
-        {
-            if (enable && !StateFlags.IsVisible(State))
-            {
-                return;
-            }
-
-            if (m_Origin == null)
-            {
-                return;
-            }
-
-            if (Base.VisibleControllers.Count <= 0)
-            {
-                Base.RootTransform.gameObject.SetActive(enable);
-            }
-            else
-            {
-                foreach (var item in Base.VisibleControllers)
-                {
-                    item.SetVisible(Base.RootTransform.gameObject, enable);
-                }
-            }
-        }
-
-        public void SetTouchable(bool enable)
-        {
-            if (m_TouchOff == null)
-            {
-                return;
-            }
-
-            m_TouchOff.SetActive(!enable);
-        }
-
         private bool IsAllFrontLayerBackVisible()
         {
-            UIBaseLayer layer = FrontLayer;
+            UIBaseLayer layer = m_FrontLayer;
             while (layer != null)
             {
                 if (!layer.Base.IsBackVisible())
@@ -324,7 +256,7 @@ namespace DM
                     return false;
                 }
 
-                layer = layer.FrontLayer;
+                layer = layer.m_FrontLayer;
             }
 
             return true;
@@ -332,7 +264,7 @@ namespace DM
 
         private bool IsAllFrontLayerBackTouchable()
         {
-            UIBaseLayer layer = FrontLayer;
+            UIBaseLayer layer = m_FrontLayer;
             while (layer != null)
             {
                 if (!layer.Base.IsBackTouchable())
@@ -340,7 +272,7 @@ namespace DM
                     return false;
                 }
 
-                layer = layer.FrontLayer;
+                layer = layer.m_FrontLayer;
             }
 
             return true;
@@ -446,12 +378,112 @@ namespace DM
             return touchPanel;
         }
 
-        private static void SetupStretchAll(RectTransform rectTransform)
+        public void Refresh(UIBaseLayer frontLayer, bool isVisible, bool isTouchable, int siblingIndex)
         {
-            rectTransform.anchorMin = Vector2.zero;
-            rectTransform.anchorMax = Vector2.one;
-            rectTransform.pivot = Vector2.zero;
-            rectTransform.sizeDelta = Vector2.zero;
+            bool preVisible = IsVisible();
+            bool preTouchable = IsTouchable();
+            SetVisible(isVisible);
+            SetTouchable(isTouchable);
+
+            if (!preVisible && isVisible)
+            {
+                Base.OnReVisible();
+            }
+
+            if (!preTouchable && isTouchable)
+            {
+                Base.OnReTouchable();
+            }
+
+            SiblingIndex = siblingIndex;
+
+            if (frontLayer != null)
+            {
+                m_BackLayer = this; 
+                CallSwitchBack();
+            }
+
+            m_FrontLayer = frontLayer;
+            CallSwitchFront();
+
+            m_BackLayer = null;
+        }
+
+        private bool IsVisible()
+        {
+            if (m_Origin == null)
+            {
+                return false;
+            }
+
+            return Base.VisibleControllers.Count <= 0
+                ? m_Origin.activeSelf
+                : Base.VisibleControllers[0].IsVisible();
+        }
+
+        public bool IsTouchable()
+        {
+            if (m_TouchOff == null)
+            {
+                return false;
+            }
+
+            return !m_TouchOff.activeSelf;
+        }
+
+        private void SetVisible(bool enable)
+        {
+            if (enable && !StateFlags.IsVisible(State))
+            {
+                return;
+            }
+
+            if (m_Origin == null)
+            {
+                return;
+            }
+
+            if (Base.VisibleControllers.Count <= 0)
+            {
+                Base.RootTransform.gameObject.SetActive(enable);
+            }
+            else
+            {
+                foreach (var item in Base.VisibleControllers)
+                {
+                    item.SetVisible(Base.RootTransform.gameObject, enable);
+                }
+            }
+        }
+
+        private void SetTouchable(bool enable)
+        {
+            if (m_TouchOff == null)
+            {
+                return;
+            }
+
+            m_TouchOff.SetActive(!enable);
+        }
+
+        private void CallSwitchBack()
+        {
+            string pre = m_LinkedBackName;
+            m_LinkedBackName = (m_BackLayer != null) ? m_BackLayer.Base.Name : string.Empty;
+            if (pre != m_LinkedBackName)
+            {
+                Base.OnSwitchBackUI(m_LinkedBackName);
+            }
+        }
+
+        private void CallSwitchFront()
+        {
+            string pre = m_LinkedFrontName;
+            m_LinkedFrontName = (m_FrontLayer != null) ? m_FrontLayer.Base.Name : string.Empty;
+            if (pre != m_LinkedFrontName)
+            {
+                Base.OnSwitchFrontUI(m_LinkedFrontName);
+            }
         }
     }
 }
