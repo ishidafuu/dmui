@@ -35,6 +35,30 @@
             }
         }
 
+        private int FindUntouchableIndex()
+        {
+            int index = -1;
+            m_LayerController.ForEachOnlyActive(layer =>
+            {
+                if (index >= 0)
+                {
+                    return;
+                }
+
+                if (layer.Base.IsSystemUntouchable())
+                {
+                    index = layer.SiblingIndex - 1;
+                }
+            });
+
+            return index;
+        }
+
+        private bool IsScreenTouchable()
+        {
+            return m_RayCasterComponents.Count != 0 && m_RayCasterComponents[0].enabled;
+        }
+
         private void RunRefresh(bool isEject)
         {
             RefreshLayer();
@@ -63,30 +87,6 @@
             return isEject && m_FadeController.IsHidden() && m_RemovingLayerList.Count == 0;
         }
 
-
-        private int FindUntouchableIndex()
-        {
-            int index = -1;
-            m_LayerController.ForEachOnlyActive(layer =>
-            {
-                if (index >= 0)
-                {
-                    return;
-                }
-
-                if (layer.Base.IsSystemUntouchable())
-                {
-                    index = layer.SiblingIndex - 1;
-                }
-            });
-
-            return index;
-        }
-
-        private bool IsScreenTouchable()
-        {
-            return m_RayCasterComponents.Count != 0 && m_RayCasterComponents[0].enabled;
-        }
 
         private bool RunAddLayer()
         {
