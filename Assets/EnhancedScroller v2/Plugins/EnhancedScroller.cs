@@ -186,22 +186,22 @@ namespace EnhancedUI.EnhancedScroller
         /// <summary>
         /// This delegate is called when the scroller has started or stopped scrolling
         /// </summary>
-        private ScrollerScrollingChangedDelegate scrollerScrollingChanged;
+        public ScrollerScrollingChangedDelegate scrollerScrollingChanged;
 
         /// <summary>
         /// This delegate is called when the scroller has started or stopped tweening
         /// </summary>
-        private ScrollerTweeningChangedDelegate scrollerTweeningChanged;
+        public ScrollerTweeningChangedDelegate scrollerTweeningChanged;
 
         /// <summary>
         /// This delegate is called when the scroller creates a new cell view from scratch
         /// </summary>
-        private CellViewInstantiated cellViewInstantiated;
+        public CellViewInstantiated cellViewInstantiated;
 
         /// <summary>
         /// This delegate is called when the scroller reuses a recycled cell view
         /// </summary>
-        private CellViewReused cellViewReused;
+        public CellViewReused cellViewReused;
 
         /// <summary>
         /// The Delegate is what the scroller will call when it needs to know information about
@@ -969,6 +969,9 @@ namespace EnhancedUI.EnhancedScroller
 
             return null;
         }
+        
+        public int GetActiveCellViewsCount() => _activeCellViews.Count;
+        
 
         #endregion
 

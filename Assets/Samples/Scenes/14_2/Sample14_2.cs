@@ -8,15 +8,12 @@
 // [結果]
 // 押したボタンに応じたログを表示します。
 
-using System.Collections;
 using System.Collections.Generic;
 using DMUIFramework.Samples;
 using EnhancedUI.EnhancedScroller;
 using UniRx.Async;
-using UniRx.Async.Triggers;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.EventSystems;
 
 namespace DM {
 
@@ -57,8 +54,9 @@ namespace DM {
 		}
 	}
 
-	class Sample14_2Scroller : UIPart {
-
+	class Sample14_2Scroller : UIPart
+	{
+		private UIBase m_TargetLayer;
 		private int m_id = 0;
 
 		public Sample14_2Scroller(int id) : base("Scroller") {
@@ -69,12 +67,16 @@ namespace DM {
 		// 	m_id = id;
 		// }
 
-		public override async UniTask OnLoadedPart(UIBase targetLayer) {
+		public override async UniTask OnLoadedPart(UIBase targetLayer)
+		{
 
+			m_TargetLayer = targetLayer;
 			Controller14_2 controller14_2 = targetLayer.RootTransform.GetComponent<Controller14_2>();
 			controller14_2.scroller = RootTransform.GetComponent<EnhancedScroller>();
 			controller14_2.Init();
-			controller14_2.scroller.Update();
+			controller14_2.scroller.ReloadData();
+			controller14_2.scroller.cellViewInstantiated = CellViewInstantiated;
+			// controller14_2.scroller.Update();
 			
 			// UIPartの追加先を決定する
 			Transform layer = targetLayer.RootTransform.Find("Layer");
@@ -84,15 +86,16 @@ namespace DM {
 			
 			// cellview
 			List<UIPart> parts = new List<UIPart>();
-			for (int i = 0; i < 5; i++)
+			int cellCount = controller14_2.scroller.GetActiveCellViewsCount();
+			for (int i = 0; i < cellCount; i++)
 			{
 				CellView14_2 cell = controller14_2.scroller.GetCellViewAtDataIndex(i) as CellView14_2;
-				parts.Add(new Sample14_2CellViewButton(i, cell.textButton));
-				parts.Add(new Sample14_2CellViewButton(i, cell.fixedIntegerButton));
-				parts.Add(new Sample14_2CellViewButton(i, cell.dataIntegerButton));		
+				parts.Add(new Sample14_2CellViewButton(cell.textButton));
+				parts.Add(new Sample14_2CellViewButton(cell.fixedIntegerButton));
+				parts.Add(new Sample14_2CellViewButton(cell.dataIntegerButton));		
 			}
 
-			UIController.Instance.AttachParts(targetLayer, parts);	
+			await UIController.Instance.YieldAttachParts(targetLayer, parts);	
 		}
 
 		public override bool OnClick(TouchEvent touch, UISound uiSound) {
@@ -101,15 +104,26 @@ namespace DM {
 
 			return true;
 		}
+
+		private void CellViewInstantiated(EnhancedScroller scroller, EnhancedScrollerCellView cellView)
+		{
+			List<UIPart> parts = new List<UIPart>();
+
+			CellView14_2 cell = cellView as CellView14_2;
+			parts.Add(new Sample14_2CellViewButton(cell.textButton));
+			parts.Add(new Sample14_2CellViewButton(cell.fixedIntegerButton));
+			parts.Add(new Sample14_2CellViewButton(cell.dataIntegerButton));
+
+			UIController.Instance.AttachParts(m_TargetLayer, parts);	
+		}
 	}
 	
+
+	
+
+	
 	class Sample14_2CellViewButton : UIPart {
-
-		private int m_id = 0;
-
-		public Sample14_2CellViewButton(int id, GameObject buttonObject) : base(buttonObject.transform) {
-			m_id = id;
-		}
+		public Sample14_2CellViewButton(GameObject buttonObject) : base(buttonObject.transform) { }
 
 		public override async UniTask OnLoadedPart(UIBase targetLayer) {
 			// UIPartの追加先を決定する
@@ -120,9 +134,9 @@ namespace DM {
 		}
 
 		public override bool OnClick(TouchEvent touch, UISound uiSound) {
-			Debug.Log("push Sample14_2CellViewButton: " + m_id);
-			Debug.Log("Scene14 : All Right");
-
+			// TouchListenerを継承してGetComponentせずに済むようなクラスを作るのがいいか
+			var cell = touch.Listener.Part.RootTransform.parent.GetComponent<CellView14_2>();
+			Debug.Log($"{cell.someTextText.text}");
 			return true;
 		}
 	}
