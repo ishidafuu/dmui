@@ -11,7 +11,23 @@ namespace DM
 
         private int m_Generation = int.MaxValue;
 
-        public void SetLayerAndPart(UIBaseLayer layer, UIPart part)
+        private static int GetGeneration(Transform target, Object dest, int generation = 0)
+        {
+            while (true)
+            {
+                if (target == null || dest == null)
+                {
+                    return -1;
+                }
+
+                if (target == dest) return generation;
+
+                target = target.parent;
+                generation += 1;
+            }
+        }
+
+        public void SetPart(UIBaseLayer layer, UIPart part)
         {
             int generation = GetGeneration(transform, part.RootTransform);
             if (m_Generation < generation)
@@ -24,12 +40,16 @@ namespace DM
             m_Generation = generation;
         }
 
-        public void ClearLayerAndPart()
+        public void ClearPart()
         {
             Layer = null;
             Part = null;
             m_Generation = int.MaxValue;
         }
+
+        // -----------------------------------------------------------------------------------------------------------------------------------------
+        // イベントメソッド
+        // -----------------------------------------------------------------------------------------------------------------------------------------
 
         public void OnPointerClick(PointerEventData pointer)
         {
@@ -49,22 +69,6 @@ namespace DM
         public void OnDrag(PointerEventData pointer)
         {
             UIController.Instance.ListenTouch(this, EnumTouchType.Drag, pointer);
-        }
-
-        private static int GetGeneration(Transform target, Object dest, int generation = 0)
-        {
-            while (true)
-            {
-                if (target == null || dest == null)
-                {
-                    return -1;
-                }
-
-                if (target == dest) return generation;
-
-                target = target.parent;
-                generation += 1;
-            }
         }
     }
 }

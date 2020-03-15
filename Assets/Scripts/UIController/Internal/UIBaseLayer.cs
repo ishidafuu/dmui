@@ -27,7 +27,7 @@ namespace DM
         public EnumLayerState State { get; private set; }
         public int ScreenTouchOffCount { get; set; }
 
-        public UIBaseLayer(UIPart uiPart, Transform parent) : base(uiPart)
+        public UIBaseLayer(UIPart part, Transform parent) : base(part)
         {
             State　= EnumLayerState.None;
             m_Parent = parent;
@@ -104,6 +104,7 @@ namespace DM
             Base.RootTransform.SetParent(parent, false);
             Base.RootTransform.gameObject.SetActive(false);
 
+            // await UniTask.DelayFrame(10);
             await Base.OnLoadedBase();
             
             Setup();
@@ -366,7 +367,7 @@ namespace DM
 
             GameObject touchArea = CreateTouchPanel(LAYER_TOUCH_AREA_NAME);
             UILayerTouchListener listener = touchArea.AddComponent<UILayerTouchListener>();
-            listener.SetLayerAndPart(this, Base);
+            listener.SetPart(this, Base);
 
             return touchArea;
         }

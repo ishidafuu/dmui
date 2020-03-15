@@ -115,30 +115,37 @@ namespace DM
         // -----------------------------------------------------------------------------------------------------------------------------------------
 
         // -----------------------------------------------------------------------------------------------------------------------------------------
-        // virtual methods
+        // イベントメソッド
+        // -----------------------------------------------------------------------------------------------------------------------------------------
 
+        // ロード完了
         public virtual async UniTask OnLoadedPart(UIBase targetLayer) { }
 
+        // クリック
         public virtual bool OnClick(TouchEvent touch, UISound uiSound)
         {
             return false;
         }
 
+        // タッチ開始
         public virtual bool OnTouchDown(TouchEvent touch)
         {
             return false;
         }
 
+        // タッチ終了
         public virtual bool OnTouchUp(TouchEvent touch)
         {
             return false;
         }
 
+        // ドラッグ
         public virtual bool OnDrag(TouchEvent touch)
         {
             return false;
         }
 
+        // 破棄
         protected virtual void OnDestroy() { }
     }
 }

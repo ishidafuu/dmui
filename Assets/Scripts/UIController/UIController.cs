@@ -141,21 +141,21 @@ namespace DM
         // -----------------------------------------------------------------------------------------------------------------------------------------
 
         // レイヤ追加
-        public void AddFront(UIBase uiBase)
+        public void AddFront(UIBase layerUIBase)
         {
-            if (uiBase == null)
+            if (layerUIBase == null)
             {
                 return;
             }
 
-            UIBaseLayer layer = new UIBaseLayer(uiBase, m_UILayers);
+            UIBaseLayer layer = new UIBaseLayer(layerUIBase, m_UILayers);
 
             if (layer.Base.IsLoadingWithoutFade())
             {
                 layer?.Load();    
             }
 
-            if (m_FadeController.IsShouldFadeByAdding(uiBase, m_LayerController))
+            if (m_FadeController.IsShouldFadeByAdding(layerUIBase, m_LayerController))
             {
                 m_FadeController.FadeIn(Implements, m_AddingLayerList, AddFront);
             }

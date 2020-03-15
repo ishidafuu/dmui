@@ -66,7 +66,7 @@ namespace DM
 
             foreach (UITouchListener item in m_Listeners)
             {
-                item.ClearLayerAndPart();
+                item.ClearPart();
             }
 
             m_Listeners = null;
@@ -74,12 +74,22 @@ namespace DM
 
         protected void CollectComponents(GameObject target, UIBaseLayer layer)
         {
+            CollectTouchListener(target, layer);
+
+            CollectAnimator(target);
+        }
+
+        private void CollectTouchListener(GameObject target, UIBaseLayer layer)
+        {
             m_Listeners = target.GetComponentsInChildren<UITouchListener>();
             foreach (UITouchListener item in m_Listeners)
             {
-                item.SetLayerAndPart(layer, Part);
+                item.SetPart(layer, Part);
             }
+        }
 
+        private void CollectAnimator(GameObject target)
+        {
             Animator[] animators = target.GetComponentsInChildren<Animator>();
             Part.Animators = animators;
         }
