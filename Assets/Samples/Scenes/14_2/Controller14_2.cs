@@ -11,7 +11,6 @@ namespace DM {
     public class Controller14_2 : MonoBehaviour, IEnhancedScrollerDelegate
     {
         private List<Data> _data;
-
         public EnhancedScroller scroller;
         // ヒエラルキー上ではなく、Resourceフォルダ内のPrefabを指定
         public EnhancedScrollerCellView cellViewPrefab;
@@ -23,7 +22,6 @@ namespace DM {
             LoadData();
         }
 
-        
         private void LoadData()
         {
             _data = new List<Data>();
@@ -52,16 +50,12 @@ namespace DM {
         public EnhancedScrollerCellView GetCellView(EnhancedScroller scroller, int dataIndex, int cellIndex)
         {
             CellView14_2 cellView142 = scroller.GetCellView(cellViewPrefab) as CellView14_2;
-
             // Set handlers for the cell views delegates.
             // Each handler will respond to a different type of event
             cellView142.cellButtonTextClicked = CellButtonTextClicked;
             cellView142.cellButtonFixedIntegerClicked = CellButtonFixedIntegerClicked;
             cellView142.cellButtonDataIntegerClicked = CellButtonDataIntegerClicked;
-
             cellView142.SetData(_data[dataIndex]);
-
-
             return cellView142;
         }
 

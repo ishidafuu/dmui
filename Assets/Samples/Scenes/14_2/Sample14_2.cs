@@ -15,143 +15,151 @@ using UniRx.Async;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace DM {
+namespace DM
+{
+    public class Sample14_2 : MonoBehaviour
+    {
+        void Start()
+        {
+            UIController.SetImplement(new PrefabLoader(), new Sounder(), new FadeCreator());
+            UIController.Instance.AddFront(new Sample14_2Scene());
+        }
+    }
 
-	public class Sample14_2 : MonoBehaviour {
+    class Sample14_2Scene : UIBase
+    {
+        public Sample14_2Scene() : base("UISceneA_2", EnumUIGroup.Scene) { }
 
-		void Start () {
-			UIController.SetImplement(new PrefabLoader(), new Sounder(), new FadeCreator());
-			UIController.Instance.AddFront(new Sample14_2Scene());
-		}
-	}
+        public override async UniTask OnLoadedBase()
+        {
+            RootTransform.Find("Layer/ButtonTop").gameObject.SetActive(false);
+            RootTransform.Find("Layer/ButtonCenter").gameObject.SetActive(false);
+            RootTransform.Find("Layer/ButtonBottom").gameObject.SetActive(false);
+            List<UIPart> parts = new List<UIPart>
+            {
+                new Sample14_2Scroller()
+            };
 
-	class Sample14_2Scene : UIBase {
+            await UIController.Instance.YieldAttachParts(this, parts);
+        }
+    }
 
-		public Sample14_2Scene() : base("UISceneA_2", EnumUIGroup.Scene) {
-		}
+    class Sample14_2Scroller : UIPart
+    {
+        private UIBase m_TargetLayer;
 
-		public override async UniTask OnLoadedBase()
-		{
-			// var controller14_2 = RootTransform.GetComponent<Controller14_2>();
-			// controller14_2.Init();
-			
-			RootTransform.Find("Layer/ButtonTop"   ).gameObject.SetActive(false);
-			RootTransform.Find("Layer/ButtonCenter").gameObject.SetActive(false);
-			RootTransform.Find("Layer/ButtonBottom").gameObject.SetActive(false);
+        public Sample14_2Scroller() : base("Scroller") { }
 
+        public override async UniTask OnLoadedPart(UIBase targetLayer)
+        {
+            m_TargetLayer = targetLayer;
+            Controller14_2 controller14_2 = targetLayer.RootTransform.GetComponent<Controller14_2>();
+            controller14_2.scroller = RootTransform.GetComponent<EnhancedScroller>();
+            controller14_2.Init();
+            controller14_2.scroller.ReloadData();
+            // 新規セルビュー追加時デリゲート
+            controller14_2.scroller.cellViewInstantiated = CellViewInstantiated;
 
-			List<UIPart> parts = new List<UIPart>
-			{
-				new Sample14_2Scroller()
-			};
+            // UIPartの追加先を決定する
+            Transform layer = targetLayer.RootTransform.Find("Layer");
+            RootTransform.SetParent(layer);
+            RootTransform.localPosition = new Vector3(200, 500, 0);
+            RootTransform.localScale = Vector3.one;
 
-			await UIController.Instance.YieldAttachParts(this, parts);
-		}
-	}
+            // cellview
+            List<UIPart> parts = new List<UIPart>();
+            int cellCount = controller14_2.scroller.GetActiveCellViewsCount();
+            for (int i = 0; i < cellCount; i++)
+            {
+                CellView14_2 cell = controller14_2.scroller.GetCellViewAtDataIndex(i) as CellView14_2;
+                if (cell == null)
+                {
+                    continue;
+                }
 
-	class Sample14_2Scroller : UIPart
-	{
-		private UIBase m_TargetLayer;
+                parts.Add(new Sample14_2CellViewButton(cell, cell.textButton));
+                parts.Add(new Sample14_2CellViewButton(cell, cell.fixedIntegerButton));
+                parts.Add(new Sample14_2CellViewButton(cell, cell.dataIntegerButton));
+            }
 
-		public Sample14_2Scroller() : base("Scroller") { }
-		
-		public override async UniTask OnLoadedPart(UIBase targetLayer)
-		{
+            // 追加待ち
+            await UIController.Instance.YieldAttachParts(targetLayer, parts);
+        }
 
-			m_TargetLayer = targetLayer;
-			Controller14_2 controller14_2 = targetLayer.RootTransform.GetComponent<Controller14_2>();
-			controller14_2.scroller = RootTransform.GetComponent<EnhancedScroller>();
-			controller14_2.Init();
-			controller14_2.scroller.ReloadData();
-			// 新規セルビュー追加時デリゲート
-			controller14_2.scroller.cellViewInstantiated = CellViewInstantiated;
+        public override bool OnClick(TouchEvent touch, UISound uiSound)
+        {
+            Debug.Log("push Sample14_2Scroller: ");
+            Debug.Log("Scene14 : All Right");
+            return true;
+        }
 
-			// UIPartの追加先を決定する
-			Transform layer = targetLayer.RootTransform.Find("Layer");
-			RootTransform.SetParent(layer);
-			RootTransform.localPosition = new Vector3(200, 500,0);
-			RootTransform.localScale = Vector3.one;
-			
-			// cellview
-			List<UIPart> parts = new List<UIPart>();
-			int cellCount = controller14_2.scroller.GetActiveCellViewsCount();
-			for (int i = 0; i < cellCount; i++)
-			{
-				CellView14_2 cell = controller14_2.scroller.GetCellViewAtDataIndex(i) as CellView14_2;
-				parts.Add(new Sample14_2CellViewButton(cell, cell.textButton));
-				parts.Add(new Sample14_2CellViewButton(cell, cell.fixedIntegerButton));
-				parts.Add(new Sample14_2CellViewButton(cell, cell.dataIntegerButton));		
-			}
+        // 新規セルビュー追加時デリゲート
+        private void CellViewInstantiated(EnhancedScroller scroller, EnhancedScrollerCellView cellView)
+        {
+            CellView14_2 cell = cellView as CellView14_2;
+            if (cell == null)
+            {
+                return;
+            }
 
-			// 追加待ち
-			await UIController.Instance.YieldAttachParts(targetLayer, parts);	
-		}
+            List<UIPart> parts = new List<UIPart>
+            {
+                new Sample14_2CellViewButton(cell, cell.textButton),
+                new Sample14_2CellViewButton(cell, cell.fixedIntegerButton),
+                new Sample14_2CellViewButton(cell, cell.dataIntegerButton)
+            };
+            // 即時追加
+            UIController.Instance.AttachParts(m_TargetLayer, parts);
+        }
+    }
 
-		public override bool OnClick(TouchEvent touch, UISound uiSound) {
-			Debug.Log("push Sample14_2Scroller: ");
-			Debug.Log("Scene14 : All Right");
+    class Sample14_2CellViewButton : UIPart
+    {
+        private readonly CellView14_2 m_cellView14_2;
 
-			return true;
-		}
+        public Sample14_2CellViewButton(CellView14_2 cellView14_2, GameObject buttonObject)
+            : base(buttonObject.transform)
+        {
+            m_cellView14_2 = cellView14_2;
+        }
 
-		// 新規セルビュー追加時デリゲート
-		private void CellViewInstantiated(EnhancedScroller scroller, EnhancedScrollerCellView cellView)
-		{
-			List<UIPart> parts = new List<UIPart>();
+        public override async UniTask OnLoadedPart(UIBase targetLayer) { }
 
-			CellView14_2 cell = cellView as CellView14_2;
-			parts.Add(new Sample14_2CellViewButton(cell, cell.textButton));
-			parts.Add(new Sample14_2CellViewButton(cell, cell.fixedIntegerButton));
-			parts.Add(new Sample14_2CellViewButton(cell, cell.dataIntegerButton));
+        public override bool OnClick(TouchEvent touch, UISound uiSound)
+        {
+            // TouchListenerを継承してGetComponentせずに済むようなクラスを作ってもいいかも
+            Debug.Log($"{m_cellView14_2.someTextText.text}");
+            return true;
+        }
+    }
 
-			// 即時追加
-			UIController.Instance.AttachParts(m_TargetLayer, parts);	
-		}
-	}
-	
-	class Sample14_2CellViewButton : UIPart
-	{
-		private readonly CellView14_2 m_cellView14_2;
+    class Sample14_2Button : UIPart
+    {
+        private readonly int m_id = 0;
 
-		public Sample14_2CellViewButton(CellView14_2 cellView14_2, GameObject buttonObject) 
-			: base(buttonObject.transform)
-		{
-			m_cellView14_2 = cellView14_2;
-		}
+        public Sample14_2Button(int id) : base("UIButton_2")
+        {
+            m_id = id;
+        }
 
-		public override async UniTask OnLoadedPart(UIBase targetLayer) {　}
+        public override async UniTask OnLoadedPart(UIBase targetLayer)
+        {
+            Text text = RootTransform.Find("Text").GetComponent<Text>();
+            text.text = m_id.ToString();
 
-		public override bool OnClick(TouchEvent touch, UISound uiSound) {
-			// TouchListenerを継承してGetComponentせずに済むようなクラスを作ってもいいかも
-			Debug.Log($"{m_cellView14_2.someTextText.text}");
-			return true;
-		}
-	}
-	
-	class Sample14_2Button : UIPart {
+            // UIPartの追加先を決定する
+            Transform layer = targetLayer.RootTransform.Find("Layer");
+            RootTransform.SetParent(layer);
+            RootTransform.localPosition = new Vector3(426, 100 * m_id, 0);
+            RootTransform.localScale = Vector3.one;
+        }
 
-		private readonly int m_id = 0;
+        public override bool OnClick(TouchEvent touch, UISound uiSound)
+        {
+            Debug.Log("push button: " + m_id);
+            Debug.Log("Scene14 : All Right");
 
-		public Sample14_2Button(int id) : base("UIButton_2") {
-			m_id = id;
-		}
-
-		public override async UniTask OnLoadedPart(UIBase targetLayer) {
-			Text text = RootTransform.Find("Text").GetComponent<Text>();
-			text.text = m_id.ToString();
-
-			// UIPartの追加先を決定する
-			Transform layer = targetLayer.RootTransform.Find("Layer");
-			RootTransform.SetParent(layer);
-			RootTransform.localPosition = new Vector3(426, 100 * m_id, 0);
-			RootTransform.localScale = Vector3.one;
-		}
-
-		public override bool OnClick(TouchEvent touch, UISound uiSound) {
-			Debug.Log("push button: " + m_id);
-			Debug.Log("Scene14 : All Right");
-
-			return true;
-		}
-	}
+            return true;
+        }
+    }
 }
