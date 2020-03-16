@@ -78,9 +78,9 @@ namespace DM {
 			for (int i = 0; i < cellCount; i++)
 			{
 				CellView14_2 cell = controller14_2.scroller.GetCellViewAtDataIndex(i) as CellView14_2;
-				parts.Add(new Sample14_2CellViewButton(cell.textButton));
-				parts.Add(new Sample14_2CellViewButton(cell.fixedIntegerButton));
-				parts.Add(new Sample14_2CellViewButton(cell.dataIntegerButton));		
+				parts.Add(new Sample14_2CellViewButton(cell, cell.textButton));
+				parts.Add(new Sample14_2CellViewButton(cell, cell.fixedIntegerButton));
+				parts.Add(new Sample14_2CellViewButton(cell, cell.dataIntegerButton));		
 			}
 
 			// 追加待ち
@@ -100,24 +100,30 @@ namespace DM {
 			List<UIPart> parts = new List<UIPart>();
 
 			CellView14_2 cell = cellView as CellView14_2;
-			parts.Add(new Sample14_2CellViewButton(cell.textButton));
-			parts.Add(new Sample14_2CellViewButton(cell.fixedIntegerButton));
-			parts.Add(new Sample14_2CellViewButton(cell.dataIntegerButton));
+			parts.Add(new Sample14_2CellViewButton(cell, cell.textButton));
+			parts.Add(new Sample14_2CellViewButton(cell, cell.fixedIntegerButton));
+			parts.Add(new Sample14_2CellViewButton(cell, cell.dataIntegerButton));
 
 			// 即時追加
 			UIController.Instance.AttachParts(m_TargetLayer, parts);	
 		}
 	}
 	
-	class Sample14_2CellViewButton : UIPart {
-		public Sample14_2CellViewButton(GameObject buttonObject) : base(buttonObject.transform) { }
+	class Sample14_2CellViewButton : UIPart
+	{
+		private readonly CellView14_2 m_cellView14_2;
+
+		public Sample14_2CellViewButton(CellView14_2 cellView14_2, GameObject buttonObject) 
+			: base(buttonObject.transform)
+		{
+			m_cellView14_2 = cellView14_2;
+		}
 
 		public override async UniTask OnLoadedPart(UIBase targetLayer) {　}
 
 		public override bool OnClick(TouchEvent touch, UISound uiSound) {
-			// TouchListenerを継承してGetComponentせずに済むようなクラスを作るのがいいか
-			var cell = touch.Listener.Part.RootTransform.parent.GetComponent<CellView14_2>();
-			Debug.Log($"{cell.someTextText.text}");
+			// TouchListenerを継承してGetComponentせずに済むようなクラスを作ってもいいかも
+			Debug.Log($"{m_cellView14_2.someTextText.text}");
 			return true;
 		}
 	}
