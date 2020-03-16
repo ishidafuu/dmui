@@ -42,14 +42,9 @@ namespace DM {
 
 			List<UIPart> parts = new List<UIPart>
 			{
-				new Sample14_2Scroller(0)
+				new Sample14_2Scroller()
 			};
 
-
-			// const int num = 4;
-			// for (int i = 1; i <= num; i++) {
-			// 	parts.Add(new Sample14_2Button(i));
-			// }
 			await UIController.Instance.YieldAttachParts(this, parts);
 		}
 	}
@@ -57,16 +52,9 @@ namespace DM {
 	class Sample14_2Scroller : UIPart
 	{
 		private UIBase m_TargetLayer;
-		private int m_id = 0;
 
-		public Sample14_2Scroller(int id) : base("Scroller") {
-			m_id = id;
-		}
+		public Sample14_2Scroller() : base("Scroller") { }
 		
-		// public Sample14_2Button(int id, Transform buttonTransform) : base(buttonTransform) {
-		// 	m_id = id;
-		// }
-
 		public override async UniTask OnLoadedPart(UIBase targetLayer)
 		{
 
@@ -75,9 +63,9 @@ namespace DM {
 			controller14_2.scroller = RootTransform.GetComponent<EnhancedScroller>();
 			controller14_2.Init();
 			controller14_2.scroller.ReloadData();
+			// 新規セルビュー追加時デリゲート
 			controller14_2.scroller.cellViewInstantiated = CellViewInstantiated;
-			// controller14_2.scroller.Update();
-			
+
 			// UIPartの追加先を決定する
 			Transform layer = targetLayer.RootTransform.Find("Layer");
 			RootTransform.SetParent(layer);
@@ -95,6 +83,7 @@ namespace DM {
 				parts.Add(new Sample14_2CellViewButton(cell.dataIntegerButton));		
 			}
 
+			// 追加待ち
 			await UIController.Instance.YieldAttachParts(targetLayer, parts);	
 		}
 
@@ -105,6 +94,7 @@ namespace DM {
 			return true;
 		}
 
+		// 新規セルビュー追加時デリゲート
 		private void CellViewInstantiated(EnhancedScroller scroller, EnhancedScrollerCellView cellView)
 		{
 			List<UIPart> parts = new List<UIPart>();
@@ -114,24 +104,15 @@ namespace DM {
 			parts.Add(new Sample14_2CellViewButton(cell.fixedIntegerButton));
 			parts.Add(new Sample14_2CellViewButton(cell.dataIntegerButton));
 
+			// 即時追加
 			UIController.Instance.AttachParts(m_TargetLayer, parts);	
 		}
 	}
 	
-
-	
-
-	
 	class Sample14_2CellViewButton : UIPart {
 		public Sample14_2CellViewButton(GameObject buttonObject) : base(buttonObject.transform) { }
 
-		public override async UniTask OnLoadedPart(UIBase targetLayer) {
-			// UIPartの追加先を決定する
-			// Transform layer = targetLayer.RootTransform.Find("Layer");
-			// RootTransform.SetParent(layer);
-			// RootTransform.localPosition = new Vector3(0, 0, 0);
-			// RootTransform.localScale = Vector3.one;
-		}
+		public override async UniTask OnLoadedPart(UIBase targetLayer) {　}
 
 		public override bool OnClick(TouchEvent touch, UISound uiSound) {
 			// TouchListenerを継承してGetComponentせずに済むようなクラスを作るのがいいか
@@ -143,7 +124,7 @@ namespace DM {
 	
 	class Sample14_2Button : UIPart {
 
-		private int m_id = 0;
+		private readonly int m_id = 0;
 
 		public Sample14_2Button(int id) : base("UIButton_2") {
 			m_id = id;

@@ -219,7 +219,7 @@ namespace DM
             }
         }
         
-        // UIパーツ追加（処理待ち（OnLoadedBase内で呼ばれる））
+        // UIパーツ追加（完了待ち（OnLoadedBase内で呼ばれる））
         public async UniTask YieldAttachParts(UIBase targetUIBase, IEnumerable<UIPart> parts)
         {
             UIBaseLayer layer = m_LayerController.Find(targetUIBase);
@@ -231,7 +231,7 @@ namespace DM
             await layer.AttachParts(parts);
         }
 
-        // 即時UIパーツ追加
+        // 即時UIパーツ追加（完了待たず）
         public void AttachParts(UIBase uiBase, IEnumerable<UIPart> parts)
         {
             UIBaseLayer layer = m_LayerController.Find(uiBase);
