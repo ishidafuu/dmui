@@ -88,7 +88,7 @@ namespace DM {
 		}
 
 		public override bool OnClick(TouchEvent touch, UISound uiSound) {
-			Debug.Log("push Sample14_2Scroller: " + m_id);
+			Debug.Log("push Sample14_2Scroller: ");
 			Debug.Log("Scene14 : All Right");
 
 			return true;
