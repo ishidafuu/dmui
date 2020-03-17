@@ -16,8 +16,13 @@ namespace DM
 
         private static void Test2()
         {
-            var db = MasterDataDB.DB;
+            var db = MasterDataDb.Db;
 
+            foreach (var person in db.PersonTable.All)
+            {
+                Debug.Log($"Person Age: {person.Age}");
+            }
+            
             foreach (var skill in db.SkillTable.All)
             {
                 Debug.Log($"Skill Name: {skill.SkillName}");
