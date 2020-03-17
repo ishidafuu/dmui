@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
+using MessagePack;
 using UnityEngine.Networking;
 using Debug = UnityEngine.Debug;
 
@@ -49,6 +50,11 @@ namespace DM
             InitRequestHeader();
 
             string requestJson = m_Serializer.Serialize(param);
+            
+            MessagePackTest asdf = new MessagePackTest();
+            byte[] asdf2 = MessagePackSerializer.Serialize(asdf);
+            asdf = MessagePackSerializer.Deserialize<MessagePackTest>(asdf2);
+            
 
             foreach (var item in m_RequestHeaderParams)
             {
