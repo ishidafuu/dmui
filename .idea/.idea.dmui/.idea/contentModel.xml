@@ -207,6 +207,19 @@
             <e p="MasterMemoryCodeGenerator.cs" t="Include" />
             <e p="MessagePackCodeGenerator.cs" t="Include" />
           </e>
+          <e p="Generated" t="Include">
+            <e p="DatabaseBuilder.cs" t="Include" />
+            <e p="ImmutableBuilder.cs" t="Include" />
+            <e p="MasterMemoryResolver.cs" t="Include" />
+            <e p="MemoryDatabase.cs" t="Include" />
+            <e p="MessagePack_Formatters_DM_GenderFormatter.cs" t="Include" />
+            <e p="MessagePack_Formatters_DM_MessagePackTestFormatter.cs" t="Include" />
+            <e p="MessagePack_Formatters_DM_PersonFormatter.cs" t="Include" />
+            <e p="MessagePack_Resolvers_GeneratedResolver.cs" t="Include" />
+            <e p="Tables" t="Include">
+              <e p="PersonTable.cs" t="Include" />
+            </e>
+          </e>
           <e p="http" t="Include">
             <e p="CryptographicProtection.cs" t="Include" />
             <e p="header_param" t="Include">
@@ -385,10 +398,11 @@
             <e p="Utilities.cs" t="Include" />
           </e>
           <e p="ResolverRegister" t="Include">
-            <e p="MessagePackResolverRegister.cs" t="Include" />
+            <e p="Initializer.cs" t="Include" />
           </e>
           <e p="Tables" t="Include">
             <e p="Person.cs" t="Include" />
+            <e p="TableTest.cs" t="Include" />
           </e>
           <e p="UIComponent" t="Include">
             <e p="UIBase.cs" t="Include" />

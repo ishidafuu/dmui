@@ -47,7 +47,7 @@ namespace MasterData
         {
             lookup = new global::System.Collections.Generic.Dictionary<Type, int>(1)
             {
-                {typeof(Person[]), 0 },
+                {typeof(global::DM.Person[]), 0 },
             };
         }
 
