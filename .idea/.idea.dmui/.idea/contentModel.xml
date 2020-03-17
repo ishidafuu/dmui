@@ -406,6 +406,7 @@
             <e p="Initializer.cs" t="Include" />
           </e>
           <e p="Tables" t="Include">
+            <e p="MasterDataDB.cs" t="Include" />
             <e p="Person.cs" t="Include" />
             <e p="Skill.cs" t="Include" />
             <e p="SkillParameter.cs" t="Include" />
