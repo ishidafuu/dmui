@@ -204,7 +204,8 @@
             <e p="UiDefine.cs" t="Include" />
           </e>
           <e p="Editor" t="Include">
-            <e p="CodeGeneratorWindow.cs" t="Include" />
+            <e p="MasterMemoryCodeGenerator.cs" t="Include" />
+            <e p="MessagePackCodeGenerator.cs" t="Include" />
           </e>
           <e p="Generated" t="Include">
             <e p="MessagePack_Formatters_MessagePackTestFormatter.cs" t="Include" />
@@ -387,6 +388,9 @@
               <e p="UnityResolver.cs" t="Include" />
             </e>
             <e p="Utilities.cs" t="Include" />
+          </e>
+          <e p="Tables" t="Include">
+            <e p="Person.cs" t="Include" />
           </e>
           <e p="UIComponent" t="Include">
             <e p="UIBase.cs" t="Include" />
