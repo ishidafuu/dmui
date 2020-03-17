@@ -242,6 +242,38 @@
             <e p="UiStateBehaviour.cs" t="Include" />
             <e p="UITouchController.cs" t="Include" />
           </e>
+          <e p="MasterMemory" t="Include">
+            <e p="Annotations" t="Include">
+              <e p="Attributes.cs" t="Include" />
+            </e>
+            <e p="DatabaseBuilderBase.cs" t="Include" />
+            <e p="ImmutableBuilderBase.cs" t="Include" />
+            <e p="Internal" t="Include">
+              <e p="BinarySearch.cs" t="Include" />
+              <e p="ByteBufferWriter.cs" t="Include" />
+              <e p="ExpandableArray.cs" t="Include" />
+              <e p="HeaderFormatterResolver.cs" t="Include" />
+              <e p="InternStringResolver.cs" t="Include" />
+            </e>
+            <e p="IValidatable.cs" t="Include" />
+            <e p="MemoryDatabaseBase.cs" t="Include" />
+            <e p="Meta" t="Include">
+              <e p="Meta.cs" t="Include" />
+            </e>
+            <e p="RangeView.cs" t="Include" />
+            <e p="TableBase.cs" t="Include" />
+            <e p="Validation" t="Include">
+              <e p="ExpressionDumper.cs" t="Include" />
+              <e p="ExpressionParameterNameModifier.cs" t="Include" />
+              <e p="ITableUniqueValidate.cs" t="Include" />
+              <e p="ReferenceSet.cs" t="Include" />
+              <e p="ValidatableSet.cs" t="Include" />
+              <e p="ValidatableSet.Sequential.cs" t="Include" />
+              <e p="ValidateResult.cs" t="Include" />
+              <e p="ValidationDatabase.cs" t="Include" />
+              <e p="Validator.cs" t="Include" />
+            </e>
+          </e>
           <e p="MessagePack" t="Include">
             <e p="Annotations" t="Include">
               <e p="Attributes.cs" t="Include" />
