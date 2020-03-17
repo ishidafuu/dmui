@@ -99,34 +99,36 @@ namespace DM
 
         private IEnumerator InnerRetry()
         {
-            using var www = UnityWebRequest.Post(m_ApiUrl, m_FormSection);
-            www.timeout = m_TimeOut;
-
-            // Headerデータをセットする
-            foreach (var item in m_RequestHeaderParams)
-                www.SetRequestHeader(item.valueName, item.cacheHeaderValue);
-
-            Stopwatch stop = new Stopwatch();
-            stop.Start();
-
-            yield return www.SendWebRequest();
-
-            int responseTime = (int)stop.ElapsedMilliseconds;
-
-            HttpResponsePack res = new HttpResponsePack
+            using (var www = UnityWebRequest.Post(m_ApiUrl, m_FormSection))
             {
-                m_IsHttpError = www.isHttpError,
-                m_IsNetworkError = www.isNetworkError,
-                m_ResponseCode = (int)www.responseCode,
-                m_Data = www.downloadHandler?.text,
-                m_ResponseTime = responseTime,
-            };
+                www.timeout = m_TimeOut;
 
-            Debug.Log(
-                $"<color=blue>SEND_RECEIVE:{responseTime}milli, httpCode:{www.responseCode}, error:{www.error}</color>");
-            Debug.Log($"<color=blue>responseJson:{res.m_Data}</color>");
+                // Headerデータをセットする
+                foreach (var item in m_RequestHeaderParams)
+                    www.SetRequestHeader(item.valueName, item.cacheHeaderValue);
 
-            m_ResponseDataDelegate(this, ref res);
+                Stopwatch stop = new Stopwatch();
+                stop.Start();
+
+                yield return www.SendWebRequest();
+
+                int responseTime = (int)stop.ElapsedMilliseconds;
+
+                HttpResponsePack res = new HttpResponsePack
+                {
+                    m_IsHttpError = www.isHttpError,
+                    m_IsNetworkError = www.isNetworkError,
+                    m_ResponseCode = (int)www.responseCode,
+                    m_Data = www.downloadHandler?.text,
+                    m_ResponseTime = responseTime,
+                };
+
+                Debug.Log(
+                    $"<color=blue>SEND_RECEIVE:{responseTime}milli, httpCode:{www.responseCode}, error:{www.error}</color>");
+                Debug.Log($"<color=blue>responseJson:{res.m_Data}</color>");
+
+                m_ResponseDataDelegate(this, ref res);
+            }
         }
     }
 }

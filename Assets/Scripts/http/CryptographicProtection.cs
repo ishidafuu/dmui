@@ -56,22 +56,25 @@ namespace DM
         /// <param name="outIv"></param>
         private static void Encrypt(byte[] inByte, byte[] aesKey, out byte[] outByte, out byte[] outIv)
         {
-            using AesManaged aes = new AesManaged
+            
+            using (AesManaged aes = new AesManaged())
             {
-                KeySize = 128, 
-                BlockSize = 128, 
-                Mode = CipherMode.CBC, 
-                Padding = PaddingMode.PKCS7
+                aes.KeySize = 128;
+                aes.BlockSize = 128;
+                aes.Mode = CipherMode.CBC;
+                aes.Padding = PaddingMode.PKCS7;
+                aes.GenerateIV();
+                aes.Key = aesKey;
+                
+                using(ICryptoTransform transform = aes.CreateEncryptor())
+                {
+                    byte[] encryptedByte = transform.TransformFinalBlock(inByte, 0, inByte.Length);
+
+                    outByte = encryptedByte;
+                    outIv = aes.IV;
+                }
             };
-            aes.GenerateIV();
 
-            aes.Key = aesKey;
-
-            using ICryptoTransform transform = aes.CreateEncryptor();
-            byte[] encryptedByte = transform.TransformFinalBlock(inByte, 0, inByte.Length);
-
-            outByte = encryptedByte;
-            outIv = aes.IV;
         }
 
         /// <summary>
@@ -255,26 +258,26 @@ namespace DM
         /// <returns></returns>
         private static string CryptId
         {
-            get => PlayerPrefs.GetString(_crypt, string.Empty);
-            set => PlayerPrefs.SetString(_crypt, value);
+            get { return PlayerPrefs.GetString(_crypt, string.Empty); }
+            set { PlayerPrefs.SetString(_crypt, value); }
         }
 
 
-        public static bool IsFinishConfirmAge() => PlayerPrefs.GetInt("confirmAge", 0) != 0;
+        static public bool IsFinishConfirmAge() => PlayerPrefs.GetInt("confirmAge", 0) != 0;
 
-        public static void CreateFinishConfirmAge()
+        static public void CreateFinishConfirmAge()
         {
             PlayerPrefs.SetInt("confirmAge", 1);
             PlayerPrefs.Save();
         }
 
-        public static void SaveAgreement()
+        static public void SaveAgreement()
         {
             PlayerPrefs.SetInt("agreement", 1);
             PlayerPrefs.Save();
         }
 
-        public static bool IsAgreementOk() => PlayerPrefs.GetInt("agreement", 0) != 0;
+        static public bool IsAgreementOk() => PlayerPrefs.GetInt("agreement", 0) != 0;
 
         /// <summary>
         /// 引き継ぎ登録済みか?
@@ -285,6 +288,7 @@ namespace DM
         /// <summary>
         /// 引き継ぎ状態を更新
         /// </summary>
+        /// <param name="isDone"></param>
         public static void TransferRegister()
         {
             PlayerPrefs.SetInt("transfer", 1);
