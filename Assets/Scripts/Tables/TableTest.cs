@@ -44,7 +44,7 @@ namespace DM
             var db = new MemoryDatabase(data);
     
             // .PersonTable.FindByPersonId is fully typed by code-generation.
-            Person person = db.PersonTable.FindByPersonId(10);
+            Person person = db.PersonTable.FindByPersonId(1);
     
             // Multiple key is also typed(***And * **), Return value is multiple if key is marked with `NonUnique`.
             RangeView<Person> result = db.PersonTable.FindByGenderAndAge((Gender.Female, 23));
