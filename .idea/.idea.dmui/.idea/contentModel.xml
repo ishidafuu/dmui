@@ -209,6 +209,7 @@
           <e p="Generated" t="Include">
             <e p="MessagePack_Formatters_MessagePackTestFormatter.cs" t="Include" />
             <e p="MessagePack_Resolvers_GeneratedResolver.cs" t="Include" />
+            <e p="MessagePackResolverRegister.cs" t="Include" />
           </e>
           <e p="http" t="Include">
             <e p="CryptographicProtection.cs" t="Include" />
