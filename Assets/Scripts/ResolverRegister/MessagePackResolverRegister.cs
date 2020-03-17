@@ -10,7 +10,7 @@ namespace DM
         private void Start()
         {
             StaticCompositeResolver.Instance.Register(
-                GeneratedResolver.Instance,
+                // GeneratedResolver.Instance,
                 UnityResolver.Instance,
                 BuiltinResolver.Instance,
                 AttributeFormatterResolver.Instance,

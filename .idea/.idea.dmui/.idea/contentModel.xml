@@ -207,11 +207,6 @@
             <e p="MasterMemoryCodeGenerator.cs" t="Include" />
             <e p="MessagePackCodeGenerator.cs" t="Include" />
           </e>
-          <e p="Generated" t="Include">
-            <e p="MessagePack_Formatters_MessagePackTestFormatter.cs" t="Include" />
-            <e p="MessagePack_Resolvers_GeneratedResolver.cs" t="Include" />
-            <e p="MessagePackResolverRegister.cs" t="Include" />
-          </e>
           <e p="http" t="Include">
             <e p="CryptographicProtection.cs" t="Include" />
             <e p="header_param" t="Include">
@@ -388,6 +383,9 @@
               <e p="UnityResolver.cs" t="Include" />
             </e>
             <e p="Utilities.cs" t="Include" />
+          </e>
+          <e p="ResolverRegister" t="Include">
+            <e p="MessagePackResolverRegister.cs" t="Include" />
           </e>
           <e p="Tables" t="Include">
             <e p="Person.cs" t="Include" />

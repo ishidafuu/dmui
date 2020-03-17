@@ -22,7 +22,6 @@
       <Path>GeneratorTools</Path>
       <Path>Library</Path>
       <Path>Logs</Path>
-      <Path>MasterMemory.Generator</Path>
       <Path>Temp</Path>
       <Path>obj</Path>
     </explicitExcludes>

@@ -8,11 +8,14 @@ namespace DM
 {
     public class MasterMemoryCodeGenerator : MonoBehaviour
     {
+        //  生成コードの出力先。Assetsフォルダ以降のパスを指定
+        private static string outputPath = "Scripts/Generated/";
+        
         [MenuItem("CodeGenerate/MasterMemory")]
         private static void Generate()
         {
             ExecuteMasterMemoryCodeGenerator();
-            ExecuteMessagePackCodeGenerator();
+            // ExecuteMessagePackCodeGenerator();
         }
 
         private static void ExecuteMasterMemoryCodeGenerator()
@@ -22,14 +25,14 @@ namespace DM
             var exProcess = new Process();
 
             var rootPath = Application.dataPath + "/..";
-            var filePath = rootPath + "/GeneratorTools/MasterMemory.Generator";
+            var filePath = rootPath + "/GeneratorTools";
             var exeFileName = "";
 #if UNITY_EDITOR_WIN
-            exeFileName = "/win-x64/MasterMemory.Generator.exe";
+            exeFileName = "/MasterMemory.Generator.exe";
 #elif UNITY_EDITOR_OSX
-        exeFileName = "/osx-x64/MasterMemory.Generator";
+        exeFileName = "/MasterMemory.Generator";
 #elif UNITY_EDITOR_LINUX
-        exeFileName = "/linux-x64/MasterMemory.Generator";
+        exeFileName = "/MasterMemory.Generator";
 #else
         return;
 #endif
@@ -43,7 +46,7 @@ namespace DM
                 UseShellExecute = false,
                 FileName = filePath + exeFileName,
                 Arguments =
-                    $@"-i ""{Application.dataPath}/Scripts/Tables"" -o ""{Application.dataPath}/Scripts/Generated"" -n ""MasterData""",
+                    $@"-i ""{Application.dataPath}/Scripts/Tables"" -o ""{Application.dataPath}/{outputPath}"" -n ""MasterData""",
             };
 
             var p = Process.Start(psi);
@@ -66,14 +69,14 @@ namespace DM
             var exProcess = new Process();
 
             var rootPath = Application.dataPath + "/..";
-            var filePath = rootPath + "/GeneratorTools/MessagePackUniversalCodeGenerator";
+            var filePath = rootPath + "/GeneratorTools";
             var exeFileName = "";
 #if UNITY_EDITOR_WIN
-            exeFileName = "/win-x64/mpc.exe";
+            exeFileName = "/mpc.exe";
 #elif UNITY_EDITOR_OSX
-        exeFileName = "/osx-x64/mpc";
+        exeFileName = "/mpc";
 #elif UNITY_EDITOR_LINUX
-        exeFileName = "/linux-x64/mpc";
+        exeFileName = "/mpc";
 #else
         return;
 #endif
@@ -87,7 +90,7 @@ namespace DM
                 UseShellExecute = false,
                 FileName = filePath + exeFileName,
                 Arguments =
-                    $@"-i ""{Application.dataPath}/../Assembly-CSharp.csproj"" -o ""{Application.dataPath}/Scripts/Generated/MessagePack.Generated.cs""",
+                    $@"-i ""{Application.dataPath}/../Assembly-CSharp.csproj"" -o ""{Application.dataPath}/{outputPath}/MessagePack.Generated.cs""",
             };
 
             var p = Process.Start(psi);

@@ -41,14 +41,14 @@ namespace DM
             var exProcess = new Process();
 
             var rootPath = Application.dataPath + "/..";
-            var fileName = rootPath + "/GeneratorTools/";
+            var fileName = rootPath + "/GeneratorTools";
             var exeFileName = "";
 #if UNITY_EDITOR_WIN
-            exeFileName = "/win/mpc.exe";
+            exeFileName = "/mpc.exe";
 #elif UNITY_EDITOR_OSX
-        exeFileName = "/osx/mpc";
+        exeFileName = "/mpc";
 #elif UNITY_EDITOR_LINUX
-        exeFileName = "/linux/mpc";
+        exeFileName = "/mpc";
 #else
         return;
 #endif

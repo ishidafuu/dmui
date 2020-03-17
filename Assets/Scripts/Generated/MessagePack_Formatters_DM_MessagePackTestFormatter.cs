@@ -14,17 +14,39 @@
 #pragma warning disable SA1403 // File may only contain a single namespace
 #pragma warning disable SA1649 // File name should match first type name
 
-namespace MessagePack.Formatters
+namespace MessagePack.Formatters.DM
 {
     using System;
     using System.Buffers;
     using MessagePack;
 
-    public sealed class MessagePackTestFormatter : global::MessagePack.Formatters.IMessagePackFormatter<global::MessagePackTest>
+    public sealed class MessagePackTestFormatter : global::MessagePack.Formatters.IMessagePackFormatter<global::DM.MessagePackTest>
     {
 
 
-        public void Serialize(ref MessagePackWriter writer, global::MessagePackTest value, global::MessagePack.MessagePackSerializerOptions options)
+        private readonly global::MessagePack.Internal.AutomataDictionary ____keyMapping;
+        private readonly byte[][] ____stringByteKeys;
+
+        public MessagePackTestFormatter()
+        {
+            this.____keyMapping = new global::MessagePack.Internal.AutomataDictionary()
+            {
+                { "IsNetworkError", 0 },
+                { "IsHttpError", 1 },
+                { "ResponseCode", 2 },
+                { "Sec", 3 },
+            };
+
+            this.____stringByteKeys = new byte[][]
+            {
+                global::MessagePack.Internal.CodeGenHelpers.GetEncodedStringBytes("IsNetworkError"),
+                global::MessagePack.Internal.CodeGenHelpers.GetEncodedStringBytes("IsHttpError"),
+                global::MessagePack.Internal.CodeGenHelpers.GetEncodedStringBytes("ResponseCode"),
+                global::MessagePack.Internal.CodeGenHelpers.GetEncodedStringBytes("Sec"),
+            };
+        }
+
+        public void Serialize(ref MessagePackWriter writer, global::DM.MessagePackTest value, global::MessagePack.MessagePackSerializerOptions options)
         {
             if (value == null)
             {
@@ -33,14 +55,18 @@ namespace MessagePack.Formatters
             }
 
             IFormatterResolver formatterResolver = options.Resolver;
-            writer.WriteArrayHeader(4);
+            writer.WriteMapHeader(4);
+            writer.WriteRaw(this.____stringByteKeys[0]);
             writer.Write(value.IsNetworkError);
+            writer.WriteRaw(this.____stringByteKeys[1]);
             writer.Write(value.IsHttpError);
+            writer.WriteRaw(this.____stringByteKeys[2]);
             writer.Write(value.ResponseCode);
+            writer.WriteRaw(this.____stringByteKeys[3]);
             writer.Write(value.Sec);
         }
 
-        public global::MessagePackTest Deserialize(ref MessagePackReader reader, global::MessagePack.MessagePackSerializerOptions options)
+        public global::DM.MessagePackTest Deserialize(ref MessagePackReader reader, global::MessagePack.MessagePackSerializerOptions options)
         {
             if (reader.TryReadNil())
             {
@@ -49,7 +75,7 @@ namespace MessagePack.Formatters
 
             options.Security.DepthStep(ref reader);
             IFormatterResolver formatterResolver = options.Resolver;
-            var length = reader.ReadArrayHeader();
+            var length = reader.ReadMapHeader();
             var __IsNetworkError__ = default(bool);
             var __IsHttpError__ = default(bool);
             var __ResponseCode__ = default(int);
@@ -57,7 +83,13 @@ namespace MessagePack.Formatters
 
             for (int i = 0; i < length; i++)
             {
-                var key = i;
+                ReadOnlySpan<byte> stringKey = global::MessagePack.Internal.CodeGenHelpers.ReadStringSpan(ref reader);
+                int key;
+                if (!this.____keyMapping.TryGetValue(stringKey, out key))
+                {
+                    reader.Skip();
+                    continue;
+                }
 
                 switch (key)
                 {
@@ -79,7 +111,7 @@ namespace MessagePack.Formatters
                 }
             }
 
-            var ____result = new global::MessagePackTest();
+            var ____result = new global::DM.MessagePackTest();
             ____result.IsNetworkError = __IsNetworkError__;
             ____result.IsHttpError = __IsHttpError__;
             ____result.ResponseCode = __ResponseCode__;
