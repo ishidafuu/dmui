@@ -52,7 +52,7 @@ namespace DM
             string requestJson = m_Serializer.Serialize(param);
             
             MessagePackTest asdf = new MessagePackTest();
-            byte[] asdf2 = MessagePackSerializer.Serialize(asdf);
+            var asdf2 = MessagePackSerializer.Serialize(asdf);
             asdf = MessagePackSerializer.Deserialize<MessagePackTest>(asdf2);
             
 
