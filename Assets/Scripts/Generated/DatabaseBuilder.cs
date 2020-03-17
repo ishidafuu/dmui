@@ -21,5 +21,17 @@ namespace MasterData
             return this;
         }
 
+        public DatabaseBuilder Append(System.Collections.Generic.IEnumerable<Skill> dataSource)
+        {
+            AppendCore(dataSource, x => x.SkillID, System.Collections.Generic.Comparer<int>.Default);
+            return this;
+        }
+
+        public DatabaseBuilder Append(System.Collections.Generic.IEnumerable<SkillParameter> dataSource)
+        {
+            AppendCore(dataSource, x => x.SkillID, System.Collections.Generic.Comparer<int>.Default);
+            return this;
+        }
+
     }
 }

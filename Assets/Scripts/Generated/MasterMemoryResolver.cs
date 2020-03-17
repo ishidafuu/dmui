@@ -45,9 +45,11 @@ namespace MasterData
 
         static MasterMemoryResolverGetFormatterHelper()
         {
-            lookup = new global::System.Collections.Generic.Dictionary<Type, int>(1)
+            lookup = new global::System.Collections.Generic.Dictionary<Type, int>(3)
             {
-                {typeof(global::DM.Person[]), 0 },
+                {typeof(Person[]), 0 },
+                {typeof(Skill[]), 1 },
+                {typeof(SkillParameter[]), 2 },
             };
         }
 
@@ -59,6 +61,8 @@ namespace MasterData
             switch (key)
             {
                 case 0: return new MessagePack.Formatters.ArrayFormatter<Person>();
+                case 1: return new MessagePack.Formatters.ArrayFormatter<Skill>();
+                case 2: return new MessagePack.Formatters.ArrayFormatter<SkillParameter>();
                 default: return null;
             }
         }

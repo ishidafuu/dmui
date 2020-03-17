@@ -51,11 +51,13 @@ namespace MessagePack.Resolvers
 
         static GeneratedResolverGetFormatterHelper()
         {
-            lookup = new global::System.Collections.Generic.Dictionary<Type, int>(3)
+            lookup = new global::System.Collections.Generic.Dictionary<Type, int>(5)
             {
                 { typeof(global::DM.Gender), 0 },
                 { typeof(global::DM.MessagePackTest), 1 },
                 { typeof(global::DM.Person), 2 },
+                { typeof(global::DM.Skill), 3 },
+                { typeof(global::DM.SkillParameter), 4 },
             };
         }
 
@@ -72,6 +74,8 @@ namespace MessagePack.Resolvers
                 case 0: return new MessagePack.Formatters.DM.GenderFormatter();
                 case 1: return new MessagePack.Formatters.DM.MessagePackTestFormatter();
                 case 2: return new MessagePack.Formatters.DM.PersonFormatter();
+                case 3: return new MessagePack.Formatters.DM.SkillFormatter();
+                case 4: return new MessagePack.Formatters.DM.SkillParameterFormatter();
                 default: return null;
             }
         }
