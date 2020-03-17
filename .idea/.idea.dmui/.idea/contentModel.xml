@@ -497,7 +497,6 @@
       <e p="MessagePack.csproj" t="IncludeRecursive" />
       <e p="obj" t="ExcludeRecursive" />
       <e p="Packages" t="ExcludeRecursive" />
-      <e p="packages.config" t="Include" />
       <e p="Temp\bin" t="ExcludeRecursive" />
       <e p="UniRx.Async.csproj" t="IncludeRecursive" />
       <e p="UniRx.Async.Editor.csproj" t="IncludeRecursive" />
