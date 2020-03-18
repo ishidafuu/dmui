@@ -10,20 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
-  m_Name: Default Local Group
+  m_Name: Default Remote Group
   m_EditorClassIdentifier: 
-  m_GroupName: Default Local Group
+  m_GroupName: Default Remote Group
   m_Data:
     m_SerializedData: []
-  m_GUID: 96cf9aad69ce1b747b7f7e2ed106cc50
+  m_GUID: 5ecb6b08476b6484d9135502af613309
   m_SerializeEntries:
-  - m_GUID: 273c7f2062833d74199010cae612ca97
-    m_Address: Assets/OriginalAssets/master-data.bytes
+  - m_GUID: 44526fad250c6584e871dcbcd10b42a5
+    m_Address: Assets/OriginalAssets/EnhancedScroller_User_Manual.pdf
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: bf299b2c4cd0c4baa8b14574b4f611b4
+    m_Address: Assets/OriginalAssets/Terrain.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: da8cd0ac9134c874faaf35ae544f2057, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: 280a429b08aea054da61e07833c44c36, type: 2}
-    - {fileID: 11400000, guid: e9eb81e11d320c04f8fa1ac5f5d5099f, type: 2}
+    - {fileID: 11400000, guid: f6617c224b276d14e8c0a40ad272d77a, type: 2}
+    - {fileID: 11400000, guid: ba2644882f2711c4eb2c97184a32754b, type: 2}

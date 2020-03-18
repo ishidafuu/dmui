@@ -3,6 +3,7 @@ using UnityEngine;
 
 namespace DM
 {
+#if UNITY_EDITOR
     [CustomEditor(typeof(UIController))]
     public class UIControllerEditor : Editor
     {
@@ -20,4 +21,5 @@ namespace DM
             base.OnInspectorGUI();
         }
     }
+#endif
 }
