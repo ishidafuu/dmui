@@ -17,7 +17,7 @@ namespace DM
         private string m_BucketName;
         private string m_IamAccessKeyId;
         private string m_IamSecretKey;
-        private const string m_ServerDataDir = "ServerData";
+        private const string SERVER_DATA_DIR = "ServerData";
         private RegionEndpoint m_BucketRegion;
 
         [MenuItem("Tools/Addressable Content Uploader (S3)")]
@@ -68,7 +68,7 @@ namespace DM
 
         private async Task InitiateTask()
         {
-            await UploadAsync(m_BucketRegion, m_BucketName, m_IamAccessKeyId, m_IamSecretKey, m_ServerDataDir);
+            await UploadAsync(m_BucketRegion, m_BucketName, m_IamAccessKeyId, m_IamSecretKey, SERVER_DATA_DIR);
         }
 
         private static async Task UploadAsync(RegionEndpoint bucketRegion, string bucketName, string iamAccessKeyId,
@@ -79,9 +79,7 @@ namespace DM
                 Debug.Log("Starting upload...");
                 var credentials = new BasicAWSCredentials(iamAccessKeyId, iamSecretKey);
                 var s3Client = new AmazonS3Client(credentials, bucketRegion);
-
                 var transferUtility = new TransferUtility(s3Client);
-
                 var transferUtilityRequest = new TransferUtilityUploadDirectoryRequest
                 {
                     BucketName = bucketName,

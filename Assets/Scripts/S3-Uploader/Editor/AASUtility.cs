@@ -76,7 +76,7 @@ namespace DM
             }
             
             List<AddressableAssetEntry> entries = new List<AddressableAssetEntry>();
-            settings.GetAllAssets(entries);
+            settings.GetAllAssets(entries, true);
             if (CheckAddress(entries, address))
             {
                 assetEntry.SetAddress(address);
@@ -126,7 +126,7 @@ namespace DM
         {
             AddressableAssetSettings assetSettings = GetSettings();
             List<AddressableAssetEntry> entries = new List<AddressableAssetEntry>();
-            assetSettings.GetAllAssets(entries);
+            assetSettings.GetAllAssets(entries, true);
             List<string> checkedAddress = new List<string>();
 
             foreach (var e in from e in entries 
@@ -217,7 +217,7 @@ namespace DM
             //ラベルを追加するように呼んでおく。追加されていないと設定されない。
             assetSettings.AddLabel(label);
             List<AddressableAssetEntry> assetList = new List<AddressableAssetEntry>();
-            assetSettings.GetAllAssets(assetList);
+            assetSettings.GetAllAssets(assetList, true);
             foreach (AddressableAssetEntry asset in assetGuidList.Select(assetGuid =>
                 assetList.Find((a) => a.guid == assetGuid)))
             {
