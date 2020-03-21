@@ -29,7 +29,7 @@ public class NobiLoad : MonoBehaviour
 
     public async UniTask LoadAssetAsync()
     { 
-        var asdf = await Addressables.LoadAssetAsync<Sprite>("Assets/AssetBundle/nobi.png").Task;
+        var asdf = await Addressables.LoadAssetAsync<Sprite>(AssetAddress.JPG_TETSUWO2).Task;
         image.sprite = asdf;
     }
 }
