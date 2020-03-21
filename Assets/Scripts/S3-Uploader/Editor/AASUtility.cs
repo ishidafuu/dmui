@@ -19,6 +19,7 @@ namespace DM
 
         private const string EDITOR_DIR = "Editor";
         private const string DATA_ROOT = "Assets/AssetBundles/";
+        private const string REMOTE_GROUP = "remote";
 
         /// <summary>
         /// データディレクトリのルートから全グループを作成する
@@ -52,9 +53,14 @@ namespace DM
             if (dir.Contains(EDITOR_DIR)) return;
 
             //アドレス名を求める計算
-            string group = dir.Replace(DATA_ROOT, "")
-                .Replace(Path.DirectorySeparatorChar, '_');
-            string address = Path.GetFileNameWithoutExtension(asset);
+            string group = asset.Replace(DATA_ROOT, "")
+                .Split('/')
+                .First();
+   
+            string address = Path.GetFileNameWithoutExtension(
+                asset.Replace(DATA_ROOT, "")
+                    .Replace(group + "/", "")
+                    .Replace('/', '_'));
 
             AddAssetToGroup(AssetDatabase.AssetPathToGUID(asset), group, address);
         }
@@ -184,7 +190,8 @@ namespace DM
             //アドレサブルアセットセッティング取得
             AddressableAssetSettings assetSettings = GetSettings();
             BundledAssetGroupSchema assetGroupSchema = CreateInstance<BundledAssetGroupSchema>();
-            if (groupName.IndexOf("remote", StringComparison.OrdinalIgnoreCase) >= 0)
+            
+            if (groupName.IndexOf(REMOTE_GROUP, StringComparison.OrdinalIgnoreCase) >= 0)
             {
                 assetGroupSchema.BuildPath.SetVariableByName(assetSettings, AddressableAssetSettings.kRemoteBuildPath);
                 assetGroupSchema.LoadPath.SetVariableByName(assetSettings, AddressableAssetSettings.kRemoteLoadPath);

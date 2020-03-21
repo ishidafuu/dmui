@@ -3,8 +3,8 @@
 // </auto-generated>
 public static class AssetAddress{
 
-	  public const string NOBI     = "nobi";
-	  public const string SERVAL   = "serval";
-	  public const string TETSUWO2 = "tetsuwo2";
+	  public const string JPG_TETSUWO2 = "jpg_tetsuwo2";
+	  public const string NOBI         = "nobi";
+	  public const string SERVAL       = "serval";
 
 }
