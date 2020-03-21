@@ -10,24 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
-  m_Name: Default Remote Group
+  m_Name: jpg
   m_EditorClassIdentifier: 
-  m_GroupName: Default Remote Group
+  m_GroupName: jpg
   m_Data:
     m_SerializedData: []
-  m_GUID: 5ecb6b08476b6484d9135502af613309
+  m_GUID: a4a5c1d4848e9d44699b289a9c9fffff
   m_SerializeEntries:
   - m_GUID: 0dca000d450366141ba77eeaa4765ff6
-    m_Address: Assets/AssetBundle/serval.jpg
+    m_Address: serval
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: 78e3ccdea4b85c54d92bfedeb4e9a2cd
-    m_Address: Assets/AssetBundle/nobi.png
+  - m_GUID: 13fa39a1f571f084f8f95eb1cb1d757d
+    m_Address: tetsuwo2
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: da8cd0ac9134c874faaf35ae544f2057, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: f6617c224b276d14e8c0a40ad272d77a, type: 2}
-    - {fileID: 11400000, guid: ba2644882f2711c4eb2c97184a32754b, type: 2}
+    - {fileID: 11400000, guid: 1699a65d084af314e94625baa34c7db5, type: 2}
+    - {fileID: 11400000, guid: c25cac8a4224de1499275df7397c845f, type: 2}

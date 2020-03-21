@@ -160,8 +160,6 @@
           <e p="AssetAddress.cs" t="Include" />
           <e p="AssetLabel.cs" t="Include" />
           <e p="Editor" t="Include">
-            <e p="AASUtility.cs" t="Include" />
-            <e p="FindReferencedAsset.cs" t="Include" />
             <e p="MasterDataBuiilder.cs" t="Include" />
             <e p="MasterMemoryCodeGenerator.cs" t="Include" />
             <e p="MessagePackCodeGenerator.cs" t="Include" />
@@ -213,6 +211,7 @@
           </e>
           <e p="S3-Uploader" t="Include">
             <e p="Editor" t="Include">
+              <e p="AASUtility.cs" t="Include" />
               <e p="AddressableAssetAddressClassCreator.cs" t="Include" />
               <e p="aws-sdk-netstandard2.0-3.3.606.0" t="Include">
                 <e p="AWSSDK.ACMPCA.xml" t="Include" />

@@ -3,10 +3,8 @@
 // </auto-generated>
 public static class AssetAddress{
 
-	  public const string ASSETS_ASSET_BUNDLE_NOBI_PNG    = "Assets/AssetBundle/nobi.png";
-	  public const string ASSETS_ASSET_BUNDLE_SERVAL_JPG  = "Assets/AssetBundle/serval.jpg";
-	  public const string ASSETS_ASSET_BUNDLE_TETSUWO_JPG = "Assets/AssetBundle/tetsuwo.jpg";
-	  public const string EDITOR_SCENE_LIST               = "EditorSceneList";
-	  public const string RESOURCES                       = "Resources";
+	  public const string NOBI     = "nobi";
+	  public const string SERVAL   = "serval";
+	  public const string TETSUWO2 = "tetsuwo2";
 
 }

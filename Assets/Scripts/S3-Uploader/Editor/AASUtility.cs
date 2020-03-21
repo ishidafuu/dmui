@@ -18,7 +18,7 @@ namespace DM
         private const string MENU_NAME = "AASUtility";
 
         private const string EDITOR_DIR = "Editor";
-        private const string DATA_ROOT = "Assets/Data/";
+        private const string DATA_ROOT = "Assets/AssetBundles/";
 
         /// <summary>
         /// データディレクトリのルートから全グループを作成する
@@ -26,14 +26,19 @@ namespace DM
         [MenuItem(MENU_NAME + "/CreateAssetsDataGroup")]
         public static void CreateGroup()
         {
-            List<string> assetPaths = AssetDatabase.GetAllAssetPaths().ToList();
-            List<string> dataPath = assetPaths.FindAll(p => p.Contains(DATA_ROOT));
+            RemoveAllGroup();
+            
+            List<string> dataPath = AssetDatabase.GetAllAssetPaths()
+                .Where(p => p.Contains(DATA_ROOT)).ToList();
+            
             foreach (string asset in dataPath)
             {
                 AddGroup(asset);
             }
 
-            Sort();
+            GetSettings().groups.Sort(new GroupCompare());
+            
+            AddressableAssetAddressClassCreator.Create();
         }
 
         private static void AddGroup(string asset)
@@ -47,9 +52,9 @@ namespace DM
             if (dir.Contains(EDITOR_DIR)) return;
 
             //アドレス名を求める計算
-            dir = dir.Replace(s_AssetRoot, "");
-            string group = dir.Replace(Path.DirectorySeparatorChar, '_');
-            string address = group + "_" + Path.GetFileNameWithoutExtension(asset);
+            string group = dir.Replace(DATA_ROOT, "")
+                .Replace(Path.DirectorySeparatorChar, '_');
+            string address = Path.GetFileNameWithoutExtension(asset);
 
             AddAssetToGroup(AssetDatabase.AssetPathToGUID(asset), group, address);
         }
@@ -63,7 +68,7 @@ namespace DM
             {
                 return;
             }
-
+            
             List<AddressableAssetEntry> entries = new List<AddressableAssetEntry>();
             settings.GetAllAssets(entries);
             if (CheckAddress(entries, address))
@@ -77,15 +82,6 @@ namespace DM
         }
 
         /// <summary>
-        /// 文字列順にソートする
-        /// </summary>
-        [MenuItem(MENU_NAME + "/Sort")]
-        public static void Sort()
-        {
-            GetSettings().groups.Sort(new GroupCompare());
-        }
-
-        /// <summary>
         /// 空グループを削除
         /// </summary>
         [MenuItem(MENU_NAME + "/Remove/EmptyGroup")]
@@ -93,12 +89,10 @@ namespace DM
         {
             var s = GetSettings();
             var groups = s.groups;
-            foreach (var g in groups)
+            foreach (var g in groups
+                .Where(g => g.entries.Count == 0 && !g.IsDefaultGroup()))
             {
-                if (g.entries.Count == 0 && !g.IsDefaultGroup())
-                {
-                    s.RemoveGroup(g);
-                }
+                s.RemoveGroup(g);
             }
         }
 
@@ -121,7 +115,7 @@ namespace DM
         /// 全アドレスの重複チェック
         /// 重複しているとビルドできない
         /// </summary>
-        [MenuItem(MENU_NAME + "/CheckAllAddress")]
+        [MenuItem(MENU_NAME + "/CheckDuplicateAddress")]
         public static void CheckAllAddress()
         {
             AddressableAssetSettings assetSettings = GetSettings();
@@ -129,13 +123,13 @@ namespace DM
             assetSettings.GetAllAssets(entries);
             List<string> checkedAddress = new List<string>();
 
-            foreach (AddressableAssetEntry assetEntry in from e in entries
-                where !checkedAddress.Contains(e.address)
-                let ret = CheckAddress(entries, e.address)
-                where !ret
+            foreach (var e in from e in entries 
+                where !checkedAddress.Contains(e.address) 
+                let ret = CheckAddress(entries, e.address) 
+                where !ret 
                 select e)
             {
-                checkedAddress.Add(assetEntry.address);
+                checkedAddress.Add(e.address);
             }
         }
 
@@ -151,7 +145,7 @@ namespace DM
         /// <summary>
         /// ビルドをクリーン
         /// </summary>
-        [MenuItem(MENU_NAME + "/CleanBuild")]
+        [MenuItem(MENU_NAME + "/Clean")]
         public static void Clean()
         {
             AddressableAssetSettings.CleanPlayerContent();
@@ -182,7 +176,6 @@ namespace DM
         private static AddressableAssetSettings GetSettings()
         {
             //アドレサブルアセットセッティング取得
-
             return AssetDatabase.LoadAssetAtPath<AddressableAssetSettings>(ADDRESSABLE_ASSET_SETTINGS);
         }
 
@@ -190,12 +183,20 @@ namespace DM
         {
             //アドレサブルアセットセッティング取得
             AddressableAssetSettings assetSettings = GetSettings();
+            BundledAssetGroupSchema assetGroupSchema = CreateInstance<BundledAssetGroupSchema>();
+            if (groupName.IndexOf("remote", StringComparison.OrdinalIgnoreCase) >= 0)
+            {
+                assetGroupSchema.BuildPath.SetVariableByName(assetSettings, AddressableAssetSettings.kRemoteBuildPath);
+                assetGroupSchema.LoadPath.SetVariableByName(assetSettings, AddressableAssetSettings.kRemoteLoadPath);
+            }
+            
             //スキーマ生成
             List<AddressableAssetGroupSchema> schema = new List<AddressableAssetGroupSchema>()
             {
-                CreateInstance<BundledAssetGroupSchema>(),
-                CreateInstance<ContentUpdateGroupSchema>()
+                CreateInstance<ContentUpdateGroupSchema>(),
+                assetGroupSchema,
             };
+            
             //グループの作成
             AddressableAssetGroup assetGroup = assetSettings.groups.Find((g) => g.name == groupName);
             return assetGroup == null

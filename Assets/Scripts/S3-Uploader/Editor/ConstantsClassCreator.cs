@@ -146,7 +146,7 @@ public static class ConstantsClassCreator
         File.WriteAllText(exportPath, builder.ToString(), Encoding.UTF8);
         AssetDatabase.Refresh(ImportAssetOptions.ImportRecursive);
 
-        Debug.Log(className + "の作成が完了しました");
+        Debug.Log( $"{className}の作成が完了しました {exportPath}");
     }
 
 
