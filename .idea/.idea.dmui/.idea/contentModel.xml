@@ -157,6 +157,8 @@
           <e p="nobiload.cs" t="Include" />
         </e>
         <e p="Scripts" t="Include">
+          <e p="AddressableAssetAddress.cs" t="Include" />
+          <e p="AddressableAssetLabel.cs" t="Include" />
           <e p="Editor" t="Include">
             <e p="MasterDataBuiilder.cs" t="Include" />
             <e p="MasterMemoryCodeGenerator.cs" t="Include" />

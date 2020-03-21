@@ -20,9 +20,8 @@ MonoBehaviour:
   - m_GUID: 0dca000d450366141ba77eeaa4765ff6
     m_Address: Assets/AssetBundle/serval.jpg
     m_ReadOnly: 0
-    m_SerializedLabels:
-    - default
-  - m_GUID: 3c3238c17f154fd4f8574322268e9823
+    m_SerializedLabels: []
+  - m_GUID: 13fa39a1f571f084f8f95eb1cb1d757d
     m_Address: Assets/AssetBundle/tetsuwo.jpg
     m_ReadOnly: 0
     m_SerializedLabels: []
