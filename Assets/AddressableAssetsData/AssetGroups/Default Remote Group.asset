@@ -21,10 +21,6 @@ MonoBehaviour:
     m_Address: Assets/AssetBundle/serval.jpg
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: 13fa39a1f571f084f8f95eb1cb1d757d
-    m_Address: Assets/AssetBundle/tetsuwo.jpg
-    m_ReadOnly: 0
-    m_SerializedLabels: []
   - m_GUID: 78e3ccdea4b85c54d92bfedeb4e9a2cd
     m_Address: Assets/AssetBundle/nobi.png
     m_ReadOnly: 0
