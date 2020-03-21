@@ -1,0 +1,3514 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AWSSDK.QLDB</name>
+    </assembly>
+    <members>
+        <member name="T:Amazon.QLDB.AmazonQLDBConfig">
+            <summary>
+            Configuration for accessing Amazon QLDB service
+            </summary>
+        </member>
+        <member name="M:Amazon.QLDB.AmazonQLDBConfig.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="P:Amazon.QLDB.AmazonQLDBConfig.RegionEndpointServiceName">
+            <summary>
+            The constant used to lookup in the region hash the endpoint.
+            </summary>
+        </member>
+        <member name="P:Amazon.QLDB.AmazonQLDBConfig.ServiceVersion">
+            <summary>
+            Gets the ServiceVersion property.
+            </summary>
+        </member>
+        <member name="P:Amazon.QLDB.AmazonQLDBConfig.UserAgent">
+            <summary>
+            Gets the value of UserAgent property.
+            </summary>
+        </member>
+        <member name="T:Amazon.QLDB.AmazonQLDBException">
+            <summary>
+             Common exception for the QLDB service.
+             </summary>
+        </member>
+        <member name="M:Amazon.QLDB.AmazonQLDBException.#ctor(System.String)">
+            <summary>
+            Construct instance of AmazonQLDBException
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:Amazon.QLDB.AmazonQLDBException.#ctor(System.String,System.Exception)">
+            <summary>
+            Construct instance of AmazonQLDBException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.QLDB.AmazonQLDBException.#ctor(System.Exception)">
+            <summary>
+            Construct instance of AmazonQLDBException
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.QLDB.AmazonQLDBException.#ctor(System.String,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of AmazonQLDBException
+            </summary>
+            <param name="message"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="M:Amazon.QLDB.AmazonQLDBException.#ctor(System.String,System.Exception,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of AmazonQLDBException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="T:Amazon.QLDB.Internal.AmazonQLDBMetadata">
+            <summary>
+            Service metadata for  Amazon QLDB service
+            </summary>
+        </member>
+        <member name="P:Amazon.QLDB.Internal.AmazonQLDBMetadata.ServiceId">
+            <summary>
+            Gets the value of the Service Id.
+            </summary>
+        </member>
+        <member name="P:Amazon.QLDB.Internal.AmazonQLDBMetadata.OperationNameMapping">
+            <summary>
+            Gets the dictionary that gives mapping of renamed operations
+            </summary>
+        </member>
+        <member name="T:Amazon.QLDB.AmazonQLDBRequest">
+            <summary>
+            Base class for QLDB operation requests.
+            </summary>
+        </member>
+        <member name="T:Amazon.QLDB.Model.CreateLedgerRequest">
+            <summary>
+            Container for the parameters to the CreateLedger operation.
+            Creates a new ledger in your AWS account.
+            </summary>
+        </member>
+        <member name="P:Amazon.QLDB.Model.CreateLedgerRequest.DeletionProtection">
+            <summary>
+            Gets and sets the property DeletionProtection. 
+            <para>
+            The flag that prevents a ledger from being deleted by any user. If not provided on
+            ledger creation, this feature is enabled (<code>true</code>) by default.
+            </para>
+             
+            <para>
+            If deletion protection is enabled, you must first disable it before you can delete
+            the ledger using the QLDB API or the AWS Command Line Interface (AWS CLI). You can
+            disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.
+            The QLDB console disables deletion protection for you when you use it to delete a
+            ledger.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.QLDB.Model.CreateLedgerRequest.Name">
+            <summary>
+            Gets and sets the property Name. 
+            <para>
+            The name of the ledger that you want to create. The name must be unique among all
+            of your ledgers in the current AWS Region.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.QLDB.Model.CreateLedgerRequest.PermissionsMode">
+            <summary>
+            Gets and sets the property PermissionsMode. 
+            <para>
+            The permissions mode to assign to the ledger that you want to create.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.QLDB.Model.CreateLedgerRequest.Tags">
+            <summary>
+            Gets and sets the property Tags. 
+            <para>
+            The key-value pairs to add as tags to the ledger that you want to create. Tag keys
+            are case sensitive. Tag values are case sensitive and can be null.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.QLDB.Model.CreateLedgerResponse">
+            <summary>
+            This is the response object from the CreateLedger operation.
+            </summary>
+        </member>
+        <member name="P:Amazon.QLDB.Model.CreateLedgerResponse.Arn">
+            <summary>
+            Gets and sets the property Arn. 
+            <para>
+            The Amazon Resource Name (ARN) for the ledger.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.QLDB.Model.CreateLedgerResponse.CreationDateTime">
+            <summary>
+            Gets and sets the property CreationDateTime. 
+            <para>
+            The date and time, in epoch time format, when the ledger was created. (Epoch time
+            format is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.QLDB.Model.CreateLedgerResponse.DeletionProtection">
+            <summary>
+            Gets and sets the property DeletionProtection. 
+            <para>
+            The flag that prevents a ledger from being deleted by any user. If not provided on
+            ledger creation, this feature is enabled (<code>true</code>) by default.
+            </para>
+             
+            <para>
+            If deletion protection is enabled, you must first disable it before you can delete
+            the ledger using the QLDB API or the AWS Command Line Interface (AWS CLI). You can
+            disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.
+            The QLDB console disables deletion protection for you when you use it to delete a
+            ledger.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.QLDB.Model.CreateLedgerResponse.Name">
+            <summary>
+            Gets and sets the property Name. 
+            <para>
+            The name of the ledger.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.QLDB.Model.CreateLedgerResponse.State">
+            <summary>
+            Gets and sets the property State. 
+            <para>
+            The current status of the ledger.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.QLDB.Model.DeleteLedgerRequest">
+            <summary>
+            Container for the parameters to the DeleteLedger operation.
+            Deletes a ledger and all of its contents. This action is irreversible.
+            
+             
+            <para>
+            If deletion protection is enabled, you must first disable it before you can delete
+            the ledger using the QLDB API or the AWS Command Line Interface (AWS CLI). You can
+            disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.
+            The QLDB console disables deletion protection for you when you use it to delete a
+            ledger.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.QLDB.Model.DeleteLedgerRequest.Name">
+            <summary>
+            Gets and sets the property Name. 
+            <para>
+            The name of the ledger that you want to delete.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.QLDB.Model.DeleteLedgerResponse">
+            <summary>
+            This is the response object from the DeleteLedger operation.
+            </summary>
+        </member>
+        <member name="T:Amazon.QLDB.Model.DescribeJournalS3ExportRequest">
+            <summary>
+            Container for the parameters to the DescribeJournalS3Export operation.
+            Returns information about a journal export job, including the ledger name, export
+            ID, when it was created, current status, and its start and end time export parameters.
+            
+             
+            <para>
+            If the export job with the given <code>ExportId</code> doesn't exist, then throws
+            <code>ResourceNotFoundException</code>.
+            </para>
+             
+            <para>
+            If the ledger with the given <code>Name</code> doesn't exist, then throws <code>ResourceNotFoundException</code>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.QLDB.Model.DescribeJournalS3ExportRequest.ExportId">
+            <summary>
+            Gets and sets the property ExportId. 
+            <para>
+            The unique ID of the journal export job that you want to describe.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.QLDB.Model.DescribeJournalS3ExportRequest.Name">
+            <summary>
+            Gets and sets the property Name. 
+            <para>
+            The name of the ledger.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.QLDB.Model.DescribeJournalS3ExportResponse">
+            <summary>
+            This is the response object from the DescribeJournalS3Export operation.
+            </summary>
+        </member>
+        <member name="P:Amazon.QLDB.Model.DescribeJournalS3ExportResponse.ExportDescription">
+            <summary>
+            Gets and sets the property ExportDescription. 
+            <para>
+            Information about the journal export job returned by a <code>DescribeJournalS3Export</code>
+            request.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.QLDB.Model.DescribeLedgerRequest">
+            <summary>
+            Container for the parameters to the DescribeLedger operation.
+            Returns information about a ledger, including its state and when it was created.
+            </summary>
+        </member>
+        <member name="P:Amazon.QLDB.Model.DescribeLedgerRequest.Name">
+            <summary>
+            Gets and sets the property Name. 
+            <para>
+            The name of the ledger that you want to describe.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.QLDB.Model.DescribeLedgerResponse">
+            <summary>
+            This is the response object from the DescribeLedger operation.
+            </summary>
+        </member>
+        <member name="P:Amazon.QLDB.Model.DescribeLedgerResponse.Arn">
+            <summary>
+            Gets and sets the property Arn. 
+            <para>
+            The Amazon Resource Name (ARN) for the ledger.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.QLDB.Model.DescribeLedgerResponse.CreationDateTime">
+            <summary>
+            Gets and sets the property CreationDateTime. 
+            <para>
+            The date and time, in epoch time format, when the ledger was created. (Epoch time
+            format is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.QLDB.Model.DescribeLedgerResponse.DeletionProtection">
+            <summary>
+            Gets and sets the property DeletionProtection. 
+            <para>
+            The flag that prevents a ledger from being deleted by any user. If not provided on
+            ledger creation, this feature is enabled (<code>true</code>) by default.
+            </para>
+             
+            <para>
+            If deletion protection is enabled, you must first disable it before you can delete
+            the ledger using the QLDB API or the AWS Command Line Interface (AWS CLI). You can
+            disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.
+            The QLDB console disables deletion protection for you when you use it to delete a
+            ledger.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.QLDB.Model.DescribeLedgerResponse.Name">
+            <summary>
+            Gets and sets the property Name. 
+            <para>
+            The name of the ledger.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.QLDB.Model.DescribeLedgerResponse.State">
+            <summary>
+            Gets and sets the property State. 
+            <para>
+            The current status of the ledger.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.QLDB.Model.ExportJournalToS3Request">
+            <summary>
+            Container for the parameters to the ExportJournalToS3 operation.
+            Exports journal contents within a date and time range from a ledger into a specified
+            Amazon Simple Storage Service (Amazon S3) bucket. The data is written as files in
+            Amazon Ion format.
+            
+             
+            <para>
+            If the ledger with the given <code>Name</code> doesn't exist, then throws <code>ResourceNotFoundException</code>.
+            </para>
+             
+            <para>
+            If the ledger with the given <code>Name</code> is in <code>CREATING</code> status,
+            then throws <code>ResourcePreconditionNotMetException</code>.
+            </para>
+             
+            <para>
+            You can initiate up to two concurrent journal export requests for each ledger. Beyond
+            this limit, journal export requests throw <code>LimitExceededException</code>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.QLDB.Model.ExportJournalToS3Request.ExclusiveEndTime">
+            <summary>
+            Gets and sets the property ExclusiveEndTime. 
+            <para>
+            The exclusive end date and time for the range of journal contents that you want to
+            export.
+            </para>
+             
+            <para>
+            The <code>ExclusiveEndTime</code> must be in <code>ISO 8601</code> date and time format
+            and in Universal Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>
+            
+            </para>
+             
+            <para>
+            The <code>ExclusiveEndTime</code> must be less than or equal to the current UTC date
+            and time.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.QLDB.Model.ExportJournalToS3Request.InclusiveStartTime">
+            <summary>
+            Gets and sets the property InclusiveStartTime. 
+            <para>
+            The inclusive start date and time for the range of journal contents that you want
+            to export.
+            </para>
+             
+            <para>
+            The <code>InclusiveStartTime</code> must be in <code>ISO 8601</code> date and time
+            format and in Universal Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>
+            
+            </para>
+             
+            <para>
+            The <code>InclusiveStartTime</code> must be before <code>ExclusiveEndTime</code>.
+            </para>
+             
+            <para>
+            If you provide an <code>InclusiveStartTime</code> that is before the ledger's <code>CreationDateTime</code>,
+            Amazon QLDB defaults it to the ledger's <code>CreationDateTime</code>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.QLDB.Model.ExportJournalToS3Request.Name">
+            <summary>
+            Gets and sets the property Name. 
+            <para>
+            The name of the ledger.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.QLDB.Model.ExportJournalToS3Request.RoleArn">
+            <summary>
+            Gets and sets the property RoleArn. 
+            <para>
+            The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a
+            journal export job to do the following:
+            </para>
+             <ul> <li> 
+            <para>
+            Write objects into your Amazon Simple Storage Service (Amazon S3) bucket.
+            </para>
+             </li> <li> 
+            <para>
+            (Optional) Use your customer master key (CMK) in AWS Key Management Service (AWS KMS)
+            for server-side encryption of your exported data.
+            </para>
+             </li> </ul>
+            </summary>
+        </member>
+        <member name="P:Amazon.QLDB.Model.ExportJournalToS3Request.S3ExportConfiguration">
+            <summary>
+            Gets and sets the property S3ExportConfiguration. 
+            <para>
+            The configuration settings of the Amazon S3 bucket destination for your export request.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.QLDB.Model.ExportJournalToS3Response">
+            <summary>
+            This is the response object from the ExportJournalToS3 operation.
+            </summary>
+        </member>
+        <member name="P:Amazon.QLDB.Model.ExportJournalToS3Response.ExportId">
+            <summary>
+            Gets and sets the property ExportId. 
+            <para>
+            The unique ID that QLDB assigns to each journal export job.
+            </para>
+             
+            <para>
+            To describe your export request and check the status of the job, you can use <code>ExportId</code>
+            to call <code>DescribeJournalS3Export</code>.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.QLDB.Model.GetBlockRequest">
+            <summary>
+            Container for the parameters to the GetBlock operation.
+            Returns a journal block object at a specified address in a ledger. Also returns a
+            proof of the specified block for verification if <code>DigestTipAddress</code> is
+            provided.
+            
+             
+            <para>
+            If the specified ledger doesn't exist or is in <code>DELETING</code> status, then
+            throws <code>ResourceNotFoundException</code>.
+            </para>
+             
+            <para>
+            If the specified ledger is in <code>CREATING</code> status, then throws <code>ResourcePreconditionNotMetException</code>.
+            </para>
+             
+            <para>
+            If no block exists with the specified address, then throws <code>InvalidParameterException</code>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.QLDB.Model.GetBlockRequest.BlockAddress">
+            <summary>
+            Gets and sets the property BlockAddress. 
+            <para>
+            The location of the block that you want to request. An address is an Amazon Ion structure
+            that has two fields: <code>strandId</code> and <code>sequenceNo</code>.
+            </para>
+             
+            <para>
+            For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code> 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.QLDB.Model.GetBlockRequest.DigestTipAddress">
+            <summary>
+            Gets and sets the property DigestTipAddress. 
+            <para>
+            The latest block location covered by the digest for which to request a proof. An address
+            is an Amazon Ion structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.
+            </para>
+             
+            <para>
+            For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:49}</code> 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.QLDB.Model.GetBlockRequest.Name">
+            <summary>
+            Gets and sets the property Name. 
+            <para>
+            The name of the ledger.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.QLDB.Model.GetBlockResponse">
+            <summary>
+            This is the response object from the GetBlock operation.
+            </summary>
+        </member>
+        <member name="P:Amazon.QLDB.Model.GetBlockResponse.Block">
+            <summary>
+            Gets and sets the property Block. 
+            <para>
+            The block data object in Amazon Ion format.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.QLDB.Model.GetBlockResponse.Proof">
+            <summary>
+            Gets and sets the property Proof. 
+            <para>
+            The proof object in Amazon Ion format returned by a <code>GetBlock</code> request.
+            A proof contains the list of hash values required to recalculate the specified digest
+            using a Merkle tree, starting with the specified block.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.QLDB.Model.GetDigestRequest">
+            <summary>
+            Container for the parameters to the GetDigest operation.
+            Returns the digest of a ledger at the latest committed block in the journal. The response
+            includes a 256-bit hash value and a block address.
+            </summary>
+        </member>
+        <member name="P:Amazon.QLDB.Model.GetDigestRequest.Name">
+            <summary>
+            Gets and sets the property Name. 
+            <para>
+            The name of the ledger.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.QLDB.Model.GetDigestResponse">
+            <summary>
+            This is the response object from the GetDigest operation.
+            </summary>
+        </member>
+        <member name="P:Amazon.QLDB.Model.GetDigestResponse.Digest">
+            <summary>
+            Gets and sets the property Digest. 
+            <para>
+            The 256-bit hash value representing the digest returned by a <code>GetDigest</code>
+            request.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.QLDB.Model.GetDigestResponse.DigestTipAddress">
+            <summary>
+            Gets and sets the property DigestTipAddress. 
+            <para>
+            The latest block location covered by the digest that you requested. An address is
+            an Amazon Ion structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.QLDB.Model.GetRevisionRequest">
+            <summary>
+            Container for the parameters to the GetRevision operation.
+            Returns a revision data object for a specified document ID and block address. Also
+            returns a proof of the specified revision for verification if <code>DigestTipAddress</code>
+            is provided.
+            </summary>
+        </member>
+        <member name="P:Amazon.QLDB.Model.GetRevisionRequest.BlockAddress">
+            <summary>
+            Gets and sets the property BlockAddress. 
+            <para>
+            The block location of the document revision to be verified. An address is an Amazon
+            Ion structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.
+            </para>
+             
+            <para>
+            For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code> 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.QLDB.Model.GetRevisionRequest.DigestTipAddress">
+            <summary>
+            Gets and sets the property DigestTipAddress. 
+            <para>
+            The latest block location covered by the digest for which to request a proof. An address
+            is an Amazon Ion structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.
+            </para>
+             
+            <para>
+            For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:49}</code> 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.QLDB.Model.GetRevisionRequest.DocumentId">
+            <summary>
+            Gets and sets the property DocumentId. 
+            <para>
+            The unique ID of the document to be verified.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.QLDB.Model.GetRevisionRequest.Name">
+            <summary>
+            Gets and sets the property Name. 
+            <para>
+            The name of the ledger.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.QLDB.Model.GetRevisionResponse">
+            <summary>
+            This is the response object from the GetRevision operation.
+            </summary>
+        </member>
+        <member name="P:Amazon.QLDB.Model.GetRevisionResponse.Proof">
+            <summary>
+            Gets and sets the property Proof. 
+            <para>
+            The proof object in Amazon Ion format returned by a <code>GetRevision</code> request.
+            A proof contains the list of hash values that are required to recalculate the specified
+            digest using a Merkle tree, starting with the specified document revision.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.QLDB.Model.GetRevisionResponse.Revision">
+            <summary>
+            Gets and sets the property Revision. 
+            <para>
+            The document revision data object in Amazon Ion format.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.QLDB.Model.Internal.MarshallTransformations.CreateLedgerRequestMarshaller">
+            <summary>
+            CreateLedger Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.QLDB.Model.Internal.MarshallTransformations.CreateLedgerRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.QLDB.Model.Internal.MarshallTransformations.CreateLedgerRequestMarshaller.Marshall(Amazon.QLDB.Model.CreateLedgerRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.QLDB.Model.Internal.MarshallTransformations.CreateLedgerRequestMarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.QLDB.Model.Internal.MarshallTransformations.CreateLedgerResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for CreateLedger operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.QLDB.Model.Internal.MarshallTransformations.CreateLedgerResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.QLDB.Model.Internal.MarshallTransformations.CreateLedgerResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.QLDB.Model.Internal.MarshallTransformations.CreateLedgerResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.QLDB.Model.Internal.MarshallTransformations.DeleteLedgerRequestMarshaller">
+            <summary>
+            DeleteLedger Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.QLDB.Model.Internal.MarshallTransformations.DeleteLedgerRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.QLDB.Model.Internal.MarshallTransformations.DeleteLedgerRequestMarshaller.Marshall(Amazon.QLDB.Model.DeleteLedgerRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.QLDB.Model.Internal.MarshallTransformations.DeleteLedgerRequestMarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.QLDB.Model.Internal.MarshallTransformations.DeleteLedgerResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for DeleteLedger operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.QLDB.Model.Internal.MarshallTransformations.DeleteLedgerResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.QLDB.Model.Internal.MarshallTransformations.DeleteLedgerResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.QLDB.Model.Internal.MarshallTransformations.DeleteLedgerResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.QLDB.Model.Internal.MarshallTransformations.DescribeJournalS3ExportRequestMarshaller">
+            <summary>
+            DescribeJournalS3Export Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.QLDB.Model.Internal.MarshallTransformations.DescribeJournalS3ExportRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.QLDB.Model.Internal.MarshallTransformations.DescribeJournalS3ExportRequestMarshaller.Marshall(Amazon.QLDB.Model.DescribeJournalS3ExportRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.QLDB.Model.Internal.MarshallTransformations.DescribeJournalS3ExportRequestMarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.QLDB.Model.Internal.MarshallTransformations.DescribeJournalS3ExportResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for DescribeJournalS3Export operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.QLDB.Model.Internal.MarshallTransformations.DescribeJournalS3ExportResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.QLDB.Model.Internal.MarshallTransformations.DescribeJournalS3ExportResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.QLDB.Model.Internal.MarshallTransformations.DescribeJournalS3ExportResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.QLDB.Model.Internal.MarshallTransformations.DescribeLedgerRequestMarshaller">
+            <summary>
+            DescribeLedger Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.QLDB.Model.Internal.MarshallTransformations.DescribeLedgerRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.QLDB.Model.Internal.MarshallTransformations.DescribeLedgerRequestMarshaller.Marshall(Amazon.QLDB.Model.DescribeLedgerRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.QLDB.Model.Internal.MarshallTransformations.DescribeLedgerRequestMarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.QLDB.Model.Internal.MarshallTransformations.DescribeLedgerResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for DescribeLedger operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.QLDB.Model.Internal.MarshallTransformations.DescribeLedgerResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.QLDB.Model.Internal.MarshallTransformations.DescribeLedgerResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.QLDB.Model.Internal.MarshallTransformations.DescribeLedgerResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.QLDB.Model.Internal.MarshallTransformations.ExportJournalToS3RequestMarshaller">
+            <summary>
+            ExportJournalToS3 Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.QLDB.Model.Internal.MarshallTransformations.ExportJournalToS3RequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.QLDB.Model.Internal.MarshallTransformations.ExportJournalToS3RequestMarshaller.Marshall(Amazon.QLDB.Model.ExportJournalToS3Request)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.QLDB.Model.Internal.MarshallTransformations.ExportJournalToS3RequestMarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.QLDB.Model.Internal.MarshallTransformations.ExportJournalToS3ResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for ExportJournalToS3 operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.QLDB.Model.Internal.MarshallTransformations.ExportJournalToS3ResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.QLDB.Model.Internal.MarshallTransformations.ExportJournalToS3ResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.QLDB.Model.Internal.MarshallTransformations.ExportJournalToS3ResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.QLDB.Model.Internal.MarshallTransformations.GetBlockRequestMarshaller">
+            <summary>
+            GetBlock Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.QLDB.Model.Internal.MarshallTransformations.GetBlockRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.QLDB.Model.Internal.MarshallTransformations.GetBlockRequestMarshaller.Marshall(Amazon.QLDB.Model.GetBlockRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.QLDB.Model.Internal.MarshallTransformations.GetBlockRequestMarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.QLDB.Model.Internal.MarshallTransformations.GetBlockResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for GetBlock operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.QLDB.Model.Internal.MarshallTransformations.GetBlockResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.QLDB.Model.Internal.MarshallTransformations.GetBlockResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.QLDB.Model.Internal.MarshallTransformations.GetBlockResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.QLDB.Model.Internal.MarshallTransformations.GetDigestRequestMarshaller">
+            <summary>
+            GetDigest Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.QLDB.Model.Internal.MarshallTransformations.GetDigestRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.QLDB.Model.Internal.MarshallTransformations.GetDigestRequestMarshaller.Marshall(Amazon.QLDB.Model.GetDigestRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.QLDB.Model.Internal.MarshallTransformations.GetDigestRequestMarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.QLDB.Model.Internal.MarshallTransformations.GetDigestResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for GetDigest operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.QLDB.Model.Internal.MarshallTransformations.GetDigestResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.QLDB.Model.Internal.MarshallTransformations.GetDigestResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.QLDB.Model.Internal.MarshallTransformations.GetDigestResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.QLDB.Model.Internal.MarshallTransformations.GetRevisionRequestMarshaller">
+            <summary>
+            GetRevision Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.QLDB.Model.Internal.MarshallTransformations.GetRevisionRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.QLDB.Model.Internal.MarshallTransformations.GetRevisionRequestMarshaller.Marshall(Amazon.QLDB.Model.GetRevisionRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.QLDB.Model.Internal.MarshallTransformations.GetRevisionRequestMarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.QLDB.Model.Internal.MarshallTransformations.GetRevisionResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for GetRevision operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.QLDB.Model.Internal.MarshallTransformations.GetRevisionResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.QLDB.Model.Internal.MarshallTransformations.GetRevisionResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.QLDB.Model.Internal.MarshallTransformations.GetRevisionResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.QLDB.Model.Internal.MarshallTransformations.JournalS3ExportDescriptionUnmarshaller">
+            <summary>
+            Response Unmarshaller for JournalS3ExportDescription Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.QLDB.Model.Internal.MarshallTransformations.JournalS3ExportDescriptionUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#QLDB#Model#JournalS3ExportDescription,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.QLDB.Model.Internal.MarshallTransformations.JournalS3ExportDescriptionUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.QLDB.Model.Internal.MarshallTransformations.JournalS3ExportDescriptionUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.QLDB.Model.Internal.MarshallTransformations.LedgerSummaryUnmarshaller">
+            <summary>
+            Response Unmarshaller for LedgerSummary Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.QLDB.Model.Internal.MarshallTransformations.LedgerSummaryUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#QLDB#Model#LedgerSummary,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.QLDB.Model.Internal.MarshallTransformations.LedgerSummaryUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.QLDB.Model.Internal.MarshallTransformations.LedgerSummaryUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.QLDB.Model.Internal.MarshallTransformations.ListJournalS3ExportsForLedgerRequestMarshaller">
+            <summary>
+            ListJournalS3ExportsForLedger Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.QLDB.Model.Internal.MarshallTransformations.ListJournalS3ExportsForLedgerRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.QLDB.Model.Internal.MarshallTransformations.ListJournalS3ExportsForLedgerRequestMarshaller.Marshall(Amazon.QLDB.Model.ListJournalS3ExportsForLedgerRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.QLDB.Model.Internal.MarshallTransformations.ListJournalS3ExportsForLedgerRequestMarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.QLDB.Model.Internal.MarshallTransformations.ListJournalS3ExportsForLedgerResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for ListJournalS3ExportsForLedger operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.QLDB.Model.Internal.MarshallTransformations.ListJournalS3ExportsForLedgerResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.QLDB.Model.Internal.MarshallTransformations.ListJournalS3ExportsForLedgerResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.QLDB.Model.Internal.MarshallTransformations.ListJournalS3ExportsForLedgerResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.QLDB.Model.Internal.MarshallTransformations.ListJournalS3ExportsRequestMarshaller">
+            <summary>
+            ListJournalS3Exports Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.QLDB.Model.Internal.MarshallTransformations.ListJournalS3ExportsRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.QLDB.Model.Internal.MarshallTransformations.ListJournalS3ExportsRequestMarshaller.Marshall(Amazon.QLDB.Model.ListJournalS3ExportsRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.QLDB.Model.Internal.MarshallTransformations.ListJournalS3ExportsRequestMarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.QLDB.Model.Internal.MarshallTransformations.ListJournalS3ExportsResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for ListJournalS3Exports operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.QLDB.Model.Internal.MarshallTransformations.ListJournalS3ExportsResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.QLDB.Model.Internal.MarshallTransformations.ListJournalS3ExportsResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.QLDB.Model.Internal.MarshallTransformations.ListJournalS3ExportsResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.QLDB.Model.Internal.MarshallTransformations.ListLedgersRequestMarshaller">
+            <summary>
+            ListLedgers Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.QLDB.Model.Internal.MarshallTransformations.ListLedgersRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.QLDB.Model.Internal.MarshallTransformations.ListLedgersRequestMarshaller.Marshall(Amazon.QLDB.Model.ListLedgersRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.QLDB.Model.Internal.MarshallTransformations.ListLedgersRequestMarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.QLDB.Model.Internal.MarshallTransformations.ListLedgersResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for ListLedgers operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.QLDB.Model.Internal.MarshallTransformations.ListLedgersResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.QLDB.Model.Internal.MarshallTransformations.ListLedgersResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.QLDB.Model.Internal.MarshallTransformations.ListLedgersResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.QLDB.Model.Internal.MarshallTransformations.ListTagsForResourceRequestMarshaller">
+            <summary>
+            ListTagsForResource Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.QLDB.Model.Internal.MarshallTransformations.ListTagsForResourceRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.QLDB.Model.Internal.MarshallTransformations.ListTagsForResourceRequestMarshaller.Marshall(Amazon.QLDB.Model.ListTagsForResourceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.QLDB.Model.Internal.MarshallTransformations.ListTagsForResourceRequestMarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.QLDB.Model.Internal.MarshallTransformations.ListTagsForResourceResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for ListTagsForResource operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.QLDB.Model.Internal.MarshallTransformations.ListTagsForResourceResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.QLDB.Model.Internal.MarshallTransformations.ListTagsForResourceResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.QLDB.Model.Internal.MarshallTransformations.ListTagsForResourceResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.QLDB.Model.Internal.MarshallTransformations.S3EncryptionConfigurationMarshaller">
+            <summary>
+            S3EncryptionConfiguration Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.QLDB.Model.Internal.MarshallTransformations.S3EncryptionConfigurationMarshaller.Marshall(Amazon.QLDB.Model.S3EncryptionConfiguration,Amazon.Runtime.Internal.Transform.JsonMarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="requestObject"></param>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="F:Amazon.QLDB.Model.Internal.MarshallTransformations.S3EncryptionConfigurationMarshaller.Instance">
+            <summary>
+            Singleton Marshaller.
+            </summary>  
+        </member>
+        <member name="T:Amazon.QLDB.Model.Internal.MarshallTransformations.S3EncryptionConfigurationUnmarshaller">
+            <summary>
+            Response Unmarshaller for S3EncryptionConfiguration Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.QLDB.Model.Internal.MarshallTransformations.S3EncryptionConfigurationUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#QLDB#Model#S3EncryptionConfiguration,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.QLDB.Model.Internal.MarshallTransformations.S3EncryptionConfigurationUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.QLDB.Model.Internal.MarshallTransformations.S3EncryptionConfigurationUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.QLDB.Model.Internal.MarshallTransformations.S3ExportConfigurationMarshaller">
+            <summary>
+            S3ExportConfiguration Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.QLDB.Model.Internal.MarshallTransformations.S3ExportConfigurationMarshaller.Marshall(Amazon.QLDB.Model.S3ExportConfiguration,Amazon.Runtime.Internal.Transform.JsonMarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="requestObject"></param>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="F:Amazon.QLDB.Model.Internal.MarshallTransformations.S3ExportConfigurationMarshaller.Instance">
+            <summary>
+            Singleton Marshaller.
+            </summary>  
+        </member>
+        <member name="T:Amazon.QLDB.Model.Internal.MarshallTransformations.S3ExportConfigurationUnmarshaller">
+            <summary>
+            Response Unmarshaller for S3ExportConfiguration Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.QLDB.Model.Internal.MarshallTransformations.S3ExportConfigurationUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#QLDB#Model#S3ExportConfiguration,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.QLDB.Model.Internal.MarshallTransformations.S3ExportConfigurationUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.QLDB.Model.Internal.MarshallTransformations.S3ExportConfigurationUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.QLDB.Model.Internal.MarshallTransformations.TagResourceRequestMarshaller">
+            <summary>
+            TagResource Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.QLDB.Model.Internal.MarshallTransformations.TagResourceRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.QLDB.Model.Internal.MarshallTransformations.TagResourceRequestMarshaller.Marshall(Amazon.QLDB.Model.TagResourceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.QLDB.Model.Internal.MarshallTransformations.TagResourceRequestMarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.QLDB.Model.Internal.MarshallTransformations.TagResourceResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for TagResource operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.QLDB.Model.Internal.MarshallTransformations.TagResourceResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.QLDB.Model.Internal.MarshallTransformations.TagResourceResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.QLDB.Model.Internal.MarshallTransformations.TagResourceResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.QLDB.Model.Internal.MarshallTransformations.UntagResourceRequestMarshaller">
+            <summary>
+            UntagResource Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.QLDB.Model.Internal.MarshallTransformations.UntagResourceRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.QLDB.Model.Internal.MarshallTransformations.UntagResourceRequestMarshaller.Marshall(Amazon.QLDB.Model.UntagResourceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.QLDB.Model.Internal.MarshallTransformations.UntagResourceRequestMarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.QLDB.Model.Internal.MarshallTransformations.UntagResourceResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for UntagResource operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.QLDB.Model.Internal.MarshallTransformations.UntagResourceResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.QLDB.Model.Internal.MarshallTransformations.UntagResourceResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.QLDB.Model.Internal.MarshallTransformations.UntagResourceResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.QLDB.Model.Internal.MarshallTransformations.UpdateLedgerRequestMarshaller">
+            <summary>
+            UpdateLedger Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.QLDB.Model.Internal.MarshallTransformations.UpdateLedgerRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.QLDB.Model.Internal.MarshallTransformations.UpdateLedgerRequestMarshaller.Marshall(Amazon.QLDB.Model.UpdateLedgerRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.QLDB.Model.Internal.MarshallTransformations.UpdateLedgerRequestMarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.QLDB.Model.Internal.MarshallTransformations.UpdateLedgerResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for UpdateLedger operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.QLDB.Model.Internal.MarshallTransformations.UpdateLedgerResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.QLDB.Model.Internal.MarshallTransformations.UpdateLedgerResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.QLDB.Model.Internal.MarshallTransformations.UpdateLedgerResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.QLDB.Model.Internal.MarshallTransformations.ValueHolderMarshaller">
+            <summary>
+            ValueHolder Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.QLDB.Model.Internal.MarshallTransformations.ValueHolderMarshaller.Marshall(Amazon.QLDB.Model.ValueHolder,Amazon.Runtime.Internal.Transform.JsonMarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="requestObject"></param>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="F:Amazon.QLDB.Model.Internal.MarshallTransformations.ValueHolderMarshaller.Instance">
+            <summary>
+            Singleton Marshaller.
+            </summary>  
+        </member>
+        <member name="T:Amazon.QLDB.Model.Internal.MarshallTransformations.ValueHolderUnmarshaller">
+            <summary>
+            Response Unmarshaller for ValueHolder Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.QLDB.Model.Internal.MarshallTransformations.ValueHolderUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#QLDB#Model#ValueHolder,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.QLDB.Model.Internal.MarshallTransformations.ValueHolderUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.QLDB.Model.Internal.MarshallTransformations.ValueHolderUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.QLDB.Model.InvalidParameterException">
+            <summary>
+             QLDB exception
+             </summary>
+        </member>
+        <member name="M:Amazon.QLDB.Model.InvalidParameterException.#ctor(System.String)">
+            <summary>
+            Constructs a new InvalidParameterException with the specified error
+            message.
+            </summary>
+            <param name="message">
+            Describes the error encountered.
+            </param>
+        </member>
+        <member name="M:Amazon.QLDB.Model.InvalidParameterException.#ctor(System.String,System.Exception)">
+            <summary>
+            Construct instance of InvalidParameterException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.QLDB.Model.InvalidParameterException.#ctor(System.Exception)">
+            <summary>
+            Construct instance of InvalidParameterException
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.QLDB.Model.InvalidParameterException.#ctor(System.String,System.Exception,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of InvalidParameterException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="M:Amazon.QLDB.Model.InvalidParameterException.#ctor(System.String,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of InvalidParameterException
+            </summary>
+            <param name="message"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="T:Amazon.QLDB.Model.JournalS3ExportDescription">
+            <summary>
+            The information about a journal export job, including the ledger name, export ID,
+            when it was created, current status, and its start and end time export parameters.
+            </summary>
+        </member>
+        <member name="P:Amazon.QLDB.Model.JournalS3ExportDescription.ExclusiveEndTime">
+            <summary>
+            Gets and sets the property ExclusiveEndTime. 
+            <para>
+            The exclusive end date and time for the range of journal contents that are specified
+            in the original export request.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.QLDB.Model.JournalS3ExportDescription.ExportCreationTime">
+            <summary>
+            Gets and sets the property ExportCreationTime. 
+            <para>
+            The date and time, in epoch time format, when the export job was created. (Epoch time
+            format is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.QLDB.Model.JournalS3ExportDescription.ExportId">
+            <summary>
+            Gets and sets the property ExportId. 
+            <para>
+            The unique ID of the journal export job.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.QLDB.Model.JournalS3ExportDescription.InclusiveStartTime">
+            <summary>
+            Gets and sets the property InclusiveStartTime. 
+            <para>
+            The inclusive start date and time for the range of journal contents that are specified
+            in the original export request.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.QLDB.Model.JournalS3ExportDescription.LedgerName">
+            <summary>
+            Gets and sets the property LedgerName. 
+            <para>
+            The name of the ledger.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.QLDB.Model.JournalS3ExportDescription.RoleArn">
+            <summary>
+            Gets and sets the property RoleArn. 
+            <para>
+            The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a
+            journal export job to do the following:
+            </para>
+             <ul> <li> 
+            <para>
+            Write objects into your Amazon Simple Storage Service (Amazon S3) bucket.
+            </para>
+             </li> <li> 
+            <para>
+            (Optional) Use your customer master key (CMK) in AWS Key Management Service (AWS KMS)
+            for server-side encryption of your exported data.
+            </para>
+             </li> </ul>
+            </summary>
+        </member>
+        <member name="P:Amazon.QLDB.Model.JournalS3ExportDescription.S3ExportConfiguration">
+            <summary>
+            Gets and sets the property S3ExportConfiguration.
+            </summary>
+        </member>
+        <member name="P:Amazon.QLDB.Model.JournalS3ExportDescription.Status">
+            <summary>
+            Gets and sets the property Status. 
+            <para>
+            The current state of the journal export job.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.QLDB.Model.LedgerSummary">
+            <summary>
+            Information about a ledger, including its name, state, and when it was created.
+            </summary>
+        </member>
+        <member name="P:Amazon.QLDB.Model.LedgerSummary.CreationDateTime">
+            <summary>
+            Gets and sets the property CreationDateTime. 
+            <para>
+            The date and time, in epoch time format, when the ledger was created. (Epoch time
+            format is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.QLDB.Model.LedgerSummary.Name">
+            <summary>
+            Gets and sets the property Name. 
+            <para>
+            The name of the ledger.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.QLDB.Model.LedgerSummary.State">
+            <summary>
+            Gets and sets the property State. 
+            <para>
+            The current status of the ledger.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.QLDB.Model.LimitExceededException">
+            <summary>
+             QLDB exception
+             </summary>
+        </member>
+        <member name="M:Amazon.QLDB.Model.LimitExceededException.#ctor(System.String)">
+            <summary>
+            Constructs a new LimitExceededException with the specified error
+            message.
+            </summary>
+            <param name="message">
+            Describes the error encountered.
+            </param>
+        </member>
+        <member name="M:Amazon.QLDB.Model.LimitExceededException.#ctor(System.String,System.Exception)">
+            <summary>
+            Construct instance of LimitExceededException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.QLDB.Model.LimitExceededException.#ctor(System.Exception)">
+            <summary>
+            Construct instance of LimitExceededException
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.QLDB.Model.LimitExceededException.#ctor(System.String,System.Exception,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of LimitExceededException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="M:Amazon.QLDB.Model.LimitExceededException.#ctor(System.String,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of LimitExceededException
+            </summary>
+            <param name="message"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="T:Amazon.QLDB.Model.ListJournalS3ExportsForLedgerRequest">
+            <summary>
+            Container for the parameters to the ListJournalS3ExportsForLedger operation.
+            Returns an array of journal export job descriptions for a specified ledger.
+            
+             
+            <para>
+            This action returns a maximum of <code>MaxResults</code> items, and is paginated so
+            that you can retrieve all the items by calling <code>ListJournalS3ExportsForLedger</code>
+            multiple times.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.QLDB.Model.ListJournalS3ExportsForLedgerRequest.MaxResults">
+            <summary>
+            Gets and sets the property MaxResults. 
+            <para>
+            The maximum number of results to return in a single <code>ListJournalS3ExportsForLedger</code>
+            request. (The actual number of results returned might be fewer.)
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.QLDB.Model.ListJournalS3ExportsForLedgerRequest.Name">
+            <summary>
+            Gets and sets the property Name. 
+            <para>
+            The name of the ledger.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.QLDB.Model.ListJournalS3ExportsForLedgerRequest.NextToken">
+            <summary>
+            Gets and sets the property NextToken. 
+            <para>
+            A pagination token, indicating that you want to retrieve the next page of results.
+            If you received a value for <code>NextToken</code> in the response from a previous
+            <code>ListJournalS3ExportsForLedger</code> call, then you should use that value as
+            input here.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.QLDB.Model.ListJournalS3ExportsForLedgerResponse">
+            <summary>
+            This is the response object from the ListJournalS3ExportsForLedger operation.
+            </summary>
+        </member>
+        <member name="P:Amazon.QLDB.Model.ListJournalS3ExportsForLedgerResponse.JournalS3Exports">
+            <summary>
+            Gets and sets the property JournalS3Exports. 
+            <para>
+            The array of journal export job descriptions that are associated with the specified
+            ledger.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.QLDB.Model.ListJournalS3ExportsForLedgerResponse.NextToken">
+            <summary>
+            Gets and sets the property NextToken. <ul> <li> 
+            <para>
+            If <code>NextToken</code> is empty, then the last page of results has been processed
+            and there are no more results to be retrieved.
+            </para>
+             </li> <li> 
+            <para>
+            If <code>NextToken</code> is <i>not</i> empty, then there are more results available.
+            To retrieve the next page of results, use the value of <code>NextToken</code> in a
+            subsequent <code>ListJournalS3ExportsForLedger</code> call.
+            </para>
+             </li> </ul>
+            </summary>
+        </member>
+        <member name="T:Amazon.QLDB.Model.ListJournalS3ExportsRequest">
+            <summary>
+            Container for the parameters to the ListJournalS3Exports operation.
+            Returns an array of journal export job descriptions for all ledgers that are associated
+            with the current AWS account and Region.
+            
+             
+            <para>
+            This action returns a maximum of <code>MaxResults</code> items, and is paginated so
+            that you can retrieve all the items by calling <code>ListJournalS3Exports</code> multiple
+            times.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.QLDB.Model.ListJournalS3ExportsRequest.MaxResults">
+            <summary>
+            Gets and sets the property MaxResults. 
+            <para>
+            The maximum number of results to return in a single <code>ListJournalS3Exports</code>
+            request. (The actual number of results returned might be fewer.)
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.QLDB.Model.ListJournalS3ExportsRequest.NextToken">
+            <summary>
+            Gets and sets the property NextToken. 
+            <para>
+            A pagination token, indicating that you want to retrieve the next page of results.
+            If you received a value for <code>NextToken</code> in the response from a previous
+            <code>ListJournalS3Exports</code> call, then you should use that value as input here.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.QLDB.Model.ListJournalS3ExportsResponse">
+            <summary>
+            This is the response object from the ListJournalS3Exports operation.
+            </summary>
+        </member>
+        <member name="P:Amazon.QLDB.Model.ListJournalS3ExportsResponse.JournalS3Exports">
+            <summary>
+            Gets and sets the property JournalS3Exports. 
+            <para>
+            The array of journal export job descriptions for all ledgers that are associated with
+            the current AWS account and Region.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.QLDB.Model.ListJournalS3ExportsResponse.NextToken">
+            <summary>
+            Gets and sets the property NextToken. <ul> <li> 
+            <para>
+            If <code>NextToken</code> is empty, then the last page of results has been processed
+            and there are no more results to be retrieved.
+            </para>
+             </li> <li> 
+            <para>
+            If <code>NextToken</code> is <i>not</i> empty, then there are more results available.
+            To retrieve the next page of results, use the value of <code>NextToken</code> in a
+            subsequent <code>ListJournalS3Exports</code> call.
+            </para>
+             </li> </ul>
+            </summary>
+        </member>
+        <member name="T:Amazon.QLDB.Model.ListLedgersRequest">
+            <summary>
+            Container for the parameters to the ListLedgers operation.
+            Returns an array of ledger summaries that are associated with the current AWS account
+            and Region.
+            
+             
+            <para>
+            This action returns a maximum of 100 items and is paginated so that you can retrieve
+            all the items by calling <code>ListLedgers</code> multiple times.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.QLDB.Model.ListLedgersRequest.MaxResults">
+            <summary>
+            Gets and sets the property MaxResults. 
+            <para>
+            The maximum number of results to return in a single <code>ListLedgers</code> request.
+            (The actual number of results returned might be fewer.)
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.QLDB.Model.ListLedgersRequest.NextToken">
+            <summary>
+            Gets and sets the property NextToken. 
+            <para>
+            A pagination token, indicating that you want to retrieve the next page of results.
+            If you received a value for <code>NextToken</code> in the response from a previous
+            <code>ListLedgers</code> call, then you should use that value as input here.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.QLDB.Model.ListLedgersResponse">
+            <summary>
+            This is the response object from the ListLedgers operation.
+            </summary>
+        </member>
+        <member name="P:Amazon.QLDB.Model.ListLedgersResponse.Ledgers">
+            <summary>
+            Gets and sets the property Ledgers. 
+            <para>
+            The array of ledger summaries that are associated with the current AWS account and
+            Region.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.QLDB.Model.ListLedgersResponse.NextToken">
+            <summary>
+            Gets and sets the property NextToken. 
+            <para>
+            A pagination token, indicating whether there are more results available:
+            </para>
+             <ul> <li> 
+            <para>
+            If <code>NextToken</code> is empty, then the last page of results has been processed
+            and there are no more results to be retrieved.
+            </para>
+             </li> <li> 
+            <para>
+            If <code>NextToken</code> is <i>not</i> empty, then there are more results available.
+            To retrieve the next page of results, use the value of <code>NextToken</code> in a
+            subsequent <code>ListLedgers</code> call.
+            </para>
+             </li> </ul>
+            </summary>
+        </member>
+        <member name="T:Amazon.QLDB.Model.ListTagsForResourceRequest">
+            <summary>
+            Container for the parameters to the ListTagsForResource operation.
+            Returns all tags for a specified Amazon QLDB resource.
+            </summary>
+        </member>
+        <member name="P:Amazon.QLDB.Model.ListTagsForResourceRequest.ResourceArn">
+            <summary>
+            Gets and sets the property ResourceArn. 
+            <para>
+            The Amazon Resource Name (ARN) for which you want to list the tags. For example:
+            </para>
+             
+            <para>
+             <code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code> 
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.QLDB.Model.ListTagsForResourceResponse">
+            <summary>
+            This is the response object from the ListTagsForResource operation.
+            </summary>
+        </member>
+        <member name="P:Amazon.QLDB.Model.ListTagsForResourceResponse.Tags">
+            <summary>
+            Gets and sets the property Tags. 
+            <para>
+            The tags that are currently associated with the specified Amazon QLDB resource.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.QLDB.Model.ResourceAlreadyExistsException">
+            <summary>
+             QLDB exception
+             </summary>
+        </member>
+        <member name="M:Amazon.QLDB.Model.ResourceAlreadyExistsException.#ctor(System.String)">
+            <summary>
+            Constructs a new ResourceAlreadyExistsException with the specified error
+            message.
+            </summary>
+            <param name="message">
+            Describes the error encountered.
+            </param>
+        </member>
+        <member name="M:Amazon.QLDB.Model.ResourceAlreadyExistsException.#ctor(System.String,System.Exception)">
+            <summary>
+            Construct instance of ResourceAlreadyExistsException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.QLDB.Model.ResourceAlreadyExistsException.#ctor(System.Exception)">
+            <summary>
+            Construct instance of ResourceAlreadyExistsException
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.QLDB.Model.ResourceAlreadyExistsException.#ctor(System.String,System.Exception,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of ResourceAlreadyExistsException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="M:Amazon.QLDB.Model.ResourceAlreadyExistsException.#ctor(System.String,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of ResourceAlreadyExistsException
+            </summary>
+            <param name="message"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="T:Amazon.QLDB.Model.ResourceInUseException">
+            <summary>
+             QLDB exception
+             </summary>
+        </member>
+        <member name="M:Amazon.QLDB.Model.ResourceInUseException.#ctor(System.String)">
+            <summary>
+            Constructs a new ResourceInUseException with the specified error
+            message.
+            </summary>
+            <param name="message">
+            Describes the error encountered.
+            </param>
+        </member>
+        <member name="M:Amazon.QLDB.Model.ResourceInUseException.#ctor(System.String,System.Exception)">
+            <summary>
+            Construct instance of ResourceInUseException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.QLDB.Model.ResourceInUseException.#ctor(System.Exception)">
+            <summary>
+            Construct instance of ResourceInUseException
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.QLDB.Model.ResourceInUseException.#ctor(System.String,System.Exception,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of ResourceInUseException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="M:Amazon.QLDB.Model.ResourceInUseException.#ctor(System.String,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of ResourceInUseException
+            </summary>
+            <param name="message"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="T:Amazon.QLDB.Model.ResourceNotFoundException">
+            <summary>
+             QLDB exception
+             </summary>
+        </member>
+        <member name="M:Amazon.QLDB.Model.ResourceNotFoundException.#ctor(System.String)">
+            <summary>
+            Constructs a new ResourceNotFoundException with the specified error
+            message.
+            </summary>
+            <param name="message">
+            Describes the error encountered.
+            </param>
+        </member>
+        <member name="M:Amazon.QLDB.Model.ResourceNotFoundException.#ctor(System.String,System.Exception)">
+            <summary>
+            Construct instance of ResourceNotFoundException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.QLDB.Model.ResourceNotFoundException.#ctor(System.Exception)">
+            <summary>
+            Construct instance of ResourceNotFoundException
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.QLDB.Model.ResourceNotFoundException.#ctor(System.String,System.Exception,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of ResourceNotFoundException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="M:Amazon.QLDB.Model.ResourceNotFoundException.#ctor(System.String,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of ResourceNotFoundException
+            </summary>
+            <param name="message"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="T:Amazon.QLDB.Model.ResourcePreconditionNotMetException">
+            <summary>
+             QLDB exception
+             </summary>
+        </member>
+        <member name="M:Amazon.QLDB.Model.ResourcePreconditionNotMetException.#ctor(System.String)">
+            <summary>
+            Constructs a new ResourcePreconditionNotMetException with the specified error
+            message.
+            </summary>
+            <param name="message">
+            Describes the error encountered.
+            </param>
+        </member>
+        <member name="M:Amazon.QLDB.Model.ResourcePreconditionNotMetException.#ctor(System.String,System.Exception)">
+            <summary>
+            Construct instance of ResourcePreconditionNotMetException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.QLDB.Model.ResourcePreconditionNotMetException.#ctor(System.Exception)">
+            <summary>
+            Construct instance of ResourcePreconditionNotMetException
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.QLDB.Model.ResourcePreconditionNotMetException.#ctor(System.String,System.Exception,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of ResourcePreconditionNotMetException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="M:Amazon.QLDB.Model.ResourcePreconditionNotMetException.#ctor(System.String,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of ResourcePreconditionNotMetException
+            </summary>
+            <param name="message"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="T:Amazon.QLDB.Model.S3EncryptionConfiguration">
+            <summary>
+            The encryption settings that are used by a journal export job to write data in an
+            Amazon Simple Storage Service (Amazon S3) bucket.
+            </summary>
+        </member>
+        <member name="P:Amazon.QLDB.Model.S3EncryptionConfiguration.KmsKeyArn">
+            <summary>
+            Gets and sets the property KmsKeyArn. 
+            <para>
+            The Amazon Resource Name (ARN) for a customer master key (CMK) in AWS Key Management
+            Service (AWS KMS).
+            </para>
+             
+            <para>
+            You must provide a <code>KmsKeyArn</code> if you specify <code>SSE_KMS</code> as the
+            <code>ObjectEncryptionType</code>.
+            </para>
+             
+            <para>
+             <code>KmsKeyArn</code> is not required if you specify <code>SSE_S3</code> as the
+            <code>ObjectEncryptionType</code>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.QLDB.Model.S3EncryptionConfiguration.ObjectEncryptionType">
+            <summary>
+            Gets and sets the property ObjectEncryptionType. 
+            <para>
+            The Amazon S3 object encryption type.
+            </para>
+             
+            <para>
+            To learn more about server-side encryption options in Amazon S3, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Protecting
+            Data Using Server-Side Encryption</a> in the <i>Amazon S3 Developer Guide</i>.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.QLDB.Model.S3ExportConfiguration">
+            <summary>
+            The Amazon Simple Storage Service (Amazon S3) bucket location in which a journal export
+            job writes the journal contents.
+            </summary>
+        </member>
+        <member name="P:Amazon.QLDB.Model.S3ExportConfiguration.Bucket">
+            <summary>
+            Gets and sets the property Bucket. 
+            <para>
+            The Amazon S3 bucket name in which a journal export job writes the journal contents.
+            </para>
+             
+            <para>
+            The bucket name must comply with the Amazon S3 bucket naming conventions. For more
+            information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html">Bucket
+            Restrictions and Limitations</a> in the <i>Amazon S3 Developer Guide</i>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.QLDB.Model.S3ExportConfiguration.EncryptionConfiguration">
+            <summary>
+            Gets and sets the property EncryptionConfiguration. 
+            <para>
+            The encryption settings that are used by a journal export job to write data in an
+            Amazon S3 bucket.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.QLDB.Model.S3ExportConfiguration.Prefix">
+            <summary>
+            Gets and sets the property Prefix. 
+            <para>
+            The prefix for the Amazon S3 bucket in which a journal export job writes the journal
+            contents.
+            </para>
+             
+            <para>
+            The prefix must comply with Amazon S3 key naming rules and restrictions. For more
+            information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html">Object
+            Key and Metadata</a> in the <i>Amazon S3 Developer Guide</i>.
+            </para>
+             
+            <para>
+            The following are examples of valid <code>Prefix</code> values:
+            </para>
+             <ul> <li> 
+            <para>
+             <code>JournalExports-ForMyLedger/Testing/</code> 
+            </para>
+             </li> <li> 
+            <para>
+             <code>JournalExports</code> 
+            </para>
+             </li> <li> 
+            <para>
+             <code>My:Tests/</code> 
+            </para>
+             </li> </ul>
+            </summary>
+        </member>
+        <member name="T:Amazon.QLDB.Model.TagResourceRequest">
+            <summary>
+            Container for the parameters to the TagResource operation.
+            Adds one or more tags to a specified Amazon QLDB resource.
+            
+             
+            <para>
+            A resource can have up to 50 tags. If you try to create more than 50 tags for a resource,
+            your request fails and returns an error.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.QLDB.Model.TagResourceRequest.ResourceArn">
+            <summary>
+            Gets and sets the property ResourceArn. 
+            <para>
+            The Amazon Resource Name (ARN) to which you want to add the tags. For example:
+            </para>
+             
+            <para>
+             <code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code> 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.QLDB.Model.TagResourceRequest.Tags">
+            <summary>
+            Gets and sets the property Tags. 
+            <para>
+            The key-value pairs to add as tags to the specified QLDB resource. Tag keys are case
+            sensitive. If you specify a key that already exists for the resource, your request
+            fails and returns an error. Tag values are case sensitive and can be null.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.QLDB.Model.TagResourceResponse">
+            <summary>
+            This is the response object from the TagResource operation.
+            </summary>
+        </member>
+        <member name="T:Amazon.QLDB.Model.UntagResourceRequest">
+            <summary>
+            Container for the parameters to the UntagResource operation.
+            Removes one or more tags from a specified Amazon QLDB resource. You can specify up
+            to 50 tag keys to remove.
+            </summary>
+        </member>
+        <member name="P:Amazon.QLDB.Model.UntagResourceRequest.ResourceArn">
+            <summary>
+            Gets and sets the property ResourceArn. 
+            <para>
+            The Amazon Resource Name (ARN) from which you want to remove the tags. For example:
+            </para>
+             
+            <para>
+             <code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code> 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.QLDB.Model.UntagResourceRequest.TagKeys">
+            <summary>
+            Gets and sets the property TagKeys. 
+            <para>
+            The list of tag keys that you want to remove.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.QLDB.Model.UntagResourceResponse">
+            <summary>
+            This is the response object from the UntagResource operation.
+            </summary>
+        </member>
+        <member name="T:Amazon.QLDB.Model.UpdateLedgerRequest">
+            <summary>
+            Container for the parameters to the UpdateLedger operation.
+            Updates properties on a ledger.
+            </summary>
+        </member>
+        <member name="P:Amazon.QLDB.Model.UpdateLedgerRequest.DeletionProtection">
+            <summary>
+            Gets and sets the property DeletionProtection. 
+            <para>
+            The flag that prevents a ledger from being deleted by any user. If not provided on
+            ledger creation, this feature is enabled (<code>true</code>) by default.
+            </para>
+             
+            <para>
+            If deletion protection is enabled, you must first disable it before you can delete
+            the ledger using the QLDB API or the AWS Command Line Interface (AWS CLI). You can
+            disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.
+            The QLDB console disables deletion protection for you when you use it to delete a
+            ledger.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.QLDB.Model.UpdateLedgerRequest.Name">
+            <summary>
+            Gets and sets the property Name. 
+            <para>
+            The name of the ledger.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.QLDB.Model.UpdateLedgerResponse">
+            <summary>
+            This is the response object from the UpdateLedger operation.
+            </summary>
+        </member>
+        <member name="P:Amazon.QLDB.Model.UpdateLedgerResponse.Arn">
+            <summary>
+            Gets and sets the property Arn. 
+            <para>
+            The Amazon Resource Name (ARN) for the ledger.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.QLDB.Model.UpdateLedgerResponse.CreationDateTime">
+            <summary>
+            Gets and sets the property CreationDateTime. 
+            <para>
+            The date and time, in epoch time format, when the ledger was created. (Epoch time
+            format is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.QLDB.Model.UpdateLedgerResponse.DeletionProtection">
+            <summary>
+            Gets and sets the property DeletionProtection. 
+            <para>
+            The flag that prevents a ledger from being deleted by any user. If not provided on
+            ledger creation, this feature is enabled (<code>true</code>) by default.
+            </para>
+             
+            <para>
+            If deletion protection is enabled, you must first disable it before you can delete
+            the ledger using the QLDB API or the AWS Command Line Interface (AWS CLI). You can
+            disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.
+            The QLDB console disables deletion protection for you when you use it to delete a
+            ledger.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.QLDB.Model.UpdateLedgerResponse.Name">
+            <summary>
+            Gets and sets the property Name. 
+            <para>
+            The name of the ledger.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.QLDB.Model.UpdateLedgerResponse.State">
+            <summary>
+            Gets and sets the property State. 
+            <para>
+            The current status of the ledger.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.QLDB.Model.ValueHolder">
+            <summary>
+            A structure that can contain an Amazon Ion value in multiple encoding formats.
+            </summary>
+        </member>
+        <member name="P:Amazon.QLDB.Model.ValueHolder.IonText">
+            <summary>
+            Gets and sets the property IonText. 
+            <para>
+            An Amazon Ion plaintext value contained in a <code>ValueHolder</code> structure.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.QLDB.ExportStatus">
+            <summary>
+            Constants used for properties of type ExportStatus.
+            </summary>
+        </member>
+        <member name="F:Amazon.QLDB.ExportStatus.CANCELLED">
+            <summary>
+            Constant CANCELLED for ExportStatus
+            </summary>
+        </member>
+        <member name="F:Amazon.QLDB.ExportStatus.COMPLETED">
+            <summary>
+            Constant COMPLETED for ExportStatus
+            </summary>
+        </member>
+        <member name="F:Amazon.QLDB.ExportStatus.IN_PROGRESS">
+            <summary>
+            Constant IN_PROGRESS for ExportStatus
+            </summary>
+        </member>
+        <member name="M:Amazon.QLDB.ExportStatus.#ctor(System.String)">
+            <summary>
+            This constant constructor does not need to be called if the constant
+            you are attempting to use is already defined as a static instance of 
+            this class.
+            This constructor should be used to construct constants that are not
+            defined as statics, for instance if attempting to use a feature that is
+            newer than the current version of the SDK.
+            </summary>
+        </member>
+        <member name="M:Amazon.QLDB.ExportStatus.FindValue(System.String)">
+            <summary>
+            Finds the constant for the unique value.
+            </summary>
+            <param name="value">The unique value for the constant</param>
+            <returns>The constant for the unique value</returns>
+        </member>
+        <member name="M:Amazon.QLDB.ExportStatus.op_Implicit(System.String)~Amazon.QLDB.ExportStatus">
+            <summary>
+            Utility method to convert strings to the constant class.
+            </summary>
+            <param name="value">The string value to convert to the constant class.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.QLDB.LedgerState">
+            <summary>
+            Constants used for properties of type LedgerState.
+            </summary>
+        </member>
+        <member name="F:Amazon.QLDB.LedgerState.ACTIVE">
+            <summary>
+            Constant ACTIVE for LedgerState
+            </summary>
+        </member>
+        <member name="F:Amazon.QLDB.LedgerState.CREATING">
+            <summary>
+            Constant CREATING for LedgerState
+            </summary>
+        </member>
+        <member name="F:Amazon.QLDB.LedgerState.DELETED">
+            <summary>
+            Constant DELETED for LedgerState
+            </summary>
+        </member>
+        <member name="F:Amazon.QLDB.LedgerState.DELETING">
+            <summary>
+            Constant DELETING for LedgerState
+            </summary>
+        </member>
+        <member name="M:Amazon.QLDB.LedgerState.#ctor(System.String)">
+            <summary>
+            This constant constructor does not need to be called if the constant
+            you are attempting to use is already defined as a static instance of 
+            this class.
+            This constructor should be used to construct constants that are not
+            defined as statics, for instance if attempting to use a feature that is
+            newer than the current version of the SDK.
+            </summary>
+        </member>
+        <member name="M:Amazon.QLDB.LedgerState.FindValue(System.String)">
+            <summary>
+            Finds the constant for the unique value.
+            </summary>
+            <param name="value">The unique value for the constant</param>
+            <returns>The constant for the unique value</returns>
+        </member>
+        <member name="M:Amazon.QLDB.LedgerState.op_Implicit(System.String)~Amazon.QLDB.LedgerState">
+            <summary>
+            Utility method to convert strings to the constant class.
+            </summary>
+            <param name="value">The string value to convert to the constant class.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.QLDB.PermissionsMode">
+            <summary>
+            Constants used for properties of type PermissionsMode.
+            </summary>
+        </member>
+        <member name="F:Amazon.QLDB.PermissionsMode.ALLOW_ALL">
+            <summary>
+            Constant ALLOW_ALL for PermissionsMode
+            </summary>
+        </member>
+        <member name="M:Amazon.QLDB.PermissionsMode.#ctor(System.String)">
+            <summary>
+            This constant constructor does not need to be called if the constant
+            you are attempting to use is already defined as a static instance of 
+            this class.
+            This constructor should be used to construct constants that are not
+            defined as statics, for instance if attempting to use a feature that is
+            newer than the current version of the SDK.
+            </summary>
+        </member>
+        <member name="M:Amazon.QLDB.PermissionsMode.FindValue(System.String)">
+            <summary>
+            Finds the constant for the unique value.
+            </summary>
+            <param name="value">The unique value for the constant</param>
+            <returns>The constant for the unique value</returns>
+        </member>
+        <member name="M:Amazon.QLDB.PermissionsMode.op_Implicit(System.String)~Amazon.QLDB.PermissionsMode">
+            <summary>
+            Utility method to convert strings to the constant class.
+            </summary>
+            <param name="value">The string value to convert to the constant class.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.QLDB.S3ObjectEncryptionType">
+            <summary>
+            Constants used for properties of type S3ObjectEncryptionType.
+            </summary>
+        </member>
+        <member name="F:Amazon.QLDB.S3ObjectEncryptionType.NO_ENCRYPTION">
+            <summary>
+            Constant NO_ENCRYPTION for S3ObjectEncryptionType
+            </summary>
+        </member>
+        <member name="F:Amazon.QLDB.S3ObjectEncryptionType.SSE_KMS">
+            <summary>
+            Constant SSE_KMS for S3ObjectEncryptionType
+            </summary>
+        </member>
+        <member name="F:Amazon.QLDB.S3ObjectEncryptionType.SSE_S3">
+            <summary>
+            Constant SSE_S3 for S3ObjectEncryptionType
+            </summary>
+        </member>
+        <member name="M:Amazon.QLDB.S3ObjectEncryptionType.#ctor(System.String)">
+            <summary>
+            This constant constructor does not need to be called if the constant
+            you are attempting to use is already defined as a static instance of 
+            this class.
+            This constructor should be used to construct constants that are not
+            defined as statics, for instance if attempting to use a feature that is
+            newer than the current version of the SDK.
+            </summary>
+        </member>
+        <member name="M:Amazon.QLDB.S3ObjectEncryptionType.FindValue(System.String)">
+            <summary>
+            Finds the constant for the unique value.
+            </summary>
+            <param name="value">The unique value for the constant</param>
+            <returns>The constant for the unique value</returns>
+        </member>
+        <member name="M:Amazon.QLDB.S3ObjectEncryptionType.op_Implicit(System.String)~Amazon.QLDB.S3ObjectEncryptionType">
+            <summary>
+            Utility method to convert strings to the constant class.
+            </summary>
+            <param name="value">The string value to convert to the constant class.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.QLDB.AmazonQLDBClient">
+             <summary>
+             Implementation for accessing QLDB
+            
+             The control plane for Amazon QLDB
+             </summary>
+        </member>
+        <member name="M:Amazon.QLDB.AmazonQLDBClient.#ctor">
+             <summary>
+             Constructs AmazonQLDBClient with the credentials loaded from the application's
+             default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+             
+             Example App.config with credentials set. 
+             <code>
+             &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+             &lt;configuration&gt;
+                 &lt;appSettings&gt;
+                     &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+                 &lt;/appSettings&gt;
+             &lt;/configuration&gt;
+             </code>
+            
+             </summary>
+        </member>
+        <member name="M:Amazon.QLDB.AmazonQLDBClient.#ctor(Amazon.RegionEndpoint)">
+             <summary>
+             Constructs AmazonQLDBClient with the credentials loaded from the application's
+             default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+             
+             Example App.config with credentials set. 
+             <code>
+             &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+             &lt;configuration&gt;
+                 &lt;appSettings&gt;
+                     &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+                 &lt;/appSettings&gt;
+             &lt;/configuration&gt;
+             </code>
+            
+             </summary>
+             <param name="region">The region to connect.</param>
+        </member>
+        <member name="M:Amazon.QLDB.AmazonQLDBClient.#ctor(Amazon.QLDB.AmazonQLDBConfig)">
+             <summary>
+             Constructs AmazonQLDBClient with the credentials loaded from the application's
+             default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+             
+             Example App.config with credentials set. 
+             <code>
+             &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+             &lt;configuration&gt;
+                 &lt;appSettings&gt;
+                     &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+                 &lt;/appSettings&gt;
+             &lt;/configuration&gt;
+             </code>
+            
+             </summary>
+             <param name="config">The AmazonQLDBClient Configuration Object</param>
+        </member>
+        <member name="M:Amazon.QLDB.AmazonQLDBClient.#ctor(Amazon.Runtime.AWSCredentials)">
+            <summary>
+            Constructs AmazonQLDBClient with AWS Credentials
+            </summary>
+            <param name="credentials">AWS Credentials</param>
+        </member>
+        <member name="M:Amazon.QLDB.AmazonQLDBClient.#ctor(Amazon.Runtime.AWSCredentials,Amazon.RegionEndpoint)">
+            <summary>
+            Constructs AmazonQLDBClient with AWS Credentials
+            </summary>
+            <param name="credentials">AWS Credentials</param>
+            <param name="region">The region to connect.</param>
+        </member>
+        <member name="M:Amazon.QLDB.AmazonQLDBClient.#ctor(Amazon.Runtime.AWSCredentials,Amazon.QLDB.AmazonQLDBConfig)">
+            <summary>
+            Constructs AmazonQLDBClient with AWS Credentials and an
+            AmazonQLDBClient Configuration object.
+            </summary>
+            <param name="credentials">AWS Credentials</param>
+            <param name="clientConfig">The AmazonQLDBClient Configuration Object</param>
+        </member>
+        <member name="M:Amazon.QLDB.AmazonQLDBClient.#ctor(System.String,System.String)">
+            <summary>
+            Constructs AmazonQLDBClient with AWS Access Key ID and AWS Secret Key
+            </summary>
+            <param name="awsAccessKeyId">AWS Access Key ID</param>
+            <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        </member>
+        <member name="M:Amazon.QLDB.AmazonQLDBClient.#ctor(System.String,System.String,Amazon.RegionEndpoint)">
+            <summary>
+            Constructs AmazonQLDBClient with AWS Access Key ID and AWS Secret Key
+            </summary>
+            <param name="awsAccessKeyId">AWS Access Key ID</param>
+            <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+            <param name="region">The region to connect.</param>
+        </member>
+        <member name="M:Amazon.QLDB.AmazonQLDBClient.#ctor(System.String,System.String,Amazon.QLDB.AmazonQLDBConfig)">
+            <summary>
+            Constructs AmazonQLDBClient with AWS Access Key ID, AWS Secret Key and an
+            AmazonQLDBClient Configuration object. 
+            </summary>
+            <param name="awsAccessKeyId">AWS Access Key ID</param>
+            <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+            <param name="clientConfig">The AmazonQLDBClient Configuration Object</param>
+        </member>
+        <member name="M:Amazon.QLDB.AmazonQLDBClient.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Constructs AmazonQLDBClient with AWS Access Key ID and AWS Secret Key
+            </summary>
+            <param name="awsAccessKeyId">AWS Access Key ID</param>
+            <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+            <param name="awsSessionToken">AWS Session Token</param>
+        </member>
+        <member name="M:Amazon.QLDB.AmazonQLDBClient.#ctor(System.String,System.String,System.String,Amazon.RegionEndpoint)">
+            <summary>
+            Constructs AmazonQLDBClient with AWS Access Key ID and AWS Secret Key
+            </summary>
+            <param name="awsAccessKeyId">AWS Access Key ID</param>
+            <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+            <param name="awsSessionToken">AWS Session Token</param>
+            <param name="region">The region to connect.</param>
+        </member>
+        <member name="M:Amazon.QLDB.AmazonQLDBClient.#ctor(System.String,System.String,System.String,Amazon.QLDB.AmazonQLDBConfig)">
+            <summary>
+            Constructs AmazonQLDBClient with AWS Access Key ID, AWS Secret Key and an
+            AmazonQLDBClient Configuration object. 
+            </summary>
+            <param name="awsAccessKeyId">AWS Access Key ID</param>
+            <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+            <param name="awsSessionToken">AWS Session Token</param>
+            <param name="clientConfig">The AmazonQLDBClient Configuration Object</param>
+        </member>
+        <member name="M:Amazon.QLDB.AmazonQLDBClient.CreateSigner">
+            <summary>
+            Creates the signer for the service.
+            </summary>
+        </member>
+        <member name="P:Amazon.QLDB.AmazonQLDBClient.ServiceMetadata">
+            <summary>
+            Capture metadata for the service.
+            </summary>
+        </member>
+        <member name="M:Amazon.QLDB.AmazonQLDBClient.Dispose(System.Boolean)">
+            <summary>
+            Disposes the service client.
+            </summary>
+        </member>
+        <member name="M:Amazon.QLDB.AmazonQLDBClient.CreateLedgerAsync(Amazon.QLDB.Model.CreateLedgerRequest,System.Threading.CancellationToken)">
+            <summary>
+            Creates a new ledger in your AWS account.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the CreateLedger service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the CreateLedger service method, as returned by QLDB.</returns>
+            <exception cref="T:Amazon.QLDB.Model.InvalidParameterException">
+            One or more parameters in the request aren't valid.
+            </exception>
+            <exception cref="T:Amazon.QLDB.Model.LimitExceededException">
+            You have reached the limit on the maximum number of resources allowed.
+            </exception>
+            <exception cref="T:Amazon.QLDB.Model.ResourceAlreadyExistsException">
+            The specified resource already exists.
+            </exception>
+            <exception cref="T:Amazon.QLDB.Model.ResourceInUseException">
+            The specified resource can't be modified at this time.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/CreateLedger">REST API Reference for CreateLedger Operation</seealso>
+        </member>
+        <member name="M:Amazon.QLDB.AmazonQLDBClient.DeleteLedgerAsync(Amazon.QLDB.Model.DeleteLedgerRequest,System.Threading.CancellationToken)">
+            <summary>
+            Deletes a ledger and all of its contents. This action is irreversible.
+            
+             
+            <para>
+            If deletion protection is enabled, you must first disable it before you can delete
+            the ledger using the QLDB API or the AWS Command Line Interface (AWS CLI). You can
+            disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.
+            The QLDB console disables deletion protection for you when you use it to delete a
+            ledger.
+            </para>
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the DeleteLedger service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the DeleteLedger service method, as returned by QLDB.</returns>
+            <exception cref="T:Amazon.QLDB.Model.InvalidParameterException">
+            One or more parameters in the request aren't valid.
+            </exception>
+            <exception cref="T:Amazon.QLDB.Model.ResourceInUseException">
+            The specified resource can't be modified at this time.
+            </exception>
+            <exception cref="T:Amazon.QLDB.Model.ResourceNotFoundException">
+            The specified resource doesn't exist.
+            </exception>
+            <exception cref="T:Amazon.QLDB.Model.ResourcePreconditionNotMetException">
+            The operation failed because a condition wasn't satisfied in advance.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/DeleteLedger">REST API Reference for DeleteLedger Operation</seealso>
+        </member>
+        <member name="M:Amazon.QLDB.AmazonQLDBClient.DescribeJournalS3ExportAsync(Amazon.QLDB.Model.DescribeJournalS3ExportRequest,System.Threading.CancellationToken)">
+            <summary>
+            Returns information about a journal export job, including the ledger name, export
+            ID, when it was created, current status, and its start and end time export parameters.
+            
+             
+            <para>
+            If the export job with the given <code>ExportId</code> doesn't exist, then throws
+            <code>ResourceNotFoundException</code>.
+            </para>
+             
+            <para>
+            If the ledger with the given <code>Name</code> doesn't exist, then throws <code>ResourceNotFoundException</code>.
+            </para>
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the DescribeJournalS3Export service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the DescribeJournalS3Export service method, as returned by QLDB.</returns>
+            <exception cref="T:Amazon.QLDB.Model.ResourceNotFoundException">
+            The specified resource doesn't exist.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/DescribeJournalS3Export">REST API Reference for DescribeJournalS3Export Operation</seealso>
+        </member>
+        <member name="M:Amazon.QLDB.AmazonQLDBClient.DescribeLedgerAsync(Amazon.QLDB.Model.DescribeLedgerRequest,System.Threading.CancellationToken)">
+            <summary>
+            Returns information about a ledger, including its state and when it was created.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the DescribeLedger service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the DescribeLedger service method, as returned by QLDB.</returns>
+            <exception cref="T:Amazon.QLDB.Model.InvalidParameterException">
+            One or more parameters in the request aren't valid.
+            </exception>
+            <exception cref="T:Amazon.QLDB.Model.ResourceNotFoundException">
+            The specified resource doesn't exist.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/DescribeLedger">REST API Reference for DescribeLedger Operation</seealso>
+        </member>
+        <member name="M:Amazon.QLDB.AmazonQLDBClient.ExportJournalToS3Async(Amazon.QLDB.Model.ExportJournalToS3Request,System.Threading.CancellationToken)">
+            <summary>
+            Exports journal contents within a date and time range from a ledger into a specified
+            Amazon Simple Storage Service (Amazon S3) bucket. The data is written as files in
+            Amazon Ion format.
+            
+             
+            <para>
+            If the ledger with the given <code>Name</code> doesn't exist, then throws <code>ResourceNotFoundException</code>.
+            </para>
+             
+            <para>
+            If the ledger with the given <code>Name</code> is in <code>CREATING</code> status,
+            then throws <code>ResourcePreconditionNotMetException</code>.
+            </para>
+             
+            <para>
+            You can initiate up to two concurrent journal export requests for each ledger. Beyond
+            this limit, journal export requests throw <code>LimitExceededException</code>.
+            </para>
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the ExportJournalToS3 service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the ExportJournalToS3 service method, as returned by QLDB.</returns>
+            <exception cref="T:Amazon.QLDB.Model.ResourceNotFoundException">
+            The specified resource doesn't exist.
+            </exception>
+            <exception cref="T:Amazon.QLDB.Model.ResourcePreconditionNotMetException">
+            The operation failed because a condition wasn't satisfied in advance.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/ExportJournalToS3">REST API Reference for ExportJournalToS3 Operation</seealso>
+        </member>
+        <member name="M:Amazon.QLDB.AmazonQLDBClient.GetBlockAsync(Amazon.QLDB.Model.GetBlockRequest,System.Threading.CancellationToken)">
+            <summary>
+            Returns a journal block object at a specified address in a ledger. Also returns a
+            proof of the specified block for verification if <code>DigestTipAddress</code> is
+            provided.
+            
+             
+            <para>
+            If the specified ledger doesn't exist or is in <code>DELETING</code> status, then
+            throws <code>ResourceNotFoundException</code>.
+            </para>
+             
+            <para>
+            If the specified ledger is in <code>CREATING</code> status, then throws <code>ResourcePreconditionNotMetException</code>.
+            </para>
+             
+            <para>
+            If no block exists with the specified address, then throws <code>InvalidParameterException</code>.
+            </para>
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the GetBlock service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the GetBlock service method, as returned by QLDB.</returns>
+            <exception cref="T:Amazon.QLDB.Model.InvalidParameterException">
+            One or more parameters in the request aren't valid.
+            </exception>
+            <exception cref="T:Amazon.QLDB.Model.ResourceNotFoundException">
+            The specified resource doesn't exist.
+            </exception>
+            <exception cref="T:Amazon.QLDB.Model.ResourcePreconditionNotMetException">
+            The operation failed because a condition wasn't satisfied in advance.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/GetBlock">REST API Reference for GetBlock Operation</seealso>
+        </member>
+        <member name="M:Amazon.QLDB.AmazonQLDBClient.GetDigestAsync(Amazon.QLDB.Model.GetDigestRequest,System.Threading.CancellationToken)">
+            <summary>
+            Returns the digest of a ledger at the latest committed block in the journal. The response
+            includes a 256-bit hash value and a block address.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the GetDigest service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the GetDigest service method, as returned by QLDB.</returns>
+            <exception cref="T:Amazon.QLDB.Model.InvalidParameterException">
+            One or more parameters in the request aren't valid.
+            </exception>
+            <exception cref="T:Amazon.QLDB.Model.ResourceNotFoundException">
+            The specified resource doesn't exist.
+            </exception>
+            <exception cref="T:Amazon.QLDB.Model.ResourcePreconditionNotMetException">
+            The operation failed because a condition wasn't satisfied in advance.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/GetDigest">REST API Reference for GetDigest Operation</seealso>
+        </member>
+        <member name="M:Amazon.QLDB.AmazonQLDBClient.GetRevisionAsync(Amazon.QLDB.Model.GetRevisionRequest,System.Threading.CancellationToken)">
+            <summary>
+            Returns a revision data object for a specified document ID and block address. Also
+            returns a proof of the specified revision for verification if <code>DigestTipAddress</code>
+            is provided.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the GetRevision service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the GetRevision service method, as returned by QLDB.</returns>
+            <exception cref="T:Amazon.QLDB.Model.InvalidParameterException">
+            One or more parameters in the request aren't valid.
+            </exception>
+            <exception cref="T:Amazon.QLDB.Model.ResourceNotFoundException">
+            The specified resource doesn't exist.
+            </exception>
+            <exception cref="T:Amazon.QLDB.Model.ResourcePreconditionNotMetException">
+            The operation failed because a condition wasn't satisfied in advance.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/GetRevision">REST API Reference for GetRevision Operation</seealso>
+        </member>
+        <member name="M:Amazon.QLDB.AmazonQLDBClient.ListJournalS3ExportsAsync(Amazon.QLDB.Model.ListJournalS3ExportsRequest,System.Threading.CancellationToken)">
+            <summary>
+            Returns an array of journal export job descriptions for all ledgers that are associated
+            with the current AWS account and Region.
+            
+             
+            <para>
+            This action returns a maximum of <code>MaxResults</code> items, and is paginated so
+            that you can retrieve all the items by calling <code>ListJournalS3Exports</code> multiple
+            times.
+            </para>
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the ListJournalS3Exports service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the ListJournalS3Exports service method, as returned by QLDB.</returns>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/ListJournalS3Exports">REST API Reference for ListJournalS3Exports Operation</seealso>
+        </member>
+        <member name="M:Amazon.QLDB.AmazonQLDBClient.ListJournalS3ExportsForLedgerAsync(Amazon.QLDB.Model.ListJournalS3ExportsForLedgerRequest,System.Threading.CancellationToken)">
+            <summary>
+            Returns an array of journal export job descriptions for a specified ledger.
+            
+             
+            <para>
+            This action returns a maximum of <code>MaxResults</code> items, and is paginated so
+            that you can retrieve all the items by calling <code>ListJournalS3ExportsForLedger</code>
+            multiple times.
+            </para>
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the ListJournalS3ExportsForLedger service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the ListJournalS3ExportsForLedger service method, as returned by QLDB.</returns>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/ListJournalS3ExportsForLedger">REST API Reference for ListJournalS3ExportsForLedger Operation</seealso>
+        </member>
+        <member name="M:Amazon.QLDB.AmazonQLDBClient.ListLedgersAsync(Amazon.QLDB.Model.ListLedgersRequest,System.Threading.CancellationToken)">
+            <summary>
+            Returns an array of ledger summaries that are associated with the current AWS account
+            and Region.
+            
+             
+            <para>
+            This action returns a maximum of 100 items and is paginated so that you can retrieve
+            all the items by calling <code>ListLedgers</code> multiple times.
+            </para>
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the ListLedgers service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the ListLedgers service method, as returned by QLDB.</returns>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/ListLedgers">REST API Reference for ListLedgers Operation</seealso>
+        </member>
+        <member name="M:Amazon.QLDB.AmazonQLDBClient.ListTagsForResourceAsync(Amazon.QLDB.Model.ListTagsForResourceRequest,System.Threading.CancellationToken)">
+            <summary>
+            Returns all tags for a specified Amazon QLDB resource.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the ListTagsForResource service method, as returned by QLDB.</returns>
+            <exception cref="T:Amazon.QLDB.Model.InvalidParameterException">
+            One or more parameters in the request aren't valid.
+            </exception>
+            <exception cref="T:Amazon.QLDB.Model.ResourceNotFoundException">
+            The specified resource doesn't exist.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        </member>
+        <member name="M:Amazon.QLDB.AmazonQLDBClient.TagResourceAsync(Amazon.QLDB.Model.TagResourceRequest,System.Threading.CancellationToken)">
+            <summary>
+            Adds one or more tags to a specified Amazon QLDB resource.
+            
+             
+            <para>
+            A resource can have up to 50 tags. If you try to create more than 50 tags for a resource,
+            your request fails and returns an error.
+            </para>
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the TagResource service method, as returned by QLDB.</returns>
+            <exception cref="T:Amazon.QLDB.Model.InvalidParameterException">
+            One or more parameters in the request aren't valid.
+            </exception>
+            <exception cref="T:Amazon.QLDB.Model.ResourceNotFoundException">
+            The specified resource doesn't exist.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/TagResource">REST API Reference for TagResource Operation</seealso>
+        </member>
+        <member name="M:Amazon.QLDB.AmazonQLDBClient.UntagResourceAsync(Amazon.QLDB.Model.UntagResourceRequest,System.Threading.CancellationToken)">
+            <summary>
+            Removes one or more tags from a specified Amazon QLDB resource. You can specify up
+            to 50 tag keys to remove.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the UntagResource service method, as returned by QLDB.</returns>
+            <exception cref="T:Amazon.QLDB.Model.InvalidParameterException">
+            One or more parameters in the request aren't valid.
+            </exception>
+            <exception cref="T:Amazon.QLDB.Model.ResourceNotFoundException">
+            The specified resource doesn't exist.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        </member>
+        <member name="M:Amazon.QLDB.AmazonQLDBClient.UpdateLedgerAsync(Amazon.QLDB.Model.UpdateLedgerRequest,System.Threading.CancellationToken)">
+            <summary>
+            Updates properties on a ledger.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the UpdateLedger service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the UpdateLedger service method, as returned by QLDB.</returns>
+            <exception cref="T:Amazon.QLDB.Model.InvalidParameterException">
+            One or more parameters in the request aren't valid.
+            </exception>
+            <exception cref="T:Amazon.QLDB.Model.ResourceNotFoundException">
+            The specified resource doesn't exist.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/UpdateLedger">REST API Reference for UpdateLedger Operation</seealso>
+        </member>
+        <member name="T:Amazon.QLDB.IAmazonQLDB">
+             <summary>
+             Interface for accessing QLDB
+            
+             The control plane for Amazon QLDB
+             </summary>
+        </member>
+        <member name="M:Amazon.QLDB.IAmazonQLDB.CreateLedgerAsync(Amazon.QLDB.Model.CreateLedgerRequest,System.Threading.CancellationToken)">
+            <summary>
+            Creates a new ledger in your AWS account.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the CreateLedger service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the CreateLedger service method, as returned by QLDB.</returns>
+            <exception cref="T:Amazon.QLDB.Model.InvalidParameterException">
+            One or more parameters in the request aren't valid.
+            </exception>
+            <exception cref="T:Amazon.QLDB.Model.LimitExceededException">
+            You have reached the limit on the maximum number of resources allowed.
+            </exception>
+            <exception cref="T:Amazon.QLDB.Model.ResourceAlreadyExistsException">
+            The specified resource already exists.
+            </exception>
+            <exception cref="T:Amazon.QLDB.Model.ResourceInUseException">
+            The specified resource can't be modified at this time.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/CreateLedger">REST API Reference for CreateLedger Operation</seealso>
+        </member>
+        <member name="M:Amazon.QLDB.IAmazonQLDB.DeleteLedgerAsync(Amazon.QLDB.Model.DeleteLedgerRequest,System.Threading.CancellationToken)">
+            <summary>
+            Deletes a ledger and all of its contents. This action is irreversible.
+            
+             
+            <para>
+            If deletion protection is enabled, you must first disable it before you can delete
+            the ledger using the QLDB API or the AWS Command Line Interface (AWS CLI). You can
+            disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.
+            The QLDB console disables deletion protection for you when you use it to delete a
+            ledger.
+            </para>
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the DeleteLedger service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the DeleteLedger service method, as returned by QLDB.</returns>
+            <exception cref="T:Amazon.QLDB.Model.InvalidParameterException">
+            One or more parameters in the request aren't valid.
+            </exception>
+            <exception cref="T:Amazon.QLDB.Model.ResourceInUseException">
+            The specified resource can't be modified at this time.
+            </exception>
+            <exception cref="T:Amazon.QLDB.Model.ResourceNotFoundException">
+            The specified resource doesn't exist.
+            </exception>
+            <exception cref="T:Amazon.QLDB.Model.ResourcePreconditionNotMetException">
+            The operation failed because a condition wasn't satisfied in advance.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/DeleteLedger">REST API Reference for DeleteLedger Operation</seealso>
+        </member>
+        <member name="M:Amazon.QLDB.IAmazonQLDB.DescribeJournalS3ExportAsync(Amazon.QLDB.Model.DescribeJournalS3ExportRequest,System.Threading.CancellationToken)">
+            <summary>
+            Returns information about a journal export job, including the ledger name, export
+            ID, when it was created, current status, and its start and end time export parameters.
+            
+             
+            <para>
+            If the export job with the given <code>ExportId</code> doesn't exist, then throws
+            <code>ResourceNotFoundException</code>.
+            </para>
+             
+            <para>
+            If the ledger with the given <code>Name</code> doesn't exist, then throws <code>ResourceNotFoundException</code>.
+            </para>
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the DescribeJournalS3Export service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the DescribeJournalS3Export service method, as returned by QLDB.</returns>
+            <exception cref="T:Amazon.QLDB.Model.ResourceNotFoundException">
+            The specified resource doesn't exist.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/DescribeJournalS3Export">REST API Reference for DescribeJournalS3Export Operation</seealso>
+        </member>
+        <member name="M:Amazon.QLDB.IAmazonQLDB.DescribeLedgerAsync(Amazon.QLDB.Model.DescribeLedgerRequest,System.Threading.CancellationToken)">
+            <summary>
+            Returns information about a ledger, including its state and when it was created.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the DescribeLedger service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the DescribeLedger service method, as returned by QLDB.</returns>
+            <exception cref="T:Amazon.QLDB.Model.InvalidParameterException">
+            One or more parameters in the request aren't valid.
+            </exception>
+            <exception cref="T:Amazon.QLDB.Model.ResourceNotFoundException">
+            The specified resource doesn't exist.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/DescribeLedger">REST API Reference for DescribeLedger Operation</seealso>
+        </member>
+        <member name="M:Amazon.QLDB.IAmazonQLDB.ExportJournalToS3Async(Amazon.QLDB.Model.ExportJournalToS3Request,System.Threading.CancellationToken)">
+            <summary>
+            Exports journal contents within a date and time range from a ledger into a specified
+            Amazon Simple Storage Service (Amazon S3) bucket. The data is written as files in
+            Amazon Ion format.
+            
+             
+            <para>
+            If the ledger with the given <code>Name</code> doesn't exist, then throws <code>ResourceNotFoundException</code>.
+            </para>
+             
+            <para>
+            If the ledger with the given <code>Name</code> is in <code>CREATING</code> status,
+            then throws <code>ResourcePreconditionNotMetException</code>.
+            </para>
+             
+            <para>
+            You can initiate up to two concurrent journal export requests for each ledger. Beyond
+            this limit, journal export requests throw <code>LimitExceededException</code>.
+            </para>
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the ExportJournalToS3 service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the ExportJournalToS3 service method, as returned by QLDB.</returns>
+            <exception cref="T:Amazon.QLDB.Model.ResourceNotFoundException">
+            The specified resource doesn't exist.
+            </exception>
+            <exception cref="T:Amazon.QLDB.Model.ResourcePreconditionNotMetException">
+            The operation failed because a condition wasn't satisfied in advance.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/ExportJournalToS3">REST API Reference for ExportJournalToS3 Operation</seealso>
+        </member>
+        <member name="M:Amazon.QLDB.IAmazonQLDB.GetBlockAsync(Amazon.QLDB.Model.GetBlockRequest,System.Threading.CancellationToken)">
+            <summary>
+            Returns a journal block object at a specified address in a ledger. Also returns a
+            proof of the specified block for verification if <code>DigestTipAddress</code> is
+            provided.
+            
+             
+            <para>
+            If the specified ledger doesn't exist or is in <code>DELETING</code> status, then
+            throws <code>ResourceNotFoundException</code>.
+            </para>
+             
+            <para>
+            If the specified ledger is in <code>CREATING</code> status, then throws <code>ResourcePreconditionNotMetException</code>.
+            </para>
+             
+            <para>
+            If no block exists with the specified address, then throws <code>InvalidParameterException</code>.
+            </para>
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the GetBlock service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the GetBlock service method, as returned by QLDB.</returns>
+            <exception cref="T:Amazon.QLDB.Model.InvalidParameterException">
+            One or more parameters in the request aren't valid.
+            </exception>
+            <exception cref="T:Amazon.QLDB.Model.ResourceNotFoundException">
+            The specified resource doesn't exist.
+            </exception>
+            <exception cref="T:Amazon.QLDB.Model.ResourcePreconditionNotMetException">
+            The operation failed because a condition wasn't satisfied in advance.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/GetBlock">REST API Reference for GetBlock Operation</seealso>
+        </member>
+        <member name="M:Amazon.QLDB.IAmazonQLDB.GetDigestAsync(Amazon.QLDB.Model.GetDigestRequest,System.Threading.CancellationToken)">
+            <summary>
+            Returns the digest of a ledger at the latest committed block in the journal. The response
+            includes a 256-bit hash value and a block address.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the GetDigest service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the GetDigest service method, as returned by QLDB.</returns>
+            <exception cref="T:Amazon.QLDB.Model.InvalidParameterException">
+            One or more parameters in the request aren't valid.
+            </exception>
+            <exception cref="T:Amazon.QLDB.Model.ResourceNotFoundException">
+            The specified resource doesn't exist.
+            </exception>
+            <exception cref="T:Amazon.QLDB.Model.ResourcePreconditionNotMetException">
+            The operation failed because a condition wasn't satisfied in advance.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/GetDigest">REST API Reference for GetDigest Operation</seealso>
+        </member>
+        <member name="M:Amazon.QLDB.IAmazonQLDB.GetRevisionAsync(Amazon.QLDB.Model.GetRevisionRequest,System.Threading.CancellationToken)">
+            <summary>
+            Returns a revision data object for a specified document ID and block address. Also
+            returns a proof of the specified revision for verification if <code>DigestTipAddress</code>
+            is provided.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the GetRevision service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the GetRevision service method, as returned by QLDB.</returns>
+            <exception cref="T:Amazon.QLDB.Model.InvalidParameterException">
+            One or more parameters in the request aren't valid.
+            </exception>
+            <exception cref="T:Amazon.QLDB.Model.ResourceNotFoundException">
+            The specified resource doesn't exist.
+            </exception>
+            <exception cref="T:Amazon.QLDB.Model.ResourcePreconditionNotMetException">
+            The operation failed because a condition wasn't satisfied in advance.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/GetRevision">REST API Reference for GetRevision Operation</seealso>
+        </member>
+        <member name="M:Amazon.QLDB.IAmazonQLDB.ListJournalS3ExportsAsync(Amazon.QLDB.Model.ListJournalS3ExportsRequest,System.Threading.CancellationToken)">
+            <summary>
+            Returns an array of journal export job descriptions for all ledgers that are associated
+            with the current AWS account and Region.
+            
+             
+            <para>
+            This action returns a maximum of <code>MaxResults</code> items, and is paginated so
+            that you can retrieve all the items by calling <code>ListJournalS3Exports</code> multiple
+            times.
+            </para>
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the ListJournalS3Exports service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the ListJournalS3Exports service method, as returned by QLDB.</returns>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/ListJournalS3Exports">REST API Reference for ListJournalS3Exports Operation</seealso>
+        </member>
+        <member name="M:Amazon.QLDB.IAmazonQLDB.ListJournalS3ExportsForLedgerAsync(Amazon.QLDB.Model.ListJournalS3ExportsForLedgerRequest,System.Threading.CancellationToken)">
+            <summary>
+            Returns an array of journal export job descriptions for a specified ledger.
+            
+             
+            <para>
+            This action returns a maximum of <code>MaxResults</code> items, and is paginated so
+            that you can retrieve all the items by calling <code>ListJournalS3ExportsForLedger</code>
+            multiple times.
+            </para>
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the ListJournalS3ExportsForLedger service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the ListJournalS3ExportsForLedger service method, as returned by QLDB.</returns>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/ListJournalS3ExportsForLedger">REST API Reference for ListJournalS3ExportsForLedger Operation</seealso>
+        </member>
+        <member name="M:Amazon.QLDB.IAmazonQLDB.ListLedgersAsync(Amazon.QLDB.Model.ListLedgersRequest,System.Threading.CancellationToken)">
+            <summary>
+            Returns an array of ledger summaries that are associated with the current AWS account
+            and Region.
+            
+             
+            <para>
+            This action returns a maximum of 100 items and is paginated so that you can retrieve
+            all the items by calling <code>ListLedgers</code> multiple times.
+            </para>
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the ListLedgers service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the ListLedgers service method, as returned by QLDB.</returns>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/ListLedgers">REST API Reference for ListLedgers Operation</seealso>
+        </member>
+        <member name="M:Amazon.QLDB.IAmazonQLDB.ListTagsForResourceAsync(Amazon.QLDB.Model.ListTagsForResourceRequest,System.Threading.CancellationToken)">
+            <summary>
+            Returns all tags for a specified Amazon QLDB resource.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the ListTagsForResource service method, as returned by QLDB.</returns>
+            <exception cref="T:Amazon.QLDB.Model.InvalidParameterException">
+            One or more parameters in the request aren't valid.
+            </exception>
+            <exception cref="T:Amazon.QLDB.Model.ResourceNotFoundException">
+            The specified resource doesn't exist.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        </member>
+        <member name="M:Amazon.QLDB.IAmazonQLDB.TagResourceAsync(Amazon.QLDB.Model.TagResourceRequest,System.Threading.CancellationToken)">
+            <summary>
+            Adds one or more tags to a specified Amazon QLDB resource.
+            
+             
+            <para>
+            A resource can have up to 50 tags. If you try to create more than 50 tags for a resource,
+            your request fails and returns an error.
+            </para>
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the TagResource service method, as returned by QLDB.</returns>
+            <exception cref="T:Amazon.QLDB.Model.InvalidParameterException">
+            One or more parameters in the request aren't valid.
+            </exception>
+            <exception cref="T:Amazon.QLDB.Model.ResourceNotFoundException">
+            The specified resource doesn't exist.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/TagResource">REST API Reference for TagResource Operation</seealso>
+        </member>
+        <member name="M:Amazon.QLDB.IAmazonQLDB.UntagResourceAsync(Amazon.QLDB.Model.UntagResourceRequest,System.Threading.CancellationToken)">
+            <summary>
+            Removes one or more tags from a specified Amazon QLDB resource. You can specify up
+            to 50 tag keys to remove.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the UntagResource service method, as returned by QLDB.</returns>
+            <exception cref="T:Amazon.QLDB.Model.InvalidParameterException">
+            One or more parameters in the request aren't valid.
+            </exception>
+            <exception cref="T:Amazon.QLDB.Model.ResourceNotFoundException">
+            The specified resource doesn't exist.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        </member>
+        <member name="M:Amazon.QLDB.IAmazonQLDB.UpdateLedgerAsync(Amazon.QLDB.Model.UpdateLedgerRequest,System.Threading.CancellationToken)">
+            <summary>
+            Updates properties on a ledger.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the UpdateLedger service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the UpdateLedger service method, as returned by QLDB.</returns>
+            <exception cref="T:Amazon.QLDB.Model.InvalidParameterException">
+            One or more parameters in the request aren't valid.
+            </exception>
+            <exception cref="T:Amazon.QLDB.Model.ResourceNotFoundException">
+            The specified resource doesn't exist.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/UpdateLedger">REST API Reference for UpdateLedger Operation</seealso>
+        </member>
+    </members>
+</doc>

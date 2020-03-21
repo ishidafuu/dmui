@@ -1,0 +1,1956 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AWSSDK.DLM</name>
+    </assembly>
+    <members>
+        <member name="T:Amazon.DLM.AmazonDLMConfig">
+            <summary>
+            Configuration for accessing Amazon DLM service
+            </summary>
+        </member>
+        <member name="M:Amazon.DLM.AmazonDLMConfig.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="P:Amazon.DLM.AmazonDLMConfig.RegionEndpointServiceName">
+            <summary>
+            The constant used to lookup in the region hash the endpoint.
+            </summary>
+        </member>
+        <member name="P:Amazon.DLM.AmazonDLMConfig.ServiceVersion">
+            <summary>
+            Gets the ServiceVersion property.
+            </summary>
+        </member>
+        <member name="P:Amazon.DLM.AmazonDLMConfig.UserAgent">
+            <summary>
+            Gets the value of UserAgent property.
+            </summary>
+        </member>
+        <member name="T:Amazon.DLM.AmazonDLMException">
+            <summary>
+             Common exception for the DLM service.
+             </summary>
+        </member>
+        <member name="M:Amazon.DLM.AmazonDLMException.#ctor(System.String)">
+            <summary>
+            Construct instance of AmazonDLMException
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:Amazon.DLM.AmazonDLMException.#ctor(System.String,System.Exception)">
+            <summary>
+            Construct instance of AmazonDLMException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.DLM.AmazonDLMException.#ctor(System.Exception)">
+            <summary>
+            Construct instance of AmazonDLMException
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.DLM.AmazonDLMException.#ctor(System.String,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of AmazonDLMException
+            </summary>
+            <param name="message"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="M:Amazon.DLM.AmazonDLMException.#ctor(System.String,System.Exception,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of AmazonDLMException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="T:Amazon.DLM.Internal.AmazonDLMMetadata">
+            <summary>
+            Service metadata for  Amazon DLM service
+            </summary>
+        </member>
+        <member name="P:Amazon.DLM.Internal.AmazonDLMMetadata.ServiceId">
+            <summary>
+            Gets the value of the Service Id.
+            </summary>
+        </member>
+        <member name="P:Amazon.DLM.Internal.AmazonDLMMetadata.OperationNameMapping">
+            <summary>
+            Gets the dictionary that gives mapping of renamed operations
+            </summary>
+        </member>
+        <member name="T:Amazon.DLM.AmazonDLMRequest">
+            <summary>
+            Base class for DLM operation requests.
+            </summary>
+        </member>
+        <member name="T:Amazon.DLM.Model.CreateLifecyclePolicyRequest">
+            <summary>
+            Container for the parameters to the CreateLifecyclePolicy operation.
+            Creates a policy to manage the lifecycle of the specified AWS resources. You can create
+            up to 100 lifecycle policies.
+            </summary>
+        </member>
+        <member name="P:Amazon.DLM.Model.CreateLifecyclePolicyRequest.Description">
+            <summary>
+            Gets and sets the property Description. 
+            <para>
+            A description of the lifecycle policy. The characters ^[0-9A-Za-z _-]+$ are supported.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.DLM.Model.CreateLifecyclePolicyRequest.ExecutionRoleArn">
+            <summary>
+            Gets and sets the property ExecutionRoleArn. 
+            <para>
+            The Amazon Resource Name (ARN) of the IAM role used to run the operations specified
+            by the lifecycle policy.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.DLM.Model.CreateLifecyclePolicyRequest.PolicyDetails">
+            <summary>
+            Gets and sets the property PolicyDetails. 
+            <para>
+            The configuration details of the lifecycle policy.
+            </para>
+             
+            <para>
+            Target tags cannot be re-used across lifecycle policies.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.DLM.Model.CreateLifecyclePolicyRequest.State">
+            <summary>
+            Gets and sets the property State. 
+            <para>
+            The desired activation state of the lifecycle policy after creation.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.DLM.Model.CreateLifecyclePolicyResponse">
+            <summary>
+            This is the response object from the CreateLifecyclePolicy operation.
+            </summary>
+        </member>
+        <member name="P:Amazon.DLM.Model.CreateLifecyclePolicyResponse.PolicyId">
+            <summary>
+            Gets and sets the property PolicyId. 
+            <para>
+            The identifier of the lifecycle policy.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.DLM.Model.CreateRule">
+            <summary>
+            Specifies when to create snapshots of EBS volumes.
+            </summary>
+        </member>
+        <member name="P:Amazon.DLM.Model.CreateRule.Interval">
+            <summary>
+            Gets and sets the property Interval. 
+            <para>
+            The interval between snapshots. The supported values are 2, 3, 4, 6, 8, 12, and 24.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.DLM.Model.CreateRule.IntervalUnit">
+            <summary>
+            Gets and sets the property IntervalUnit. 
+            <para>
+            The interval unit.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.DLM.Model.CreateRule.Times">
+            <summary>
+            Gets and sets the property Times. 
+            <para>
+            The time, in UTC, to start the operation. The supported format is hh:mm.
+            </para>
+             
+            <para>
+            The operation occurs within a one-hour window following the specified time.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.DLM.Model.DeleteLifecyclePolicyRequest">
+            <summary>
+            Container for the parameters to the DeleteLifecyclePolicy operation.
+            Deletes the specified lifecycle policy and halts the automated operations that the
+            policy specified.
+            </summary>
+        </member>
+        <member name="P:Amazon.DLM.Model.DeleteLifecyclePolicyRequest.PolicyId">
+            <summary>
+            Gets and sets the property PolicyId. 
+            <para>
+            The identifier of the lifecycle policy.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.DLM.Model.DeleteLifecyclePolicyResponse">
+            <summary>
+            This is the response object from the DeleteLifecyclePolicy operation.
+            </summary>
+        </member>
+        <member name="T:Amazon.DLM.Model.GetLifecyclePoliciesRequest">
+            <summary>
+            Container for the parameters to the GetLifecyclePolicies operation.
+            Gets summary information about all or the specified data lifecycle policies.
+            
+             
+            <para>
+            To get complete information about a policy, use <a>GetLifecyclePolicy</a>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.DLM.Model.GetLifecyclePoliciesRequest.PolicyIds">
+            <summary>
+            Gets and sets the property PolicyIds. 
+            <para>
+            The identifiers of the data lifecycle policies.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.DLM.Model.GetLifecyclePoliciesRequest.ResourceTypes">
+            <summary>
+            Gets and sets the property ResourceTypes. 
+            <para>
+            The resource type.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.DLM.Model.GetLifecyclePoliciesRequest.State">
+            <summary>
+            Gets and sets the property State. 
+            <para>
+            The activation state.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.DLM.Model.GetLifecyclePoliciesRequest.TagsToAdd">
+            <summary>
+            Gets and sets the property TagsToAdd. 
+            <para>
+            The tags to add to objects created by the policy.
+            </para>
+             
+            <para>
+            Tags are strings in the format <code>key=value</code>.
+            </para>
+             
+            <para>
+            These user-defined tags are added in addition to the AWS-added lifecycle tags.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.DLM.Model.GetLifecyclePoliciesRequest.TargetTags">
+            <summary>
+            Gets and sets the property TargetTags. 
+            <para>
+            The target tag for a policy.
+            </para>
+             
+            <para>
+            Tags are strings in the format <code>key=value</code>.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.DLM.Model.GetLifecyclePoliciesResponse">
+            <summary>
+            This is the response object from the GetLifecyclePolicies operation.
+            </summary>
+        </member>
+        <member name="P:Amazon.DLM.Model.GetLifecyclePoliciesResponse.Policies">
+            <summary>
+            Gets and sets the property Policies. 
+            <para>
+            Summary information about the lifecycle policies.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.DLM.Model.GetLifecyclePolicyRequest">
+            <summary>
+            Container for the parameters to the GetLifecyclePolicy operation.
+            Gets detailed information about the specified lifecycle policy.
+            </summary>
+        </member>
+        <member name="P:Amazon.DLM.Model.GetLifecyclePolicyRequest.PolicyId">
+            <summary>
+            Gets and sets the property PolicyId. 
+            <para>
+            The identifier of the lifecycle policy.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.DLM.Model.GetLifecyclePolicyResponse">
+            <summary>
+            This is the response object from the GetLifecyclePolicy operation.
+            </summary>
+        </member>
+        <member name="P:Amazon.DLM.Model.GetLifecyclePolicyResponse.Policy">
+            <summary>
+            Gets and sets the property Policy. 
+            <para>
+            Detailed information about the lifecycle policy.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.DLM.Model.InternalServerException">
+            <summary>
+             DLM exception
+             </summary>
+        </member>
+        <member name="M:Amazon.DLM.Model.InternalServerException.#ctor(System.String)">
+            <summary>
+            Constructs a new InternalServerException with the specified error
+            message.
+            </summary>
+            <param name="message">
+            Describes the error encountered.
+            </param>
+        </member>
+        <member name="M:Amazon.DLM.Model.InternalServerException.#ctor(System.String,System.Exception)">
+            <summary>
+            Construct instance of InternalServerException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.DLM.Model.InternalServerException.#ctor(System.Exception)">
+            <summary>
+            Construct instance of InternalServerException
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.DLM.Model.InternalServerException.#ctor(System.String,System.Exception,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of InternalServerException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="M:Amazon.DLM.Model.InternalServerException.#ctor(System.String,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of InternalServerException
+            </summary>
+            <param name="message"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="T:Amazon.DLM.Model.Internal.MarshallTransformations.CreateLifecyclePolicyRequestMarshaller">
+            <summary>
+            CreateLifecyclePolicy Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.DLM.Model.Internal.MarshallTransformations.CreateLifecyclePolicyRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.DLM.Model.Internal.MarshallTransformations.CreateLifecyclePolicyRequestMarshaller.Marshall(Amazon.DLM.Model.CreateLifecyclePolicyRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.DLM.Model.Internal.MarshallTransformations.CreateLifecyclePolicyRequestMarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.DLM.Model.Internal.MarshallTransformations.CreateLifecyclePolicyResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for CreateLifecyclePolicy operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.DLM.Model.Internal.MarshallTransformations.CreateLifecyclePolicyResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.DLM.Model.Internal.MarshallTransformations.CreateLifecyclePolicyResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.DLM.Model.Internal.MarshallTransformations.CreateLifecyclePolicyResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.DLM.Model.Internal.MarshallTransformations.CreateRuleMarshaller">
+            <summary>
+            CreateRule Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.DLM.Model.Internal.MarshallTransformations.CreateRuleMarshaller.Marshall(Amazon.DLM.Model.CreateRule,Amazon.Runtime.Internal.Transform.JsonMarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="requestObject"></param>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="F:Amazon.DLM.Model.Internal.MarshallTransformations.CreateRuleMarshaller.Instance">
+            <summary>
+            Singleton Marshaller.
+            </summary>  
+        </member>
+        <member name="T:Amazon.DLM.Model.Internal.MarshallTransformations.CreateRuleUnmarshaller">
+            <summary>
+            Response Unmarshaller for CreateRule Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.DLM.Model.Internal.MarshallTransformations.CreateRuleUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#DLM#Model#CreateRule,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.DLM.Model.Internal.MarshallTransformations.CreateRuleUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.DLM.Model.Internal.MarshallTransformations.CreateRuleUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.DLM.Model.Internal.MarshallTransformations.DeleteLifecyclePolicyRequestMarshaller">
+            <summary>
+            DeleteLifecyclePolicy Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.DLM.Model.Internal.MarshallTransformations.DeleteLifecyclePolicyRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.DLM.Model.Internal.MarshallTransformations.DeleteLifecyclePolicyRequestMarshaller.Marshall(Amazon.DLM.Model.DeleteLifecyclePolicyRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.DLM.Model.Internal.MarshallTransformations.DeleteLifecyclePolicyRequestMarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.DLM.Model.Internal.MarshallTransformations.DeleteLifecyclePolicyResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for DeleteLifecyclePolicy operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.DLM.Model.Internal.MarshallTransformations.DeleteLifecyclePolicyResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.DLM.Model.Internal.MarshallTransformations.DeleteLifecyclePolicyResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.DLM.Model.Internal.MarshallTransformations.DeleteLifecyclePolicyResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.DLM.Model.Internal.MarshallTransformations.GetLifecyclePoliciesRequestMarshaller">
+            <summary>
+            GetLifecyclePolicies Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.DLM.Model.Internal.MarshallTransformations.GetLifecyclePoliciesRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.DLM.Model.Internal.MarshallTransformations.GetLifecyclePoliciesRequestMarshaller.Marshall(Amazon.DLM.Model.GetLifecyclePoliciesRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.DLM.Model.Internal.MarshallTransformations.GetLifecyclePoliciesRequestMarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.DLM.Model.Internal.MarshallTransformations.GetLifecyclePoliciesResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for GetLifecyclePolicies operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.DLM.Model.Internal.MarshallTransformations.GetLifecyclePoliciesResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.DLM.Model.Internal.MarshallTransformations.GetLifecyclePoliciesResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.DLM.Model.Internal.MarshallTransformations.GetLifecyclePoliciesResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.DLM.Model.Internal.MarshallTransformations.GetLifecyclePolicyRequestMarshaller">
+            <summary>
+            GetLifecyclePolicy Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.DLM.Model.Internal.MarshallTransformations.GetLifecyclePolicyRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.DLM.Model.Internal.MarshallTransformations.GetLifecyclePolicyRequestMarshaller.Marshall(Amazon.DLM.Model.GetLifecyclePolicyRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.DLM.Model.Internal.MarshallTransformations.GetLifecyclePolicyRequestMarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.DLM.Model.Internal.MarshallTransformations.GetLifecyclePolicyResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for GetLifecyclePolicy operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.DLM.Model.Internal.MarshallTransformations.GetLifecyclePolicyResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.DLM.Model.Internal.MarshallTransformations.GetLifecyclePolicyResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.DLM.Model.Internal.MarshallTransformations.GetLifecyclePolicyResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.DLM.Model.Internal.MarshallTransformations.LifecyclePolicySummaryUnmarshaller">
+            <summary>
+            Response Unmarshaller for LifecyclePolicySummary Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.DLM.Model.Internal.MarshallTransformations.LifecyclePolicySummaryUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#DLM#Model#LifecyclePolicySummary,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.DLM.Model.Internal.MarshallTransformations.LifecyclePolicySummaryUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.DLM.Model.Internal.MarshallTransformations.LifecyclePolicySummaryUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.DLM.Model.Internal.MarshallTransformations.LifecyclePolicyUnmarshaller">
+            <summary>
+            Response Unmarshaller for LifecyclePolicy Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.DLM.Model.Internal.MarshallTransformations.LifecyclePolicyUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#DLM#Model#LifecyclePolicy,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.DLM.Model.Internal.MarshallTransformations.LifecyclePolicyUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.DLM.Model.Internal.MarshallTransformations.LifecyclePolicyUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.DLM.Model.Internal.MarshallTransformations.ParametersMarshaller">
+            <summary>
+            Parameters Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.DLM.Model.Internal.MarshallTransformations.ParametersMarshaller.Marshall(Amazon.DLM.Model.Parameters,Amazon.Runtime.Internal.Transform.JsonMarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="requestObject"></param>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="F:Amazon.DLM.Model.Internal.MarshallTransformations.ParametersMarshaller.Instance">
+            <summary>
+            Singleton Marshaller.
+            </summary>  
+        </member>
+        <member name="T:Amazon.DLM.Model.Internal.MarshallTransformations.ParametersUnmarshaller">
+            <summary>
+            Response Unmarshaller for Parameters Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.DLM.Model.Internal.MarshallTransformations.ParametersUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#DLM#Model#Parameters,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.DLM.Model.Internal.MarshallTransformations.ParametersUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.DLM.Model.Internal.MarshallTransformations.ParametersUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.DLM.Model.Internal.MarshallTransformations.PolicyDetailsMarshaller">
+            <summary>
+            PolicyDetails Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.DLM.Model.Internal.MarshallTransformations.PolicyDetailsMarshaller.Marshall(Amazon.DLM.Model.PolicyDetails,Amazon.Runtime.Internal.Transform.JsonMarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="requestObject"></param>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="F:Amazon.DLM.Model.Internal.MarshallTransformations.PolicyDetailsMarshaller.Instance">
+            <summary>
+            Singleton Marshaller.
+            </summary>  
+        </member>
+        <member name="T:Amazon.DLM.Model.Internal.MarshallTransformations.PolicyDetailsUnmarshaller">
+            <summary>
+            Response Unmarshaller for PolicyDetails Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.DLM.Model.Internal.MarshallTransformations.PolicyDetailsUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#DLM#Model#PolicyDetails,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.DLM.Model.Internal.MarshallTransformations.PolicyDetailsUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.DLM.Model.Internal.MarshallTransformations.PolicyDetailsUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.DLM.Model.Internal.MarshallTransformations.RetainRuleMarshaller">
+            <summary>
+            RetainRule Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.DLM.Model.Internal.MarshallTransformations.RetainRuleMarshaller.Marshall(Amazon.DLM.Model.RetainRule,Amazon.Runtime.Internal.Transform.JsonMarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="requestObject"></param>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="F:Amazon.DLM.Model.Internal.MarshallTransformations.RetainRuleMarshaller.Instance">
+            <summary>
+            Singleton Marshaller.
+            </summary>  
+        </member>
+        <member name="T:Amazon.DLM.Model.Internal.MarshallTransformations.RetainRuleUnmarshaller">
+            <summary>
+            Response Unmarshaller for RetainRule Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.DLM.Model.Internal.MarshallTransformations.RetainRuleUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#DLM#Model#RetainRule,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.DLM.Model.Internal.MarshallTransformations.RetainRuleUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.DLM.Model.Internal.MarshallTransformations.RetainRuleUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.DLM.Model.Internal.MarshallTransformations.ScheduleMarshaller">
+            <summary>
+            Schedule Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.DLM.Model.Internal.MarshallTransformations.ScheduleMarshaller.Marshall(Amazon.DLM.Model.Schedule,Amazon.Runtime.Internal.Transform.JsonMarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="requestObject"></param>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="F:Amazon.DLM.Model.Internal.MarshallTransformations.ScheduleMarshaller.Instance">
+            <summary>
+            Singleton Marshaller.
+            </summary>  
+        </member>
+        <member name="T:Amazon.DLM.Model.Internal.MarshallTransformations.ScheduleUnmarshaller">
+            <summary>
+            Response Unmarshaller for Schedule Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.DLM.Model.Internal.MarshallTransformations.ScheduleUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#DLM#Model#Schedule,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.DLM.Model.Internal.MarshallTransformations.ScheduleUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.DLM.Model.Internal.MarshallTransformations.ScheduleUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.DLM.Model.Internal.MarshallTransformations.TagMarshaller">
+            <summary>
+            Tag Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.DLM.Model.Internal.MarshallTransformations.TagMarshaller.Marshall(Amazon.DLM.Model.Tag,Amazon.Runtime.Internal.Transform.JsonMarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="requestObject"></param>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="F:Amazon.DLM.Model.Internal.MarshallTransformations.TagMarshaller.Instance">
+            <summary>
+            Singleton Marshaller.
+            </summary>  
+        </member>
+        <member name="T:Amazon.DLM.Model.Internal.MarshallTransformations.TagUnmarshaller">
+            <summary>
+            Response Unmarshaller for Tag Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.DLM.Model.Internal.MarshallTransformations.TagUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#DLM#Model#Tag,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.DLM.Model.Internal.MarshallTransformations.TagUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.DLM.Model.Internal.MarshallTransformations.TagUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.DLM.Model.Internal.MarshallTransformations.UpdateLifecyclePolicyRequestMarshaller">
+            <summary>
+            UpdateLifecyclePolicy Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.DLM.Model.Internal.MarshallTransformations.UpdateLifecyclePolicyRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.DLM.Model.Internal.MarshallTransformations.UpdateLifecyclePolicyRequestMarshaller.Marshall(Amazon.DLM.Model.UpdateLifecyclePolicyRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.DLM.Model.Internal.MarshallTransformations.UpdateLifecyclePolicyRequestMarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.DLM.Model.Internal.MarshallTransformations.UpdateLifecyclePolicyResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for UpdateLifecyclePolicy operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.DLM.Model.Internal.MarshallTransformations.UpdateLifecyclePolicyResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.DLM.Model.Internal.MarshallTransformations.UpdateLifecyclePolicyResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.DLM.Model.Internal.MarshallTransformations.UpdateLifecyclePolicyResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.DLM.Model.InvalidRequestException">
+            <summary>
+             DLM exception
+             </summary>
+        </member>
+        <member name="M:Amazon.DLM.Model.InvalidRequestException.#ctor(System.String)">
+            <summary>
+            Constructs a new InvalidRequestException with the specified error
+            message.
+            </summary>
+            <param name="message">
+            Describes the error encountered.
+            </param>
+        </member>
+        <member name="M:Amazon.DLM.Model.InvalidRequestException.#ctor(System.String,System.Exception)">
+            <summary>
+            Construct instance of InvalidRequestException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.DLM.Model.InvalidRequestException.#ctor(System.Exception)">
+            <summary>
+            Construct instance of InvalidRequestException
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.DLM.Model.InvalidRequestException.#ctor(System.String,System.Exception,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of InvalidRequestException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="M:Amazon.DLM.Model.InvalidRequestException.#ctor(System.String,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of InvalidRequestException
+            </summary>
+            <param name="message"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="T:Amazon.DLM.Model.LifecyclePolicy">
+            <summary>
+            Detailed information about a lifecycle policy.
+            </summary>
+        </member>
+        <member name="P:Amazon.DLM.Model.LifecyclePolicy.DateCreated">
+            <summary>
+            Gets and sets the property DateCreated. 
+            <para>
+            The local date and time when the lifecycle policy was created.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.DLM.Model.LifecyclePolicy.DateModified">
+            <summary>
+            Gets and sets the property DateModified. 
+            <para>
+            The local date and time when the lifecycle policy was last modified.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.DLM.Model.LifecyclePolicy.Description">
+            <summary>
+            Gets and sets the property Description. 
+            <para>
+            The description of the lifecycle policy.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.DLM.Model.LifecyclePolicy.ExecutionRoleArn">
+            <summary>
+            Gets and sets the property ExecutionRoleArn. 
+            <para>
+            The Amazon Resource Name (ARN) of the IAM role used to run the operations specified
+            by the lifecycle policy.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.DLM.Model.LifecyclePolicy.PolicyDetails">
+            <summary>
+            Gets and sets the property PolicyDetails. 
+            <para>
+            The configuration of the lifecycle policy
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.DLM.Model.LifecyclePolicy.PolicyId">
+            <summary>
+            Gets and sets the property PolicyId. 
+            <para>
+            The identifier of the lifecycle policy.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.DLM.Model.LifecyclePolicy.State">
+            <summary>
+            Gets and sets the property State. 
+            <para>
+            The activation state of the lifecycle policy.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.DLM.Model.LifecyclePolicySummary">
+            <summary>
+            Summary information about a lifecycle policy.
+            </summary>
+        </member>
+        <member name="P:Amazon.DLM.Model.LifecyclePolicySummary.Description">
+            <summary>
+            Gets and sets the property Description. 
+            <para>
+            The description of the lifecycle policy.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.DLM.Model.LifecyclePolicySummary.PolicyId">
+            <summary>
+            Gets and sets the property PolicyId. 
+            <para>
+            The identifier of the lifecycle policy.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.DLM.Model.LifecyclePolicySummary.State">
+            <summary>
+            Gets and sets the property State. 
+            <para>
+            The activation state of the lifecycle policy.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.DLM.Model.LimitExceededException">
+            <summary>
+             DLM exception
+             </summary>
+        </member>
+        <member name="M:Amazon.DLM.Model.LimitExceededException.#ctor(System.String)">
+            <summary>
+            Constructs a new LimitExceededException with the specified error
+            message.
+            </summary>
+            <param name="message">
+            Describes the error encountered.
+            </param>
+        </member>
+        <member name="M:Amazon.DLM.Model.LimitExceededException.#ctor(System.String,System.Exception)">
+            <summary>
+            Construct instance of LimitExceededException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.DLM.Model.LimitExceededException.#ctor(System.Exception)">
+            <summary>
+            Construct instance of LimitExceededException
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.DLM.Model.LimitExceededException.#ctor(System.String,System.Exception,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of LimitExceededException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="M:Amazon.DLM.Model.LimitExceededException.#ctor(System.String,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of LimitExceededException
+            </summary>
+            <param name="message"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="T:Amazon.DLM.Model.Parameters">
+            <summary>
+            Optional parameters that can be added to the policy. The set of valid parameters depends
+            on the combination of <code>policyType</code> and <code>resourceType</code> values.
+            </summary>
+        </member>
+        <member name="P:Amazon.DLM.Model.Parameters.ExcludeBootVolume">
+            <summary>
+            Gets and sets the property ExcludeBootVolume. 
+            <para>
+            When executing an EBS Snapshot Management – Instance policy, execute all CreateSnapshots
+            calls with the <code>excludeBootVolume</code> set to the supplied field. Defaults
+            to false. Only valid for EBS Snapshot Management – Instance policies.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.DLM.Model.PolicyDetails">
+            <summary>
+            Specifies the configuration of a lifecycle policy.
+            </summary>
+        </member>
+        <member name="P:Amazon.DLM.Model.PolicyDetails.Parameters">
+            <summary>
+            Gets and sets the property Parameters. 
+            <para>
+            A set of optional parameters that can be provided by the policy. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.DLM.Model.PolicyDetails.PolicyType">
+            <summary>
+            Gets and sets the property PolicyType. 
+            <para>
+            This field determines the valid target resource types and actions a policy can manage.
+            This field defaults to EBS_SNAPSHOT_MANAGEMENT if not present.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.DLM.Model.PolicyDetails.ResourceTypes">
+            <summary>
+            Gets and sets the property ResourceTypes. 
+            <para>
+            The resource type.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.DLM.Model.PolicyDetails.Schedules">
+            <summary>
+            Gets and sets the property Schedules. 
+            <para>
+            The schedule of policy-defined actions.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.DLM.Model.PolicyDetails.TargetTags">
+            <summary>
+            Gets and sets the property TargetTags. 
+            <para>
+            The single tag that identifies targeted resources for this policy.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.DLM.Model.ResourceNotFoundException">
+            <summary>
+             DLM exception
+             </summary>
+        </member>
+        <member name="M:Amazon.DLM.Model.ResourceNotFoundException.#ctor(System.String)">
+            <summary>
+            Constructs a new ResourceNotFoundException with the specified error
+            message.
+            </summary>
+            <param name="message">
+            Describes the error encountered.
+            </param>
+        </member>
+        <member name="M:Amazon.DLM.Model.ResourceNotFoundException.#ctor(System.String,System.Exception)">
+            <summary>
+            Construct instance of ResourceNotFoundException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.DLM.Model.ResourceNotFoundException.#ctor(System.Exception)">
+            <summary>
+            Construct instance of ResourceNotFoundException
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.DLM.Model.ResourceNotFoundException.#ctor(System.String,System.Exception,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of ResourceNotFoundException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="M:Amazon.DLM.Model.ResourceNotFoundException.#ctor(System.String,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of ResourceNotFoundException
+            </summary>
+            <param name="message"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="T:Amazon.DLM.Model.RetainRule">
+            <summary>
+            Specifies the number of snapshots to keep for each EBS volume.
+            </summary>
+        </member>
+        <member name="P:Amazon.DLM.Model.RetainRule.Count">
+            <summary>
+            Gets and sets the property Count. 
+            <para>
+            The number of snapshots to keep for each volume, up to a maximum of 1000.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.DLM.Model.Schedule">
+            <summary>
+            Specifies a schedule.
+            </summary>
+        </member>
+        <member name="P:Amazon.DLM.Model.Schedule.CopyTags">
+            <summary>
+            Gets and sets the property CopyTags. 
+            <para>
+            Copy all user-defined tags on a source volume to snapshots of the volume created by
+            this policy.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.DLM.Model.Schedule.CreateRule">
+            <summary>
+            Gets and sets the property CreateRule. 
+            <para>
+            The create rule.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.DLM.Model.Schedule.Name">
+            <summary>
+            Gets and sets the property Name. 
+            <para>
+            The name of the schedule.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.DLM.Model.Schedule.RetainRule">
+            <summary>
+            Gets and sets the property RetainRule. 
+            <para>
+            The retain rule.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.DLM.Model.Schedule.TagsToAdd">
+            <summary>
+            Gets and sets the property TagsToAdd. 
+            <para>
+            The tags to apply to policy-created resources. These user-defined tags are in addition
+            to the AWS-added lifecycle tags.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.DLM.Model.Schedule.VariableTags">
+            <summary>
+            Gets and sets the property VariableTags. 
+            <para>
+            A collection of key/value pairs with values determined dynamically when the policy
+            is executed. Keys may be any valid Amazon EC2 tag key. Values must be in one of the
+            two following formats: <code>$(instance-id)</code> or <code>$(timestamp)</code>. Variable
+            tags are only valid for EBS Snapshot Management – Instance policies.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.DLM.Model.Tag">
+            <summary>
+            Specifies a tag for a resource.
+            </summary>
+        </member>
+        <member name="P:Amazon.DLM.Model.Tag.Key">
+            <summary>
+            Gets and sets the property Key. 
+            <para>
+            The tag key.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.DLM.Model.Tag.Value">
+            <summary>
+            Gets and sets the property Value. 
+            <para>
+            The tag value.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.DLM.Model.UpdateLifecyclePolicyRequest">
+            <summary>
+            Container for the parameters to the UpdateLifecyclePolicy operation.
+            Updates the specified lifecycle policy.
+            </summary>
+        </member>
+        <member name="P:Amazon.DLM.Model.UpdateLifecyclePolicyRequest.Description">
+            <summary>
+            Gets and sets the property Description. 
+            <para>
+            A description of the lifecycle policy.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.DLM.Model.UpdateLifecyclePolicyRequest.ExecutionRoleArn">
+            <summary>
+            Gets and sets the property ExecutionRoleArn. 
+            <para>
+            The Amazon Resource Name (ARN) of the IAM role used to run the operations specified
+            by the lifecycle policy.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.DLM.Model.UpdateLifecyclePolicyRequest.PolicyDetails">
+            <summary>
+            Gets and sets the property PolicyDetails. 
+            <para>
+            The configuration of the lifecycle policy.
+            </para>
+             
+            <para>
+            Target tags cannot be re-used across policies.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.DLM.Model.UpdateLifecyclePolicyRequest.PolicyId">
+            <summary>
+            Gets and sets the property PolicyId. 
+            <para>
+            The identifier of the lifecycle policy.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.DLM.Model.UpdateLifecyclePolicyRequest.State">
+            <summary>
+            Gets and sets the property State. 
+            <para>
+            The desired activation state of the lifecycle policy after creation.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.DLM.Model.UpdateLifecyclePolicyResponse">
+            <summary>
+            This is the response object from the UpdateLifecyclePolicy operation.
+            </summary>
+        </member>
+        <member name="T:Amazon.DLM.GettablePolicyStateValues">
+            <summary>
+            Constants used for properties of type GettablePolicyStateValues.
+            </summary>
+        </member>
+        <member name="F:Amazon.DLM.GettablePolicyStateValues.DISABLED">
+            <summary>
+            Constant DISABLED for GettablePolicyStateValues
+            </summary>
+        </member>
+        <member name="F:Amazon.DLM.GettablePolicyStateValues.ENABLED">
+            <summary>
+            Constant ENABLED for GettablePolicyStateValues
+            </summary>
+        </member>
+        <member name="F:Amazon.DLM.GettablePolicyStateValues.ERROR">
+            <summary>
+            Constant ERROR for GettablePolicyStateValues
+            </summary>
+        </member>
+        <member name="M:Amazon.DLM.GettablePolicyStateValues.#ctor(System.String)">
+            <summary>
+            This constant constructor does not need to be called if the constant
+            you are attempting to use is already defined as a static instance of 
+            this class.
+            This constructor should be used to construct constants that are not
+            defined as statics, for instance if attempting to use a feature that is
+            newer than the current version of the SDK.
+            </summary>
+        </member>
+        <member name="M:Amazon.DLM.GettablePolicyStateValues.FindValue(System.String)">
+            <summary>
+            Finds the constant for the unique value.
+            </summary>
+            <param name="value">The unique value for the constant</param>
+            <returns>The constant for the unique value</returns>
+        </member>
+        <member name="M:Amazon.DLM.GettablePolicyStateValues.op_Implicit(System.String)~Amazon.DLM.GettablePolicyStateValues">
+            <summary>
+            Utility method to convert strings to the constant class.
+            </summary>
+            <param name="value">The string value to convert to the constant class.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.DLM.IntervalUnitValues">
+            <summary>
+            Constants used for properties of type IntervalUnitValues.
+            </summary>
+        </member>
+        <member name="F:Amazon.DLM.IntervalUnitValues.HOURS">
+            <summary>
+            Constant HOURS for IntervalUnitValues
+            </summary>
+        </member>
+        <member name="M:Amazon.DLM.IntervalUnitValues.#ctor(System.String)">
+            <summary>
+            This constant constructor does not need to be called if the constant
+            you are attempting to use is already defined as a static instance of 
+            this class.
+            This constructor should be used to construct constants that are not
+            defined as statics, for instance if attempting to use a feature that is
+            newer than the current version of the SDK.
+            </summary>
+        </member>
+        <member name="M:Amazon.DLM.IntervalUnitValues.FindValue(System.String)">
+            <summary>
+            Finds the constant for the unique value.
+            </summary>
+            <param name="value">The unique value for the constant</param>
+            <returns>The constant for the unique value</returns>
+        </member>
+        <member name="M:Amazon.DLM.IntervalUnitValues.op_Implicit(System.String)~Amazon.DLM.IntervalUnitValues">
+            <summary>
+            Utility method to convert strings to the constant class.
+            </summary>
+            <param name="value">The string value to convert to the constant class.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.DLM.PolicyTypeValues">
+            <summary>
+            Constants used for properties of type PolicyTypeValues.
+            </summary>
+        </member>
+        <member name="F:Amazon.DLM.PolicyTypeValues.EBS_SNAPSHOT_MANAGEMENT">
+            <summary>
+            Constant EBS_SNAPSHOT_MANAGEMENT for PolicyTypeValues
+            </summary>
+        </member>
+        <member name="M:Amazon.DLM.PolicyTypeValues.#ctor(System.String)">
+            <summary>
+            This constant constructor does not need to be called if the constant
+            you are attempting to use is already defined as a static instance of 
+            this class.
+            This constructor should be used to construct constants that are not
+            defined as statics, for instance if attempting to use a feature that is
+            newer than the current version of the SDK.
+            </summary>
+        </member>
+        <member name="M:Amazon.DLM.PolicyTypeValues.FindValue(System.String)">
+            <summary>
+            Finds the constant for the unique value.
+            </summary>
+            <param name="value">The unique value for the constant</param>
+            <returns>The constant for the unique value</returns>
+        </member>
+        <member name="M:Amazon.DLM.PolicyTypeValues.op_Implicit(System.String)~Amazon.DLM.PolicyTypeValues">
+            <summary>
+            Utility method to convert strings to the constant class.
+            </summary>
+            <param name="value">The string value to convert to the constant class.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.DLM.ResourceTypeValues">
+            <summary>
+            Constants used for properties of type ResourceTypeValues.
+            </summary>
+        </member>
+        <member name="F:Amazon.DLM.ResourceTypeValues.INSTANCE">
+            <summary>
+            Constant INSTANCE for ResourceTypeValues
+            </summary>
+        </member>
+        <member name="F:Amazon.DLM.ResourceTypeValues.VOLUME">
+            <summary>
+            Constant VOLUME for ResourceTypeValues
+            </summary>
+        </member>
+        <member name="M:Amazon.DLM.ResourceTypeValues.#ctor(System.String)">
+            <summary>
+            This constant constructor does not need to be called if the constant
+            you are attempting to use is already defined as a static instance of 
+            this class.
+            This constructor should be used to construct constants that are not
+            defined as statics, for instance if attempting to use a feature that is
+            newer than the current version of the SDK.
+            </summary>
+        </member>
+        <member name="M:Amazon.DLM.ResourceTypeValues.FindValue(System.String)">
+            <summary>
+            Finds the constant for the unique value.
+            </summary>
+            <param name="value">The unique value for the constant</param>
+            <returns>The constant for the unique value</returns>
+        </member>
+        <member name="M:Amazon.DLM.ResourceTypeValues.op_Implicit(System.String)~Amazon.DLM.ResourceTypeValues">
+            <summary>
+            Utility method to convert strings to the constant class.
+            </summary>
+            <param name="value">The string value to convert to the constant class.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.DLM.SettablePolicyStateValues">
+            <summary>
+            Constants used for properties of type SettablePolicyStateValues.
+            </summary>
+        </member>
+        <member name="F:Amazon.DLM.SettablePolicyStateValues.DISABLED">
+            <summary>
+            Constant DISABLED for SettablePolicyStateValues
+            </summary>
+        </member>
+        <member name="F:Amazon.DLM.SettablePolicyStateValues.ENABLED">
+            <summary>
+            Constant ENABLED for SettablePolicyStateValues
+            </summary>
+        </member>
+        <member name="M:Amazon.DLM.SettablePolicyStateValues.#ctor(System.String)">
+            <summary>
+            This constant constructor does not need to be called if the constant
+            you are attempting to use is already defined as a static instance of 
+            this class.
+            This constructor should be used to construct constants that are not
+            defined as statics, for instance if attempting to use a feature that is
+            newer than the current version of the SDK.
+            </summary>
+        </member>
+        <member name="M:Amazon.DLM.SettablePolicyStateValues.FindValue(System.String)">
+            <summary>
+            Finds the constant for the unique value.
+            </summary>
+            <param name="value">The unique value for the constant</param>
+            <returns>The constant for the unique value</returns>
+        </member>
+        <member name="M:Amazon.DLM.SettablePolicyStateValues.op_Implicit(System.String)~Amazon.DLM.SettablePolicyStateValues">
+            <summary>
+            Utility method to convert strings to the constant class.
+            </summary>
+            <param name="value">The string value to convert to the constant class.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.DLM.AmazonDLMClient">
+             <summary>
+             Implementation for accessing DLM
+            
+             Amazon Data Lifecycle Manager 
+             <para>
+             With Amazon Data Lifecycle Manager, you can manage the lifecycle of your AWS resources.
+             You create lifecycle policies, which are used to automate operations on the specified
+             resources.
+             </para>
+              
+             <para>
+             Amazon DLM supports Amazon EBS volumes and snapshots. For information about using
+             Amazon DLM with Amazon EBS, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshot-lifecycle.html">Automating
+             the Amazon EBS Snapshot Lifecycle</a> in the <i>Amazon EC2 User Guide</i>.
+             </para>
+             </summary>
+        </member>
+        <member name="M:Amazon.DLM.AmazonDLMClient.#ctor">
+             <summary>
+             Constructs AmazonDLMClient with the credentials loaded from the application's
+             default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+             
+             Example App.config with credentials set. 
+             <code>
+             &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+             &lt;configuration&gt;
+                 &lt;appSettings&gt;
+                     &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+                 &lt;/appSettings&gt;
+             &lt;/configuration&gt;
+             </code>
+            
+             </summary>
+        </member>
+        <member name="M:Amazon.DLM.AmazonDLMClient.#ctor(Amazon.RegionEndpoint)">
+             <summary>
+             Constructs AmazonDLMClient with the credentials loaded from the application's
+             default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+             
+             Example App.config with credentials set. 
+             <code>
+             &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+             &lt;configuration&gt;
+                 &lt;appSettings&gt;
+                     &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+                 &lt;/appSettings&gt;
+             &lt;/configuration&gt;
+             </code>
+            
+             </summary>
+             <param name="region">The region to connect.</param>
+        </member>
+        <member name="M:Amazon.DLM.AmazonDLMClient.#ctor(Amazon.DLM.AmazonDLMConfig)">
+             <summary>
+             Constructs AmazonDLMClient with the credentials loaded from the application's
+             default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+             
+             Example App.config with credentials set. 
+             <code>
+             &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+             &lt;configuration&gt;
+                 &lt;appSettings&gt;
+                     &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+                 &lt;/appSettings&gt;
+             &lt;/configuration&gt;
+             </code>
+            
+             </summary>
+             <param name="config">The AmazonDLMClient Configuration Object</param>
+        </member>
+        <member name="M:Amazon.DLM.AmazonDLMClient.#ctor(Amazon.Runtime.AWSCredentials)">
+            <summary>
+            Constructs AmazonDLMClient with AWS Credentials
+            </summary>
+            <param name="credentials">AWS Credentials</param>
+        </member>
+        <member name="M:Amazon.DLM.AmazonDLMClient.#ctor(Amazon.Runtime.AWSCredentials,Amazon.RegionEndpoint)">
+            <summary>
+            Constructs AmazonDLMClient with AWS Credentials
+            </summary>
+            <param name="credentials">AWS Credentials</param>
+            <param name="region">The region to connect.</param>
+        </member>
+        <member name="M:Amazon.DLM.AmazonDLMClient.#ctor(Amazon.Runtime.AWSCredentials,Amazon.DLM.AmazonDLMConfig)">
+            <summary>
+            Constructs AmazonDLMClient with AWS Credentials and an
+            AmazonDLMClient Configuration object.
+            </summary>
+            <param name="credentials">AWS Credentials</param>
+            <param name="clientConfig">The AmazonDLMClient Configuration Object</param>
+        </member>
+        <member name="M:Amazon.DLM.AmazonDLMClient.#ctor(System.String,System.String)">
+            <summary>
+            Constructs AmazonDLMClient with AWS Access Key ID and AWS Secret Key
+            </summary>
+            <param name="awsAccessKeyId">AWS Access Key ID</param>
+            <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        </member>
+        <member name="M:Amazon.DLM.AmazonDLMClient.#ctor(System.String,System.String,Amazon.RegionEndpoint)">
+            <summary>
+            Constructs AmazonDLMClient with AWS Access Key ID and AWS Secret Key
+            </summary>
+            <param name="awsAccessKeyId">AWS Access Key ID</param>
+            <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+            <param name="region">The region to connect.</param>
+        </member>
+        <member name="M:Amazon.DLM.AmazonDLMClient.#ctor(System.String,System.String,Amazon.DLM.AmazonDLMConfig)">
+            <summary>
+            Constructs AmazonDLMClient with AWS Access Key ID, AWS Secret Key and an
+            AmazonDLMClient Configuration object. 
+            </summary>
+            <param name="awsAccessKeyId">AWS Access Key ID</param>
+            <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+            <param name="clientConfig">The AmazonDLMClient Configuration Object</param>
+        </member>
+        <member name="M:Amazon.DLM.AmazonDLMClient.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Constructs AmazonDLMClient with AWS Access Key ID and AWS Secret Key
+            </summary>
+            <param name="awsAccessKeyId">AWS Access Key ID</param>
+            <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+            <param name="awsSessionToken">AWS Session Token</param>
+        </member>
+        <member name="M:Amazon.DLM.AmazonDLMClient.#ctor(System.String,System.String,System.String,Amazon.RegionEndpoint)">
+            <summary>
+            Constructs AmazonDLMClient with AWS Access Key ID and AWS Secret Key
+            </summary>
+            <param name="awsAccessKeyId">AWS Access Key ID</param>
+            <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+            <param name="awsSessionToken">AWS Session Token</param>
+            <param name="region">The region to connect.</param>
+        </member>
+        <member name="M:Amazon.DLM.AmazonDLMClient.#ctor(System.String,System.String,System.String,Amazon.DLM.AmazonDLMConfig)">
+            <summary>
+            Constructs AmazonDLMClient with AWS Access Key ID, AWS Secret Key and an
+            AmazonDLMClient Configuration object. 
+            </summary>
+            <param name="awsAccessKeyId">AWS Access Key ID</param>
+            <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+            <param name="awsSessionToken">AWS Session Token</param>
+            <param name="clientConfig">The AmazonDLMClient Configuration Object</param>
+        </member>
+        <member name="M:Amazon.DLM.AmazonDLMClient.CreateSigner">
+            <summary>
+            Creates the signer for the service.
+            </summary>
+        </member>
+        <member name="P:Amazon.DLM.AmazonDLMClient.ServiceMetadata">
+            <summary>
+            Capture metadata for the service.
+            </summary>
+        </member>
+        <member name="M:Amazon.DLM.AmazonDLMClient.Dispose(System.Boolean)">
+            <summary>
+            Disposes the service client.
+            </summary>
+        </member>
+        <member name="M:Amazon.DLM.AmazonDLMClient.CreateLifecyclePolicyAsync(Amazon.DLM.Model.CreateLifecyclePolicyRequest,System.Threading.CancellationToken)">
+            <summary>
+            Creates a policy to manage the lifecycle of the specified AWS resources. You can create
+            up to 100 lifecycle policies.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the CreateLifecyclePolicy service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the CreateLifecyclePolicy service method, as returned by DLM.</returns>
+            <exception cref="T:Amazon.DLM.Model.InternalServerException">
+            The service failed in an unexpected way.
+            </exception>
+            <exception cref="T:Amazon.DLM.Model.InvalidRequestException">
+            Bad request. The request is missing required parameters or has invalid parameters.
+            </exception>
+            <exception cref="T:Amazon.DLM.Model.LimitExceededException">
+            The request failed because a limit was exceeded.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/CreateLifecyclePolicy">REST API Reference for CreateLifecyclePolicy Operation</seealso>
+        </member>
+        <member name="M:Amazon.DLM.AmazonDLMClient.DeleteLifecyclePolicyAsync(Amazon.DLM.Model.DeleteLifecyclePolicyRequest,System.Threading.CancellationToken)">
+            <summary>
+            Deletes the specified lifecycle policy and halts the automated operations that the
+            policy specified.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the DeleteLifecyclePolicy service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the DeleteLifecyclePolicy service method, as returned by DLM.</returns>
+            <exception cref="T:Amazon.DLM.Model.InternalServerException">
+            The service failed in an unexpected way.
+            </exception>
+            <exception cref="T:Amazon.DLM.Model.LimitExceededException">
+            The request failed because a limit was exceeded.
+            </exception>
+            <exception cref="T:Amazon.DLM.Model.ResourceNotFoundException">
+            A requested resource was not found.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/DeleteLifecyclePolicy">REST API Reference for DeleteLifecyclePolicy Operation</seealso>
+        </member>
+        <member name="M:Amazon.DLM.AmazonDLMClient.GetLifecyclePoliciesAsync(Amazon.DLM.Model.GetLifecyclePoliciesRequest,System.Threading.CancellationToken)">
+            <summary>
+            Gets summary information about all or the specified data lifecycle policies.
+            
+             
+            <para>
+            To get complete information about a policy, use <a>GetLifecyclePolicy</a>.
+            </para>
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the GetLifecyclePolicies service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the GetLifecyclePolicies service method, as returned by DLM.</returns>
+            <exception cref="T:Amazon.DLM.Model.InternalServerException">
+            The service failed in an unexpected way.
+            </exception>
+            <exception cref="T:Amazon.DLM.Model.InvalidRequestException">
+            Bad request. The request is missing required parameters or has invalid parameters.
+            </exception>
+            <exception cref="T:Amazon.DLM.Model.LimitExceededException">
+            The request failed because a limit was exceeded.
+            </exception>
+            <exception cref="T:Amazon.DLM.Model.ResourceNotFoundException">
+            A requested resource was not found.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/GetLifecyclePolicies">REST API Reference for GetLifecyclePolicies Operation</seealso>
+        </member>
+        <member name="M:Amazon.DLM.AmazonDLMClient.GetLifecyclePolicyAsync(Amazon.DLM.Model.GetLifecyclePolicyRequest,System.Threading.CancellationToken)">
+            <summary>
+            Gets detailed information about the specified lifecycle policy.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the GetLifecyclePolicy service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the GetLifecyclePolicy service method, as returned by DLM.</returns>
+            <exception cref="T:Amazon.DLM.Model.InternalServerException">
+            The service failed in an unexpected way.
+            </exception>
+            <exception cref="T:Amazon.DLM.Model.LimitExceededException">
+            The request failed because a limit was exceeded.
+            </exception>
+            <exception cref="T:Amazon.DLM.Model.ResourceNotFoundException">
+            A requested resource was not found.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/GetLifecyclePolicy">REST API Reference for GetLifecyclePolicy Operation</seealso>
+        </member>
+        <member name="M:Amazon.DLM.AmazonDLMClient.UpdateLifecyclePolicyAsync(Amazon.DLM.Model.UpdateLifecyclePolicyRequest,System.Threading.CancellationToken)">
+            <summary>
+            Updates the specified lifecycle policy.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the UpdateLifecyclePolicy service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the UpdateLifecyclePolicy service method, as returned by DLM.</returns>
+            <exception cref="T:Amazon.DLM.Model.InternalServerException">
+            The service failed in an unexpected way.
+            </exception>
+            <exception cref="T:Amazon.DLM.Model.InvalidRequestException">
+            Bad request. The request is missing required parameters or has invalid parameters.
+            </exception>
+            <exception cref="T:Amazon.DLM.Model.LimitExceededException">
+            The request failed because a limit was exceeded.
+            </exception>
+            <exception cref="T:Amazon.DLM.Model.ResourceNotFoundException">
+            A requested resource was not found.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/UpdateLifecyclePolicy">REST API Reference for UpdateLifecyclePolicy Operation</seealso>
+        </member>
+        <member name="T:Amazon.DLM.IAmazonDLM">
+             <summary>
+             Interface for accessing DLM
+            
+             Amazon Data Lifecycle Manager 
+             <para>
+             With Amazon Data Lifecycle Manager, you can manage the lifecycle of your AWS resources.
+             You create lifecycle policies, which are used to automate operations on the specified
+             resources.
+             </para>
+              
+             <para>
+             Amazon DLM supports Amazon EBS volumes and snapshots. For information about using
+             Amazon DLM with Amazon EBS, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshot-lifecycle.html">Automating
+             the Amazon EBS Snapshot Lifecycle</a> in the <i>Amazon EC2 User Guide</i>.
+             </para>
+             </summary>
+        </member>
+        <member name="M:Amazon.DLM.IAmazonDLM.CreateLifecyclePolicyAsync(Amazon.DLM.Model.CreateLifecyclePolicyRequest,System.Threading.CancellationToken)">
+            <summary>
+            Creates a policy to manage the lifecycle of the specified AWS resources. You can create
+            up to 100 lifecycle policies.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the CreateLifecyclePolicy service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the CreateLifecyclePolicy service method, as returned by DLM.</returns>
+            <exception cref="T:Amazon.DLM.Model.InternalServerException">
+            The service failed in an unexpected way.
+            </exception>
+            <exception cref="T:Amazon.DLM.Model.InvalidRequestException">
+            Bad request. The request is missing required parameters or has invalid parameters.
+            </exception>
+            <exception cref="T:Amazon.DLM.Model.LimitExceededException">
+            The request failed because a limit was exceeded.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/CreateLifecyclePolicy">REST API Reference for CreateLifecyclePolicy Operation</seealso>
+        </member>
+        <member name="M:Amazon.DLM.IAmazonDLM.DeleteLifecyclePolicyAsync(Amazon.DLM.Model.DeleteLifecyclePolicyRequest,System.Threading.CancellationToken)">
+            <summary>
+            Deletes the specified lifecycle policy and halts the automated operations that the
+            policy specified.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the DeleteLifecyclePolicy service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the DeleteLifecyclePolicy service method, as returned by DLM.</returns>
+            <exception cref="T:Amazon.DLM.Model.InternalServerException">
+            The service failed in an unexpected way.
+            </exception>
+            <exception cref="T:Amazon.DLM.Model.LimitExceededException">
+            The request failed because a limit was exceeded.
+            </exception>
+            <exception cref="T:Amazon.DLM.Model.ResourceNotFoundException">
+            A requested resource was not found.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/DeleteLifecyclePolicy">REST API Reference for DeleteLifecyclePolicy Operation</seealso>
+        </member>
+        <member name="M:Amazon.DLM.IAmazonDLM.GetLifecyclePoliciesAsync(Amazon.DLM.Model.GetLifecyclePoliciesRequest,System.Threading.CancellationToken)">
+            <summary>
+            Gets summary information about all or the specified data lifecycle policies.
+            
+             
+            <para>
+            To get complete information about a policy, use <a>GetLifecyclePolicy</a>.
+            </para>
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the GetLifecyclePolicies service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the GetLifecyclePolicies service method, as returned by DLM.</returns>
+            <exception cref="T:Amazon.DLM.Model.InternalServerException">
+            The service failed in an unexpected way.
+            </exception>
+            <exception cref="T:Amazon.DLM.Model.InvalidRequestException">
+            Bad request. The request is missing required parameters or has invalid parameters.
+            </exception>
+            <exception cref="T:Amazon.DLM.Model.LimitExceededException">
+            The request failed because a limit was exceeded.
+            </exception>
+            <exception cref="T:Amazon.DLM.Model.ResourceNotFoundException">
+            A requested resource was not found.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/GetLifecyclePolicies">REST API Reference for GetLifecyclePolicies Operation</seealso>
+        </member>
+        <member name="M:Amazon.DLM.IAmazonDLM.GetLifecyclePolicyAsync(Amazon.DLM.Model.GetLifecyclePolicyRequest,System.Threading.CancellationToken)">
+            <summary>
+            Gets detailed information about the specified lifecycle policy.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the GetLifecyclePolicy service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the GetLifecyclePolicy service method, as returned by DLM.</returns>
+            <exception cref="T:Amazon.DLM.Model.InternalServerException">
+            The service failed in an unexpected way.
+            </exception>
+            <exception cref="T:Amazon.DLM.Model.LimitExceededException">
+            The request failed because a limit was exceeded.
+            </exception>
+            <exception cref="T:Amazon.DLM.Model.ResourceNotFoundException">
+            A requested resource was not found.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/GetLifecyclePolicy">REST API Reference for GetLifecyclePolicy Operation</seealso>
+        </member>
+        <member name="M:Amazon.DLM.IAmazonDLM.UpdateLifecyclePolicyAsync(Amazon.DLM.Model.UpdateLifecyclePolicyRequest,System.Threading.CancellationToken)">
+            <summary>
+            Updates the specified lifecycle policy.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the UpdateLifecyclePolicy service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the UpdateLifecyclePolicy service method, as returned by DLM.</returns>
+            <exception cref="T:Amazon.DLM.Model.InternalServerException">
+            The service failed in an unexpected way.
+            </exception>
+            <exception cref="T:Amazon.DLM.Model.InvalidRequestException">
+            Bad request. The request is missing required parameters or has invalid parameters.
+            </exception>
+            <exception cref="T:Amazon.DLM.Model.LimitExceededException">
+            The request failed because a limit was exceeded.
+            </exception>
+            <exception cref="T:Amazon.DLM.Model.ResourceNotFoundException">
+            A requested resource was not found.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/UpdateLifecyclePolicy">REST API Reference for UpdateLifecyclePolicy Operation</seealso>
+        </member>
+    </members>
+</doc>

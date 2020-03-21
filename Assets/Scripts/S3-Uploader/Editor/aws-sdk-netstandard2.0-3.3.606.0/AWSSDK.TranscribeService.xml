@@ -1,0 +1,2936 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AWSSDK.TranscribeService</name>
+    </assembly>
+    <members>
+        <member name="T:Amazon.TranscribeService.AmazonTranscribeServiceConfig">
+            <summary>
+            Configuration for accessing Amazon TranscribeService service
+            </summary>
+        </member>
+        <member name="M:Amazon.TranscribeService.AmazonTranscribeServiceConfig.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="P:Amazon.TranscribeService.AmazonTranscribeServiceConfig.RegionEndpointServiceName">
+            <summary>
+            The constant used to lookup in the region hash the endpoint.
+            </summary>
+        </member>
+        <member name="P:Amazon.TranscribeService.AmazonTranscribeServiceConfig.ServiceVersion">
+            <summary>
+            Gets the ServiceVersion property.
+            </summary>
+        </member>
+        <member name="P:Amazon.TranscribeService.AmazonTranscribeServiceConfig.UserAgent">
+            <summary>
+            Gets the value of UserAgent property.
+            </summary>
+        </member>
+        <member name="T:Amazon.TranscribeService.AmazonTranscribeServiceException">
+            <summary>
+             Common exception for the TranscribeService service.
+             </summary>
+        </member>
+        <member name="M:Amazon.TranscribeService.AmazonTranscribeServiceException.#ctor(System.String)">
+            <summary>
+            Construct instance of AmazonTranscribeServiceException
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:Amazon.TranscribeService.AmazonTranscribeServiceException.#ctor(System.String,System.Exception)">
+            <summary>
+            Construct instance of AmazonTranscribeServiceException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.TranscribeService.AmazonTranscribeServiceException.#ctor(System.Exception)">
+            <summary>
+            Construct instance of AmazonTranscribeServiceException
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.TranscribeService.AmazonTranscribeServiceException.#ctor(System.String,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of AmazonTranscribeServiceException
+            </summary>
+            <param name="message"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="M:Amazon.TranscribeService.AmazonTranscribeServiceException.#ctor(System.String,System.Exception,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of AmazonTranscribeServiceException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="T:Amazon.TranscribeService.Internal.AmazonTranscribeServiceMetadata">
+            <summary>
+            Service metadata for  Amazon TranscribeService service
+            </summary>
+        </member>
+        <member name="P:Amazon.TranscribeService.Internal.AmazonTranscribeServiceMetadata.ServiceId">
+            <summary>
+            Gets the value of the Service Id.
+            </summary>
+        </member>
+        <member name="P:Amazon.TranscribeService.Internal.AmazonTranscribeServiceMetadata.OperationNameMapping">
+            <summary>
+            Gets the dictionary that gives mapping of renamed operations
+            </summary>
+        </member>
+        <member name="T:Amazon.TranscribeService.AmazonTranscribeServiceRequest">
+            <summary>
+            Base class for TranscribeService operation requests.
+            </summary>
+        </member>
+        <member name="T:Amazon.TranscribeService.Model.BadRequestException">
+            <summary>
+             TranscribeService exception
+             </summary>
+        </member>
+        <member name="M:Amazon.TranscribeService.Model.BadRequestException.#ctor(System.String)">
+            <summary>
+            Constructs a new BadRequestException with the specified error
+            message.
+            </summary>
+            <param name="message">
+            Describes the error encountered.
+            </param>
+        </member>
+        <member name="M:Amazon.TranscribeService.Model.BadRequestException.#ctor(System.String,System.Exception)">
+            <summary>
+            Construct instance of BadRequestException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.TranscribeService.Model.BadRequestException.#ctor(System.Exception)">
+            <summary>
+            Construct instance of BadRequestException
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.TranscribeService.Model.BadRequestException.#ctor(System.String,System.Exception,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of BadRequestException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="M:Amazon.TranscribeService.Model.BadRequestException.#ctor(System.String,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of BadRequestException
+            </summary>
+            <param name="message"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="T:Amazon.TranscribeService.Model.ConflictException">
+            <summary>
+             TranscribeService exception
+             </summary>
+        </member>
+        <member name="M:Amazon.TranscribeService.Model.ConflictException.#ctor(System.String)">
+            <summary>
+            Constructs a new ConflictException with the specified error
+            message.
+            </summary>
+            <param name="message">
+            Describes the error encountered.
+            </param>
+        </member>
+        <member name="M:Amazon.TranscribeService.Model.ConflictException.#ctor(System.String,System.Exception)">
+            <summary>
+            Construct instance of ConflictException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.TranscribeService.Model.ConflictException.#ctor(System.Exception)">
+            <summary>
+            Construct instance of ConflictException
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.TranscribeService.Model.ConflictException.#ctor(System.String,System.Exception,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of ConflictException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="M:Amazon.TranscribeService.Model.ConflictException.#ctor(System.String,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of ConflictException
+            </summary>
+            <param name="message"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="T:Amazon.TranscribeService.Model.CreateVocabularyRequest">
+            <summary>
+            Container for the parameters to the CreateVocabulary operation.
+            Creates a new custom vocabulary that you can use to change the way Amazon Transcribe
+            handles transcription of an audio file.
+            </summary>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.CreateVocabularyRequest.LanguageCode">
+            <summary>
+            Gets and sets the property LanguageCode. 
+            <para>
+            The language code of the vocabulary entries.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.CreateVocabularyRequest.Phrases">
+            <summary>
+            Gets and sets the property Phrases. 
+            <para>
+            An array of strings that contains the vocabulary entries. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.CreateVocabularyRequest.VocabularyFileUri">
+            <summary>
+            Gets and sets the property VocabularyFileUri. 
+            <para>
+            The S3 location of the text file that contains the definition of the custom vocabulary.
+            The URI must be in the same region as the API endpoint that you are calling. The general
+            form is 
+            </para>
+             
+            <para>
+             <code> https://s3-&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt;
+            </code> 
+            </para>
+             
+            <para>
+            For example:
+            </para>
+             
+            <para>
+             <code>https://s3-us-east-1.amazonaws.com/examplebucket/vocab.txt</code> 
+            </para>
+             
+            <para>
+            For more information about S3 object names, see <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
+            Keys</a> in the <i>Amazon S3 Developer Guide</i>.
+            </para>
+             
+            <para>
+            For more information about custom vocabularies, see <a href="http://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html#how-vocabulary">Custom
+            Vocabularies</a>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.CreateVocabularyRequest.VocabularyName">
+            <summary>
+            Gets and sets the property VocabularyName. 
+            <para>
+            The name of the vocabulary. The name must be unique within an AWS account. The name
+            is case-sensitive.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.TranscribeService.Model.CreateVocabularyResponse">
+            <summary>
+            This is the response object from the CreateVocabulary operation.
+            </summary>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.CreateVocabularyResponse.FailureReason">
+            <summary>
+            Gets and sets the property FailureReason. 
+            <para>
+            If the <code>VocabularyState</code> field is <code>FAILED</code>, this field contains
+            information about why the job failed.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.CreateVocabularyResponse.LanguageCode">
+            <summary>
+            Gets and sets the property LanguageCode. 
+            <para>
+            The language code of the vocabulary entries.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.CreateVocabularyResponse.LastModifiedTime">
+            <summary>
+            Gets and sets the property LastModifiedTime. 
+            <para>
+            The date and time that the vocabulary was created.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.CreateVocabularyResponse.VocabularyName">
+            <summary>
+            Gets and sets the property VocabularyName. 
+            <para>
+            The name of the vocabulary.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.CreateVocabularyResponse.VocabularyState">
+            <summary>
+            Gets and sets the property VocabularyState. 
+            <para>
+            The processing state of the vocabulary. When the <code>VocabularyState</code> field
+            contains <code>READY</code> the vocabulary is ready to be used in a <code>StartTranscriptionJob</code>
+            request.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.TranscribeService.Model.DeleteTranscriptionJobRequest">
+            <summary>
+            Container for the parameters to the DeleteTranscriptionJob operation.
+            Deletes a previously submitted transcription job along with any other generated results
+            such as the transcription, models, and so on.
+            </summary>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.DeleteTranscriptionJobRequest.TranscriptionJobName">
+            <summary>
+            Gets and sets the property TranscriptionJobName. 
+            <para>
+            The name of the transcription job to be deleted.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.TranscribeService.Model.DeleteTranscriptionJobResponse">
+            <summary>
+            This is the response object from the DeleteTranscriptionJob operation.
+            </summary>
+        </member>
+        <member name="T:Amazon.TranscribeService.Model.DeleteVocabularyRequest">
+            <summary>
+            Container for the parameters to the DeleteVocabulary operation.
+            Deletes a vocabulary from Amazon Transcribe.
+            </summary>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.DeleteVocabularyRequest.VocabularyName">
+            <summary>
+            Gets and sets the property VocabularyName. 
+            <para>
+            The name of the vocabulary to delete. 
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.TranscribeService.Model.DeleteVocabularyResponse">
+            <summary>
+            This is the response object from the DeleteVocabulary operation.
+            </summary>
+        </member>
+        <member name="T:Amazon.TranscribeService.Model.GetTranscriptionJobRequest">
+            <summary>
+            Container for the parameters to the GetTranscriptionJob operation.
+            Returns information about a transcription job. To see the status of the job, check
+            the <code>TranscriptionJobStatus</code> field. If the status is <code>COMPLETED</code>,
+            the job is finished and you can find the results at the location specified in the
+            <code>TranscriptionFileUri</code> field.
+            </summary>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.GetTranscriptionJobRequest.TranscriptionJobName">
+            <summary>
+            Gets and sets the property TranscriptionJobName. 
+            <para>
+            The name of the job.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.TranscribeService.Model.GetTranscriptionJobResponse">
+            <summary>
+            This is the response object from the GetTranscriptionJob operation.
+            </summary>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.GetTranscriptionJobResponse.TranscriptionJob">
+            <summary>
+            Gets and sets the property TranscriptionJob. 
+            <para>
+            An object that contains the results of the transcription job.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.TranscribeService.Model.GetVocabularyRequest">
+            <summary>
+            Container for the parameters to the GetVocabulary operation.
+            Gets information about a vocabulary.
+            </summary>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.GetVocabularyRequest.VocabularyName">
+            <summary>
+            Gets and sets the property VocabularyName. 
+            <para>
+            The name of the vocabulary to return information about. The name is case-sensitive.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.TranscribeService.Model.GetVocabularyResponse">
+            <summary>
+            This is the response object from the GetVocabulary operation.
+            </summary>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.GetVocabularyResponse.DownloadUri">
+            <summary>
+            Gets and sets the property DownloadUri. 
+            <para>
+            The S3 location where the vocabulary is stored. Use this URI to get the contents of
+            the vocabulary. The URI is available for a limited time.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.GetVocabularyResponse.FailureReason">
+            <summary>
+            Gets and sets the property FailureReason. 
+            <para>
+            If the <code>VocabularyState</code> field is <code>FAILED</code>, this field contains
+            information about why the job failed.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.GetVocabularyResponse.LanguageCode">
+            <summary>
+            Gets and sets the property LanguageCode. 
+            <para>
+            The language code of the vocabulary entries.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.GetVocabularyResponse.LastModifiedTime">
+            <summary>
+            Gets and sets the property LastModifiedTime. 
+            <para>
+            The date and time that the vocabulary was last modified.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.GetVocabularyResponse.VocabularyName">
+            <summary>
+            Gets and sets the property VocabularyName. 
+            <para>
+            The name of the vocabulary to return.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.GetVocabularyResponse.VocabularyState">
+            <summary>
+            Gets and sets the property VocabularyState. 
+            <para>
+            The processing state of the vocabulary.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.TranscribeService.Model.InternalFailureException">
+            <summary>
+             TranscribeService exception
+             </summary>
+        </member>
+        <member name="M:Amazon.TranscribeService.Model.InternalFailureException.#ctor(System.String)">
+            <summary>
+            Constructs a new InternalFailureException with the specified error
+            message.
+            </summary>
+            <param name="message">
+            Describes the error encountered.
+            </param>
+        </member>
+        <member name="M:Amazon.TranscribeService.Model.InternalFailureException.#ctor(System.String,System.Exception)">
+            <summary>
+            Construct instance of InternalFailureException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.TranscribeService.Model.InternalFailureException.#ctor(System.Exception)">
+            <summary>
+            Construct instance of InternalFailureException
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.TranscribeService.Model.InternalFailureException.#ctor(System.String,System.Exception,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of InternalFailureException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="M:Amazon.TranscribeService.Model.InternalFailureException.#ctor(System.String,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of InternalFailureException
+            </summary>
+            <param name="message"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="T:Amazon.TranscribeService.Model.Internal.MarshallTransformations.CreateVocabularyRequestMarshaller">
+            <summary>
+            CreateVocabulary Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.TranscribeService.Model.Internal.MarshallTransformations.CreateVocabularyRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.TranscribeService.Model.Internal.MarshallTransformations.CreateVocabularyRequestMarshaller.Marshall(Amazon.TranscribeService.Model.CreateVocabularyRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.Internal.MarshallTransformations.CreateVocabularyRequestMarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.TranscribeService.Model.Internal.MarshallTransformations.CreateVocabularyResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for CreateVocabulary operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.TranscribeService.Model.Internal.MarshallTransformations.CreateVocabularyResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.TranscribeService.Model.Internal.MarshallTransformations.CreateVocabularyResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.Internal.MarshallTransformations.CreateVocabularyResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.TranscribeService.Model.Internal.MarshallTransformations.DeleteTranscriptionJobRequestMarshaller">
+            <summary>
+            DeleteTranscriptionJob Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.TranscribeService.Model.Internal.MarshallTransformations.DeleteTranscriptionJobRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.TranscribeService.Model.Internal.MarshallTransformations.DeleteTranscriptionJobRequestMarshaller.Marshall(Amazon.TranscribeService.Model.DeleteTranscriptionJobRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.Internal.MarshallTransformations.DeleteTranscriptionJobRequestMarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.TranscribeService.Model.Internal.MarshallTransformations.DeleteTranscriptionJobResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for DeleteTranscriptionJob operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.TranscribeService.Model.Internal.MarshallTransformations.DeleteTranscriptionJobResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.TranscribeService.Model.Internal.MarshallTransformations.DeleteTranscriptionJobResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.Internal.MarshallTransformations.DeleteTranscriptionJobResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.TranscribeService.Model.Internal.MarshallTransformations.DeleteVocabularyRequestMarshaller">
+            <summary>
+            DeleteVocabulary Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.TranscribeService.Model.Internal.MarshallTransformations.DeleteVocabularyRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.TranscribeService.Model.Internal.MarshallTransformations.DeleteVocabularyRequestMarshaller.Marshall(Amazon.TranscribeService.Model.DeleteVocabularyRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.Internal.MarshallTransformations.DeleteVocabularyRequestMarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.TranscribeService.Model.Internal.MarshallTransformations.DeleteVocabularyResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for DeleteVocabulary operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.TranscribeService.Model.Internal.MarshallTransformations.DeleteVocabularyResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.TranscribeService.Model.Internal.MarshallTransformations.DeleteVocabularyResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.Internal.MarshallTransformations.DeleteVocabularyResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.TranscribeService.Model.Internal.MarshallTransformations.GetTranscriptionJobRequestMarshaller">
+            <summary>
+            GetTranscriptionJob Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.TranscribeService.Model.Internal.MarshallTransformations.GetTranscriptionJobRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.TranscribeService.Model.Internal.MarshallTransformations.GetTranscriptionJobRequestMarshaller.Marshall(Amazon.TranscribeService.Model.GetTranscriptionJobRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.Internal.MarshallTransformations.GetTranscriptionJobRequestMarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.TranscribeService.Model.Internal.MarshallTransformations.GetTranscriptionJobResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for GetTranscriptionJob operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.TranscribeService.Model.Internal.MarshallTransformations.GetTranscriptionJobResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.TranscribeService.Model.Internal.MarshallTransformations.GetTranscriptionJobResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.Internal.MarshallTransformations.GetTranscriptionJobResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.TranscribeService.Model.Internal.MarshallTransformations.GetVocabularyRequestMarshaller">
+            <summary>
+            GetVocabulary Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.TranscribeService.Model.Internal.MarshallTransformations.GetVocabularyRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.TranscribeService.Model.Internal.MarshallTransformations.GetVocabularyRequestMarshaller.Marshall(Amazon.TranscribeService.Model.GetVocabularyRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.Internal.MarshallTransformations.GetVocabularyRequestMarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.TranscribeService.Model.Internal.MarshallTransformations.GetVocabularyResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for GetVocabulary operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.TranscribeService.Model.Internal.MarshallTransformations.GetVocabularyResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.TranscribeService.Model.Internal.MarshallTransformations.GetVocabularyResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.Internal.MarshallTransformations.GetVocabularyResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.TranscribeService.Model.Internal.MarshallTransformations.ListTranscriptionJobsRequestMarshaller">
+            <summary>
+            ListTranscriptionJobs Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.TranscribeService.Model.Internal.MarshallTransformations.ListTranscriptionJobsRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.TranscribeService.Model.Internal.MarshallTransformations.ListTranscriptionJobsRequestMarshaller.Marshall(Amazon.TranscribeService.Model.ListTranscriptionJobsRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.Internal.MarshallTransformations.ListTranscriptionJobsRequestMarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.TranscribeService.Model.Internal.MarshallTransformations.ListTranscriptionJobsResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for ListTranscriptionJobs operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.TranscribeService.Model.Internal.MarshallTransformations.ListTranscriptionJobsResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.TranscribeService.Model.Internal.MarshallTransformations.ListTranscriptionJobsResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.Internal.MarshallTransformations.ListTranscriptionJobsResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.TranscribeService.Model.Internal.MarshallTransformations.ListVocabulariesRequestMarshaller">
+            <summary>
+            ListVocabularies Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.TranscribeService.Model.Internal.MarshallTransformations.ListVocabulariesRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.TranscribeService.Model.Internal.MarshallTransformations.ListVocabulariesRequestMarshaller.Marshall(Amazon.TranscribeService.Model.ListVocabulariesRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.Internal.MarshallTransformations.ListVocabulariesRequestMarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.TranscribeService.Model.Internal.MarshallTransformations.ListVocabulariesResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for ListVocabularies operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.TranscribeService.Model.Internal.MarshallTransformations.ListVocabulariesResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.TranscribeService.Model.Internal.MarshallTransformations.ListVocabulariesResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.Internal.MarshallTransformations.ListVocabulariesResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.TranscribeService.Model.Internal.MarshallTransformations.MediaMarshaller">
+            <summary>
+            Media Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.TranscribeService.Model.Internal.MarshallTransformations.MediaMarshaller.Marshall(Amazon.TranscribeService.Model.Media,Amazon.Runtime.Internal.Transform.JsonMarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="requestObject"></param>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="F:Amazon.TranscribeService.Model.Internal.MarshallTransformations.MediaMarshaller.Instance">
+            <summary>
+            Singleton Marshaller.
+            </summary>  
+        </member>
+        <member name="T:Amazon.TranscribeService.Model.Internal.MarshallTransformations.MediaUnmarshaller">
+            <summary>
+            Response Unmarshaller for Media Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.TranscribeService.Model.Internal.MarshallTransformations.MediaUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#TranscribeService#Model#Media,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.TranscribeService.Model.Internal.MarshallTransformations.MediaUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.Internal.MarshallTransformations.MediaUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.TranscribeService.Model.Internal.MarshallTransformations.SettingsMarshaller">
+            <summary>
+            Settings Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.TranscribeService.Model.Internal.MarshallTransformations.SettingsMarshaller.Marshall(Amazon.TranscribeService.Model.Settings,Amazon.Runtime.Internal.Transform.JsonMarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="requestObject"></param>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="F:Amazon.TranscribeService.Model.Internal.MarshallTransformations.SettingsMarshaller.Instance">
+            <summary>
+            Singleton Marshaller.
+            </summary>  
+        </member>
+        <member name="T:Amazon.TranscribeService.Model.Internal.MarshallTransformations.SettingsUnmarshaller">
+            <summary>
+            Response Unmarshaller for Settings Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.TranscribeService.Model.Internal.MarshallTransformations.SettingsUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#TranscribeService#Model#Settings,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.TranscribeService.Model.Internal.MarshallTransformations.SettingsUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.Internal.MarshallTransformations.SettingsUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.TranscribeService.Model.Internal.MarshallTransformations.StartTranscriptionJobRequestMarshaller">
+            <summary>
+            StartTranscriptionJob Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.TranscribeService.Model.Internal.MarshallTransformations.StartTranscriptionJobRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.TranscribeService.Model.Internal.MarshallTransformations.StartTranscriptionJobRequestMarshaller.Marshall(Amazon.TranscribeService.Model.StartTranscriptionJobRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.Internal.MarshallTransformations.StartTranscriptionJobRequestMarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.TranscribeService.Model.Internal.MarshallTransformations.StartTranscriptionJobResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for StartTranscriptionJob operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.TranscribeService.Model.Internal.MarshallTransformations.StartTranscriptionJobResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.TranscribeService.Model.Internal.MarshallTransformations.StartTranscriptionJobResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.Internal.MarshallTransformations.StartTranscriptionJobResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.TranscribeService.Model.Internal.MarshallTransformations.TranscriptionJobSummaryUnmarshaller">
+            <summary>
+            Response Unmarshaller for TranscriptionJobSummary Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.TranscribeService.Model.Internal.MarshallTransformations.TranscriptionJobSummaryUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#TranscribeService#Model#TranscriptionJobSummary,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.TranscribeService.Model.Internal.MarshallTransformations.TranscriptionJobSummaryUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.Internal.MarshallTransformations.TranscriptionJobSummaryUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.TranscribeService.Model.Internal.MarshallTransformations.TranscriptionJobUnmarshaller">
+            <summary>
+            Response Unmarshaller for TranscriptionJob Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.TranscribeService.Model.Internal.MarshallTransformations.TranscriptionJobUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#TranscribeService#Model#TranscriptionJob,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.TranscribeService.Model.Internal.MarshallTransformations.TranscriptionJobUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.Internal.MarshallTransformations.TranscriptionJobUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.TranscribeService.Model.Internal.MarshallTransformations.TranscriptUnmarshaller">
+            <summary>
+            Response Unmarshaller for Transcript Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.TranscribeService.Model.Internal.MarshallTransformations.TranscriptUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#TranscribeService#Model#Transcript,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.TranscribeService.Model.Internal.MarshallTransformations.TranscriptUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.Internal.MarshallTransformations.TranscriptUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.TranscribeService.Model.Internal.MarshallTransformations.UpdateVocabularyRequestMarshaller">
+            <summary>
+            UpdateVocabulary Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.TranscribeService.Model.Internal.MarshallTransformations.UpdateVocabularyRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.TranscribeService.Model.Internal.MarshallTransformations.UpdateVocabularyRequestMarshaller.Marshall(Amazon.TranscribeService.Model.UpdateVocabularyRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.Internal.MarshallTransformations.UpdateVocabularyRequestMarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.TranscribeService.Model.Internal.MarshallTransformations.UpdateVocabularyResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for UpdateVocabulary operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.TranscribeService.Model.Internal.MarshallTransformations.UpdateVocabularyResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.TranscribeService.Model.Internal.MarshallTransformations.UpdateVocabularyResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.Internal.MarshallTransformations.UpdateVocabularyResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.TranscribeService.Model.Internal.MarshallTransformations.VocabularyInfoUnmarshaller">
+            <summary>
+            Response Unmarshaller for VocabularyInfo Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.TranscribeService.Model.Internal.MarshallTransformations.VocabularyInfoUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#TranscribeService#Model#VocabularyInfo,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.TranscribeService.Model.Internal.MarshallTransformations.VocabularyInfoUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.Internal.MarshallTransformations.VocabularyInfoUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.TranscribeService.Model.LimitExceededException">
+            <summary>
+             TranscribeService exception
+             </summary>
+        </member>
+        <member name="M:Amazon.TranscribeService.Model.LimitExceededException.#ctor(System.String)">
+            <summary>
+            Constructs a new LimitExceededException with the specified error
+            message.
+            </summary>
+            <param name="message">
+            Describes the error encountered.
+            </param>
+        </member>
+        <member name="M:Amazon.TranscribeService.Model.LimitExceededException.#ctor(System.String,System.Exception)">
+            <summary>
+            Construct instance of LimitExceededException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.TranscribeService.Model.LimitExceededException.#ctor(System.Exception)">
+            <summary>
+            Construct instance of LimitExceededException
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.TranscribeService.Model.LimitExceededException.#ctor(System.String,System.Exception,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of LimitExceededException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="M:Amazon.TranscribeService.Model.LimitExceededException.#ctor(System.String,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of LimitExceededException
+            </summary>
+            <param name="message"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="T:Amazon.TranscribeService.Model.ListTranscriptionJobsRequest">
+            <summary>
+            Container for the parameters to the ListTranscriptionJobs operation.
+            Lists transcription jobs with the specified status.
+            </summary>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.ListTranscriptionJobsRequest.JobNameContains">
+            <summary>
+            Gets and sets the property JobNameContains. 
+            <para>
+            When specified, the jobs returned in the list are limited to jobs whose name contains
+            the specified string.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.ListTranscriptionJobsRequest.MaxResults">
+            <summary>
+            Gets and sets the property MaxResults. 
+            <para>
+            The maximum number of jobs to return in the response. If there are fewer results in
+            the list, this response contains only the actual results.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.ListTranscriptionJobsRequest.NextToken">
+            <summary>
+            Gets and sets the property NextToken. 
+            <para>
+            If the result of the previous request to <code>ListTranscriptionJobs</code> was truncated,
+            include the <code>NextToken</code> to fetch the next set of jobs.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.ListTranscriptionJobsRequest.Status">
+            <summary>
+            Gets and sets the property Status. 
+            <para>
+            When specified, returns only transcription jobs with the specified status. Jobs are
+            ordered by creation date, with the newest jobs returned first. If you don’t specify
+            a status, Amazon Transcribe returns all transcription jobs ordered by creation date.
+            
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.TranscribeService.Model.ListTranscriptionJobsResponse">
+            <summary>
+            This is the response object from the ListTranscriptionJobs operation.
+            </summary>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.ListTranscriptionJobsResponse.NextToken">
+            <summary>
+            Gets and sets the property NextToken. 
+            <para>
+            The <code>ListTranscriptionJobs</code> operation returns a page of jobs at a time.
+            The maximum size of the page is set by the <code>MaxResults</code> parameter. If there
+            are more jobs in the list than the page size, Amazon Transcribe returns the <code>NextPage</code>
+            token. Include the token in the next request to the <code>ListTranscriptionJobs</code>
+            operation to return in the next page of jobs.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.ListTranscriptionJobsResponse.Status">
+            <summary>
+            Gets and sets the property Status. 
+            <para>
+            The requested status of the jobs returned.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.ListTranscriptionJobsResponse.TranscriptionJobSummaries">
+            <summary>
+            Gets and sets the property TranscriptionJobSummaries. 
+            <para>
+            A list of objects containing summary information for a transcription job.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.TranscribeService.Model.ListVocabulariesRequest">
+            <summary>
+            Container for the parameters to the ListVocabularies operation.
+            Returns a list of vocabularies that match the specified criteria. If no criteria are
+            specified, returns the entire list of vocabularies.
+            </summary>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.ListVocabulariesRequest.MaxResults">
+            <summary>
+            Gets and sets the property MaxResults. 
+            <para>
+            The maximum number of vocabularies to return in the response. If there are fewer results
+            in the list, this response contains only the actual results.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.ListVocabulariesRequest.NameContains">
+            <summary>
+            Gets and sets the property NameContains. 
+            <para>
+            When specified, the vocabularies returned in the list are limited to vocabularies
+            whose name contains the specified string. The search is case-insensitive, <code>ListVocabularies</code>
+            will return both "vocabularyname" and "VocabularyName" in the response list.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.ListVocabulariesRequest.NextToken">
+            <summary>
+            Gets and sets the property NextToken. 
+            <para>
+            If the result of the previous request to <code>ListVocabularies</code> was truncated,
+            include the <code>NextToken</code> to fetch the next set of jobs.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.ListVocabulariesRequest.StateEquals">
+            <summary>
+            Gets and sets the property StateEquals. 
+            <para>
+            When specified, only returns vocabularies with the <code>VocabularyState</code> field
+            equal to the specified state.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.TranscribeService.Model.ListVocabulariesResponse">
+            <summary>
+            This is the response object from the ListVocabularies operation.
+            </summary>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.ListVocabulariesResponse.NextToken">
+            <summary>
+            Gets and sets the property NextToken. 
+            <para>
+            The <code>ListVocabularies</code> operation returns a page of vocabularies at a time.
+            The maximum size of the page is set by the <code>MaxResults</code> parameter. If there
+            are more jobs in the list than the page size, Amazon Transcribe returns the <code>NextPage</code>
+            token. Include the token in the next request to the <code>ListVocabularies</code>
+            operation to return in the next page of jobs.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.ListVocabulariesResponse.Status">
+            <summary>
+            Gets and sets the property Status. 
+            <para>
+            The requested vocabulary state.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.ListVocabulariesResponse.Vocabularies">
+            <summary>
+            Gets and sets the property Vocabularies. 
+            <para>
+            A list of objects that describe the vocabularies that match the search criteria in
+            the request.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.TranscribeService.Model.Media">
+            <summary>
+            Describes the input media file in a transcription request.
+            </summary>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.Media.MediaFileUri">
+            <summary>
+            Gets and sets the property MediaFileUri. 
+            <para>
+            The S3 location of the input media file. The URI must be in the same region as the
+            API endpoint that you are calling. The general form is:
+            </para>
+             
+            <para>
+             <code> https://s3-&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt;
+            </code> 
+            </para>
+             
+            <para>
+            For example:
+            </para>
+             
+            <para>
+             <code>https://s3-us-east-1.amazonaws.com/examplebucket/example.mp4</code> 
+            </para>
+             
+            <para>
+             <code>https://s3-us-east-1.amazonaws.com/examplebucket/mediadocs/example.mp4</code>
+            
+            </para>
+             
+            <para>
+            For more information about S3 object names, see <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
+            Keys</a> in the <i>Amazon S3 Developer Guide</i>.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.TranscribeService.Model.NotFoundException">
+            <summary>
+             TranscribeService exception
+             </summary>
+        </member>
+        <member name="M:Amazon.TranscribeService.Model.NotFoundException.#ctor(System.String)">
+            <summary>
+            Constructs a new NotFoundException with the specified error
+            message.
+            </summary>
+            <param name="message">
+            Describes the error encountered.
+            </param>
+        </member>
+        <member name="M:Amazon.TranscribeService.Model.NotFoundException.#ctor(System.String,System.Exception)">
+            <summary>
+            Construct instance of NotFoundException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.TranscribeService.Model.NotFoundException.#ctor(System.Exception)">
+            <summary>
+            Construct instance of NotFoundException
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.TranscribeService.Model.NotFoundException.#ctor(System.String,System.Exception,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of NotFoundException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="M:Amazon.TranscribeService.Model.NotFoundException.#ctor(System.String,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of NotFoundException
+            </summary>
+            <param name="message"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="T:Amazon.TranscribeService.Model.Settings">
+            <summary>
+            Provides optional settings for the <code>StartTranscriptionJob</code> operation.
+            </summary>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.Settings.ChannelIdentification">
+            <summary>
+            Gets and sets the property ChannelIdentification. 
+            <para>
+            Instructs Amazon Transcribe to process each audio channel separately and then merge
+            the transcription output of each channel into a single transcription. 
+            </para>
+             
+            <para>
+            Amazon Transcribe also produces a transcription of each item detected on an audio
+            channel, including the start time and end time of the item and alternative transcriptions
+            of the item including the confidence that Amazon Transcribe has in the transcription.
+            </para>
+             
+            <para>
+            You can't set both <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code>
+            in the same request. If you set both, your request returns a <code>BadRequestException</code>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.Settings.MaxSpeakerLabels">
+            <summary>
+            Gets and sets the property MaxSpeakerLabels. 
+            <para>
+            The maximum number of speakers to identify in the input audio. If there are more speakers
+            in the audio than this number, multiple speakers will be identified as a single speaker.
+            If you specify the <code>MaxSpeakerLabels</code> field, you must set the <code>ShowSpeakerLabels</code>
+            field to true.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.Settings.ShowSpeakerLabels">
+            <summary>
+            Gets and sets the property ShowSpeakerLabels. 
+            <para>
+            Determines whether the transcription job uses speaker recognition to identify different
+            speakers in the input audio. Speaker recognition labels individual speakers in the
+            audio file. If you set the <code>ShowSpeakerLabels</code> field to true, you must
+            also set the maximum number of speaker labels <code>MaxSpeakerLabels</code> field.
+            </para>
+             
+            <para>
+            You can't set both <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code>
+            in the same request. If you set both, your request returns a <code>BadRequestException</code>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.Settings.VocabularyName">
+            <summary>
+            Gets and sets the property VocabularyName. 
+            <para>
+            The name of a vocabulary to use when processing the transcription job.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.TranscribeService.Model.StartTranscriptionJobRequest">
+            <summary>
+            Container for the parameters to the StartTranscriptionJob operation.
+            Starts an asynchronous job to transcribe speech to text.
+            </summary>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.StartTranscriptionJobRequest.LanguageCode">
+            <summary>
+            Gets and sets the property LanguageCode. 
+            <para>
+            The language code for the language used in the input media file.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.StartTranscriptionJobRequest.Media">
+            <summary>
+            Gets and sets the property Media. 
+            <para>
+            An object that describes the input media for a transcription job.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.StartTranscriptionJobRequest.MediaFormat">
+            <summary>
+            Gets and sets the property MediaFormat. 
+            <para>
+            The format of the input media file.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.StartTranscriptionJobRequest.MediaSampleRateHertz">
+            <summary>
+            Gets and sets the property MediaSampleRateHertz. 
+            <para>
+            The sample rate, in Hertz, of the audio track in the input media file. 
+            </para>
+             
+            <para>
+            If you do not specify the media sample rate, Amazon Transcribe determines the sample
+            rate. If you specify the sample rate, it must match the sample rate detected by Amazon
+            Transcribe. In most cases, you should leave the <code>MediaSampleRateHertz</code>
+            field blank and let Amazon Transcribe determine the sample rate.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.StartTranscriptionJobRequest.OutputBucketName">
+            <summary>
+            Gets and sets the property OutputBucketName. 
+            <para>
+            The location where the transcription is stored.
+            </para>
+             
+            <para>
+            If you set the <code>OutputBucketName</code>, Amazon Transcribe puts the transcription
+            in the specified S3 bucket. When you call the <a>GetTranscriptionJob</a> operation,
+            the operation returns this location in the <code>TranscriptFileUri</code> field. The
+            S3 bucket must have permissions that allow Amazon Transcribe to put files in the bucket.
+            For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/security_iam_id-based-policy-examples.html#auth-role-iam-user">Permissions
+            Required for IAM User Roles</a>.
+            </para>
+             
+            <para>
+            Amazon Transcribe uses the default Amazon S3 key for server-side encryption of transcripts
+            that are placed in your S3 bucket. You can't specify your own encryption key.
+            </para>
+             
+            <para>
+            If you don't set the <code>OutputBucketName</code>, Amazon Transcribe generates a
+            pre-signed URL, a shareable URL that provides secure access to your transcription,
+            and returns it in the <code>TranscriptFileUri</code> field. Use this URL to download
+            the transcription.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.StartTranscriptionJobRequest.OutputEncryptionKMSKeyId">
+            <summary>
+            Gets and sets the property OutputEncryptionKMSKeyId.
+            </summary>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.StartTranscriptionJobRequest.Settings">
+            <summary>
+            Gets and sets the property Settings. 
+            <para>
+            A <code>Settings</code> object that provides optional settings for a transcription
+            job.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.StartTranscriptionJobRequest.TranscriptionJobName">
+            <summary>
+            Gets and sets the property TranscriptionJobName. 
+            <para>
+            The name of the job. Note that you can't use the strings "." or ".." by themselves
+            as the job name. The name must also be unique within an AWS account.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.TranscribeService.Model.StartTranscriptionJobResponse">
+            <summary>
+            This is the response object from the StartTranscriptionJob operation.
+            </summary>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.StartTranscriptionJobResponse.TranscriptionJob">
+            <summary>
+            Gets and sets the property TranscriptionJob. 
+            <para>
+            An object containing details of the asynchronous transcription job.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.TranscribeService.Model.Transcript">
+            <summary>
+            Identifies the location of a transcription.
+            </summary>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.Transcript.TranscriptFileUri">
+            <summary>
+            Gets and sets the property TranscriptFileUri. 
+            <para>
+            The location where the transcription is stored.
+            </para>
+             
+            <para>
+            Use this URI to access the transcription. If you specified an S3 bucket in the <code>OutputBucketName</code>
+            field when you created the job, this is the URI of that bucket. If you chose to store
+            the transcription in Amazon Transcribe, this is a shareable URL that provides secure
+            access to that location.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.TranscribeService.Model.TranscriptionJob">
+            <summary>
+            Describes an asynchronous transcription job that was created with the <code>StartTranscriptionJob</code>
+            operation.
+            </summary>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.TranscriptionJob.CompletionTime">
+            <summary>
+            Gets and sets the property CompletionTime. 
+            <para>
+            A timestamp that shows when the job was completed.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.TranscriptionJob.CreationTime">
+            <summary>
+            Gets and sets the property CreationTime. 
+            <para>
+            A timestamp that shows when the job was created.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.TranscriptionJob.FailureReason">
+            <summary>
+            Gets and sets the property FailureReason. 
+            <para>
+            If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, this field
+            contains information about why the job failed.
+            </para>
+             
+            <para>
+            The <code>FailureReason</code> field can contain one of the following values:
+            </para>
+             <ul> <li> 
+            <para>
+             <code>Unsupported media format</code> - The media format specified in the <code>MediaFormat</code>
+            field of the request isn't valid. See the description of the <code>MediaFormat</code>
+            field for a list of valid values.
+            </para>
+             </li> <li> 
+            <para>
+             <code>The media format provided does not match the detected media format</code> -
+            The media format of the audio file doesn't match the format specified in the <code>MediaFormat</code>
+            field in the request. Check the media format of your media file and make sure that
+            the two values match.
+            </para>
+             </li> <li> 
+            <para>
+             <code>Invalid sample rate for audio file</code> - The sample rate specified in the
+            <code>MediaSampleRateHertz</code> of the request isn't valid. The sample rate must
+            be between 8000 and 48000 Hertz.
+            </para>
+             </li> <li> 
+            <para>
+             <code>The sample rate provided does not match the detected sample rate</code> - The
+            sample rate in the audio file doesn't match the sample rate specified in the <code>MediaSampleRateHertz</code>
+            field in the request. Check the sample rate of your media file and make sure that
+            the two values match.
+            </para>
+             </li> <li> 
+            <para>
+             <code>Invalid file size: file size too large</code> - The size of your audio file
+            is larger than Amazon Transcribe can process. For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Limits</a>
+            in the <i>Amazon Transcribe Developer Guide</i>.
+            </para>
+             </li> <li> 
+            <para>
+             <code>Invalid number of channels: number of channels too large</code> - Your audio
+            contains more channels than Amazon Transcribe is configured to process. To request
+            additional channels, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits-amazon-transcribe">Amazon
+            Transcribe Limits</a> in the <i>Amazon Web Services General Reference</i>.
+            </para>
+             </li> </ul>
+            </summary>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.TranscriptionJob.LanguageCode">
+            <summary>
+            Gets and sets the property LanguageCode. 
+            <para>
+            The language code for the input speech.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.TranscriptionJob.Media">
+            <summary>
+            Gets and sets the property Media. 
+            <para>
+            An object that describes the input media for the transcription job.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.TranscriptionJob.MediaFormat">
+            <summary>
+            Gets and sets the property MediaFormat. 
+            <para>
+            The format of the input media file.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.TranscriptionJob.MediaSampleRateHertz">
+            <summary>
+            Gets and sets the property MediaSampleRateHertz. 
+            <para>
+            The sample rate, in Hertz, of the audio track in the input media file. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.TranscriptionJob.Settings">
+            <summary>
+            Gets and sets the property Settings. 
+            <para>
+            Optional settings for the transcription job. Use these settings to turn on speaker
+            recognition, to set the maximum number of speakers that should be identified and to
+            specify a custom vocabulary to use when processing the transcription job.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.TranscriptionJob.Transcript">
+            <summary>
+            Gets and sets the property Transcript. 
+            <para>
+            An object that describes the output of the transcription job.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.TranscriptionJob.TranscriptionJobName">
+            <summary>
+            Gets and sets the property TranscriptionJobName. 
+            <para>
+            The name of the transcription job.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.TranscriptionJob.TranscriptionJobStatus">
+            <summary>
+            Gets and sets the property TranscriptionJobStatus. 
+            <para>
+            The status of the transcription job.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.TranscribeService.Model.TranscriptionJobSummary">
+            <summary>
+            Provides a summary of information about a transcription job.
+            </summary>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.TranscriptionJobSummary.CompletionTime">
+            <summary>
+            Gets and sets the property CompletionTime. 
+            <para>
+            A timestamp that shows when the job was completed.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.TranscriptionJobSummary.CreationTime">
+            <summary>
+            Gets and sets the property CreationTime. 
+            <para>
+            A timestamp that shows when the job was created.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.TranscriptionJobSummary.FailureReason">
+            <summary>
+            Gets and sets the property FailureReason. 
+            <para>
+            If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, a description
+            of the error.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.TranscriptionJobSummary.LanguageCode">
+            <summary>
+            Gets and sets the property LanguageCode. 
+            <para>
+            The language code for the input speech.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.TranscriptionJobSummary.OutputLocationType">
+            <summary>
+            Gets and sets the property OutputLocationType. 
+            <para>
+            Indicates the location of the output of the transcription job.
+            </para>
+             
+            <para>
+            If the value is <code>CUSTOMER_BUCKET</code> then the location is the S3 bucket specified
+            in the <code>outputBucketName</code> field when the transcription job was started
+            with the <code>StartTranscriptionJob</code> operation.
+            </para>
+             
+            <para>
+            If the value is <code>SERVICE_BUCKET</code> then the output is stored by Amazon Transcribe
+            and can be retrieved using the URI in the <code>GetTranscriptionJob</code> response's
+            <code>TranscriptFileUri</code> field.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.TranscriptionJobSummary.TranscriptionJobName">
+            <summary>
+            Gets and sets the property TranscriptionJobName. 
+            <para>
+            The name of the transcription job.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.TranscriptionJobSummary.TranscriptionJobStatus">
+            <summary>
+            Gets and sets the property TranscriptionJobStatus. 
+            <para>
+            The status of the transcription job. When the status is <code>COMPLETED</code>, use
+            the <code>GetTranscriptionJob</code> operation to get the results of the transcription.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.TranscribeService.Model.UpdateVocabularyRequest">
+            <summary>
+            Container for the parameters to the UpdateVocabulary operation.
+            Updates an existing vocabulary with new values. The <code>UpdateVocabulary</code>
+            operation overwrites all of the existing information with the values that you provide
+            in the request.
+            </summary>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.UpdateVocabularyRequest.LanguageCode">
+            <summary>
+            Gets and sets the property LanguageCode. 
+            <para>
+            The language code of the vocabulary entries.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.UpdateVocabularyRequest.Phrases">
+            <summary>
+            Gets and sets the property Phrases. 
+            <para>
+            An array of strings containing the vocabulary entries.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.UpdateVocabularyRequest.VocabularyFileUri">
+            <summary>
+            Gets and sets the property VocabularyFileUri. 
+            <para>
+            The S3 location of the text file that contains the definition of the custom vocabulary.
+            The URI must be in the same region as the API endpoint that you are calling. The general
+            form is 
+            </para>
+             
+            <para>
+             <code> https://s3-&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt;
+            </code> 
+            </para>
+             
+            <para>
+            For example:
+            </para>
+             
+            <para>
+             <code>https://s3-us-east-1.amazonaws.com/examplebucket/vocab.txt</code> 
+            </para>
+             
+            <para>
+            For more information about S3 object names, see <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
+            Keys</a> in the <i>Amazon S3 Developer Guide</i>.
+            </para>
+             
+            <para>
+            For more information about custom vocabularies, see <a href="http://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html#how-vocabulary">Custom
+            Vocabularies</a>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.UpdateVocabularyRequest.VocabularyName">
+            <summary>
+            Gets and sets the property VocabularyName. 
+            <para>
+            The name of the vocabulary to update. The name is case-sensitive.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.TranscribeService.Model.UpdateVocabularyResponse">
+            <summary>
+            This is the response object from the UpdateVocabulary operation.
+            </summary>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.UpdateVocabularyResponse.LanguageCode">
+            <summary>
+            Gets and sets the property LanguageCode. 
+            <para>
+            The language code of the vocabulary entries.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.UpdateVocabularyResponse.LastModifiedTime">
+            <summary>
+            Gets and sets the property LastModifiedTime. 
+            <para>
+            The date and time that the vocabulary was updated.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.UpdateVocabularyResponse.VocabularyName">
+            <summary>
+            Gets and sets the property VocabularyName. 
+            <para>
+            The name of the vocabulary that was updated.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.UpdateVocabularyResponse.VocabularyState">
+            <summary>
+            Gets and sets the property VocabularyState. 
+            <para>
+            The processing state of the vocabulary. When the <code>VocabularyState</code> field
+            contains <code>READY</code> the vocabulary is ready to be used in a <code>StartTranscriptionJob</code>
+            request.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.TranscribeService.Model.VocabularyInfo">
+            <summary>
+            Provides information about a custom vocabulary.
+            </summary>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.VocabularyInfo.LanguageCode">
+            <summary>
+            Gets and sets the property LanguageCode. 
+            <para>
+            The language code of the vocabulary entries.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.VocabularyInfo.LastModifiedTime">
+            <summary>
+            Gets and sets the property LastModifiedTime. 
+            <para>
+            The date and time that the vocabulary was last modified.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.VocabularyInfo.VocabularyName">
+            <summary>
+            Gets and sets the property VocabularyName. 
+            <para>
+            The name of the vocabulary.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.TranscribeService.Model.VocabularyInfo.VocabularyState">
+            <summary>
+            Gets and sets the property VocabularyState. 
+            <para>
+            The processing state of the vocabulary. If the state is <code>READY</code> you can
+            use the vocabulary in a <code>StartTranscriptionJob</code> request.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.TranscribeService.LanguageCode">
+            <summary>
+            Constants used for properties of type LanguageCode.
+            </summary>
+        </member>
+        <member name="F:Amazon.TranscribeService.LanguageCode.ArSA">
+            <summary>
+            Constant ArSA for LanguageCode
+            </summary>
+        </member>
+        <member name="F:Amazon.TranscribeService.LanguageCode.DeDE">
+            <summary>
+            Constant DeDE for LanguageCode
+            </summary>
+        </member>
+        <member name="F:Amazon.TranscribeService.LanguageCode.EnAU">
+            <summary>
+            Constant EnAU for LanguageCode
+            </summary>
+        </member>
+        <member name="F:Amazon.TranscribeService.LanguageCode.EnGB">
+            <summary>
+            Constant EnGB for LanguageCode
+            </summary>
+        </member>
+        <member name="F:Amazon.TranscribeService.LanguageCode.EnIN">
+            <summary>
+            Constant EnIN for LanguageCode
+            </summary>
+        </member>
+        <member name="F:Amazon.TranscribeService.LanguageCode.EnUS">
+            <summary>
+            Constant EnUS for LanguageCode
+            </summary>
+        </member>
+        <member name="F:Amazon.TranscribeService.LanguageCode.EsES">
+            <summary>
+            Constant EsES for LanguageCode
+            </summary>
+        </member>
+        <member name="F:Amazon.TranscribeService.LanguageCode.EsUS">
+            <summary>
+            Constant EsUS for LanguageCode
+            </summary>
+        </member>
+        <member name="F:Amazon.TranscribeService.LanguageCode.FrCA">
+            <summary>
+            Constant FrCA for LanguageCode
+            </summary>
+        </member>
+        <member name="F:Amazon.TranscribeService.LanguageCode.FrFR">
+            <summary>
+            Constant FrFR for LanguageCode
+            </summary>
+        </member>
+        <member name="F:Amazon.TranscribeService.LanguageCode.HiIN">
+            <summary>
+            Constant HiIN for LanguageCode
+            </summary>
+        </member>
+        <member name="F:Amazon.TranscribeService.LanguageCode.ItIT">
+            <summary>
+            Constant ItIT for LanguageCode
+            </summary>
+        </member>
+        <member name="F:Amazon.TranscribeService.LanguageCode.KoKR">
+            <summary>
+            Constant KoKR for LanguageCode
+            </summary>
+        </member>
+        <member name="F:Amazon.TranscribeService.LanguageCode.PtBR">
+            <summary>
+            Constant PtBR for LanguageCode
+            </summary>
+        </member>
+        <member name="F:Amazon.TranscribeService.LanguageCode.RuRU">
+            <summary>
+            Constant RuRU for LanguageCode
+            </summary>
+        </member>
+        <member name="F:Amazon.TranscribeService.LanguageCode.ZhCN">
+            <summary>
+            Constant ZhCN for LanguageCode
+            </summary>
+        </member>
+        <member name="M:Amazon.TranscribeService.LanguageCode.#ctor(System.String)">
+            <summary>
+            This constant constructor does not need to be called if the constant
+            you are attempting to use is already defined as a static instance of 
+            this class.
+            This constructor should be used to construct constants that are not
+            defined as statics, for instance if attempting to use a feature that is
+            newer than the current version of the SDK.
+            </summary>
+        </member>
+        <member name="M:Amazon.TranscribeService.LanguageCode.FindValue(System.String)">
+            <summary>
+            Finds the constant for the unique value.
+            </summary>
+            <param name="value">The unique value for the constant</param>
+            <returns>The constant for the unique value</returns>
+        </member>
+        <member name="M:Amazon.TranscribeService.LanguageCode.op_Implicit(System.String)~Amazon.TranscribeService.LanguageCode">
+            <summary>
+            Utility method to convert strings to the constant class.
+            </summary>
+            <param name="value">The string value to convert to the constant class.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.TranscribeService.MediaFormat">
+            <summary>
+            Constants used for properties of type MediaFormat.
+            </summary>
+        </member>
+        <member name="F:Amazon.TranscribeService.MediaFormat.Flac">
+            <summary>
+            Constant Flac for MediaFormat
+            </summary>
+        </member>
+        <member name="F:Amazon.TranscribeService.MediaFormat.Mp3">
+            <summary>
+            Constant Mp3 for MediaFormat
+            </summary>
+        </member>
+        <member name="F:Amazon.TranscribeService.MediaFormat.Mp4">
+            <summary>
+            Constant Mp4 for MediaFormat
+            </summary>
+        </member>
+        <member name="F:Amazon.TranscribeService.MediaFormat.Wav">
+            <summary>
+            Constant Wav for MediaFormat
+            </summary>
+        </member>
+        <member name="M:Amazon.TranscribeService.MediaFormat.#ctor(System.String)">
+            <summary>
+            This constant constructor does not need to be called if the constant
+            you are attempting to use is already defined as a static instance of 
+            this class.
+            This constructor should be used to construct constants that are not
+            defined as statics, for instance if attempting to use a feature that is
+            newer than the current version of the SDK.
+            </summary>
+        </member>
+        <member name="M:Amazon.TranscribeService.MediaFormat.FindValue(System.String)">
+            <summary>
+            Finds the constant for the unique value.
+            </summary>
+            <param name="value">The unique value for the constant</param>
+            <returns>The constant for the unique value</returns>
+        </member>
+        <member name="M:Amazon.TranscribeService.MediaFormat.op_Implicit(System.String)~Amazon.TranscribeService.MediaFormat">
+            <summary>
+            Utility method to convert strings to the constant class.
+            </summary>
+            <param name="value">The string value to convert to the constant class.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.TranscribeService.OutputLocationType">
+            <summary>
+            Constants used for properties of type OutputLocationType.
+            </summary>
+        </member>
+        <member name="F:Amazon.TranscribeService.OutputLocationType.CUSTOMER_BUCKET">
+            <summary>
+            Constant CUSTOMER_BUCKET for OutputLocationType
+            </summary>
+        </member>
+        <member name="F:Amazon.TranscribeService.OutputLocationType.SERVICE_BUCKET">
+            <summary>
+            Constant SERVICE_BUCKET for OutputLocationType
+            </summary>
+        </member>
+        <member name="M:Amazon.TranscribeService.OutputLocationType.#ctor(System.String)">
+            <summary>
+            This constant constructor does not need to be called if the constant
+            you are attempting to use is already defined as a static instance of 
+            this class.
+            This constructor should be used to construct constants that are not
+            defined as statics, for instance if attempting to use a feature that is
+            newer than the current version of the SDK.
+            </summary>
+        </member>
+        <member name="M:Amazon.TranscribeService.OutputLocationType.FindValue(System.String)">
+            <summary>
+            Finds the constant for the unique value.
+            </summary>
+            <param name="value">The unique value for the constant</param>
+            <returns>The constant for the unique value</returns>
+        </member>
+        <member name="M:Amazon.TranscribeService.OutputLocationType.op_Implicit(System.String)~Amazon.TranscribeService.OutputLocationType">
+            <summary>
+            Utility method to convert strings to the constant class.
+            </summary>
+            <param name="value">The string value to convert to the constant class.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.TranscribeService.TranscriptionJobStatus">
+            <summary>
+            Constants used for properties of type TranscriptionJobStatus.
+            </summary>
+        </member>
+        <member name="F:Amazon.TranscribeService.TranscriptionJobStatus.COMPLETED">
+            <summary>
+            Constant COMPLETED for TranscriptionJobStatus
+            </summary>
+        </member>
+        <member name="F:Amazon.TranscribeService.TranscriptionJobStatus.FAILED">
+            <summary>
+            Constant FAILED for TranscriptionJobStatus
+            </summary>
+        </member>
+        <member name="F:Amazon.TranscribeService.TranscriptionJobStatus.IN_PROGRESS">
+            <summary>
+            Constant IN_PROGRESS for TranscriptionJobStatus
+            </summary>
+        </member>
+        <member name="M:Amazon.TranscribeService.TranscriptionJobStatus.#ctor(System.String)">
+            <summary>
+            This constant constructor does not need to be called if the constant
+            you are attempting to use is already defined as a static instance of 
+            this class.
+            This constructor should be used to construct constants that are not
+            defined as statics, for instance if attempting to use a feature that is
+            newer than the current version of the SDK.
+            </summary>
+        </member>
+        <member name="M:Amazon.TranscribeService.TranscriptionJobStatus.FindValue(System.String)">
+            <summary>
+            Finds the constant for the unique value.
+            </summary>
+            <param name="value">The unique value for the constant</param>
+            <returns>The constant for the unique value</returns>
+        </member>
+        <member name="M:Amazon.TranscribeService.TranscriptionJobStatus.op_Implicit(System.String)~Amazon.TranscribeService.TranscriptionJobStatus">
+            <summary>
+            Utility method to convert strings to the constant class.
+            </summary>
+            <param name="value">The string value to convert to the constant class.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.TranscribeService.VocabularyState">
+            <summary>
+            Constants used for properties of type VocabularyState.
+            </summary>
+        </member>
+        <member name="F:Amazon.TranscribeService.VocabularyState.FAILED">
+            <summary>
+            Constant FAILED for VocabularyState
+            </summary>
+        </member>
+        <member name="F:Amazon.TranscribeService.VocabularyState.PENDING">
+            <summary>
+            Constant PENDING for VocabularyState
+            </summary>
+        </member>
+        <member name="F:Amazon.TranscribeService.VocabularyState.READY">
+            <summary>
+            Constant READY for VocabularyState
+            </summary>
+        </member>
+        <member name="M:Amazon.TranscribeService.VocabularyState.#ctor(System.String)">
+            <summary>
+            This constant constructor does not need to be called if the constant
+            you are attempting to use is already defined as a static instance of 
+            this class.
+            This constructor should be used to construct constants that are not
+            defined as statics, for instance if attempting to use a feature that is
+            newer than the current version of the SDK.
+            </summary>
+        </member>
+        <member name="M:Amazon.TranscribeService.VocabularyState.FindValue(System.String)">
+            <summary>
+            Finds the constant for the unique value.
+            </summary>
+            <param name="value">The unique value for the constant</param>
+            <returns>The constant for the unique value</returns>
+        </member>
+        <member name="M:Amazon.TranscribeService.VocabularyState.op_Implicit(System.String)~Amazon.TranscribeService.VocabularyState">
+            <summary>
+            Utility method to convert strings to the constant class.
+            </summary>
+            <param name="value">The string value to convert to the constant class.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.TranscribeService.AmazonTranscribeServiceClient">
+             <summary>
+             Implementation for accessing TranscribeService
+            
+             Operations and objects for transcribing speech to text.
+             </summary>
+        </member>
+        <member name="M:Amazon.TranscribeService.AmazonTranscribeServiceClient.#ctor">
+             <summary>
+             Constructs AmazonTranscribeServiceClient with the credentials loaded from the application's
+             default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+             
+             Example App.config with credentials set. 
+             <code>
+             &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+             &lt;configuration&gt;
+                 &lt;appSettings&gt;
+                     &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+                 &lt;/appSettings&gt;
+             &lt;/configuration&gt;
+             </code>
+            
+             </summary>
+        </member>
+        <member name="M:Amazon.TranscribeService.AmazonTranscribeServiceClient.#ctor(Amazon.RegionEndpoint)">
+             <summary>
+             Constructs AmazonTranscribeServiceClient with the credentials loaded from the application's
+             default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+             
+             Example App.config with credentials set. 
+             <code>
+             &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+             &lt;configuration&gt;
+                 &lt;appSettings&gt;
+                     &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+                 &lt;/appSettings&gt;
+             &lt;/configuration&gt;
+             </code>
+            
+             </summary>
+             <param name="region">The region to connect.</param>
+        </member>
+        <member name="M:Amazon.TranscribeService.AmazonTranscribeServiceClient.#ctor(Amazon.TranscribeService.AmazonTranscribeServiceConfig)">
+             <summary>
+             Constructs AmazonTranscribeServiceClient with the credentials loaded from the application's
+             default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+             
+             Example App.config with credentials set. 
+             <code>
+             &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+             &lt;configuration&gt;
+                 &lt;appSettings&gt;
+                     &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+                 &lt;/appSettings&gt;
+             &lt;/configuration&gt;
+             </code>
+            
+             </summary>
+             <param name="config">The AmazonTranscribeServiceClient Configuration Object</param>
+        </member>
+        <member name="M:Amazon.TranscribeService.AmazonTranscribeServiceClient.#ctor(Amazon.Runtime.AWSCredentials)">
+            <summary>
+            Constructs AmazonTranscribeServiceClient with AWS Credentials
+            </summary>
+            <param name="credentials">AWS Credentials</param>
+        </member>
+        <member name="M:Amazon.TranscribeService.AmazonTranscribeServiceClient.#ctor(Amazon.Runtime.AWSCredentials,Amazon.RegionEndpoint)">
+            <summary>
+            Constructs AmazonTranscribeServiceClient with AWS Credentials
+            </summary>
+            <param name="credentials">AWS Credentials</param>
+            <param name="region">The region to connect.</param>
+        </member>
+        <member name="M:Amazon.TranscribeService.AmazonTranscribeServiceClient.#ctor(Amazon.Runtime.AWSCredentials,Amazon.TranscribeService.AmazonTranscribeServiceConfig)">
+            <summary>
+            Constructs AmazonTranscribeServiceClient with AWS Credentials and an
+            AmazonTranscribeServiceClient Configuration object.
+            </summary>
+            <param name="credentials">AWS Credentials</param>
+            <param name="clientConfig">The AmazonTranscribeServiceClient Configuration Object</param>
+        </member>
+        <member name="M:Amazon.TranscribeService.AmazonTranscribeServiceClient.#ctor(System.String,System.String)">
+            <summary>
+            Constructs AmazonTranscribeServiceClient with AWS Access Key ID and AWS Secret Key
+            </summary>
+            <param name="awsAccessKeyId">AWS Access Key ID</param>
+            <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        </member>
+        <member name="M:Amazon.TranscribeService.AmazonTranscribeServiceClient.#ctor(System.String,System.String,Amazon.RegionEndpoint)">
+            <summary>
+            Constructs AmazonTranscribeServiceClient with AWS Access Key ID and AWS Secret Key
+            </summary>
+            <param name="awsAccessKeyId">AWS Access Key ID</param>
+            <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+            <param name="region">The region to connect.</param>
+        </member>
+        <member name="M:Amazon.TranscribeService.AmazonTranscribeServiceClient.#ctor(System.String,System.String,Amazon.TranscribeService.AmazonTranscribeServiceConfig)">
+            <summary>
+            Constructs AmazonTranscribeServiceClient with AWS Access Key ID, AWS Secret Key and an
+            AmazonTranscribeServiceClient Configuration object. 
+            </summary>
+            <param name="awsAccessKeyId">AWS Access Key ID</param>
+            <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+            <param name="clientConfig">The AmazonTranscribeServiceClient Configuration Object</param>
+        </member>
+        <member name="M:Amazon.TranscribeService.AmazonTranscribeServiceClient.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Constructs AmazonTranscribeServiceClient with AWS Access Key ID and AWS Secret Key
+            </summary>
+            <param name="awsAccessKeyId">AWS Access Key ID</param>
+            <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+            <param name="awsSessionToken">AWS Session Token</param>
+        </member>
+        <member name="M:Amazon.TranscribeService.AmazonTranscribeServiceClient.#ctor(System.String,System.String,System.String,Amazon.RegionEndpoint)">
+            <summary>
+            Constructs AmazonTranscribeServiceClient with AWS Access Key ID and AWS Secret Key
+            </summary>
+            <param name="awsAccessKeyId">AWS Access Key ID</param>
+            <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+            <param name="awsSessionToken">AWS Session Token</param>
+            <param name="region">The region to connect.</param>
+        </member>
+        <member name="M:Amazon.TranscribeService.AmazonTranscribeServiceClient.#ctor(System.String,System.String,System.String,Amazon.TranscribeService.AmazonTranscribeServiceConfig)">
+            <summary>
+            Constructs AmazonTranscribeServiceClient with AWS Access Key ID, AWS Secret Key and an
+            AmazonTranscribeServiceClient Configuration object. 
+            </summary>
+            <param name="awsAccessKeyId">AWS Access Key ID</param>
+            <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+            <param name="awsSessionToken">AWS Session Token</param>
+            <param name="clientConfig">The AmazonTranscribeServiceClient Configuration Object</param>
+        </member>
+        <member name="M:Amazon.TranscribeService.AmazonTranscribeServiceClient.CreateSigner">
+            <summary>
+            Creates the signer for the service.
+            </summary>
+        </member>
+        <member name="P:Amazon.TranscribeService.AmazonTranscribeServiceClient.ServiceMetadata">
+            <summary>
+            Capture metadata for the service.
+            </summary>
+        </member>
+        <member name="M:Amazon.TranscribeService.AmazonTranscribeServiceClient.Dispose(System.Boolean)">
+            <summary>
+            Disposes the service client.
+            </summary>
+        </member>
+        <member name="M:Amazon.TranscribeService.AmazonTranscribeServiceClient.CreateVocabularyAsync(Amazon.TranscribeService.Model.CreateVocabularyRequest,System.Threading.CancellationToken)">
+            <summary>
+            Creates a new custom vocabulary that you can use to change the way Amazon Transcribe
+            handles transcription of an audio file.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the CreateVocabulary service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the CreateVocabulary service method, as returned by TranscribeService.</returns>
+            <exception cref="T:Amazon.TranscribeService.Model.BadRequestException">
+            Your request didn't pass one or more validation tests. For example, if the transcription
+            you're trying to delete doesn't exist or if it is in a non-terminal state (for example,
+            it's "in progress"). See the exception <code>Message</code> field for more information.
+            </exception>
+            <exception cref="T:Amazon.TranscribeService.Model.ConflictException">
+            When you are using the <code>StartTranscriptionJob</code> operation, the <code>JobName</code>
+            field is a duplicate of a previously entered job name. Resend your request with a
+            different name.
+            
+             
+            <para>
+            When you are using the <code>UpdateVocabulary</code> operation, there are two jobs
+            running at the same time. Resend the second request later.
+            </para>
+            </exception>
+            <exception cref="T:Amazon.TranscribeService.Model.InternalFailureException">
+            There was an internal error. Check the error message and try your request again.
+            </exception>
+            <exception cref="T:Amazon.TranscribeService.Model.LimitExceededException">
+            Either you have sent too many requests or your input file is too long. Wait before
+            you resend your request, or use a smaller file and resend the request.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/CreateVocabulary">REST API Reference for CreateVocabulary Operation</seealso>
+        </member>
+        <member name="M:Amazon.TranscribeService.AmazonTranscribeServiceClient.DeleteTranscriptionJobAsync(Amazon.TranscribeService.Model.DeleteTranscriptionJobRequest,System.Threading.CancellationToken)">
+            <summary>
+            Deletes a previously submitted transcription job along with any other generated results
+            such as the transcription, models, and so on.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the DeleteTranscriptionJob service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the DeleteTranscriptionJob service method, as returned by TranscribeService.</returns>
+            <exception cref="T:Amazon.TranscribeService.Model.BadRequestException">
+            Your request didn't pass one or more validation tests. For example, if the transcription
+            you're trying to delete doesn't exist or if it is in a non-terminal state (for example,
+            it's "in progress"). See the exception <code>Message</code> field for more information.
+            </exception>
+            <exception cref="T:Amazon.TranscribeService.Model.InternalFailureException">
+            There was an internal error. Check the error message and try your request again.
+            </exception>
+            <exception cref="T:Amazon.TranscribeService.Model.LimitExceededException">
+            Either you have sent too many requests or your input file is too long. Wait before
+            you resend your request, or use a smaller file and resend the request.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DeleteTranscriptionJob">REST API Reference for DeleteTranscriptionJob Operation</seealso>
+        </member>
+        <member name="M:Amazon.TranscribeService.AmazonTranscribeServiceClient.DeleteVocabularyAsync(Amazon.TranscribeService.Model.DeleteVocabularyRequest,System.Threading.CancellationToken)">
+            <summary>
+            Deletes a vocabulary from Amazon Transcribe.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the DeleteVocabulary service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the DeleteVocabulary service method, as returned by TranscribeService.</returns>
+            <exception cref="T:Amazon.TranscribeService.Model.BadRequestException">
+            Your request didn't pass one or more validation tests. For example, if the transcription
+            you're trying to delete doesn't exist or if it is in a non-terminal state (for example,
+            it's "in progress"). See the exception <code>Message</code> field for more information.
+            </exception>
+            <exception cref="T:Amazon.TranscribeService.Model.InternalFailureException">
+            There was an internal error. Check the error message and try your request again.
+            </exception>
+            <exception cref="T:Amazon.TranscribeService.Model.LimitExceededException">
+            Either you have sent too many requests or your input file is too long. Wait before
+            you resend your request, or use a smaller file and resend the request.
+            </exception>
+            <exception cref="T:Amazon.TranscribeService.Model.NotFoundException">
+            We can't find the requested resource. Check the name and try your request again.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DeleteVocabulary">REST API Reference for DeleteVocabulary Operation</seealso>
+        </member>
+        <member name="M:Amazon.TranscribeService.AmazonTranscribeServiceClient.GetTranscriptionJobAsync(Amazon.TranscribeService.Model.GetTranscriptionJobRequest,System.Threading.CancellationToken)">
+            <summary>
+            Returns information about a transcription job. To see the status of the job, check
+            the <code>TranscriptionJobStatus</code> field. If the status is <code>COMPLETED</code>,
+            the job is finished and you can find the results at the location specified in the
+            <code>TranscriptionFileUri</code> field.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the GetTranscriptionJob service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the GetTranscriptionJob service method, as returned by TranscribeService.</returns>
+            <exception cref="T:Amazon.TranscribeService.Model.BadRequestException">
+            Your request didn't pass one or more validation tests. For example, if the transcription
+            you're trying to delete doesn't exist or if it is in a non-terminal state (for example,
+            it's "in progress"). See the exception <code>Message</code> field for more information.
+            </exception>
+            <exception cref="T:Amazon.TranscribeService.Model.InternalFailureException">
+            There was an internal error. Check the error message and try your request again.
+            </exception>
+            <exception cref="T:Amazon.TranscribeService.Model.LimitExceededException">
+            Either you have sent too many requests or your input file is too long. Wait before
+            you resend your request, or use a smaller file and resend the request.
+            </exception>
+            <exception cref="T:Amazon.TranscribeService.Model.NotFoundException">
+            We can't find the requested resource. Check the name and try your request again.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/GetTranscriptionJob">REST API Reference for GetTranscriptionJob Operation</seealso>
+        </member>
+        <member name="M:Amazon.TranscribeService.AmazonTranscribeServiceClient.GetVocabularyAsync(Amazon.TranscribeService.Model.GetVocabularyRequest,System.Threading.CancellationToken)">
+            <summary>
+            Gets information about a vocabulary.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the GetVocabulary service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the GetVocabulary service method, as returned by TranscribeService.</returns>
+            <exception cref="T:Amazon.TranscribeService.Model.BadRequestException">
+            Your request didn't pass one or more validation tests. For example, if the transcription
+            you're trying to delete doesn't exist or if it is in a non-terminal state (for example,
+            it's "in progress"). See the exception <code>Message</code> field for more information.
+            </exception>
+            <exception cref="T:Amazon.TranscribeService.Model.InternalFailureException">
+            There was an internal error. Check the error message and try your request again.
+            </exception>
+            <exception cref="T:Amazon.TranscribeService.Model.LimitExceededException">
+            Either you have sent too many requests or your input file is too long. Wait before
+            you resend your request, or use a smaller file and resend the request.
+            </exception>
+            <exception cref="T:Amazon.TranscribeService.Model.NotFoundException">
+            We can't find the requested resource. Check the name and try your request again.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/GetVocabulary">REST API Reference for GetVocabulary Operation</seealso>
+        </member>
+        <member name="M:Amazon.TranscribeService.AmazonTranscribeServiceClient.ListTranscriptionJobsAsync(Amazon.TranscribeService.Model.ListTranscriptionJobsRequest,System.Threading.CancellationToken)">
+            <summary>
+            Lists transcription jobs with the specified status.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the ListTranscriptionJobs service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the ListTranscriptionJobs service method, as returned by TranscribeService.</returns>
+            <exception cref="T:Amazon.TranscribeService.Model.BadRequestException">
+            Your request didn't pass one or more validation tests. For example, if the transcription
+            you're trying to delete doesn't exist or if it is in a non-terminal state (for example,
+            it's "in progress"). See the exception <code>Message</code> field for more information.
+            </exception>
+            <exception cref="T:Amazon.TranscribeService.Model.InternalFailureException">
+            There was an internal error. Check the error message and try your request again.
+            </exception>
+            <exception cref="T:Amazon.TranscribeService.Model.LimitExceededException">
+            Either you have sent too many requests or your input file is too long. Wait before
+            you resend your request, or use a smaller file and resend the request.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/ListTranscriptionJobs">REST API Reference for ListTranscriptionJobs Operation</seealso>
+        </member>
+        <member name="M:Amazon.TranscribeService.AmazonTranscribeServiceClient.ListVocabulariesAsync(Amazon.TranscribeService.Model.ListVocabulariesRequest,System.Threading.CancellationToken)">
+            <summary>
+            Returns a list of vocabularies that match the specified criteria. If no criteria are
+            specified, returns the entire list of vocabularies.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the ListVocabularies service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the ListVocabularies service method, as returned by TranscribeService.</returns>
+            <exception cref="T:Amazon.TranscribeService.Model.BadRequestException">
+            Your request didn't pass one or more validation tests. For example, if the transcription
+            you're trying to delete doesn't exist or if it is in a non-terminal state (for example,
+            it's "in progress"). See the exception <code>Message</code> field for more information.
+            </exception>
+            <exception cref="T:Amazon.TranscribeService.Model.InternalFailureException">
+            There was an internal error. Check the error message and try your request again.
+            </exception>
+            <exception cref="T:Amazon.TranscribeService.Model.LimitExceededException">
+            Either you have sent too many requests or your input file is too long. Wait before
+            you resend your request, or use a smaller file and resend the request.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/ListVocabularies">REST API Reference for ListVocabularies Operation</seealso>
+        </member>
+        <member name="M:Amazon.TranscribeService.AmazonTranscribeServiceClient.StartTranscriptionJobAsync(Amazon.TranscribeService.Model.StartTranscriptionJobRequest,System.Threading.CancellationToken)">
+            <summary>
+            Starts an asynchronous job to transcribe speech to text.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the StartTranscriptionJob service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the StartTranscriptionJob service method, as returned by TranscribeService.</returns>
+            <exception cref="T:Amazon.TranscribeService.Model.BadRequestException">
+            Your request didn't pass one or more validation tests. For example, if the transcription
+            you're trying to delete doesn't exist or if it is in a non-terminal state (for example,
+            it's "in progress"). See the exception <code>Message</code> field for more information.
+            </exception>
+            <exception cref="T:Amazon.TranscribeService.Model.ConflictException">
+            When you are using the <code>StartTranscriptionJob</code> operation, the <code>JobName</code>
+            field is a duplicate of a previously entered job name. Resend your request with a
+            different name.
+            
+             
+            <para>
+            When you are using the <code>UpdateVocabulary</code> operation, there are two jobs
+            running at the same time. Resend the second request later.
+            </para>
+            </exception>
+            <exception cref="T:Amazon.TranscribeService.Model.InternalFailureException">
+            There was an internal error. Check the error message and try your request again.
+            </exception>
+            <exception cref="T:Amazon.TranscribeService.Model.LimitExceededException">
+            Either you have sent too many requests or your input file is too long. Wait before
+            you resend your request, or use a smaller file and resend the request.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/StartTranscriptionJob">REST API Reference for StartTranscriptionJob Operation</seealso>
+        </member>
+        <member name="M:Amazon.TranscribeService.AmazonTranscribeServiceClient.UpdateVocabularyAsync(Amazon.TranscribeService.Model.UpdateVocabularyRequest,System.Threading.CancellationToken)">
+            <summary>
+            Updates an existing vocabulary with new values. The <code>UpdateVocabulary</code>
+            operation overwrites all of the existing information with the values that you provide
+            in the request.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the UpdateVocabulary service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the UpdateVocabulary service method, as returned by TranscribeService.</returns>
+            <exception cref="T:Amazon.TranscribeService.Model.BadRequestException">
+            Your request didn't pass one or more validation tests. For example, if the transcription
+            you're trying to delete doesn't exist or if it is in a non-terminal state (for example,
+            it's "in progress"). See the exception <code>Message</code> field for more information.
+            </exception>
+            <exception cref="T:Amazon.TranscribeService.Model.ConflictException">
+            When you are using the <code>StartTranscriptionJob</code> operation, the <code>JobName</code>
+            field is a duplicate of a previously entered job name. Resend your request with a
+            different name.
+            
+             
+            <para>
+            When you are using the <code>UpdateVocabulary</code> operation, there are two jobs
+            running at the same time. Resend the second request later.
+            </para>
+            </exception>
+            <exception cref="T:Amazon.TranscribeService.Model.InternalFailureException">
+            There was an internal error. Check the error message and try your request again.
+            </exception>
+            <exception cref="T:Amazon.TranscribeService.Model.LimitExceededException">
+            Either you have sent too many requests or your input file is too long. Wait before
+            you resend your request, or use a smaller file and resend the request.
+            </exception>
+            <exception cref="T:Amazon.TranscribeService.Model.NotFoundException">
+            We can't find the requested resource. Check the name and try your request again.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/UpdateVocabulary">REST API Reference for UpdateVocabulary Operation</seealso>
+        </member>
+        <member name="T:Amazon.TranscribeService.IAmazonTranscribeService">
+             <summary>
+             Interface for accessing TranscribeService
+            
+             Operations and objects for transcribing speech to text.
+             </summary>
+        </member>
+        <member name="M:Amazon.TranscribeService.IAmazonTranscribeService.CreateVocabularyAsync(Amazon.TranscribeService.Model.CreateVocabularyRequest,System.Threading.CancellationToken)">
+            <summary>
+            Creates a new custom vocabulary that you can use to change the way Amazon Transcribe
+            handles transcription of an audio file.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the CreateVocabulary service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the CreateVocabulary service method, as returned by TranscribeService.</returns>
+            <exception cref="T:Amazon.TranscribeService.Model.BadRequestException">
+            Your request didn't pass one or more validation tests. For example, if the transcription
+            you're trying to delete doesn't exist or if it is in a non-terminal state (for example,
+            it's "in progress"). See the exception <code>Message</code> field for more information.
+            </exception>
+            <exception cref="T:Amazon.TranscribeService.Model.ConflictException">
+            When you are using the <code>StartTranscriptionJob</code> operation, the <code>JobName</code>
+            field is a duplicate of a previously entered job name. Resend your request with a
+            different name.
+            
+             
+            <para>
+            When you are using the <code>UpdateVocabulary</code> operation, there are two jobs
+            running at the same time. Resend the second request later.
+            </para>
+            </exception>
+            <exception cref="T:Amazon.TranscribeService.Model.InternalFailureException">
+            There was an internal error. Check the error message and try your request again.
+            </exception>
+            <exception cref="T:Amazon.TranscribeService.Model.LimitExceededException">
+            Either you have sent too many requests or your input file is too long. Wait before
+            you resend your request, or use a smaller file and resend the request.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/CreateVocabulary">REST API Reference for CreateVocabulary Operation</seealso>
+        </member>
+        <member name="M:Amazon.TranscribeService.IAmazonTranscribeService.DeleteTranscriptionJobAsync(Amazon.TranscribeService.Model.DeleteTranscriptionJobRequest,System.Threading.CancellationToken)">
+            <summary>
+            Deletes a previously submitted transcription job along with any other generated results
+            such as the transcription, models, and so on.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the DeleteTranscriptionJob service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the DeleteTranscriptionJob service method, as returned by TranscribeService.</returns>
+            <exception cref="T:Amazon.TranscribeService.Model.BadRequestException">
+            Your request didn't pass one or more validation tests. For example, if the transcription
+            you're trying to delete doesn't exist or if it is in a non-terminal state (for example,
+            it's "in progress"). See the exception <code>Message</code> field for more information.
+            </exception>
+            <exception cref="T:Amazon.TranscribeService.Model.InternalFailureException">
+            There was an internal error. Check the error message and try your request again.
+            </exception>
+            <exception cref="T:Amazon.TranscribeService.Model.LimitExceededException">
+            Either you have sent too many requests or your input file is too long. Wait before
+            you resend your request, or use a smaller file and resend the request.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DeleteTranscriptionJob">REST API Reference for DeleteTranscriptionJob Operation</seealso>
+        </member>
+        <member name="M:Amazon.TranscribeService.IAmazonTranscribeService.DeleteVocabularyAsync(Amazon.TranscribeService.Model.DeleteVocabularyRequest,System.Threading.CancellationToken)">
+            <summary>
+            Deletes a vocabulary from Amazon Transcribe.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the DeleteVocabulary service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the DeleteVocabulary service method, as returned by TranscribeService.</returns>
+            <exception cref="T:Amazon.TranscribeService.Model.BadRequestException">
+            Your request didn't pass one or more validation tests. For example, if the transcription
+            you're trying to delete doesn't exist or if it is in a non-terminal state (for example,
+            it's "in progress"). See the exception <code>Message</code> field for more information.
+            </exception>
+            <exception cref="T:Amazon.TranscribeService.Model.InternalFailureException">
+            There was an internal error. Check the error message and try your request again.
+            </exception>
+            <exception cref="T:Amazon.TranscribeService.Model.LimitExceededException">
+            Either you have sent too many requests or your input file is too long. Wait before
+            you resend your request, or use a smaller file and resend the request.
+            </exception>
+            <exception cref="T:Amazon.TranscribeService.Model.NotFoundException">
+            We can't find the requested resource. Check the name and try your request again.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DeleteVocabulary">REST API Reference for DeleteVocabulary Operation</seealso>
+        </member>
+        <member name="M:Amazon.TranscribeService.IAmazonTranscribeService.GetTranscriptionJobAsync(Amazon.TranscribeService.Model.GetTranscriptionJobRequest,System.Threading.CancellationToken)">
+            <summary>
+            Returns information about a transcription job. To see the status of the job, check
+            the <code>TranscriptionJobStatus</code> field. If the status is <code>COMPLETED</code>,
+            the job is finished and you can find the results at the location specified in the
+            <code>TranscriptionFileUri</code> field.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the GetTranscriptionJob service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the GetTranscriptionJob service method, as returned by TranscribeService.</returns>
+            <exception cref="T:Amazon.TranscribeService.Model.BadRequestException">
+            Your request didn't pass one or more validation tests. For example, if the transcription
+            you're trying to delete doesn't exist or if it is in a non-terminal state (for example,
+            it's "in progress"). See the exception <code>Message</code> field for more information.
+            </exception>
+            <exception cref="T:Amazon.TranscribeService.Model.InternalFailureException">
+            There was an internal error. Check the error message and try your request again.
+            </exception>
+            <exception cref="T:Amazon.TranscribeService.Model.LimitExceededException">
+            Either you have sent too many requests or your input file is too long. Wait before
+            you resend your request, or use a smaller file and resend the request.
+            </exception>
+            <exception cref="T:Amazon.TranscribeService.Model.NotFoundException">
+            We can't find the requested resource. Check the name and try your request again.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/GetTranscriptionJob">REST API Reference for GetTranscriptionJob Operation</seealso>
+        </member>
+        <member name="M:Amazon.TranscribeService.IAmazonTranscribeService.GetVocabularyAsync(Amazon.TranscribeService.Model.GetVocabularyRequest,System.Threading.CancellationToken)">
+            <summary>
+            Gets information about a vocabulary.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the GetVocabulary service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the GetVocabulary service method, as returned by TranscribeService.</returns>
+            <exception cref="T:Amazon.TranscribeService.Model.BadRequestException">
+            Your request didn't pass one or more validation tests. For example, if the transcription
+            you're trying to delete doesn't exist or if it is in a non-terminal state (for example,
+            it's "in progress"). See the exception <code>Message</code> field for more information.
+            </exception>
+            <exception cref="T:Amazon.TranscribeService.Model.InternalFailureException">
+            There was an internal error. Check the error message and try your request again.
+            </exception>
+            <exception cref="T:Amazon.TranscribeService.Model.LimitExceededException">
+            Either you have sent too many requests or your input file is too long. Wait before
+            you resend your request, or use a smaller file and resend the request.
+            </exception>
+            <exception cref="T:Amazon.TranscribeService.Model.NotFoundException">
+            We can't find the requested resource. Check the name and try your request again.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/GetVocabulary">REST API Reference for GetVocabulary Operation</seealso>
+        </member>
+        <member name="M:Amazon.TranscribeService.IAmazonTranscribeService.ListTranscriptionJobsAsync(Amazon.TranscribeService.Model.ListTranscriptionJobsRequest,System.Threading.CancellationToken)">
+            <summary>
+            Lists transcription jobs with the specified status.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the ListTranscriptionJobs service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the ListTranscriptionJobs service method, as returned by TranscribeService.</returns>
+            <exception cref="T:Amazon.TranscribeService.Model.BadRequestException">
+            Your request didn't pass one or more validation tests. For example, if the transcription
+            you're trying to delete doesn't exist or if it is in a non-terminal state (for example,
+            it's "in progress"). See the exception <code>Message</code> field for more information.
+            </exception>
+            <exception cref="T:Amazon.TranscribeService.Model.InternalFailureException">
+            There was an internal error. Check the error message and try your request again.
+            </exception>
+            <exception cref="T:Amazon.TranscribeService.Model.LimitExceededException">
+            Either you have sent too many requests or your input file is too long. Wait before
+            you resend your request, or use a smaller file and resend the request.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/ListTranscriptionJobs">REST API Reference for ListTranscriptionJobs Operation</seealso>
+        </member>
+        <member name="M:Amazon.TranscribeService.IAmazonTranscribeService.ListVocabulariesAsync(Amazon.TranscribeService.Model.ListVocabulariesRequest,System.Threading.CancellationToken)">
+            <summary>
+            Returns a list of vocabularies that match the specified criteria. If no criteria are
+            specified, returns the entire list of vocabularies.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the ListVocabularies service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the ListVocabularies service method, as returned by TranscribeService.</returns>
+            <exception cref="T:Amazon.TranscribeService.Model.BadRequestException">
+            Your request didn't pass one or more validation tests. For example, if the transcription
+            you're trying to delete doesn't exist or if it is in a non-terminal state (for example,
+            it's "in progress"). See the exception <code>Message</code> field for more information.
+            </exception>
+            <exception cref="T:Amazon.TranscribeService.Model.InternalFailureException">
+            There was an internal error. Check the error message and try your request again.
+            </exception>
+            <exception cref="T:Amazon.TranscribeService.Model.LimitExceededException">
+            Either you have sent too many requests or your input file is too long. Wait before
+            you resend your request, or use a smaller file and resend the request.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/ListVocabularies">REST API Reference for ListVocabularies Operation</seealso>
+        </member>
+        <member name="M:Amazon.TranscribeService.IAmazonTranscribeService.StartTranscriptionJobAsync(Amazon.TranscribeService.Model.StartTranscriptionJobRequest,System.Threading.CancellationToken)">
+            <summary>
+            Starts an asynchronous job to transcribe speech to text.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the StartTranscriptionJob service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the StartTranscriptionJob service method, as returned by TranscribeService.</returns>
+            <exception cref="T:Amazon.TranscribeService.Model.BadRequestException">
+            Your request didn't pass one or more validation tests. For example, if the transcription
+            you're trying to delete doesn't exist or if it is in a non-terminal state (for example,
+            it's "in progress"). See the exception <code>Message</code> field for more information.
+            </exception>
+            <exception cref="T:Amazon.TranscribeService.Model.ConflictException">
+            When you are using the <code>StartTranscriptionJob</code> operation, the <code>JobName</code>
+            field is a duplicate of a previously entered job name. Resend your request with a
+            different name.
+            
+             
+            <para>
+            When you are using the <code>UpdateVocabulary</code> operation, there are two jobs
+            running at the same time. Resend the second request later.
+            </para>
+            </exception>
+            <exception cref="T:Amazon.TranscribeService.Model.InternalFailureException">
+            There was an internal error. Check the error message and try your request again.
+            </exception>
+            <exception cref="T:Amazon.TranscribeService.Model.LimitExceededException">
+            Either you have sent too many requests or your input file is too long. Wait before
+            you resend your request, or use a smaller file and resend the request.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/StartTranscriptionJob">REST API Reference for StartTranscriptionJob Operation</seealso>
+        </member>
+        <member name="M:Amazon.TranscribeService.IAmazonTranscribeService.UpdateVocabularyAsync(Amazon.TranscribeService.Model.UpdateVocabularyRequest,System.Threading.CancellationToken)">
+            <summary>
+            Updates an existing vocabulary with new values. The <code>UpdateVocabulary</code>
+            operation overwrites all of the existing information with the values that you provide
+            in the request.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the UpdateVocabulary service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the UpdateVocabulary service method, as returned by TranscribeService.</returns>
+            <exception cref="T:Amazon.TranscribeService.Model.BadRequestException">
+            Your request didn't pass one or more validation tests. For example, if the transcription
+            you're trying to delete doesn't exist or if it is in a non-terminal state (for example,
+            it's "in progress"). See the exception <code>Message</code> field for more information.
+            </exception>
+            <exception cref="T:Amazon.TranscribeService.Model.ConflictException">
+            When you are using the <code>StartTranscriptionJob</code> operation, the <code>JobName</code>
+            field is a duplicate of a previously entered job name. Resend your request with a
+            different name.
+            
+             
+            <para>
+            When you are using the <code>UpdateVocabulary</code> operation, there are two jobs
+            running at the same time. Resend the second request later.
+            </para>
+            </exception>
+            <exception cref="T:Amazon.TranscribeService.Model.InternalFailureException">
+            There was an internal error. Check the error message and try your request again.
+            </exception>
+            <exception cref="T:Amazon.TranscribeService.Model.LimitExceededException">
+            Either you have sent too many requests or your input file is too long. Wait before
+            you resend your request, or use a smaller file and resend the request.
+            </exception>
+            <exception cref="T:Amazon.TranscribeService.Model.NotFoundException">
+            We can't find the requested resource. Check the name and try your request again.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/UpdateVocabulary">REST API Reference for UpdateVocabulary Operation</seealso>
+        </member>
+    </members>
+</doc>

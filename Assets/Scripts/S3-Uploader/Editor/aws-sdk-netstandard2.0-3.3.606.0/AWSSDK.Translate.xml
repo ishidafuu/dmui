@@ -1,0 +1,2312 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AWSSDK.Translate</name>
+    </assembly>
+    <members>
+        <member name="T:Amazon.Translate.AmazonTranslateConfig">
+            <summary>
+            Configuration for accessing Amazon Translate service
+            </summary>
+        </member>
+        <member name="M:Amazon.Translate.AmazonTranslateConfig.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="P:Amazon.Translate.AmazonTranslateConfig.RegionEndpointServiceName">
+            <summary>
+            The constant used to lookup in the region hash the endpoint.
+            </summary>
+        </member>
+        <member name="P:Amazon.Translate.AmazonTranslateConfig.ServiceVersion">
+            <summary>
+            Gets the ServiceVersion property.
+            </summary>
+        </member>
+        <member name="P:Amazon.Translate.AmazonTranslateConfig.UserAgent">
+            <summary>
+            Gets the value of UserAgent property.
+            </summary>
+        </member>
+        <member name="T:Amazon.Translate.AmazonTranslateException">
+            <summary>
+             Common exception for the Translate service.
+             </summary>
+        </member>
+        <member name="M:Amazon.Translate.AmazonTranslateException.#ctor(System.String)">
+            <summary>
+            Construct instance of AmazonTranslateException
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:Amazon.Translate.AmazonTranslateException.#ctor(System.String,System.Exception)">
+            <summary>
+            Construct instance of AmazonTranslateException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.Translate.AmazonTranslateException.#ctor(System.Exception)">
+            <summary>
+            Construct instance of AmazonTranslateException
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.Translate.AmazonTranslateException.#ctor(System.String,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of AmazonTranslateException
+            </summary>
+            <param name="message"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="M:Amazon.Translate.AmazonTranslateException.#ctor(System.String,System.Exception,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of AmazonTranslateException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="T:Amazon.Translate.Internal.AmazonTranslateMetadata">
+            <summary>
+            Service metadata for  Amazon Translate service
+            </summary>
+        </member>
+        <member name="P:Amazon.Translate.Internal.AmazonTranslateMetadata.ServiceId">
+            <summary>
+            Gets the value of the Service Id.
+            </summary>
+        </member>
+        <member name="P:Amazon.Translate.Internal.AmazonTranslateMetadata.OperationNameMapping">
+            <summary>
+            Gets the dictionary that gives mapping of renamed operations
+            </summary>
+        </member>
+        <member name="T:Amazon.Translate.AmazonTranslateRequest">
+            <summary>
+            Base class for Translate operation requests.
+            </summary>
+        </member>
+        <member name="T:Amazon.Translate.Model.AppliedTerminology">
+            <summary>
+            The custom terminology applied to the input text by Amazon Translate for the translated
+            text response. This is optional in the response and will only be present if you specified
+            terminology input in the request. Currently, only one terminology can be applied per
+            TranslateText request.
+            </summary>
+        </member>
+        <member name="P:Amazon.Translate.Model.AppliedTerminology.Name">
+            <summary>
+            Gets and sets the property Name. 
+            <para>
+            The name of the custom terminology applied to the input text by Amazon Translate for
+            the translated text response.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Translate.Model.AppliedTerminology.Terms">
+            <summary>
+            Gets and sets the property Terms. 
+            <para>
+            The specific terms of the custom terminology applied to the input text by Amazon Translate
+            for the translated text response. A maximum of 250 terms will be returned, and the
+            specific terms applied will be the first 250 terms in the source text. 
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Translate.Model.DeleteTerminologyRequest">
+            <summary>
+            Container for the parameters to the DeleteTerminology operation.
+            A synchronous action that deletes a custom terminology.
+            </summary>
+        </member>
+        <member name="P:Amazon.Translate.Model.DeleteTerminologyRequest.Name">
+            <summary>
+            Gets and sets the property Name. 
+            <para>
+            The name of the custom terminology being deleted. 
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Translate.Model.DeleteTerminologyResponse">
+            <summary>
+            This is the response object from the DeleteTerminology operation.
+            </summary>
+        </member>
+        <member name="T:Amazon.Translate.Model.DetectedLanguageLowConfidenceException">
+            <summary>
+             Translate exception
+             </summary>
+        </member>
+        <member name="M:Amazon.Translate.Model.DetectedLanguageLowConfidenceException.#ctor(System.String)">
+            <summary>
+            Constructs a new DetectedLanguageLowConfidenceException with the specified error
+            message.
+            </summary>
+            <param name="message">
+            Describes the error encountered.
+            </param>
+        </member>
+        <member name="M:Amazon.Translate.Model.DetectedLanguageLowConfidenceException.#ctor(System.String,System.Exception)">
+            <summary>
+            Construct instance of DetectedLanguageLowConfidenceException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.Translate.Model.DetectedLanguageLowConfidenceException.#ctor(System.Exception)">
+            <summary>
+            Construct instance of DetectedLanguageLowConfidenceException
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.Translate.Model.DetectedLanguageLowConfidenceException.#ctor(System.String,System.Exception,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of DetectedLanguageLowConfidenceException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="M:Amazon.Translate.Model.DetectedLanguageLowConfidenceException.#ctor(System.String,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of DetectedLanguageLowConfidenceException
+            </summary>
+            <param name="message"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="T:Amazon.Translate.Model.EncryptionKey">
+            <summary>
+            The encryption key used to encrypt the custom terminologies used by Amazon Translate.
+            </summary>
+        </member>
+        <member name="P:Amazon.Translate.Model.EncryptionKey.Id">
+            <summary>
+            Gets and sets the property Id. 
+            <para>
+            The Amazon Resource Name (ARN) of the encryption key being used to encrypt the custom
+            terminology.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Translate.Model.EncryptionKey.Type">
+            <summary>
+            Gets and sets the property Type. 
+            <para>
+            The type of encryption key used by Amazon Translate to encrypt custom terminologies.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Translate.Model.GetTerminologyRequest">
+            <summary>
+            Container for the parameters to the GetTerminology operation.
+            Retrieves a custom terminology.
+            </summary>
+        </member>
+        <member name="P:Amazon.Translate.Model.GetTerminologyRequest.Name">
+            <summary>
+            Gets and sets the property Name. 
+            <para>
+            The name of the custom terminology being retrieved.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Translate.Model.GetTerminologyRequest.TerminologyDataFormat">
+            <summary>
+            Gets and sets the property TerminologyDataFormat. 
+            <para>
+            The data format of the custom terminology being retrieved, either CSV or TMX.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Translate.Model.GetTerminologyResponse">
+            <summary>
+            This is the response object from the GetTerminology operation.
+            </summary>
+        </member>
+        <member name="P:Amazon.Translate.Model.GetTerminologyResponse.TerminologyDataLocation">
+            <summary>
+            Gets and sets the property TerminologyDataLocation. 
+            <para>
+            The data location of the custom terminology being retrieved. The custom terminology
+            file is returned in a presigned url that has a 30 minute expiration.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Translate.Model.GetTerminologyResponse.TerminologyProperties">
+            <summary>
+            Gets and sets the property TerminologyProperties. 
+            <para>
+            The properties of the custom terminology being retrieved.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Translate.Model.ImportTerminologyRequest">
+            <summary>
+            Container for the parameters to the ImportTerminology operation.
+            Creates or updates a custom terminology, depending on whether or not one already exists
+            for the given terminology name. Importing a terminology with the same name as an existing
+            one will merge the terminologies based on the chosen merge strategy. Currently, the
+            only supported merge strategy is OVERWRITE, and so the imported terminology will overwrite
+            an existing terminology of the same name.
+            
+             
+            <para>
+            If you import a terminology that overwrites an existing one, the new terminology take
+            up to 10 minutes to fully propagate and be available for use in a translation due
+            to cache policies with the DataPlane service that performs the translations.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Translate.Model.ImportTerminologyRequest.Description">
+            <summary>
+            Gets and sets the property Description. 
+            <para>
+            The description of the custom terminology being imported.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Translate.Model.ImportTerminologyRequest.EncryptionKey">
+            <summary>
+            Gets and sets the property EncryptionKey. 
+            <para>
+            The encryption key for the custom terminology being imported.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Translate.Model.ImportTerminologyRequest.MergeStrategy">
+            <summary>
+            Gets and sets the property MergeStrategy. 
+            <para>
+            The merge strategy of the custom terminology being imported. Currently, only the OVERWRITE
+            merge strategy is supported. In this case, the imported terminology will overwrite
+            an existing terminology of the same name.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Translate.Model.ImportTerminologyRequest.Name">
+            <summary>
+            Gets and sets the property Name. 
+            <para>
+            The name of the custom terminology being imported.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Translate.Model.ImportTerminologyRequest.TerminologyData">
+            <summary>
+            Gets and sets the property TerminologyData. 
+            <para>
+            The terminology data for the custom terminology being imported.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Translate.Model.ImportTerminologyResponse">
+            <summary>
+            This is the response object from the ImportTerminology operation.
+            </summary>
+        </member>
+        <member name="P:Amazon.Translate.Model.ImportTerminologyResponse.TerminologyProperties">
+            <summary>
+            Gets and sets the property TerminologyProperties. 
+            <para>
+            The properties of the custom terminology being imported.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Translate.Model.InternalServerException">
+            <summary>
+             Translate exception
+             </summary>
+        </member>
+        <member name="M:Amazon.Translate.Model.InternalServerException.#ctor(System.String)">
+            <summary>
+            Constructs a new InternalServerException with the specified error
+            message.
+            </summary>
+            <param name="message">
+            Describes the error encountered.
+            </param>
+        </member>
+        <member name="M:Amazon.Translate.Model.InternalServerException.#ctor(System.String,System.Exception)">
+            <summary>
+            Construct instance of InternalServerException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.Translate.Model.InternalServerException.#ctor(System.Exception)">
+            <summary>
+            Construct instance of InternalServerException
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.Translate.Model.InternalServerException.#ctor(System.String,System.Exception,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of InternalServerException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="M:Amazon.Translate.Model.InternalServerException.#ctor(System.String,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of InternalServerException
+            </summary>
+            <param name="message"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="T:Amazon.Translate.Model.Internal.MarshallTransformations.AppliedTerminologyUnmarshaller">
+            <summary>
+            Response Unmarshaller for AppliedTerminology Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.Translate.Model.Internal.MarshallTransformations.AppliedTerminologyUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#Translate#Model#AppliedTerminology,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Translate.Model.Internal.MarshallTransformations.AppliedTerminologyUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.Translate.Model.Internal.MarshallTransformations.AppliedTerminologyUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Translate.Model.Internal.MarshallTransformations.DeleteTerminologyRequestMarshaller">
+            <summary>
+            DeleteTerminology Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.Translate.Model.Internal.MarshallTransformations.DeleteTerminologyRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Translate.Model.Internal.MarshallTransformations.DeleteTerminologyRequestMarshaller.Marshall(Amazon.Translate.Model.DeleteTerminologyRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.Translate.Model.Internal.MarshallTransformations.DeleteTerminologyRequestMarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Translate.Model.Internal.MarshallTransformations.DeleteTerminologyResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for DeleteTerminology operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.Translate.Model.Internal.MarshallTransformations.DeleteTerminologyResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Translate.Model.Internal.MarshallTransformations.DeleteTerminologyResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.Translate.Model.Internal.MarshallTransformations.DeleteTerminologyResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Translate.Model.Internal.MarshallTransformations.EncryptionKeyMarshaller">
+            <summary>
+            EncryptionKey Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.Translate.Model.Internal.MarshallTransformations.EncryptionKeyMarshaller.Marshall(Amazon.Translate.Model.EncryptionKey,Amazon.Runtime.Internal.Transform.JsonMarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="requestObject"></param>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="F:Amazon.Translate.Model.Internal.MarshallTransformations.EncryptionKeyMarshaller.Instance">
+            <summary>
+            Singleton Marshaller.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Translate.Model.Internal.MarshallTransformations.EncryptionKeyUnmarshaller">
+            <summary>
+            Response Unmarshaller for EncryptionKey Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.Translate.Model.Internal.MarshallTransformations.EncryptionKeyUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#Translate#Model#EncryptionKey,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Translate.Model.Internal.MarshallTransformations.EncryptionKeyUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.Translate.Model.Internal.MarshallTransformations.EncryptionKeyUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Translate.Model.Internal.MarshallTransformations.GetTerminologyRequestMarshaller">
+            <summary>
+            GetTerminology Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.Translate.Model.Internal.MarshallTransformations.GetTerminologyRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Translate.Model.Internal.MarshallTransformations.GetTerminologyRequestMarshaller.Marshall(Amazon.Translate.Model.GetTerminologyRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.Translate.Model.Internal.MarshallTransformations.GetTerminologyRequestMarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Translate.Model.Internal.MarshallTransformations.GetTerminologyResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for GetTerminology operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.Translate.Model.Internal.MarshallTransformations.GetTerminologyResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Translate.Model.Internal.MarshallTransformations.GetTerminologyResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.Translate.Model.Internal.MarshallTransformations.GetTerminologyResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Translate.Model.Internal.MarshallTransformations.ImportTerminologyRequestMarshaller">
+            <summary>
+            ImportTerminology Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.Translate.Model.Internal.MarshallTransformations.ImportTerminologyRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Translate.Model.Internal.MarshallTransformations.ImportTerminologyRequestMarshaller.Marshall(Amazon.Translate.Model.ImportTerminologyRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.Translate.Model.Internal.MarshallTransformations.ImportTerminologyRequestMarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Translate.Model.Internal.MarshallTransformations.ImportTerminologyResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for ImportTerminology operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.Translate.Model.Internal.MarshallTransformations.ImportTerminologyResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Translate.Model.Internal.MarshallTransformations.ImportTerminologyResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.Translate.Model.Internal.MarshallTransformations.ImportTerminologyResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Translate.Model.Internal.MarshallTransformations.ListTerminologiesRequestMarshaller">
+            <summary>
+            ListTerminologies Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.Translate.Model.Internal.MarshallTransformations.ListTerminologiesRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Translate.Model.Internal.MarshallTransformations.ListTerminologiesRequestMarshaller.Marshall(Amazon.Translate.Model.ListTerminologiesRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.Translate.Model.Internal.MarshallTransformations.ListTerminologiesRequestMarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Translate.Model.Internal.MarshallTransformations.ListTerminologiesResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for ListTerminologies operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.Translate.Model.Internal.MarshallTransformations.ListTerminologiesResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Translate.Model.Internal.MarshallTransformations.ListTerminologiesResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.Translate.Model.Internal.MarshallTransformations.ListTerminologiesResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Translate.Model.Internal.MarshallTransformations.TerminologyDataLocationUnmarshaller">
+            <summary>
+            Response Unmarshaller for TerminologyDataLocation Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.Translate.Model.Internal.MarshallTransformations.TerminologyDataLocationUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#Translate#Model#TerminologyDataLocation,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Translate.Model.Internal.MarshallTransformations.TerminologyDataLocationUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.Translate.Model.Internal.MarshallTransformations.TerminologyDataLocationUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Translate.Model.Internal.MarshallTransformations.TerminologyDataMarshaller">
+            <summary>
+            TerminologyData Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.Translate.Model.Internal.MarshallTransformations.TerminologyDataMarshaller.Marshall(Amazon.Translate.Model.TerminologyData,Amazon.Runtime.Internal.Transform.JsonMarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="requestObject"></param>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="F:Amazon.Translate.Model.Internal.MarshallTransformations.TerminologyDataMarshaller.Instance">
+            <summary>
+            Singleton Marshaller.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Translate.Model.Internal.MarshallTransformations.TerminologyPropertiesUnmarshaller">
+            <summary>
+            Response Unmarshaller for TerminologyProperties Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.Translate.Model.Internal.MarshallTransformations.TerminologyPropertiesUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#Translate#Model#TerminologyProperties,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Translate.Model.Internal.MarshallTransformations.TerminologyPropertiesUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.Translate.Model.Internal.MarshallTransformations.TerminologyPropertiesUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Translate.Model.Internal.MarshallTransformations.TermUnmarshaller">
+            <summary>
+            Response Unmarshaller for Term Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.Translate.Model.Internal.MarshallTransformations.TermUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#Translate#Model#Term,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Translate.Model.Internal.MarshallTransformations.TermUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.Translate.Model.Internal.MarshallTransformations.TermUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Translate.Model.Internal.MarshallTransformations.TranslateTextRequestMarshaller">
+            <summary>
+            TranslateText Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.Translate.Model.Internal.MarshallTransformations.TranslateTextRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Translate.Model.Internal.MarshallTransformations.TranslateTextRequestMarshaller.Marshall(Amazon.Translate.Model.TranslateTextRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.Translate.Model.Internal.MarshallTransformations.TranslateTextRequestMarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Translate.Model.Internal.MarshallTransformations.TranslateTextResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for TranslateText operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.Translate.Model.Internal.MarshallTransformations.TranslateTextResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Translate.Model.Internal.MarshallTransformations.TranslateTextResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.Translate.Model.Internal.MarshallTransformations.TranslateTextResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Translate.Model.InvalidParameterValueException">
+            <summary>
+             Translate exception
+             </summary>
+        </member>
+        <member name="M:Amazon.Translate.Model.InvalidParameterValueException.#ctor(System.String)">
+            <summary>
+            Constructs a new InvalidParameterValueException with the specified error
+            message.
+            </summary>
+            <param name="message">
+            Describes the error encountered.
+            </param>
+        </member>
+        <member name="M:Amazon.Translate.Model.InvalidParameterValueException.#ctor(System.String,System.Exception)">
+            <summary>
+            Construct instance of InvalidParameterValueException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.Translate.Model.InvalidParameterValueException.#ctor(System.Exception)">
+            <summary>
+            Construct instance of InvalidParameterValueException
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.Translate.Model.InvalidParameterValueException.#ctor(System.String,System.Exception,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of InvalidParameterValueException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="M:Amazon.Translate.Model.InvalidParameterValueException.#ctor(System.String,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of InvalidParameterValueException
+            </summary>
+            <param name="message"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="T:Amazon.Translate.Model.InvalidRequestException">
+            <summary>
+             Translate exception
+             </summary>
+        </member>
+        <member name="M:Amazon.Translate.Model.InvalidRequestException.#ctor(System.String)">
+            <summary>
+            Constructs a new InvalidRequestException with the specified error
+            message.
+            </summary>
+            <param name="message">
+            Describes the error encountered.
+            </param>
+        </member>
+        <member name="M:Amazon.Translate.Model.InvalidRequestException.#ctor(System.String,System.Exception)">
+            <summary>
+            Construct instance of InvalidRequestException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.Translate.Model.InvalidRequestException.#ctor(System.Exception)">
+            <summary>
+            Construct instance of InvalidRequestException
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.Translate.Model.InvalidRequestException.#ctor(System.String,System.Exception,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of InvalidRequestException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="M:Amazon.Translate.Model.InvalidRequestException.#ctor(System.String,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of InvalidRequestException
+            </summary>
+            <param name="message"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="T:Amazon.Translate.Model.LimitExceededException">
+            <summary>
+             Translate exception
+             </summary>
+        </member>
+        <member name="M:Amazon.Translate.Model.LimitExceededException.#ctor(System.String)">
+            <summary>
+            Constructs a new LimitExceededException with the specified error
+            message.
+            </summary>
+            <param name="message">
+            Describes the error encountered.
+            </param>
+        </member>
+        <member name="M:Amazon.Translate.Model.LimitExceededException.#ctor(System.String,System.Exception)">
+            <summary>
+            Construct instance of LimitExceededException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.Translate.Model.LimitExceededException.#ctor(System.Exception)">
+            <summary>
+            Construct instance of LimitExceededException
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.Translate.Model.LimitExceededException.#ctor(System.String,System.Exception,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of LimitExceededException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="M:Amazon.Translate.Model.LimitExceededException.#ctor(System.String,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of LimitExceededException
+            </summary>
+            <param name="message"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="T:Amazon.Translate.Model.ListTerminologiesRequest">
+            <summary>
+            Container for the parameters to the ListTerminologies operation.
+            Provides a list of custom terminologies associated with your account.
+            </summary>
+        </member>
+        <member name="P:Amazon.Translate.Model.ListTerminologiesRequest.MaxResults">
+            <summary>
+            Gets and sets the property MaxResults. 
+            <para>
+            The maximum number of custom terminologies returned per list request.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Translate.Model.ListTerminologiesRequest.NextToken">
+            <summary>
+            Gets and sets the property NextToken. 
+            <para>
+            If the result of the request to ListTerminologies was truncated, include the NextToken
+            to fetch the next group of custom terminologies. 
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Translate.Model.ListTerminologiesResponse">
+            <summary>
+            This is the response object from the ListTerminologies operation.
+            </summary>
+        </member>
+        <member name="P:Amazon.Translate.Model.ListTerminologiesResponse.NextToken">
+            <summary>
+            Gets and sets the property NextToken. 
+            <para>
+             If the response to the ListTerminologies was truncated, the NextToken fetches the
+            next group of custom terminologies. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Translate.Model.ListTerminologiesResponse.TerminologyPropertiesList">
+            <summary>
+            Gets and sets the property TerminologyPropertiesList. 
+            <para>
+            The properties list of the custom terminologies returned on the list request.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Translate.Model.ResourceNotFoundException">
+            <summary>
+             Translate exception
+             </summary>
+        </member>
+        <member name="M:Amazon.Translate.Model.ResourceNotFoundException.#ctor(System.String)">
+            <summary>
+            Constructs a new ResourceNotFoundException with the specified error
+            message.
+            </summary>
+            <param name="message">
+            Describes the error encountered.
+            </param>
+        </member>
+        <member name="M:Amazon.Translate.Model.ResourceNotFoundException.#ctor(System.String,System.Exception)">
+            <summary>
+            Construct instance of ResourceNotFoundException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.Translate.Model.ResourceNotFoundException.#ctor(System.Exception)">
+            <summary>
+            Construct instance of ResourceNotFoundException
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.Translate.Model.ResourceNotFoundException.#ctor(System.String,System.Exception,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of ResourceNotFoundException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="M:Amazon.Translate.Model.ResourceNotFoundException.#ctor(System.String,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of ResourceNotFoundException
+            </summary>
+            <param name="message"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="T:Amazon.Translate.Model.ServiceUnavailableException">
+            <summary>
+             Translate exception
+             </summary>
+        </member>
+        <member name="M:Amazon.Translate.Model.ServiceUnavailableException.#ctor(System.String)">
+            <summary>
+            Constructs a new ServiceUnavailableException with the specified error
+            message.
+            </summary>
+            <param name="message">
+            Describes the error encountered.
+            </param>
+        </member>
+        <member name="M:Amazon.Translate.Model.ServiceUnavailableException.#ctor(System.String,System.Exception)">
+            <summary>
+            Construct instance of ServiceUnavailableException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.Translate.Model.ServiceUnavailableException.#ctor(System.Exception)">
+            <summary>
+            Construct instance of ServiceUnavailableException
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.Translate.Model.ServiceUnavailableException.#ctor(System.String,System.Exception,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of ServiceUnavailableException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="M:Amazon.Translate.Model.ServiceUnavailableException.#ctor(System.String,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of ServiceUnavailableException
+            </summary>
+            <param name="message"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="T:Amazon.Translate.Model.Term">
+            <summary>
+            The term being translated by the custom terminology.
+            </summary>
+        </member>
+        <member name="P:Amazon.Translate.Model.Term.SourceText">
+            <summary>
+            Gets and sets the property SourceText. 
+            <para>
+            The source text of the term being translated by the custom terminology.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Translate.Model.Term.TargetText">
+            <summary>
+            Gets and sets the property TargetText. 
+            <para>
+            The target text of the term being translated by the custom terminology.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Translate.Model.TerminologyData">
+            <summary>
+            The data associated with the custom terminology.
+            </summary>
+        </member>
+        <member name="P:Amazon.Translate.Model.TerminologyData.File">
+            <summary>
+            Gets and sets the property File. 
+            <para>
+            The file containing the custom terminology data.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Translate.Model.TerminologyData.Format">
+            <summary>
+            Gets and sets the property Format. 
+            <para>
+            The data format of the custom terminology. Either CSV or TMX.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Translate.Model.TerminologyDataLocation">
+            <summary>
+            The location of the custom terminology data.
+            </summary>
+        </member>
+        <member name="P:Amazon.Translate.Model.TerminologyDataLocation.Location">
+            <summary>
+            Gets and sets the property Location. 
+            <para>
+            The location of the custom terminology data.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Translate.Model.TerminologyDataLocation.RepositoryType">
+            <summary>
+            Gets and sets the property RepositoryType. 
+            <para>
+            The repository type for the custom terminology data.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Translate.Model.TerminologyProperties">
+            <summary>
+            The properties of the custom terminology.
+            </summary>
+        </member>
+        <member name="P:Amazon.Translate.Model.TerminologyProperties.Arn">
+            <summary>
+            Gets and sets the property Arn. 
+            <para>
+             The Amazon Resource Name (ARN) of the custom terminology. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Translate.Model.TerminologyProperties.CreatedAt">
+            <summary>
+            Gets and sets the property CreatedAt. 
+            <para>
+            The time at which the custom terminology was created, based on the timestamp.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Translate.Model.TerminologyProperties.Description">
+            <summary>
+            Gets and sets the property Description. 
+            <para>
+            The description of the custom terminology properties.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Translate.Model.TerminologyProperties.EncryptionKey">
+            <summary>
+            Gets and sets the property EncryptionKey. 
+            <para>
+            The encryption key for the custom terminology.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Translate.Model.TerminologyProperties.LastUpdatedAt">
+            <summary>
+            Gets and sets the property LastUpdatedAt. 
+            <para>
+            The time at which the custom terminology was last update, based on the timestamp.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Translate.Model.TerminologyProperties.Name">
+            <summary>
+            Gets and sets the property Name. 
+            <para>
+            The name of the custom terminology.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Translate.Model.TerminologyProperties.SizeBytes">
+            <summary>
+            Gets and sets the property SizeBytes. 
+            <para>
+            The size of the file used when importing a custom terminology.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Translate.Model.TerminologyProperties.SourceLanguageCode">
+            <summary>
+            Gets and sets the property SourceLanguageCode. 
+            <para>
+            The language code for the source text of the translation request for which the custom
+            terminology is being used.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Translate.Model.TerminologyProperties.TargetLanguageCodes">
+            <summary>
+            Gets and sets the property TargetLanguageCodes. 
+            <para>
+            The language codes for the target languages available with the custom terminology
+            file. All possible target languages are returned in array.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Translate.Model.TerminologyProperties.TermCount">
+            <summary>
+            Gets and sets the property TermCount. 
+            <para>
+            The number of terms included in the custom terminology.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Translate.Model.TextSizeLimitExceededException">
+            <summary>
+             Translate exception
+             </summary>
+        </member>
+        <member name="M:Amazon.Translate.Model.TextSizeLimitExceededException.#ctor(System.String)">
+            <summary>
+            Constructs a new TextSizeLimitExceededException with the specified error
+            message.
+            </summary>
+            <param name="message">
+            Describes the error encountered.
+            </param>
+        </member>
+        <member name="M:Amazon.Translate.Model.TextSizeLimitExceededException.#ctor(System.String,System.Exception)">
+            <summary>
+            Construct instance of TextSizeLimitExceededException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.Translate.Model.TextSizeLimitExceededException.#ctor(System.Exception)">
+            <summary>
+            Construct instance of TextSizeLimitExceededException
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.Translate.Model.TextSizeLimitExceededException.#ctor(System.String,System.Exception,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of TextSizeLimitExceededException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="M:Amazon.Translate.Model.TextSizeLimitExceededException.#ctor(System.String,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of TextSizeLimitExceededException
+            </summary>
+            <param name="message"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="T:Amazon.Translate.Model.TooManyRequestsException">
+            <summary>
+             Translate exception
+             </summary>
+        </member>
+        <member name="M:Amazon.Translate.Model.TooManyRequestsException.#ctor(System.String)">
+            <summary>
+            Constructs a new TooManyRequestsException with the specified error
+            message.
+            </summary>
+            <param name="message">
+            Describes the error encountered.
+            </param>
+        </member>
+        <member name="M:Amazon.Translate.Model.TooManyRequestsException.#ctor(System.String,System.Exception)">
+            <summary>
+            Construct instance of TooManyRequestsException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.Translate.Model.TooManyRequestsException.#ctor(System.Exception)">
+            <summary>
+            Construct instance of TooManyRequestsException
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.Translate.Model.TooManyRequestsException.#ctor(System.String,System.Exception,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of TooManyRequestsException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="M:Amazon.Translate.Model.TooManyRequestsException.#ctor(System.String,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of TooManyRequestsException
+            </summary>
+            <param name="message"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="T:Amazon.Translate.Model.TranslateTextRequest">
+            <summary>
+            Container for the parameters to the TranslateText operation.
+            Translates input text from the source language to the target language. It is not necessary
+            to use English (en) as either the source or the target language but not all language
+            combinations are supported by Amazon Translate. For more information, see <a href="http://docs.aws.amazon.com/translate/latest/dg/pairs.html">Supported
+            Language Pairs</a>.
+            
+             <ul> <li> 
+            <para>
+            Arabic (ar)
+            </para>
+             </li> <li> 
+            <para>
+            Chinese (Simplified) (zh)
+            </para>
+             </li> <li> 
+            <para>
+            Chinese (Traditional) (zh-TW)
+            </para>
+             </li> <li> 
+            <para>
+            Czech (cs)
+            </para>
+             </li> <li> 
+            <para>
+            Danish (da)
+            </para>
+             </li> <li> 
+            <para>
+            Dutch (nl)
+            </para>
+             </li> <li> 
+            <para>
+            English (en)
+            </para>
+             </li> <li> 
+            <para>
+            Finnish (fi)
+            </para>
+             </li> <li> 
+            <para>
+            French (fr)
+            </para>
+             </li> <li> 
+            <para>
+            German (de)
+            </para>
+             </li> <li> 
+            <para>
+            Hebrew (he)
+            </para>
+             </li> <li> 
+            <para>
+            Indonesian (id)
+            </para>
+             </li> <li> 
+            <para>
+            Italian (it)
+            </para>
+             </li> <li> 
+            <para>
+            Japanese (ja)
+            </para>
+             </li> <li> 
+            <para>
+            Korean (ko)
+            </para>
+             </li> <li> 
+            <para>
+            Polish (pl)
+            </para>
+             </li> <li> 
+            <para>
+            Portuguese (pt)
+            </para>
+             </li> <li> 
+            <para>
+            Russian (ru)
+            </para>
+             </li> <li> 
+            <para>
+            Spanish (es)
+            </para>
+             </li> <li> 
+            <para>
+            Swedish (sv)
+            </para>
+             </li> <li> 
+            <para>
+            Turkish (tr)
+            </para>
+             </li> </ul> 
+            <para>
+            To have Amazon Translate determine the source language of your text, you can specify
+            <code>auto</code> in the <code>SourceLanguageCode</code> field. If you specify <code>auto</code>,
+            Amazon Translate will call Amazon Comprehend to determine the source language.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Translate.Model.TranslateTextRequest.SourceLanguageCode">
+            <summary>
+            Gets and sets the property SourceLanguageCode. 
+            <para>
+            The language code for the language of the source text. The language must be a language
+            supported by Amazon Translate. 
+            </para>
+             
+            <para>
+            To have Amazon Translate determine the source language of your text, you can specify
+            <code>auto</code> in the <code>SourceLanguageCode</code> field. If you specify <code>auto</code>,
+            Amazon Translate will call Amazon Comprehend to determine the source language.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Translate.Model.TranslateTextRequest.TargetLanguageCode">
+            <summary>
+            Gets and sets the property TargetLanguageCode. 
+            <para>
+            The language code requested for the language of the target text. The language must
+            be a language supported by Amazon Translate.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Translate.Model.TranslateTextRequest.TerminologyNames">
+            <summary>
+            Gets and sets the property TerminologyNames. 
+            <para>
+            The TerminologyNames list that is taken as input to the TranslateText request. This
+            has a minimum length of 0 and a maximum length of 1.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Translate.Model.TranslateTextRequest.Text">
+            <summary>
+            Gets and sets the property Text. 
+            <para>
+            The text to translate. The text string can be a maximum of 5,000 bytes long. Depending
+            on your character set, this may be fewer than 5,000 characters.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Translate.Model.TranslateTextResponse">
+            <summary>
+            This is the response object from the TranslateText operation.
+            </summary>
+        </member>
+        <member name="P:Amazon.Translate.Model.TranslateTextResponse.AppliedTerminologies">
+            <summary>
+            Gets and sets the property AppliedTerminologies. 
+            <para>
+            The names of the custom terminologies applied to the input text by Amazon Translate
+            for the translated text response.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Translate.Model.TranslateTextResponse.SourceLanguageCode">
+            <summary>
+            Gets and sets the property SourceLanguageCode. 
+            <para>
+            The language code for the language of the source text. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Translate.Model.TranslateTextResponse.TargetLanguageCode">
+            <summary>
+            Gets and sets the property TargetLanguageCode. 
+            <para>
+            The language code for the language of the target text. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Translate.Model.TranslateTextResponse.TranslatedText">
+            <summary>
+            Gets and sets the property TranslatedText. 
+            <para>
+            The the translated text. The maximum length of this text is 5kb.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Translate.Model.UnsupportedLanguagePairException">
+            <summary>
+             Translate exception
+             </summary>
+        </member>
+        <member name="M:Amazon.Translate.Model.UnsupportedLanguagePairException.#ctor(System.String)">
+            <summary>
+            Constructs a new UnsupportedLanguagePairException with the specified error
+            message.
+            </summary>
+            <param name="message">
+            Describes the error encountered.
+            </param>
+        </member>
+        <member name="M:Amazon.Translate.Model.UnsupportedLanguagePairException.#ctor(System.String,System.Exception)">
+            <summary>
+            Construct instance of UnsupportedLanguagePairException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.Translate.Model.UnsupportedLanguagePairException.#ctor(System.Exception)">
+            <summary>
+            Construct instance of UnsupportedLanguagePairException
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.Translate.Model.UnsupportedLanguagePairException.#ctor(System.String,System.Exception,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of UnsupportedLanguagePairException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="M:Amazon.Translate.Model.UnsupportedLanguagePairException.#ctor(System.String,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of UnsupportedLanguagePairException
+            </summary>
+            <param name="message"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="T:Amazon.Translate.EncryptionKeyType">
+            <summary>
+            Constants used for properties of type EncryptionKeyType.
+            </summary>
+        </member>
+        <member name="F:Amazon.Translate.EncryptionKeyType.KMS">
+            <summary>
+            Constant KMS for EncryptionKeyType
+            </summary>
+        </member>
+        <member name="M:Amazon.Translate.EncryptionKeyType.#ctor(System.String)">
+            <summary>
+            This constant constructor does not need to be called if the constant
+            you are attempting to use is already defined as a static instance of 
+            this class.
+            This constructor should be used to construct constants that are not
+            defined as statics, for instance if attempting to use a feature that is
+            newer than the current version of the SDK.
+            </summary>
+        </member>
+        <member name="M:Amazon.Translate.EncryptionKeyType.FindValue(System.String)">
+            <summary>
+            Finds the constant for the unique value.
+            </summary>
+            <param name="value">The unique value for the constant</param>
+            <returns>The constant for the unique value</returns>
+        </member>
+        <member name="M:Amazon.Translate.EncryptionKeyType.op_Implicit(System.String)~Amazon.Translate.EncryptionKeyType">
+            <summary>
+            Utility method to convert strings to the constant class.
+            </summary>
+            <param name="value">The string value to convert to the constant class.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.Translate.MergeStrategy">
+            <summary>
+            Constants used for properties of type MergeStrategy.
+            </summary>
+        </member>
+        <member name="F:Amazon.Translate.MergeStrategy.OVERWRITE">
+            <summary>
+            Constant OVERWRITE for MergeStrategy
+            </summary>
+        </member>
+        <member name="M:Amazon.Translate.MergeStrategy.#ctor(System.String)">
+            <summary>
+            This constant constructor does not need to be called if the constant
+            you are attempting to use is already defined as a static instance of 
+            this class.
+            This constructor should be used to construct constants that are not
+            defined as statics, for instance if attempting to use a feature that is
+            newer than the current version of the SDK.
+            </summary>
+        </member>
+        <member name="M:Amazon.Translate.MergeStrategy.FindValue(System.String)">
+            <summary>
+            Finds the constant for the unique value.
+            </summary>
+            <param name="value">The unique value for the constant</param>
+            <returns>The constant for the unique value</returns>
+        </member>
+        <member name="M:Amazon.Translate.MergeStrategy.op_Implicit(System.String)~Amazon.Translate.MergeStrategy">
+            <summary>
+            Utility method to convert strings to the constant class.
+            </summary>
+            <param name="value">The string value to convert to the constant class.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.Translate.TerminologyDataFormat">
+            <summary>
+            Constants used for properties of type TerminologyDataFormat.
+            </summary>
+        </member>
+        <member name="F:Amazon.Translate.TerminologyDataFormat.CSV">
+            <summary>
+            Constant CSV for TerminologyDataFormat
+            </summary>
+        </member>
+        <member name="F:Amazon.Translate.TerminologyDataFormat.TMX">
+            <summary>
+            Constant TMX for TerminologyDataFormat
+            </summary>
+        </member>
+        <member name="M:Amazon.Translate.TerminologyDataFormat.#ctor(System.String)">
+            <summary>
+            This constant constructor does not need to be called if the constant
+            you are attempting to use is already defined as a static instance of 
+            this class.
+            This constructor should be used to construct constants that are not
+            defined as statics, for instance if attempting to use a feature that is
+            newer than the current version of the SDK.
+            </summary>
+        </member>
+        <member name="M:Amazon.Translate.TerminologyDataFormat.FindValue(System.String)">
+            <summary>
+            Finds the constant for the unique value.
+            </summary>
+            <param name="value">The unique value for the constant</param>
+            <returns>The constant for the unique value</returns>
+        </member>
+        <member name="M:Amazon.Translate.TerminologyDataFormat.op_Implicit(System.String)~Amazon.Translate.TerminologyDataFormat">
+            <summary>
+            Utility method to convert strings to the constant class.
+            </summary>
+            <param name="value">The string value to convert to the constant class.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.Translate.AmazonTranslateClient">
+             <summary>
+             Implementation for accessing Translate
+            
+             Provides translation between one source language and another of the same set of languages.
+             </summary>
+        </member>
+        <member name="M:Amazon.Translate.AmazonTranslateClient.#ctor">
+             <summary>
+             Constructs AmazonTranslateClient with the credentials loaded from the application's
+             default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+             
+             Example App.config with credentials set. 
+             <code>
+             &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+             &lt;configuration&gt;
+                 &lt;appSettings&gt;
+                     &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+                 &lt;/appSettings&gt;
+             &lt;/configuration&gt;
+             </code>
+            
+             </summary>
+        </member>
+        <member name="M:Amazon.Translate.AmazonTranslateClient.#ctor(Amazon.RegionEndpoint)">
+             <summary>
+             Constructs AmazonTranslateClient with the credentials loaded from the application's
+             default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+             
+             Example App.config with credentials set. 
+             <code>
+             &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+             &lt;configuration&gt;
+                 &lt;appSettings&gt;
+                     &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+                 &lt;/appSettings&gt;
+             &lt;/configuration&gt;
+             </code>
+            
+             </summary>
+             <param name="region">The region to connect.</param>
+        </member>
+        <member name="M:Amazon.Translate.AmazonTranslateClient.#ctor(Amazon.Translate.AmazonTranslateConfig)">
+             <summary>
+             Constructs AmazonTranslateClient with the credentials loaded from the application's
+             default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+             
+             Example App.config with credentials set. 
+             <code>
+             &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+             &lt;configuration&gt;
+                 &lt;appSettings&gt;
+                     &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+                 &lt;/appSettings&gt;
+             &lt;/configuration&gt;
+             </code>
+            
+             </summary>
+             <param name="config">The AmazonTranslateClient Configuration Object</param>
+        </member>
+        <member name="M:Amazon.Translate.AmazonTranslateClient.#ctor(Amazon.Runtime.AWSCredentials)">
+            <summary>
+            Constructs AmazonTranslateClient with AWS Credentials
+            </summary>
+            <param name="credentials">AWS Credentials</param>
+        </member>
+        <member name="M:Amazon.Translate.AmazonTranslateClient.#ctor(Amazon.Runtime.AWSCredentials,Amazon.RegionEndpoint)">
+            <summary>
+            Constructs AmazonTranslateClient with AWS Credentials
+            </summary>
+            <param name="credentials">AWS Credentials</param>
+            <param name="region">The region to connect.</param>
+        </member>
+        <member name="M:Amazon.Translate.AmazonTranslateClient.#ctor(Amazon.Runtime.AWSCredentials,Amazon.Translate.AmazonTranslateConfig)">
+            <summary>
+            Constructs AmazonTranslateClient with AWS Credentials and an
+            AmazonTranslateClient Configuration object.
+            </summary>
+            <param name="credentials">AWS Credentials</param>
+            <param name="clientConfig">The AmazonTranslateClient Configuration Object</param>
+        </member>
+        <member name="M:Amazon.Translate.AmazonTranslateClient.#ctor(System.String,System.String)">
+            <summary>
+            Constructs AmazonTranslateClient with AWS Access Key ID and AWS Secret Key
+            </summary>
+            <param name="awsAccessKeyId">AWS Access Key ID</param>
+            <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        </member>
+        <member name="M:Amazon.Translate.AmazonTranslateClient.#ctor(System.String,System.String,Amazon.RegionEndpoint)">
+            <summary>
+            Constructs AmazonTranslateClient with AWS Access Key ID and AWS Secret Key
+            </summary>
+            <param name="awsAccessKeyId">AWS Access Key ID</param>
+            <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+            <param name="region">The region to connect.</param>
+        </member>
+        <member name="M:Amazon.Translate.AmazonTranslateClient.#ctor(System.String,System.String,Amazon.Translate.AmazonTranslateConfig)">
+            <summary>
+            Constructs AmazonTranslateClient with AWS Access Key ID, AWS Secret Key and an
+            AmazonTranslateClient Configuration object. 
+            </summary>
+            <param name="awsAccessKeyId">AWS Access Key ID</param>
+            <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+            <param name="clientConfig">The AmazonTranslateClient Configuration Object</param>
+        </member>
+        <member name="M:Amazon.Translate.AmazonTranslateClient.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Constructs AmazonTranslateClient with AWS Access Key ID and AWS Secret Key
+            </summary>
+            <param name="awsAccessKeyId">AWS Access Key ID</param>
+            <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+            <param name="awsSessionToken">AWS Session Token</param>
+        </member>
+        <member name="M:Amazon.Translate.AmazonTranslateClient.#ctor(System.String,System.String,System.String,Amazon.RegionEndpoint)">
+            <summary>
+            Constructs AmazonTranslateClient with AWS Access Key ID and AWS Secret Key
+            </summary>
+            <param name="awsAccessKeyId">AWS Access Key ID</param>
+            <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+            <param name="awsSessionToken">AWS Session Token</param>
+            <param name="region">The region to connect.</param>
+        </member>
+        <member name="M:Amazon.Translate.AmazonTranslateClient.#ctor(System.String,System.String,System.String,Amazon.Translate.AmazonTranslateConfig)">
+            <summary>
+            Constructs AmazonTranslateClient with AWS Access Key ID, AWS Secret Key and an
+            AmazonTranslateClient Configuration object. 
+            </summary>
+            <param name="awsAccessKeyId">AWS Access Key ID</param>
+            <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+            <param name="awsSessionToken">AWS Session Token</param>
+            <param name="clientConfig">The AmazonTranslateClient Configuration Object</param>
+        </member>
+        <member name="M:Amazon.Translate.AmazonTranslateClient.CreateSigner">
+            <summary>
+            Creates the signer for the service.
+            </summary>
+        </member>
+        <member name="P:Amazon.Translate.AmazonTranslateClient.ServiceMetadata">
+            <summary>
+            Capture metadata for the service.
+            </summary>
+        </member>
+        <member name="M:Amazon.Translate.AmazonTranslateClient.Dispose(System.Boolean)">
+            <summary>
+            Disposes the service client.
+            </summary>
+        </member>
+        <member name="M:Amazon.Translate.AmazonTranslateClient.DeleteTerminologyAsync(Amazon.Translate.Model.DeleteTerminologyRequest,System.Threading.CancellationToken)">
+            <summary>
+            A synchronous action that deletes a custom terminology.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the DeleteTerminology service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the DeleteTerminology service method, as returned by Translate.</returns>
+            <exception cref="T:Amazon.Translate.Model.InternalServerException">
+            An internal server error occurred. Retry your request.
+            </exception>
+            <exception cref="T:Amazon.Translate.Model.ResourceNotFoundException">
+            The resource you are looking for has not been found. Review the resource you're looking
+            for and see if a different resource will accomplish your needs before retrying the
+            revised request. .
+            </exception>
+            <exception cref="T:Amazon.Translate.Model.TooManyRequestsException">
+            You have made too many requests within a short period of time. Wait for a short time
+            and then try your request again.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/DeleteTerminology">REST API Reference for DeleteTerminology Operation</seealso>
+        </member>
+        <member name="M:Amazon.Translate.AmazonTranslateClient.GetTerminologyAsync(Amazon.Translate.Model.GetTerminologyRequest,System.Threading.CancellationToken)">
+            <summary>
+            Retrieves a custom terminology.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the GetTerminology service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the GetTerminology service method, as returned by Translate.</returns>
+            <exception cref="T:Amazon.Translate.Model.InternalServerException">
+            An internal server error occurred. Retry your request.
+            </exception>
+            <exception cref="T:Amazon.Translate.Model.InvalidParameterValueException">
+            The value of the parameter is invalid. Review the value of the parameter you are using
+            to correct it, and then retry your operation.
+            </exception>
+            <exception cref="T:Amazon.Translate.Model.ResourceNotFoundException">
+            The resource you are looking for has not been found. Review the resource you're looking
+            for and see if a different resource will accomplish your needs before retrying the
+            revised request. .
+            </exception>
+            <exception cref="T:Amazon.Translate.Model.TooManyRequestsException">
+            You have made too many requests within a short period of time. Wait for a short time
+            and then try your request again.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/GetTerminology">REST API Reference for GetTerminology Operation</seealso>
+        </member>
+        <member name="M:Amazon.Translate.AmazonTranslateClient.ImportTerminologyAsync(Amazon.Translate.Model.ImportTerminologyRequest,System.Threading.CancellationToken)">
+            <summary>
+            Creates or updates a custom terminology, depending on whether or not one already exists
+            for the given terminology name. Importing a terminology with the same name as an existing
+            one will merge the terminologies based on the chosen merge strategy. Currently, the
+            only supported merge strategy is OVERWRITE, and so the imported terminology will overwrite
+            an existing terminology of the same name.
+            
+             
+            <para>
+            If you import a terminology that overwrites an existing one, the new terminology take
+            up to 10 minutes to fully propagate and be available for use in a translation due
+            to cache policies with the DataPlane service that performs the translations.
+            </para>
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the ImportTerminology service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the ImportTerminology service method, as returned by Translate.</returns>
+            <exception cref="T:Amazon.Translate.Model.InternalServerException">
+            An internal server error occurred. Retry your request.
+            </exception>
+            <exception cref="T:Amazon.Translate.Model.InvalidParameterValueException">
+            The value of the parameter is invalid. Review the value of the parameter you are using
+            to correct it, and then retry your operation.
+            </exception>
+            <exception cref="T:Amazon.Translate.Model.LimitExceededException">
+            The specified limit has been exceeded. Review your request and retry it with a quantity
+            below the stated limit.
+            </exception>
+            <exception cref="T:Amazon.Translate.Model.TooManyRequestsException">
+            You have made too many requests within a short period of time. Wait for a short time
+            and then try your request again.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/ImportTerminology">REST API Reference for ImportTerminology Operation</seealso>
+        </member>
+        <member name="M:Amazon.Translate.AmazonTranslateClient.ListTerminologiesAsync(Amazon.Translate.Model.ListTerminologiesRequest,System.Threading.CancellationToken)">
+            <summary>
+            Provides a list of custom terminologies associated with your account.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the ListTerminologies service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the ListTerminologies service method, as returned by Translate.</returns>
+            <exception cref="T:Amazon.Translate.Model.InternalServerException">
+            An internal server error occurred. Retry your request.
+            </exception>
+            <exception cref="T:Amazon.Translate.Model.InvalidParameterValueException">
+            The value of the parameter is invalid. Review the value of the parameter you are using
+            to correct it, and then retry your operation.
+            </exception>
+            <exception cref="T:Amazon.Translate.Model.TooManyRequestsException">
+            You have made too many requests within a short period of time. Wait for a short time
+            and then try your request again.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/ListTerminologies">REST API Reference for ListTerminologies Operation</seealso>
+        </member>
+        <member name="M:Amazon.Translate.AmazonTranslateClient.TranslateTextAsync(Amazon.Translate.Model.TranslateTextRequest,System.Threading.CancellationToken)">
+            <summary>
+            Translates input text from the source language to the target language. It is not necessary
+            to use English (en) as either the source or the target language but not all language
+            combinations are supported by Amazon Translate. For more information, see <a href="http://docs.aws.amazon.com/translate/latest/dg/pairs.html">Supported
+            Language Pairs</a>.
+            
+             <ul> <li> 
+            <para>
+            Arabic (ar)
+            </para>
+             </li> <li> 
+            <para>
+            Chinese (Simplified) (zh)
+            </para>
+             </li> <li> 
+            <para>
+            Chinese (Traditional) (zh-TW)
+            </para>
+             </li> <li> 
+            <para>
+            Czech (cs)
+            </para>
+             </li> <li> 
+            <para>
+            Danish (da)
+            </para>
+             </li> <li> 
+            <para>
+            Dutch (nl)
+            </para>
+             </li> <li> 
+            <para>
+            English (en)
+            </para>
+             </li> <li> 
+            <para>
+            Finnish (fi)
+            </para>
+             </li> <li> 
+            <para>
+            French (fr)
+            </para>
+             </li> <li> 
+            <para>
+            German (de)
+            </para>
+             </li> <li> 
+            <para>
+            Hebrew (he)
+            </para>
+             </li> <li> 
+            <para>
+            Indonesian (id)
+            </para>
+             </li> <li> 
+            <para>
+            Italian (it)
+            </para>
+             </li> <li> 
+            <para>
+            Japanese (ja)
+            </para>
+             </li> <li> 
+            <para>
+            Korean (ko)
+            </para>
+             </li> <li> 
+            <para>
+            Polish (pl)
+            </para>
+             </li> <li> 
+            <para>
+            Portuguese (pt)
+            </para>
+             </li> <li> 
+            <para>
+            Russian (ru)
+            </para>
+             </li> <li> 
+            <para>
+            Spanish (es)
+            </para>
+             </li> <li> 
+            <para>
+            Swedish (sv)
+            </para>
+             </li> <li> 
+            <para>
+            Turkish (tr)
+            </para>
+             </li> </ul> 
+            <para>
+            To have Amazon Translate determine the source language of your text, you can specify
+            <code>auto</code> in the <code>SourceLanguageCode</code> field. If you specify <code>auto</code>,
+            Amazon Translate will call Amazon Comprehend to determine the source language.
+            </para>
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the TranslateText service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the TranslateText service method, as returned by Translate.</returns>
+            <exception cref="T:Amazon.Translate.Model.DetectedLanguageLowConfidenceException">
+            The confidence that Amazon Comprehend accurately detected the source language is low.
+            If a low confidence level is acceptable for your application, you can use the language
+            in the exception to call Amazon Translate again. For more information, see the <a
+            href="https://docs.aws.amazon.com/comprehend/latest/dg/API_DetectDominantLanguage.html">DetectDominantLanguage</a>
+            operation in the <i>Amazon Comprehend Developer Guide</i>.
+            </exception>
+            <exception cref="T:Amazon.Translate.Model.InternalServerException">
+            An internal server error occurred. Retry your request.
+            </exception>
+            <exception cref="T:Amazon.Translate.Model.InvalidRequestException">
+            The request that you made is invalid. Check your request to determine why it's invalid
+            and then retry the request.
+            </exception>
+            <exception cref="T:Amazon.Translate.Model.ResourceNotFoundException">
+            The resource you are looking for has not been found. Review the resource you're looking
+            for and see if a different resource will accomplish your needs before retrying the
+            revised request. .
+            </exception>
+            <exception cref="T:Amazon.Translate.Model.ServiceUnavailableException">
+            The Amazon Translate service is temporarily unavailable. Please wait a bit and then
+            retry your request.
+            </exception>
+            <exception cref="T:Amazon.Translate.Model.TextSizeLimitExceededException">
+            The size of the text you submitted exceeds the size limit. Reduce the size of the
+            text or use a smaller document and then retry your request.
+            </exception>
+            <exception cref="T:Amazon.Translate.Model.TooManyRequestsException">
+            You have made too many requests within a short period of time. Wait for a short time
+            and then try your request again.
+            </exception>
+            <exception cref="T:Amazon.Translate.Model.UnsupportedLanguagePairException">
+            Amazon Translate does not support translation from the language of the source text
+            into the requested target language. For more information, see <a>how-to-error-msg</a>.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/TranslateText">REST API Reference for TranslateText Operation</seealso>
+        </member>
+        <member name="T:Amazon.Translate.IAmazonTranslate">
+             <summary>
+             Interface for accessing Translate
+            
+             Provides translation between one source language and another of the same set of languages.
+             </summary>
+        </member>
+        <member name="M:Amazon.Translate.IAmazonTranslate.DeleteTerminologyAsync(Amazon.Translate.Model.DeleteTerminologyRequest,System.Threading.CancellationToken)">
+            <summary>
+            A synchronous action that deletes a custom terminology.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the DeleteTerminology service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the DeleteTerminology service method, as returned by Translate.</returns>
+            <exception cref="T:Amazon.Translate.Model.InternalServerException">
+            An internal server error occurred. Retry your request.
+            </exception>
+            <exception cref="T:Amazon.Translate.Model.ResourceNotFoundException">
+            The resource you are looking for has not been found. Review the resource you're looking
+            for and see if a different resource will accomplish your needs before retrying the
+            revised request. .
+            </exception>
+            <exception cref="T:Amazon.Translate.Model.TooManyRequestsException">
+            You have made too many requests within a short period of time. Wait for a short time
+            and then try your request again.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/DeleteTerminology">REST API Reference for DeleteTerminology Operation</seealso>
+        </member>
+        <member name="M:Amazon.Translate.IAmazonTranslate.GetTerminologyAsync(Amazon.Translate.Model.GetTerminologyRequest,System.Threading.CancellationToken)">
+            <summary>
+            Retrieves a custom terminology.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the GetTerminology service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the GetTerminology service method, as returned by Translate.</returns>
+            <exception cref="T:Amazon.Translate.Model.InternalServerException">
+            An internal server error occurred. Retry your request.
+            </exception>
+            <exception cref="T:Amazon.Translate.Model.InvalidParameterValueException">
+            The value of the parameter is invalid. Review the value of the parameter you are using
+            to correct it, and then retry your operation.
+            </exception>
+            <exception cref="T:Amazon.Translate.Model.ResourceNotFoundException">
+            The resource you are looking for has not been found. Review the resource you're looking
+            for and see if a different resource will accomplish your needs before retrying the
+            revised request. .
+            </exception>
+            <exception cref="T:Amazon.Translate.Model.TooManyRequestsException">
+            You have made too many requests within a short period of time. Wait for a short time
+            and then try your request again.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/GetTerminology">REST API Reference for GetTerminology Operation</seealso>
+        </member>
+        <member name="M:Amazon.Translate.IAmazonTranslate.ImportTerminologyAsync(Amazon.Translate.Model.ImportTerminologyRequest,System.Threading.CancellationToken)">
+            <summary>
+            Creates or updates a custom terminology, depending on whether or not one already exists
+            for the given terminology name. Importing a terminology with the same name as an existing
+            one will merge the terminologies based on the chosen merge strategy. Currently, the
+            only supported merge strategy is OVERWRITE, and so the imported terminology will overwrite
+            an existing terminology of the same name.
+            
+             
+            <para>
+            If you import a terminology that overwrites an existing one, the new terminology take
+            up to 10 minutes to fully propagate and be available for use in a translation due
+            to cache policies with the DataPlane service that performs the translations.
+            </para>
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the ImportTerminology service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the ImportTerminology service method, as returned by Translate.</returns>
+            <exception cref="T:Amazon.Translate.Model.InternalServerException">
+            An internal server error occurred. Retry your request.
+            </exception>
+            <exception cref="T:Amazon.Translate.Model.InvalidParameterValueException">
+            The value of the parameter is invalid. Review the value of the parameter you are using
+            to correct it, and then retry your operation.
+            </exception>
+            <exception cref="T:Amazon.Translate.Model.LimitExceededException">
+            The specified limit has been exceeded. Review your request and retry it with a quantity
+            below the stated limit.
+            </exception>
+            <exception cref="T:Amazon.Translate.Model.TooManyRequestsException">
+            You have made too many requests within a short period of time. Wait for a short time
+            and then try your request again.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/ImportTerminology">REST API Reference for ImportTerminology Operation</seealso>
+        </member>
+        <member name="M:Amazon.Translate.IAmazonTranslate.ListTerminologiesAsync(Amazon.Translate.Model.ListTerminologiesRequest,System.Threading.CancellationToken)">
+            <summary>
+            Provides a list of custom terminologies associated with your account.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the ListTerminologies service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the ListTerminologies service method, as returned by Translate.</returns>
+            <exception cref="T:Amazon.Translate.Model.InternalServerException">
+            An internal server error occurred. Retry your request.
+            </exception>
+            <exception cref="T:Amazon.Translate.Model.InvalidParameterValueException">
+            The value of the parameter is invalid. Review the value of the parameter you are using
+            to correct it, and then retry your operation.
+            </exception>
+            <exception cref="T:Amazon.Translate.Model.TooManyRequestsException">
+            You have made too many requests within a short period of time. Wait for a short time
+            and then try your request again.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/ListTerminologies">REST API Reference for ListTerminologies Operation</seealso>
+        </member>
+        <member name="M:Amazon.Translate.IAmazonTranslate.TranslateTextAsync(Amazon.Translate.Model.TranslateTextRequest,System.Threading.CancellationToken)">
+            <summary>
+            Translates input text from the source language to the target language. It is not necessary
+            to use English (en) as either the source or the target language but not all language
+            combinations are supported by Amazon Translate. For more information, see <a href="http://docs.aws.amazon.com/translate/latest/dg/pairs.html">Supported
+            Language Pairs</a>.
+            
+             <ul> <li> 
+            <para>
+            Arabic (ar)
+            </para>
+             </li> <li> 
+            <para>
+            Chinese (Simplified) (zh)
+            </para>
+             </li> <li> 
+            <para>
+            Chinese (Traditional) (zh-TW)
+            </para>
+             </li> <li> 
+            <para>
+            Czech (cs)
+            </para>
+             </li> <li> 
+            <para>
+            Danish (da)
+            </para>
+             </li> <li> 
+            <para>
+            Dutch (nl)
+            </para>
+             </li> <li> 
+            <para>
+            English (en)
+            </para>
+             </li> <li> 
+            <para>
+            Finnish (fi)
+            </para>
+             </li> <li> 
+            <para>
+            French (fr)
+            </para>
+             </li> <li> 
+            <para>
+            German (de)
+            </para>
+             </li> <li> 
+            <para>
+            Hebrew (he)
+            </para>
+             </li> <li> 
+            <para>
+            Indonesian (id)
+            </para>
+             </li> <li> 
+            <para>
+            Italian (it)
+            </para>
+             </li> <li> 
+            <para>
+            Japanese (ja)
+            </para>
+             </li> <li> 
+            <para>
+            Korean (ko)
+            </para>
+             </li> <li> 
+            <para>
+            Polish (pl)
+            </para>
+             </li> <li> 
+            <para>
+            Portuguese (pt)
+            </para>
+             </li> <li> 
+            <para>
+            Russian (ru)
+            </para>
+             </li> <li> 
+            <para>
+            Spanish (es)
+            </para>
+             </li> <li> 
+            <para>
+            Swedish (sv)
+            </para>
+             </li> <li> 
+            <para>
+            Turkish (tr)
+            </para>
+             </li> </ul> 
+            <para>
+            To have Amazon Translate determine the source language of your text, you can specify
+            <code>auto</code> in the <code>SourceLanguageCode</code> field. If you specify <code>auto</code>,
+            Amazon Translate will call Amazon Comprehend to determine the source language.
+            </para>
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the TranslateText service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the TranslateText service method, as returned by Translate.</returns>
+            <exception cref="T:Amazon.Translate.Model.DetectedLanguageLowConfidenceException">
+            The confidence that Amazon Comprehend accurately detected the source language is low.
+            If a low confidence level is acceptable for your application, you can use the language
+            in the exception to call Amazon Translate again. For more information, see the <a
+            href="https://docs.aws.amazon.com/comprehend/latest/dg/API_DetectDominantLanguage.html">DetectDominantLanguage</a>
+            operation in the <i>Amazon Comprehend Developer Guide</i>.
+            </exception>
+            <exception cref="T:Amazon.Translate.Model.InternalServerException">
+            An internal server error occurred. Retry your request.
+            </exception>
+            <exception cref="T:Amazon.Translate.Model.InvalidRequestException">
+            The request that you made is invalid. Check your request to determine why it's invalid
+            and then retry the request.
+            </exception>
+            <exception cref="T:Amazon.Translate.Model.ResourceNotFoundException">
+            The resource you are looking for has not been found. Review the resource you're looking
+            for and see if a different resource will accomplish your needs before retrying the
+            revised request. .
+            </exception>
+            <exception cref="T:Amazon.Translate.Model.ServiceUnavailableException">
+            The Amazon Translate service is temporarily unavailable. Please wait a bit and then
+            retry your request.
+            </exception>
+            <exception cref="T:Amazon.Translate.Model.TextSizeLimitExceededException">
+            The size of the text you submitted exceeds the size limit. Reduce the size of the
+            text or use a smaller document and then retry your request.
+            </exception>
+            <exception cref="T:Amazon.Translate.Model.TooManyRequestsException">
+            You have made too many requests within a short period of time. Wait for a short time
+            and then try your request again.
+            </exception>
+            <exception cref="T:Amazon.Translate.Model.UnsupportedLanguagePairException">
+            Amazon Translate does not support translation from the language of the source text
+            into the requested target language. For more information, see <a>how-to-error-msg</a>.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/TranslateText">REST API Reference for TranslateText Operation</seealso>
+        </member>
+    </members>
+</doc>

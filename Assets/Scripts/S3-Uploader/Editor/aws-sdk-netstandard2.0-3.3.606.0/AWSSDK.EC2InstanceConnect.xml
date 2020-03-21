@@ -1,0 +1,670 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AWSSDK.EC2InstanceConnect</name>
+    </assembly>
+    <members>
+        <member name="T:Amazon.EC2InstanceConnect.AmazonEC2InstanceConnectConfig">
+            <summary>
+            Configuration for accessing Amazon EC2InstanceConnect service
+            </summary>
+        </member>
+        <member name="M:Amazon.EC2InstanceConnect.AmazonEC2InstanceConnectConfig.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="P:Amazon.EC2InstanceConnect.AmazonEC2InstanceConnectConfig.RegionEndpointServiceName">
+            <summary>
+            The constant used to lookup in the region hash the endpoint.
+            </summary>
+        </member>
+        <member name="P:Amazon.EC2InstanceConnect.AmazonEC2InstanceConnectConfig.ServiceVersion">
+            <summary>
+            Gets the ServiceVersion property.
+            </summary>
+        </member>
+        <member name="P:Amazon.EC2InstanceConnect.AmazonEC2InstanceConnectConfig.UserAgent">
+            <summary>
+            Gets the value of UserAgent property.
+            </summary>
+        </member>
+        <member name="T:Amazon.EC2InstanceConnect.AmazonEC2InstanceConnectException">
+            <summary>
+             Common exception for the EC2InstanceConnect service.
+             </summary>
+        </member>
+        <member name="M:Amazon.EC2InstanceConnect.AmazonEC2InstanceConnectException.#ctor(System.String)">
+            <summary>
+            Construct instance of AmazonEC2InstanceConnectException
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:Amazon.EC2InstanceConnect.AmazonEC2InstanceConnectException.#ctor(System.String,System.Exception)">
+            <summary>
+            Construct instance of AmazonEC2InstanceConnectException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.EC2InstanceConnect.AmazonEC2InstanceConnectException.#ctor(System.Exception)">
+            <summary>
+            Construct instance of AmazonEC2InstanceConnectException
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.EC2InstanceConnect.AmazonEC2InstanceConnectException.#ctor(System.String,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of AmazonEC2InstanceConnectException
+            </summary>
+            <param name="message"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="M:Amazon.EC2InstanceConnect.AmazonEC2InstanceConnectException.#ctor(System.String,System.Exception,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of AmazonEC2InstanceConnectException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="T:Amazon.EC2InstanceConnect.Internal.AmazonEC2InstanceConnectMetadata">
+            <summary>
+            Service metadata for  Amazon EC2InstanceConnect service
+            </summary>
+        </member>
+        <member name="P:Amazon.EC2InstanceConnect.Internal.AmazonEC2InstanceConnectMetadata.ServiceId">
+            <summary>
+            Gets the value of the Service Id.
+            </summary>
+        </member>
+        <member name="P:Amazon.EC2InstanceConnect.Internal.AmazonEC2InstanceConnectMetadata.OperationNameMapping">
+            <summary>
+            Gets the dictionary that gives mapping of renamed operations
+            </summary>
+        </member>
+        <member name="T:Amazon.EC2InstanceConnect.AmazonEC2InstanceConnectRequest">
+            <summary>
+            Base class for EC2InstanceConnect operation requests.
+            </summary>
+        </member>
+        <member name="T:Amazon.EC2InstanceConnect.Model.AuthException">
+            <summary>
+             EC2InstanceConnect exception
+             </summary>
+        </member>
+        <member name="M:Amazon.EC2InstanceConnect.Model.AuthException.#ctor(System.String)">
+            <summary>
+            Constructs a new AuthException with the specified error
+            message.
+            </summary>
+            <param name="message">
+            Describes the error encountered.
+            </param>
+        </member>
+        <member name="M:Amazon.EC2InstanceConnect.Model.AuthException.#ctor(System.String,System.Exception)">
+            <summary>
+            Construct instance of AuthException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.EC2InstanceConnect.Model.AuthException.#ctor(System.Exception)">
+            <summary>
+            Construct instance of AuthException
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.EC2InstanceConnect.Model.AuthException.#ctor(System.String,System.Exception,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of AuthException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="M:Amazon.EC2InstanceConnect.Model.AuthException.#ctor(System.String,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of AuthException
+            </summary>
+            <param name="message"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="T:Amazon.EC2InstanceConnect.Model.EC2InstanceNotFoundException">
+            <summary>
+             EC2InstanceConnect exception
+             </summary>
+        </member>
+        <member name="M:Amazon.EC2InstanceConnect.Model.EC2InstanceNotFoundException.#ctor(System.String)">
+            <summary>
+            Constructs a new EC2InstanceNotFoundException with the specified error
+            message.
+            </summary>
+            <param name="message">
+            Describes the error encountered.
+            </param>
+        </member>
+        <member name="M:Amazon.EC2InstanceConnect.Model.EC2InstanceNotFoundException.#ctor(System.String,System.Exception)">
+            <summary>
+            Construct instance of EC2InstanceNotFoundException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.EC2InstanceConnect.Model.EC2InstanceNotFoundException.#ctor(System.Exception)">
+            <summary>
+            Construct instance of EC2InstanceNotFoundException
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.EC2InstanceConnect.Model.EC2InstanceNotFoundException.#ctor(System.String,System.Exception,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of EC2InstanceNotFoundException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="M:Amazon.EC2InstanceConnect.Model.EC2InstanceNotFoundException.#ctor(System.String,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of EC2InstanceNotFoundException
+            </summary>
+            <param name="message"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="T:Amazon.EC2InstanceConnect.Model.Internal.MarshallTransformations.SendSSHPublicKeyRequestMarshaller">
+            <summary>
+            SendSSHPublicKey Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.EC2InstanceConnect.Model.Internal.MarshallTransformations.SendSSHPublicKeyRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.EC2InstanceConnect.Model.Internal.MarshallTransformations.SendSSHPublicKeyRequestMarshaller.Marshall(Amazon.EC2InstanceConnect.Model.SendSSHPublicKeyRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.EC2InstanceConnect.Model.Internal.MarshallTransformations.SendSSHPublicKeyRequestMarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.EC2InstanceConnect.Model.Internal.MarshallTransformations.SendSSHPublicKeyResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for SendSSHPublicKey operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.EC2InstanceConnect.Model.Internal.MarshallTransformations.SendSSHPublicKeyResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.EC2InstanceConnect.Model.Internal.MarshallTransformations.SendSSHPublicKeyResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.EC2InstanceConnect.Model.Internal.MarshallTransformations.SendSSHPublicKeyResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.EC2InstanceConnect.Model.InvalidArgsException">
+            <summary>
+             EC2InstanceConnect exception
+             </summary>
+        </member>
+        <member name="M:Amazon.EC2InstanceConnect.Model.InvalidArgsException.#ctor(System.String)">
+            <summary>
+            Constructs a new InvalidArgsException with the specified error
+            message.
+            </summary>
+            <param name="message">
+            Describes the error encountered.
+            </param>
+        </member>
+        <member name="M:Amazon.EC2InstanceConnect.Model.InvalidArgsException.#ctor(System.String,System.Exception)">
+            <summary>
+            Construct instance of InvalidArgsException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.EC2InstanceConnect.Model.InvalidArgsException.#ctor(System.Exception)">
+            <summary>
+            Construct instance of InvalidArgsException
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.EC2InstanceConnect.Model.InvalidArgsException.#ctor(System.String,System.Exception,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of InvalidArgsException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="M:Amazon.EC2InstanceConnect.Model.InvalidArgsException.#ctor(System.String,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of InvalidArgsException
+            </summary>
+            <param name="message"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="T:Amazon.EC2InstanceConnect.Model.SendSSHPublicKeyRequest">
+            <summary>
+            Container for the parameters to the SendSSHPublicKey operation.
+            Pushes an SSH public key to a particular OS user on a given EC2 instance for 60 seconds.
+            </summary>
+        </member>
+        <member name="P:Amazon.EC2InstanceConnect.Model.SendSSHPublicKeyRequest.AvailabilityZone">
+            <summary>
+            Gets and sets the property AvailabilityZone. 
+            <para>
+            The availability zone the EC2 instance was launched in.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.EC2InstanceConnect.Model.SendSSHPublicKeyRequest.InstanceId">
+            <summary>
+            Gets and sets the property InstanceId. 
+            <para>
+            The EC2 instance you wish to publish the SSH key to.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.EC2InstanceConnect.Model.SendSSHPublicKeyRequest.InstanceOSUser">
+            <summary>
+            Gets and sets the property InstanceOSUser. 
+            <para>
+            The OS user on the EC2 instance whom the key may be used to authenticate as.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.EC2InstanceConnect.Model.SendSSHPublicKeyRequest.SSHPublicKey">
+            <summary>
+            Gets and sets the property SSHPublicKey. 
+            <para>
+            The public key to be published to the instance. To use it after publication you must
+            have the matching private key.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.EC2InstanceConnect.Model.SendSSHPublicKeyResponse">
+            <summary>
+            This is the response object from the SendSSHPublicKey operation.
+            </summary>
+        </member>
+        <member name="P:Amazon.EC2InstanceConnect.Model.SendSSHPublicKeyResponse.RequestId">
+            <summary>
+            Gets and sets the property RequestId. 
+            <para>
+            The request ID as logged by EC2 Connect. Please provide this when contacting AWS Support.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.EC2InstanceConnect.Model.SendSSHPublicKeyResponse.Success">
+            <summary>
+            Gets and sets the property Success. 
+            <para>
+            Indicates request success.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.EC2InstanceConnect.Model.ServiceException">
+            <summary>
+             EC2InstanceConnect exception
+             </summary>
+        </member>
+        <member name="M:Amazon.EC2InstanceConnect.Model.ServiceException.#ctor(System.String)">
+            <summary>
+            Constructs a new ServiceException with the specified error
+            message.
+            </summary>
+            <param name="message">
+            Describes the error encountered.
+            </param>
+        </member>
+        <member name="M:Amazon.EC2InstanceConnect.Model.ServiceException.#ctor(System.String,System.Exception)">
+            <summary>
+            Construct instance of ServiceException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.EC2InstanceConnect.Model.ServiceException.#ctor(System.Exception)">
+            <summary>
+            Construct instance of ServiceException
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.EC2InstanceConnect.Model.ServiceException.#ctor(System.String,System.Exception,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of ServiceException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="M:Amazon.EC2InstanceConnect.Model.ServiceException.#ctor(System.String,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of ServiceException
+            </summary>
+            <param name="message"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="T:Amazon.EC2InstanceConnect.Model.ThrottlingException">
+            <summary>
+             EC2InstanceConnect exception
+             </summary>
+        </member>
+        <member name="M:Amazon.EC2InstanceConnect.Model.ThrottlingException.#ctor(System.String)">
+            <summary>
+            Constructs a new ThrottlingException with the specified error
+            message.
+            </summary>
+            <param name="message">
+            Describes the error encountered.
+            </param>
+        </member>
+        <member name="M:Amazon.EC2InstanceConnect.Model.ThrottlingException.#ctor(System.String,System.Exception)">
+            <summary>
+            Construct instance of ThrottlingException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.EC2InstanceConnect.Model.ThrottlingException.#ctor(System.Exception)">
+            <summary>
+            Construct instance of ThrottlingException
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.EC2InstanceConnect.Model.ThrottlingException.#ctor(System.String,System.Exception,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of ThrottlingException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="M:Amazon.EC2InstanceConnect.Model.ThrottlingException.#ctor(System.String,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of ThrottlingException
+            </summary>
+            <param name="message"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="T:Amazon.EC2InstanceConnect.AmazonEC2InstanceConnectClient">
+             <summary>
+             Implementation for accessing EC2InstanceConnect
+            
+             AWS EC2 Connect Service is a service that enables system administrators to publish
+             temporary SSH keys to their EC2 instances in order to establish connections to their
+             instances without leaving a permanent authentication option.
+             </summary>
+        </member>
+        <member name="M:Amazon.EC2InstanceConnect.AmazonEC2InstanceConnectClient.#ctor">
+             <summary>
+             Constructs AmazonEC2InstanceConnectClient with the credentials loaded from the application's
+             default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+             
+             Example App.config with credentials set. 
+             <code>
+             &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+             &lt;configuration&gt;
+                 &lt;appSettings&gt;
+                     &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+                 &lt;/appSettings&gt;
+             &lt;/configuration&gt;
+             </code>
+            
+             </summary>
+        </member>
+        <member name="M:Amazon.EC2InstanceConnect.AmazonEC2InstanceConnectClient.#ctor(Amazon.RegionEndpoint)">
+             <summary>
+             Constructs AmazonEC2InstanceConnectClient with the credentials loaded from the application's
+             default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+             
+             Example App.config with credentials set. 
+             <code>
+             &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+             &lt;configuration&gt;
+                 &lt;appSettings&gt;
+                     &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+                 &lt;/appSettings&gt;
+             &lt;/configuration&gt;
+             </code>
+            
+             </summary>
+             <param name="region">The region to connect.</param>
+        </member>
+        <member name="M:Amazon.EC2InstanceConnect.AmazonEC2InstanceConnectClient.#ctor(Amazon.EC2InstanceConnect.AmazonEC2InstanceConnectConfig)">
+             <summary>
+             Constructs AmazonEC2InstanceConnectClient with the credentials loaded from the application's
+             default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+             
+             Example App.config with credentials set. 
+             <code>
+             &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+             &lt;configuration&gt;
+                 &lt;appSettings&gt;
+                     &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+                 &lt;/appSettings&gt;
+             &lt;/configuration&gt;
+             </code>
+            
+             </summary>
+             <param name="config">The AmazonEC2InstanceConnectClient Configuration Object</param>
+        </member>
+        <member name="M:Amazon.EC2InstanceConnect.AmazonEC2InstanceConnectClient.#ctor(Amazon.Runtime.AWSCredentials)">
+            <summary>
+            Constructs AmazonEC2InstanceConnectClient with AWS Credentials
+            </summary>
+            <param name="credentials">AWS Credentials</param>
+        </member>
+        <member name="M:Amazon.EC2InstanceConnect.AmazonEC2InstanceConnectClient.#ctor(Amazon.Runtime.AWSCredentials,Amazon.RegionEndpoint)">
+            <summary>
+            Constructs AmazonEC2InstanceConnectClient with AWS Credentials
+            </summary>
+            <param name="credentials">AWS Credentials</param>
+            <param name="region">The region to connect.</param>
+        </member>
+        <member name="M:Amazon.EC2InstanceConnect.AmazonEC2InstanceConnectClient.#ctor(Amazon.Runtime.AWSCredentials,Amazon.EC2InstanceConnect.AmazonEC2InstanceConnectConfig)">
+            <summary>
+            Constructs AmazonEC2InstanceConnectClient with AWS Credentials and an
+            AmazonEC2InstanceConnectClient Configuration object.
+            </summary>
+            <param name="credentials">AWS Credentials</param>
+            <param name="clientConfig">The AmazonEC2InstanceConnectClient Configuration Object</param>
+        </member>
+        <member name="M:Amazon.EC2InstanceConnect.AmazonEC2InstanceConnectClient.#ctor(System.String,System.String)">
+            <summary>
+            Constructs AmazonEC2InstanceConnectClient with AWS Access Key ID and AWS Secret Key
+            </summary>
+            <param name="awsAccessKeyId">AWS Access Key ID</param>
+            <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        </member>
+        <member name="M:Amazon.EC2InstanceConnect.AmazonEC2InstanceConnectClient.#ctor(System.String,System.String,Amazon.RegionEndpoint)">
+            <summary>
+            Constructs AmazonEC2InstanceConnectClient with AWS Access Key ID and AWS Secret Key
+            </summary>
+            <param name="awsAccessKeyId">AWS Access Key ID</param>
+            <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+            <param name="region">The region to connect.</param>
+        </member>
+        <member name="M:Amazon.EC2InstanceConnect.AmazonEC2InstanceConnectClient.#ctor(System.String,System.String,Amazon.EC2InstanceConnect.AmazonEC2InstanceConnectConfig)">
+            <summary>
+            Constructs AmazonEC2InstanceConnectClient with AWS Access Key ID, AWS Secret Key and an
+            AmazonEC2InstanceConnectClient Configuration object. 
+            </summary>
+            <param name="awsAccessKeyId">AWS Access Key ID</param>
+            <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+            <param name="clientConfig">The AmazonEC2InstanceConnectClient Configuration Object</param>
+        </member>
+        <member name="M:Amazon.EC2InstanceConnect.AmazonEC2InstanceConnectClient.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Constructs AmazonEC2InstanceConnectClient with AWS Access Key ID and AWS Secret Key
+            </summary>
+            <param name="awsAccessKeyId">AWS Access Key ID</param>
+            <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+            <param name="awsSessionToken">AWS Session Token</param>
+        </member>
+        <member name="M:Amazon.EC2InstanceConnect.AmazonEC2InstanceConnectClient.#ctor(System.String,System.String,System.String,Amazon.RegionEndpoint)">
+            <summary>
+            Constructs AmazonEC2InstanceConnectClient with AWS Access Key ID and AWS Secret Key
+            </summary>
+            <param name="awsAccessKeyId">AWS Access Key ID</param>
+            <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+            <param name="awsSessionToken">AWS Session Token</param>
+            <param name="region">The region to connect.</param>
+        </member>
+        <member name="M:Amazon.EC2InstanceConnect.AmazonEC2InstanceConnectClient.#ctor(System.String,System.String,System.String,Amazon.EC2InstanceConnect.AmazonEC2InstanceConnectConfig)">
+            <summary>
+            Constructs AmazonEC2InstanceConnectClient with AWS Access Key ID, AWS Secret Key and an
+            AmazonEC2InstanceConnectClient Configuration object. 
+            </summary>
+            <param name="awsAccessKeyId">AWS Access Key ID</param>
+            <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+            <param name="awsSessionToken">AWS Session Token</param>
+            <param name="clientConfig">The AmazonEC2InstanceConnectClient Configuration Object</param>
+        </member>
+        <member name="M:Amazon.EC2InstanceConnect.AmazonEC2InstanceConnectClient.CreateSigner">
+            <summary>
+            Creates the signer for the service.
+            </summary>
+        </member>
+        <member name="P:Amazon.EC2InstanceConnect.AmazonEC2InstanceConnectClient.ServiceMetadata">
+            <summary>
+            Capture metadata for the service.
+            </summary>
+        </member>
+        <member name="M:Amazon.EC2InstanceConnect.AmazonEC2InstanceConnectClient.Dispose(System.Boolean)">
+            <summary>
+            Disposes the service client.
+            </summary>
+        </member>
+        <member name="M:Amazon.EC2InstanceConnect.AmazonEC2InstanceConnectClient.SendSSHPublicKeyAsync(Amazon.EC2InstanceConnect.Model.SendSSHPublicKeyRequest,System.Threading.CancellationToken)">
+            <summary>
+            Pushes an SSH public key to a particular OS user on a given EC2 instance for 60 seconds.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the SendSSHPublicKey service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the SendSSHPublicKey service method, as returned by EC2InstanceConnect.</returns>
+            <exception cref="T:Amazon.EC2InstanceConnect.Model.AuthException">
+            Indicates that either your AWS credentials are invalid or you do not have access to
+            the EC2 instance.
+            </exception>
+            <exception cref="T:Amazon.EC2InstanceConnect.Model.EC2InstanceNotFoundException">
+            Indicates that the instance requested was not found in the given zone. Check that
+            you have provided a valid instance ID and the correct zone.
+            </exception>
+            <exception cref="T:Amazon.EC2InstanceConnect.Model.InvalidArgsException">
+            Indicates that you provided bad input. Ensure you have a valid instance ID, the correct
+            zone, and a valid SSH public key.
+            </exception>
+            <exception cref="T:Amazon.EC2InstanceConnect.Model.ServiceException">
+            Indicates that the service encountered an error. Follow the message's instructions
+            and try again.
+            </exception>
+            <exception cref="T:Amazon.EC2InstanceConnect.Model.ThrottlingException">
+            Indicates you have been making requests too frequently and have been throttled. Wait
+            for a while and try again. If higher call volume is warranted contact AWS Support.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-instance-connect-2018-04-02/SendSSHPublicKey">REST API Reference for SendSSHPublicKey Operation</seealso>
+        </member>
+        <member name="T:Amazon.EC2InstanceConnect.IAmazonEC2InstanceConnect">
+             <summary>
+             Interface for accessing EC2InstanceConnect
+            
+             AWS EC2 Connect Service is a service that enables system administrators to publish
+             temporary SSH keys to their EC2 instances in order to establish connections to their
+             instances without leaving a permanent authentication option.
+             </summary>
+        </member>
+        <member name="M:Amazon.EC2InstanceConnect.IAmazonEC2InstanceConnect.SendSSHPublicKeyAsync(Amazon.EC2InstanceConnect.Model.SendSSHPublicKeyRequest,System.Threading.CancellationToken)">
+            <summary>
+            Pushes an SSH public key to a particular OS user on a given EC2 instance for 60 seconds.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the SendSSHPublicKey service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the SendSSHPublicKey service method, as returned by EC2InstanceConnect.</returns>
+            <exception cref="T:Amazon.EC2InstanceConnect.Model.AuthException">
+            Indicates that either your AWS credentials are invalid or you do not have access to
+            the EC2 instance.
+            </exception>
+            <exception cref="T:Amazon.EC2InstanceConnect.Model.EC2InstanceNotFoundException">
+            Indicates that the instance requested was not found in the given zone. Check that
+            you have provided a valid instance ID and the correct zone.
+            </exception>
+            <exception cref="T:Amazon.EC2InstanceConnect.Model.InvalidArgsException">
+            Indicates that you provided bad input. Ensure you have a valid instance ID, the correct
+            zone, and a valid SSH public key.
+            </exception>
+            <exception cref="T:Amazon.EC2InstanceConnect.Model.ServiceException">
+            Indicates that the service encountered an error. Follow the message's instructions
+            and try again.
+            </exception>
+            <exception cref="T:Amazon.EC2InstanceConnect.Model.ThrottlingException">
+            Indicates you have been making requests too frequently and have been throttled. Wait
+            for a while and try again. If higher call volume is warranted contact AWS Support.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-instance-connect-2018-04-02/SendSSHPublicKey">REST API Reference for SendSSHPublicKey Operation</seealso>
+        </member>
+    </members>
+</doc>

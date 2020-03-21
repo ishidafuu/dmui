@@ -1,0 +1,3753 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AWSSDK.Textract</name>
+    </assembly>
+    <members>
+        <member name="T:Amazon.Textract.AmazonTextractConfig">
+            <summary>
+            Configuration for accessing Amazon Textract service
+            </summary>
+        </member>
+        <member name="M:Amazon.Textract.AmazonTextractConfig.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="P:Amazon.Textract.AmazonTextractConfig.RegionEndpointServiceName">
+            <summary>
+            The constant used to lookup in the region hash the endpoint.
+            </summary>
+        </member>
+        <member name="P:Amazon.Textract.AmazonTextractConfig.ServiceVersion">
+            <summary>
+            Gets the ServiceVersion property.
+            </summary>
+        </member>
+        <member name="P:Amazon.Textract.AmazonTextractConfig.UserAgent">
+            <summary>
+            Gets the value of UserAgent property.
+            </summary>
+        </member>
+        <member name="T:Amazon.Textract.AmazonTextractException">
+            <summary>
+             Common exception for the Textract service.
+             </summary>
+        </member>
+        <member name="M:Amazon.Textract.AmazonTextractException.#ctor(System.String)">
+            <summary>
+            Construct instance of AmazonTextractException
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:Amazon.Textract.AmazonTextractException.#ctor(System.String,System.Exception)">
+            <summary>
+            Construct instance of AmazonTextractException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.Textract.AmazonTextractException.#ctor(System.Exception)">
+            <summary>
+            Construct instance of AmazonTextractException
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.Textract.AmazonTextractException.#ctor(System.String,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of AmazonTextractException
+            </summary>
+            <param name="message"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="M:Amazon.Textract.AmazonTextractException.#ctor(System.String,System.Exception,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of AmazonTextractException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="T:Amazon.Textract.Internal.AmazonTextractMetadata">
+            <summary>
+            Service metadata for  Amazon Textract service
+            </summary>
+        </member>
+        <member name="P:Amazon.Textract.Internal.AmazonTextractMetadata.ServiceId">
+            <summary>
+            Gets the value of the Service Id.
+            </summary>
+        </member>
+        <member name="P:Amazon.Textract.Internal.AmazonTextractMetadata.OperationNameMapping">
+            <summary>
+            Gets the dictionary that gives mapping of renamed operations
+            </summary>
+        </member>
+        <member name="T:Amazon.Textract.Model.AccessDeniedException">
+            <summary>
+             Textract exception
+             </summary>
+        </member>
+        <member name="M:Amazon.Textract.Model.AccessDeniedException.#ctor(System.String)">
+            <summary>
+            Constructs a new AccessDeniedException with the specified error
+            message.
+            </summary>
+            <param name="message">
+            Describes the error encountered.
+            </param>
+        </member>
+        <member name="M:Amazon.Textract.Model.AccessDeniedException.#ctor(System.String,System.Exception)">
+            <summary>
+            Construct instance of AccessDeniedException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.Textract.Model.AccessDeniedException.#ctor(System.Exception)">
+            <summary>
+            Construct instance of AccessDeniedException
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.Textract.Model.AccessDeniedException.#ctor(System.String,System.Exception,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of AccessDeniedException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="M:Amazon.Textract.Model.AccessDeniedException.#ctor(System.String,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of AccessDeniedException
+            </summary>
+            <param name="message"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="T:Amazon.Textract.Model.AnalyzeDocumentRequest">
+            <summary>
+            Container for the parameters to the AnalyzeDocument operation.
+            Analyzes an input document for relationships between detected items. 
+            
+             
+            <para>
+            The types of information returned are as follows: 
+            </para>
+             <ul> <li> 
+            <para>
+            Words and lines that are related to nearby lines and words. The related information
+            is returned in two <a>Block</a> objects each of type <code>KEY_VALUE_SET</code>: a
+            KEY Block object and a VALUE Block object. For example, <i>Name: Ana Silva Carolina</i>
+            contains a key and value. <i>Name:</i> is the key. <i>Ana Silva Carolina</i> is the
+            value.
+            </para>
+             </li> <li> 
+            <para>
+            Table and table cell data. A TABLE Block object contains information about a detected
+            table. A CELL Block object is returned for each cell in a table.
+            </para>
+             </li> <li> 
+            <para>
+            Selectable elements such as checkboxes and radio buttons. A SELECTION_ELEMENT Block
+            object contains information about a selectable element.
+            </para>
+             </li> <li> 
+            <para>
+            Lines and words of text. A LINE Block object contains one or more WORD Block objects.
+            </para>
+             </li> </ul> 
+            <para>
+            You can choose which type of analysis to perform by specifying the <code>FeatureTypes</code>
+            list. 
+            </para>
+             
+            <para>
+            The output is returned in a list of <code>BLOCK</code> objects.
+            </para>
+             
+            <para>
+             <code>AnalyzeDocument</code> is a synchronous operation. To analyze documents asynchronously,
+            use <a>StartDocumentAnalysis</a>.
+            </para>
+             
+            <para>
+            For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/how-it-works-analyzing.html">Document
+            Text Analysis</a>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Textract.Model.AnalyzeDocumentRequest.Document">
+            <summary>
+            Gets and sets the property Document. 
+            <para>
+            The input document as base64-encoded bytes or an Amazon S3 object. If you use the
+            AWS CLI to call Amazon Textract operations, you can't pass image bytes. The document
+            must be an image in JPG or PNG format.
+            </para>
+             
+            <para>
+            If you are using an AWS SDK to call Amazon Textract, you might not need to base64-encode
+            image bytes passed using the <code>Bytes</code> field. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Textract.Model.AnalyzeDocumentRequest.FeatureTypes">
+            <summary>
+            Gets and sets the property FeatureTypes. 
+            <para>
+            A list of the types of analysis to perform. Add TABLES to the list to return information
+            about the tables detected in the input document. Add FORMS to return detected fields
+            and the associated text. To perform both types of analysis, add TABLES and FORMS to
+            <code>FeatureTypes</code>.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Textract.Model.AnalyzeDocumentResponse">
+            <summary>
+            This is the response object from the AnalyzeDocument operation.
+            </summary>
+        </member>
+        <member name="P:Amazon.Textract.Model.AnalyzeDocumentResponse.Blocks">
+            <summary>
+            Gets and sets the property Blocks. 
+            <para>
+            The text that's detected and analyzed by <code>AnalyzeDocument</code>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Textract.Model.AnalyzeDocumentResponse.DocumentMetadata">
+            <summary>
+            Gets and sets the property DocumentMetadata. 
+            <para>
+            Metadata about the analyzed document. An example is the number of pages.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Textract.Model.BadDocumentException">
+            <summary>
+             Textract exception
+             </summary>
+        </member>
+        <member name="M:Amazon.Textract.Model.BadDocumentException.#ctor(System.String)">
+            <summary>
+            Constructs a new BadDocumentException with the specified error
+            message.
+            </summary>
+            <param name="message">
+            Describes the error encountered.
+            </param>
+        </member>
+        <member name="M:Amazon.Textract.Model.BadDocumentException.#ctor(System.String,System.Exception)">
+            <summary>
+            Construct instance of BadDocumentException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.Textract.Model.BadDocumentException.#ctor(System.Exception)">
+            <summary>
+            Construct instance of BadDocumentException
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.Textract.Model.BadDocumentException.#ctor(System.String,System.Exception,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of BadDocumentException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="M:Amazon.Textract.Model.BadDocumentException.#ctor(System.String,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of BadDocumentException
+            </summary>
+            <param name="message"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="T:Amazon.Textract.Model.Block">
+            <summary>
+            A <code>Block</code> represents items that are recognized in a document within a group
+            of pixels close to each other. The information returned in a <code>Block</code> depends
+            on the type of operation. In document-text detection (for example <a>DetectDocumentText</a>),
+            you get information about the detected words and lines of text. In text analysis (for
+            example <a>AnalyzeDocument</a>), you can also get information about the fields, tables
+            and selection elements that are detected in the document.
+            
+             
+            <para>
+            An array of <code>Block</code> objects is returned by both synchronous and asynchronous
+            operations. In synchronous operations, such as <a>DetectDocumentText</a>, the array
+            of <code>Block</code> objects is the entire set of results. In asynchronous operations,
+            such as <a>GetDocumentAnalysis</a>, the array is returned over one or more responses.
+            </para>
+             
+            <para>
+            For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/how-it-works.html">How
+            Amazon Textract Works</a>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Textract.Model.Block.BlockType">
+            <summary>
+            Gets and sets the property BlockType. 
+            <para>
+            The type of text that's recognized in a block. In text-detection operations, the following
+            types are returned:
+            </para>
+             <ul> <li> 
+            <para>
+             <i>PAGE</i> - Contains a list of the LINE Block objects that are detected on a document
+            page.
+            </para>
+             </li> <li> 
+            <para>
+             <i>WORD</i> - A word detected on a document page. A word is one or more ISO basic
+            Latin script characters that aren't separated by spaces.
+            </para>
+             </li> <li> 
+            <para>
+             <i>LINE</i> - A string of tab-delimited, contiguous words that's detected on a document
+            page.
+            </para>
+             </li> </ul> 
+            <para>
+            In text analysis operations, the following types are returned:
+            </para>
+             <ul> <li> 
+            <para>
+             <i>PAGE</i> - Contains a list of child Block objects that are detected on a document
+            page.
+            </para>
+             </li> <li> 
+            <para>
+             <i>KEY_VALUE_SET</i> - Stores the KEY and VALUE Block objects for a field that's
+            detected on a document page. Use the <code>EntityType</code> field to determine if
+            a KEY_VALUE_SET object is a KEY Block object or a VALUE Block object. 
+            </para>
+             </li> <li> 
+            <para>
+             <i>WORD</i> - A word detected on a document page. A word is one or more ISO basic
+            Latin script characters that aren't separated by spaces that's detected on a document
+            page.
+            </para>
+             </li> <li> 
+            <para>
+             <i>LINE</i> - A string of tab-delimited, contiguous words that's detected on a document
+            page.
+            </para>
+             </li> <li> 
+            <para>
+             <i>TABLE</i> - A table that's detected on a document page. A table is any grid-based
+            information with 2 or more rows or columns with a cell span of 1 row and 1 column
+            each. 
+            </para>
+             </li> <li> 
+            <para>
+             <i>CELL</i> - A cell within a detected table. The cell is the parent of the block
+            that contains the text in the cell.
+            </para>
+             </li> <li> 
+            <para>
+             <i>SELECTION_ELEMENT</i> - A selectable element such as a radio button or checkbox
+            that's detected on a document page. Use the value of <code>SelectionStatus</code>
+            to determine the status of the selection element.
+            </para>
+             </li> </ul>
+            </summary>
+        </member>
+        <member name="P:Amazon.Textract.Model.Block.ColumnIndex">
+            <summary>
+            Gets and sets the property ColumnIndex. 
+            <para>
+            The column in which a table cell appears. The first column position is 1. <code>ColumnIndex</code>
+            isn't returned by <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Textract.Model.Block.ColumnSpan">
+            <summary>
+            Gets and sets the property ColumnSpan. 
+            <para>
+            The number of columns that a table cell spans. <code>ColumnSpan</code> isn't returned
+            by <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Textract.Model.Block.Confidence">
+            <summary>
+            Gets and sets the property Confidence. 
+            <para>
+            The confidence that Amazon Textract has in the accuracy of the recognized text and
+            the accuracy of the geometry points around the recognized text.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Textract.Model.Block.EntityTypes">
+            <summary>
+            Gets and sets the property EntityTypes. 
+            <para>
+            The type of entity. The following can be returned:
+            </para>
+             <ul> <li> 
+            <para>
+             <i>KEY</i> - An identifier for a field on the document.
+            </para>
+             </li> <li> 
+            <para>
+             <i>VALUE</i> - The field text.
+            </para>
+             </li> </ul> 
+            <para>
+             <code>EntityTypes</code> isn't returned by <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Textract.Model.Block.Geometry">
+            <summary>
+            Gets and sets the property Geometry. 
+            <para>
+            The location of the recognized text on the image. It includes an axis-aligned, coarse
+            bounding box that surrounds the text, and a finer-grain polygon for more accurate
+            spatial information. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Textract.Model.Block.Id">
+            <summary>
+            Gets and sets the property Id. 
+            <para>
+            The identifier for the recognized text. The identifier is only unique for a single
+            operation. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Textract.Model.Block.Page">
+            <summary>
+            Gets and sets the property Page. 
+            <para>
+            The page in which a block was detected. <code>Page</code> is returned by asynchronous
+            operations. Page values greater than 1 are only returned for multi-page documents
+            that are in PDF format. A scanned image (JPG/PNG), even if it contains multiple document
+            pages, is always considered to be a single-page document and the value of <code>Page</code>
+            is always 1. Synchronous operations don't return <code>Page</code> as every input
+            document is considered to be a single-page document.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Textract.Model.Block.Relationships">
+            <summary>
+            Gets and sets the property Relationships. 
+            <para>
+            A list of child blocks of the current block. For example a LINE object has child blocks
+            for each WORD block that's part of the line of text. There aren't Relationship objects
+            in the list for relationships that don't exist, such as when the current block has
+            no child blocks. The list size can be the following:
+            </para>
+             <ul> <li> 
+            <para>
+            0 - The block has no child blocks.
+            </para>
+             </li> <li> 
+            <para>
+            1 - The block has child blocks.
+            </para>
+             </li> </ul>
+            </summary>
+        </member>
+        <member name="P:Amazon.Textract.Model.Block.RowIndex">
+            <summary>
+            Gets and sets the property RowIndex. 
+            <para>
+            The row in which a table cell is located. The first row position is 1. <code>RowIndex</code>
+            isn't returned by <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Textract.Model.Block.RowSpan">
+            <summary>
+            Gets and sets the property RowSpan. 
+            <para>
+            The number of rows that a table spans. <code>RowSpan</code> isn't returned by <code>DetectDocumentText</code>
+            and <code>GetDocumentTextDetection</code>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Textract.Model.Block.SelectionStatus">
+            <summary>
+            Gets and sets the property SelectionStatus. 
+            <para>
+            The selection status of a selectable element such as a radio button or checkbox. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Textract.Model.Block.Text">
+            <summary>
+            Gets and sets the property Text. 
+            <para>
+            The word or line of text that's recognized by Amazon Textract. 
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Textract.Model.BoundingBox">
+            <summary>
+            The bounding box around the recognized text, key, value, table or table cell on a
+            document page. The <code>left</code> (x-coordinate) and <code>top</code> (y-coordinate)
+            are coordinates that represent the top and left sides of the bounding box. Note that
+            the upper-left corner of the image is the origin (0,0). 
+            
+             
+            <para>
+            The <code>top</code> and <code>left</code> values returned are ratios of the overall
+            document page size. For example, if the input image is 700 x 200 pixels, and the top-left
+            coordinate of the bounding box is 350 x 50 pixels, the API returns a <code>left</code>
+            value of 0.5 (350/700) and a <code>top</code> value of 0.25 (50/200).
+            </para>
+             
+            <para>
+            The <code>width</code> and <code>height</code> values represent the dimensions of
+            the bounding box as a ratio of the overall document page dimension. For example, if
+            the document page size is 700 x 200 pixels, and the bounding box width is 70 pixels,
+            the width returned is 0.1. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Textract.Model.BoundingBox.Height">
+            <summary>
+            Gets and sets the property Height. 
+            <para>
+            The height of the bounding box as a ratio of the overall document page height.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Textract.Model.BoundingBox.Left">
+            <summary>
+            Gets and sets the property Left. 
+            <para>
+            The left coordinate of the bounding box as a ratio of overall document page width.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Textract.Model.BoundingBox.Top">
+            <summary>
+            Gets and sets the property Top. 
+            <para>
+            The top coordinate of the bounding box as a ratio of overall document page height.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Textract.Model.BoundingBox.Width">
+            <summary>
+            Gets and sets the property Width. 
+            <para>
+            The width of the bounding box as a ratio of the overall document page width.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Textract.Model.DetectDocumentTextRequest">
+            <summary>
+            Container for the parameters to the DetectDocumentText operation.
+            Detects text in the input document. Amazon Textract can detect lines of text and the
+            words that make up a line of text. The input document must be an image in JPG or PNG
+            format. <code>DetectDocumentText</code> returns the detected text in an array of <a>Block</a>
+            objects. 
+            
+             
+            <para>
+            Each document page has as an associated <code>Block</code> of type PAGE. Each PAGE
+            <code>Block</code> object is the parent of LINE <code>Block</code> objects that represent
+            the lines of detected text on a page. A LINE <code>Block</code> object is a parent
+            for each word that makes up the line. Words are represented by <code>Block</code>
+            objects of type WORD.
+            </para>
+             
+            <para>
+             <code>DetectDocumentText</code> is a synchronous operation. To analyze documents
+            asynchronously, use <a>StartDocumentTextDetection</a>.
+            </para>
+             
+            <para>
+            For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/how-it-works-detecting.html">Document
+            Text Detection</a>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Textract.Model.DetectDocumentTextRequest.Document">
+            <summary>
+            Gets and sets the property Document. 
+            <para>
+            The input document as base64-encoded bytes or an Amazon S3 object. If you use the
+            AWS CLI to call Amazon Textract operations, you can't pass image bytes. The document
+            must be an image in JPG or PNG format.
+            </para>
+             
+            <para>
+            If you are using an AWS SDK to call Amazon Textract, you might not need to base64-encode
+            image bytes passed using the <code>Bytes</code> field. 
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Textract.Model.DetectDocumentTextResponse">
+            <summary>
+            This is the response object from the DetectDocumentText operation.
+            </summary>
+        </member>
+        <member name="P:Amazon.Textract.Model.DetectDocumentTextResponse.Blocks">
+            <summary>
+            Gets and sets the property Blocks. 
+            <para>
+            An array of Block objects containing the text detected in the document.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Textract.Model.DetectDocumentTextResponse.DocumentMetadata">
+            <summary>
+            Gets and sets the property DocumentMetadata. 
+            <para>
+            Metadata about the document. Contains the number of pages that are detected in the
+            document.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Textract.Model.Document">
+            <summary>
+            The input document, either as bytes or as an S3 object.
+            
+             
+            <para>
+            You pass image bytes to an Amazon Textract API operation by using the <code>Bytes</code>
+            property. For example, you would use the <code>Bytes</code> property to pass a document
+            loaded from a local file system. Image bytes passed by using the <code>Bytes</code>
+            property must be base64 encoded. Your code might not need to encode document file
+            bytes if you're using an AWS SDK to call Amazon Textract API operations. 
+            </para>
+             
+            <para>
+            You pass images stored in an S3 bucket to an Amazon Textract API operation by using
+            the <code>S3Object</code> property. Documents stored in an S3 bucket don't need to
+            be base64 encoded.
+            </para>
+             
+            <para>
+            The AWS Region for the S3 bucket that contains the S3 object must match the AWS Region
+            that you use for Amazon Textract operations.
+            </para>
+             
+            <para>
+            If you use the AWS CLI to call Amazon Textract operations, passing image bytes using
+            the Bytes property isn't supported. You must first upload the document to an Amazon
+            S3 bucket, and then call the operation using the S3Object property.
+            </para>
+             
+            <para>
+            For Amazon Textract to process an S3 object, the user must have permission to access
+            the S3 object. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Textract.Model.Document.Bytes">
+            <summary>
+            Gets and sets the property Bytes. 
+            <para>
+            A blob of base-64 encoded documents bytes. The maximum size of a document that's provided
+            in a blob of bytes is 5 MB. The document bytes must be in PNG or JPG format.
+            </para>
+             
+            <para>
+            If you are using an AWS SDK to call Amazon Textract, you might not need to base64-encode
+            image bytes passed using the <code>Bytes</code> field. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Textract.Model.Document.S3Object">
+            <summary>
+            Gets and sets the property S3Object. 
+            <para>
+            Identifies an S3 object as the document source. The maximum size of a document stored
+            in an S3 bucket is 5 MB.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Textract.Model.DocumentLocation">
+            <summary>
+            The Amazon S3 bucket that contains the document to be processed. It's used by asynchronous
+            operations such as <a>StartDocumentTextDetection</a>.
+            
+             
+            <para>
+            The input document can be an image file in JPG or PNG format. It can also be a file
+            in PDF format.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Textract.Model.DocumentLocation.S3Object">
+            <summary>
+            Gets and sets the property S3Object. 
+            <para>
+            The Amazon S3 bucket that contains the input document.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Textract.Model.DocumentMetadata">
+            <summary>
+            Information about the input document.
+            </summary>
+        </member>
+        <member name="P:Amazon.Textract.Model.DocumentMetadata.Pages">
+            <summary>
+            Gets and sets the property Pages. 
+            <para>
+            The number of pages detected in the document.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Textract.Model.DocumentTooLargeException">
+            <summary>
+             Textract exception
+             </summary>
+        </member>
+        <member name="M:Amazon.Textract.Model.DocumentTooLargeException.#ctor(System.String)">
+            <summary>
+            Constructs a new DocumentTooLargeException with the specified error
+            message.
+            </summary>
+            <param name="message">
+            Describes the error encountered.
+            </param>
+        </member>
+        <member name="M:Amazon.Textract.Model.DocumentTooLargeException.#ctor(System.String,System.Exception)">
+            <summary>
+            Construct instance of DocumentTooLargeException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.Textract.Model.DocumentTooLargeException.#ctor(System.Exception)">
+            <summary>
+            Construct instance of DocumentTooLargeException
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.Textract.Model.DocumentTooLargeException.#ctor(System.String,System.Exception,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of DocumentTooLargeException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="M:Amazon.Textract.Model.DocumentTooLargeException.#ctor(System.String,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of DocumentTooLargeException
+            </summary>
+            <param name="message"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="T:Amazon.Textract.Model.Geometry">
+            <summary>
+            Information about where a recognized text, key, value, table, or table cell is located
+            on a document page.
+            </summary>
+        </member>
+        <member name="P:Amazon.Textract.Model.Geometry.BoundingBox">
+            <summary>
+            Gets and sets the property BoundingBox. 
+            <para>
+            An axis-aligned coarse representation of the location of the recognized text on the
+            document page.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Textract.Model.Geometry.Polygon">
+            <summary>
+            Gets and sets the property Polygon. 
+            <para>
+            Within the bounding box, a fine-grained polygon around the recognized text.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Textract.Model.GetDocumentAnalysisRequest">
+            <summary>
+            Container for the parameters to the GetDocumentAnalysis operation.
+            Gets the results for an Amazon Textract asynchronous operation that analyzes text
+            in a document.
+            
+             
+            <para>
+            You start asynchronous text analysis by calling <a>StartDocumentAnalysis</a>, which
+            returns a job identifier (<code>JobId</code>). When the text analysis operation finishes,
+            Amazon Textract publishes a completion status to the Amazon Simple Notification Service
+            (Amazon SNS) topic that's registered in the initial call to <code>StartDocumentAnalysis</code>.
+            To get the results of the text-detection operation, first check that the status value
+            published to the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call <code>GetDocumentAnalysis</code>,
+            and pass the job identifier (<code>JobId</code>) from the initial call to <code>StartDocumentAnalysis</code>.
+            </para>
+             
+            <para>
+             <code>GetDocumentAnalysis</code> returns an array of <a>Block</a> objects. The following
+            types of information are returned: 
+            </para>
+             <ul> <li> 
+            <para>
+            Words and lines that are related to nearby lines and words. The related information
+            is returned in two <a>Block</a> objects each of type <code>KEY_VALUE_SET</code>: a
+            KEY Block object and a VALUE Block object. For example, <i>Name: Ana Silva Carolina</i>
+            contains a key and value. <i>Name:</i> is the key. <i>Ana Silva Carolina</i> is the
+            value.
+            </para>
+             </li> <li> 
+            <para>
+            Table and table cell data. A TABLE Block object contains information about a detected
+            table. A CELL Block object is returned for each cell in a table.
+            </para>
+             </li> <li> 
+            <para>
+            Selectable elements such as checkboxes and radio buttons. A SELECTION_ELEMENT Block
+            object contains information about a selectable element.
+            </para>
+             </li> <li> 
+            <para>
+            Lines and words of text. A LINE Block object contains one or more WORD Block objects.
+            </para>
+             </li> </ul> 
+            <para>
+            Use the <code>MaxResults</code> parameter to limit the number of blocks returned.
+            If there are more results than specified in <code>MaxResults</code>, the value of
+            <code>NextToken</code> in the operation response contains a pagination token for getting
+            the next set of results. To get the next page of results, call <code>GetDocumentAnalysis</code>,
+            and populate the <code>NextToken</code> request parameter with the token value that's
+            returned from the previous call to <code>GetDocumentAnalysis</code>.
+            </para>
+             
+            <para>
+            For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/how-it-works-analyzing.html">Document
+            Text Analysis</a>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Textract.Model.GetDocumentAnalysisRequest.JobId">
+            <summary>
+            Gets and sets the property JobId. 
+            <para>
+            A unique identifier for the text-detection job. The <code>JobId</code> is returned
+            from <code>StartDocumentAnalysis</code>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Textract.Model.GetDocumentAnalysisRequest.MaxResults">
+            <summary>
+            Gets and sets the property MaxResults. 
+            <para>
+            The maximum number of results to return per paginated call. The largest value that
+            you can specify is 1,000. If you specify a value greater than 1,000, a maximum of
+            1,000 results is returned. The default value is 1,000.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Textract.Model.GetDocumentAnalysisRequest.NextToken">
+            <summary>
+            Gets and sets the property NextToken. 
+            <para>
+            If the previous response was incomplete (because there are more blocks to retrieve),
+            Amazon Textract returns a pagination token in the response. You can use this pagination
+            token to retrieve the next set of blocks.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Textract.Model.GetDocumentAnalysisResponse">
+            <summary>
+            This is the response object from the GetDocumentAnalysis operation.
+            </summary>
+        </member>
+        <member name="P:Amazon.Textract.Model.GetDocumentAnalysisResponse.Blocks">
+            <summary>
+            Gets and sets the property Blocks. 
+            <para>
+            The results of the text analysis operation.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Textract.Model.GetDocumentAnalysisResponse.DocumentMetadata">
+            <summary>
+            Gets and sets the property DocumentMetadata. 
+            <para>
+            Information about a document that Amazon Textract processed. <code>DocumentMetadata</code>
+            is returned in every page of paginated responses from an Amazon Textract video operation.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Textract.Model.GetDocumentAnalysisResponse.JobStatus">
+            <summary>
+            Gets and sets the property JobStatus. 
+            <para>
+            The current status of the text detection job.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Textract.Model.GetDocumentAnalysisResponse.NextToken">
+            <summary>
+            Gets and sets the property NextToken. 
+            <para>
+            If the response is truncated, Amazon Textract returns this token. You can use this
+            token in the subsequent request to retrieve the next set of text detection results.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Textract.Model.GetDocumentAnalysisResponse.StatusMessage">
+            <summary>
+            Gets and sets the property StatusMessage. 
+            <para>
+            The current status of an asynchronous document analysis operation.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Textract.Model.GetDocumentAnalysisResponse.Warnings">
+            <summary>
+            Gets and sets the property Warnings. 
+            <para>
+            A list of warnings that occurred during the document analysis operation.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Textract.Model.GetDocumentTextDetectionRequest">
+            <summary>
+            Container for the parameters to the GetDocumentTextDetection operation.
+            Gets the results for an Amazon Textract asynchronous operation that detects text in
+            a document. Amazon Textract can detect lines of text and the words that make up a
+            line of text.
+            
+             
+            <para>
+            You start asynchronous text detection by calling <a>StartDocumentTextDetection</a>,
+            which returns a job identifier (<code>JobId</code>). When the text detection operation
+            finishes, Amazon Textract publishes a completion status to the Amazon Simple Notification
+            Service (Amazon SNS) topic that's registered in the initial call to <code>StartDocumentTextDetection</code>.
+            To get the results of the text-detection operation, first check that the status value
+            published to the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call <code>GetDocumentTextDetection</code>,
+            and pass the job identifier (<code>JobId</code>) from the initial call to <code>StartDocumentTextDetection</code>.
+            </para>
+             
+            <para>
+             <code>GetDocumentTextDetection</code> returns an array of <a>Block</a> objects. 
+            </para>
+             
+            <para>
+            Each document page has as an associated <code>Block</code> of type PAGE. Each PAGE
+            <code>Block</code> object is the parent of LINE <code>Block</code> objects that represent
+            the lines of detected text on a page. A LINE <code>Block</code> object is a parent
+            for each word that makes up the line. Words are represented by <code>Block</code>
+            objects of type WORD.
+            </para>
+             
+            <para>
+            Use the MaxResults parameter to limit the number of blocks that are returned. If there
+            are more results than specified in <code>MaxResults</code>, the value of <code>NextToken</code>
+            in the operation response contains a pagination token for getting the next set of
+            results. To get the next page of results, call <code>GetDocumentTextDetection</code>,
+            and populate the <code>NextToken</code> request parameter with the token value that's
+            returned from the previous call to <code>GetDocumentTextDetection</code>.
+            </para>
+             
+            <para>
+            For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/how-it-works-detecting.html">Document
+            Text Detection</a>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Textract.Model.GetDocumentTextDetectionRequest.JobId">
+            <summary>
+            Gets and sets the property JobId. 
+            <para>
+            A unique identifier for the text detection job. The <code>JobId</code> is returned
+            from <code>StartDocumentTextDetection</code>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Textract.Model.GetDocumentTextDetectionRequest.MaxResults">
+            <summary>
+            Gets and sets the property MaxResults. 
+            <para>
+            The maximum number of results to return per paginated call. The largest value you
+            can specify is 1,000. If you specify a value greater than 1,000, a maximum of 1,000
+            results is returned. The default value is 1,000.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Textract.Model.GetDocumentTextDetectionRequest.NextToken">
+            <summary>
+            Gets and sets the property NextToken. 
+            <para>
+            If the previous response was incomplete (because there are more blocks to retrieve),
+            Amazon Textract returns a pagination token in the response. You can use this pagination
+            token to retrieve the next set of blocks.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Textract.Model.GetDocumentTextDetectionResponse">
+            <summary>
+            This is the response object from the GetDocumentTextDetection operation.
+            </summary>
+        </member>
+        <member name="P:Amazon.Textract.Model.GetDocumentTextDetectionResponse.Blocks">
+            <summary>
+            Gets and sets the property Blocks. 
+            <para>
+            The results of the text-detection operation.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Textract.Model.GetDocumentTextDetectionResponse.DocumentMetadata">
+            <summary>
+            Gets and sets the property DocumentMetadata. 
+            <para>
+            Information about a document that Amazon Textract processed. <code>DocumentMetadata</code>
+            is returned in every page of paginated responses from an Amazon Textract video operation.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Textract.Model.GetDocumentTextDetectionResponse.JobStatus">
+            <summary>
+            Gets and sets the property JobStatus. 
+            <para>
+            The current status of the text detection job.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Textract.Model.GetDocumentTextDetectionResponse.NextToken">
+            <summary>
+            Gets and sets the property NextToken. 
+            <para>
+            If the response is truncated, Amazon Textract returns this token. You can use this
+            token in the subsequent request to retrieve the next set of text-detection results.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Textract.Model.GetDocumentTextDetectionResponse.StatusMessage">
+            <summary>
+            Gets and sets the property StatusMessage. 
+            <para>
+            The current status of an asynchronous document text-detection operation. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Textract.Model.GetDocumentTextDetectionResponse.Warnings">
+            <summary>
+            Gets and sets the property Warnings. 
+            <para>
+            A list of warnings that occurred during the document text-detection operation.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Textract.Model.IdempotentParameterMismatchException">
+            <summary>
+             Textract exception
+             </summary>
+        </member>
+        <member name="M:Amazon.Textract.Model.IdempotentParameterMismatchException.#ctor(System.String)">
+            <summary>
+            Constructs a new IdempotentParameterMismatchException with the specified error
+            message.
+            </summary>
+            <param name="message">
+            Describes the error encountered.
+            </param>
+        </member>
+        <member name="M:Amazon.Textract.Model.IdempotentParameterMismatchException.#ctor(System.String,System.Exception)">
+            <summary>
+            Construct instance of IdempotentParameterMismatchException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.Textract.Model.IdempotentParameterMismatchException.#ctor(System.Exception)">
+            <summary>
+            Construct instance of IdempotentParameterMismatchException
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.Textract.Model.IdempotentParameterMismatchException.#ctor(System.String,System.Exception,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of IdempotentParameterMismatchException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="M:Amazon.Textract.Model.IdempotentParameterMismatchException.#ctor(System.String,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of IdempotentParameterMismatchException
+            </summary>
+            <param name="message"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="T:Amazon.Textract.Model.InternalServerErrorException">
+            <summary>
+             Textract exception
+             </summary>
+        </member>
+        <member name="M:Amazon.Textract.Model.InternalServerErrorException.#ctor(System.String)">
+            <summary>
+            Constructs a new InternalServerErrorException with the specified error
+            message.
+            </summary>
+            <param name="message">
+            Describes the error encountered.
+            </param>
+        </member>
+        <member name="M:Amazon.Textract.Model.InternalServerErrorException.#ctor(System.String,System.Exception)">
+            <summary>
+            Construct instance of InternalServerErrorException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.Textract.Model.InternalServerErrorException.#ctor(System.Exception)">
+            <summary>
+            Construct instance of InternalServerErrorException
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.Textract.Model.InternalServerErrorException.#ctor(System.String,System.Exception,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of InternalServerErrorException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="M:Amazon.Textract.Model.InternalServerErrorException.#ctor(System.String,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of InternalServerErrorException
+            </summary>
+            <param name="message"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="T:Amazon.Textract.Model.Internal.MarshallTransformations.AnalyzeDocumentRequestMarshaller">
+            <summary>
+            AnalyzeDocument Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.Textract.Model.Internal.MarshallTransformations.AnalyzeDocumentRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Textract.Model.Internal.MarshallTransformations.AnalyzeDocumentRequestMarshaller.Marshall(Amazon.Textract.Model.AnalyzeDocumentRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.Textract.Model.Internal.MarshallTransformations.AnalyzeDocumentRequestMarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Textract.Model.Internal.MarshallTransformations.AnalyzeDocumentResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for AnalyzeDocument operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.Textract.Model.Internal.MarshallTransformations.AnalyzeDocumentResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Textract.Model.Internal.MarshallTransformations.AnalyzeDocumentResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.Textract.Model.Internal.MarshallTransformations.AnalyzeDocumentResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Textract.Model.Internal.MarshallTransformations.BlockUnmarshaller">
+            <summary>
+            Response Unmarshaller for Block Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.Textract.Model.Internal.MarshallTransformations.BlockUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#Textract#Model#Block,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Textract.Model.Internal.MarshallTransformations.BlockUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.Textract.Model.Internal.MarshallTransformations.BlockUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Textract.Model.Internal.MarshallTransformations.BoundingBoxUnmarshaller">
+            <summary>
+            Response Unmarshaller for BoundingBox Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.Textract.Model.Internal.MarshallTransformations.BoundingBoxUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#Textract#Model#BoundingBox,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Textract.Model.Internal.MarshallTransformations.BoundingBoxUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.Textract.Model.Internal.MarshallTransformations.BoundingBoxUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Textract.Model.Internal.MarshallTransformations.DetectDocumentTextRequestMarshaller">
+            <summary>
+            DetectDocumentText Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.Textract.Model.Internal.MarshallTransformations.DetectDocumentTextRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Textract.Model.Internal.MarshallTransformations.DetectDocumentTextRequestMarshaller.Marshall(Amazon.Textract.Model.DetectDocumentTextRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.Textract.Model.Internal.MarshallTransformations.DetectDocumentTextRequestMarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Textract.Model.Internal.MarshallTransformations.DetectDocumentTextResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for DetectDocumentText operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.Textract.Model.Internal.MarshallTransformations.DetectDocumentTextResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Textract.Model.Internal.MarshallTransformations.DetectDocumentTextResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.Textract.Model.Internal.MarshallTransformations.DetectDocumentTextResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Textract.Model.Internal.MarshallTransformations.DocumentLocationMarshaller">
+            <summary>
+            DocumentLocation Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.Textract.Model.Internal.MarshallTransformations.DocumentLocationMarshaller.Marshall(Amazon.Textract.Model.DocumentLocation,Amazon.Runtime.Internal.Transform.JsonMarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="requestObject"></param>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="F:Amazon.Textract.Model.Internal.MarshallTransformations.DocumentLocationMarshaller.Instance">
+            <summary>
+            Singleton Marshaller.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Textract.Model.Internal.MarshallTransformations.DocumentMarshaller">
+            <summary>
+            Document Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.Textract.Model.Internal.MarshallTransformations.DocumentMarshaller.Marshall(Amazon.Textract.Model.Document,Amazon.Runtime.Internal.Transform.JsonMarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="requestObject"></param>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="F:Amazon.Textract.Model.Internal.MarshallTransformations.DocumentMarshaller.Instance">
+            <summary>
+            Singleton Marshaller.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Textract.Model.Internal.MarshallTransformations.DocumentMetadataUnmarshaller">
+            <summary>
+            Response Unmarshaller for DocumentMetadata Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.Textract.Model.Internal.MarshallTransformations.DocumentMetadataUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#Textract#Model#DocumentMetadata,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Textract.Model.Internal.MarshallTransformations.DocumentMetadataUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.Textract.Model.Internal.MarshallTransformations.DocumentMetadataUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Textract.Model.Internal.MarshallTransformations.GeometryUnmarshaller">
+            <summary>
+            Response Unmarshaller for Geometry Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.Textract.Model.Internal.MarshallTransformations.GeometryUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#Textract#Model#Geometry,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Textract.Model.Internal.MarshallTransformations.GeometryUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.Textract.Model.Internal.MarshallTransformations.GeometryUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Textract.Model.Internal.MarshallTransformations.GetDocumentAnalysisRequestMarshaller">
+            <summary>
+            GetDocumentAnalysis Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.Textract.Model.Internal.MarshallTransformations.GetDocumentAnalysisRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Textract.Model.Internal.MarshallTransformations.GetDocumentAnalysisRequestMarshaller.Marshall(Amazon.Textract.Model.GetDocumentAnalysisRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.Textract.Model.Internal.MarshallTransformations.GetDocumentAnalysisRequestMarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Textract.Model.Internal.MarshallTransformations.GetDocumentAnalysisResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for GetDocumentAnalysis operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.Textract.Model.Internal.MarshallTransformations.GetDocumentAnalysisResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Textract.Model.Internal.MarshallTransformations.GetDocumentAnalysisResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.Textract.Model.Internal.MarshallTransformations.GetDocumentAnalysisResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Textract.Model.Internal.MarshallTransformations.GetDocumentTextDetectionRequestMarshaller">
+            <summary>
+            GetDocumentTextDetection Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.Textract.Model.Internal.MarshallTransformations.GetDocumentTextDetectionRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Textract.Model.Internal.MarshallTransformations.GetDocumentTextDetectionRequestMarshaller.Marshall(Amazon.Textract.Model.GetDocumentTextDetectionRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.Textract.Model.Internal.MarshallTransformations.GetDocumentTextDetectionRequestMarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Textract.Model.Internal.MarshallTransformations.GetDocumentTextDetectionResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for GetDocumentTextDetection operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.Textract.Model.Internal.MarshallTransformations.GetDocumentTextDetectionResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Textract.Model.Internal.MarshallTransformations.GetDocumentTextDetectionResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.Textract.Model.Internal.MarshallTransformations.GetDocumentTextDetectionResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Textract.Model.Internal.MarshallTransformations.NotificationChannelMarshaller">
+            <summary>
+            NotificationChannel Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.Textract.Model.Internal.MarshallTransformations.NotificationChannelMarshaller.Marshall(Amazon.Textract.Model.NotificationChannel,Amazon.Runtime.Internal.Transform.JsonMarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="requestObject"></param>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="F:Amazon.Textract.Model.Internal.MarshallTransformations.NotificationChannelMarshaller.Instance">
+            <summary>
+            Singleton Marshaller.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Textract.Model.Internal.MarshallTransformations.PointUnmarshaller">
+            <summary>
+            Response Unmarshaller for Point Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.Textract.Model.Internal.MarshallTransformations.PointUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#Textract#Model#Point,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Textract.Model.Internal.MarshallTransformations.PointUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.Textract.Model.Internal.MarshallTransformations.PointUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Textract.Model.Internal.MarshallTransformations.RelationshipUnmarshaller">
+            <summary>
+            Response Unmarshaller for Relationship Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.Textract.Model.Internal.MarshallTransformations.RelationshipUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#Textract#Model#Relationship,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Textract.Model.Internal.MarshallTransformations.RelationshipUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.Textract.Model.Internal.MarshallTransformations.RelationshipUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Textract.Model.Internal.MarshallTransformations.S3ObjectMarshaller">
+            <summary>
+            S3Object Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.Textract.Model.Internal.MarshallTransformations.S3ObjectMarshaller.Marshall(Amazon.Textract.Model.S3Object,Amazon.Runtime.Internal.Transform.JsonMarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="requestObject"></param>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="F:Amazon.Textract.Model.Internal.MarshallTransformations.S3ObjectMarshaller.Instance">
+            <summary>
+            Singleton Marshaller.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Textract.Model.Internal.MarshallTransformations.StartDocumentAnalysisRequestMarshaller">
+            <summary>
+            StartDocumentAnalysis Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.Textract.Model.Internal.MarshallTransformations.StartDocumentAnalysisRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Textract.Model.Internal.MarshallTransformations.StartDocumentAnalysisRequestMarshaller.Marshall(Amazon.Textract.Model.StartDocumentAnalysisRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.Textract.Model.Internal.MarshallTransformations.StartDocumentAnalysisRequestMarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Textract.Model.Internal.MarshallTransformations.StartDocumentAnalysisResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for StartDocumentAnalysis operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.Textract.Model.Internal.MarshallTransformations.StartDocumentAnalysisResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Textract.Model.Internal.MarshallTransformations.StartDocumentAnalysisResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.Textract.Model.Internal.MarshallTransformations.StartDocumentAnalysisResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Textract.Model.Internal.MarshallTransformations.StartDocumentTextDetectionRequestMarshaller">
+            <summary>
+            StartDocumentTextDetection Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.Textract.Model.Internal.MarshallTransformations.StartDocumentTextDetectionRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Textract.Model.Internal.MarshallTransformations.StartDocumentTextDetectionRequestMarshaller.Marshall(Amazon.Textract.Model.StartDocumentTextDetectionRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.Textract.Model.Internal.MarshallTransformations.StartDocumentTextDetectionRequestMarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Textract.Model.Internal.MarshallTransformations.StartDocumentTextDetectionResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for StartDocumentTextDetection operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.Textract.Model.Internal.MarshallTransformations.StartDocumentTextDetectionResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Textract.Model.Internal.MarshallTransformations.StartDocumentTextDetectionResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.Textract.Model.Internal.MarshallTransformations.StartDocumentTextDetectionResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Textract.Model.Internal.MarshallTransformations.WarningUnmarshaller">
+            <summary>
+            Response Unmarshaller for Warning Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.Textract.Model.Internal.MarshallTransformations.WarningUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#Textract#Model#Warning,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Textract.Model.Internal.MarshallTransformations.WarningUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.Textract.Model.Internal.MarshallTransformations.WarningUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Textract.Model.InvalidJobIdException">
+            <summary>
+             Textract exception
+             </summary>
+        </member>
+        <member name="M:Amazon.Textract.Model.InvalidJobIdException.#ctor(System.String)">
+            <summary>
+            Constructs a new InvalidJobIdException with the specified error
+            message.
+            </summary>
+            <param name="message">
+            Describes the error encountered.
+            </param>
+        </member>
+        <member name="M:Amazon.Textract.Model.InvalidJobIdException.#ctor(System.String,System.Exception)">
+            <summary>
+            Construct instance of InvalidJobIdException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.Textract.Model.InvalidJobIdException.#ctor(System.Exception)">
+            <summary>
+            Construct instance of InvalidJobIdException
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.Textract.Model.InvalidJobIdException.#ctor(System.String,System.Exception,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of InvalidJobIdException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="M:Amazon.Textract.Model.InvalidJobIdException.#ctor(System.String,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of InvalidJobIdException
+            </summary>
+            <param name="message"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="T:Amazon.Textract.Model.InvalidParameterException">
+            <summary>
+             Textract exception
+             </summary>
+        </member>
+        <member name="M:Amazon.Textract.Model.InvalidParameterException.#ctor(System.String)">
+            <summary>
+            Constructs a new InvalidParameterException with the specified error
+            message.
+            </summary>
+            <param name="message">
+            Describes the error encountered.
+            </param>
+        </member>
+        <member name="M:Amazon.Textract.Model.InvalidParameterException.#ctor(System.String,System.Exception)">
+            <summary>
+            Construct instance of InvalidParameterException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.Textract.Model.InvalidParameterException.#ctor(System.Exception)">
+            <summary>
+            Construct instance of InvalidParameterException
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.Textract.Model.InvalidParameterException.#ctor(System.String,System.Exception,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of InvalidParameterException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="M:Amazon.Textract.Model.InvalidParameterException.#ctor(System.String,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of InvalidParameterException
+            </summary>
+            <param name="message"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="T:Amazon.Textract.Model.InvalidS3ObjectException">
+            <summary>
+             Textract exception
+             </summary>
+        </member>
+        <member name="M:Amazon.Textract.Model.InvalidS3ObjectException.#ctor(System.String)">
+            <summary>
+            Constructs a new InvalidS3ObjectException with the specified error
+            message.
+            </summary>
+            <param name="message">
+            Describes the error encountered.
+            </param>
+        </member>
+        <member name="M:Amazon.Textract.Model.InvalidS3ObjectException.#ctor(System.String,System.Exception)">
+            <summary>
+            Construct instance of InvalidS3ObjectException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.Textract.Model.InvalidS3ObjectException.#ctor(System.Exception)">
+            <summary>
+            Construct instance of InvalidS3ObjectException
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.Textract.Model.InvalidS3ObjectException.#ctor(System.String,System.Exception,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of InvalidS3ObjectException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="M:Amazon.Textract.Model.InvalidS3ObjectException.#ctor(System.String,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of InvalidS3ObjectException
+            </summary>
+            <param name="message"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="T:Amazon.Textract.Model.LimitExceededException">
+            <summary>
+             Textract exception
+             </summary>
+        </member>
+        <member name="M:Amazon.Textract.Model.LimitExceededException.#ctor(System.String)">
+            <summary>
+            Constructs a new LimitExceededException with the specified error
+            message.
+            </summary>
+            <param name="message">
+            Describes the error encountered.
+            </param>
+        </member>
+        <member name="M:Amazon.Textract.Model.LimitExceededException.#ctor(System.String,System.Exception)">
+            <summary>
+            Construct instance of LimitExceededException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.Textract.Model.LimitExceededException.#ctor(System.Exception)">
+            <summary>
+            Construct instance of LimitExceededException
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.Textract.Model.LimitExceededException.#ctor(System.String,System.Exception,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of LimitExceededException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="M:Amazon.Textract.Model.LimitExceededException.#ctor(System.String,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of LimitExceededException
+            </summary>
+            <param name="message"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="T:Amazon.Textract.Model.NotificationChannel">
+            <summary>
+            The Amazon Simple Notification Service (Amazon SNS) topic to which Amazon Textract
+            publishes the completion status of an asynchronous document operation, such as <a>StartDocumentTextDetection</a>.
+            </summary>
+        </member>
+        <member name="P:Amazon.Textract.Model.NotificationChannel.RoleArn">
+            <summary>
+            Gets and sets the property RoleArn. 
+            <para>
+            The Amazon Resource Name (ARN) of an IAM role that gives Amazon Textract publishing
+            permissions to the Amazon SNS topic. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Textract.Model.NotificationChannel.SNSTopicArn">
+            <summary>
+            Gets and sets the property SNSTopicArn. 
+            <para>
+            The Amazon SNS topic that Amazon Textract posts the completion status to.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Textract.Model.Point">
+            <summary>
+            The X and Y coordinates of a point on a document page. The X and Y values returned
+            are ratios of the overall document page size. For example, if the input document is
+            700 x 200 and the operation returns X=0.5 and Y=0.25, then the point is at the (350,50)
+            pixel coordinate on the document page.
+            
+             
+            <para>
+            An array of <code>Point</code> objects, <code>Polygon</code>, is returned by <a>DetectDocumentText</a>.
+            <code>Polygon</code> represents a fine-grained polygon around detected text. For more
+            information, see Geometry in the Amazon Textract Developer Guide. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Textract.Model.Point.X">
+            <summary>
+            Gets and sets the property X. 
+            <para>
+            The value of the X coordinate for a point on a <code>Polygon</code>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Textract.Model.Point.Y">
+            <summary>
+            Gets and sets the property Y. 
+            <para>
+            The value of the Y coordinate for a point on a <code>Polygon</code>.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Textract.Model.ProvisionedThroughputExceededException">
+            <summary>
+             Textract exception
+             </summary>
+        </member>
+        <member name="M:Amazon.Textract.Model.ProvisionedThroughputExceededException.#ctor(System.String)">
+            <summary>
+            Constructs a new ProvisionedThroughputExceededException with the specified error
+            message.
+            </summary>
+            <param name="message">
+            Describes the error encountered.
+            </param>
+        </member>
+        <member name="M:Amazon.Textract.Model.ProvisionedThroughputExceededException.#ctor(System.String,System.Exception)">
+            <summary>
+            Construct instance of ProvisionedThroughputExceededException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.Textract.Model.ProvisionedThroughputExceededException.#ctor(System.Exception)">
+            <summary>
+            Construct instance of ProvisionedThroughputExceededException
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.Textract.Model.ProvisionedThroughputExceededException.#ctor(System.String,System.Exception,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of ProvisionedThroughputExceededException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="M:Amazon.Textract.Model.ProvisionedThroughputExceededException.#ctor(System.String,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of ProvisionedThroughputExceededException
+            </summary>
+            <param name="message"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="T:Amazon.Textract.Model.Relationship">
+            <summary>
+            Information about how blocks are related to each other. A <code>Block</code> object
+            contains 0 or more <code>Relation</code> objects in a list, <code>Relationships</code>.
+            For more information, see <a>Block</a>.
+            
+             
+            <para>
+            The <code>Type</code> element provides the type of the relationship for all blocks
+            in the <code>IDs</code> array. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Textract.Model.Relationship.Ids">
+            <summary>
+            Gets and sets the property Ids. 
+            <para>
+            An array of IDs for related blocks. You can get the type of the relationship from
+            the <code>Type</code> element.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Textract.Model.Relationship.Type">
+            <summary>
+            Gets and sets the property Type. 
+            <para>
+            The type of relationship that the blocks in the IDs array have with the current block.
+            The relationship can be <code>VALUE</code> or <code>CHILD</code>.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Textract.Model.S3Object">
+            <summary>
+            The S3 bucket name and file name that identifies the document.
+            
+             
+            <para>
+            The AWS Region for the S3 bucket that contains the document must match the Region
+            that you use for Amazon Textract operations.
+            </para>
+             
+            <para>
+            For Amazon Textract to process a file in an S3 bucket, the user must have permission
+            to access the S3 bucket and file. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Textract.Model.S3Object.Bucket">
+            <summary>
+            Gets and sets the property Bucket. 
+            <para>
+            The name of the S3 bucket.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Textract.Model.S3Object.Name">
+            <summary>
+            Gets and sets the property Name. 
+            <para>
+            The file name of the input document. It must be an image file (.JPG or .PNG format).
+            Asynchronous operations also support PDF files.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Textract.Model.S3Object.Version">
+            <summary>
+            Gets and sets the property Version. 
+            <para>
+            If the bucket has versioning enabled, you can specify the object version. 
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Textract.Model.StartDocumentAnalysisRequest">
+            <summary>
+            Container for the parameters to the StartDocumentAnalysis operation.
+            Starts asynchronous analysis of an input document for relationships between detected
+            items such as key and value pairs, tables, and selection elements.
+            
+             
+            <para>
+             <code>StartDocumentAnalysis</code> can analyze text in documents that are in JPG,
+            PNG, and PDF format. The documents are stored in an Amazon S3 bucket. Use <a>DocumentLocation</a>
+            to specify the bucket name and file name of the document. 
+            </para>
+             
+            <para>
+             <code>StartDocumentAnalysis</code> returns a job identifier (<code>JobId</code>)
+            that you use to get the results of the operation. When text analysis is finished,
+            Amazon Textract publishes a completion status to the Amazon Simple Notification Service
+            (Amazon SNS) topic that you specify in <code>NotificationChannel</code>. To get the
+            results of the text analysis operation, first check that the status value published
+            to the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call <a>GetDocumentAnalysis</a>,
+            and pass the job identifier (<code>JobId</code>) from the initial call to <code>StartDocumentAnalysis</code>.
+            </para>
+             
+            <para>
+            For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/how-it-works-analyzing.html">Document
+            Text Analysis</a>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Textract.Model.StartDocumentAnalysisRequest.ClientRequestToken">
+            <summary>
+            Gets and sets the property ClientRequestToken. 
+            <para>
+            The idempotent token that you use to identify the start request. If you use the same
+            token with multiple <code>StartDocumentAnalysis</code> requests, the same <code>JobId</code>
+            is returned. Use <code>ClientRequestToken</code> to prevent the same job from being
+            accidentally started more than once. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Textract.Model.StartDocumentAnalysisRequest.DocumentLocation">
+            <summary>
+            Gets and sets the property DocumentLocation. 
+            <para>
+            The location of the document to be processed.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Textract.Model.StartDocumentAnalysisRequest.FeatureTypes">
+            <summary>
+            Gets and sets the property FeatureTypes. 
+            <para>
+            A list of the types of analysis to perform. Add TABLES to the list to return information
+            about the tables that are detected in the input document. Add FORMS to return detected
+            fields and the associated text. To perform both types of analysis, add TABLES and
+            FORMS to <code>FeatureTypes</code>. All selectable elements (<code>SELECTION_ELEMENT</code>)
+            that are detected are returned, whatever the value of <code>FeatureTypes</code>. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Textract.Model.StartDocumentAnalysisRequest.JobTag">
+            <summary>
+            Gets and sets the property JobTag. 
+            <para>
+            An identifier you specify that's included in the completion notification that's published
+            to the Amazon SNS topic. For example, you can use <code>JobTag</code> to identify
+            the type of document, such as a tax form or a receipt, that the completion notification
+            corresponds to.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Textract.Model.StartDocumentAnalysisRequest.NotificationChannel">
+            <summary>
+            Gets and sets the property NotificationChannel. 
+            <para>
+            The Amazon SNS topic ARN that you want Amazon Textract to publish the completion status
+            of the operation to. 
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Textract.Model.StartDocumentAnalysisResponse">
+            <summary>
+            This is the response object from the StartDocumentAnalysis operation.
+            </summary>
+        </member>
+        <member name="P:Amazon.Textract.Model.StartDocumentAnalysisResponse.JobId">
+            <summary>
+            Gets and sets the property JobId. 
+            <para>
+            The identifier for the document text detection job. Use <code>JobId</code> to identify
+            the job in a subsequent call to <code>GetDocumentAnalysis</code>.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Textract.Model.StartDocumentTextDetectionRequest">
+            <summary>
+            Container for the parameters to the StartDocumentTextDetection operation.
+            Starts the asynchronous detection of text in a document. Amazon Textract can detect
+            lines of text and the words that make up a line of text.
+            
+             
+            <para>
+             <code>StartDocumentTextDetection</code> can analyze text in documents that are in
+            JPG, PNG, and PDF format. The documents are stored in an Amazon S3 bucket. Use <a>DocumentLocation</a>
+            to specify the bucket name and file name of the document. 
+            </para>
+             
+            <para>
+             <code>StartTextDetection</code> returns a job identifier (<code>JobId</code>) that
+            you use to get the results of the operation. When text detection is finished, Amazon
+            Textract publishes a completion status to the Amazon Simple Notification Service (Amazon
+            SNS) topic that you specify in <code>NotificationChannel</code>. To get the results
+            of the text detection operation, first check that the status value published to the
+            Amazon SNS topic is <code>SUCCEEDED</code>. If so, call <a>GetDocumentTextDetection</a>,
+            and pass the job identifier (<code>JobId</code>) from the initial call to <code>StartDocumentTextDetection</code>.
+            </para>
+             
+            <para>
+            For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/how-it-works-detecting.html">Document
+            Text Detection</a>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Textract.Model.StartDocumentTextDetectionRequest.ClientRequestToken">
+            <summary>
+            Gets and sets the property ClientRequestToken. 
+            <para>
+            The idempotent token that's used to identify the start request. If you use the same
+            token with multiple <code>StartDocumentTextDetection</code> requests, the same <code>JobId</code>
+            is returned. Use <code>ClientRequestToken</code> to prevent the same job from being
+            accidentally started more than once. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Textract.Model.StartDocumentTextDetectionRequest.DocumentLocation">
+            <summary>
+            Gets and sets the property DocumentLocation. 
+            <para>
+            The location of the document to be processed.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Textract.Model.StartDocumentTextDetectionRequest.JobTag">
+            <summary>
+            Gets and sets the property JobTag. 
+            <para>
+            An identifier you specify that's included in the completion notification that's published
+            to the Amazon SNS topic. For example, you can use <code>JobTag</code> to identify
+            the type of document, such as a tax form or a receipt, that the completion notification
+            corresponds to.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Textract.Model.StartDocumentTextDetectionRequest.NotificationChannel">
+            <summary>
+            Gets and sets the property NotificationChannel. 
+            <para>
+            The Amazon SNS topic ARN that you want Amazon Textract to publish the completion status
+            of the operation to. 
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Textract.Model.StartDocumentTextDetectionResponse">
+            <summary>
+            This is the response object from the StartDocumentTextDetection operation.
+            </summary>
+        </member>
+        <member name="P:Amazon.Textract.Model.StartDocumentTextDetectionResponse.JobId">
+            <summary>
+            Gets and sets the property JobId. 
+            <para>
+            The identifier for the document text-detection job. Use <code>JobId</code> to identify
+            the job in a subsequent call to <code>GetDocumentTextDetection</code>.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Textract.Model.ThrottlingException">
+            <summary>
+             Textract exception
+             </summary>
+        </member>
+        <member name="M:Amazon.Textract.Model.ThrottlingException.#ctor(System.String)">
+            <summary>
+            Constructs a new ThrottlingException with the specified error
+            message.
+            </summary>
+            <param name="message">
+            Describes the error encountered.
+            </param>
+        </member>
+        <member name="M:Amazon.Textract.Model.ThrottlingException.#ctor(System.String,System.Exception)">
+            <summary>
+            Construct instance of ThrottlingException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.Textract.Model.ThrottlingException.#ctor(System.Exception)">
+            <summary>
+            Construct instance of ThrottlingException
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.Textract.Model.ThrottlingException.#ctor(System.String,System.Exception,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of ThrottlingException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="M:Amazon.Textract.Model.ThrottlingException.#ctor(System.String,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of ThrottlingException
+            </summary>
+            <param name="message"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="T:Amazon.Textract.Model.UnsupportedDocumentException">
+            <summary>
+             Textract exception
+             </summary>
+        </member>
+        <member name="M:Amazon.Textract.Model.UnsupportedDocumentException.#ctor(System.String)">
+            <summary>
+            Constructs a new UnsupportedDocumentException with the specified error
+            message.
+            </summary>
+            <param name="message">
+            Describes the error encountered.
+            </param>
+        </member>
+        <member name="M:Amazon.Textract.Model.UnsupportedDocumentException.#ctor(System.String,System.Exception)">
+            <summary>
+            Construct instance of UnsupportedDocumentException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.Textract.Model.UnsupportedDocumentException.#ctor(System.Exception)">
+            <summary>
+            Construct instance of UnsupportedDocumentException
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.Textract.Model.UnsupportedDocumentException.#ctor(System.String,System.Exception,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of UnsupportedDocumentException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="M:Amazon.Textract.Model.UnsupportedDocumentException.#ctor(System.String,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of UnsupportedDocumentException
+            </summary>
+            <param name="message"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="T:Amazon.Textract.Model.Warning">
+            <summary>
+            A warning about an issue that occurred during asynchronous text analysis (<a>StartDocumentAnalysis</a>)
+            or asynchronous document-text detection (<a>StartDocumentTextDetection</a>).
+            </summary>
+        </member>
+        <member name="P:Amazon.Textract.Model.Warning.ErrorCode">
+            <summary>
+            Gets and sets the property ErrorCode. 
+            <para>
+            The error code for the warning.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Textract.Model.Warning.Pages">
+            <summary>
+            Gets and sets the property Pages. 
+            <para>
+            A list of the pages that the warning applies to.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Textract.AmazonTextractRequest">
+            <summary>
+            Base class for Textract operation requests.
+            </summary>
+        </member>
+        <member name="T:Amazon.Textract.BlockType">
+            <summary>
+            Constants used for properties of type BlockType.
+            </summary>
+        </member>
+        <member name="F:Amazon.Textract.BlockType.CELL">
+            <summary>
+            Constant CELL for BlockType
+            </summary>
+        </member>
+        <member name="F:Amazon.Textract.BlockType.KEY_VALUE_SET">
+            <summary>
+            Constant KEY_VALUE_SET for BlockType
+            </summary>
+        </member>
+        <member name="F:Amazon.Textract.BlockType.LINE">
+            <summary>
+            Constant LINE for BlockType
+            </summary>
+        </member>
+        <member name="F:Amazon.Textract.BlockType.PAGE">
+            <summary>
+            Constant PAGE for BlockType
+            </summary>
+        </member>
+        <member name="F:Amazon.Textract.BlockType.SELECTION_ELEMENT">
+            <summary>
+            Constant SELECTION_ELEMENT for BlockType
+            </summary>
+        </member>
+        <member name="F:Amazon.Textract.BlockType.TABLE">
+            <summary>
+            Constant TABLE for BlockType
+            </summary>
+        </member>
+        <member name="F:Amazon.Textract.BlockType.WORD">
+            <summary>
+            Constant WORD for BlockType
+            </summary>
+        </member>
+        <member name="M:Amazon.Textract.BlockType.#ctor(System.String)">
+            <summary>
+            This constant constructor does not need to be called if the constant
+            you are attempting to use is already defined as a static instance of 
+            this class.
+            This constructor should be used to construct constants that are not
+            defined as statics, for instance if attempting to use a feature that is
+            newer than the current version of the SDK.
+            </summary>
+        </member>
+        <member name="M:Amazon.Textract.BlockType.FindValue(System.String)">
+            <summary>
+            Finds the constant for the unique value.
+            </summary>
+            <param name="value">The unique value for the constant</param>
+            <returns>The constant for the unique value</returns>
+        </member>
+        <member name="M:Amazon.Textract.BlockType.op_Implicit(System.String)~Amazon.Textract.BlockType">
+            <summary>
+            Utility method to convert strings to the constant class.
+            </summary>
+            <param name="value">The string value to convert to the constant class.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.Textract.EntityType">
+            <summary>
+            Constants used for properties of type EntityType.
+            </summary>
+        </member>
+        <member name="F:Amazon.Textract.EntityType.KEY">
+            <summary>
+            Constant KEY for EntityType
+            </summary>
+        </member>
+        <member name="F:Amazon.Textract.EntityType.VALUE">
+            <summary>
+            Constant VALUE for EntityType
+            </summary>
+        </member>
+        <member name="M:Amazon.Textract.EntityType.#ctor(System.String)">
+            <summary>
+            This constant constructor does not need to be called if the constant
+            you are attempting to use is already defined as a static instance of 
+            this class.
+            This constructor should be used to construct constants that are not
+            defined as statics, for instance if attempting to use a feature that is
+            newer than the current version of the SDK.
+            </summary>
+        </member>
+        <member name="M:Amazon.Textract.EntityType.FindValue(System.String)">
+            <summary>
+            Finds the constant for the unique value.
+            </summary>
+            <param name="value">The unique value for the constant</param>
+            <returns>The constant for the unique value</returns>
+        </member>
+        <member name="M:Amazon.Textract.EntityType.op_Implicit(System.String)~Amazon.Textract.EntityType">
+            <summary>
+            Utility method to convert strings to the constant class.
+            </summary>
+            <param name="value">The string value to convert to the constant class.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.Textract.FeatureType">
+            <summary>
+            Constants used for properties of type FeatureType.
+            </summary>
+        </member>
+        <member name="F:Amazon.Textract.FeatureType.FORMS">
+            <summary>
+            Constant FORMS for FeatureType
+            </summary>
+        </member>
+        <member name="F:Amazon.Textract.FeatureType.TABLES">
+            <summary>
+            Constant TABLES for FeatureType
+            </summary>
+        </member>
+        <member name="M:Amazon.Textract.FeatureType.#ctor(System.String)">
+            <summary>
+            This constant constructor does not need to be called if the constant
+            you are attempting to use is already defined as a static instance of 
+            this class.
+            This constructor should be used to construct constants that are not
+            defined as statics, for instance if attempting to use a feature that is
+            newer than the current version of the SDK.
+            </summary>
+        </member>
+        <member name="M:Amazon.Textract.FeatureType.FindValue(System.String)">
+            <summary>
+            Finds the constant for the unique value.
+            </summary>
+            <param name="value">The unique value for the constant</param>
+            <returns>The constant for the unique value</returns>
+        </member>
+        <member name="M:Amazon.Textract.FeatureType.op_Implicit(System.String)~Amazon.Textract.FeatureType">
+            <summary>
+            Utility method to convert strings to the constant class.
+            </summary>
+            <param name="value">The string value to convert to the constant class.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.Textract.JobStatus">
+            <summary>
+            Constants used for properties of type JobStatus.
+            </summary>
+        </member>
+        <member name="F:Amazon.Textract.JobStatus.FAILED">
+            <summary>
+            Constant FAILED for JobStatus
+            </summary>
+        </member>
+        <member name="F:Amazon.Textract.JobStatus.IN_PROGRESS">
+            <summary>
+            Constant IN_PROGRESS for JobStatus
+            </summary>
+        </member>
+        <member name="F:Amazon.Textract.JobStatus.PARTIAL_SUCCESS">
+            <summary>
+            Constant PARTIAL_SUCCESS for JobStatus
+            </summary>
+        </member>
+        <member name="F:Amazon.Textract.JobStatus.SUCCEEDED">
+            <summary>
+            Constant SUCCEEDED for JobStatus
+            </summary>
+        </member>
+        <member name="M:Amazon.Textract.JobStatus.#ctor(System.String)">
+            <summary>
+            This constant constructor does not need to be called if the constant
+            you are attempting to use is already defined as a static instance of 
+            this class.
+            This constructor should be used to construct constants that are not
+            defined as statics, for instance if attempting to use a feature that is
+            newer than the current version of the SDK.
+            </summary>
+        </member>
+        <member name="M:Amazon.Textract.JobStatus.FindValue(System.String)">
+            <summary>
+            Finds the constant for the unique value.
+            </summary>
+            <param name="value">The unique value for the constant</param>
+            <returns>The constant for the unique value</returns>
+        </member>
+        <member name="M:Amazon.Textract.JobStatus.op_Implicit(System.String)~Amazon.Textract.JobStatus">
+            <summary>
+            Utility method to convert strings to the constant class.
+            </summary>
+            <param name="value">The string value to convert to the constant class.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.Textract.RelationshipType">
+            <summary>
+            Constants used for properties of type RelationshipType.
+            </summary>
+        </member>
+        <member name="F:Amazon.Textract.RelationshipType.CHILD">
+            <summary>
+            Constant CHILD for RelationshipType
+            </summary>
+        </member>
+        <member name="F:Amazon.Textract.RelationshipType.VALUE">
+            <summary>
+            Constant VALUE for RelationshipType
+            </summary>
+        </member>
+        <member name="M:Amazon.Textract.RelationshipType.#ctor(System.String)">
+            <summary>
+            This constant constructor does not need to be called if the constant
+            you are attempting to use is already defined as a static instance of 
+            this class.
+            This constructor should be used to construct constants that are not
+            defined as statics, for instance if attempting to use a feature that is
+            newer than the current version of the SDK.
+            </summary>
+        </member>
+        <member name="M:Amazon.Textract.RelationshipType.FindValue(System.String)">
+            <summary>
+            Finds the constant for the unique value.
+            </summary>
+            <param name="value">The unique value for the constant</param>
+            <returns>The constant for the unique value</returns>
+        </member>
+        <member name="M:Amazon.Textract.RelationshipType.op_Implicit(System.String)~Amazon.Textract.RelationshipType">
+            <summary>
+            Utility method to convert strings to the constant class.
+            </summary>
+            <param name="value">The string value to convert to the constant class.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.Textract.SelectionStatus">
+            <summary>
+            Constants used for properties of type SelectionStatus.
+            </summary>
+        </member>
+        <member name="F:Amazon.Textract.SelectionStatus.NOT_SELECTED">
+            <summary>
+            Constant NOT_SELECTED for SelectionStatus
+            </summary>
+        </member>
+        <member name="F:Amazon.Textract.SelectionStatus.SELECTED">
+            <summary>
+            Constant SELECTED for SelectionStatus
+            </summary>
+        </member>
+        <member name="M:Amazon.Textract.SelectionStatus.#ctor(System.String)">
+            <summary>
+            This constant constructor does not need to be called if the constant
+            you are attempting to use is already defined as a static instance of 
+            this class.
+            This constructor should be used to construct constants that are not
+            defined as statics, for instance if attempting to use a feature that is
+            newer than the current version of the SDK.
+            </summary>
+        </member>
+        <member name="M:Amazon.Textract.SelectionStatus.FindValue(System.String)">
+            <summary>
+            Finds the constant for the unique value.
+            </summary>
+            <param name="value">The unique value for the constant</param>
+            <returns>The constant for the unique value</returns>
+        </member>
+        <member name="M:Amazon.Textract.SelectionStatus.op_Implicit(System.String)~Amazon.Textract.SelectionStatus">
+            <summary>
+            Utility method to convert strings to the constant class.
+            </summary>
+            <param name="value">The string value to convert to the constant class.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.Textract.AmazonTextractClient">
+             <summary>
+             Implementation for accessing Textract
+            
+             Amazon Textract detects and analyzes text in documents and converts it into machine-readable
+             text. This is the API reference documentation for Amazon Textract.
+             </summary>
+        </member>
+        <member name="M:Amazon.Textract.AmazonTextractClient.#ctor">
+             <summary>
+             Constructs AmazonTextractClient with the credentials loaded from the application's
+             default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+             
+             Example App.config with credentials set. 
+             <code>
+             &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+             &lt;configuration&gt;
+                 &lt;appSettings&gt;
+                     &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+                 &lt;/appSettings&gt;
+             &lt;/configuration&gt;
+             </code>
+            
+             </summary>
+        </member>
+        <member name="M:Amazon.Textract.AmazonTextractClient.#ctor(Amazon.RegionEndpoint)">
+             <summary>
+             Constructs AmazonTextractClient with the credentials loaded from the application's
+             default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+             
+             Example App.config with credentials set. 
+             <code>
+             &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+             &lt;configuration&gt;
+                 &lt;appSettings&gt;
+                     &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+                 &lt;/appSettings&gt;
+             &lt;/configuration&gt;
+             </code>
+            
+             </summary>
+             <param name="region">The region to connect.</param>
+        </member>
+        <member name="M:Amazon.Textract.AmazonTextractClient.#ctor(Amazon.Textract.AmazonTextractConfig)">
+             <summary>
+             Constructs AmazonTextractClient with the credentials loaded from the application's
+             default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+             
+             Example App.config with credentials set. 
+             <code>
+             &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+             &lt;configuration&gt;
+                 &lt;appSettings&gt;
+                     &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+                 &lt;/appSettings&gt;
+             &lt;/configuration&gt;
+             </code>
+            
+             </summary>
+             <param name="config">The AmazonTextractClient Configuration Object</param>
+        </member>
+        <member name="M:Amazon.Textract.AmazonTextractClient.#ctor(Amazon.Runtime.AWSCredentials)">
+            <summary>
+            Constructs AmazonTextractClient with AWS Credentials
+            </summary>
+            <param name="credentials">AWS Credentials</param>
+        </member>
+        <member name="M:Amazon.Textract.AmazonTextractClient.#ctor(Amazon.Runtime.AWSCredentials,Amazon.RegionEndpoint)">
+            <summary>
+            Constructs AmazonTextractClient with AWS Credentials
+            </summary>
+            <param name="credentials">AWS Credentials</param>
+            <param name="region">The region to connect.</param>
+        </member>
+        <member name="M:Amazon.Textract.AmazonTextractClient.#ctor(Amazon.Runtime.AWSCredentials,Amazon.Textract.AmazonTextractConfig)">
+            <summary>
+            Constructs AmazonTextractClient with AWS Credentials and an
+            AmazonTextractClient Configuration object.
+            </summary>
+            <param name="credentials">AWS Credentials</param>
+            <param name="clientConfig">The AmazonTextractClient Configuration Object</param>
+        </member>
+        <member name="M:Amazon.Textract.AmazonTextractClient.#ctor(System.String,System.String)">
+            <summary>
+            Constructs AmazonTextractClient with AWS Access Key ID and AWS Secret Key
+            </summary>
+            <param name="awsAccessKeyId">AWS Access Key ID</param>
+            <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        </member>
+        <member name="M:Amazon.Textract.AmazonTextractClient.#ctor(System.String,System.String,Amazon.RegionEndpoint)">
+            <summary>
+            Constructs AmazonTextractClient with AWS Access Key ID and AWS Secret Key
+            </summary>
+            <param name="awsAccessKeyId">AWS Access Key ID</param>
+            <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+            <param name="region">The region to connect.</param>
+        </member>
+        <member name="M:Amazon.Textract.AmazonTextractClient.#ctor(System.String,System.String,Amazon.Textract.AmazonTextractConfig)">
+            <summary>
+            Constructs AmazonTextractClient with AWS Access Key ID, AWS Secret Key and an
+            AmazonTextractClient Configuration object. 
+            </summary>
+            <param name="awsAccessKeyId">AWS Access Key ID</param>
+            <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+            <param name="clientConfig">The AmazonTextractClient Configuration Object</param>
+        </member>
+        <member name="M:Amazon.Textract.AmazonTextractClient.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Constructs AmazonTextractClient with AWS Access Key ID and AWS Secret Key
+            </summary>
+            <param name="awsAccessKeyId">AWS Access Key ID</param>
+            <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+            <param name="awsSessionToken">AWS Session Token</param>
+        </member>
+        <member name="M:Amazon.Textract.AmazonTextractClient.#ctor(System.String,System.String,System.String,Amazon.RegionEndpoint)">
+            <summary>
+            Constructs AmazonTextractClient with AWS Access Key ID and AWS Secret Key
+            </summary>
+            <param name="awsAccessKeyId">AWS Access Key ID</param>
+            <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+            <param name="awsSessionToken">AWS Session Token</param>
+            <param name="region">The region to connect.</param>
+        </member>
+        <member name="M:Amazon.Textract.AmazonTextractClient.#ctor(System.String,System.String,System.String,Amazon.Textract.AmazonTextractConfig)">
+            <summary>
+            Constructs AmazonTextractClient with AWS Access Key ID, AWS Secret Key and an
+            AmazonTextractClient Configuration object. 
+            </summary>
+            <param name="awsAccessKeyId">AWS Access Key ID</param>
+            <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+            <param name="awsSessionToken">AWS Session Token</param>
+            <param name="clientConfig">The AmazonTextractClient Configuration Object</param>
+        </member>
+        <member name="M:Amazon.Textract.AmazonTextractClient.CreateSigner">
+            <summary>
+            Creates the signer for the service.
+            </summary>
+        </member>
+        <member name="P:Amazon.Textract.AmazonTextractClient.ServiceMetadata">
+            <summary>
+            Capture metadata for the service.
+            </summary>
+        </member>
+        <member name="M:Amazon.Textract.AmazonTextractClient.Dispose(System.Boolean)">
+            <summary>
+            Disposes the service client.
+            </summary>
+        </member>
+        <member name="M:Amazon.Textract.AmazonTextractClient.AnalyzeDocumentAsync(Amazon.Textract.Model.AnalyzeDocumentRequest,System.Threading.CancellationToken)">
+            <summary>
+            Analyzes an input document for relationships between detected items. 
+            
+             
+            <para>
+            The types of information returned are as follows: 
+            </para>
+             <ul> <li> 
+            <para>
+            Words and lines that are related to nearby lines and words. The related information
+            is returned in two <a>Block</a> objects each of type <code>KEY_VALUE_SET</code>: a
+            KEY Block object and a VALUE Block object. For example, <i>Name: Ana Silva Carolina</i>
+            contains a key and value. <i>Name:</i> is the key. <i>Ana Silva Carolina</i> is the
+            value.
+            </para>
+             </li> <li> 
+            <para>
+            Table and table cell data. A TABLE Block object contains information about a detected
+            table. A CELL Block object is returned for each cell in a table.
+            </para>
+             </li> <li> 
+            <para>
+            Selectable elements such as checkboxes and radio buttons. A SELECTION_ELEMENT Block
+            object contains information about a selectable element.
+            </para>
+             </li> <li> 
+            <para>
+            Lines and words of text. A LINE Block object contains one or more WORD Block objects.
+            </para>
+             </li> </ul> 
+            <para>
+            You can choose which type of analysis to perform by specifying the <code>FeatureTypes</code>
+            list. 
+            </para>
+             
+            <para>
+            The output is returned in a list of <code>BLOCK</code> objects.
+            </para>
+             
+            <para>
+             <code>AnalyzeDocument</code> is a synchronous operation. To analyze documents asynchronously,
+            use <a>StartDocumentAnalysis</a>.
+            </para>
+             
+            <para>
+            For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/how-it-works-analyzing.html">Document
+            Text Analysis</a>.
+            </para>
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the AnalyzeDocument service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the AnalyzeDocument service method, as returned by Textract.</returns>
+            <exception cref="T:Amazon.Textract.Model.AccessDeniedException">
+            You aren't authorized to perform the action.
+            </exception>
+            <exception cref="T:Amazon.Textract.Model.BadDocumentException">
+            Amazon Textract isn't able to read the document.
+            </exception>
+            <exception cref="T:Amazon.Textract.Model.DocumentTooLargeException">
+            The document can't be processed because it's too large. The maximum document size
+            for synchronous operations 5 MB. The maximum document size for asynchronous operations
+            is 500 MB for PDF format files.
+            </exception>
+            <exception cref="T:Amazon.Textract.Model.InternalServerErrorException">
+            Amazon Textract experienced a service issue. Try your call again.
+            </exception>
+            <exception cref="T:Amazon.Textract.Model.InvalidParameterException">
+            An input parameter violated a constraint. For example, in synchronous operations,
+            an <code>InvalidParameterException</code> exception occurs when neither of the <code>S3Object</code>
+            or <code>Bytes</code> values are supplied in the <code>Document</code> request parameter.
+            Validate your parameter before calling the API operation again.
+            </exception>
+            <exception cref="T:Amazon.Textract.Model.InvalidS3ObjectException">
+            Amazon Textract is unable to access the S3 object that's specified in the request.
+            </exception>
+            <exception cref="T:Amazon.Textract.Model.ProvisionedThroughputExceededException">
+            The number of requests exceeded your throughput limit. If you want to increase this
+            limit, contact Amazon Textract.
+            </exception>
+            <exception cref="T:Amazon.Textract.Model.ThrottlingException">
+            Amazon Textract is temporarily unable to process the request. Try your call again.
+            </exception>
+            <exception cref="T:Amazon.Textract.Model.UnsupportedDocumentException">
+            The format of the input document isn't supported. Amazon Textract supports documents
+            that are .png or .jpg format.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/AnalyzeDocument">REST API Reference for AnalyzeDocument Operation</seealso>
+        </member>
+        <member name="M:Amazon.Textract.AmazonTextractClient.DetectDocumentTextAsync(Amazon.Textract.Model.DetectDocumentTextRequest,System.Threading.CancellationToken)">
+            <summary>
+            Detects text in the input document. Amazon Textract can detect lines of text and the
+            words that make up a line of text. The input document must be an image in JPG or PNG
+            format. <code>DetectDocumentText</code> returns the detected text in an array of <a>Block</a>
+            objects. 
+            
+             
+            <para>
+            Each document page has as an associated <code>Block</code> of type PAGE. Each PAGE
+            <code>Block</code> object is the parent of LINE <code>Block</code> objects that represent
+            the lines of detected text on a page. A LINE <code>Block</code> object is a parent
+            for each word that makes up the line. Words are represented by <code>Block</code>
+            objects of type WORD.
+            </para>
+             
+            <para>
+             <code>DetectDocumentText</code> is a synchronous operation. To analyze documents
+            asynchronously, use <a>StartDocumentTextDetection</a>.
+            </para>
+             
+            <para>
+            For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/how-it-works-detecting.html">Document
+            Text Detection</a>.
+            </para>
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the DetectDocumentText service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the DetectDocumentText service method, as returned by Textract.</returns>
+            <exception cref="T:Amazon.Textract.Model.AccessDeniedException">
+            You aren't authorized to perform the action.
+            </exception>
+            <exception cref="T:Amazon.Textract.Model.BadDocumentException">
+            Amazon Textract isn't able to read the document.
+            </exception>
+            <exception cref="T:Amazon.Textract.Model.DocumentTooLargeException">
+            The document can't be processed because it's too large. The maximum document size
+            for synchronous operations 5 MB. The maximum document size for asynchronous operations
+            is 500 MB for PDF format files.
+            </exception>
+            <exception cref="T:Amazon.Textract.Model.InternalServerErrorException">
+            Amazon Textract experienced a service issue. Try your call again.
+            </exception>
+            <exception cref="T:Amazon.Textract.Model.InvalidParameterException">
+            An input parameter violated a constraint. For example, in synchronous operations,
+            an <code>InvalidParameterException</code> exception occurs when neither of the <code>S3Object</code>
+            or <code>Bytes</code> values are supplied in the <code>Document</code> request parameter.
+            Validate your parameter before calling the API operation again.
+            </exception>
+            <exception cref="T:Amazon.Textract.Model.InvalidS3ObjectException">
+            Amazon Textract is unable to access the S3 object that's specified in the request.
+            </exception>
+            <exception cref="T:Amazon.Textract.Model.ProvisionedThroughputExceededException">
+            The number of requests exceeded your throughput limit. If you want to increase this
+            limit, contact Amazon Textract.
+            </exception>
+            <exception cref="T:Amazon.Textract.Model.ThrottlingException">
+            Amazon Textract is temporarily unable to process the request. Try your call again.
+            </exception>
+            <exception cref="T:Amazon.Textract.Model.UnsupportedDocumentException">
+            The format of the input document isn't supported. Amazon Textract supports documents
+            that are .png or .jpg format.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/DetectDocumentText">REST API Reference for DetectDocumentText Operation</seealso>
+        </member>
+        <member name="M:Amazon.Textract.AmazonTextractClient.GetDocumentAnalysisAsync(Amazon.Textract.Model.GetDocumentAnalysisRequest,System.Threading.CancellationToken)">
+            <summary>
+            Gets the results for an Amazon Textract asynchronous operation that analyzes text
+            in a document.
+            
+             
+            <para>
+            You start asynchronous text analysis by calling <a>StartDocumentAnalysis</a>, which
+            returns a job identifier (<code>JobId</code>). When the text analysis operation finishes,
+            Amazon Textract publishes a completion status to the Amazon Simple Notification Service
+            (Amazon SNS) topic that's registered in the initial call to <code>StartDocumentAnalysis</code>.
+            To get the results of the text-detection operation, first check that the status value
+            published to the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call <code>GetDocumentAnalysis</code>,
+            and pass the job identifier (<code>JobId</code>) from the initial call to <code>StartDocumentAnalysis</code>.
+            </para>
+             
+            <para>
+             <code>GetDocumentAnalysis</code> returns an array of <a>Block</a> objects. The following
+            types of information are returned: 
+            </para>
+             <ul> <li> 
+            <para>
+            Words and lines that are related to nearby lines and words. The related information
+            is returned in two <a>Block</a> objects each of type <code>KEY_VALUE_SET</code>: a
+            KEY Block object and a VALUE Block object. For example, <i>Name: Ana Silva Carolina</i>
+            contains a key and value. <i>Name:</i> is the key. <i>Ana Silva Carolina</i> is the
+            value.
+            </para>
+             </li> <li> 
+            <para>
+            Table and table cell data. A TABLE Block object contains information about a detected
+            table. A CELL Block object is returned for each cell in a table.
+            </para>
+             </li> <li> 
+            <para>
+            Selectable elements such as checkboxes and radio buttons. A SELECTION_ELEMENT Block
+            object contains information about a selectable element.
+            </para>
+             </li> <li> 
+            <para>
+            Lines and words of text. A LINE Block object contains one or more WORD Block objects.
+            </para>
+             </li> </ul> 
+            <para>
+            Use the <code>MaxResults</code> parameter to limit the number of blocks returned.
+            If there are more results than specified in <code>MaxResults</code>, the value of
+            <code>NextToken</code> in the operation response contains a pagination token for getting
+            the next set of results. To get the next page of results, call <code>GetDocumentAnalysis</code>,
+            and populate the <code>NextToken</code> request parameter with the token value that's
+            returned from the previous call to <code>GetDocumentAnalysis</code>.
+            </para>
+             
+            <para>
+            For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/how-it-works-analyzing.html">Document
+            Text Analysis</a>.
+            </para>
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the GetDocumentAnalysis service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the GetDocumentAnalysis service method, as returned by Textract.</returns>
+            <exception cref="T:Amazon.Textract.Model.AccessDeniedException">
+            You aren't authorized to perform the action.
+            </exception>
+            <exception cref="T:Amazon.Textract.Model.InternalServerErrorException">
+            Amazon Textract experienced a service issue. Try your call again.
+            </exception>
+            <exception cref="T:Amazon.Textract.Model.InvalidJobIdException">
+            An invalid job identifier was passed to <a>GetDocumentAnalysis</a> or to <a>GetDocumentAnalysis</a>.
+            </exception>
+            <exception cref="T:Amazon.Textract.Model.InvalidParameterException">
+            An input parameter violated a constraint. For example, in synchronous operations,
+            an <code>InvalidParameterException</code> exception occurs when neither of the <code>S3Object</code>
+            or <code>Bytes</code> values are supplied in the <code>Document</code> request parameter.
+            Validate your parameter before calling the API operation again.
+            </exception>
+            <exception cref="T:Amazon.Textract.Model.ProvisionedThroughputExceededException">
+            The number of requests exceeded your throughput limit. If you want to increase this
+            limit, contact Amazon Textract.
+            </exception>
+            <exception cref="T:Amazon.Textract.Model.ThrottlingException">
+            Amazon Textract is temporarily unable to process the request. Try your call again.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/GetDocumentAnalysis">REST API Reference for GetDocumentAnalysis Operation</seealso>
+        </member>
+        <member name="M:Amazon.Textract.AmazonTextractClient.GetDocumentTextDetectionAsync(Amazon.Textract.Model.GetDocumentTextDetectionRequest,System.Threading.CancellationToken)">
+            <summary>
+            Gets the results for an Amazon Textract asynchronous operation that detects text in
+            a document. Amazon Textract can detect lines of text and the words that make up a
+            line of text.
+            
+             
+            <para>
+            You start asynchronous text detection by calling <a>StartDocumentTextDetection</a>,
+            which returns a job identifier (<code>JobId</code>). When the text detection operation
+            finishes, Amazon Textract publishes a completion status to the Amazon Simple Notification
+            Service (Amazon SNS) topic that's registered in the initial call to <code>StartDocumentTextDetection</code>.
+            To get the results of the text-detection operation, first check that the status value
+            published to the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call <code>GetDocumentTextDetection</code>,
+            and pass the job identifier (<code>JobId</code>) from the initial call to <code>StartDocumentTextDetection</code>.
+            </para>
+             
+            <para>
+             <code>GetDocumentTextDetection</code> returns an array of <a>Block</a> objects. 
+            </para>
+             
+            <para>
+            Each document page has as an associated <code>Block</code> of type PAGE. Each PAGE
+            <code>Block</code> object is the parent of LINE <code>Block</code> objects that represent
+            the lines of detected text on a page. A LINE <code>Block</code> object is a parent
+            for each word that makes up the line. Words are represented by <code>Block</code>
+            objects of type WORD.
+            </para>
+             
+            <para>
+            Use the MaxResults parameter to limit the number of blocks that are returned. If there
+            are more results than specified in <code>MaxResults</code>, the value of <code>NextToken</code>
+            in the operation response contains a pagination token for getting the next set of
+            results. To get the next page of results, call <code>GetDocumentTextDetection</code>,
+            and populate the <code>NextToken</code> request parameter with the token value that's
+            returned from the previous call to <code>GetDocumentTextDetection</code>.
+            </para>
+             
+            <para>
+            For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/how-it-works-detecting.html">Document
+            Text Detection</a>.
+            </para>
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the GetDocumentTextDetection service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the GetDocumentTextDetection service method, as returned by Textract.</returns>
+            <exception cref="T:Amazon.Textract.Model.AccessDeniedException">
+            You aren't authorized to perform the action.
+            </exception>
+            <exception cref="T:Amazon.Textract.Model.InternalServerErrorException">
+            Amazon Textract experienced a service issue. Try your call again.
+            </exception>
+            <exception cref="T:Amazon.Textract.Model.InvalidJobIdException">
+            An invalid job identifier was passed to <a>GetDocumentAnalysis</a> or to <a>GetDocumentAnalysis</a>.
+            </exception>
+            <exception cref="T:Amazon.Textract.Model.InvalidParameterException">
+            An input parameter violated a constraint. For example, in synchronous operations,
+            an <code>InvalidParameterException</code> exception occurs when neither of the <code>S3Object</code>
+            or <code>Bytes</code> values are supplied in the <code>Document</code> request parameter.
+            Validate your parameter before calling the API operation again.
+            </exception>
+            <exception cref="T:Amazon.Textract.Model.ProvisionedThroughputExceededException">
+            The number of requests exceeded your throughput limit. If you want to increase this
+            limit, contact Amazon Textract.
+            </exception>
+            <exception cref="T:Amazon.Textract.Model.ThrottlingException">
+            Amazon Textract is temporarily unable to process the request. Try your call again.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/GetDocumentTextDetection">REST API Reference for GetDocumentTextDetection Operation</seealso>
+        </member>
+        <member name="M:Amazon.Textract.AmazonTextractClient.StartDocumentAnalysisAsync(Amazon.Textract.Model.StartDocumentAnalysisRequest,System.Threading.CancellationToken)">
+            <summary>
+            Starts asynchronous analysis of an input document for relationships between detected
+            items such as key and value pairs, tables, and selection elements.
+            
+             
+            <para>
+             <code>StartDocumentAnalysis</code> can analyze text in documents that are in JPG,
+            PNG, and PDF format. The documents are stored in an Amazon S3 bucket. Use <a>DocumentLocation</a>
+            to specify the bucket name and file name of the document. 
+            </para>
+             
+            <para>
+             <code>StartDocumentAnalysis</code> returns a job identifier (<code>JobId</code>)
+            that you use to get the results of the operation. When text analysis is finished,
+            Amazon Textract publishes a completion status to the Amazon Simple Notification Service
+            (Amazon SNS) topic that you specify in <code>NotificationChannel</code>. To get the
+            results of the text analysis operation, first check that the status value published
+            to the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call <a>GetDocumentAnalysis</a>,
+            and pass the job identifier (<code>JobId</code>) from the initial call to <code>StartDocumentAnalysis</code>.
+            </para>
+             
+            <para>
+            For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/how-it-works-analyzing.html">Document
+            Text Analysis</a>.
+            </para>
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the StartDocumentAnalysis service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the StartDocumentAnalysis service method, as returned by Textract.</returns>
+            <exception cref="T:Amazon.Textract.Model.AccessDeniedException">
+            You aren't authorized to perform the action.
+            </exception>
+            <exception cref="T:Amazon.Textract.Model.BadDocumentException">
+            Amazon Textract isn't able to read the document.
+            </exception>
+            <exception cref="T:Amazon.Textract.Model.DocumentTooLargeException">
+            The document can't be processed because it's too large. The maximum document size
+            for synchronous operations 5 MB. The maximum document size for asynchronous operations
+            is 500 MB for PDF format files.
+            </exception>
+            <exception cref="T:Amazon.Textract.Model.IdempotentParameterMismatchException">
+            A <code>ClientRequestToken</code> input parameter was reused with an operation, but
+            at least one of the other input parameters is different from the previous call to
+            the operation.
+            </exception>
+            <exception cref="T:Amazon.Textract.Model.InternalServerErrorException">
+            Amazon Textract experienced a service issue. Try your call again.
+            </exception>
+            <exception cref="T:Amazon.Textract.Model.InvalidParameterException">
+            An input parameter violated a constraint. For example, in synchronous operations,
+            an <code>InvalidParameterException</code> exception occurs when neither of the <code>S3Object</code>
+            or <code>Bytes</code> values are supplied in the <code>Document</code> request parameter.
+            Validate your parameter before calling the API operation again.
+            </exception>
+            <exception cref="T:Amazon.Textract.Model.InvalidS3ObjectException">
+            Amazon Textract is unable to access the S3 object that's specified in the request.
+            </exception>
+            <exception cref="T:Amazon.Textract.Model.LimitExceededException">
+            An Amazon Textract service limit was exceeded. For example, if you start too many
+            asynchronous jobs concurrently, calls to start operations (<code>StartDocumentTextDetection</code>,
+            for example) raise a LimitExceededException exception (HTTP status code: 400) until
+            the number of concurrently running jobs is below the Amazon Textract service limit.
+            </exception>
+            <exception cref="T:Amazon.Textract.Model.ProvisionedThroughputExceededException">
+            The number of requests exceeded your throughput limit. If you want to increase this
+            limit, contact Amazon Textract.
+            </exception>
+            <exception cref="T:Amazon.Textract.Model.ThrottlingException">
+            Amazon Textract is temporarily unable to process the request. Try your call again.
+            </exception>
+            <exception cref="T:Amazon.Textract.Model.UnsupportedDocumentException">
+            The format of the input document isn't supported. Amazon Textract supports documents
+            that are .png or .jpg format.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/StartDocumentAnalysis">REST API Reference for StartDocumentAnalysis Operation</seealso>
+        </member>
+        <member name="M:Amazon.Textract.AmazonTextractClient.StartDocumentTextDetectionAsync(Amazon.Textract.Model.StartDocumentTextDetectionRequest,System.Threading.CancellationToken)">
+            <summary>
+            Starts the asynchronous detection of text in a document. Amazon Textract can detect
+            lines of text and the words that make up a line of text.
+            
+             
+            <para>
+             <code>StartDocumentTextDetection</code> can analyze text in documents that are in
+            JPG, PNG, and PDF format. The documents are stored in an Amazon S3 bucket. Use <a>DocumentLocation</a>
+            to specify the bucket name and file name of the document. 
+            </para>
+             
+            <para>
+             <code>StartTextDetection</code> returns a job identifier (<code>JobId</code>) that
+            you use to get the results of the operation. When text detection is finished, Amazon
+            Textract publishes a completion status to the Amazon Simple Notification Service (Amazon
+            SNS) topic that you specify in <code>NotificationChannel</code>. To get the results
+            of the text detection operation, first check that the status value published to the
+            Amazon SNS topic is <code>SUCCEEDED</code>. If so, call <a>GetDocumentTextDetection</a>,
+            and pass the job identifier (<code>JobId</code>) from the initial call to <code>StartDocumentTextDetection</code>.
+            </para>
+             
+            <para>
+            For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/how-it-works-detecting.html">Document
+            Text Detection</a>.
+            </para>
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the StartDocumentTextDetection service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the StartDocumentTextDetection service method, as returned by Textract.</returns>
+            <exception cref="T:Amazon.Textract.Model.AccessDeniedException">
+            You aren't authorized to perform the action.
+            </exception>
+            <exception cref="T:Amazon.Textract.Model.BadDocumentException">
+            Amazon Textract isn't able to read the document.
+            </exception>
+            <exception cref="T:Amazon.Textract.Model.DocumentTooLargeException">
+            The document can't be processed because it's too large. The maximum document size
+            for synchronous operations 5 MB. The maximum document size for asynchronous operations
+            is 500 MB for PDF format files.
+            </exception>
+            <exception cref="T:Amazon.Textract.Model.IdempotentParameterMismatchException">
+            A <code>ClientRequestToken</code> input parameter was reused with an operation, but
+            at least one of the other input parameters is different from the previous call to
+            the operation.
+            </exception>
+            <exception cref="T:Amazon.Textract.Model.InternalServerErrorException">
+            Amazon Textract experienced a service issue. Try your call again.
+            </exception>
+            <exception cref="T:Amazon.Textract.Model.InvalidParameterException">
+            An input parameter violated a constraint. For example, in synchronous operations,
+            an <code>InvalidParameterException</code> exception occurs when neither of the <code>S3Object</code>
+            or <code>Bytes</code> values are supplied in the <code>Document</code> request parameter.
+            Validate your parameter before calling the API operation again.
+            </exception>
+            <exception cref="T:Amazon.Textract.Model.InvalidS3ObjectException">
+            Amazon Textract is unable to access the S3 object that's specified in the request.
+            </exception>
+            <exception cref="T:Amazon.Textract.Model.LimitExceededException">
+            An Amazon Textract service limit was exceeded. For example, if you start too many
+            asynchronous jobs concurrently, calls to start operations (<code>StartDocumentTextDetection</code>,
+            for example) raise a LimitExceededException exception (HTTP status code: 400) until
+            the number of concurrently running jobs is below the Amazon Textract service limit.
+            </exception>
+            <exception cref="T:Amazon.Textract.Model.ProvisionedThroughputExceededException">
+            The number of requests exceeded your throughput limit. If you want to increase this
+            limit, contact Amazon Textract.
+            </exception>
+            <exception cref="T:Amazon.Textract.Model.ThrottlingException">
+            Amazon Textract is temporarily unable to process the request. Try your call again.
+            </exception>
+            <exception cref="T:Amazon.Textract.Model.UnsupportedDocumentException">
+            The format of the input document isn't supported. Amazon Textract supports documents
+            that are .png or .jpg format.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/StartDocumentTextDetection">REST API Reference for StartDocumentTextDetection Operation</seealso>
+        </member>
+        <member name="T:Amazon.Textract.IAmazonTextract">
+             <summary>
+             Interface for accessing Textract
+            
+             Amazon Textract detects and analyzes text in documents and converts it into machine-readable
+             text. This is the API reference documentation for Amazon Textract.
+             </summary>
+        </member>
+        <member name="M:Amazon.Textract.IAmazonTextract.AnalyzeDocumentAsync(Amazon.Textract.Model.AnalyzeDocumentRequest,System.Threading.CancellationToken)">
+            <summary>
+            Analyzes an input document for relationships between detected items. 
+            
+             
+            <para>
+            The types of information returned are as follows: 
+            </para>
+             <ul> <li> 
+            <para>
+            Words and lines that are related to nearby lines and words. The related information
+            is returned in two <a>Block</a> objects each of type <code>KEY_VALUE_SET</code>: a
+            KEY Block object and a VALUE Block object. For example, <i>Name: Ana Silva Carolina</i>
+            contains a key and value. <i>Name:</i> is the key. <i>Ana Silva Carolina</i> is the
+            value.
+            </para>
+             </li> <li> 
+            <para>
+            Table and table cell data. A TABLE Block object contains information about a detected
+            table. A CELL Block object is returned for each cell in a table.
+            </para>
+             </li> <li> 
+            <para>
+            Selectable elements such as checkboxes and radio buttons. A SELECTION_ELEMENT Block
+            object contains information about a selectable element.
+            </para>
+             </li> <li> 
+            <para>
+            Lines and words of text. A LINE Block object contains one or more WORD Block objects.
+            </para>
+             </li> </ul> 
+            <para>
+            You can choose which type of analysis to perform by specifying the <code>FeatureTypes</code>
+            list. 
+            </para>
+             
+            <para>
+            The output is returned in a list of <code>BLOCK</code> objects.
+            </para>
+             
+            <para>
+             <code>AnalyzeDocument</code> is a synchronous operation. To analyze documents asynchronously,
+            use <a>StartDocumentAnalysis</a>.
+            </para>
+             
+            <para>
+            For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/how-it-works-analyzing.html">Document
+            Text Analysis</a>.
+            </para>
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the AnalyzeDocument service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the AnalyzeDocument service method, as returned by Textract.</returns>
+            <exception cref="T:Amazon.Textract.Model.AccessDeniedException">
+            You aren't authorized to perform the action.
+            </exception>
+            <exception cref="T:Amazon.Textract.Model.BadDocumentException">
+            Amazon Textract isn't able to read the document.
+            </exception>
+            <exception cref="T:Amazon.Textract.Model.DocumentTooLargeException">
+            The document can't be processed because it's too large. The maximum document size
+            for synchronous operations 5 MB. The maximum document size for asynchronous operations
+            is 500 MB for PDF format files.
+            </exception>
+            <exception cref="T:Amazon.Textract.Model.InternalServerErrorException">
+            Amazon Textract experienced a service issue. Try your call again.
+            </exception>
+            <exception cref="T:Amazon.Textract.Model.InvalidParameterException">
+            An input parameter violated a constraint. For example, in synchronous operations,
+            an <code>InvalidParameterException</code> exception occurs when neither of the <code>S3Object</code>
+            or <code>Bytes</code> values are supplied in the <code>Document</code> request parameter.
+            Validate your parameter before calling the API operation again.
+            </exception>
+            <exception cref="T:Amazon.Textract.Model.InvalidS3ObjectException">
+            Amazon Textract is unable to access the S3 object that's specified in the request.
+            </exception>
+            <exception cref="T:Amazon.Textract.Model.ProvisionedThroughputExceededException">
+            The number of requests exceeded your throughput limit. If you want to increase this
+            limit, contact Amazon Textract.
+            </exception>
+            <exception cref="T:Amazon.Textract.Model.ThrottlingException">
+            Amazon Textract is temporarily unable to process the request. Try your call again.
+            </exception>
+            <exception cref="T:Amazon.Textract.Model.UnsupportedDocumentException">
+            The format of the input document isn't supported. Amazon Textract supports documents
+            that are .png or .jpg format.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/AnalyzeDocument">REST API Reference for AnalyzeDocument Operation</seealso>
+        </member>
+        <member name="M:Amazon.Textract.IAmazonTextract.DetectDocumentTextAsync(Amazon.Textract.Model.DetectDocumentTextRequest,System.Threading.CancellationToken)">
+            <summary>
+            Detects text in the input document. Amazon Textract can detect lines of text and the
+            words that make up a line of text. The input document must be an image in JPG or PNG
+            format. <code>DetectDocumentText</code> returns the detected text in an array of <a>Block</a>
+            objects. 
+            
+             
+            <para>
+            Each document page has as an associated <code>Block</code> of type PAGE. Each PAGE
+            <code>Block</code> object is the parent of LINE <code>Block</code> objects that represent
+            the lines of detected text on a page. A LINE <code>Block</code> object is a parent
+            for each word that makes up the line. Words are represented by <code>Block</code>
+            objects of type WORD.
+            </para>
+             
+            <para>
+             <code>DetectDocumentText</code> is a synchronous operation. To analyze documents
+            asynchronously, use <a>StartDocumentTextDetection</a>.
+            </para>
+             
+            <para>
+            For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/how-it-works-detecting.html">Document
+            Text Detection</a>.
+            </para>
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the DetectDocumentText service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the DetectDocumentText service method, as returned by Textract.</returns>
+            <exception cref="T:Amazon.Textract.Model.AccessDeniedException">
+            You aren't authorized to perform the action.
+            </exception>
+            <exception cref="T:Amazon.Textract.Model.BadDocumentException">
+            Amazon Textract isn't able to read the document.
+            </exception>
+            <exception cref="T:Amazon.Textract.Model.DocumentTooLargeException">
+            The document can't be processed because it's too large. The maximum document size
+            for synchronous operations 5 MB. The maximum document size for asynchronous operations
+            is 500 MB for PDF format files.
+            </exception>
+            <exception cref="T:Amazon.Textract.Model.InternalServerErrorException">
+            Amazon Textract experienced a service issue. Try your call again.
+            </exception>
+            <exception cref="T:Amazon.Textract.Model.InvalidParameterException">
+            An input parameter violated a constraint. For example, in synchronous operations,
+            an <code>InvalidParameterException</code> exception occurs when neither of the <code>S3Object</code>
+            or <code>Bytes</code> values are supplied in the <code>Document</code> request parameter.
+            Validate your parameter before calling the API operation again.
+            </exception>
+            <exception cref="T:Amazon.Textract.Model.InvalidS3ObjectException">
+            Amazon Textract is unable to access the S3 object that's specified in the request.
+            </exception>
+            <exception cref="T:Amazon.Textract.Model.ProvisionedThroughputExceededException">
+            The number of requests exceeded your throughput limit. If you want to increase this
+            limit, contact Amazon Textract.
+            </exception>
+            <exception cref="T:Amazon.Textract.Model.ThrottlingException">
+            Amazon Textract is temporarily unable to process the request. Try your call again.
+            </exception>
+            <exception cref="T:Amazon.Textract.Model.UnsupportedDocumentException">
+            The format of the input document isn't supported. Amazon Textract supports documents
+            that are .png or .jpg format.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/DetectDocumentText">REST API Reference for DetectDocumentText Operation</seealso>
+        </member>
+        <member name="M:Amazon.Textract.IAmazonTextract.GetDocumentAnalysisAsync(Amazon.Textract.Model.GetDocumentAnalysisRequest,System.Threading.CancellationToken)">
+            <summary>
+            Gets the results for an Amazon Textract asynchronous operation that analyzes text
+            in a document.
+            
+             
+            <para>
+            You start asynchronous text analysis by calling <a>StartDocumentAnalysis</a>, which
+            returns a job identifier (<code>JobId</code>). When the text analysis operation finishes,
+            Amazon Textract publishes a completion status to the Amazon Simple Notification Service
+            (Amazon SNS) topic that's registered in the initial call to <code>StartDocumentAnalysis</code>.
+            To get the results of the text-detection operation, first check that the status value
+            published to the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call <code>GetDocumentAnalysis</code>,
+            and pass the job identifier (<code>JobId</code>) from the initial call to <code>StartDocumentAnalysis</code>.
+            </para>
+             
+            <para>
+             <code>GetDocumentAnalysis</code> returns an array of <a>Block</a> objects. The following
+            types of information are returned: 
+            </para>
+             <ul> <li> 
+            <para>
+            Words and lines that are related to nearby lines and words. The related information
+            is returned in two <a>Block</a> objects each of type <code>KEY_VALUE_SET</code>: a
+            KEY Block object and a VALUE Block object. For example, <i>Name: Ana Silva Carolina</i>
+            contains a key and value. <i>Name:</i> is the key. <i>Ana Silva Carolina</i> is the
+            value.
+            </para>
+             </li> <li> 
+            <para>
+            Table and table cell data. A TABLE Block object contains information about a detected
+            table. A CELL Block object is returned for each cell in a table.
+            </para>
+             </li> <li> 
+            <para>
+            Selectable elements such as checkboxes and radio buttons. A SELECTION_ELEMENT Block
+            object contains information about a selectable element.
+            </para>
+             </li> <li> 
+            <para>
+            Lines and words of text. A LINE Block object contains one or more WORD Block objects.
+            </para>
+             </li> </ul> 
+            <para>
+            Use the <code>MaxResults</code> parameter to limit the number of blocks returned.
+            If there are more results than specified in <code>MaxResults</code>, the value of
+            <code>NextToken</code> in the operation response contains a pagination token for getting
+            the next set of results. To get the next page of results, call <code>GetDocumentAnalysis</code>,
+            and populate the <code>NextToken</code> request parameter with the token value that's
+            returned from the previous call to <code>GetDocumentAnalysis</code>.
+            </para>
+             
+            <para>
+            For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/how-it-works-analyzing.html">Document
+            Text Analysis</a>.
+            </para>
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the GetDocumentAnalysis service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the GetDocumentAnalysis service method, as returned by Textract.</returns>
+            <exception cref="T:Amazon.Textract.Model.AccessDeniedException">
+            You aren't authorized to perform the action.
+            </exception>
+            <exception cref="T:Amazon.Textract.Model.InternalServerErrorException">
+            Amazon Textract experienced a service issue. Try your call again.
+            </exception>
+            <exception cref="T:Amazon.Textract.Model.InvalidJobIdException">
+            An invalid job identifier was passed to <a>GetDocumentAnalysis</a> or to <a>GetDocumentAnalysis</a>.
+            </exception>
+            <exception cref="T:Amazon.Textract.Model.InvalidParameterException">
+            An input parameter violated a constraint. For example, in synchronous operations,
+            an <code>InvalidParameterException</code> exception occurs when neither of the <code>S3Object</code>
+            or <code>Bytes</code> values are supplied in the <code>Document</code> request parameter.
+            Validate your parameter before calling the API operation again.
+            </exception>
+            <exception cref="T:Amazon.Textract.Model.ProvisionedThroughputExceededException">
+            The number of requests exceeded your throughput limit. If you want to increase this
+            limit, contact Amazon Textract.
+            </exception>
+            <exception cref="T:Amazon.Textract.Model.ThrottlingException">
+            Amazon Textract is temporarily unable to process the request. Try your call again.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/GetDocumentAnalysis">REST API Reference for GetDocumentAnalysis Operation</seealso>
+        </member>
+        <member name="M:Amazon.Textract.IAmazonTextract.GetDocumentTextDetectionAsync(Amazon.Textract.Model.GetDocumentTextDetectionRequest,System.Threading.CancellationToken)">
+            <summary>
+            Gets the results for an Amazon Textract asynchronous operation that detects text in
+            a document. Amazon Textract can detect lines of text and the words that make up a
+            line of text.
+            
+             
+            <para>
+            You start asynchronous text detection by calling <a>StartDocumentTextDetection</a>,
+            which returns a job identifier (<code>JobId</code>). When the text detection operation
+            finishes, Amazon Textract publishes a completion status to the Amazon Simple Notification
+            Service (Amazon SNS) topic that's registered in the initial call to <code>StartDocumentTextDetection</code>.
+            To get the results of the text-detection operation, first check that the status value
+            published to the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call <code>GetDocumentTextDetection</code>,
+            and pass the job identifier (<code>JobId</code>) from the initial call to <code>StartDocumentTextDetection</code>.
+            </para>
+             
+            <para>
+             <code>GetDocumentTextDetection</code> returns an array of <a>Block</a> objects. 
+            </para>
+             
+            <para>
+            Each document page has as an associated <code>Block</code> of type PAGE. Each PAGE
+            <code>Block</code> object is the parent of LINE <code>Block</code> objects that represent
+            the lines of detected text on a page. A LINE <code>Block</code> object is a parent
+            for each word that makes up the line. Words are represented by <code>Block</code>
+            objects of type WORD.
+            </para>
+             
+            <para>
+            Use the MaxResults parameter to limit the number of blocks that are returned. If there
+            are more results than specified in <code>MaxResults</code>, the value of <code>NextToken</code>
+            in the operation response contains a pagination token for getting the next set of
+            results. To get the next page of results, call <code>GetDocumentTextDetection</code>,
+            and populate the <code>NextToken</code> request parameter with the token value that's
+            returned from the previous call to <code>GetDocumentTextDetection</code>.
+            </para>
+             
+            <para>
+            For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/how-it-works-detecting.html">Document
+            Text Detection</a>.
+            </para>
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the GetDocumentTextDetection service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the GetDocumentTextDetection service method, as returned by Textract.</returns>
+            <exception cref="T:Amazon.Textract.Model.AccessDeniedException">
+            You aren't authorized to perform the action.
+            </exception>
+            <exception cref="T:Amazon.Textract.Model.InternalServerErrorException">
+            Amazon Textract experienced a service issue. Try your call again.
+            </exception>
+            <exception cref="T:Amazon.Textract.Model.InvalidJobIdException">
+            An invalid job identifier was passed to <a>GetDocumentAnalysis</a> or to <a>GetDocumentAnalysis</a>.
+            </exception>
+            <exception cref="T:Amazon.Textract.Model.InvalidParameterException">
+            An input parameter violated a constraint. For example, in synchronous operations,
+            an <code>InvalidParameterException</code> exception occurs when neither of the <code>S3Object</code>
+            or <code>Bytes</code> values are supplied in the <code>Document</code> request parameter.
+            Validate your parameter before calling the API operation again.
+            </exception>
+            <exception cref="T:Amazon.Textract.Model.ProvisionedThroughputExceededException">
+            The number of requests exceeded your throughput limit. If you want to increase this
+            limit, contact Amazon Textract.
+            </exception>
+            <exception cref="T:Amazon.Textract.Model.ThrottlingException">
+            Amazon Textract is temporarily unable to process the request. Try your call again.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/GetDocumentTextDetection">REST API Reference for GetDocumentTextDetection Operation</seealso>
+        </member>
+        <member name="M:Amazon.Textract.IAmazonTextract.StartDocumentAnalysisAsync(Amazon.Textract.Model.StartDocumentAnalysisRequest,System.Threading.CancellationToken)">
+            <summary>
+            Starts asynchronous analysis of an input document for relationships between detected
+            items such as key and value pairs, tables, and selection elements.
+            
+             
+            <para>
+             <code>StartDocumentAnalysis</code> can analyze text in documents that are in JPG,
+            PNG, and PDF format. The documents are stored in an Amazon S3 bucket. Use <a>DocumentLocation</a>
+            to specify the bucket name and file name of the document. 
+            </para>
+             
+            <para>
+             <code>StartDocumentAnalysis</code> returns a job identifier (<code>JobId</code>)
+            that you use to get the results of the operation. When text analysis is finished,
+            Amazon Textract publishes a completion status to the Amazon Simple Notification Service
+            (Amazon SNS) topic that you specify in <code>NotificationChannel</code>. To get the
+            results of the text analysis operation, first check that the status value published
+            to the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call <a>GetDocumentAnalysis</a>,
+            and pass the job identifier (<code>JobId</code>) from the initial call to <code>StartDocumentAnalysis</code>.
+            </para>
+             
+            <para>
+            For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/how-it-works-analyzing.html">Document
+            Text Analysis</a>.
+            </para>
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the StartDocumentAnalysis service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the StartDocumentAnalysis service method, as returned by Textract.</returns>
+            <exception cref="T:Amazon.Textract.Model.AccessDeniedException">
+            You aren't authorized to perform the action.
+            </exception>
+            <exception cref="T:Amazon.Textract.Model.BadDocumentException">
+            Amazon Textract isn't able to read the document.
+            </exception>
+            <exception cref="T:Amazon.Textract.Model.DocumentTooLargeException">
+            The document can't be processed because it's too large. The maximum document size
+            for synchronous operations 5 MB. The maximum document size for asynchronous operations
+            is 500 MB for PDF format files.
+            </exception>
+            <exception cref="T:Amazon.Textract.Model.IdempotentParameterMismatchException">
+            A <code>ClientRequestToken</code> input parameter was reused with an operation, but
+            at least one of the other input parameters is different from the previous call to
+            the operation.
+            </exception>
+            <exception cref="T:Amazon.Textract.Model.InternalServerErrorException">
+            Amazon Textract experienced a service issue. Try your call again.
+            </exception>
+            <exception cref="T:Amazon.Textract.Model.InvalidParameterException">
+            An input parameter violated a constraint. For example, in synchronous operations,
+            an <code>InvalidParameterException</code> exception occurs when neither of the <code>S3Object</code>
+            or <code>Bytes</code> values are supplied in the <code>Document</code> request parameter.
+            Validate your parameter before calling the API operation again.
+            </exception>
+            <exception cref="T:Amazon.Textract.Model.InvalidS3ObjectException">
+            Amazon Textract is unable to access the S3 object that's specified in the request.
+            </exception>
+            <exception cref="T:Amazon.Textract.Model.LimitExceededException">
+            An Amazon Textract service limit was exceeded. For example, if you start too many
+            asynchronous jobs concurrently, calls to start operations (<code>StartDocumentTextDetection</code>,
+            for example) raise a LimitExceededException exception (HTTP status code: 400) until
+            the number of concurrently running jobs is below the Amazon Textract service limit.
+            </exception>
+            <exception cref="T:Amazon.Textract.Model.ProvisionedThroughputExceededException">
+            The number of requests exceeded your throughput limit. If you want to increase this
+            limit, contact Amazon Textract.
+            </exception>
+            <exception cref="T:Amazon.Textract.Model.ThrottlingException">
+            Amazon Textract is temporarily unable to process the request. Try your call again.
+            </exception>
+            <exception cref="T:Amazon.Textract.Model.UnsupportedDocumentException">
+            The format of the input document isn't supported. Amazon Textract supports documents
+            that are .png or .jpg format.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/StartDocumentAnalysis">REST API Reference for StartDocumentAnalysis Operation</seealso>
+        </member>
+        <member name="M:Amazon.Textract.IAmazonTextract.StartDocumentTextDetectionAsync(Amazon.Textract.Model.StartDocumentTextDetectionRequest,System.Threading.CancellationToken)">
+            <summary>
+            Starts the asynchronous detection of text in a document. Amazon Textract can detect
+            lines of text and the words that make up a line of text.
+            
+             
+            <para>
+             <code>StartDocumentTextDetection</code> can analyze text in documents that are in
+            JPG, PNG, and PDF format. The documents are stored in an Amazon S3 bucket. Use <a>DocumentLocation</a>
+            to specify the bucket name and file name of the document. 
+            </para>
+             
+            <para>
+             <code>StartTextDetection</code> returns a job identifier (<code>JobId</code>) that
+            you use to get the results of the operation. When text detection is finished, Amazon
+            Textract publishes a completion status to the Amazon Simple Notification Service (Amazon
+            SNS) topic that you specify in <code>NotificationChannel</code>. To get the results
+            of the text detection operation, first check that the status value published to the
+            Amazon SNS topic is <code>SUCCEEDED</code>. If so, call <a>GetDocumentTextDetection</a>,
+            and pass the job identifier (<code>JobId</code>) from the initial call to <code>StartDocumentTextDetection</code>.
+            </para>
+             
+            <para>
+            For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/how-it-works-detecting.html">Document
+            Text Detection</a>.
+            </para>
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the StartDocumentTextDetection service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the StartDocumentTextDetection service method, as returned by Textract.</returns>
+            <exception cref="T:Amazon.Textract.Model.AccessDeniedException">
+            You aren't authorized to perform the action.
+            </exception>
+            <exception cref="T:Amazon.Textract.Model.BadDocumentException">
+            Amazon Textract isn't able to read the document.
+            </exception>
+            <exception cref="T:Amazon.Textract.Model.DocumentTooLargeException">
+            The document can't be processed because it's too large. The maximum document size
+            for synchronous operations 5 MB. The maximum document size for asynchronous operations
+            is 500 MB for PDF format files.
+            </exception>
+            <exception cref="T:Amazon.Textract.Model.IdempotentParameterMismatchException">
+            A <code>ClientRequestToken</code> input parameter was reused with an operation, but
+            at least one of the other input parameters is different from the previous call to
+            the operation.
+            </exception>
+            <exception cref="T:Amazon.Textract.Model.InternalServerErrorException">
+            Amazon Textract experienced a service issue. Try your call again.
+            </exception>
+            <exception cref="T:Amazon.Textract.Model.InvalidParameterException">
+            An input parameter violated a constraint. For example, in synchronous operations,
+            an <code>InvalidParameterException</code> exception occurs when neither of the <code>S3Object</code>
+            or <code>Bytes</code> values are supplied in the <code>Document</code> request parameter.
+            Validate your parameter before calling the API operation again.
+            </exception>
+            <exception cref="T:Amazon.Textract.Model.InvalidS3ObjectException">
+            Amazon Textract is unable to access the S3 object that's specified in the request.
+            </exception>
+            <exception cref="T:Amazon.Textract.Model.LimitExceededException">
+            An Amazon Textract service limit was exceeded. For example, if you start too many
+            asynchronous jobs concurrently, calls to start operations (<code>StartDocumentTextDetection</code>,
+            for example) raise a LimitExceededException exception (HTTP status code: 400) until
+            the number of concurrently running jobs is below the Amazon Textract service limit.
+            </exception>
+            <exception cref="T:Amazon.Textract.Model.ProvisionedThroughputExceededException">
+            The number of requests exceeded your throughput limit. If you want to increase this
+            limit, contact Amazon Textract.
+            </exception>
+            <exception cref="T:Amazon.Textract.Model.ThrottlingException">
+            Amazon Textract is temporarily unable to process the request. Try your call again.
+            </exception>
+            <exception cref="T:Amazon.Textract.Model.UnsupportedDocumentException">
+            The format of the input document isn't supported. Amazon Textract supports documents
+            that are .png or .jpg format.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/StartDocumentTextDetection">REST API Reference for StartDocumentTextDetection Operation</seealso>
+        </member>
+    </members>
+</doc>

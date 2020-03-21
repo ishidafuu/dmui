@@ -1,0 +1,3676 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AWSSDK.LakeFormation</name>
+    </assembly>
+    <members>
+        <member name="T:Amazon.LakeFormation.AmazonLakeFormationConfig">
+            <summary>
+            Configuration for accessing Amazon LakeFormation service
+            </summary>
+        </member>
+        <member name="M:Amazon.LakeFormation.AmazonLakeFormationConfig.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="P:Amazon.LakeFormation.AmazonLakeFormationConfig.RegionEndpointServiceName">
+            <summary>
+            The constant used to lookup in the region hash the endpoint.
+            </summary>
+        </member>
+        <member name="P:Amazon.LakeFormation.AmazonLakeFormationConfig.ServiceVersion">
+            <summary>
+            Gets the ServiceVersion property.
+            </summary>
+        </member>
+        <member name="P:Amazon.LakeFormation.AmazonLakeFormationConfig.UserAgent">
+            <summary>
+            Gets the value of UserAgent property.
+            </summary>
+        </member>
+        <member name="T:Amazon.LakeFormation.AmazonLakeFormationException">
+            <summary>
+             Common exception for the LakeFormation service.
+             </summary>
+        </member>
+        <member name="M:Amazon.LakeFormation.AmazonLakeFormationException.#ctor(System.String)">
+            <summary>
+            Construct instance of AmazonLakeFormationException
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:Amazon.LakeFormation.AmazonLakeFormationException.#ctor(System.String,System.Exception)">
+            <summary>
+            Construct instance of AmazonLakeFormationException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.LakeFormation.AmazonLakeFormationException.#ctor(System.Exception)">
+            <summary>
+            Construct instance of AmazonLakeFormationException
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.LakeFormation.AmazonLakeFormationException.#ctor(System.String,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of AmazonLakeFormationException
+            </summary>
+            <param name="message"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="M:Amazon.LakeFormation.AmazonLakeFormationException.#ctor(System.String,System.Exception,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of AmazonLakeFormationException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="T:Amazon.LakeFormation.Internal.AmazonLakeFormationMetadata">
+            <summary>
+            Service metadata for  Amazon LakeFormation service
+            </summary>
+        </member>
+        <member name="P:Amazon.LakeFormation.Internal.AmazonLakeFormationMetadata.ServiceId">
+            <summary>
+            Gets the value of the Service Id.
+            </summary>
+        </member>
+        <member name="P:Amazon.LakeFormation.Internal.AmazonLakeFormationMetadata.OperationNameMapping">
+            <summary>
+            Gets the dictionary that gives mapping of renamed operations
+            </summary>
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.AlreadyExistsException">
+            <summary>
+             LakeFormation exception
+             </summary>
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.AlreadyExistsException.#ctor(System.String)">
+            <summary>
+            Constructs a new AlreadyExistsException with the specified error
+            message.
+            </summary>
+            <param name="message">
+            Describes the error encountered.
+            </param>
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.AlreadyExistsException.#ctor(System.String,System.Exception)">
+            <summary>
+            Construct instance of AlreadyExistsException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.AlreadyExistsException.#ctor(System.Exception)">
+            <summary>
+            Construct instance of AlreadyExistsException
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.AlreadyExistsException.#ctor(System.String,System.Exception,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of AlreadyExistsException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.AlreadyExistsException.#ctor(System.String,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of AlreadyExistsException
+            </summary>
+            <param name="message"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.BatchGrantPermissionsRequest">
+            <summary>
+            Container for the parameters to the BatchGrantPermissions operation.
+            Batch operation to grant permissions to the principal.
+            </summary>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.BatchGrantPermissionsRequest.CatalogId">
+            <summary>
+            Gets and sets the property CatalogId. 
+            <para>
+            The identifier for the Data Catalog. By default, the account ID. The Data Catalog
+            is the persistent metadata store. It contains database definitions, table definitions,
+            and other control information to manage your AWS Lake Formation environment. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.BatchGrantPermissionsRequest.Entries">
+            <summary>
+            Gets and sets the property Entries. 
+            <para>
+            A list of up to 20 entries for resource permissions to be granted by batch operation
+            to the principal.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.BatchGrantPermissionsResponse">
+            <summary>
+            This is the response object from the BatchGrantPermissions operation.
+            </summary>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.BatchGrantPermissionsResponse.Failures">
+            <summary>
+            Gets and sets the property Failures. 
+            <para>
+            A list of failures to grant permissions to the resources.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.BatchPermissionsFailureEntry">
+            <summary>
+            A list of failures when performing a batch grant or batch revoke operation.
+            </summary>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.BatchPermissionsFailureEntry.Error">
+            <summary>
+            Gets and sets the property Error. 
+            <para>
+            An error message that applies to the failure of the entry.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.BatchPermissionsFailureEntry.RequestEntry">
+            <summary>
+            Gets and sets the property RequestEntry. 
+            <para>
+            An identifier for an entry of the batch request.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.BatchPermissionsRequestEntry">
+            <summary>
+            A permission to a resource granted by batch operation to the principal.
+            </summary>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.BatchPermissionsRequestEntry.Id">
+            <summary>
+            Gets and sets the property Id. 
+            <para>
+            A unique identifier for the batch permissions request entry.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.BatchPermissionsRequestEntry.Permissions">
+            <summary>
+            Gets and sets the property Permissions. 
+            <para>
+            The permissions to be granted.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.BatchPermissionsRequestEntry.PermissionsWithGrantOption">
+            <summary>
+            Gets and sets the property PermissionsWithGrantOption. 
+            <para>
+            Indicates if the option to pass permissions is granted.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.BatchPermissionsRequestEntry.Principal">
+            <summary>
+            Gets and sets the property Principal. 
+            <para>
+            The principal to be granted a permission.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.BatchPermissionsRequestEntry.Resource">
+            <summary>
+            Gets and sets the property Resource. 
+            <para>
+            The resource to which the principal is to be granted a permission.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.BatchRevokePermissionsRequest">
+            <summary>
+            Container for the parameters to the BatchRevokePermissions operation.
+            Batch operation to revoke permissions from the principal.
+            </summary>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.BatchRevokePermissionsRequest.CatalogId">
+            <summary>
+            Gets and sets the property CatalogId. 
+            <para>
+            The identifier for the Data Catalog. By default, the account ID. The Data Catalog
+            is the persistent metadata store. It contains database definitions, table definitions,
+            and other control information to manage your AWS Lake Formation environment. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.BatchRevokePermissionsRequest.Entries">
+            <summary>
+            Gets and sets the property Entries. 
+            <para>
+            A list of up to 20 entries for resource permissions to be revoked by batch operation
+            to the principal.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.BatchRevokePermissionsResponse">
+            <summary>
+            This is the response object from the BatchRevokePermissions operation.
+            </summary>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.BatchRevokePermissionsResponse.Failures">
+            <summary>
+            Gets and sets the property Failures. 
+            <para>
+            A list of failures to revoke permissions to the resources.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.CatalogResource">
+            <summary>
+            A structure for the catalog object.
+            </summary>
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.ColumnWildcard">
+            <summary>
+            A wildcard object, consisting of an optional list of excluded column names or indexes.
+            </summary>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.ColumnWildcard.ExcludedColumnNames">
+            <summary>
+            Gets and sets the property ExcludedColumnNames. 
+            <para>
+            Excludes column names. Any column with this name will be excluded.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.ConcurrentModificationException">
+            <summary>
+             LakeFormation exception
+             </summary>
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.ConcurrentModificationException.#ctor(System.String)">
+            <summary>
+            Constructs a new ConcurrentModificationException with the specified error
+            message.
+            </summary>
+            <param name="message">
+            Describes the error encountered.
+            </param>
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.ConcurrentModificationException.#ctor(System.String,System.Exception)">
+            <summary>
+            Construct instance of ConcurrentModificationException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.ConcurrentModificationException.#ctor(System.Exception)">
+            <summary>
+            Construct instance of ConcurrentModificationException
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.ConcurrentModificationException.#ctor(System.String,System.Exception,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of ConcurrentModificationException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.ConcurrentModificationException.#ctor(System.String,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of ConcurrentModificationException
+            </summary>
+            <param name="message"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.DatabaseResource">
+            <summary>
+            A structure for the database object.
+            </summary>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.DatabaseResource.Name">
+            <summary>
+            Gets and sets the property Name. 
+            <para>
+            The name of the database resource. Unique to the Data Catalog.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.DataLakePrincipal">
+            <summary>
+            The AWS Lake Formation principal.
+            </summary>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.DataLakePrincipal.DataLakePrincipalIdentifier">
+            <summary>
+            Gets and sets the property DataLakePrincipalIdentifier. 
+            <para>
+            An identifier for the AWS Lake Formation principal.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.DataLakeSettings">
+            <summary>
+            The AWS Lake Formation principal.
+            </summary>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.DataLakeSettings.CreateDatabaseDefaultPermissions">
+            <summary>
+            Gets and sets the property CreateDatabaseDefaultPermissions. 
+            <para>
+            A list of up to three principal permissions entries for default create database permissions.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.DataLakeSettings.CreateTableDefaultPermissions">
+            <summary>
+            Gets and sets the property CreateTableDefaultPermissions. 
+            <para>
+            A list of up to three principal permissions entries for default create table permissions.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.DataLakeSettings.DataLakeAdmins">
+            <summary>
+            Gets and sets the property DataLakeAdmins. 
+            <para>
+            A list of AWS Lake Formation principals.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.DataLocationResource">
+            <summary>
+            A structure for a data location object where permissions are granted or revoked.
+            </summary>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.DataLocationResource.ResourceArn">
+            <summary>
+            Gets and sets the property ResourceArn. 
+            <para>
+            The Amazon Resource Name (ARN) that uniquely identifies the data location resource.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.DeregisterResourceRequest">
+            <summary>
+            Container for the parameters to the DeregisterResource operation.
+            Deregisters the resource as managed by the Data Catalog.
+            
+             
+            <para>
+            When you deregister a path, Lake Formation removes the path from the inline policy
+            attached to your service-linked role.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.DeregisterResourceRequest.ResourceArn">
+            <summary>
+            Gets and sets the property ResourceArn. 
+            <para>
+            The Amazon Resource Name (ARN) of the resource that you want to deregister.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.DeregisterResourceResponse">
+            <summary>
+            This is the response object from the DeregisterResource operation.
+            </summary>
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.DescribeResourceRequest">
+            <summary>
+            Container for the parameters to the DescribeResource operation.
+            Retrieves the current data access role for the given resource registered in AWS Lake
+            Formation.
+            </summary>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.DescribeResourceRequest.ResourceArn">
+            <summary>
+            Gets and sets the property ResourceArn. 
+            <para>
+            The resource ARN.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.DescribeResourceResponse">
+            <summary>
+            This is the response object from the DescribeResource operation.
+            </summary>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.DescribeResourceResponse.ResourceInfo">
+            <summary>
+            Gets and sets the property ResourceInfo. 
+            <para>
+            A structure containing information about an AWS Lake Formation resource.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.EntityNotFoundException">
+            <summary>
+             LakeFormation exception
+             </summary>
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.EntityNotFoundException.#ctor(System.String)">
+            <summary>
+            Constructs a new EntityNotFoundException with the specified error
+            message.
+            </summary>
+            <param name="message">
+            Describes the error encountered.
+            </param>
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.EntityNotFoundException.#ctor(System.String,System.Exception)">
+            <summary>
+            Construct instance of EntityNotFoundException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.EntityNotFoundException.#ctor(System.Exception)">
+            <summary>
+            Construct instance of EntityNotFoundException
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.EntityNotFoundException.#ctor(System.String,System.Exception,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of EntityNotFoundException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.EntityNotFoundException.#ctor(System.String,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of EntityNotFoundException
+            </summary>
+            <param name="message"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.ErrorDetail">
+            <summary>
+            Contains details about an error.
+            </summary>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.ErrorDetail.ErrorCode">
+            <summary>
+            Gets and sets the property ErrorCode. 
+            <para>
+            The code associated with this error.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.ErrorDetail.ErrorMessage">
+            <summary>
+            Gets and sets the property ErrorMessage. 
+            <para>
+            A message describing the error.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.FilterCondition">
+            <summary>
+            This structure describes the filtering of columns in a table based on a filter condition.
+            </summary>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.FilterCondition.ComparisonOperator">
+            <summary>
+            Gets and sets the property ComparisonOperator. 
+            <para>
+            The comparison operator used in the filter condition.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.FilterCondition.Field">
+            <summary>
+            Gets and sets the property Field. 
+            <para>
+            The field to filter in the filter condition.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.FilterCondition.StringValueList">
+            <summary>
+            Gets and sets the property StringValueList. 
+            <para>
+            A string with values used in evaluating the filter condition.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.GetDataLakeSettingsRequest">
+            <summary>
+            Container for the parameters to the GetDataLakeSettings operation.
+            The AWS Lake Formation principal.
+            </summary>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.GetDataLakeSettingsRequest.CatalogId">
+            <summary>
+            Gets and sets the property CatalogId. 
+            <para>
+            The identifier for the Data Catalog. By default, the account ID. The Data Catalog
+            is the persistent metadata store. It contains database definitions, table definitions,
+            and other control information to manage your AWS Lake Formation environment. 
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.GetDataLakeSettingsResponse">
+            <summary>
+            This is the response object from the GetDataLakeSettings operation.
+            </summary>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.GetDataLakeSettingsResponse.DataLakeSettings">
+            <summary>
+            Gets and sets the property DataLakeSettings. 
+            <para>
+            A list of AWS Lake Formation principals. 
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.GetEffectivePermissionsForPathRequest">
+            <summary>
+            Container for the parameters to the GetEffectivePermissionsForPath operation.
+            Returns the permissions for a specified table or database resource located at a path
+            in Amazon S3.
+            </summary>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.GetEffectivePermissionsForPathRequest.CatalogId">
+            <summary>
+            Gets and sets the property CatalogId. 
+            <para>
+            The identifier for the Data Catalog. By default, the account ID. The Data Catalog
+            is the persistent metadata store. It contains database definitions, table definitions,
+            and other control information to manage your AWS Lake Formation environment. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.GetEffectivePermissionsForPathRequest.MaxResults">
+            <summary>
+            Gets and sets the property MaxResults. 
+            <para>
+            The maximum number of results to return.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.GetEffectivePermissionsForPathRequest.NextToken">
+            <summary>
+            Gets and sets the property NextToken. 
+            <para>
+            A continuation token, if this is not the first call to retrieve this list.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.GetEffectivePermissionsForPathRequest.ResourceArn">
+            <summary>
+            Gets and sets the property ResourceArn. 
+            <para>
+            The Amazon Resource Name (ARN) of the resource for which you want to get permissions.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.GetEffectivePermissionsForPathResponse">
+            <summary>
+            This is the response object from the GetEffectivePermissionsForPath operation.
+            </summary>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.GetEffectivePermissionsForPathResponse.NextToken">
+            <summary>
+            Gets and sets the property NextToken. 
+            <para>
+            A continuation token, if this is not the first call to retrieve this list.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.GetEffectivePermissionsForPathResponse.Permissions">
+            <summary>
+            Gets and sets the property Permissions. 
+            <para>
+            A list of the permissions for the specified table or database resource located at
+            the path in Amazon S3.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.GrantPermissionsRequest">
+            <summary>
+            Container for the parameters to the GrantPermissions operation.
+            Grants permissions to the principal to access metadata in the Data Catalog and data
+            organized in underlying data storage such as Amazon S3.
+            
+             
+            <para>
+            For information about permissions, see <a href="https://docs-aws.amazon.com/michigan/latest/dg/security-data-access.html">Security
+            and Access Control to Metadata and Data</a>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.GrantPermissionsRequest.CatalogId">
+            <summary>
+            Gets and sets the property CatalogId. 
+            <para>
+            The identifier for the Data Catalog. By default, the account ID. The Data Catalog
+            is the persistent metadata store. It contains database definitions, table definitions,
+            and other control information to manage your AWS Lake Formation environment. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.GrantPermissionsRequest.Permissions">
+            <summary>
+            Gets and sets the property Permissions. 
+            <para>
+            The permissions granted to the principal on the resource. AWS Lake Formation defines
+            privileges to grant and revoke access to metadata in the Data Catalog and data organized
+            in underlying data storage such as Amazon S3. AWS Lake Formation requires that each
+            principal be authorized to perform a specific task on AWS Lake Formation resources.
+            
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.GrantPermissionsRequest.PermissionsWithGrantOption">
+            <summary>
+            Gets and sets the property PermissionsWithGrantOption. 
+            <para>
+            Indicates a list of the granted permissions that the principal may pass to other users.
+            These permissions may only be a subset of the permissions granted in the <code>Privileges</code>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.GrantPermissionsRequest.Principal">
+            <summary>
+            Gets and sets the property Principal. 
+            <para>
+            The principal to be granted the permissions on the resource. Supported principals
+            are IAM users or IAM roles, and they are defined by their principal type and their
+            ARN.
+            </para>
+             
+            <para>
+            Note that if you define a resource with a particular ARN, then later delete, and recreate
+            a resource with that same ARN, the resource maintains the permissions already granted.
+            
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.GrantPermissionsRequest.Resource">
+            <summary>
+            Gets and sets the property Resource. 
+            <para>
+            The resource to which permissions are to be granted. Resources in AWS Lake Formation
+            are the Data Catalog, databases, and tables.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.GrantPermissionsResponse">
+            <summary>
+            This is the response object from the GrantPermissions operation.
+            </summary>
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.InternalServiceException">
+            <summary>
+             LakeFormation exception
+             </summary>
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.InternalServiceException.#ctor(System.String)">
+            <summary>
+            Constructs a new InternalServiceException with the specified error
+            message.
+            </summary>
+            <param name="message">
+            Describes the error encountered.
+            </param>
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.InternalServiceException.#ctor(System.String,System.Exception)">
+            <summary>
+            Construct instance of InternalServiceException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.InternalServiceException.#ctor(System.Exception)">
+            <summary>
+            Construct instance of InternalServiceException
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.InternalServiceException.#ctor(System.String,System.Exception,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of InternalServiceException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.InternalServiceException.#ctor(System.String,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of InternalServiceException
+            </summary>
+            <param name="message"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.Internal.MarshallTransformations.BatchGrantPermissionsRequestMarshaller">
+            <summary>
+            BatchGrantPermissions Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.Internal.MarshallTransformations.BatchGrantPermissionsRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.Internal.MarshallTransformations.BatchGrantPermissionsRequestMarshaller.Marshall(Amazon.LakeFormation.Model.BatchGrantPermissionsRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.Internal.MarshallTransformations.BatchGrantPermissionsRequestMarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.Internal.MarshallTransformations.BatchGrantPermissionsResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for BatchGrantPermissions operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.Internal.MarshallTransformations.BatchGrantPermissionsResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.Internal.MarshallTransformations.BatchGrantPermissionsResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.Internal.MarshallTransformations.BatchGrantPermissionsResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.Internal.MarshallTransformations.BatchPermissionsFailureEntryUnmarshaller">
+            <summary>
+            Response Unmarshaller for BatchPermissionsFailureEntry Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.Internal.MarshallTransformations.BatchPermissionsFailureEntryUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#LakeFormation#Model#BatchPermissionsFailureEntry,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.Internal.MarshallTransformations.BatchPermissionsFailureEntryUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.Internal.MarshallTransformations.BatchPermissionsFailureEntryUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.Internal.MarshallTransformations.BatchPermissionsRequestEntryMarshaller">
+            <summary>
+            BatchPermissionsRequestEntry Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.Internal.MarshallTransformations.BatchPermissionsRequestEntryMarshaller.Marshall(Amazon.LakeFormation.Model.BatchPermissionsRequestEntry,Amazon.Runtime.Internal.Transform.JsonMarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="requestObject"></param>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="F:Amazon.LakeFormation.Model.Internal.MarshallTransformations.BatchPermissionsRequestEntryMarshaller.Instance">
+            <summary>
+            Singleton Marshaller.
+            </summary>  
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.Internal.MarshallTransformations.BatchPermissionsRequestEntryUnmarshaller">
+            <summary>
+            Response Unmarshaller for BatchPermissionsRequestEntry Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.Internal.MarshallTransformations.BatchPermissionsRequestEntryUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#LakeFormation#Model#BatchPermissionsRequestEntry,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.Internal.MarshallTransformations.BatchPermissionsRequestEntryUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.Internal.MarshallTransformations.BatchPermissionsRequestEntryUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.Internal.MarshallTransformations.BatchRevokePermissionsRequestMarshaller">
+            <summary>
+            BatchRevokePermissions Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.Internal.MarshallTransformations.BatchRevokePermissionsRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.Internal.MarshallTransformations.BatchRevokePermissionsRequestMarshaller.Marshall(Amazon.LakeFormation.Model.BatchRevokePermissionsRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.Internal.MarshallTransformations.BatchRevokePermissionsRequestMarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.Internal.MarshallTransformations.BatchRevokePermissionsResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for BatchRevokePermissions operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.Internal.MarshallTransformations.BatchRevokePermissionsResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.Internal.MarshallTransformations.BatchRevokePermissionsResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.Internal.MarshallTransformations.BatchRevokePermissionsResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.Internal.MarshallTransformations.CatalogResourceMarshaller">
+            <summary>
+            CatalogResource Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.Internal.MarshallTransformations.CatalogResourceMarshaller.Marshall(Amazon.LakeFormation.Model.CatalogResource,Amazon.Runtime.Internal.Transform.JsonMarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="requestObject"></param>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="F:Amazon.LakeFormation.Model.Internal.MarshallTransformations.CatalogResourceMarshaller.Instance">
+            <summary>
+            Singleton Marshaller.
+            </summary>  
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.Internal.MarshallTransformations.CatalogResourceUnmarshaller">
+            <summary>
+            Response Unmarshaller for CatalogResource Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.Internal.MarshallTransformations.CatalogResourceUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#LakeFormation#Model#CatalogResource,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.Internal.MarshallTransformations.CatalogResourceUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.Internal.MarshallTransformations.CatalogResourceUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.Internal.MarshallTransformations.ColumnWildcardMarshaller">
+            <summary>
+            ColumnWildcard Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.Internal.MarshallTransformations.ColumnWildcardMarshaller.Marshall(Amazon.LakeFormation.Model.ColumnWildcard,Amazon.Runtime.Internal.Transform.JsonMarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="requestObject"></param>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="F:Amazon.LakeFormation.Model.Internal.MarshallTransformations.ColumnWildcardMarshaller.Instance">
+            <summary>
+            Singleton Marshaller.
+            </summary>  
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.Internal.MarshallTransformations.ColumnWildcardUnmarshaller">
+            <summary>
+            Response Unmarshaller for ColumnWildcard Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.Internal.MarshallTransformations.ColumnWildcardUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#LakeFormation#Model#ColumnWildcard,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.Internal.MarshallTransformations.ColumnWildcardUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.Internal.MarshallTransformations.ColumnWildcardUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.Internal.MarshallTransformations.DatabaseResourceMarshaller">
+            <summary>
+            DatabaseResource Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.Internal.MarshallTransformations.DatabaseResourceMarshaller.Marshall(Amazon.LakeFormation.Model.DatabaseResource,Amazon.Runtime.Internal.Transform.JsonMarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="requestObject"></param>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="F:Amazon.LakeFormation.Model.Internal.MarshallTransformations.DatabaseResourceMarshaller.Instance">
+            <summary>
+            Singleton Marshaller.
+            </summary>  
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.Internal.MarshallTransformations.DatabaseResourceUnmarshaller">
+            <summary>
+            Response Unmarshaller for DatabaseResource Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.Internal.MarshallTransformations.DatabaseResourceUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#LakeFormation#Model#DatabaseResource,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.Internal.MarshallTransformations.DatabaseResourceUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.Internal.MarshallTransformations.DatabaseResourceUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.Internal.MarshallTransformations.DataLakePrincipalMarshaller">
+            <summary>
+            DataLakePrincipal Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.Internal.MarshallTransformations.DataLakePrincipalMarshaller.Marshall(Amazon.LakeFormation.Model.DataLakePrincipal,Amazon.Runtime.Internal.Transform.JsonMarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="requestObject"></param>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="F:Amazon.LakeFormation.Model.Internal.MarshallTransformations.DataLakePrincipalMarshaller.Instance">
+            <summary>
+            Singleton Marshaller.
+            </summary>  
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.Internal.MarshallTransformations.DataLakePrincipalUnmarshaller">
+            <summary>
+            Response Unmarshaller for DataLakePrincipal Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.Internal.MarshallTransformations.DataLakePrincipalUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#LakeFormation#Model#DataLakePrincipal,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.Internal.MarshallTransformations.DataLakePrincipalUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.Internal.MarshallTransformations.DataLakePrincipalUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.Internal.MarshallTransformations.DataLakeSettingsMarshaller">
+            <summary>
+            DataLakeSettings Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.Internal.MarshallTransformations.DataLakeSettingsMarshaller.Marshall(Amazon.LakeFormation.Model.DataLakeSettings,Amazon.Runtime.Internal.Transform.JsonMarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="requestObject"></param>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="F:Amazon.LakeFormation.Model.Internal.MarshallTransformations.DataLakeSettingsMarshaller.Instance">
+            <summary>
+            Singleton Marshaller.
+            </summary>  
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.Internal.MarshallTransformations.DataLakeSettingsUnmarshaller">
+            <summary>
+            Response Unmarshaller for DataLakeSettings Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.Internal.MarshallTransformations.DataLakeSettingsUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#LakeFormation#Model#DataLakeSettings,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.Internal.MarshallTransformations.DataLakeSettingsUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.Internal.MarshallTransformations.DataLakeSettingsUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.Internal.MarshallTransformations.DataLocationResourceMarshaller">
+            <summary>
+            DataLocationResource Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.Internal.MarshallTransformations.DataLocationResourceMarshaller.Marshall(Amazon.LakeFormation.Model.DataLocationResource,Amazon.Runtime.Internal.Transform.JsonMarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="requestObject"></param>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="F:Amazon.LakeFormation.Model.Internal.MarshallTransformations.DataLocationResourceMarshaller.Instance">
+            <summary>
+            Singleton Marshaller.
+            </summary>  
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.Internal.MarshallTransformations.DataLocationResourceUnmarshaller">
+            <summary>
+            Response Unmarshaller for DataLocationResource Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.Internal.MarshallTransformations.DataLocationResourceUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#LakeFormation#Model#DataLocationResource,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.Internal.MarshallTransformations.DataLocationResourceUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.Internal.MarshallTransformations.DataLocationResourceUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.Internal.MarshallTransformations.DeregisterResourceRequestMarshaller">
+            <summary>
+            DeregisterResource Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.Internal.MarshallTransformations.DeregisterResourceRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.Internal.MarshallTransformations.DeregisterResourceRequestMarshaller.Marshall(Amazon.LakeFormation.Model.DeregisterResourceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.Internal.MarshallTransformations.DeregisterResourceRequestMarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.Internal.MarshallTransformations.DeregisterResourceResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for DeregisterResource operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.Internal.MarshallTransformations.DeregisterResourceResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.Internal.MarshallTransformations.DeregisterResourceResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.Internal.MarshallTransformations.DeregisterResourceResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.Internal.MarshallTransformations.DescribeResourceRequestMarshaller">
+            <summary>
+            DescribeResource Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.Internal.MarshallTransformations.DescribeResourceRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.Internal.MarshallTransformations.DescribeResourceRequestMarshaller.Marshall(Amazon.LakeFormation.Model.DescribeResourceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.Internal.MarshallTransformations.DescribeResourceRequestMarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.Internal.MarshallTransformations.DescribeResourceResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for DescribeResource operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.Internal.MarshallTransformations.DescribeResourceResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.Internal.MarshallTransformations.DescribeResourceResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.Internal.MarshallTransformations.DescribeResourceResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.Internal.MarshallTransformations.ErrorDetailUnmarshaller">
+            <summary>
+            Response Unmarshaller for ErrorDetail Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.Internal.MarshallTransformations.ErrorDetailUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#LakeFormation#Model#ErrorDetail,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.Internal.MarshallTransformations.ErrorDetailUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.Internal.MarshallTransformations.ErrorDetailUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.Internal.MarshallTransformations.FilterConditionMarshaller">
+            <summary>
+            FilterCondition Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.Internal.MarshallTransformations.FilterConditionMarshaller.Marshall(Amazon.LakeFormation.Model.FilterCondition,Amazon.Runtime.Internal.Transform.JsonMarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="requestObject"></param>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="F:Amazon.LakeFormation.Model.Internal.MarshallTransformations.FilterConditionMarshaller.Instance">
+            <summary>
+            Singleton Marshaller.
+            </summary>  
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.Internal.MarshallTransformations.GetDataLakeSettingsRequestMarshaller">
+            <summary>
+            GetDataLakeSettings Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.Internal.MarshallTransformations.GetDataLakeSettingsRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.Internal.MarshallTransformations.GetDataLakeSettingsRequestMarshaller.Marshall(Amazon.LakeFormation.Model.GetDataLakeSettingsRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.Internal.MarshallTransformations.GetDataLakeSettingsRequestMarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.Internal.MarshallTransformations.GetDataLakeSettingsResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for GetDataLakeSettings operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.Internal.MarshallTransformations.GetDataLakeSettingsResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.Internal.MarshallTransformations.GetDataLakeSettingsResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.Internal.MarshallTransformations.GetDataLakeSettingsResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.Internal.MarshallTransformations.GetEffectivePermissionsForPathRequestMarshaller">
+            <summary>
+            GetEffectivePermissionsForPath Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.Internal.MarshallTransformations.GetEffectivePermissionsForPathRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.Internal.MarshallTransformations.GetEffectivePermissionsForPathRequestMarshaller.Marshall(Amazon.LakeFormation.Model.GetEffectivePermissionsForPathRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.Internal.MarshallTransformations.GetEffectivePermissionsForPathRequestMarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.Internal.MarshallTransformations.GetEffectivePermissionsForPathResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for GetEffectivePermissionsForPath operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.Internal.MarshallTransformations.GetEffectivePermissionsForPathResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.Internal.MarshallTransformations.GetEffectivePermissionsForPathResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.Internal.MarshallTransformations.GetEffectivePermissionsForPathResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.Internal.MarshallTransformations.GrantPermissionsRequestMarshaller">
+            <summary>
+            GrantPermissions Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.Internal.MarshallTransformations.GrantPermissionsRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.Internal.MarshallTransformations.GrantPermissionsRequestMarshaller.Marshall(Amazon.LakeFormation.Model.GrantPermissionsRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.Internal.MarshallTransformations.GrantPermissionsRequestMarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.Internal.MarshallTransformations.GrantPermissionsResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for GrantPermissions operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.Internal.MarshallTransformations.GrantPermissionsResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.Internal.MarshallTransformations.GrantPermissionsResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.Internal.MarshallTransformations.GrantPermissionsResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.Internal.MarshallTransformations.ListPermissionsRequestMarshaller">
+            <summary>
+            ListPermissions Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.Internal.MarshallTransformations.ListPermissionsRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.Internal.MarshallTransformations.ListPermissionsRequestMarshaller.Marshall(Amazon.LakeFormation.Model.ListPermissionsRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.Internal.MarshallTransformations.ListPermissionsRequestMarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.Internal.MarshallTransformations.ListPermissionsResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for ListPermissions operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.Internal.MarshallTransformations.ListPermissionsResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.Internal.MarshallTransformations.ListPermissionsResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.Internal.MarshallTransformations.ListPermissionsResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.Internal.MarshallTransformations.ListResourcesRequestMarshaller">
+            <summary>
+            ListResources Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.Internal.MarshallTransformations.ListResourcesRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.Internal.MarshallTransformations.ListResourcesRequestMarshaller.Marshall(Amazon.LakeFormation.Model.ListResourcesRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.Internal.MarshallTransformations.ListResourcesRequestMarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.Internal.MarshallTransformations.ListResourcesResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for ListResources operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.Internal.MarshallTransformations.ListResourcesResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.Internal.MarshallTransformations.ListResourcesResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.Internal.MarshallTransformations.ListResourcesResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.Internal.MarshallTransformations.PrincipalPermissionsMarshaller">
+            <summary>
+            PrincipalPermissions Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.Internal.MarshallTransformations.PrincipalPermissionsMarshaller.Marshall(Amazon.LakeFormation.Model.PrincipalPermissions,Amazon.Runtime.Internal.Transform.JsonMarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="requestObject"></param>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="F:Amazon.LakeFormation.Model.Internal.MarshallTransformations.PrincipalPermissionsMarshaller.Instance">
+            <summary>
+            Singleton Marshaller.
+            </summary>  
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.Internal.MarshallTransformations.PrincipalPermissionsUnmarshaller">
+            <summary>
+            Response Unmarshaller for PrincipalPermissions Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.Internal.MarshallTransformations.PrincipalPermissionsUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#LakeFormation#Model#PrincipalPermissions,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.Internal.MarshallTransformations.PrincipalPermissionsUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.Internal.MarshallTransformations.PrincipalPermissionsUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.Internal.MarshallTransformations.PrincipalResourcePermissionsUnmarshaller">
+            <summary>
+            Response Unmarshaller for PrincipalResourcePermissions Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.Internal.MarshallTransformations.PrincipalResourcePermissionsUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#LakeFormation#Model#PrincipalResourcePermissions,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.Internal.MarshallTransformations.PrincipalResourcePermissionsUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.Internal.MarshallTransformations.PrincipalResourcePermissionsUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.Internal.MarshallTransformations.PutDataLakeSettingsRequestMarshaller">
+            <summary>
+            PutDataLakeSettings Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.Internal.MarshallTransformations.PutDataLakeSettingsRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.Internal.MarshallTransformations.PutDataLakeSettingsRequestMarshaller.Marshall(Amazon.LakeFormation.Model.PutDataLakeSettingsRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.Internal.MarshallTransformations.PutDataLakeSettingsRequestMarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.Internal.MarshallTransformations.PutDataLakeSettingsResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for PutDataLakeSettings operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.Internal.MarshallTransformations.PutDataLakeSettingsResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.Internal.MarshallTransformations.PutDataLakeSettingsResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.Internal.MarshallTransformations.PutDataLakeSettingsResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.Internal.MarshallTransformations.RegisterResourceRequestMarshaller">
+            <summary>
+            RegisterResource Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.Internal.MarshallTransformations.RegisterResourceRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.Internal.MarshallTransformations.RegisterResourceRequestMarshaller.Marshall(Amazon.LakeFormation.Model.RegisterResourceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.Internal.MarshallTransformations.RegisterResourceRequestMarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.Internal.MarshallTransformations.RegisterResourceResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for RegisterResource operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.Internal.MarshallTransformations.RegisterResourceResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.Internal.MarshallTransformations.RegisterResourceResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.Internal.MarshallTransformations.RegisterResourceResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.Internal.MarshallTransformations.ResourceInfoUnmarshaller">
+            <summary>
+            Response Unmarshaller for ResourceInfo Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.Internal.MarshallTransformations.ResourceInfoUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#LakeFormation#Model#ResourceInfo,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.Internal.MarshallTransformations.ResourceInfoUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.Internal.MarshallTransformations.ResourceInfoUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.Internal.MarshallTransformations.ResourceMarshaller">
+            <summary>
+            Resource Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.Internal.MarshallTransformations.ResourceMarshaller.Marshall(Amazon.LakeFormation.Model.Resource,Amazon.Runtime.Internal.Transform.JsonMarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="requestObject"></param>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="F:Amazon.LakeFormation.Model.Internal.MarshallTransformations.ResourceMarshaller.Instance">
+            <summary>
+            Singleton Marshaller.
+            </summary>  
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.Internal.MarshallTransformations.ResourceUnmarshaller">
+            <summary>
+            Response Unmarshaller for Resource Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.Internal.MarshallTransformations.ResourceUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#LakeFormation#Model#Resource,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.Internal.MarshallTransformations.ResourceUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.Internal.MarshallTransformations.ResourceUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.Internal.MarshallTransformations.RevokePermissionsRequestMarshaller">
+            <summary>
+            RevokePermissions Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.Internal.MarshallTransformations.RevokePermissionsRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.Internal.MarshallTransformations.RevokePermissionsRequestMarshaller.Marshall(Amazon.LakeFormation.Model.RevokePermissionsRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.Internal.MarshallTransformations.RevokePermissionsRequestMarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.Internal.MarshallTransformations.RevokePermissionsResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for RevokePermissions operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.Internal.MarshallTransformations.RevokePermissionsResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.Internal.MarshallTransformations.RevokePermissionsResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.Internal.MarshallTransformations.RevokePermissionsResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.Internal.MarshallTransformations.TableResourceMarshaller">
+            <summary>
+            TableResource Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.Internal.MarshallTransformations.TableResourceMarshaller.Marshall(Amazon.LakeFormation.Model.TableResource,Amazon.Runtime.Internal.Transform.JsonMarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="requestObject"></param>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="F:Amazon.LakeFormation.Model.Internal.MarshallTransformations.TableResourceMarshaller.Instance">
+            <summary>
+            Singleton Marshaller.
+            </summary>  
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.Internal.MarshallTransformations.TableResourceUnmarshaller">
+            <summary>
+            Response Unmarshaller for TableResource Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.Internal.MarshallTransformations.TableResourceUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#LakeFormation#Model#TableResource,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.Internal.MarshallTransformations.TableResourceUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.Internal.MarshallTransformations.TableResourceUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.Internal.MarshallTransformations.TableWithColumnsResourceMarshaller">
+            <summary>
+            TableWithColumnsResource Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.Internal.MarshallTransformations.TableWithColumnsResourceMarshaller.Marshall(Amazon.LakeFormation.Model.TableWithColumnsResource,Amazon.Runtime.Internal.Transform.JsonMarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="requestObject"></param>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="F:Amazon.LakeFormation.Model.Internal.MarshallTransformations.TableWithColumnsResourceMarshaller.Instance">
+            <summary>
+            Singleton Marshaller.
+            </summary>  
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.Internal.MarshallTransformations.TableWithColumnsResourceUnmarshaller">
+            <summary>
+            Response Unmarshaller for TableWithColumnsResource Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.Internal.MarshallTransformations.TableWithColumnsResourceUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#LakeFormation#Model#TableWithColumnsResource,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.Internal.MarshallTransformations.TableWithColumnsResourceUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.Internal.MarshallTransformations.TableWithColumnsResourceUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.Internal.MarshallTransformations.UpdateResourceRequestMarshaller">
+            <summary>
+            UpdateResource Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.Internal.MarshallTransformations.UpdateResourceRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.Internal.MarshallTransformations.UpdateResourceRequestMarshaller.Marshall(Amazon.LakeFormation.Model.UpdateResourceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.Internal.MarshallTransformations.UpdateResourceRequestMarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.Internal.MarshallTransformations.UpdateResourceResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for UpdateResource operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.Internal.MarshallTransformations.UpdateResourceResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.Internal.MarshallTransformations.UpdateResourceResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.Internal.MarshallTransformations.UpdateResourceResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.InvalidInputException">
+            <summary>
+             LakeFormation exception
+             </summary>
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.InvalidInputException.#ctor(System.String)">
+            <summary>
+            Constructs a new InvalidInputException with the specified error
+            message.
+            </summary>
+            <param name="message">
+            Describes the error encountered.
+            </param>
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.InvalidInputException.#ctor(System.String,System.Exception)">
+            <summary>
+            Construct instance of InvalidInputException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.InvalidInputException.#ctor(System.Exception)">
+            <summary>
+            Construct instance of InvalidInputException
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.InvalidInputException.#ctor(System.String,System.Exception,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of InvalidInputException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.InvalidInputException.#ctor(System.String,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of InvalidInputException
+            </summary>
+            <param name="message"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.ListPermissionsRequest">
+            <summary>
+            Container for the parameters to the ListPermissions operation.
+            Returns a list of the principal permissions on the resource, filtered by the permissions
+            of the caller. For example, if you are granted an ALTER permission, you are able to
+            see only the principal permissions for ALTER.
+            
+             
+            <para>
+            This operation returns only those permissions that have been explicitly granted.
+            </para>
+             
+            <para>
+            For information about permissions, see <a href="https://docs-aws.amazon.com/michigan/latest/dg/security-data-access.html">Security
+            and Access Control to Metadata and Data</a>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.ListPermissionsRequest.CatalogId">
+            <summary>
+            Gets and sets the property CatalogId. 
+            <para>
+            The identifier for the Data Catalog. By default, the account ID. The Data Catalog
+            is the persistent metadata store. It contains database definitions, table definitions,
+            and other control information to manage your AWS Lake Formation environment. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.ListPermissionsRequest.MaxResults">
+            <summary>
+            Gets and sets the property MaxResults. 
+            <para>
+            The maximum number of results to return.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.ListPermissionsRequest.NextToken">
+            <summary>
+            Gets and sets the property NextToken. 
+            <para>
+            A continuation token, if this is not the first call to retrieve this list.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.ListPermissionsRequest.Principal">
+            <summary>
+            Gets and sets the property Principal. 
+            <para>
+            Specifies a principal to filter the permissions returned.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.ListPermissionsRequest.Resource">
+            <summary>
+            Gets and sets the property Resource. 
+            <para>
+            A resource where you will get a list of the principal permissions.
+            </para>
+             
+            <para>
+            This operation does not support getting privileges on a table with columns. Instead,
+            call this operation on the table, and the operation returns the table and the table
+            w columns.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.ListPermissionsRequest.ResourceType">
+            <summary>
+            Gets and sets the property ResourceType. 
+            <para>
+            Specifies a resource type to filter the permissions returned.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.ListPermissionsResponse">
+            <summary>
+            This is the response object from the ListPermissions operation.
+            </summary>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.ListPermissionsResponse.NextToken">
+            <summary>
+            Gets and sets the property NextToken. 
+            <para>
+            A continuation token, if this is not the first call to retrieve this list.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.ListPermissionsResponse.PrincipalResourcePermissions">
+            <summary>
+            Gets and sets the property PrincipalResourcePermissions. 
+            <para>
+            A list of principals and their permissions on the resource for the specified principal
+            and resource types.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.ListResourcesRequest">
+            <summary>
+            Container for the parameters to the ListResources operation.
+            Lists the resources registered to be managed by the Data Catalog.
+            </summary>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.ListResourcesRequest.FilterConditionList">
+            <summary>
+            Gets and sets the property FilterConditionList. 
+            <para>
+            Any applicable row-level and/or column-level filtering conditions for the resources.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.ListResourcesRequest.MaxResults">
+            <summary>
+            Gets and sets the property MaxResults. 
+            <para>
+            The maximum number of resource results.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.ListResourcesRequest.NextToken">
+            <summary>
+            Gets and sets the property NextToken. 
+            <para>
+            A continuation token, if this is not the first call to retrieve these resources.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.ListResourcesResponse">
+            <summary>
+            This is the response object from the ListResources operation.
+            </summary>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.ListResourcesResponse.NextToken">
+            <summary>
+            Gets and sets the property NextToken. 
+            <para>
+            A continuation token, if this is not the first call to retrieve these resources.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.ListResourcesResponse.ResourceInfoList">
+            <summary>
+            Gets and sets the property ResourceInfoList. 
+            <para>
+            A summary of the data lake resources.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.OperationTimeoutException">
+            <summary>
+             LakeFormation exception
+             </summary>
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.OperationTimeoutException.#ctor(System.String)">
+            <summary>
+            Constructs a new OperationTimeoutException with the specified error
+            message.
+            </summary>
+            <param name="message">
+            Describes the error encountered.
+            </param>
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.OperationTimeoutException.#ctor(System.String,System.Exception)">
+            <summary>
+            Construct instance of OperationTimeoutException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.OperationTimeoutException.#ctor(System.Exception)">
+            <summary>
+            Construct instance of OperationTimeoutException
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.OperationTimeoutException.#ctor(System.String,System.Exception,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of OperationTimeoutException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="M:Amazon.LakeFormation.Model.OperationTimeoutException.#ctor(System.String,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of OperationTimeoutException
+            </summary>
+            <param name="message"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.PrincipalPermissions">
+            <summary>
+            Permissions granted to a principal.
+            </summary>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.PrincipalPermissions.Permissions">
+            <summary>
+            Gets and sets the property Permissions. 
+            <para>
+            The permissions that are granted to the principal.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.PrincipalPermissions.Principal">
+            <summary>
+            Gets and sets the property Principal. 
+            <para>
+            The principal who is granted permissions.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.PrincipalResourcePermissions">
+            <summary>
+            The permissions granted or revoked on a resource.
+            </summary>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.PrincipalResourcePermissions.Permissions">
+            <summary>
+            Gets and sets the property Permissions. 
+            <para>
+            The permissions to be granted or revoked on the resource.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.PrincipalResourcePermissions.PermissionsWithGrantOption">
+            <summary>
+            Gets and sets the property PermissionsWithGrantOption. 
+            <para>
+            Indicates whether to grant the ability to grant permissions (as a subset of permissions
+            granted).
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.PrincipalResourcePermissions.Principal">
+            <summary>
+            Gets and sets the property Principal. 
+            <para>
+            The Data Lake principal to be granted or revoked permissions.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.PrincipalResourcePermissions.Resource">
+            <summary>
+            Gets and sets the property Resource. 
+            <para>
+            The resource where permissions are to be granted or revoked.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.PutDataLakeSettingsRequest">
+            <summary>
+            Container for the parameters to the PutDataLakeSettings operation.
+            The AWS Lake Formation principal.
+            </summary>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.PutDataLakeSettingsRequest.CatalogId">
+            <summary>
+            Gets and sets the property CatalogId. 
+            <para>
+            The identifier for the Data Catalog. By default, the account ID. The Data Catalog
+            is the persistent metadata store. It contains database definitions, table definitions,
+            and other control information to manage your AWS Lake Formation environment. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.PutDataLakeSettingsRequest.DataLakeSettings">
+            <summary>
+            Gets and sets the property DataLakeSettings. 
+            <para>
+            A list of AWS Lake Formation principals.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.PutDataLakeSettingsResponse">
+            <summary>
+            This is the response object from the PutDataLakeSettings operation.
+            </summary>
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.RegisterResourceRequest">
+            <summary>
+            Container for the parameters to the RegisterResource operation.
+            Registers the resource as managed by the Data Catalog.
+            
+             
+            <para>
+            To add or update data, Lake Formation needs read/write access to the chosen Amazon
+            S3 path. Choose a role that you know has permission to do this, or choose the AWSServiceRoleForLakeFormationDataAccess
+            service-linked role. When you register the first Amazon S3 path, the service-linked
+            role and a new inline policy are created on your behalf. Lake Formation adds the first
+            path to the inline policy and attaches it to the service-linked role. When you register
+            subsequent paths, Lake Formation adds the path to the existing policy.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.RegisterResourceRequest.ResourceArn">
+            <summary>
+            Gets and sets the property ResourceArn. 
+            <para>
+            The Amazon Resource Name (ARN) of the resource that you want to register.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.RegisterResourceRequest.RoleArn">
+            <summary>
+            Gets and sets the property RoleArn. 
+            <para>
+            The identifier for the role.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.RegisterResourceRequest.UseServiceLinkedRole">
+            <summary>
+            Gets and sets the property UseServiceLinkedRole. 
+            <para>
+            Designates a trusted caller, an IAM principal, by registering this caller with the
+            Data Catalog. 
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.RegisterResourceResponse">
+            <summary>
+            This is the response object from the RegisterResource operation.
+            </summary>
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.Resource">
+            <summary>
+            A structure for the resource.
+            </summary>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.Resource.Catalog">
+            <summary>
+            Gets and sets the property Catalog. 
+            <para>
+            The identifier for the Data Catalog. By default, the account ID. The Data Catalog
+            is the persistent metadata store. It contains database definitions, table definitions,
+            and other control information to manage your AWS Lake Formation environment. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.Resource.Database">
+            <summary>
+            Gets and sets the property Database. 
+            <para>
+            The database for the resource. Unique to the Data Catalog. A database is a set of
+            associated table definitions organized into a logical group. You can Grant and Revoke
+            database permissions to a principal. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.Resource.DataLocation">
+            <summary>
+            Gets and sets the property DataLocation. 
+            <para>
+            The location of an Amazon S3 path where permissions are granted or revoked. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.Resource.Table">
+            <summary>
+            Gets and sets the property Table. 
+            <para>
+            The table for the resource. A table is a metadata definition that represents your
+            data. You can Grant and Revoke table privileges to a principal. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.Resource.TableWithColumns">
+            <summary>
+            Gets and sets the property TableWithColumns. 
+            <para>
+            The table with columns for the resource. A principal with permissions to this resource
+            can select metadata from the columns of a table in the Data Catalog and the underlying
+            data in Amazon S3.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.ResourceInfo">
+            <summary>
+            A structure containing information about an AWS Lake Formation resource.
+            </summary>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.ResourceInfo.LastModified">
+            <summary>
+            Gets and sets the property LastModified. 
+            <para>
+            The date and time the resource was last modified.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.ResourceInfo.ResourceArn">
+            <summary>
+            Gets and sets the property ResourceArn. 
+            <para>
+            The Amazon Resource Name (ARN) of the resource.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.ResourceInfo.RoleArn">
+            <summary>
+            Gets and sets the property RoleArn. 
+            <para>
+            The IAM role that registered a resource.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.RevokePermissionsRequest">
+            <summary>
+            Container for the parameters to the RevokePermissions operation.
+            Revokes permissions to the principal to access metadata in the Data Catalog and data
+            organized in underlying data storage such as Amazon S3.
+            </summary>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.RevokePermissionsRequest.CatalogId">
+            <summary>
+            Gets and sets the property CatalogId. 
+            <para>
+            The identifier for the Data Catalog. By default, the account ID. The Data Catalog
+            is the persistent metadata store. It contains database definitions, table definitions,
+            and other control information to manage your AWS Lake Formation environment. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.RevokePermissionsRequest.Permissions">
+            <summary>
+            Gets and sets the property Permissions. 
+            <para>
+            The permissions revoked to the principal on the resource. For information about permissions,
+            see <a href="https://docs-aws.amazon.com/michigan/latest/dg/security-data-access.html">Security
+            and Access Control to Metadata and Data</a>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.RevokePermissionsRequest.PermissionsWithGrantOption">
+            <summary>
+            Gets and sets the property PermissionsWithGrantOption. 
+            <para>
+            Indicates a list of permissions for which to revoke the grant option allowing the
+            principal to pass permissions to other principals.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.RevokePermissionsRequest.Principal">
+            <summary>
+            Gets and sets the property Principal. 
+            <para>
+            The principal to be revoked permissions on the resource.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.RevokePermissionsRequest.Resource">
+            <summary>
+            Gets and sets the property Resource. 
+            <para>
+            The resource to which permissions are to be revoked.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.RevokePermissionsResponse">
+            <summary>
+            This is the response object from the RevokePermissions operation.
+            </summary>
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.TableResource">
+            <summary>
+            A structure for the table object. A table is a metadata definition that represents
+            your data. You can Grant and Revoke table privileges to a principal.
+            </summary>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.TableResource.DatabaseName">
+            <summary>
+            Gets and sets the property DatabaseName. 
+            <para>
+            The name of the database for the table. Unique to a Data Catalog. A database is a
+            set of associated table definitions organized into a logical group. You can Grant
+            and Revoke database privileges to a principal. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.TableResource.Name">
+            <summary>
+            Gets and sets the property Name. 
+            <para>
+            The name of the table.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.TableWithColumnsResource">
+            <summary>
+            A structure for a table with columns object. This object is only used when granting
+            a SELECT permission.
+            
+             
+            <para>
+            This object must take a value for at least one of <code>ColumnsNames</code>, <code>ColumnsIndexes</code>,
+            or <code>ColumnsWildcard</code>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.TableWithColumnsResource.ColumnNames">
+            <summary>
+            Gets and sets the property ColumnNames. 
+            <para>
+            The list of column names for the table. At least one of <code>ColumnNames</code> or
+            <code>ColumnWildcard</code> is required.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.TableWithColumnsResource.ColumnWildcard">
+            <summary>
+            Gets and sets the property ColumnWildcard. 
+            <para>
+            A wildcard specified by a <code>ColumnWildcard</code> object. At least one of <code>ColumnNames</code>
+            or <code>ColumnWildcard</code> is required.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.TableWithColumnsResource.DatabaseName">
+            <summary>
+            Gets and sets the property DatabaseName. 
+            <para>
+            The name of the database for the table with columns resource. Unique to the Data Catalog.
+            A database is a set of associated table definitions organized into a logical group.
+            You can Grant and Revoke database privileges to a principal. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.TableWithColumnsResource.Name">
+            <summary>
+            Gets and sets the property Name. 
+            <para>
+            The name of the table resource. A table is a metadata definition that represents your
+            data. You can Grant and Revoke table privileges to a principal. 
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.UpdateResourceRequest">
+            <summary>
+            Container for the parameters to the UpdateResource operation.
+            Updates the data access role used for vending access to the given (registered) resource
+            in AWS Lake Formation.
+            </summary>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.UpdateResourceRequest.ResourceArn">
+            <summary>
+            Gets and sets the property ResourceArn. 
+            <para>
+            The resource ARN.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.LakeFormation.Model.UpdateResourceRequest.RoleArn">
+            <summary>
+            Gets and sets the property RoleArn. 
+            <para>
+            The new role to use for the given resource registered in AWS Lake Formation.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.LakeFormation.Model.UpdateResourceResponse">
+            <summary>
+            This is the response object from the UpdateResource operation.
+            </summary>
+        </member>
+        <member name="T:Amazon.LakeFormation.AmazonLakeFormationRequest">
+            <summary>
+            Base class for LakeFormation operation requests.
+            </summary>
+        </member>
+        <member name="T:Amazon.LakeFormation.ComparisonOperator">
+            <summary>
+            Constants used for properties of type ComparisonOperator.
+            </summary>
+        </member>
+        <member name="F:Amazon.LakeFormation.ComparisonOperator.BEGINS_WITH">
+            <summary>
+            Constant BEGINS_WITH for ComparisonOperator
+            </summary>
+        </member>
+        <member name="F:Amazon.LakeFormation.ComparisonOperator.BETWEEN">
+            <summary>
+            Constant BETWEEN for ComparisonOperator
+            </summary>
+        </member>
+        <member name="F:Amazon.LakeFormation.ComparisonOperator.CONTAINS">
+            <summary>
+            Constant CONTAINS for ComparisonOperator
+            </summary>
+        </member>
+        <member name="F:Amazon.LakeFormation.ComparisonOperator.EQ">
+            <summary>
+            Constant EQ for ComparisonOperator
+            </summary>
+        </member>
+        <member name="F:Amazon.LakeFormation.ComparisonOperator.GE">
+            <summary>
+            Constant GE for ComparisonOperator
+            </summary>
+        </member>
+        <member name="F:Amazon.LakeFormation.ComparisonOperator.GT">
+            <summary>
+            Constant GT for ComparisonOperator
+            </summary>
+        </member>
+        <member name="F:Amazon.LakeFormation.ComparisonOperator.IN">
+            <summary>
+            Constant IN for ComparisonOperator
+            </summary>
+        </member>
+        <member name="F:Amazon.LakeFormation.ComparisonOperator.LE">
+            <summary>
+            Constant LE for ComparisonOperator
+            </summary>
+        </member>
+        <member name="F:Amazon.LakeFormation.ComparisonOperator.LT">
+            <summary>
+            Constant LT for ComparisonOperator
+            </summary>
+        </member>
+        <member name="F:Amazon.LakeFormation.ComparisonOperator.NE">
+            <summary>
+            Constant NE for ComparisonOperator
+            </summary>
+        </member>
+        <member name="F:Amazon.LakeFormation.ComparisonOperator.NOT_CONTAINS">
+            <summary>
+            Constant NOT_CONTAINS for ComparisonOperator
+            </summary>
+        </member>
+        <member name="M:Amazon.LakeFormation.ComparisonOperator.#ctor(System.String)">
+            <summary>
+            This constant constructor does not need to be called if the constant
+            you are attempting to use is already defined as a static instance of 
+            this class.
+            This constructor should be used to construct constants that are not
+            defined as statics, for instance if attempting to use a feature that is
+            newer than the current version of the SDK.
+            </summary>
+        </member>
+        <member name="M:Amazon.LakeFormation.ComparisonOperator.FindValue(System.String)">
+            <summary>
+            Finds the constant for the unique value.
+            </summary>
+            <param name="value">The unique value for the constant</param>
+            <returns>The constant for the unique value</returns>
+        </member>
+        <member name="M:Amazon.LakeFormation.ComparisonOperator.op_Implicit(System.String)~Amazon.LakeFormation.ComparisonOperator">
+            <summary>
+            Utility method to convert strings to the constant class.
+            </summary>
+            <param name="value">The string value to convert to the constant class.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.LakeFormation.DataLakeResourceType">
+            <summary>
+            Constants used for properties of type DataLakeResourceType.
+            </summary>
+        </member>
+        <member name="F:Amazon.LakeFormation.DataLakeResourceType.CATALOG">
+            <summary>
+            Constant CATALOG for DataLakeResourceType
+            </summary>
+        </member>
+        <member name="F:Amazon.LakeFormation.DataLakeResourceType.DATA_LOCATION">
+            <summary>
+            Constant DATA_LOCATION for DataLakeResourceType
+            </summary>
+        </member>
+        <member name="F:Amazon.LakeFormation.DataLakeResourceType.DATABASE">
+            <summary>
+            Constant DATABASE for DataLakeResourceType
+            </summary>
+        </member>
+        <member name="F:Amazon.LakeFormation.DataLakeResourceType.TABLE">
+            <summary>
+            Constant TABLE for DataLakeResourceType
+            </summary>
+        </member>
+        <member name="M:Amazon.LakeFormation.DataLakeResourceType.#ctor(System.String)">
+            <summary>
+            This constant constructor does not need to be called if the constant
+            you are attempting to use is already defined as a static instance of 
+            this class.
+            This constructor should be used to construct constants that are not
+            defined as statics, for instance if attempting to use a feature that is
+            newer than the current version of the SDK.
+            </summary>
+        </member>
+        <member name="M:Amazon.LakeFormation.DataLakeResourceType.FindValue(System.String)">
+            <summary>
+            Finds the constant for the unique value.
+            </summary>
+            <param name="value">The unique value for the constant</param>
+            <returns>The constant for the unique value</returns>
+        </member>
+        <member name="M:Amazon.LakeFormation.DataLakeResourceType.op_Implicit(System.String)~Amazon.LakeFormation.DataLakeResourceType">
+            <summary>
+            Utility method to convert strings to the constant class.
+            </summary>
+            <param name="value">The string value to convert to the constant class.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.LakeFormation.FieldNameString">
+            <summary>
+            Constants used for properties of type FieldNameString.
+            </summary>
+        </member>
+        <member name="F:Amazon.LakeFormation.FieldNameString.LAST_MODIFIED">
+            <summary>
+            Constant LAST_MODIFIED for FieldNameString
+            </summary>
+        </member>
+        <member name="F:Amazon.LakeFormation.FieldNameString.RESOURCE_ARN">
+            <summary>
+            Constant RESOURCE_ARN for FieldNameString
+            </summary>
+        </member>
+        <member name="F:Amazon.LakeFormation.FieldNameString.ROLE_ARN">
+            <summary>
+            Constant ROLE_ARN for FieldNameString
+            </summary>
+        </member>
+        <member name="M:Amazon.LakeFormation.FieldNameString.#ctor(System.String)">
+            <summary>
+            This constant constructor does not need to be called if the constant
+            you are attempting to use is already defined as a static instance of 
+            this class.
+            This constructor should be used to construct constants that are not
+            defined as statics, for instance if attempting to use a feature that is
+            newer than the current version of the SDK.
+            </summary>
+        </member>
+        <member name="M:Amazon.LakeFormation.FieldNameString.FindValue(System.String)">
+            <summary>
+            Finds the constant for the unique value.
+            </summary>
+            <param name="value">The unique value for the constant</param>
+            <returns>The constant for the unique value</returns>
+        </member>
+        <member name="M:Amazon.LakeFormation.FieldNameString.op_Implicit(System.String)~Amazon.LakeFormation.FieldNameString">
+            <summary>
+            Utility method to convert strings to the constant class.
+            </summary>
+            <param name="value">The string value to convert to the constant class.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.LakeFormation.Permission">
+            <summary>
+            Constants used for properties of type Permission.
+            </summary>
+        </member>
+        <member name="F:Amazon.LakeFormation.Permission.ALL">
+            <summary>
+            Constant ALL for Permission
+            </summary>
+        </member>
+        <member name="F:Amazon.LakeFormation.Permission.ALTER">
+            <summary>
+            Constant ALTER for Permission
+            </summary>
+        </member>
+        <member name="F:Amazon.LakeFormation.Permission.CREATE_DATABASE">
+            <summary>
+            Constant CREATE_DATABASE for Permission
+            </summary>
+        </member>
+        <member name="F:Amazon.LakeFormation.Permission.CREATE_TABLE">
+            <summary>
+            Constant CREATE_TABLE for Permission
+            </summary>
+        </member>
+        <member name="F:Amazon.LakeFormation.Permission.DATA_LOCATION_ACCESS">
+            <summary>
+            Constant DATA_LOCATION_ACCESS for Permission
+            </summary>
+        </member>
+        <member name="F:Amazon.LakeFormation.Permission.DELETE">
+            <summary>
+            Constant DELETE for Permission
+            </summary>
+        </member>
+        <member name="F:Amazon.LakeFormation.Permission.DROP">
+            <summary>
+            Constant DROP for Permission
+            </summary>
+        </member>
+        <member name="F:Amazon.LakeFormation.Permission.INSERT">
+            <summary>
+            Constant INSERT for Permission
+            </summary>
+        </member>
+        <member name="F:Amazon.LakeFormation.Permission.SELECT">
+            <summary>
+            Constant SELECT for Permission
+            </summary>
+        </member>
+        <member name="M:Amazon.LakeFormation.Permission.#ctor(System.String)">
+            <summary>
+            This constant constructor does not need to be called if the constant
+            you are attempting to use is already defined as a static instance of 
+            this class.
+            This constructor should be used to construct constants that are not
+            defined as statics, for instance if attempting to use a feature that is
+            newer than the current version of the SDK.
+            </summary>
+        </member>
+        <member name="M:Amazon.LakeFormation.Permission.FindValue(System.String)">
+            <summary>
+            Finds the constant for the unique value.
+            </summary>
+            <param name="value">The unique value for the constant</param>
+            <returns>The constant for the unique value</returns>
+        </member>
+        <member name="M:Amazon.LakeFormation.Permission.op_Implicit(System.String)~Amazon.LakeFormation.Permission">
+            <summary>
+            Utility method to convert strings to the constant class.
+            </summary>
+            <param name="value">The string value to convert to the constant class.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.LakeFormation.AmazonLakeFormationClient">
+             <summary>
+             Implementation for accessing LakeFormation
+            
+             AWS Lake Formation 
+             <para>
+             Defines the public endpoint for the AWS Lake Formation service.
+             </para>
+             </summary>
+        </member>
+        <member name="M:Amazon.LakeFormation.AmazonLakeFormationClient.#ctor">
+             <summary>
+             Constructs AmazonLakeFormationClient with the credentials loaded from the application's
+             default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+             
+             Example App.config with credentials set. 
+             <code>
+             &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+             &lt;configuration&gt;
+                 &lt;appSettings&gt;
+                     &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+                 &lt;/appSettings&gt;
+             &lt;/configuration&gt;
+             </code>
+            
+             </summary>
+        </member>
+        <member name="M:Amazon.LakeFormation.AmazonLakeFormationClient.#ctor(Amazon.RegionEndpoint)">
+             <summary>
+             Constructs AmazonLakeFormationClient with the credentials loaded from the application's
+             default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+             
+             Example App.config with credentials set. 
+             <code>
+             &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+             &lt;configuration&gt;
+                 &lt;appSettings&gt;
+                     &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+                 &lt;/appSettings&gt;
+             &lt;/configuration&gt;
+             </code>
+            
+             </summary>
+             <param name="region">The region to connect.</param>
+        </member>
+        <member name="M:Amazon.LakeFormation.AmazonLakeFormationClient.#ctor(Amazon.LakeFormation.AmazonLakeFormationConfig)">
+             <summary>
+             Constructs AmazonLakeFormationClient with the credentials loaded from the application's
+             default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+             
+             Example App.config with credentials set. 
+             <code>
+             &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+             &lt;configuration&gt;
+                 &lt;appSettings&gt;
+                     &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+                 &lt;/appSettings&gt;
+             &lt;/configuration&gt;
+             </code>
+            
+             </summary>
+             <param name="config">The AmazonLakeFormationClient Configuration Object</param>
+        </member>
+        <member name="M:Amazon.LakeFormation.AmazonLakeFormationClient.#ctor(Amazon.Runtime.AWSCredentials)">
+            <summary>
+            Constructs AmazonLakeFormationClient with AWS Credentials
+            </summary>
+            <param name="credentials">AWS Credentials</param>
+        </member>
+        <member name="M:Amazon.LakeFormation.AmazonLakeFormationClient.#ctor(Amazon.Runtime.AWSCredentials,Amazon.RegionEndpoint)">
+            <summary>
+            Constructs AmazonLakeFormationClient with AWS Credentials
+            </summary>
+            <param name="credentials">AWS Credentials</param>
+            <param name="region">The region to connect.</param>
+        </member>
+        <member name="M:Amazon.LakeFormation.AmazonLakeFormationClient.#ctor(Amazon.Runtime.AWSCredentials,Amazon.LakeFormation.AmazonLakeFormationConfig)">
+            <summary>
+            Constructs AmazonLakeFormationClient with AWS Credentials and an
+            AmazonLakeFormationClient Configuration object.
+            </summary>
+            <param name="credentials">AWS Credentials</param>
+            <param name="clientConfig">The AmazonLakeFormationClient Configuration Object</param>
+        </member>
+        <member name="M:Amazon.LakeFormation.AmazonLakeFormationClient.#ctor(System.String,System.String)">
+            <summary>
+            Constructs AmazonLakeFormationClient with AWS Access Key ID and AWS Secret Key
+            </summary>
+            <param name="awsAccessKeyId">AWS Access Key ID</param>
+            <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        </member>
+        <member name="M:Amazon.LakeFormation.AmazonLakeFormationClient.#ctor(System.String,System.String,Amazon.RegionEndpoint)">
+            <summary>
+            Constructs AmazonLakeFormationClient with AWS Access Key ID and AWS Secret Key
+            </summary>
+            <param name="awsAccessKeyId">AWS Access Key ID</param>
+            <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+            <param name="region">The region to connect.</param>
+        </member>
+        <member name="M:Amazon.LakeFormation.AmazonLakeFormationClient.#ctor(System.String,System.String,Amazon.LakeFormation.AmazonLakeFormationConfig)">
+            <summary>
+            Constructs AmazonLakeFormationClient with AWS Access Key ID, AWS Secret Key and an
+            AmazonLakeFormationClient Configuration object. 
+            </summary>
+            <param name="awsAccessKeyId">AWS Access Key ID</param>
+            <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+            <param name="clientConfig">The AmazonLakeFormationClient Configuration Object</param>
+        </member>
+        <member name="M:Amazon.LakeFormation.AmazonLakeFormationClient.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Constructs AmazonLakeFormationClient with AWS Access Key ID and AWS Secret Key
+            </summary>
+            <param name="awsAccessKeyId">AWS Access Key ID</param>
+            <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+            <param name="awsSessionToken">AWS Session Token</param>
+        </member>
+        <member name="M:Amazon.LakeFormation.AmazonLakeFormationClient.#ctor(System.String,System.String,System.String,Amazon.RegionEndpoint)">
+            <summary>
+            Constructs AmazonLakeFormationClient with AWS Access Key ID and AWS Secret Key
+            </summary>
+            <param name="awsAccessKeyId">AWS Access Key ID</param>
+            <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+            <param name="awsSessionToken">AWS Session Token</param>
+            <param name="region">The region to connect.</param>
+        </member>
+        <member name="M:Amazon.LakeFormation.AmazonLakeFormationClient.#ctor(System.String,System.String,System.String,Amazon.LakeFormation.AmazonLakeFormationConfig)">
+            <summary>
+            Constructs AmazonLakeFormationClient with AWS Access Key ID, AWS Secret Key and an
+            AmazonLakeFormationClient Configuration object. 
+            </summary>
+            <param name="awsAccessKeyId">AWS Access Key ID</param>
+            <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+            <param name="awsSessionToken">AWS Session Token</param>
+            <param name="clientConfig">The AmazonLakeFormationClient Configuration Object</param>
+        </member>
+        <member name="M:Amazon.LakeFormation.AmazonLakeFormationClient.CreateSigner">
+            <summary>
+            Creates the signer for the service.
+            </summary>
+        </member>
+        <member name="P:Amazon.LakeFormation.AmazonLakeFormationClient.ServiceMetadata">
+            <summary>
+            Capture metadata for the service.
+            </summary>
+        </member>
+        <member name="M:Amazon.LakeFormation.AmazonLakeFormationClient.Dispose(System.Boolean)">
+            <summary>
+            Disposes the service client.
+            </summary>
+        </member>
+        <member name="M:Amazon.LakeFormation.AmazonLakeFormationClient.BatchGrantPermissionsAsync(Amazon.LakeFormation.Model.BatchGrantPermissionsRequest,System.Threading.CancellationToken)">
+            <summary>
+            Batch operation to grant permissions to the principal.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the BatchGrantPermissions service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the BatchGrantPermissions service method, as returned by LakeFormation.</returns>
+            <exception cref="T:Amazon.LakeFormation.Model.InvalidInputException">
+            The input provided was not valid.
+            </exception>
+            <exception cref="T:Amazon.LakeFormation.Model.OperationTimeoutException">
+            The operation timed out.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/BatchGrantPermissions">REST API Reference for BatchGrantPermissions Operation</seealso>
+        </member>
+        <member name="M:Amazon.LakeFormation.AmazonLakeFormationClient.BatchRevokePermissionsAsync(Amazon.LakeFormation.Model.BatchRevokePermissionsRequest,System.Threading.CancellationToken)">
+            <summary>
+            Batch operation to revoke permissions from the principal.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the BatchRevokePermissions service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the BatchRevokePermissions service method, as returned by LakeFormation.</returns>
+            <exception cref="T:Amazon.LakeFormation.Model.InvalidInputException">
+            The input provided was not valid.
+            </exception>
+            <exception cref="T:Amazon.LakeFormation.Model.OperationTimeoutException">
+            The operation timed out.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/BatchRevokePermissions">REST API Reference for BatchRevokePermissions Operation</seealso>
+        </member>
+        <member name="M:Amazon.LakeFormation.AmazonLakeFormationClient.DeregisterResourceAsync(Amazon.LakeFormation.Model.DeregisterResourceRequest,System.Threading.CancellationToken)">
+            <summary>
+            Deregisters the resource as managed by the Data Catalog.
+            
+             
+            <para>
+            When you deregister a path, Lake Formation removes the path from the inline policy
+            attached to your service-linked role.
+            </para>
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the DeregisterResource service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the DeregisterResource service method, as returned by LakeFormation.</returns>
+            <exception cref="T:Amazon.LakeFormation.Model.EntityNotFoundException">
+            A specified entity does not exist
+            </exception>
+            <exception cref="T:Amazon.LakeFormation.Model.InternalServiceException">
+            An internal service error occurred.
+            </exception>
+            <exception cref="T:Amazon.LakeFormation.Model.InvalidInputException">
+            The input provided was not valid.
+            </exception>
+            <exception cref="T:Amazon.LakeFormation.Model.OperationTimeoutException">
+            The operation timed out.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/DeregisterResource">REST API Reference for DeregisterResource Operation</seealso>
+        </member>
+        <member name="M:Amazon.LakeFormation.AmazonLakeFormationClient.DescribeResourceAsync(Amazon.LakeFormation.Model.DescribeResourceRequest,System.Threading.CancellationToken)">
+            <summary>
+            Retrieves the current data access role for the given resource registered in AWS Lake
+            Formation.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the DescribeResource service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the DescribeResource service method, as returned by LakeFormation.</returns>
+            <exception cref="T:Amazon.LakeFormation.Model.EntityNotFoundException">
+            A specified entity does not exist
+            </exception>
+            <exception cref="T:Amazon.LakeFormation.Model.InternalServiceException">
+            An internal service error occurred.
+            </exception>
+            <exception cref="T:Amazon.LakeFormation.Model.InvalidInputException">
+            The input provided was not valid.
+            </exception>
+            <exception cref="T:Amazon.LakeFormation.Model.OperationTimeoutException">
+            The operation timed out.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/DescribeResource">REST API Reference for DescribeResource Operation</seealso>
+        </member>
+        <member name="M:Amazon.LakeFormation.AmazonLakeFormationClient.GetDataLakeSettingsAsync(Amazon.LakeFormation.Model.GetDataLakeSettingsRequest,System.Threading.CancellationToken)">
+            <summary>
+            The AWS Lake Formation principal.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the GetDataLakeSettings service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the GetDataLakeSettings service method, as returned by LakeFormation.</returns>
+            <exception cref="T:Amazon.LakeFormation.Model.EntityNotFoundException">
+            A specified entity does not exist
+            </exception>
+            <exception cref="T:Amazon.LakeFormation.Model.InternalServiceException">
+            An internal service error occurred.
+            </exception>
+            <exception cref="T:Amazon.LakeFormation.Model.InvalidInputException">
+            The input provided was not valid.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetDataLakeSettings">REST API Reference for GetDataLakeSettings Operation</seealso>
+        </member>
+        <member name="M:Amazon.LakeFormation.AmazonLakeFormationClient.GetEffectivePermissionsForPathAsync(Amazon.LakeFormation.Model.GetEffectivePermissionsForPathRequest,System.Threading.CancellationToken)">
+            <summary>
+            Returns the permissions for a specified table or database resource located at a path
+            in Amazon S3.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the GetEffectivePermissionsForPath service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the GetEffectivePermissionsForPath service method, as returned by LakeFormation.</returns>
+            <exception cref="T:Amazon.LakeFormation.Model.EntityNotFoundException">
+            A specified entity does not exist
+            </exception>
+            <exception cref="T:Amazon.LakeFormation.Model.InternalServiceException">
+            An internal service error occurred.
+            </exception>
+            <exception cref="T:Amazon.LakeFormation.Model.InvalidInputException">
+            The input provided was not valid.
+            </exception>
+            <exception cref="T:Amazon.LakeFormation.Model.OperationTimeoutException">
+            The operation timed out.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetEffectivePermissionsForPath">REST API Reference for GetEffectivePermissionsForPath Operation</seealso>
+        </member>
+        <member name="M:Amazon.LakeFormation.AmazonLakeFormationClient.GrantPermissionsAsync(Amazon.LakeFormation.Model.GrantPermissionsRequest,System.Threading.CancellationToken)">
+            <summary>
+            Grants permissions to the principal to access metadata in the Data Catalog and data
+            organized in underlying data storage such as Amazon S3.
+            
+             
+            <para>
+            For information about permissions, see <a href="https://docs-aws.amazon.com/michigan/latest/dg/security-data-access.html">Security
+            and Access Control to Metadata and Data</a>.
+            </para>
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the GrantPermissions service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the GrantPermissions service method, as returned by LakeFormation.</returns>
+            <exception cref="T:Amazon.LakeFormation.Model.ConcurrentModificationException">
+            Two processes are trying to modify a resource simultaneously.
+            </exception>
+            <exception cref="T:Amazon.LakeFormation.Model.EntityNotFoundException">
+            A specified entity does not exist
+            </exception>
+            <exception cref="T:Amazon.LakeFormation.Model.InvalidInputException">
+            The input provided was not valid.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GrantPermissions">REST API Reference for GrantPermissions Operation</seealso>
+        </member>
+        <member name="M:Amazon.LakeFormation.AmazonLakeFormationClient.ListPermissionsAsync(Amazon.LakeFormation.Model.ListPermissionsRequest,System.Threading.CancellationToken)">
+            <summary>
+            Returns a list of the principal permissions on the resource, filtered by the permissions
+            of the caller. For example, if you are granted an ALTER permission, you are able to
+            see only the principal permissions for ALTER.
+            
+             
+            <para>
+            This operation returns only those permissions that have been explicitly granted.
+            </para>
+             
+            <para>
+            For information about permissions, see <a href="https://docs-aws.amazon.com/michigan/latest/dg/security-data-access.html">Security
+            and Access Control to Metadata and Data</a>.
+            </para>
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the ListPermissions service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the ListPermissions service method, as returned by LakeFormation.</returns>
+            <exception cref="T:Amazon.LakeFormation.Model.InternalServiceException">
+            An internal service error occurred.
+            </exception>
+            <exception cref="T:Amazon.LakeFormation.Model.InvalidInputException">
+            The input provided was not valid.
+            </exception>
+            <exception cref="T:Amazon.LakeFormation.Model.OperationTimeoutException">
+            The operation timed out.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/ListPermissions">REST API Reference for ListPermissions Operation</seealso>
+        </member>
+        <member name="M:Amazon.LakeFormation.AmazonLakeFormationClient.ListResourcesAsync(Amazon.LakeFormation.Model.ListResourcesRequest,System.Threading.CancellationToken)">
+            <summary>
+            Lists the resources registered to be managed by the Data Catalog.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the ListResources service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the ListResources service method, as returned by LakeFormation.</returns>
+            <exception cref="T:Amazon.LakeFormation.Model.InternalServiceException">
+            An internal service error occurred.
+            </exception>
+            <exception cref="T:Amazon.LakeFormation.Model.InvalidInputException">
+            The input provided was not valid.
+            </exception>
+            <exception cref="T:Amazon.LakeFormation.Model.OperationTimeoutException">
+            The operation timed out.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/ListResources">REST API Reference for ListResources Operation</seealso>
+        </member>
+        <member name="M:Amazon.LakeFormation.AmazonLakeFormationClient.PutDataLakeSettingsAsync(Amazon.LakeFormation.Model.PutDataLakeSettingsRequest,System.Threading.CancellationToken)">
+            <summary>
+            The AWS Lake Formation principal.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the PutDataLakeSettings service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the PutDataLakeSettings service method, as returned by LakeFormation.</returns>
+            <exception cref="T:Amazon.LakeFormation.Model.InternalServiceException">
+            An internal service error occurred.
+            </exception>
+            <exception cref="T:Amazon.LakeFormation.Model.InvalidInputException">
+            The input provided was not valid.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/PutDataLakeSettings">REST API Reference for PutDataLakeSettings Operation</seealso>
+        </member>
+        <member name="M:Amazon.LakeFormation.AmazonLakeFormationClient.RegisterResourceAsync(Amazon.LakeFormation.Model.RegisterResourceRequest,System.Threading.CancellationToken)">
+            <summary>
+            Registers the resource as managed by the Data Catalog.
+            
+             
+            <para>
+            To add or update data, Lake Formation needs read/write access to the chosen Amazon
+            S3 path. Choose a role that you know has permission to do this, or choose the AWSServiceRoleForLakeFormationDataAccess
+            service-linked role. When you register the first Amazon S3 path, the service-linked
+            role and a new inline policy are created on your behalf. Lake Formation adds the first
+            path to the inline policy and attaches it to the service-linked role. When you register
+            subsequent paths, Lake Formation adds the path to the existing policy.
+            </para>
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the RegisterResource service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the RegisterResource service method, as returned by LakeFormation.</returns>
+            <exception cref="T:Amazon.LakeFormation.Model.AlreadyExistsException">
+            A resource to be created or added already exists.
+            </exception>
+            <exception cref="T:Amazon.LakeFormation.Model.InternalServiceException">
+            An internal service error occurred.
+            </exception>
+            <exception cref="T:Amazon.LakeFormation.Model.InvalidInputException">
+            The input provided was not valid.
+            </exception>
+            <exception cref="T:Amazon.LakeFormation.Model.OperationTimeoutException">
+            The operation timed out.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/RegisterResource">REST API Reference for RegisterResource Operation</seealso>
+        </member>
+        <member name="M:Amazon.LakeFormation.AmazonLakeFormationClient.RevokePermissionsAsync(Amazon.LakeFormation.Model.RevokePermissionsRequest,System.Threading.CancellationToken)">
+            <summary>
+            Revokes permissions to the principal to access metadata in the Data Catalog and data
+            organized in underlying data storage such as Amazon S3.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the RevokePermissions service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the RevokePermissions service method, as returned by LakeFormation.</returns>
+            <exception cref="T:Amazon.LakeFormation.Model.ConcurrentModificationException">
+            Two processes are trying to modify a resource simultaneously.
+            </exception>
+            <exception cref="T:Amazon.LakeFormation.Model.EntityNotFoundException">
+            A specified entity does not exist
+            </exception>
+            <exception cref="T:Amazon.LakeFormation.Model.InvalidInputException">
+            The input provided was not valid.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/RevokePermissions">REST API Reference for RevokePermissions Operation</seealso>
+        </member>
+        <member name="M:Amazon.LakeFormation.AmazonLakeFormationClient.UpdateResourceAsync(Amazon.LakeFormation.Model.UpdateResourceRequest,System.Threading.CancellationToken)">
+            <summary>
+            Updates the data access role used for vending access to the given (registered) resource
+            in AWS Lake Formation.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the UpdateResource service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the UpdateResource service method, as returned by LakeFormation.</returns>
+            <exception cref="T:Amazon.LakeFormation.Model.EntityNotFoundException">
+            A specified entity does not exist
+            </exception>
+            <exception cref="T:Amazon.LakeFormation.Model.InternalServiceException">
+            An internal service error occurred.
+            </exception>
+            <exception cref="T:Amazon.LakeFormation.Model.InvalidInputException">
+            The input provided was not valid.
+            </exception>
+            <exception cref="T:Amazon.LakeFormation.Model.OperationTimeoutException">
+            The operation timed out.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/UpdateResource">REST API Reference for UpdateResource Operation</seealso>
+        </member>
+        <member name="T:Amazon.LakeFormation.IAmazonLakeFormation">
+             <summary>
+             Interface for accessing LakeFormation
+            
+             AWS Lake Formation 
+             <para>
+             Defines the public endpoint for the AWS Lake Formation service.
+             </para>
+             </summary>
+        </member>
+        <member name="M:Amazon.LakeFormation.IAmazonLakeFormation.BatchGrantPermissionsAsync(Amazon.LakeFormation.Model.BatchGrantPermissionsRequest,System.Threading.CancellationToken)">
+            <summary>
+            Batch operation to grant permissions to the principal.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the BatchGrantPermissions service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the BatchGrantPermissions service method, as returned by LakeFormation.</returns>
+            <exception cref="T:Amazon.LakeFormation.Model.InvalidInputException">
+            The input provided was not valid.
+            </exception>
+            <exception cref="T:Amazon.LakeFormation.Model.OperationTimeoutException">
+            The operation timed out.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/BatchGrantPermissions">REST API Reference for BatchGrantPermissions Operation</seealso>
+        </member>
+        <member name="M:Amazon.LakeFormation.IAmazonLakeFormation.BatchRevokePermissionsAsync(Amazon.LakeFormation.Model.BatchRevokePermissionsRequest,System.Threading.CancellationToken)">
+            <summary>
+            Batch operation to revoke permissions from the principal.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the BatchRevokePermissions service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the BatchRevokePermissions service method, as returned by LakeFormation.</returns>
+            <exception cref="T:Amazon.LakeFormation.Model.InvalidInputException">
+            The input provided was not valid.
+            </exception>
+            <exception cref="T:Amazon.LakeFormation.Model.OperationTimeoutException">
+            The operation timed out.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/BatchRevokePermissions">REST API Reference for BatchRevokePermissions Operation</seealso>
+        </member>
+        <member name="M:Amazon.LakeFormation.IAmazonLakeFormation.DeregisterResourceAsync(Amazon.LakeFormation.Model.DeregisterResourceRequest,System.Threading.CancellationToken)">
+            <summary>
+            Deregisters the resource as managed by the Data Catalog.
+            
+             
+            <para>
+            When you deregister a path, Lake Formation removes the path from the inline policy
+            attached to your service-linked role.
+            </para>
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the DeregisterResource service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the DeregisterResource service method, as returned by LakeFormation.</returns>
+            <exception cref="T:Amazon.LakeFormation.Model.EntityNotFoundException">
+            A specified entity does not exist
+            </exception>
+            <exception cref="T:Amazon.LakeFormation.Model.InternalServiceException">
+            An internal service error occurred.
+            </exception>
+            <exception cref="T:Amazon.LakeFormation.Model.InvalidInputException">
+            The input provided was not valid.
+            </exception>
+            <exception cref="T:Amazon.LakeFormation.Model.OperationTimeoutException">
+            The operation timed out.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/DeregisterResource">REST API Reference for DeregisterResource Operation</seealso>
+        </member>
+        <member name="M:Amazon.LakeFormation.IAmazonLakeFormation.DescribeResourceAsync(Amazon.LakeFormation.Model.DescribeResourceRequest,System.Threading.CancellationToken)">
+            <summary>
+            Retrieves the current data access role for the given resource registered in AWS Lake
+            Formation.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the DescribeResource service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the DescribeResource service method, as returned by LakeFormation.</returns>
+            <exception cref="T:Amazon.LakeFormation.Model.EntityNotFoundException">
+            A specified entity does not exist
+            </exception>
+            <exception cref="T:Amazon.LakeFormation.Model.InternalServiceException">
+            An internal service error occurred.
+            </exception>
+            <exception cref="T:Amazon.LakeFormation.Model.InvalidInputException">
+            The input provided was not valid.
+            </exception>
+            <exception cref="T:Amazon.LakeFormation.Model.OperationTimeoutException">
+            The operation timed out.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/DescribeResource">REST API Reference for DescribeResource Operation</seealso>
+        </member>
+        <member name="M:Amazon.LakeFormation.IAmazonLakeFormation.GetDataLakeSettingsAsync(Amazon.LakeFormation.Model.GetDataLakeSettingsRequest,System.Threading.CancellationToken)">
+            <summary>
+            The AWS Lake Formation principal.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the GetDataLakeSettings service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the GetDataLakeSettings service method, as returned by LakeFormation.</returns>
+            <exception cref="T:Amazon.LakeFormation.Model.EntityNotFoundException">
+            A specified entity does not exist
+            </exception>
+            <exception cref="T:Amazon.LakeFormation.Model.InternalServiceException">
+            An internal service error occurred.
+            </exception>
+            <exception cref="T:Amazon.LakeFormation.Model.InvalidInputException">
+            The input provided was not valid.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetDataLakeSettings">REST API Reference for GetDataLakeSettings Operation</seealso>
+        </member>
+        <member name="M:Amazon.LakeFormation.IAmazonLakeFormation.GetEffectivePermissionsForPathAsync(Amazon.LakeFormation.Model.GetEffectivePermissionsForPathRequest,System.Threading.CancellationToken)">
+            <summary>
+            Returns the permissions for a specified table or database resource located at a path
+            in Amazon S3.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the GetEffectivePermissionsForPath service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the GetEffectivePermissionsForPath service method, as returned by LakeFormation.</returns>
+            <exception cref="T:Amazon.LakeFormation.Model.EntityNotFoundException">
+            A specified entity does not exist
+            </exception>
+            <exception cref="T:Amazon.LakeFormation.Model.InternalServiceException">
+            An internal service error occurred.
+            </exception>
+            <exception cref="T:Amazon.LakeFormation.Model.InvalidInputException">
+            The input provided was not valid.
+            </exception>
+            <exception cref="T:Amazon.LakeFormation.Model.OperationTimeoutException">
+            The operation timed out.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetEffectivePermissionsForPath">REST API Reference for GetEffectivePermissionsForPath Operation</seealso>
+        </member>
+        <member name="M:Amazon.LakeFormation.IAmazonLakeFormation.GrantPermissionsAsync(Amazon.LakeFormation.Model.GrantPermissionsRequest,System.Threading.CancellationToken)">
+            <summary>
+            Grants permissions to the principal to access metadata in the Data Catalog and data
+            organized in underlying data storage such as Amazon S3.
+            
+             
+            <para>
+            For information about permissions, see <a href="https://docs-aws.amazon.com/michigan/latest/dg/security-data-access.html">Security
+            and Access Control to Metadata and Data</a>.
+            </para>
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the GrantPermissions service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the GrantPermissions service method, as returned by LakeFormation.</returns>
+            <exception cref="T:Amazon.LakeFormation.Model.ConcurrentModificationException">
+            Two processes are trying to modify a resource simultaneously.
+            </exception>
+            <exception cref="T:Amazon.LakeFormation.Model.EntityNotFoundException">
+            A specified entity does not exist
+            </exception>
+            <exception cref="T:Amazon.LakeFormation.Model.InvalidInputException">
+            The input provided was not valid.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GrantPermissions">REST API Reference for GrantPermissions Operation</seealso>
+        </member>
+        <member name="M:Amazon.LakeFormation.IAmazonLakeFormation.ListPermissionsAsync(Amazon.LakeFormation.Model.ListPermissionsRequest,System.Threading.CancellationToken)">
+            <summary>
+            Returns a list of the principal permissions on the resource, filtered by the permissions
+            of the caller. For example, if you are granted an ALTER permission, you are able to
+            see only the principal permissions for ALTER.
+            
+             
+            <para>
+            This operation returns only those permissions that have been explicitly granted.
+            </para>
+             
+            <para>
+            For information about permissions, see <a href="https://docs-aws.amazon.com/michigan/latest/dg/security-data-access.html">Security
+            and Access Control to Metadata and Data</a>.
+            </para>
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the ListPermissions service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the ListPermissions service method, as returned by LakeFormation.</returns>
+            <exception cref="T:Amazon.LakeFormation.Model.InternalServiceException">
+            An internal service error occurred.
+            </exception>
+            <exception cref="T:Amazon.LakeFormation.Model.InvalidInputException">
+            The input provided was not valid.
+            </exception>
+            <exception cref="T:Amazon.LakeFormation.Model.OperationTimeoutException">
+            The operation timed out.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/ListPermissions">REST API Reference for ListPermissions Operation</seealso>
+        </member>
+        <member name="M:Amazon.LakeFormation.IAmazonLakeFormation.ListResourcesAsync(Amazon.LakeFormation.Model.ListResourcesRequest,System.Threading.CancellationToken)">
+            <summary>
+            Lists the resources registered to be managed by the Data Catalog.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the ListResources service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the ListResources service method, as returned by LakeFormation.</returns>
+            <exception cref="T:Amazon.LakeFormation.Model.InternalServiceException">
+            An internal service error occurred.
+            </exception>
+            <exception cref="T:Amazon.LakeFormation.Model.InvalidInputException">
+            The input provided was not valid.
+            </exception>
+            <exception cref="T:Amazon.LakeFormation.Model.OperationTimeoutException">
+            The operation timed out.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/ListResources">REST API Reference for ListResources Operation</seealso>
+        </member>
+        <member name="M:Amazon.LakeFormation.IAmazonLakeFormation.PutDataLakeSettingsAsync(Amazon.LakeFormation.Model.PutDataLakeSettingsRequest,System.Threading.CancellationToken)">
+            <summary>
+            The AWS Lake Formation principal.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the PutDataLakeSettings service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the PutDataLakeSettings service method, as returned by LakeFormation.</returns>
+            <exception cref="T:Amazon.LakeFormation.Model.InternalServiceException">
+            An internal service error occurred.
+            </exception>
+            <exception cref="T:Amazon.LakeFormation.Model.InvalidInputException">
+            The input provided was not valid.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/PutDataLakeSettings">REST API Reference for PutDataLakeSettings Operation</seealso>
+        </member>
+        <member name="M:Amazon.LakeFormation.IAmazonLakeFormation.RegisterResourceAsync(Amazon.LakeFormation.Model.RegisterResourceRequest,System.Threading.CancellationToken)">
+            <summary>
+            Registers the resource as managed by the Data Catalog.
+            
+             
+            <para>
+            To add or update data, Lake Formation needs read/write access to the chosen Amazon
+            S3 path. Choose a role that you know has permission to do this, or choose the AWSServiceRoleForLakeFormationDataAccess
+            service-linked role. When you register the first Amazon S3 path, the service-linked
+            role and a new inline policy are created on your behalf. Lake Formation adds the first
+            path to the inline policy and attaches it to the service-linked role. When you register
+            subsequent paths, Lake Formation adds the path to the existing policy.
+            </para>
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the RegisterResource service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the RegisterResource service method, as returned by LakeFormation.</returns>
+            <exception cref="T:Amazon.LakeFormation.Model.AlreadyExistsException">
+            A resource to be created or added already exists.
+            </exception>
+            <exception cref="T:Amazon.LakeFormation.Model.InternalServiceException">
+            An internal service error occurred.
+            </exception>
+            <exception cref="T:Amazon.LakeFormation.Model.InvalidInputException">
+            The input provided was not valid.
+            </exception>
+            <exception cref="T:Amazon.LakeFormation.Model.OperationTimeoutException">
+            The operation timed out.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/RegisterResource">REST API Reference for RegisterResource Operation</seealso>
+        </member>
+        <member name="M:Amazon.LakeFormation.IAmazonLakeFormation.RevokePermissionsAsync(Amazon.LakeFormation.Model.RevokePermissionsRequest,System.Threading.CancellationToken)">
+            <summary>
+            Revokes permissions to the principal to access metadata in the Data Catalog and data
+            organized in underlying data storage such as Amazon S3.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the RevokePermissions service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the RevokePermissions service method, as returned by LakeFormation.</returns>
+            <exception cref="T:Amazon.LakeFormation.Model.ConcurrentModificationException">
+            Two processes are trying to modify a resource simultaneously.
+            </exception>
+            <exception cref="T:Amazon.LakeFormation.Model.EntityNotFoundException">
+            A specified entity does not exist
+            </exception>
+            <exception cref="T:Amazon.LakeFormation.Model.InvalidInputException">
+            The input provided was not valid.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/RevokePermissions">REST API Reference for RevokePermissions Operation</seealso>
+        </member>
+        <member name="M:Amazon.LakeFormation.IAmazonLakeFormation.UpdateResourceAsync(Amazon.LakeFormation.Model.UpdateResourceRequest,System.Threading.CancellationToken)">
+            <summary>
+            Updates the data access role used for vending access to the given (registered) resource
+            in AWS Lake Formation.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the UpdateResource service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the UpdateResource service method, as returned by LakeFormation.</returns>
+            <exception cref="T:Amazon.LakeFormation.Model.EntityNotFoundException">
+            A specified entity does not exist
+            </exception>
+            <exception cref="T:Amazon.LakeFormation.Model.InternalServiceException">
+            An internal service error occurred.
+            </exception>
+            <exception cref="T:Amazon.LakeFormation.Model.InvalidInputException">
+            The input provided was not valid.
+            </exception>
+            <exception cref="T:Amazon.LakeFormation.Model.OperationTimeoutException">
+            The operation timed out.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/UpdateResource">REST API Reference for UpdateResource Operation</seealso>
+        </member>
+    </members>
+</doc>

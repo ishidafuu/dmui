@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\ishida.hiroaki\.Rider2019.3\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\ishida.hiroaki\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_dmui.-917219228.00" t="ExcludeRecursive" />
-    <e p="C:\Users\ishida.hiroaki\Documents\dmui" t="IncludeRecursive">
+    <e p="C:\Users\isdf\.Rider2019.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\isdf\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_dmui.-1688824023.00" t="ExcludeRecursive" />
+    <e p="D:\nkpb\dmui" t="IncludeRecursive">
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
@@ -404,6 +404,204 @@
           </e>
           <e p="ResolverRegister" t="Include">
             <e p="Initializer.cs" t="Include" />
+          </e>
+          <e p="S3-Uploader" t="Include">
+            <e p="Editor" t="Include">
+              <e p="aws-sdk-netstandard2.0-3.3.606.0" t="Include">
+                <e p="AWSSDK.ACMPCA.xml" t="Include" />
+                <e p="AWSSDK.AlexaForBusiness.xml" t="Include" />
+                <e p="AWSSDK.Amplify.xml" t="Include" />
+                <e p="AWSSDK.APIGateway.xml" t="Include" />
+                <e p="AWSSDK.ApiGatewayManagementApi.xml" t="Include" />
+                <e p="AWSSDK.ApiGatewayV2.xml" t="Include" />
+                <e p="AWSSDK.ApplicationAutoScaling.xml" t="Include" />
+                <e p="AWSSDK.ApplicationDiscoveryService.xml" t="Include" />
+                <e p="AWSSDK.ApplicationInsights.xml" t="Include" />
+                <e p="AWSSDK.AppMesh.xml" t="Include" />
+                <e p="AWSSDK.AppStream.xml" t="Include" />
+                <e p="AWSSDK.AppSync.xml" t="Include" />
+                <e p="AWSSDK.Athena.xml" t="Include" />
+                <e p="AWSSDK.AutoScaling.xml" t="Include" />
+                <e p="AWSSDK.AutoScalingPlans.xml" t="Include" />
+                <e p="AWSSDK.AWSHealth.xml" t="Include" />
+                <e p="AWSSDK.AWSMarketplaceCommerceAnalytics.xml" t="Include" />
+                <e p="AWSSDK.AWSMarketplaceMetering.xml" t="Include" />
+                <e p="AWSSDK.AWSSupport.xml" t="Include" />
+                <e p="AWSSDK.Backup.xml" t="Include" />
+                <e p="AWSSDK.Batch.xml" t="Include" />
+                <e p="AWSSDK.Budgets.xml" t="Include" />
+                <e p="AWSSDK.CertificateManager.xml" t="Include" />
+                <e p="AWSSDK.Chime.xml" t="Include" />
+                <e p="AWSSDK.Cloud9.xml" t="Include" />
+                <e p="AWSSDK.CloudDirectory.xml" t="Include" />
+                <e p="AWSSDK.CloudFormation.xml" t="Include" />
+                <e p="AWSSDK.CloudFront.xml" t="Include" />
+                <e p="AWSSDK.CloudHSM.xml" t="Include" />
+                <e p="AWSSDK.CloudHSMV2.xml" t="Include" />
+                <e p="AWSSDK.CloudSearch.xml" t="Include" />
+                <e p="AWSSDK.CloudSearchDomain.xml" t="Include" />
+                <e p="AWSSDK.CloudTrail.xml" t="Include" />
+                <e p="AWSSDK.CloudWatch.xml" t="Include" />
+                <e p="AWSSDK.CloudWatchEvents.xml" t="Include" />
+                <e p="AWSSDK.CloudWatchLogs.xml" t="Include" />
+                <e p="AWSSDK.CodeBuild.xml" t="Include" />
+                <e p="AWSSDK.CodeCommit.xml" t="Include" />
+                <e p="AWSSDK.CodeDeploy.xml" t="Include" />
+                <e p="AWSSDK.CodePipeline.xml" t="Include" />
+                <e p="AWSSDK.CodeStar.xml" t="Include" />
+                <e p="AWSSDK.CognitoIdentity.xml" t="Include" />
+                <e p="AWSSDK.CognitoIdentityProvider.xml" t="Include" />
+                <e p="AWSSDK.CognitoSync.xml" t="Include" />
+                <e p="AWSSDK.Comprehend.xml" t="Include" />
+                <e p="AWSSDK.ComprehendMedical.xml" t="Include" />
+                <e p="AWSSDK.ConfigService.xml" t="Include" />
+                <e p="AWSSDK.Connect.xml" t="Include" />
+                <e p="AWSSDK.Core.xml" t="Include" />
+                <e p="AWSSDK.CostAndUsageReport.xml" t="Include" />
+                <e p="AWSSDK.CostExplorer.xml" t="Include" />
+                <e p="AWSSDK.DatabaseMigrationService.xml" t="Include" />
+                <e p="AWSSDK.DataPipeline.xml" t="Include" />
+                <e p="AWSSDK.DataSync.xml" t="Include" />
+                <e p="AWSSDK.DAX.xml" t="Include" />
+                <e p="AWSSDK.DeviceFarm.xml" t="Include" />
+                <e p="AWSSDK.DirectConnect.xml" t="Include" />
+                <e p="AWSSDK.DirectoryService.xml" t="Include" />
+                <e p="AWSSDK.DLM.xml" t="Include" />
+                <e p="AWSSDK.DocDB.xml" t="Include" />
+                <e p="AWSSDK.DynamoDBv2.xml" t="Include" />
+                <e p="AWSSDK.EC2.xml" t="Include" />
+                <e p="AWSSDK.EC2InstanceConnect.xml" t="Include" />
+                <e p="AWSSDK.ECR.xml" t="Include" />
+                <e p="AWSSDK.ECS.xml" t="Include" />
+                <e p="AWSSDK.EKS.xml" t="Include" />
+                <e p="AWSSDK.ElastiCache.xml" t="Include" />
+                <e p="AWSSDK.ElasticBeanstalk.xml" t="Include" />
+                <e p="AWSSDK.ElasticFileSystem.xml" t="Include" />
+                <e p="AWSSDK.ElasticLoadBalancing.xml" t="Include" />
+                <e p="AWSSDK.ElasticLoadBalancingV2.xml" t="Include" />
+                <e p="AWSSDK.ElasticMapReduce.xml" t="Include" />
+                <e p="AWSSDK.Elasticsearch.xml" t="Include" />
+                <e p="AWSSDK.ElasticTranscoder.xml" t="Include" />
+                <e p="AWSSDK.EventBridge.xml" t="Include" />
+                <e p="AWSSDK.FMS.xml" t="Include" />
+                <e p="AWSSDK.ForecastQueryService.xml" t="Include" />
+                <e p="AWSSDK.ForecastService.xml" t="Include" />
+                <e p="AWSSDK.FSx.xml" t="Include" />
+                <e p="AWSSDK.GameLift.xml" t="Include" />
+                <e p="AWSSDK.Glacier.xml" t="Include" />
+                <e p="AWSSDK.GlobalAccelerator.xml" t="Include" />
+                <e p="AWSSDK.Glue.xml" t="Include" />
+                <e p="AWSSDK.Greengrass.xml" t="Include" />
+                <e p="AWSSDK.GroundStation.xml" t="Include" />
+                <e p="AWSSDK.GuardDuty.xml" t="Include" />
+                <e p="AWSSDK.IdentityManagement.xml" t="Include" />
+                <e p="AWSSDK.ImportExport.xml" t="Include" />
+                <e p="AWSSDK.Inspector.xml" t="Include" />
+                <e p="AWSSDK.IoT.xml" t="Include" />
+                <e p="AWSSDK.IoT1ClickDevicesService.xml" t="Include" />
+                <e p="AWSSDK.IoT1ClickProjects.xml" t="Include" />
+                <e p="AWSSDK.IoTAnalytics.xml" t="Include" />
+                <e p="AWSSDK.IotData.xml" t="Include" />
+                <e p="AWSSDK.IoTEvents.xml" t="Include" />
+                <e p="AWSSDK.IoTEventsData.xml" t="Include" />
+                <e p="AWSSDK.IoTJobsDataPlane.xml" t="Include" />
+                <e p="AWSSDK.IoTThingsGraph.xml" t="Include" />
+                <e p="AWSSDK.Kafka.xml" t="Include" />
+                <e p="AWSSDK.KeyManagementService.xml" t="Include" />
+                <e p="AWSSDK.Kinesis.xml" t="Include" />
+                <e p="AWSSDK.KinesisAnalytics.xml" t="Include" />
+                <e p="AWSSDK.KinesisAnalyticsV2.xml" t="Include" />
+                <e p="AWSSDK.KinesisFirehose.xml" t="Include" />
+                <e p="AWSSDK.KinesisVideo.xml" t="Include" />
+                <e p="AWSSDK.KinesisVideoArchivedMedia.xml" t="Include" />
+                <e p="AWSSDK.KinesisVideoMedia.xml" t="Include" />
+                <e p="AWSSDK.LakeFormation.xml" t="Include" />
+                <e p="AWSSDK.Lambda.xml" t="Include" />
+                <e p="AWSSDK.Lex.xml" t="Include" />
+                <e p="AWSSDK.LexModelBuildingService.xml" t="Include" />
+                <e p="AWSSDK.LicenseManager.xml" t="Include" />
+                <e p="AWSSDK.Lightsail.xml" t="Include" />
+                <e p="AWSSDK.MachineLearning.xml" t="Include" />
+                <e p="AWSSDK.Macie.xml" t="Include" />
+                <e p="AWSSDK.ManagedBlockchain.xml" t="Include" />
+                <e p="AWSSDK.MarketplaceEntitlementService.xml" t="Include" />
+                <e p="AWSSDK.MediaConnect.xml" t="Include" />
+                <e p="AWSSDK.MediaConvert.xml" t="Include" />
+                <e p="AWSSDK.MediaLive.xml" t="Include" />
+                <e p="AWSSDK.MediaPackage.xml" t="Include" />
+                <e p="AWSSDK.MediaPackageVod.xml" t="Include" />
+                <e p="AWSSDK.MediaStore.xml" t="Include" />
+                <e p="AWSSDK.MediaStoreData.xml" t="Include" />
+                <e p="AWSSDK.MediaTailor.xml" t="Include" />
+                <e p="AWSSDK.MigrationHub.xml" t="Include" />
+                <e p="AWSSDK.Mobile.xml" t="Include" />
+                <e p="AWSSDK.MQ.xml" t="Include" />
+                <e p="AWSSDK.MTurk.xml" t="Include" />
+                <e p="AWSSDK.Neptune.xml" t="Include" />
+                <e p="AWSSDK.OpsWorks.xml" t="Include" />
+                <e p="AWSSDK.OpsWorksCM.xml" t="Include" />
+                <e p="AWSSDK.Organizations.xml" t="Include" />
+                <e p="AWSSDK.Personalize.xml" t="Include" />
+                <e p="AWSSDK.PersonalizeEvents.xml" t="Include" />
+                <e p="AWSSDK.PersonalizeRuntime.xml" t="Include" />
+                <e p="AWSSDK.PI.xml" t="Include" />
+                <e p="AWSSDK.Pinpoint.xml" t="Include" />
+                <e p="AWSSDK.PinpointEmail.xml" t="Include" />
+                <e p="AWSSDK.PinpointSMSVoice.xml" t="Include" />
+                <e p="AWSSDK.Polly.xml" t="Include" />
+                <e p="AWSSDK.Pricing.xml" t="Include" />
+                <e p="AWSSDK.QLDB.xml" t="Include" />
+                <e p="AWSSDK.QLDBSession.xml" t="Include" />
+                <e p="AWSSDK.QuickSight.xml" t="Include" />
+                <e p="AWSSDK.RAM.xml" t="Include" />
+                <e p="AWSSDK.RDS.xml" t="Include" />
+                <e p="AWSSDK.RDSDataService.xml" t="Include" />
+                <e p="AWSSDK.Redshift.xml" t="Include" />
+                <e p="AWSSDK.Rekognition.xml" t="Include" />
+                <e p="AWSSDK.ResourceGroups.xml" t="Include" />
+                <e p="AWSSDK.ResourceGroupsTaggingAPI.xml" t="Include" />
+                <e p="AWSSDK.RoboMaker.xml" t="Include" />
+                <e p="AWSSDK.Route53.xml" t="Include" />
+                <e p="AWSSDK.Route53Domains.xml" t="Include" />
+                <e p="AWSSDK.Route53Resolver.xml" t="Include" />
+                <e p="AWSSDK.S3.xml" t="Include" />
+                <e p="AWSSDK.S3Control.xml" t="Include" />
+                <e p="AWSSDK.SageMaker.xml" t="Include" />
+                <e p="AWSSDK.SageMakerRuntime.xml" t="Include" />
+                <e p="AWSSDK.SecretsManager.xml" t="Include" />
+                <e p="AWSSDK.SecurityHub.xml" t="Include" />
+                <e p="AWSSDK.SecurityToken.xml" t="Include" />
+                <e p="AWSSDK.ServerlessApplicationRepository.xml" t="Include" />
+                <e p="AWSSDK.ServerMigrationService.xml" t="Include" />
+                <e p="AWSSDK.ServiceCatalog.xml" t="Include" />
+                <e p="AWSSDK.ServiceDiscovery.xml" t="Include" />
+                <e p="AWSSDK.ServiceQuotas.xml" t="Include" />
+                <e p="AWSSDK.Shield.xml" t="Include" />
+                <e p="AWSSDK.Signer.xml" t="Include" />
+                <e p="AWSSDK.SimpleDB.xml" t="Include" />
+                <e p="AWSSDK.SimpleEmail.xml" t="Include" />
+                <e p="AWSSDK.SimpleNotificationService.xml" t="Include" />
+                <e p="AWSSDK.SimpleSystemsManagement.xml" t="Include" />
+                <e p="AWSSDK.SimpleWorkflow.xml" t="Include" />
+                <e p="AWSSDK.Snowball.xml" t="Include" />
+                <e p="AWSSDK.SQS.xml" t="Include" />
+                <e p="AWSSDK.StepFunctions.xml" t="Include" />
+                <e p="AWSSDK.StorageGateway.xml" t="Include" />
+                <e p="AWSSDK.Textract.xml" t="Include" />
+                <e p="AWSSDK.TranscribeService.xml" t="Include" />
+                <e p="AWSSDK.Transfer.xml" t="Include" />
+                <e p="AWSSDK.Translate.xml" t="Include" />
+                <e p="AWSSDK.WAF.xml" t="Include" />
+                <e p="AWSSDK.WAFRegional.xml" t="Include" />
+                <e p="AWSSDK.WorkDocs.xml" t="Include" />
+                <e p="AWSSDK.WorkLink.xml" t="Include" />
+                <e p="AWSSDK.WorkMail.xml" t="Include" />
+                <e p="AWSSDK.WorkMailMessageFlow.xml" t="Include" />
+                <e p="AWSSDK.WorkSpaces.xml" t="Include" />
+                <e p="AWSSDK.XRay.xml" t="Include" />
+              </e>
+              <e p="UploadToS3.cs" t="Include" />
+            </e>
           </e>
           <e p="Tables" t="Include">
             <e p="MasterDataDB.cs" t="Include" />

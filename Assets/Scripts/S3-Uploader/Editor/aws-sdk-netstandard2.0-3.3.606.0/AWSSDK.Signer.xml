@@ -1,0 +1,3268 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AWSSDK.Signer</name>
+    </assembly>
+    <members>
+        <member name="T:Amazon.Signer.AmazonSignerConfig">
+            <summary>
+            Configuration for accessing Amazon Signer service
+            </summary>
+        </member>
+        <member name="M:Amazon.Signer.AmazonSignerConfig.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.AmazonSignerConfig.RegionEndpointServiceName">
+            <summary>
+            The constant used to lookup in the region hash the endpoint.
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.AmazonSignerConfig.ServiceVersion">
+            <summary>
+            Gets the ServiceVersion property.
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.AmazonSignerConfig.UserAgent">
+            <summary>
+            Gets the value of UserAgent property.
+            </summary>
+        </member>
+        <member name="T:Amazon.Signer.AmazonSignerException">
+            <summary>
+             Common exception for the Signer service.
+             </summary>
+        </member>
+        <member name="M:Amazon.Signer.AmazonSignerException.#ctor(System.String)">
+            <summary>
+            Construct instance of AmazonSignerException
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:Amazon.Signer.AmazonSignerException.#ctor(System.String,System.Exception)">
+            <summary>
+            Construct instance of AmazonSignerException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.Signer.AmazonSignerException.#ctor(System.Exception)">
+            <summary>
+            Construct instance of AmazonSignerException
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.Signer.AmazonSignerException.#ctor(System.String,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of AmazonSignerException
+            </summary>
+            <param name="message"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="M:Amazon.Signer.AmazonSignerException.#ctor(System.String,System.Exception,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of AmazonSignerException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="T:Amazon.Signer.Internal.AmazonSignerMetadata">
+            <summary>
+            Service metadata for  Amazon Signer service
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Internal.AmazonSignerMetadata.ServiceId">
+            <summary>
+            Gets the value of the Service Id.
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Internal.AmazonSignerMetadata.OperationNameMapping">
+            <summary>
+            Gets the dictionary that gives mapping of renamed operations
+            </summary>
+        </member>
+        <member name="T:Amazon.Signer.Model.AccessDeniedException">
+            <summary>
+             Signer exception
+             </summary>
+        </member>
+        <member name="M:Amazon.Signer.Model.AccessDeniedException.#ctor(System.String)">
+            <summary>
+            Constructs a new AccessDeniedException with the specified error
+            message.
+            </summary>
+            <param name="message">
+            Describes the error encountered.
+            </param>
+        </member>
+        <member name="M:Amazon.Signer.Model.AccessDeniedException.#ctor(System.String,System.Exception)">
+            <summary>
+            Construct instance of AccessDeniedException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.Signer.Model.AccessDeniedException.#ctor(System.Exception)">
+            <summary>
+            Construct instance of AccessDeniedException
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.Signer.Model.AccessDeniedException.#ctor(System.String,System.Exception,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of AccessDeniedException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="M:Amazon.Signer.Model.AccessDeniedException.#ctor(System.String,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of AccessDeniedException
+            </summary>
+            <param name="message"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="T:Amazon.Signer.Model.CancelSigningProfileRequest">
+            <summary>
+            Container for the parameters to the CancelSigningProfile operation.
+            Changes the state of an <code>ACTIVE</code> signing profile to <code>CANCELED</code>.
+            A canceled profile is still viewable with the <code>ListSigningProfiles</code> operation,
+            but it cannot perform new signing jobs, and is deleted two years after cancelation.
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.CancelSigningProfileRequest.ProfileName">
+            <summary>
+            Gets and sets the property ProfileName. 
+            <para>
+            The name of the signing profile to be canceled.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Signer.Model.CancelSigningProfileResponse">
+            <summary>
+            This is the response object from the CancelSigningProfile operation.
+            </summary>
+        </member>
+        <member name="T:Amazon.Signer.Model.DescribeSigningJobRequest">
+            <summary>
+            Container for the parameters to the DescribeSigningJob operation.
+            Returns information about a specific code signing job. You specify the job by using
+            the <code>jobId</code> value that is returned by the <a>StartSigningJob</a> operation.
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.DescribeSigningJobRequest.JobId">
+            <summary>
+            Gets and sets the property JobId. 
+            <para>
+            The ID of the signing job on input.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Signer.Model.DescribeSigningJobResponse">
+            <summary>
+            This is the response object from the DescribeSigningJob operation.
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.DescribeSigningJobResponse.CompletedAt">
+            <summary>
+            Gets and sets the property CompletedAt. 
+            <para>
+            Date and time that the signing job was completed.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.DescribeSigningJobResponse.CreatedAt">
+            <summary>
+            Gets and sets the property CreatedAt. 
+            <para>
+            Date and time that the signing job was created.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.DescribeSigningJobResponse.JobId">
+            <summary>
+            Gets and sets the property JobId. 
+            <para>
+            The ID of the signing job on output.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.DescribeSigningJobResponse.Overrides">
+            <summary>
+            Gets and sets the property Overrides. 
+            <para>
+            A list of any overrides that were applied to the signing operation.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.DescribeSigningJobResponse.PlatformId">
+            <summary>
+            Gets and sets the property PlatformId. 
+            <para>
+            The microcontroller platform to which your signed code image will be distributed.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.DescribeSigningJobResponse.ProfileName">
+            <summary>
+            Gets and sets the property ProfileName. 
+            <para>
+            The name of the profile that initiated the signing operation.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.DescribeSigningJobResponse.RequestedBy">
+            <summary>
+            Gets and sets the property RequestedBy. 
+            <para>
+            The IAM principal that requested the signing job.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.DescribeSigningJobResponse.SignedObject">
+            <summary>
+            Gets and sets the property SignedObject. 
+            <para>
+            Name of the S3 bucket where the signed code image is saved by AWS Signer.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.DescribeSigningJobResponse.SigningMaterial">
+            <summary>
+            Gets and sets the property SigningMaterial. 
+            <para>
+            Amazon Resource Name (ARN) of your code signing certificate.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.DescribeSigningJobResponse.SigningParameters">
+            <summary>
+            Gets and sets the property SigningParameters. 
+            <para>
+            Map of user-assigned key-value pairs used during signing. These values contain any
+            information that you specified for use in your signing job. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.DescribeSigningJobResponse.Source">
+            <summary>
+            Gets and sets the property Source. 
+            <para>
+            The object that contains the name of your S3 bucket or your raw code.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.DescribeSigningJobResponse.Status">
+            <summary>
+            Gets and sets the property Status. 
+            <para>
+            Status of the signing job.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.DescribeSigningJobResponse.StatusReason">
+            <summary>
+            Gets and sets the property StatusReason. 
+            <para>
+            String value that contains the status reason.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Signer.Model.Destination">
+            <summary>
+            Points to an <code>S3Destination</code> object that contains information about your
+            S3 bucket.
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.Destination.S3">
+            <summary>
+            Gets and sets the property S3. 
+            <para>
+            The <code>S3Destination</code> object.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Signer.Model.EncryptionAlgorithmOptions">
+            <summary>
+            The encryption algorithm options that are available to an AWS Signer job.
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.EncryptionAlgorithmOptions.AllowedValues">
+            <summary>
+            Gets and sets the property AllowedValues. 
+            <para>
+            The set of accepted encryption algorithms that are allowed in an AWS Signer job.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.EncryptionAlgorithmOptions.DefaultValue">
+            <summary>
+            Gets and sets the property DefaultValue. 
+            <para>
+            The default encryption algorithm that is used by an AWS Signer job.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Signer.Model.GetSigningPlatformRequest">
+            <summary>
+            Container for the parameters to the GetSigningPlatform operation.
+            Returns information on a specific signing platform.
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.GetSigningPlatformRequest.PlatformId">
+            <summary>
+            Gets and sets the property PlatformId. 
+            <para>
+            The ID of the target signing platform.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Signer.Model.GetSigningPlatformResponse">
+            <summary>
+            This is the response object from the GetSigningPlatform operation.
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.GetSigningPlatformResponse.Category">
+            <summary>
+            Gets and sets the property Category. 
+            <para>
+            The category type of the target signing platform.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.GetSigningPlatformResponse.DisplayName">
+            <summary>
+            Gets and sets the property DisplayName. 
+            <para>
+            The display name of the target signing platform.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.GetSigningPlatformResponse.MaxSizeInMB">
+            <summary>
+            Gets and sets the property MaxSizeInMB. 
+            <para>
+            The maximum size (in MB) of the payload that can be signed by the target platform.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.GetSigningPlatformResponse.Partner">
+            <summary>
+            Gets and sets the property Partner. 
+            <para>
+            A list of partner entities that use the target signing platform.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.GetSigningPlatformResponse.PlatformId">
+            <summary>
+            Gets and sets the property PlatformId. 
+            <para>
+            The ID of the target signing platform.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.GetSigningPlatformResponse.SigningConfiguration">
+            <summary>
+            Gets and sets the property SigningConfiguration. 
+            <para>
+            A list of configurations applied to the target platform at signing.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.GetSigningPlatformResponse.SigningImageFormat">
+            <summary>
+            Gets and sets the property SigningImageFormat. 
+            <para>
+            The format of the target platform's signing image.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.GetSigningPlatformResponse.Target">
+            <summary>
+            Gets and sets the property Target. 
+            <para>
+            The validation template that is used by the target signing platform.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Signer.Model.GetSigningProfileRequest">
+            <summary>
+            Container for the parameters to the GetSigningProfile operation.
+            Returns information on a specific signing profile.
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.GetSigningProfileRequest.ProfileName">
+            <summary>
+            Gets and sets the property ProfileName. 
+            <para>
+            The name of the target signing profile.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Signer.Model.GetSigningProfileResponse">
+            <summary>
+            This is the response object from the GetSigningProfile operation.
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.GetSigningProfileResponse.Overrides">
+            <summary>
+            Gets and sets the property Overrides. 
+            <para>
+            A list of overrides applied by the target signing profile for signing operations.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.GetSigningProfileResponse.PlatformId">
+            <summary>
+            Gets and sets the property PlatformId. 
+            <para>
+            The ID of the platform that is used by the target signing profile.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.GetSigningProfileResponse.ProfileName">
+            <summary>
+            Gets and sets the property ProfileName. 
+            <para>
+            The name of the target signing profile.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.GetSigningProfileResponse.SigningMaterial">
+            <summary>
+            Gets and sets the property SigningMaterial. 
+            <para>
+            The ARN of the certificate that the target profile uses for signing operations.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.GetSigningProfileResponse.SigningParameters">
+            <summary>
+            Gets and sets the property SigningParameters. 
+            <para>
+            A map of key-value pairs for signing operations that is attached to the target signing
+            profile.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.GetSigningProfileResponse.Status">
+            <summary>
+            Gets and sets the property Status. 
+            <para>
+            The status of the target signing profile.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Signer.Model.HashAlgorithmOptions">
+            <summary>
+            The hash algorithms that are available to an AWS Signer job.
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.HashAlgorithmOptions.AllowedValues">
+            <summary>
+            Gets and sets the property AllowedValues. 
+            <para>
+            The set of accepted hash algorithms allowed in an AWS Signer job.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.HashAlgorithmOptions.DefaultValue">
+            <summary>
+            Gets and sets the property DefaultValue. 
+            <para>
+            The default hash algorithm that is used in an AWS Signer job.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Signer.Model.InternalServiceErrorException">
+            <summary>
+             Signer exception
+             </summary>
+        </member>
+        <member name="M:Amazon.Signer.Model.InternalServiceErrorException.#ctor(System.String)">
+            <summary>
+            Constructs a new InternalServiceErrorException with the specified error
+            message.
+            </summary>
+            <param name="message">
+            Describes the error encountered.
+            </param>
+        </member>
+        <member name="M:Amazon.Signer.Model.InternalServiceErrorException.#ctor(System.String,System.Exception)">
+            <summary>
+            Construct instance of InternalServiceErrorException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.Signer.Model.InternalServiceErrorException.#ctor(System.Exception)">
+            <summary>
+            Construct instance of InternalServiceErrorException
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.Signer.Model.InternalServiceErrorException.#ctor(System.String,System.Exception,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of InternalServiceErrorException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="M:Amazon.Signer.Model.InternalServiceErrorException.#ctor(System.String,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of InternalServiceErrorException
+            </summary>
+            <param name="message"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="T:Amazon.Signer.Model.Internal.MarshallTransformations.CancelSigningProfileRequestMarshaller">
+            <summary>
+            CancelSigningProfile Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.Signer.Model.Internal.MarshallTransformations.CancelSigningProfileRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Signer.Model.Internal.MarshallTransformations.CancelSigningProfileRequestMarshaller.Marshall(Amazon.Signer.Model.CancelSigningProfileRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.Signer.Model.Internal.MarshallTransformations.CancelSigningProfileRequestMarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Signer.Model.Internal.MarshallTransformations.CancelSigningProfileResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for CancelSigningProfile operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.Signer.Model.Internal.MarshallTransformations.CancelSigningProfileResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Signer.Model.Internal.MarshallTransformations.CancelSigningProfileResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.Signer.Model.Internal.MarshallTransformations.CancelSigningProfileResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Signer.Model.Internal.MarshallTransformations.DescribeSigningJobRequestMarshaller">
+            <summary>
+            DescribeSigningJob Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.Signer.Model.Internal.MarshallTransformations.DescribeSigningJobRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Signer.Model.Internal.MarshallTransformations.DescribeSigningJobRequestMarshaller.Marshall(Amazon.Signer.Model.DescribeSigningJobRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.Signer.Model.Internal.MarshallTransformations.DescribeSigningJobRequestMarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Signer.Model.Internal.MarshallTransformations.DescribeSigningJobResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for DescribeSigningJob operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.Signer.Model.Internal.MarshallTransformations.DescribeSigningJobResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Signer.Model.Internal.MarshallTransformations.DescribeSigningJobResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.Signer.Model.Internal.MarshallTransformations.DescribeSigningJobResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Signer.Model.Internal.MarshallTransformations.DestinationMarshaller">
+            <summary>
+            Destination Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.Signer.Model.Internal.MarshallTransformations.DestinationMarshaller.Marshall(Amazon.Signer.Model.Destination,Amazon.Runtime.Internal.Transform.JsonMarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="requestObject"></param>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="F:Amazon.Signer.Model.Internal.MarshallTransformations.DestinationMarshaller.Instance">
+            <summary>
+            Singleton Marshaller.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Signer.Model.Internal.MarshallTransformations.EncryptionAlgorithmOptionsUnmarshaller">
+            <summary>
+            Response Unmarshaller for EncryptionAlgorithmOptions Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.Signer.Model.Internal.MarshallTransformations.EncryptionAlgorithmOptionsUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#Signer#Model#EncryptionAlgorithmOptions,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Signer.Model.Internal.MarshallTransformations.EncryptionAlgorithmOptionsUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.Signer.Model.Internal.MarshallTransformations.EncryptionAlgorithmOptionsUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Signer.Model.Internal.MarshallTransformations.GetSigningPlatformRequestMarshaller">
+            <summary>
+            GetSigningPlatform Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.Signer.Model.Internal.MarshallTransformations.GetSigningPlatformRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Signer.Model.Internal.MarshallTransformations.GetSigningPlatformRequestMarshaller.Marshall(Amazon.Signer.Model.GetSigningPlatformRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.Signer.Model.Internal.MarshallTransformations.GetSigningPlatformRequestMarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Signer.Model.Internal.MarshallTransformations.GetSigningPlatformResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for GetSigningPlatform operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.Signer.Model.Internal.MarshallTransformations.GetSigningPlatformResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Signer.Model.Internal.MarshallTransformations.GetSigningPlatformResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.Signer.Model.Internal.MarshallTransformations.GetSigningPlatformResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Signer.Model.Internal.MarshallTransformations.GetSigningProfileRequestMarshaller">
+            <summary>
+            GetSigningProfile Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.Signer.Model.Internal.MarshallTransformations.GetSigningProfileRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Signer.Model.Internal.MarshallTransformations.GetSigningProfileRequestMarshaller.Marshall(Amazon.Signer.Model.GetSigningProfileRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.Signer.Model.Internal.MarshallTransformations.GetSigningProfileRequestMarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Signer.Model.Internal.MarshallTransformations.GetSigningProfileResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for GetSigningProfile operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.Signer.Model.Internal.MarshallTransformations.GetSigningProfileResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Signer.Model.Internal.MarshallTransformations.GetSigningProfileResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.Signer.Model.Internal.MarshallTransformations.GetSigningProfileResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Signer.Model.Internal.MarshallTransformations.HashAlgorithmOptionsUnmarshaller">
+            <summary>
+            Response Unmarshaller for HashAlgorithmOptions Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.Signer.Model.Internal.MarshallTransformations.HashAlgorithmOptionsUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#Signer#Model#HashAlgorithmOptions,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Signer.Model.Internal.MarshallTransformations.HashAlgorithmOptionsUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.Signer.Model.Internal.MarshallTransformations.HashAlgorithmOptionsUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Signer.Model.Internal.MarshallTransformations.ListSigningJobsRequestMarshaller">
+            <summary>
+            ListSigningJobs Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.Signer.Model.Internal.MarshallTransformations.ListSigningJobsRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Signer.Model.Internal.MarshallTransformations.ListSigningJobsRequestMarshaller.Marshall(Amazon.Signer.Model.ListSigningJobsRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.Signer.Model.Internal.MarshallTransformations.ListSigningJobsRequestMarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Signer.Model.Internal.MarshallTransformations.ListSigningJobsResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for ListSigningJobs operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.Signer.Model.Internal.MarshallTransformations.ListSigningJobsResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Signer.Model.Internal.MarshallTransformations.ListSigningJobsResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.Signer.Model.Internal.MarshallTransformations.ListSigningJobsResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Signer.Model.Internal.MarshallTransformations.ListSigningPlatformsRequestMarshaller">
+            <summary>
+            ListSigningPlatforms Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.Signer.Model.Internal.MarshallTransformations.ListSigningPlatformsRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Signer.Model.Internal.MarshallTransformations.ListSigningPlatformsRequestMarshaller.Marshall(Amazon.Signer.Model.ListSigningPlatformsRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.Signer.Model.Internal.MarshallTransformations.ListSigningPlatformsRequestMarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Signer.Model.Internal.MarshallTransformations.ListSigningPlatformsResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for ListSigningPlatforms operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.Signer.Model.Internal.MarshallTransformations.ListSigningPlatformsResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Signer.Model.Internal.MarshallTransformations.ListSigningPlatformsResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.Signer.Model.Internal.MarshallTransformations.ListSigningPlatformsResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Signer.Model.Internal.MarshallTransformations.ListSigningProfilesRequestMarshaller">
+            <summary>
+            ListSigningProfiles Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.Signer.Model.Internal.MarshallTransformations.ListSigningProfilesRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Signer.Model.Internal.MarshallTransformations.ListSigningProfilesRequestMarshaller.Marshall(Amazon.Signer.Model.ListSigningProfilesRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.Signer.Model.Internal.MarshallTransformations.ListSigningProfilesRequestMarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Signer.Model.Internal.MarshallTransformations.ListSigningProfilesResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for ListSigningProfiles operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.Signer.Model.Internal.MarshallTransformations.ListSigningProfilesResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Signer.Model.Internal.MarshallTransformations.ListSigningProfilesResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.Signer.Model.Internal.MarshallTransformations.ListSigningProfilesResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Signer.Model.Internal.MarshallTransformations.PutSigningProfileRequestMarshaller">
+            <summary>
+            PutSigningProfile Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.Signer.Model.Internal.MarshallTransformations.PutSigningProfileRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Signer.Model.Internal.MarshallTransformations.PutSigningProfileRequestMarshaller.Marshall(Amazon.Signer.Model.PutSigningProfileRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.Signer.Model.Internal.MarshallTransformations.PutSigningProfileRequestMarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Signer.Model.Internal.MarshallTransformations.PutSigningProfileResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for PutSigningProfile operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.Signer.Model.Internal.MarshallTransformations.PutSigningProfileResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Signer.Model.Internal.MarshallTransformations.PutSigningProfileResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.Signer.Model.Internal.MarshallTransformations.PutSigningProfileResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Signer.Model.Internal.MarshallTransformations.S3DestinationMarshaller">
+            <summary>
+            S3Destination Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.Signer.Model.Internal.MarshallTransformations.S3DestinationMarshaller.Marshall(Amazon.Signer.Model.S3Destination,Amazon.Runtime.Internal.Transform.JsonMarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="requestObject"></param>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="F:Amazon.Signer.Model.Internal.MarshallTransformations.S3DestinationMarshaller.Instance">
+            <summary>
+            Singleton Marshaller.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Signer.Model.Internal.MarshallTransformations.S3SignedObjectUnmarshaller">
+            <summary>
+            Response Unmarshaller for S3SignedObject Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.Signer.Model.Internal.MarshallTransformations.S3SignedObjectUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#Signer#Model#S3SignedObject,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Signer.Model.Internal.MarshallTransformations.S3SignedObjectUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.Signer.Model.Internal.MarshallTransformations.S3SignedObjectUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Signer.Model.Internal.MarshallTransformations.S3SourceMarshaller">
+            <summary>
+            S3Source Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.Signer.Model.Internal.MarshallTransformations.S3SourceMarshaller.Marshall(Amazon.Signer.Model.S3Source,Amazon.Runtime.Internal.Transform.JsonMarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="requestObject"></param>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="F:Amazon.Signer.Model.Internal.MarshallTransformations.S3SourceMarshaller.Instance">
+            <summary>
+            Singleton Marshaller.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Signer.Model.Internal.MarshallTransformations.S3SourceUnmarshaller">
+            <summary>
+            Response Unmarshaller for S3Source Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.Signer.Model.Internal.MarshallTransformations.S3SourceUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#Signer#Model#S3Source,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Signer.Model.Internal.MarshallTransformations.S3SourceUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.Signer.Model.Internal.MarshallTransformations.S3SourceUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Signer.Model.Internal.MarshallTransformations.SignedObjectUnmarshaller">
+            <summary>
+            Response Unmarshaller for SignedObject Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.Signer.Model.Internal.MarshallTransformations.SignedObjectUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#Signer#Model#SignedObject,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Signer.Model.Internal.MarshallTransformations.SignedObjectUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.Signer.Model.Internal.MarshallTransformations.SignedObjectUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Signer.Model.Internal.MarshallTransformations.SigningConfigurationOverridesMarshaller">
+            <summary>
+            SigningConfigurationOverrides Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.Signer.Model.Internal.MarshallTransformations.SigningConfigurationOverridesMarshaller.Marshall(Amazon.Signer.Model.SigningConfigurationOverrides,Amazon.Runtime.Internal.Transform.JsonMarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="requestObject"></param>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="F:Amazon.Signer.Model.Internal.MarshallTransformations.SigningConfigurationOverridesMarshaller.Instance">
+            <summary>
+            Singleton Marshaller.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Signer.Model.Internal.MarshallTransformations.SigningConfigurationOverridesUnmarshaller">
+            <summary>
+            Response Unmarshaller for SigningConfigurationOverrides Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.Signer.Model.Internal.MarshallTransformations.SigningConfigurationOverridesUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#Signer#Model#SigningConfigurationOverrides,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Signer.Model.Internal.MarshallTransformations.SigningConfigurationOverridesUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.Signer.Model.Internal.MarshallTransformations.SigningConfigurationOverridesUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Signer.Model.Internal.MarshallTransformations.SigningConfigurationUnmarshaller">
+            <summary>
+            Response Unmarshaller for SigningConfiguration Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.Signer.Model.Internal.MarshallTransformations.SigningConfigurationUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#Signer#Model#SigningConfiguration,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Signer.Model.Internal.MarshallTransformations.SigningConfigurationUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.Signer.Model.Internal.MarshallTransformations.SigningConfigurationUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Signer.Model.Internal.MarshallTransformations.SigningImageFormatUnmarshaller">
+            <summary>
+            Response Unmarshaller for SigningImageFormat Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.Signer.Model.Internal.MarshallTransformations.SigningImageFormatUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#Signer#Model#SigningImageFormat,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Signer.Model.Internal.MarshallTransformations.SigningImageFormatUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.Signer.Model.Internal.MarshallTransformations.SigningImageFormatUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Signer.Model.Internal.MarshallTransformations.SigningJobUnmarshaller">
+            <summary>
+            Response Unmarshaller for SigningJob Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.Signer.Model.Internal.MarshallTransformations.SigningJobUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#Signer#Model#SigningJob,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Signer.Model.Internal.MarshallTransformations.SigningJobUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.Signer.Model.Internal.MarshallTransformations.SigningJobUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Signer.Model.Internal.MarshallTransformations.SigningMaterialMarshaller">
+            <summary>
+            SigningMaterial Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.Signer.Model.Internal.MarshallTransformations.SigningMaterialMarshaller.Marshall(Amazon.Signer.Model.SigningMaterial,Amazon.Runtime.Internal.Transform.JsonMarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="requestObject"></param>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="F:Amazon.Signer.Model.Internal.MarshallTransformations.SigningMaterialMarshaller.Instance">
+            <summary>
+            Singleton Marshaller.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Signer.Model.Internal.MarshallTransformations.SigningMaterialUnmarshaller">
+            <summary>
+            Response Unmarshaller for SigningMaterial Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.Signer.Model.Internal.MarshallTransformations.SigningMaterialUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#Signer#Model#SigningMaterial,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Signer.Model.Internal.MarshallTransformations.SigningMaterialUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.Signer.Model.Internal.MarshallTransformations.SigningMaterialUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Signer.Model.Internal.MarshallTransformations.SigningPlatformOverridesMarshaller">
+            <summary>
+            SigningPlatformOverrides Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.Signer.Model.Internal.MarshallTransformations.SigningPlatformOverridesMarshaller.Marshall(Amazon.Signer.Model.SigningPlatformOverrides,Amazon.Runtime.Internal.Transform.JsonMarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="requestObject"></param>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="F:Amazon.Signer.Model.Internal.MarshallTransformations.SigningPlatformOverridesMarshaller.Instance">
+            <summary>
+            Singleton Marshaller.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Signer.Model.Internal.MarshallTransformations.SigningPlatformOverridesUnmarshaller">
+            <summary>
+            Response Unmarshaller for SigningPlatformOverrides Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.Signer.Model.Internal.MarshallTransformations.SigningPlatformOverridesUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#Signer#Model#SigningPlatformOverrides,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Signer.Model.Internal.MarshallTransformations.SigningPlatformOverridesUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.Signer.Model.Internal.MarshallTransformations.SigningPlatformOverridesUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Signer.Model.Internal.MarshallTransformations.SigningPlatformUnmarshaller">
+            <summary>
+            Response Unmarshaller for SigningPlatform Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.Signer.Model.Internal.MarshallTransformations.SigningPlatformUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#Signer#Model#SigningPlatform,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Signer.Model.Internal.MarshallTransformations.SigningPlatformUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.Signer.Model.Internal.MarshallTransformations.SigningPlatformUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Signer.Model.Internal.MarshallTransformations.SigningProfileUnmarshaller">
+            <summary>
+            Response Unmarshaller for SigningProfile Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.Signer.Model.Internal.MarshallTransformations.SigningProfileUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#Signer#Model#SigningProfile,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Signer.Model.Internal.MarshallTransformations.SigningProfileUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.Signer.Model.Internal.MarshallTransformations.SigningProfileUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Signer.Model.Internal.MarshallTransformations.SourceMarshaller">
+            <summary>
+            Source Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.Signer.Model.Internal.MarshallTransformations.SourceMarshaller.Marshall(Amazon.Signer.Model.Source,Amazon.Runtime.Internal.Transform.JsonMarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="requestObject"></param>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="F:Amazon.Signer.Model.Internal.MarshallTransformations.SourceMarshaller.Instance">
+            <summary>
+            Singleton Marshaller.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Signer.Model.Internal.MarshallTransformations.SourceUnmarshaller">
+            <summary>
+            Response Unmarshaller for Source Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.Signer.Model.Internal.MarshallTransformations.SourceUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#Signer#Model#Source,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Signer.Model.Internal.MarshallTransformations.SourceUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.Signer.Model.Internal.MarshallTransformations.SourceUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Signer.Model.Internal.MarshallTransformations.StartSigningJobRequestMarshaller">
+            <summary>
+            StartSigningJob Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.Signer.Model.Internal.MarshallTransformations.StartSigningJobRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Signer.Model.Internal.MarshallTransformations.StartSigningJobRequestMarshaller.Marshall(Amazon.Signer.Model.StartSigningJobRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.Signer.Model.Internal.MarshallTransformations.StartSigningJobRequestMarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Signer.Model.Internal.MarshallTransformations.StartSigningJobResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for StartSigningJob operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.Signer.Model.Internal.MarshallTransformations.StartSigningJobResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.Signer.Model.Internal.MarshallTransformations.StartSigningJobResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.Signer.Model.Internal.MarshallTransformations.StartSigningJobResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.Signer.Model.ListSigningJobsRequest">
+            <summary>
+            Container for the parameters to the ListSigningJobs operation.
+            Lists all your signing jobs. You can use the <code>maxResults</code> parameter to
+            limit the number of signing jobs that are returned in the response. If additional
+            jobs remain to be listed, AWS Signer returns a <code>nextToken</code> value. Use this
+            value in subsequent calls to <code>ListSigningJobs</code> to fetch the remaining values.
+            You can continue calling <code>ListSigningJobs</code> with your <code>maxResults</code>
+            parameter and with new values that AWS Signer returns in the <code>nextToken</code>
+            parameter until all of your signing jobs have been returned.
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.ListSigningJobsRequest.MaxResults">
+            <summary>
+            Gets and sets the property MaxResults. 
+            <para>
+            Specifies the maximum number of items to return in the response. Use this parameter
+            when paginating results. If additional items exist beyond the number you specify,
+            the <code>nextToken</code> element is set in the response. Use the <code>nextToken</code>
+            value in a subsequent request to retrieve additional items. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.ListSigningJobsRequest.NextToken">
+            <summary>
+            Gets and sets the property NextToken. 
+            <para>
+            String for specifying the next set of paginated results to return. After you receive
+            a response with truncated results, use this parameter in a subsequent request. Set
+            it to the value of <code>nextToken</code> from the response that you just received.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.ListSigningJobsRequest.PlatformId">
+            <summary>
+            Gets and sets the property PlatformId. 
+            <para>
+            The ID of microcontroller platform that you specified for the distribution of your
+            code image.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.ListSigningJobsRequest.RequestedBy">
+            <summary>
+            Gets and sets the property RequestedBy. 
+            <para>
+            The IAM principal that requested the signing job.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.ListSigningJobsRequest.Status">
+            <summary>
+            Gets and sets the property Status. 
+            <para>
+            A status value with which to filter your results.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Signer.Model.ListSigningJobsResponse">
+            <summary>
+            This is the response object from the ListSigningJobs operation.
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.ListSigningJobsResponse.Jobs">
+            <summary>
+            Gets and sets the property Jobs. 
+            <para>
+            A list of your signing jobs.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.ListSigningJobsResponse.NextToken">
+            <summary>
+            Gets and sets the property NextToken. 
+            <para>
+            String for specifying the next set of paginated results.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Signer.Model.ListSigningPlatformsRequest">
+            <summary>
+            Container for the parameters to the ListSigningPlatforms operation.
+            Lists all signing platforms available in AWS Signer that match the request parameters.
+            If additional jobs remain to be listed, AWS Signer returns a <code>nextToken</code>
+            value. Use this value in subsequent calls to <code>ListSigningJobs</code> to fetch
+            the remaining values. You can continue calling <code>ListSigningJobs</code> with your
+            <code>maxResults</code> parameter and with new values that AWS Signer returns in the
+            <code>nextToken</code> parameter until all of your signing jobs have been returned.
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.ListSigningPlatformsRequest.Category">
+            <summary>
+            Gets and sets the property Category. 
+            <para>
+            The category type of a signing platform.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.ListSigningPlatformsRequest.MaxResults">
+            <summary>
+            Gets and sets the property MaxResults. 
+            <para>
+            The maximum number of results to be returned by this operation.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.ListSigningPlatformsRequest.NextToken">
+            <summary>
+            Gets and sets the property NextToken. 
+            <para>
+            Value for specifying the next set of paginated results to return. After you receive
+            a response with truncated results, use this parameter in a subsequent request. Set
+            it to the value of <code>nextToken</code> from the response that you just received.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.ListSigningPlatformsRequest.Partner">
+            <summary>
+            Gets and sets the property Partner. 
+            <para>
+            Any partner entities connected to a signing platform.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.ListSigningPlatformsRequest.Target">
+            <summary>
+            Gets and sets the property Target. 
+            <para>
+            The validation template that is used by the target signing platform.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Signer.Model.ListSigningPlatformsResponse">
+            <summary>
+            This is the response object from the ListSigningPlatforms operation.
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.ListSigningPlatformsResponse.NextToken">
+            <summary>
+            Gets and sets the property NextToken. 
+            <para>
+            Value for specifying the next set of paginated results to return.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.ListSigningPlatformsResponse.Platforms">
+            <summary>
+            Gets and sets the property Platforms. 
+            <para>
+            A list of all platforms that match the request parameters.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Signer.Model.ListSigningProfilesRequest">
+            <summary>
+            Container for the parameters to the ListSigningProfiles operation.
+            Lists all available signing profiles in your AWS account. Returns only profiles with
+            an <code>ACTIVE</code> status unless the <code>includeCanceled</code> request field
+            is set to <code>true</code>. If additional jobs remain to be listed, AWS Signer returns
+            a <code>nextToken</code> value. Use this value in subsequent calls to <code>ListSigningJobs</code>
+            to fetch the remaining values. You can continue calling <code>ListSigningJobs</code>
+            with your <code>maxResults</code> parameter and with new values that AWS Signer returns
+            in the <code>nextToken</code> parameter until all of your signing jobs have been returned.
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.ListSigningProfilesRequest.IncludeCanceled">
+            <summary>
+            Gets and sets the property IncludeCanceled. 
+            <para>
+            Designates whether to include profiles with the status of <code>CANCELED</code>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.ListSigningProfilesRequest.MaxResults">
+            <summary>
+            Gets and sets the property MaxResults. 
+            <para>
+            The maximum number of profiles to be returned.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.ListSigningProfilesRequest.NextToken">
+            <summary>
+            Gets and sets the property NextToken. 
+            <para>
+            Value for specifying the next set of paginated results to return. After you receive
+            a response with truncated results, use this parameter in a subsequent request. Set
+            it to the value of <code>nextToken</code> from the response that you just received.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Signer.Model.ListSigningProfilesResponse">
+            <summary>
+            This is the response object from the ListSigningProfiles operation.
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.ListSigningProfilesResponse.NextToken">
+            <summary>
+            Gets and sets the property NextToken. 
+            <para>
+            Value for specifying the next set of paginated results to return.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.ListSigningProfilesResponse.Profiles">
+            <summary>
+            Gets and sets the property Profiles. 
+            <para>
+            A list of profiles that are available in the AWS account. This includes profiles with
+            the status of <code>CANCELED</code> if the <code>includeCanceled</code> parameter
+            is set to <code>true</code>.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Signer.Model.PutSigningProfileRequest">
+            <summary>
+            Container for the parameters to the PutSigningProfile operation.
+            Creates a signing profile. A signing profile is an AWS Signer template that can be
+            used to carry out a pre-defined signing job. For more information, see <a href="http://docs.aws.amazon.com/signer/latest/developerguide/gs-profile.html">http://docs.aws.amazon.com/signer/latest/developerguide/gs-profile.html</a>
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.PutSigningProfileRequest.Overrides">
+            <summary>
+            Gets and sets the property Overrides. 
+            <para>
+            A subfield of <code>platform</code>. This specifies any different configuration options
+            that you want to apply to the chosen platform (such as a different <code>hash-algorithm</code>
+            or <code>signing-algorithm</code>).
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.PutSigningProfileRequest.PlatformId">
+            <summary>
+            Gets and sets the property PlatformId. 
+            <para>
+            The ID of the signing profile to be created.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.PutSigningProfileRequest.ProfileName">
+            <summary>
+            Gets and sets the property ProfileName. 
+            <para>
+            The name of the signing profile to be created.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.PutSigningProfileRequest.SigningMaterial">
+            <summary>
+            Gets and sets the property SigningMaterial. 
+            <para>
+            The AWS Certificate Manager certificate that will be used to sign code with the new
+            signing profile.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.PutSigningProfileRequest.SigningParameters">
+            <summary>
+            Gets and sets the property SigningParameters. 
+            <para>
+            Map of key-value pairs for signing. These can include any information that you want
+            to use during signing.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Signer.Model.PutSigningProfileResponse">
+            <summary>
+            This is the response object from the PutSigningProfile operation.
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.PutSigningProfileResponse.Arn">
+            <summary>
+            Gets and sets the property Arn. 
+            <para>
+            The Amazon Resource Name (ARN) of the signing profile created.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Signer.Model.ResourceNotFoundException">
+            <summary>
+             Signer exception
+             </summary>
+        </member>
+        <member name="M:Amazon.Signer.Model.ResourceNotFoundException.#ctor(System.String)">
+            <summary>
+            Constructs a new ResourceNotFoundException with the specified error
+            message.
+            </summary>
+            <param name="message">
+            Describes the error encountered.
+            </param>
+        </member>
+        <member name="M:Amazon.Signer.Model.ResourceNotFoundException.#ctor(System.String,System.Exception)">
+            <summary>
+            Construct instance of ResourceNotFoundException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.Signer.Model.ResourceNotFoundException.#ctor(System.Exception)">
+            <summary>
+            Construct instance of ResourceNotFoundException
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.Signer.Model.ResourceNotFoundException.#ctor(System.String,System.Exception,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of ResourceNotFoundException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="M:Amazon.Signer.Model.ResourceNotFoundException.#ctor(System.String,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of ResourceNotFoundException
+            </summary>
+            <param name="message"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="T:Amazon.Signer.Model.S3Destination">
+            <summary>
+            The name and prefix of the S3 bucket where AWS Signer saves your signed objects.
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.S3Destination.BucketName">
+            <summary>
+            Gets and sets the property BucketName. 
+            <para>
+            Name of the S3 bucket.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.S3Destination.Prefix">
+            <summary>
+            Gets and sets the property Prefix. 
+            <para>
+            An Amazon S3 prefix that you can use to limit responses to those that begin with the
+            specified prefix.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Signer.Model.S3SignedObject">
+            <summary>
+            The S3 bucket name and key where AWS Signer saved your signed code image.
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.S3SignedObject.BucketName">
+            <summary>
+            Gets and sets the property BucketName. 
+            <para>
+            Name of the S3 bucket.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.S3SignedObject.Key">
+            <summary>
+            Gets and sets the property Key. 
+            <para>
+            Key name that uniquely identifies a signed code image in your bucket.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Signer.Model.S3Source">
+            <summary>
+            Information about the S3 bucket where you saved your unsigned code.
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.S3Source.BucketName">
+            <summary>
+            Gets and sets the property BucketName. 
+            <para>
+            Name of the S3 bucket.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.S3Source.Key">
+            <summary>
+            Gets and sets the property Key. 
+            <para>
+            Key name of the bucket object that contains your unsigned code.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.S3Source.Version">
+            <summary>
+            Gets and sets the property Version. 
+            <para>
+            Version of your source image in your version enabled S3 bucket.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Signer.Model.SignedObject">
+            <summary>
+            Points to an <code>S3SignedObject</code> object that contains information about your
+            signed code image.
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.SignedObject.S3">
+            <summary>
+            Gets and sets the property S3. 
+            <para>
+            The <code>S3SignedObject</code>.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Signer.Model.SigningConfiguration">
+            <summary>
+            The configuration of an AWS Signer operation.
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.SigningConfiguration.EncryptionAlgorithmOptions">
+            <summary>
+            Gets and sets the property EncryptionAlgorithmOptions. 
+            <para>
+            The encryption algorithm options that are available for an AWS Signer job.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.SigningConfiguration.HashAlgorithmOptions">
+            <summary>
+            Gets and sets the property HashAlgorithmOptions. 
+            <para>
+            The hash algorithm options that are available for an AWS Signer job.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Signer.Model.SigningConfigurationOverrides">
+            <summary>
+            A signing configuration that overrides the default encryption or hash algorithm of
+            a signing job.
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.SigningConfigurationOverrides.EncryptionAlgorithm">
+            <summary>
+            Gets and sets the property EncryptionAlgorithm. 
+            <para>
+            A specified override of the default encryption algorithm that is used in an AWS Signer
+            job.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.SigningConfigurationOverrides.HashAlgorithm">
+            <summary>
+            Gets and sets the property HashAlgorithm. 
+            <para>
+            A specified override of the default hash algorithm that is used in an AWS Signer job.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Signer.Model.SigningImageFormat">
+            <summary>
+            The image format of an AWS Signer platform or profile.
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.SigningImageFormat.DefaultFormat">
+            <summary>
+            Gets and sets the property DefaultFormat. 
+            <para>
+            The default format of an AWS Signer signing image.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.SigningImageFormat.SupportedFormats">
+            <summary>
+            Gets and sets the property SupportedFormats. 
+            <para>
+            The supported formats of an AWS Signer signing image.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Signer.Model.SigningJob">
+            <summary>
+            Contains information about a signing job.
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.SigningJob.CreatedAt">
+            <summary>
+            Gets and sets the property CreatedAt. 
+            <para>
+            The date and time that the signing job was created.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.SigningJob.JobId">
+            <summary>
+            Gets and sets the property JobId. 
+            <para>
+            The ID of the signing job.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.SigningJob.SignedObject">
+            <summary>
+            Gets and sets the property SignedObject. 
+            <para>
+            A <code>SignedObject</code> structure that contains information about a signing job's
+            signed code image.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.SigningJob.SigningMaterial">
+            <summary>
+            Gets and sets the property SigningMaterial. 
+            <para>
+            A <code>SigningMaterial</code> object that contains the Amazon Resource Name (ARN)
+            of the certificate used for the signing job.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.SigningJob.Source">
+            <summary>
+            Gets and sets the property Source. 
+            <para>
+            A <code>Source</code> that contains information about a signing job's code image source.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.SigningJob.Status">
+            <summary>
+            Gets and sets the property Status. 
+            <para>
+            The status of the signing job.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Signer.Model.SigningMaterial">
+            <summary>
+            The ACM certificate that is used to sign your code.
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.SigningMaterial.CertificateArn">
+            <summary>
+            Gets and sets the property CertificateArn. 
+            <para>
+            The Amazon Resource Name (ARN) of the certificates that is used to sign your code.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Signer.Model.SigningPlatform">
+            <summary>
+            Contains information about the signing configurations and parameters that is used
+            to perform an AWS Signer job.
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.SigningPlatform.Category">
+            <summary>
+            Gets and sets the property Category. 
+            <para>
+            The category of an AWS Signer platform.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.SigningPlatform.DisplayName">
+            <summary>
+            Gets and sets the property DisplayName. 
+            <para>
+            The display name of an AWS Signer platform.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.SigningPlatform.MaxSizeInMB">
+            <summary>
+            Gets and sets the property MaxSizeInMB. 
+            <para>
+            The maximum size (in MB) of code that can be signed by a AWS Signer platform.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.SigningPlatform.Partner">
+            <summary>
+            Gets and sets the property Partner. 
+            <para>
+            Any partner entities linked to an AWS Signer platform.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.SigningPlatform.PlatformId">
+            <summary>
+            Gets and sets the property PlatformId. 
+            <para>
+            The ID of an AWS Signer platform.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.SigningPlatform.SigningConfiguration">
+            <summary>
+            Gets and sets the property SigningConfiguration. 
+            <para>
+            The configuration of an AWS Signer platform. This includes the designated hash algorithm
+            and encryption algorithm of a signing platform.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.SigningPlatform.SigningImageFormat">
+            <summary>
+            Gets and sets the property SigningImageFormat. 
+            <para>
+            The signing image format that is used by an AWS Signer platform.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.SigningPlatform.Target">
+            <summary>
+            Gets and sets the property Target. 
+            <para>
+            The types of targets that can be signed by an AWS Signer platform.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Signer.Model.SigningPlatformOverrides">
+            <summary>
+            Any overrides that are applied to the signing configuration of an AWS Signer platform.
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.SigningPlatformOverrides.SigningConfiguration">
+            <summary>
+            Gets and sets the property SigningConfiguration.
+            </summary>
+        </member>
+        <member name="T:Amazon.Signer.Model.SigningProfile">
+            <summary>
+            Contains information about the ACM certificates and AWS Signer configuration parameters
+            that can be used by a given AWS Signer user.
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.SigningProfile.PlatformId">
+            <summary>
+            Gets and sets the property PlatformId. 
+            <para>
+            The ID of a platform that is available for use by a signing profile.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.SigningProfile.ProfileName">
+            <summary>
+            Gets and sets the property ProfileName. 
+            <para>
+            The name of the AWS Signer profile.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.SigningProfile.SigningMaterial">
+            <summary>
+            Gets and sets the property SigningMaterial. 
+            <para>
+            The ACM certificate that is available for use by a signing profile.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.SigningProfile.SigningParameters">
+            <summary>
+            Gets and sets the property SigningParameters. 
+            <para>
+            The parameters that are available for use by an AWS Signer user.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.SigningProfile.Status">
+            <summary>
+            Gets and sets the property Status. 
+            <para>
+            The status of an AWS Signer profile.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Signer.Model.Source">
+            <summary>
+            An <code>S3Source</code> object that contains information about the S3 bucket where
+            you saved your unsigned code.
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.Source.S3">
+            <summary>
+            Gets and sets the property S3. 
+            <para>
+            The <code>S3Source</code> object.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Signer.Model.StartSigningJobRequest">
+            <summary>
+            Container for the parameters to the StartSigningJob operation.
+            Initiates a signing job to be performed on the code provided. Signing jobs are viewable
+            by the <code>ListSigningJobs</code> operation for two years after they are performed.
+            Note the following requirements: 
+            
+             <ul> <li> 
+            <para>
+             You must create an Amazon S3 source bucket. For more information, see <a href="http://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html">Create
+            a Bucket</a> in the <i>Amazon S3 Getting Started Guide</i>. 
+            </para>
+             </li> <li> 
+            <para>
+            Your S3 source bucket must be version enabled.
+            </para>
+             </li> <li> 
+            <para>
+            You must create an S3 destination bucket. AWS Signer uses your S3 destination bucket
+            to write your signed code.
+            </para>
+             </li> <li> 
+            <para>
+            You specify the name of the source and destination buckets when calling the <code>StartSigningJob</code>
+            operation.
+            </para>
+             </li> <li> 
+            <para>
+            You must also specify a request token that identifies your request to AWS Signer.
+            
+            </para>
+             </li> </ul> 
+            <para>
+            You can call the <a>DescribeSigningJob</a> and the <a>ListSigningJobs</a> actions
+            after you call <code>StartSigningJob</code>.
+            </para>
+             
+            <para>
+            For a Java example that shows how to use this action, see <a href="http://docs.aws.amazon.com/acm/latest/userguide/">http://docs.aws.amazon.com/acm/latest/userguide/</a>
+            
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.StartSigningJobRequest.ClientRequestToken">
+            <summary>
+            Gets and sets the property ClientRequestToken. 
+            <para>
+            String that identifies the signing request. All calls after the first that use this
+            token return the same response as the first call.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.StartSigningJobRequest.Destination">
+            <summary>
+            Gets and sets the property Destination. 
+            <para>
+            The S3 bucket in which to save your signed object. The destination contains the name
+            of your bucket and an optional prefix.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.StartSigningJobRequest.ProfileName">
+            <summary>
+            Gets and sets the property ProfileName. 
+            <para>
+            The name of the signing profile.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.StartSigningJobRequest.Source">
+            <summary>
+            Gets and sets the property Source. 
+            <para>
+            The S3 bucket that contains the object to sign or a BLOB that contains your raw code.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Signer.Model.StartSigningJobResponse">
+            <summary>
+            This is the response object from the StartSigningJob operation.
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.Model.StartSigningJobResponse.JobId">
+            <summary>
+            Gets and sets the property JobId. 
+            <para>
+            The ID of your signing job.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.Signer.Model.ThrottlingException">
+            <summary>
+             Signer exception
+             </summary>
+        </member>
+        <member name="M:Amazon.Signer.Model.ThrottlingException.#ctor(System.String)">
+            <summary>
+            Constructs a new ThrottlingException with the specified error
+            message.
+            </summary>
+            <param name="message">
+            Describes the error encountered.
+            </param>
+        </member>
+        <member name="M:Amazon.Signer.Model.ThrottlingException.#ctor(System.String,System.Exception)">
+            <summary>
+            Construct instance of ThrottlingException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.Signer.Model.ThrottlingException.#ctor(System.Exception)">
+            <summary>
+            Construct instance of ThrottlingException
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.Signer.Model.ThrottlingException.#ctor(System.String,System.Exception,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of ThrottlingException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="M:Amazon.Signer.Model.ThrottlingException.#ctor(System.String,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of ThrottlingException
+            </summary>
+            <param name="message"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="T:Amazon.Signer.Model.ValidationException">
+            <summary>
+             Signer exception
+             </summary>
+        </member>
+        <member name="M:Amazon.Signer.Model.ValidationException.#ctor(System.String)">
+            <summary>
+            Constructs a new ValidationException with the specified error
+            message.
+            </summary>
+            <param name="message">
+            Describes the error encountered.
+            </param>
+        </member>
+        <member name="M:Amazon.Signer.Model.ValidationException.#ctor(System.String,System.Exception)">
+            <summary>
+            Construct instance of ValidationException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.Signer.Model.ValidationException.#ctor(System.Exception)">
+            <summary>
+            Construct instance of ValidationException
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.Signer.Model.ValidationException.#ctor(System.String,System.Exception,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of ValidationException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="M:Amazon.Signer.Model.ValidationException.#ctor(System.String,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of ValidationException
+            </summary>
+            <param name="message"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="T:Amazon.Signer.AmazonSignerRequest">
+            <summary>
+            Base class for Signer operation requests.
+            </summary>
+        </member>
+        <member name="T:Amazon.Signer.Category">
+            <summary>
+            Constants used for properties of type Category.
+            </summary>
+        </member>
+        <member name="F:Amazon.Signer.Category.AWSIoT">
+            <summary>
+            Constant AWSIoT for Category
+            </summary>
+        </member>
+        <member name="M:Amazon.Signer.Category.#ctor(System.String)">
+            <summary>
+            This constant constructor does not need to be called if the constant
+            you are attempting to use is already defined as a static instance of 
+            this class.
+            This constructor should be used to construct constants that are not
+            defined as statics, for instance if attempting to use a feature that is
+            newer than the current version of the SDK.
+            </summary>
+        </member>
+        <member name="M:Amazon.Signer.Category.FindValue(System.String)">
+            <summary>
+            Finds the constant for the unique value.
+            </summary>
+            <param name="value">The unique value for the constant</param>
+            <returns>The constant for the unique value</returns>
+        </member>
+        <member name="M:Amazon.Signer.Category.op_Implicit(System.String)~Amazon.Signer.Category">
+            <summary>
+            Utility method to convert strings to the constant class.
+            </summary>
+            <param name="value">The string value to convert to the constant class.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.Signer.EncryptionAlgorithm">
+            <summary>
+            Constants used for properties of type EncryptionAlgorithm.
+            </summary>
+        </member>
+        <member name="F:Amazon.Signer.EncryptionAlgorithm.ECDSA">
+            <summary>
+            Constant ECDSA for EncryptionAlgorithm
+            </summary>
+        </member>
+        <member name="F:Amazon.Signer.EncryptionAlgorithm.RSA">
+            <summary>
+            Constant RSA for EncryptionAlgorithm
+            </summary>
+        </member>
+        <member name="M:Amazon.Signer.EncryptionAlgorithm.#ctor(System.String)">
+            <summary>
+            This constant constructor does not need to be called if the constant
+            you are attempting to use is already defined as a static instance of 
+            this class.
+            This constructor should be used to construct constants that are not
+            defined as statics, for instance if attempting to use a feature that is
+            newer than the current version of the SDK.
+            </summary>
+        </member>
+        <member name="M:Amazon.Signer.EncryptionAlgorithm.FindValue(System.String)">
+            <summary>
+            Finds the constant for the unique value.
+            </summary>
+            <param name="value">The unique value for the constant</param>
+            <returns>The constant for the unique value</returns>
+        </member>
+        <member name="M:Amazon.Signer.EncryptionAlgorithm.op_Implicit(System.String)~Amazon.Signer.EncryptionAlgorithm">
+            <summary>
+            Utility method to convert strings to the constant class.
+            </summary>
+            <param name="value">The string value to convert to the constant class.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.Signer.HashAlgorithm">
+            <summary>
+            Constants used for properties of type HashAlgorithm.
+            </summary>
+        </member>
+        <member name="F:Amazon.Signer.HashAlgorithm.SHA1">
+            <summary>
+            Constant SHA1 for HashAlgorithm
+            </summary>
+        </member>
+        <member name="F:Amazon.Signer.HashAlgorithm.SHA256">
+            <summary>
+            Constant SHA256 for HashAlgorithm
+            </summary>
+        </member>
+        <member name="M:Amazon.Signer.HashAlgorithm.#ctor(System.String)">
+            <summary>
+            This constant constructor does not need to be called if the constant
+            you are attempting to use is already defined as a static instance of 
+            this class.
+            This constructor should be used to construct constants that are not
+            defined as statics, for instance if attempting to use a feature that is
+            newer than the current version of the SDK.
+            </summary>
+        </member>
+        <member name="M:Amazon.Signer.HashAlgorithm.FindValue(System.String)">
+            <summary>
+            Finds the constant for the unique value.
+            </summary>
+            <param name="value">The unique value for the constant</param>
+            <returns>The constant for the unique value</returns>
+        </member>
+        <member name="M:Amazon.Signer.HashAlgorithm.op_Implicit(System.String)~Amazon.Signer.HashAlgorithm">
+            <summary>
+            Utility method to convert strings to the constant class.
+            </summary>
+            <param name="value">The string value to convert to the constant class.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.Signer.ImageFormat">
+            <summary>
+            Constants used for properties of type ImageFormat.
+            </summary>
+        </member>
+        <member name="F:Amazon.Signer.ImageFormat.JSON">
+            <summary>
+            Constant JSON for ImageFormat
+            </summary>
+        </member>
+        <member name="M:Amazon.Signer.ImageFormat.#ctor(System.String)">
+            <summary>
+            This constant constructor does not need to be called if the constant
+            you are attempting to use is already defined as a static instance of 
+            this class.
+            This constructor should be used to construct constants that are not
+            defined as statics, for instance if attempting to use a feature that is
+            newer than the current version of the SDK.
+            </summary>
+        </member>
+        <member name="M:Amazon.Signer.ImageFormat.FindValue(System.String)">
+            <summary>
+            Finds the constant for the unique value.
+            </summary>
+            <param name="value">The unique value for the constant</param>
+            <returns>The constant for the unique value</returns>
+        </member>
+        <member name="M:Amazon.Signer.ImageFormat.op_Implicit(System.String)~Amazon.Signer.ImageFormat">
+            <summary>
+            Utility method to convert strings to the constant class.
+            </summary>
+            <param name="value">The string value to convert to the constant class.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.Signer.SigningProfileStatus">
+            <summary>
+            Constants used for properties of type SigningProfileStatus.
+            </summary>
+        </member>
+        <member name="F:Amazon.Signer.SigningProfileStatus.Active">
+            <summary>
+            Constant Active for SigningProfileStatus
+            </summary>
+        </member>
+        <member name="F:Amazon.Signer.SigningProfileStatus.Canceled">
+            <summary>
+            Constant Canceled for SigningProfileStatus
+            </summary>
+        </member>
+        <member name="M:Amazon.Signer.SigningProfileStatus.#ctor(System.String)">
+            <summary>
+            This constant constructor does not need to be called if the constant
+            you are attempting to use is already defined as a static instance of 
+            this class.
+            This constructor should be used to construct constants that are not
+            defined as statics, for instance if attempting to use a feature that is
+            newer than the current version of the SDK.
+            </summary>
+        </member>
+        <member name="M:Amazon.Signer.SigningProfileStatus.FindValue(System.String)">
+            <summary>
+            Finds the constant for the unique value.
+            </summary>
+            <param name="value">The unique value for the constant</param>
+            <returns>The constant for the unique value</returns>
+        </member>
+        <member name="M:Amazon.Signer.SigningProfileStatus.op_Implicit(System.String)~Amazon.Signer.SigningProfileStatus">
+            <summary>
+            Utility method to convert strings to the constant class.
+            </summary>
+            <param name="value">The string value to convert to the constant class.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.Signer.SigningStatus">
+            <summary>
+            Constants used for properties of type SigningStatus.
+            </summary>
+        </member>
+        <member name="F:Amazon.Signer.SigningStatus.Failed">
+            <summary>
+            Constant Failed for SigningStatus
+            </summary>
+        </member>
+        <member name="F:Amazon.Signer.SigningStatus.InProgress">
+            <summary>
+            Constant InProgress for SigningStatus
+            </summary>
+        </member>
+        <member name="F:Amazon.Signer.SigningStatus.Succeeded">
+            <summary>
+            Constant Succeeded for SigningStatus
+            </summary>
+        </member>
+        <member name="M:Amazon.Signer.SigningStatus.#ctor(System.String)">
+            <summary>
+            This constant constructor does not need to be called if the constant
+            you are attempting to use is already defined as a static instance of 
+            this class.
+            This constructor should be used to construct constants that are not
+            defined as statics, for instance if attempting to use a feature that is
+            newer than the current version of the SDK.
+            </summary>
+        </member>
+        <member name="M:Amazon.Signer.SigningStatus.FindValue(System.String)">
+            <summary>
+            Finds the constant for the unique value.
+            </summary>
+            <param name="value">The unique value for the constant</param>
+            <returns>The constant for the unique value</returns>
+        </member>
+        <member name="M:Amazon.Signer.SigningStatus.op_Implicit(System.String)~Amazon.Signer.SigningStatus">
+            <summary>
+            Utility method to convert strings to the constant class.
+            </summary>
+            <param name="value">The string value to convert to the constant class.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.Signer.AmazonSignerClient">
+             <summary>
+             Implementation for accessing Signer
+            
+             You can use Code Signing for Amazon FreeRTOS (AWS Signer) to sign code that you created
+             for any of the IoT devices that Amazon Web Services supports. AWS Signer is integrated
+             with Amazon FreeRTOS, AWS Certificate Manager, and AWS CloudTrail. Amazon FreeRTOS
+             customers can use AWS Signer to sign code images before making them available for
+             microcontrollers. You can use ACM to import third-party certificates to be used by
+             AWS Signer. For general information about using AWS Signer, see the <a href="http://docs.aws.amazon.com/signer/latest/developerguide/Welcome.html">Code
+             Signing for Amazon FreeRTOS Developer Guide</a>.
+             </summary>
+        </member>
+        <member name="M:Amazon.Signer.AmazonSignerClient.#ctor">
+             <summary>
+             Constructs AmazonSignerClient with the credentials loaded from the application's
+             default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+             
+             Example App.config with credentials set. 
+             <code>
+             &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+             &lt;configuration&gt;
+                 &lt;appSettings&gt;
+                     &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+                 &lt;/appSettings&gt;
+             &lt;/configuration&gt;
+             </code>
+            
+             </summary>
+        </member>
+        <member name="M:Amazon.Signer.AmazonSignerClient.#ctor(Amazon.RegionEndpoint)">
+             <summary>
+             Constructs AmazonSignerClient with the credentials loaded from the application's
+             default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+             
+             Example App.config with credentials set. 
+             <code>
+             &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+             &lt;configuration&gt;
+                 &lt;appSettings&gt;
+                     &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+                 &lt;/appSettings&gt;
+             &lt;/configuration&gt;
+             </code>
+            
+             </summary>
+             <param name="region">The region to connect.</param>
+        </member>
+        <member name="M:Amazon.Signer.AmazonSignerClient.#ctor(Amazon.Signer.AmazonSignerConfig)">
+             <summary>
+             Constructs AmazonSignerClient with the credentials loaded from the application's
+             default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+             
+             Example App.config with credentials set. 
+             <code>
+             &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+             &lt;configuration&gt;
+                 &lt;appSettings&gt;
+                     &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+                 &lt;/appSettings&gt;
+             &lt;/configuration&gt;
+             </code>
+            
+             </summary>
+             <param name="config">The AmazonSignerClient Configuration Object</param>
+        </member>
+        <member name="M:Amazon.Signer.AmazonSignerClient.#ctor(Amazon.Runtime.AWSCredentials)">
+            <summary>
+            Constructs AmazonSignerClient with AWS Credentials
+            </summary>
+            <param name="credentials">AWS Credentials</param>
+        </member>
+        <member name="M:Amazon.Signer.AmazonSignerClient.#ctor(Amazon.Runtime.AWSCredentials,Amazon.RegionEndpoint)">
+            <summary>
+            Constructs AmazonSignerClient with AWS Credentials
+            </summary>
+            <param name="credentials">AWS Credentials</param>
+            <param name="region">The region to connect.</param>
+        </member>
+        <member name="M:Amazon.Signer.AmazonSignerClient.#ctor(Amazon.Runtime.AWSCredentials,Amazon.Signer.AmazonSignerConfig)">
+            <summary>
+            Constructs AmazonSignerClient with AWS Credentials and an
+            AmazonSignerClient Configuration object.
+            </summary>
+            <param name="credentials">AWS Credentials</param>
+            <param name="clientConfig">The AmazonSignerClient Configuration Object</param>
+        </member>
+        <member name="M:Amazon.Signer.AmazonSignerClient.#ctor(System.String,System.String)">
+            <summary>
+            Constructs AmazonSignerClient with AWS Access Key ID and AWS Secret Key
+            </summary>
+            <param name="awsAccessKeyId">AWS Access Key ID</param>
+            <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        </member>
+        <member name="M:Amazon.Signer.AmazonSignerClient.#ctor(System.String,System.String,Amazon.RegionEndpoint)">
+            <summary>
+            Constructs AmazonSignerClient with AWS Access Key ID and AWS Secret Key
+            </summary>
+            <param name="awsAccessKeyId">AWS Access Key ID</param>
+            <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+            <param name="region">The region to connect.</param>
+        </member>
+        <member name="M:Amazon.Signer.AmazonSignerClient.#ctor(System.String,System.String,Amazon.Signer.AmazonSignerConfig)">
+            <summary>
+            Constructs AmazonSignerClient with AWS Access Key ID, AWS Secret Key and an
+            AmazonSignerClient Configuration object. 
+            </summary>
+            <param name="awsAccessKeyId">AWS Access Key ID</param>
+            <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+            <param name="clientConfig">The AmazonSignerClient Configuration Object</param>
+        </member>
+        <member name="M:Amazon.Signer.AmazonSignerClient.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Constructs AmazonSignerClient with AWS Access Key ID and AWS Secret Key
+            </summary>
+            <param name="awsAccessKeyId">AWS Access Key ID</param>
+            <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+            <param name="awsSessionToken">AWS Session Token</param>
+        </member>
+        <member name="M:Amazon.Signer.AmazonSignerClient.#ctor(System.String,System.String,System.String,Amazon.RegionEndpoint)">
+            <summary>
+            Constructs AmazonSignerClient with AWS Access Key ID and AWS Secret Key
+            </summary>
+            <param name="awsAccessKeyId">AWS Access Key ID</param>
+            <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+            <param name="awsSessionToken">AWS Session Token</param>
+            <param name="region">The region to connect.</param>
+        </member>
+        <member name="M:Amazon.Signer.AmazonSignerClient.#ctor(System.String,System.String,System.String,Amazon.Signer.AmazonSignerConfig)">
+            <summary>
+            Constructs AmazonSignerClient with AWS Access Key ID, AWS Secret Key and an
+            AmazonSignerClient Configuration object. 
+            </summary>
+            <param name="awsAccessKeyId">AWS Access Key ID</param>
+            <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+            <param name="awsSessionToken">AWS Session Token</param>
+            <param name="clientConfig">The AmazonSignerClient Configuration Object</param>
+        </member>
+        <member name="M:Amazon.Signer.AmazonSignerClient.CreateSigner">
+            <summary>
+            Creates the signer for the service.
+            </summary>
+        </member>
+        <member name="P:Amazon.Signer.AmazonSignerClient.ServiceMetadata">
+            <summary>
+            Capture metadata for the service.
+            </summary>
+        </member>
+        <member name="M:Amazon.Signer.AmazonSignerClient.Dispose(System.Boolean)">
+            <summary>
+            Disposes the service client.
+            </summary>
+        </member>
+        <member name="M:Amazon.Signer.AmazonSignerClient.CancelSigningProfileAsync(Amazon.Signer.Model.CancelSigningProfileRequest,System.Threading.CancellationToken)">
+            <summary>
+            Changes the state of an <code>ACTIVE</code> signing profile to <code>CANCELED</code>.
+            A canceled profile is still viewable with the <code>ListSigningProfiles</code> operation,
+            but it cannot perform new signing jobs, and is deleted two years after cancelation.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the CancelSigningProfile service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the CancelSigningProfile service method, as returned by Signer.</returns>
+            <exception cref="T:Amazon.Signer.Model.AccessDeniedException">
+            You do not have sufficient access to perform this action.
+            </exception>
+            <exception cref="T:Amazon.Signer.Model.InternalServiceErrorException">
+            An internal error occurred.
+            </exception>
+            <exception cref="T:Amazon.Signer.Model.ResourceNotFoundException">
+            A specified resource could not be found.
+            </exception>
+            <exception cref="T:Amazon.Signer.Model.ThrottlingException">
+            The signing job has been throttled.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/CancelSigningProfile">REST API Reference for CancelSigningProfile Operation</seealso>
+        </member>
+        <member name="M:Amazon.Signer.AmazonSignerClient.DescribeSigningJobAsync(Amazon.Signer.Model.DescribeSigningJobRequest,System.Threading.CancellationToken)">
+            <summary>
+            Returns information about a specific code signing job. You specify the job by using
+            the <code>jobId</code> value that is returned by the <a>StartSigningJob</a> operation.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the DescribeSigningJob service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the DescribeSigningJob service method, as returned by Signer.</returns>
+            <exception cref="T:Amazon.Signer.Model.AccessDeniedException">
+            You do not have sufficient access to perform this action.
+            </exception>
+            <exception cref="T:Amazon.Signer.Model.InternalServiceErrorException">
+            An internal error occurred.
+            </exception>
+            <exception cref="T:Amazon.Signer.Model.ResourceNotFoundException">
+            A specified resource could not be found.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/DescribeSigningJob">REST API Reference for DescribeSigningJob Operation</seealso>
+        </member>
+        <member name="M:Amazon.Signer.AmazonSignerClient.GetSigningPlatformAsync(Amazon.Signer.Model.GetSigningPlatformRequest,System.Threading.CancellationToken)">
+            <summary>
+            Returns information on a specific signing platform.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the GetSigningPlatform service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the GetSigningPlatform service method, as returned by Signer.</returns>
+            <exception cref="T:Amazon.Signer.Model.AccessDeniedException">
+            You do not have sufficient access to perform this action.
+            </exception>
+            <exception cref="T:Amazon.Signer.Model.InternalServiceErrorException">
+            An internal error occurred.
+            </exception>
+            <exception cref="T:Amazon.Signer.Model.ResourceNotFoundException">
+            A specified resource could not be found.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/GetSigningPlatform">REST API Reference for GetSigningPlatform Operation</seealso>
+        </member>
+        <member name="M:Amazon.Signer.AmazonSignerClient.GetSigningProfileAsync(Amazon.Signer.Model.GetSigningProfileRequest,System.Threading.CancellationToken)">
+            <summary>
+            Returns information on a specific signing profile.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the GetSigningProfile service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the GetSigningProfile service method, as returned by Signer.</returns>
+            <exception cref="T:Amazon.Signer.Model.AccessDeniedException">
+            You do not have sufficient access to perform this action.
+            </exception>
+            <exception cref="T:Amazon.Signer.Model.InternalServiceErrorException">
+            An internal error occurred.
+            </exception>
+            <exception cref="T:Amazon.Signer.Model.ResourceNotFoundException">
+            A specified resource could not be found.
+            </exception>
+            <exception cref="T:Amazon.Signer.Model.ThrottlingException">
+            The signing job has been throttled.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/GetSigningProfile">REST API Reference for GetSigningProfile Operation</seealso>
+        </member>
+        <member name="M:Amazon.Signer.AmazonSignerClient.ListSigningJobsAsync(Amazon.Signer.Model.ListSigningJobsRequest,System.Threading.CancellationToken)">
+            <summary>
+            Lists all your signing jobs. You can use the <code>maxResults</code> parameter to
+            limit the number of signing jobs that are returned in the response. If additional
+            jobs remain to be listed, AWS Signer returns a <code>nextToken</code> value. Use this
+            value in subsequent calls to <code>ListSigningJobs</code> to fetch the remaining values.
+            You can continue calling <code>ListSigningJobs</code> with your <code>maxResults</code>
+            parameter and with new values that AWS Signer returns in the <code>nextToken</code>
+            parameter until all of your signing jobs have been returned.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the ListSigningJobs service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the ListSigningJobs service method, as returned by Signer.</returns>
+            <exception cref="T:Amazon.Signer.Model.AccessDeniedException">
+            You do not have sufficient access to perform this action.
+            </exception>
+            <exception cref="T:Amazon.Signer.Model.InternalServiceErrorException">
+            An internal error occurred.
+            </exception>
+            <exception cref="T:Amazon.Signer.Model.ThrottlingException">
+            The signing job has been throttled.
+            </exception>
+            <exception cref="T:Amazon.Signer.Model.ValidationException">
+            You signing certificate could not be validated.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/ListSigningJobs">REST API Reference for ListSigningJobs Operation</seealso>
+        </member>
+        <member name="M:Amazon.Signer.AmazonSignerClient.ListSigningPlatformsAsync(Amazon.Signer.Model.ListSigningPlatformsRequest,System.Threading.CancellationToken)">
+            <summary>
+            Lists all signing platforms available in AWS Signer that match the request parameters.
+            If additional jobs remain to be listed, AWS Signer returns a <code>nextToken</code>
+            value. Use this value in subsequent calls to <code>ListSigningJobs</code> to fetch
+            the remaining values. You can continue calling <code>ListSigningJobs</code> with your
+            <code>maxResults</code> parameter and with new values that AWS Signer returns in the
+            <code>nextToken</code> parameter until all of your signing jobs have been returned.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the ListSigningPlatforms service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the ListSigningPlatforms service method, as returned by Signer.</returns>
+            <exception cref="T:Amazon.Signer.Model.AccessDeniedException">
+            You do not have sufficient access to perform this action.
+            </exception>
+            <exception cref="T:Amazon.Signer.Model.InternalServiceErrorException">
+            An internal error occurred.
+            </exception>
+            <exception cref="T:Amazon.Signer.Model.ThrottlingException">
+            The signing job has been throttled.
+            </exception>
+            <exception cref="T:Amazon.Signer.Model.ValidationException">
+            You signing certificate could not be validated.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/ListSigningPlatforms">REST API Reference for ListSigningPlatforms Operation</seealso>
+        </member>
+        <member name="M:Amazon.Signer.AmazonSignerClient.ListSigningProfilesAsync(Amazon.Signer.Model.ListSigningProfilesRequest,System.Threading.CancellationToken)">
+            <summary>
+            Lists all available signing profiles in your AWS account. Returns only profiles with
+            an <code>ACTIVE</code> status unless the <code>includeCanceled</code> request field
+            is set to <code>true</code>. If additional jobs remain to be listed, AWS Signer returns
+            a <code>nextToken</code> value. Use this value in subsequent calls to <code>ListSigningJobs</code>
+            to fetch the remaining values. You can continue calling <code>ListSigningJobs</code>
+            with your <code>maxResults</code> parameter and with new values that AWS Signer returns
+            in the <code>nextToken</code> parameter until all of your signing jobs have been returned.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the ListSigningProfiles service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the ListSigningProfiles service method, as returned by Signer.</returns>
+            <exception cref="T:Amazon.Signer.Model.AccessDeniedException">
+            You do not have sufficient access to perform this action.
+            </exception>
+            <exception cref="T:Amazon.Signer.Model.InternalServiceErrorException">
+            An internal error occurred.
+            </exception>
+            <exception cref="T:Amazon.Signer.Model.ThrottlingException">
+            The signing job has been throttled.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/ListSigningProfiles">REST API Reference for ListSigningProfiles Operation</seealso>
+        </member>
+        <member name="M:Amazon.Signer.AmazonSignerClient.PutSigningProfileAsync(Amazon.Signer.Model.PutSigningProfileRequest,System.Threading.CancellationToken)">
+            <summary>
+            Creates a signing profile. A signing profile is an AWS Signer template that can be
+            used to carry out a pre-defined signing job. For more information, see <a href="http://docs.aws.amazon.com/signer/latest/developerguide/gs-profile.html">http://docs.aws.amazon.com/signer/latest/developerguide/gs-profile.html</a>
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the PutSigningProfile service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the PutSigningProfile service method, as returned by Signer.</returns>
+            <exception cref="T:Amazon.Signer.Model.AccessDeniedException">
+            You do not have sufficient access to perform this action.
+            </exception>
+            <exception cref="T:Amazon.Signer.Model.InternalServiceErrorException">
+            An internal error occurred.
+            </exception>
+            <exception cref="T:Amazon.Signer.Model.ResourceNotFoundException">
+            A specified resource could not be found.
+            </exception>
+            <exception cref="T:Amazon.Signer.Model.ThrottlingException">
+            The signing job has been throttled.
+            </exception>
+            <exception cref="T:Amazon.Signer.Model.ValidationException">
+            You signing certificate could not be validated.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/PutSigningProfile">REST API Reference for PutSigningProfile Operation</seealso>
+        </member>
+        <member name="M:Amazon.Signer.AmazonSignerClient.StartSigningJobAsync(Amazon.Signer.Model.StartSigningJobRequest,System.Threading.CancellationToken)">
+            <summary>
+            Initiates a signing job to be performed on the code provided. Signing jobs are viewable
+            by the <code>ListSigningJobs</code> operation for two years after they are performed.
+            Note the following requirements: 
+            
+             <ul> <li> 
+            <para>
+             You must create an Amazon S3 source bucket. For more information, see <a href="http://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html">Create
+            a Bucket</a> in the <i>Amazon S3 Getting Started Guide</i>. 
+            </para>
+             </li> <li> 
+            <para>
+            Your S3 source bucket must be version enabled.
+            </para>
+             </li> <li> 
+            <para>
+            You must create an S3 destination bucket. AWS Signer uses your S3 destination bucket
+            to write your signed code.
+            </para>
+             </li> <li> 
+            <para>
+            You specify the name of the source and destination buckets when calling the <code>StartSigningJob</code>
+            operation.
+            </para>
+             </li> <li> 
+            <para>
+            You must also specify a request token that identifies your request to AWS Signer.
+            
+            </para>
+             </li> </ul> 
+            <para>
+            You can call the <a>DescribeSigningJob</a> and the <a>ListSigningJobs</a> actions
+            after you call <code>StartSigningJob</code>.
+            </para>
+             
+            <para>
+            For a Java example that shows how to use this action, see <a href="http://docs.aws.amazon.com/acm/latest/userguide/">http://docs.aws.amazon.com/acm/latest/userguide/</a>
+            
+            </para>
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the StartSigningJob service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the StartSigningJob service method, as returned by Signer.</returns>
+            <exception cref="T:Amazon.Signer.Model.AccessDeniedException">
+            You do not have sufficient access to perform this action.
+            </exception>
+            <exception cref="T:Amazon.Signer.Model.InternalServiceErrorException">
+            An internal error occurred.
+            </exception>
+            <exception cref="T:Amazon.Signer.Model.ResourceNotFoundException">
+            A specified resource could not be found.
+            </exception>
+            <exception cref="T:Amazon.Signer.Model.ThrottlingException">
+            The signing job has been throttled.
+            </exception>
+            <exception cref="T:Amazon.Signer.Model.ValidationException">
+            You signing certificate could not be validated.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/StartSigningJob">REST API Reference for StartSigningJob Operation</seealso>
+        </member>
+        <member name="T:Amazon.Signer.IAmazonSigner">
+             <summary>
+             Interface for accessing Signer
+            
+             You can use Code Signing for Amazon FreeRTOS (AWS Signer) to sign code that you created
+             for any of the IoT devices that Amazon Web Services supports. AWS Signer is integrated
+             with Amazon FreeRTOS, AWS Certificate Manager, and AWS CloudTrail. Amazon FreeRTOS
+             customers can use AWS Signer to sign code images before making them available for
+             microcontrollers. You can use ACM to import third-party certificates to be used by
+             AWS Signer. For general information about using AWS Signer, see the <a href="http://docs.aws.amazon.com/signer/latest/developerguide/Welcome.html">Code
+             Signing for Amazon FreeRTOS Developer Guide</a>.
+             </summary>
+        </member>
+        <member name="M:Amazon.Signer.IAmazonSigner.CancelSigningProfileAsync(Amazon.Signer.Model.CancelSigningProfileRequest,System.Threading.CancellationToken)">
+            <summary>
+            Changes the state of an <code>ACTIVE</code> signing profile to <code>CANCELED</code>.
+            A canceled profile is still viewable with the <code>ListSigningProfiles</code> operation,
+            but it cannot perform new signing jobs, and is deleted two years after cancelation.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the CancelSigningProfile service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the CancelSigningProfile service method, as returned by Signer.</returns>
+            <exception cref="T:Amazon.Signer.Model.AccessDeniedException">
+            You do not have sufficient access to perform this action.
+            </exception>
+            <exception cref="T:Amazon.Signer.Model.InternalServiceErrorException">
+            An internal error occurred.
+            </exception>
+            <exception cref="T:Amazon.Signer.Model.ResourceNotFoundException">
+            A specified resource could not be found.
+            </exception>
+            <exception cref="T:Amazon.Signer.Model.ThrottlingException">
+            The signing job has been throttled.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/CancelSigningProfile">REST API Reference for CancelSigningProfile Operation</seealso>
+        </member>
+        <member name="M:Amazon.Signer.IAmazonSigner.DescribeSigningJobAsync(Amazon.Signer.Model.DescribeSigningJobRequest,System.Threading.CancellationToken)">
+            <summary>
+            Returns information about a specific code signing job. You specify the job by using
+            the <code>jobId</code> value that is returned by the <a>StartSigningJob</a> operation.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the DescribeSigningJob service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the DescribeSigningJob service method, as returned by Signer.</returns>
+            <exception cref="T:Amazon.Signer.Model.AccessDeniedException">
+            You do not have sufficient access to perform this action.
+            </exception>
+            <exception cref="T:Amazon.Signer.Model.InternalServiceErrorException">
+            An internal error occurred.
+            </exception>
+            <exception cref="T:Amazon.Signer.Model.ResourceNotFoundException">
+            A specified resource could not be found.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/DescribeSigningJob">REST API Reference for DescribeSigningJob Operation</seealso>
+        </member>
+        <member name="M:Amazon.Signer.IAmazonSigner.GetSigningPlatformAsync(Amazon.Signer.Model.GetSigningPlatformRequest,System.Threading.CancellationToken)">
+            <summary>
+            Returns information on a specific signing platform.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the GetSigningPlatform service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the GetSigningPlatform service method, as returned by Signer.</returns>
+            <exception cref="T:Amazon.Signer.Model.AccessDeniedException">
+            You do not have sufficient access to perform this action.
+            </exception>
+            <exception cref="T:Amazon.Signer.Model.InternalServiceErrorException">
+            An internal error occurred.
+            </exception>
+            <exception cref="T:Amazon.Signer.Model.ResourceNotFoundException">
+            A specified resource could not be found.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/GetSigningPlatform">REST API Reference for GetSigningPlatform Operation</seealso>
+        </member>
+        <member name="M:Amazon.Signer.IAmazonSigner.GetSigningProfileAsync(Amazon.Signer.Model.GetSigningProfileRequest,System.Threading.CancellationToken)">
+            <summary>
+            Returns information on a specific signing profile.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the GetSigningProfile service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the GetSigningProfile service method, as returned by Signer.</returns>
+            <exception cref="T:Amazon.Signer.Model.AccessDeniedException">
+            You do not have sufficient access to perform this action.
+            </exception>
+            <exception cref="T:Amazon.Signer.Model.InternalServiceErrorException">
+            An internal error occurred.
+            </exception>
+            <exception cref="T:Amazon.Signer.Model.ResourceNotFoundException">
+            A specified resource could not be found.
+            </exception>
+            <exception cref="T:Amazon.Signer.Model.ThrottlingException">
+            The signing job has been throttled.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/GetSigningProfile">REST API Reference for GetSigningProfile Operation</seealso>
+        </member>
+        <member name="M:Amazon.Signer.IAmazonSigner.ListSigningJobsAsync(Amazon.Signer.Model.ListSigningJobsRequest,System.Threading.CancellationToken)">
+            <summary>
+            Lists all your signing jobs. You can use the <code>maxResults</code> parameter to
+            limit the number of signing jobs that are returned in the response. If additional
+            jobs remain to be listed, AWS Signer returns a <code>nextToken</code> value. Use this
+            value in subsequent calls to <code>ListSigningJobs</code> to fetch the remaining values.
+            You can continue calling <code>ListSigningJobs</code> with your <code>maxResults</code>
+            parameter and with new values that AWS Signer returns in the <code>nextToken</code>
+            parameter until all of your signing jobs have been returned.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the ListSigningJobs service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the ListSigningJobs service method, as returned by Signer.</returns>
+            <exception cref="T:Amazon.Signer.Model.AccessDeniedException">
+            You do not have sufficient access to perform this action.
+            </exception>
+            <exception cref="T:Amazon.Signer.Model.InternalServiceErrorException">
+            An internal error occurred.
+            </exception>
+            <exception cref="T:Amazon.Signer.Model.ThrottlingException">
+            The signing job has been throttled.
+            </exception>
+            <exception cref="T:Amazon.Signer.Model.ValidationException">
+            You signing certificate could not be validated.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/ListSigningJobs">REST API Reference for ListSigningJobs Operation</seealso>
+        </member>
+        <member name="M:Amazon.Signer.IAmazonSigner.ListSigningPlatformsAsync(Amazon.Signer.Model.ListSigningPlatformsRequest,System.Threading.CancellationToken)">
+            <summary>
+            Lists all signing platforms available in AWS Signer that match the request parameters.
+            If additional jobs remain to be listed, AWS Signer returns a <code>nextToken</code>
+            value. Use this value in subsequent calls to <code>ListSigningJobs</code> to fetch
+            the remaining values. You can continue calling <code>ListSigningJobs</code> with your
+            <code>maxResults</code> parameter and with new values that AWS Signer returns in the
+            <code>nextToken</code> parameter until all of your signing jobs have been returned.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the ListSigningPlatforms service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the ListSigningPlatforms service method, as returned by Signer.</returns>
+            <exception cref="T:Amazon.Signer.Model.AccessDeniedException">
+            You do not have sufficient access to perform this action.
+            </exception>
+            <exception cref="T:Amazon.Signer.Model.InternalServiceErrorException">
+            An internal error occurred.
+            </exception>
+            <exception cref="T:Amazon.Signer.Model.ThrottlingException">
+            The signing job has been throttled.
+            </exception>
+            <exception cref="T:Amazon.Signer.Model.ValidationException">
+            You signing certificate could not be validated.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/ListSigningPlatforms">REST API Reference for ListSigningPlatforms Operation</seealso>
+        </member>
+        <member name="M:Amazon.Signer.IAmazonSigner.ListSigningProfilesAsync(Amazon.Signer.Model.ListSigningProfilesRequest,System.Threading.CancellationToken)">
+            <summary>
+            Lists all available signing profiles in your AWS account. Returns only profiles with
+            an <code>ACTIVE</code> status unless the <code>includeCanceled</code> request field
+            is set to <code>true</code>. If additional jobs remain to be listed, AWS Signer returns
+            a <code>nextToken</code> value. Use this value in subsequent calls to <code>ListSigningJobs</code>
+            to fetch the remaining values. You can continue calling <code>ListSigningJobs</code>
+            with your <code>maxResults</code> parameter and with new values that AWS Signer returns
+            in the <code>nextToken</code> parameter until all of your signing jobs have been returned.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the ListSigningProfiles service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the ListSigningProfiles service method, as returned by Signer.</returns>
+            <exception cref="T:Amazon.Signer.Model.AccessDeniedException">
+            You do not have sufficient access to perform this action.
+            </exception>
+            <exception cref="T:Amazon.Signer.Model.InternalServiceErrorException">
+            An internal error occurred.
+            </exception>
+            <exception cref="T:Amazon.Signer.Model.ThrottlingException">
+            The signing job has been throttled.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/ListSigningProfiles">REST API Reference for ListSigningProfiles Operation</seealso>
+        </member>
+        <member name="M:Amazon.Signer.IAmazonSigner.PutSigningProfileAsync(Amazon.Signer.Model.PutSigningProfileRequest,System.Threading.CancellationToken)">
+            <summary>
+            Creates a signing profile. A signing profile is an AWS Signer template that can be
+            used to carry out a pre-defined signing job. For more information, see <a href="http://docs.aws.amazon.com/signer/latest/developerguide/gs-profile.html">http://docs.aws.amazon.com/signer/latest/developerguide/gs-profile.html</a>
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the PutSigningProfile service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the PutSigningProfile service method, as returned by Signer.</returns>
+            <exception cref="T:Amazon.Signer.Model.AccessDeniedException">
+            You do not have sufficient access to perform this action.
+            </exception>
+            <exception cref="T:Amazon.Signer.Model.InternalServiceErrorException">
+            An internal error occurred.
+            </exception>
+            <exception cref="T:Amazon.Signer.Model.ResourceNotFoundException">
+            A specified resource could not be found.
+            </exception>
+            <exception cref="T:Amazon.Signer.Model.ThrottlingException">
+            The signing job has been throttled.
+            </exception>
+            <exception cref="T:Amazon.Signer.Model.ValidationException">
+            You signing certificate could not be validated.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/PutSigningProfile">REST API Reference for PutSigningProfile Operation</seealso>
+        </member>
+        <member name="M:Amazon.Signer.IAmazonSigner.StartSigningJobAsync(Amazon.Signer.Model.StartSigningJobRequest,System.Threading.CancellationToken)">
+            <summary>
+            Initiates a signing job to be performed on the code provided. Signing jobs are viewable
+            by the <code>ListSigningJobs</code> operation for two years after they are performed.
+            Note the following requirements: 
+            
+             <ul> <li> 
+            <para>
+             You must create an Amazon S3 source bucket. For more information, see <a href="http://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html">Create
+            a Bucket</a> in the <i>Amazon S3 Getting Started Guide</i>. 
+            </para>
+             </li> <li> 
+            <para>
+            Your S3 source bucket must be version enabled.
+            </para>
+             </li> <li> 
+            <para>
+            You must create an S3 destination bucket. AWS Signer uses your S3 destination bucket
+            to write your signed code.
+            </para>
+             </li> <li> 
+            <para>
+            You specify the name of the source and destination buckets when calling the <code>StartSigningJob</code>
+            operation.
+            </para>
+             </li> <li> 
+            <para>
+            You must also specify a request token that identifies your request to AWS Signer.
+            
+            </para>
+             </li> </ul> 
+            <para>
+            You can call the <a>DescribeSigningJob</a> and the <a>ListSigningJobs</a> actions
+            after you call <code>StartSigningJob</code>.
+            </para>
+             
+            <para>
+            For a Java example that shows how to use this action, see <a href="http://docs.aws.amazon.com/acm/latest/userguide/">http://docs.aws.amazon.com/acm/latest/userguide/</a>
+            
+            </para>
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the StartSigningJob service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the StartSigningJob service method, as returned by Signer.</returns>
+            <exception cref="T:Amazon.Signer.Model.AccessDeniedException">
+            You do not have sufficient access to perform this action.
+            </exception>
+            <exception cref="T:Amazon.Signer.Model.InternalServiceErrorException">
+            An internal error occurred.
+            </exception>
+            <exception cref="T:Amazon.Signer.Model.ResourceNotFoundException">
+            A specified resource could not be found.
+            </exception>
+            <exception cref="T:Amazon.Signer.Model.ThrottlingException">
+            The signing job has been throttled.
+            </exception>
+            <exception cref="T:Amazon.Signer.Model.ValidationException">
+            You signing certificate could not be validated.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/StartSigningJob">REST API Reference for StartSigningJob Operation</seealso>
+        </member>
+    </members>
+</doc>

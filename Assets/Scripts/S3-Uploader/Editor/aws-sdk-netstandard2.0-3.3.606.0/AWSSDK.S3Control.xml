@@ -1,0 +1,3717 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AWSSDK.S3Control</name>
+    </assembly>
+    <members>
+        <member name="T:Amazon.S3Control.AmazonS3ControlException">
+            <summary>
+             Common exception for the S3Control service.
+             </summary>
+        </member>
+        <member name="P:Amazon.S3Control.AmazonS3ControlException.AmazonId2">
+            <summary>
+            A special token that helps AWS troubleshoot problems.
+            </summary>
+        </member>
+        <member name="M:Amazon.S3Control.AmazonS3ControlException.#ctor(System.String)">
+            <summary>
+            Construct instance of AmazonS3ControlException
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:Amazon.S3Control.AmazonS3ControlException.#ctor(System.String,System.Exception)">
+            <summary>
+            Construct instance of AmazonS3ControlException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.S3Control.AmazonS3ControlException.#ctor(System.Exception)">
+            <summary>
+            Construct instance of AmazonS3ControlException
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.S3Control.AmazonS3ControlException.#ctor(System.String,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of AmazonS3ControlException
+            </summary>
+            <param name="message"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="M:Amazon.S3Control.AmazonS3ControlException.#ctor(System.String,System.Exception,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of AmazonS3ControlException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="T:Amazon.S3Control.Internal.AmazonS3ControlExceptionHandler">
+            <summary>
+            Custom pipeline handler to extract the X-Amz-Id-2 header from WebExceptions
+            </summary>
+        </member>
+        <member name="M:Amazon.S3Control.Internal.AmazonS3ControlExceptionHandler.InvokeSync(Amazon.Runtime.IExecutionContext)">
+            <summary>
+            Extracts the X-Amz-Id-2 header from WebExceptions and adds it to the AmazonS3ControlException and metrics
+            </summary>
+            <param name="executionContext"></param>
+        </member>
+        <member name="M:Amazon.S3Control.Internal.AmazonS3ControlPostMarshallHandler.InvokeSync(Amazon.Runtime.IExecutionContext)">
+            <summary>
+            Calls pre invoke logic before calling the next handler 
+            in the pipeline.
+            </summary>
+            <param name="executionContext">The execution context which contains both the
+            requests and response context.</param>
+        </member>
+        <member name="M:Amazon.S3Control.Internal.AmazonS3ControlPostMarshallHandler.InvokeAsync``1(Amazon.Runtime.IExecutionContext)">
+            <summary>
+            Calls pre invoke logic before calling the next handler 
+            in the pipeline.
+            </summary>
+            <typeparam name="T">The response type for the current request.</typeparam>
+            <param name="executionContext">The execution context, it contains the
+            request and response context.</param>
+            <returns>A task that represents the asynchronous operation.</returns>
+        </member>
+        <member name="M:Amazon.S3Control.Internal.AmazonS3ControlPostUnmarshallHandler.InvokeSync(Amazon.Runtime.IExecutionContext)">
+            <summary>
+            Calls the post invoke logic after calling the next handler 
+            in the pipeline.
+            </summary>
+            <param name="executionContext">The execution context which contains both the
+            requests and response context.</param>
+        </member>
+        <member name="M:Amazon.S3Control.Internal.AmazonS3ControlPostUnmarshallHandler.InvokeAsync``1(Amazon.Runtime.IExecutionContext)">
+            <summary>
+            Calls the and post invoke logic after calling the next handler 
+            in the pipeline.
+            </summary>
+            <typeparam name="T">The response type for the current request.</typeparam>
+            <param name="executionContext">The execution context, it contains the
+            request and response context.</param>
+            <returns>A task that represents the asynchronous operation.</returns>
+        </member>
+        <member name="T:Amazon.S3Control.Internal.AmazonS3ControlMetadata">
+            <summary>
+            Service metadata for  Amazon S3Control service
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Internal.AmazonS3ControlMetadata.ServiceId">
+            <summary>
+            Gets the value of the Service Id.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Internal.AmazonS3ControlMetadata.OperationNameMapping">
+            <summary>
+            Gets the dictionary that gives mapping of renamed operations
+            </summary>
+        </member>
+        <member name="T:Amazon.S3Control.AmazonS3ControlConfig">
+            <summary>
+            Configuration for accessing Amazon S3Control service
+            </summary>
+        </member>
+        <member name="M:Amazon.S3Control.AmazonS3ControlConfig.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.AmazonS3ControlConfig.RegionEndpointServiceName">
+            <summary>
+            The constant used to lookup in the region hash the endpoint.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.AmazonS3ControlConfig.ServiceVersion">
+            <summary>
+            Gets the ServiceVersion property.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.AmazonS3ControlConfig.UserAgent">
+            <summary>
+            Gets the value of UserAgent property.
+            </summary>
+        </member>
+        <member name="T:Amazon.S3Control.AmazonS3ControlRequest">
+            <summary>
+            Base class for S3Control operation requests.
+            </summary>
+        </member>
+        <member name="T:Amazon.S3Control.Model.BadRequestException">
+            <summary>
+             S3Control exception
+             </summary>
+        </member>
+        <member name="M:Amazon.S3Control.Model.BadRequestException.#ctor(System.String)">
+            <summary>
+            Constructs a new BadRequestException with the specified error
+            message.
+            </summary>
+            <param name="message">
+            Describes the error encountered.
+            </param>
+        </member>
+        <member name="M:Amazon.S3Control.Model.BadRequestException.#ctor(System.String,System.Exception)">
+            <summary>
+            Construct instance of BadRequestException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.S3Control.Model.BadRequestException.#ctor(System.Exception)">
+            <summary>
+            Construct instance of BadRequestException
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.S3Control.Model.BadRequestException.#ctor(System.String,System.Exception,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of BadRequestException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="M:Amazon.S3Control.Model.BadRequestException.#ctor(System.String,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of BadRequestException
+            </summary>
+            <param name="message"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="T:Amazon.S3Control.Model.CreateJobRequest">
+            <summary>
+            Container for the parameters to the CreateJob operation.
+            Creates an Amazon S3 batch operations job.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.CreateJobRequest.AccountId">
+            <summary>
+            Gets and sets the property AccountId.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.CreateJobRequest.ClientRequestToken">
+            <summary>
+            Gets and sets the property ClientRequestToken. 
+            <para>
+            An idempotency token to ensure that you don't accidentally submit the same request
+            twice. You can use any string up to the maximum length.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.CreateJobRequest.ConfirmationRequired">
+            <summary>
+            Gets and sets the property ConfirmationRequired. 
+            <para>
+            Indicates whether confirmation is required before Amazon S3 runs the job. Confirmation
+            is only required for jobs created through the Amazon S3 console.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.CreateJobRequest.Description">
+            <summary>
+            Gets and sets the property Description. 
+            <para>
+            A description for this job. You can use any string within the permitted length. Descriptions
+            don't need to be unique and can be used for multiple jobs.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.CreateJobRequest.Manifest">
+            <summary>
+            Gets and sets the property Manifest. 
+            <para>
+            Configuration parameters for the manifest.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.CreateJobRequest.Operation">
+            <summary>
+            Gets and sets the property Operation. 
+            <para>
+            The operation that you want this job to perform on each object listed in the manifest.
+            For more information about the available operations, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-operations.html">Available
+            Operations</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.CreateJobRequest.Priority">
+            <summary>
+            Gets and sets the property Priority. 
+            <para>
+            The numerical priority for this job. Higher numbers indicate higher priority.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.CreateJobRequest.Report">
+            <summary>
+            Gets and sets the property Report. 
+            <para>
+            Configuration parameters for the optional job-completion report.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.CreateJobRequest.RoleArn">
+            <summary>
+            Gets and sets the property RoleArn. 
+            <para>
+            The Amazon Resource Name (ARN) for the Identity and Access Management (IAM) Role that
+            batch operations will use to execute this job's operation on each object in the manifest.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.S3Control.Model.CreateJobResponse">
+            <summary>
+            This is the response object from the CreateJob operation.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.CreateJobResponse.JobId">
+            <summary>
+            Gets and sets the property JobId. 
+            <para>
+            The ID for this job. Amazon S3 generates this ID automatically and returns it after
+            a successful <code>Create Job</code> request.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.S3Control.Model.DeletePublicAccessBlockRequest">
+            <summary>
+            Container for the parameters to the DeletePublicAccessBlock operation.
+            Deletes the block public access configuration for the specified account.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.DeletePublicAccessBlockRequest.AccountId">
+            <summary>
+            Gets and sets the property AccountId. 
+            <para>
+            The account ID for the AWS account whose block public access configuration you want
+            to delete.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.S3Control.Model.DeletePublicAccessBlockResponse">
+            <summary>
+            This is the response object from the DeletePublicAccessBlock operation.
+            </summary>
+        </member>
+        <member name="T:Amazon.S3Control.Model.DescribeJobRequest">
+            <summary>
+            Container for the parameters to the DescribeJob operation.
+            Retrieves the configuration parameters and status for a batch operations job.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.DescribeJobRequest.AccountId">
+            <summary>
+            Gets and sets the property AccountId.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.DescribeJobRequest.JobId">
+            <summary>
+            Gets and sets the property JobId. 
+            <para>
+            The ID for the job whose information you want to retrieve.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.S3Control.Model.DescribeJobResponse">
+            <summary>
+            This is the response object from the DescribeJob operation.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.DescribeJobResponse.Job">
+            <summary>
+            Gets and sets the property Job. 
+            <para>
+            Contains the configuration parameters and status for the job specified in the <code>Describe
+            Job</code> request.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.S3Control.Model.GetPublicAccessBlockRequest">
+            <summary>
+            Container for the parameters to the GetPublicAccessBlock operation.
+            
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.GetPublicAccessBlockRequest.AccountId">
+            <summary>
+            Gets and sets the property AccountId.
+            </summary>
+        </member>
+        <member name="T:Amazon.S3Control.Model.GetPublicAccessBlockResponse">
+            <summary>
+            This is the response object from the GetPublicAccessBlock operation.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.GetPublicAccessBlockResponse.PublicAccessBlockConfiguration">
+            <summary>
+            Gets and sets the property PublicAccessBlockConfiguration.
+            </summary>
+        </member>
+        <member name="T:Amazon.S3Control.Model.IdempotencyException">
+            <summary>
+             S3Control exception
+             </summary>
+        </member>
+        <member name="M:Amazon.S3Control.Model.IdempotencyException.#ctor(System.String)">
+            <summary>
+            Constructs a new IdempotencyException with the specified error
+            message.
+            </summary>
+            <param name="message">
+            Describes the error encountered.
+            </param>
+        </member>
+        <member name="M:Amazon.S3Control.Model.IdempotencyException.#ctor(System.String,System.Exception)">
+            <summary>
+            Construct instance of IdempotencyException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.S3Control.Model.IdempotencyException.#ctor(System.Exception)">
+            <summary>
+            Construct instance of IdempotencyException
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.S3Control.Model.IdempotencyException.#ctor(System.String,System.Exception,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of IdempotencyException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="M:Amazon.S3Control.Model.IdempotencyException.#ctor(System.String,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of IdempotencyException
+            </summary>
+            <param name="message"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="T:Amazon.S3Control.Model.InternalServiceException">
+            <summary>
+             S3Control exception
+             </summary>
+        </member>
+        <member name="M:Amazon.S3Control.Model.InternalServiceException.#ctor(System.String)">
+            <summary>
+            Constructs a new InternalServiceException with the specified error
+            message.
+            </summary>
+            <param name="message">
+            Describes the error encountered.
+            </param>
+        </member>
+        <member name="M:Amazon.S3Control.Model.InternalServiceException.#ctor(System.String,System.Exception)">
+            <summary>
+            Construct instance of InternalServiceException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.S3Control.Model.InternalServiceException.#ctor(System.Exception)">
+            <summary>
+            Construct instance of InternalServiceException
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.S3Control.Model.InternalServiceException.#ctor(System.String,System.Exception,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of InternalServiceException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="M:Amazon.S3Control.Model.InternalServiceException.#ctor(System.String,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of InternalServiceException
+            </summary>
+            <param name="message"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="T:Amazon.S3Control.Model.Internal.MarshallTransformations.CreateJobRequestMarshaller">
+            <summary>
+            CreateJob Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.S3Control.Model.Internal.MarshallTransformations.CreateJobRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.S3Control.Model.Internal.MarshallTransformations.CreateJobRequestMarshaller.Marshall(Amazon.S3Control.Model.CreateJobRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.S3Control.Model.Internal.MarshallTransformations.CreateJobRequestMarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.S3Control.Model.Internal.MarshallTransformations.CreateJobResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for CreateJob operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.S3Control.Model.Internal.MarshallTransformations.CreateJobResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.S3Control.Model.Internal.MarshallTransformations.CreateJobResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.S3Control.Model.Internal.MarshallTransformations.CreateJobResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.S3Control.Model.Internal.MarshallTransformations.DeletePublicAccessBlockRequestMarshaller">
+            <summary>
+            DeletePublicAccessBlock Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.S3Control.Model.Internal.MarshallTransformations.DeletePublicAccessBlockRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.S3Control.Model.Internal.MarshallTransformations.DeletePublicAccessBlockRequestMarshaller.Marshall(Amazon.S3Control.Model.DeletePublicAccessBlockRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.S3Control.Model.Internal.MarshallTransformations.DeletePublicAccessBlockRequestMarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.S3Control.Model.Internal.MarshallTransformations.DeletePublicAccessBlockResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for DeletePublicAccessBlock operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.S3Control.Model.Internal.MarshallTransformations.DeletePublicAccessBlockResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.S3Control.Model.Internal.MarshallTransformations.DeletePublicAccessBlockResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.S3Control.Model.Internal.MarshallTransformations.DeletePublicAccessBlockResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.S3Control.Model.Internal.MarshallTransformations.DescribeJobRequestMarshaller">
+            <summary>
+            DescribeJob Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.S3Control.Model.Internal.MarshallTransformations.DescribeJobRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.S3Control.Model.Internal.MarshallTransformations.DescribeJobRequestMarshaller.Marshall(Amazon.S3Control.Model.DescribeJobRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.S3Control.Model.Internal.MarshallTransformations.DescribeJobRequestMarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.S3Control.Model.Internal.MarshallTransformations.DescribeJobResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for DescribeJob operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.S3Control.Model.Internal.MarshallTransformations.DescribeJobResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.S3Control.Model.Internal.MarshallTransformations.DescribeJobResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.S3Control.Model.Internal.MarshallTransformations.DescribeJobResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.S3Control.Model.Internal.MarshallTransformations.GetPublicAccessBlockRequestMarshaller">
+            <summary>
+            GetPublicAccessBlock Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.S3Control.Model.Internal.MarshallTransformations.GetPublicAccessBlockRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.S3Control.Model.Internal.MarshallTransformations.GetPublicAccessBlockRequestMarshaller.Marshall(Amazon.S3Control.Model.GetPublicAccessBlockRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.S3Control.Model.Internal.MarshallTransformations.GetPublicAccessBlockRequestMarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.S3Control.Model.Internal.MarshallTransformations.GetPublicAccessBlockResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for GetPublicAccessBlock operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.S3Control.Model.Internal.MarshallTransformations.GetPublicAccessBlockResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.S3Control.Model.Internal.MarshallTransformations.GetPublicAccessBlockResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.S3Control.Model.Internal.MarshallTransformations.GetPublicAccessBlockResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.S3Control.Model.Internal.MarshallTransformations.JobDescriptorUnmarshaller">
+            <summary>
+            Response Unmarshaller for JobDescriptor Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.S3Control.Model.Internal.MarshallTransformations.JobDescriptorUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.S3Control.Model.Internal.MarshallTransformations.JobDescriptorUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.S3Control.Model.Internal.MarshallTransformations.JobFailureUnmarshaller">
+            <summary>
+            Response Unmarshaller for JobFailure Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.S3Control.Model.Internal.MarshallTransformations.JobFailureUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.S3Control.Model.Internal.MarshallTransformations.JobFailureUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.S3Control.Model.Internal.MarshallTransformations.JobListDescriptorUnmarshaller">
+            <summary>
+            Response Unmarshaller for JobListDescriptor Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.S3Control.Model.Internal.MarshallTransformations.JobListDescriptorUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.S3Control.Model.Internal.MarshallTransformations.JobListDescriptorUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.S3Control.Model.Internal.MarshallTransformations.JobManifestLocationUnmarshaller">
+            <summary>
+            Response Unmarshaller for JobManifestLocation Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.S3Control.Model.Internal.MarshallTransformations.JobManifestLocationUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.S3Control.Model.Internal.MarshallTransformations.JobManifestLocationUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.S3Control.Model.Internal.MarshallTransformations.JobManifestSpecUnmarshaller">
+            <summary>
+            Response Unmarshaller for JobManifestSpec Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.S3Control.Model.Internal.MarshallTransformations.JobManifestSpecUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.S3Control.Model.Internal.MarshallTransformations.JobManifestSpecUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.S3Control.Model.Internal.MarshallTransformations.JobManifestUnmarshaller">
+            <summary>
+            Response Unmarshaller for JobManifest Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.S3Control.Model.Internal.MarshallTransformations.JobManifestUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.S3Control.Model.Internal.MarshallTransformations.JobManifestUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.S3Control.Model.Internal.MarshallTransformations.JobOperationUnmarshaller">
+            <summary>
+            Response Unmarshaller for JobOperation Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.S3Control.Model.Internal.MarshallTransformations.JobOperationUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.S3Control.Model.Internal.MarshallTransformations.JobOperationUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.S3Control.Model.Internal.MarshallTransformations.JobProgressSummaryUnmarshaller">
+            <summary>
+            Response Unmarshaller for JobProgressSummary Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.S3Control.Model.Internal.MarshallTransformations.JobProgressSummaryUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.S3Control.Model.Internal.MarshallTransformations.JobProgressSummaryUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.S3Control.Model.Internal.MarshallTransformations.JobReportUnmarshaller">
+            <summary>
+            Response Unmarshaller for JobReport Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.S3Control.Model.Internal.MarshallTransformations.JobReportUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.S3Control.Model.Internal.MarshallTransformations.JobReportUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.S3Control.Model.Internal.MarshallTransformations.LambdaInvokeOperationUnmarshaller">
+            <summary>
+            Response Unmarshaller for LambdaInvokeOperation Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.S3Control.Model.Internal.MarshallTransformations.LambdaInvokeOperationUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.S3Control.Model.Internal.MarshallTransformations.LambdaInvokeOperationUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.S3Control.Model.Internal.MarshallTransformations.ListJobsRequestMarshaller">
+            <summary>
+            ListJobs Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.S3Control.Model.Internal.MarshallTransformations.ListJobsRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.S3Control.Model.Internal.MarshallTransformations.ListJobsRequestMarshaller.Marshall(Amazon.S3Control.Model.ListJobsRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.S3Control.Model.Internal.MarshallTransformations.ListJobsRequestMarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.S3Control.Model.Internal.MarshallTransformations.ListJobsResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for ListJobs operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.S3Control.Model.Internal.MarshallTransformations.ListJobsResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.S3Control.Model.Internal.MarshallTransformations.ListJobsResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.S3Control.Model.Internal.MarshallTransformations.ListJobsResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.S3Control.Model.Internal.MarshallTransformations.PublicAccessBlockConfigurationUnmarshaller">
+            <summary>
+            Response Unmarshaller for PublicAccessBlockConfiguration Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.S3Control.Model.Internal.MarshallTransformations.PublicAccessBlockConfigurationUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.S3Control.Model.Internal.MarshallTransformations.PublicAccessBlockConfigurationUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.S3Control.Model.Internal.MarshallTransformations.PutPublicAccessBlockRequestMarshaller">
+            <summary>
+            PutPublicAccessBlock Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.S3Control.Model.Internal.MarshallTransformations.PutPublicAccessBlockRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.S3Control.Model.Internal.MarshallTransformations.PutPublicAccessBlockRequestMarshaller.Marshall(Amazon.S3Control.Model.PutPublicAccessBlockRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.S3Control.Model.Internal.MarshallTransformations.PutPublicAccessBlockRequestMarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.S3Control.Model.Internal.MarshallTransformations.PutPublicAccessBlockResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for PutPublicAccessBlock operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.S3Control.Model.Internal.MarshallTransformations.PutPublicAccessBlockResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.S3Control.Model.Internal.MarshallTransformations.PutPublicAccessBlockResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.S3Control.Model.Internal.MarshallTransformations.PutPublicAccessBlockResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.S3Control.Model.Internal.MarshallTransformations.S3AccessControlListUnmarshaller">
+            <summary>
+            Response Unmarshaller for S3AccessControlList Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.S3Control.Model.Internal.MarshallTransformations.S3AccessControlListUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.S3Control.Model.Internal.MarshallTransformations.S3AccessControlListUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.S3Control.Model.Internal.MarshallTransformations.S3AccessControlPolicyUnmarshaller">
+            <summary>
+            Response Unmarshaller for S3AccessControlPolicy Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.S3Control.Model.Internal.MarshallTransformations.S3AccessControlPolicyUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.S3Control.Model.Internal.MarshallTransformations.S3AccessControlPolicyUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.S3Control.Model.Internal.MarshallTransformations.S3CopyObjectOperationUnmarshaller">
+            <summary>
+            Response Unmarshaller for S3CopyObjectOperation Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.S3Control.Model.Internal.MarshallTransformations.S3CopyObjectOperationUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.S3Control.Model.Internal.MarshallTransformations.S3CopyObjectOperationUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.S3Control.Model.Internal.MarshallTransformations.S3GranteeUnmarshaller">
+            <summary>
+            Response Unmarshaller for S3Grantee Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.S3Control.Model.Internal.MarshallTransformations.S3GranteeUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.S3Control.Model.Internal.MarshallTransformations.S3GranteeUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.S3Control.Model.Internal.MarshallTransformations.S3GrantUnmarshaller">
+            <summary>
+            Response Unmarshaller for S3Grant Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.S3Control.Model.Internal.MarshallTransformations.S3GrantUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.S3Control.Model.Internal.MarshallTransformations.S3GrantUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.S3Control.Model.Internal.MarshallTransformations.S3InitiateRestoreObjectOperationUnmarshaller">
+            <summary>
+            Response Unmarshaller for S3InitiateRestoreObjectOperation Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.S3Control.Model.Internal.MarshallTransformations.S3InitiateRestoreObjectOperationUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.S3Control.Model.Internal.MarshallTransformations.S3InitiateRestoreObjectOperationUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.S3Control.Model.Internal.MarshallTransformations.S3ObjectMetadataUnmarshaller">
+            <summary>
+            Response Unmarshaller for S3ObjectMetadata Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.S3Control.Model.Internal.MarshallTransformations.S3ObjectMetadataUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.S3Control.Model.Internal.MarshallTransformations.S3ObjectMetadataUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.S3Control.Model.Internal.MarshallTransformations.S3ObjectOwnerUnmarshaller">
+            <summary>
+            Response Unmarshaller for S3ObjectOwner Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.S3Control.Model.Internal.MarshallTransformations.S3ObjectOwnerUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.S3Control.Model.Internal.MarshallTransformations.S3ObjectOwnerUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.S3Control.Model.Internal.MarshallTransformations.S3SetObjectAclOperationUnmarshaller">
+            <summary>
+            Response Unmarshaller for S3SetObjectAclOperation Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.S3Control.Model.Internal.MarshallTransformations.S3SetObjectAclOperationUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.S3Control.Model.Internal.MarshallTransformations.S3SetObjectAclOperationUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.S3Control.Model.Internal.MarshallTransformations.S3SetObjectTaggingOperationUnmarshaller">
+            <summary>
+            Response Unmarshaller for S3SetObjectTaggingOperation Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.S3Control.Model.Internal.MarshallTransformations.S3SetObjectTaggingOperationUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.S3Control.Model.Internal.MarshallTransformations.S3SetObjectTaggingOperationUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.S3Control.Model.Internal.MarshallTransformations.S3TagUnmarshaller">
+            <summary>
+            Response Unmarshaller for S3Tag Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.S3Control.Model.Internal.MarshallTransformations.S3TagUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.S3Control.Model.Internal.MarshallTransformations.S3TagUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.S3Control.Model.Internal.MarshallTransformations.UpdateJobPriorityRequestMarshaller">
+            <summary>
+            UpdateJobPriority Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.S3Control.Model.Internal.MarshallTransformations.UpdateJobPriorityRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.S3Control.Model.Internal.MarshallTransformations.UpdateJobPriorityRequestMarshaller.Marshall(Amazon.S3Control.Model.UpdateJobPriorityRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.S3Control.Model.Internal.MarshallTransformations.UpdateJobPriorityRequestMarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.S3Control.Model.Internal.MarshallTransformations.UpdateJobPriorityResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for UpdateJobPriority operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.S3Control.Model.Internal.MarshallTransformations.UpdateJobPriorityResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.S3Control.Model.Internal.MarshallTransformations.UpdateJobPriorityResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.S3Control.Model.Internal.MarshallTransformations.UpdateJobPriorityResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.S3Control.Model.Internal.MarshallTransformations.UpdateJobStatusRequestMarshaller">
+            <summary>
+            UpdateJobStatus Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.S3Control.Model.Internal.MarshallTransformations.UpdateJobStatusRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.S3Control.Model.Internal.MarshallTransformations.UpdateJobStatusRequestMarshaller.Marshall(Amazon.S3Control.Model.UpdateJobStatusRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.S3Control.Model.Internal.MarshallTransformations.UpdateJobStatusRequestMarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.S3Control.Model.Internal.MarshallTransformations.UpdateJobStatusResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for UpdateJobStatus operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.S3Control.Model.Internal.MarshallTransformations.UpdateJobStatusResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.S3Control.Model.Internal.MarshallTransformations.UpdateJobStatusResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.S3Control.Model.Internal.MarshallTransformations.UpdateJobStatusResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.S3Control.Model.InvalidNextTokenException">
+            <summary>
+             S3Control exception
+             </summary>
+        </member>
+        <member name="M:Amazon.S3Control.Model.InvalidNextTokenException.#ctor(System.String)">
+            <summary>
+            Constructs a new InvalidNextTokenException with the specified error
+            message.
+            </summary>
+            <param name="message">
+            Describes the error encountered.
+            </param>
+        </member>
+        <member name="M:Amazon.S3Control.Model.InvalidNextTokenException.#ctor(System.String,System.Exception)">
+            <summary>
+            Construct instance of InvalidNextTokenException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.S3Control.Model.InvalidNextTokenException.#ctor(System.Exception)">
+            <summary>
+            Construct instance of InvalidNextTokenException
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.S3Control.Model.InvalidNextTokenException.#ctor(System.String,System.Exception,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of InvalidNextTokenException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="M:Amazon.S3Control.Model.InvalidNextTokenException.#ctor(System.String,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of InvalidNextTokenException
+            </summary>
+            <param name="message"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="T:Amazon.S3Control.Model.InvalidRequestException">
+            <summary>
+             S3Control exception
+             </summary>
+        </member>
+        <member name="M:Amazon.S3Control.Model.InvalidRequestException.#ctor(System.String)">
+            <summary>
+            Constructs a new InvalidRequestException with the specified error
+            message.
+            </summary>
+            <param name="message">
+            Describes the error encountered.
+            </param>
+        </member>
+        <member name="M:Amazon.S3Control.Model.InvalidRequestException.#ctor(System.String,System.Exception)">
+            <summary>
+            Construct instance of InvalidRequestException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.S3Control.Model.InvalidRequestException.#ctor(System.Exception)">
+            <summary>
+            Construct instance of InvalidRequestException
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.S3Control.Model.InvalidRequestException.#ctor(System.String,System.Exception,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of InvalidRequestException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="M:Amazon.S3Control.Model.InvalidRequestException.#ctor(System.String,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of InvalidRequestException
+            </summary>
+            <param name="message"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="T:Amazon.S3Control.Model.JobDescriptor">
+            <summary>
+            A container element for the job configuration and status information returned by a
+            <code>Describe Job</code> request.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.JobDescriptor.ConfirmationRequired">
+            <summary>
+            Gets and sets the property ConfirmationRequired. 
+            <para>
+            Indicates whether confirmation is required before Amazon S3 begins running the specified
+            job. Confirmation is required only for jobs created through the Amazon S3 console.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.JobDescriptor.CreationTime">
+            <summary>
+            Gets and sets the property CreationTime. 
+            <para>
+            A timestamp indicating when this job was created.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.JobDescriptor.Description">
+            <summary>
+            Gets and sets the property Description. 
+            <para>
+            The description for this job, if one was provided in this job's <code>Create Job</code>
+            request.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.JobDescriptor.FailureReasons">
+            <summary>
+            Gets and sets the property FailureReasons. 
+            <para>
+            If the specified job failed, this field contains information describing the failure.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.JobDescriptor.JobArn">
+            <summary>
+            Gets and sets the property JobArn. 
+            <para>
+            The Amazon Resource Name (ARN) for this job.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.JobDescriptor.JobId">
+            <summary>
+            Gets and sets the property JobId. 
+            <para>
+            The ID for the specified job.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.JobDescriptor.Manifest">
+            <summary>
+            Gets and sets the property Manifest. 
+            <para>
+            The configuration information for the specified job's manifest object.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.JobDescriptor.Operation">
+            <summary>
+            Gets and sets the property Operation. 
+            <para>
+            The operation that the specified job is configured to execute on the objects listed
+            in the manifest.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.JobDescriptor.Priority">
+            <summary>
+            Gets and sets the property Priority. 
+            <para>
+            The priority of the specified job.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.JobDescriptor.ProgressSummary">
+            <summary>
+            Gets and sets the property ProgressSummary. 
+            <para>
+            Describes the total number of tasks that the specified job has executed, the number
+            of tasks that succeeded, and the number of tasks that failed.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.JobDescriptor.Report">
+            <summary>
+            Gets and sets the property Report. 
+            <para>
+            Contains the configuration information for the job-completion report if you requested
+            one in the <code>Create Job</code> request.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.JobDescriptor.RoleArn">
+            <summary>
+            Gets and sets the property RoleArn. 
+            <para>
+            The Amazon Resource Name (ARN) for the Identity and Access Management (IAM) Role assigned
+            to execute the tasks for this job.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.JobDescriptor.Status">
+            <summary>
+            Gets and sets the property Status. 
+            <para>
+            The current status of the specified job.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.JobDescriptor.StatusUpdateReason">
+            <summary>
+            Gets and sets the property StatusUpdateReason.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.JobDescriptor.SuspendedCause">
+            <summary>
+            Gets and sets the property SuspendedCause. 
+            <para>
+            The reason why the specified job was suspended. A job is only suspended if you create
+            it through the Amazon S3 console. When you create the job, it enters the <code>Suspended</code>
+            state to await confirmation before running. After you confirm the job, it automatically
+            exits the <code>Suspended</code> state.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.JobDescriptor.SuspendedDate">
+            <summary>
+            Gets and sets the property SuspendedDate. 
+            <para>
+            The timestamp when this job was suspended, if it has been suspended.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.JobDescriptor.TerminationDate">
+            <summary>
+            Gets and sets the property TerminationDate. 
+            <para>
+            A timestamp indicating when this job terminated. A job's termination date is the date
+            and time when it succeeded, failed, or was canceled.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.S3Control.Model.JobFailure">
+            <summary>
+            If this job failed, this element indicates why the job failed.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.JobFailure.FailureCode">
+            <summary>
+            Gets and sets the property FailureCode. 
+            <para>
+            The failure code, if any, for the specified job.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.JobFailure.FailureReason">
+            <summary>
+            Gets and sets the property FailureReason. 
+            <para>
+            The failure reason, if any, for the specified job.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.S3Control.Model.JobListDescriptor">
+            <summary>
+            Contains the configuration and status information for a single job retrieved as part
+            of a job list.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.JobListDescriptor.CreationTime">
+            <summary>
+            Gets and sets the property CreationTime. 
+            <para>
+            A timestamp indicating when the specified job was created.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.JobListDescriptor.Description">
+            <summary>
+            Gets and sets the property Description. 
+            <para>
+            The user-specified description that was included in the specified job's <code>Create
+            Job</code> request.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.JobListDescriptor.JobId">
+            <summary>
+            Gets and sets the property JobId. 
+            <para>
+            The ID for the specified job.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.JobListDescriptor.Operation">
+            <summary>
+            Gets and sets the property Operation. 
+            <para>
+            The operation that the specified job is configured to run on each object listed in
+            the manifest.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.JobListDescriptor.Priority">
+            <summary>
+            Gets and sets the property Priority. 
+            <para>
+            The current priority for the specified job.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.JobListDescriptor.ProgressSummary">
+            <summary>
+            Gets and sets the property ProgressSummary. 
+            <para>
+            Describes the total number of tasks that the specified job has executed, the number
+            of tasks that succeeded, and the number of tasks that failed.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.JobListDescriptor.Status">
+            <summary>
+            Gets and sets the property Status. 
+            <para>
+            The specified job's current status.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.JobListDescriptor.TerminationDate">
+            <summary>
+            Gets and sets the property TerminationDate. 
+            <para>
+            A timestamp indicating when the specified job terminated. A job's termination date
+            is the date and time when it succeeded, failed, or was canceled.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.S3Control.Model.JobManifest">
+            <summary>
+            Contains the configuration information for a job's manifest.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.JobManifest.Location">
+            <summary>
+            Gets and sets the property Location. 
+            <para>
+            Contains the information required to locate the specified job's manifest.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.JobManifest.Spec">
+            <summary>
+            Gets and sets the property Spec. 
+            <para>
+            Describes the format of the specified job's manifest. If the manifest is in CSV format,
+            also describes the columns contained within the manifest.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.S3Control.Model.JobManifestLocation">
+            <summary>
+            Contains the information required to locate a manifest object.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.JobManifestLocation.ETag">
+            <summary>
+            Gets and sets the property ETag. 
+            <para>
+            The ETag for the specified manifest object.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.JobManifestLocation.ObjectArn">
+            <summary>
+            Gets and sets the property ObjectArn. 
+            <para>
+            The Amazon Resource Name (ARN) for a manifest object.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.JobManifestLocation.ObjectVersionId">
+            <summary>
+            Gets and sets the property ObjectVersionId. 
+            <para>
+            The optional version ID to identify a specific version of the manifest object.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.S3Control.Model.JobManifestSpec">
+            <summary>
+            Describes the format of a manifest. If the manifest is in CSV format, also describes
+            the columns contained within the manifest.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.JobManifestSpec.Fields">
+            <summary>
+            Gets and sets the property Fields. 
+            <para>
+            If the specified manifest object is in the <code>S3BatchOperations_CSV_20180820</code>
+            format, this element describes which columns contain the required data.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.JobManifestSpec.Format">
+            <summary>
+            Gets and sets the property Format. 
+            <para>
+            Indicates which of the available formats the specified manifest uses.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.S3Control.Model.JobOperation">
+            <summary>
+            The operation that you want this job to perform on each object listed in the manifest.
+            For more information about the available operations, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-operations.html">Available
+            Operations</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.JobOperation.LambdaInvoke">
+            <summary>
+            Gets and sets the property LambdaInvoke. 
+            <para>
+            Directs the specified job to invoke an AWS Lambda function on each object in the manifest.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.JobOperation.S3InitiateRestoreObject">
+            <summary>
+            Gets and sets the property S3InitiateRestoreObject. 
+            <para>
+            Directs the specified job to execute an Initiate Glacier Restore call on each object
+            in the manifest.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.JobOperation.S3PutObjectAcl">
+            <summary>
+            Gets and sets the property S3PutObjectAcl. 
+            <para>
+            Directs the specified job to execute a PUT Object acl call on each object in the manifest.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.JobOperation.S3PutObjectCopy">
+            <summary>
+            Gets and sets the property S3PutObjectCopy. 
+            <para>
+            Directs the specified job to execute a PUT Copy object call on each object in the
+            manifest.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.JobOperation.S3PutObjectTagging">
+            <summary>
+            Gets and sets the property S3PutObjectTagging. 
+            <para>
+            Directs the specified job to execute a PUT Object tagging call on each object in the
+            manifest.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.S3Control.Model.JobProgressSummary">
+            <summary>
+            Describes the total number of tasks that the specified job has executed, the number
+            of tasks that succeeded, and the number of tasks that failed.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.JobProgressSummary.NumberOfTasksFailed">
+            <summary>
+            Gets and sets the property NumberOfTasksFailed.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.JobProgressSummary.NumberOfTasksSucceeded">
+            <summary>
+            Gets and sets the property NumberOfTasksSucceeded.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.JobProgressSummary.TotalNumberOfTasks">
+            <summary>
+            Gets and sets the property TotalNumberOfTasks.
+            </summary>
+        </member>
+        <member name="T:Amazon.S3Control.Model.JobReport">
+            <summary>
+            Contains the configuration parameters for a job-completion report.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.JobReport.Bucket">
+            <summary>
+            Gets and sets the property Bucket. 
+            <para>
+            The bucket where specified job-completion report will be stored.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.JobReport.Enabled">
+            <summary>
+            Gets and sets the property Enabled. 
+            <para>
+            Indicates whether the specified job will generate a job-completion report.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.JobReport.Format">
+            <summary>
+            Gets and sets the property Format. 
+            <para>
+            The format of the specified job-completion report.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.JobReport.Prefix">
+            <summary>
+            Gets and sets the property Prefix. 
+            <para>
+            An optional prefix to describe where in the specified bucket the job-completion report
+            will be stored. Amazon S3 will store the job-completion report at &lt;prefix&gt;/job-&lt;job-id&gt;/report.json.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.JobReport.ReportScope">
+            <summary>
+            Gets and sets the property ReportScope. 
+            <para>
+            Indicates whether the job-completion report will include details of all tasks or only
+            failed tasks.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.S3Control.Model.JobStatusException">
+            <summary>
+             S3Control exception
+             </summary>
+        </member>
+        <member name="M:Amazon.S3Control.Model.JobStatusException.#ctor(System.String)">
+            <summary>
+            Constructs a new JobStatusException with the specified error
+            message.
+            </summary>
+            <param name="message">
+            Describes the error encountered.
+            </param>
+        </member>
+        <member name="M:Amazon.S3Control.Model.JobStatusException.#ctor(System.String,System.Exception)">
+            <summary>
+            Construct instance of JobStatusException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.S3Control.Model.JobStatusException.#ctor(System.Exception)">
+            <summary>
+            Construct instance of JobStatusException
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.S3Control.Model.JobStatusException.#ctor(System.String,System.Exception,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of JobStatusException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="M:Amazon.S3Control.Model.JobStatusException.#ctor(System.String,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of JobStatusException
+            </summary>
+            <param name="message"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="T:Amazon.S3Control.Model.LambdaInvokeOperation">
+            <summary>
+            Contains the configuration parameters for a <code>Lambda Invoke</code> operation.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.LambdaInvokeOperation.FunctionArn">
+            <summary>
+            Gets and sets the property FunctionArn. 
+            <para>
+            The Amazon Resource Name (ARN) for the AWS Lambda function that the specified job
+            will invoke for each object in the manifest.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.S3Control.Model.ListJobsRequest">
+            <summary>
+            Container for the parameters to the ListJobs operation.
+            Lists current jobs and jobs that have ended within the last 30 days for the AWS account
+            making the request.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.ListJobsRequest.AccountId">
+            <summary>
+            Gets and sets the property AccountId.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.ListJobsRequest.JobStatuses">
+            <summary>
+            Gets and sets the property JobStatuses. 
+            <para>
+            The <code>List Jobs</code> request returns jobs that match the statuses listed in
+            this element.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.ListJobsRequest.MaxResults">
+            <summary>
+            Gets and sets the property MaxResults. 
+            <para>
+            The maximum number of jobs that Amazon S3 will include in the <code>List Jobs</code>
+            response. If there are more jobs than this number, the response will include a pagination
+            token in the <code>NextToken</code> field to enable you to retrieve the next page
+            of results.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.ListJobsRequest.NextToken">
+            <summary>
+            Gets and sets the property NextToken. 
+            <para>
+            A pagination token to request the next page of results. Use the token that Amazon
+            S3 returned in the <code>NextToken</code> element of the <code>ListJobsResult</code>
+            from the previous <code>List Jobs</code> request.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.S3Control.Model.ListJobsResponse">
+            <summary>
+            This is the response object from the ListJobs operation.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.ListJobsResponse.Jobs">
+            <summary>
+            Gets and sets the property Jobs. 
+            <para>
+            The list of current jobs and jobs that have ended within the last 30 days.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.ListJobsResponse.NextToken">
+            <summary>
+            Gets and sets the property NextToken. 
+            <para>
+            If the <code>List Jobs</code> request produced more than the maximum number of results,
+            you can pass this value into a subsequent <code>List Jobs</code> request in order
+            to retrieve the next page of results.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.S3Control.Model.NoSuchPublicAccessBlockConfigurationException">
+            <summary>
+             S3Control exception
+             </summary>
+        </member>
+        <member name="M:Amazon.S3Control.Model.NoSuchPublicAccessBlockConfigurationException.#ctor(System.String)">
+            <summary>
+            Constructs a new NoSuchPublicAccessBlockConfigurationException with the specified error
+            message.
+            </summary>
+            <param name="message">
+            Describes the error encountered.
+            </param>
+        </member>
+        <member name="M:Amazon.S3Control.Model.NoSuchPublicAccessBlockConfigurationException.#ctor(System.String,System.Exception)">
+            <summary>
+            Construct instance of NoSuchPublicAccessBlockConfigurationException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.S3Control.Model.NoSuchPublicAccessBlockConfigurationException.#ctor(System.Exception)">
+            <summary>
+            Construct instance of NoSuchPublicAccessBlockConfigurationException
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.S3Control.Model.NoSuchPublicAccessBlockConfigurationException.#ctor(System.String,System.Exception,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of NoSuchPublicAccessBlockConfigurationException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="M:Amazon.S3Control.Model.NoSuchPublicAccessBlockConfigurationException.#ctor(System.String,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of NoSuchPublicAccessBlockConfigurationException
+            </summary>
+            <param name="message"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="T:Amazon.S3Control.Model.NotFoundException">
+            <summary>
+             S3Control exception
+             </summary>
+        </member>
+        <member name="M:Amazon.S3Control.Model.NotFoundException.#ctor(System.String)">
+            <summary>
+            Constructs a new NotFoundException with the specified error
+            message.
+            </summary>
+            <param name="message">
+            Describes the error encountered.
+            </param>
+        </member>
+        <member name="M:Amazon.S3Control.Model.NotFoundException.#ctor(System.String,System.Exception)">
+            <summary>
+            Construct instance of NotFoundException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.S3Control.Model.NotFoundException.#ctor(System.Exception)">
+            <summary>
+            Construct instance of NotFoundException
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.S3Control.Model.NotFoundException.#ctor(System.String,System.Exception,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of NotFoundException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="M:Amazon.S3Control.Model.NotFoundException.#ctor(System.String,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of NotFoundException
+            </summary>
+            <param name="message"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="T:Amazon.S3Control.Model.PublicAccessBlockConfiguration">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.PublicAccessBlockConfiguration.BlockPublicAcls">
+            <summary>
+            Gets and sets the property BlockPublicAcls.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.PublicAccessBlockConfiguration.BlockPublicPolicy">
+            <summary>
+            Gets and sets the property BlockPublicPolicy.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.PublicAccessBlockConfiguration.IgnorePublicAcls">
+            <summary>
+            Gets and sets the property IgnorePublicAcls.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.PublicAccessBlockConfiguration.RestrictPublicBuckets">
+            <summary>
+            Gets and sets the property RestrictPublicBuckets.
+            </summary>
+        </member>
+        <member name="T:Amazon.S3Control.Model.PutPublicAccessBlockRequest">
+            <summary>
+            Container for the parameters to the PutPublicAccessBlock operation.
+            
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.PutPublicAccessBlockRequest.AccountId">
+            <summary>
+            Gets and sets the property AccountId.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.PutPublicAccessBlockRequest.PublicAccessBlockConfiguration">
+            <summary>
+            Gets and sets the property PublicAccessBlockConfiguration.
+            </summary>
+        </member>
+        <member name="T:Amazon.S3Control.Model.PutPublicAccessBlockResponse">
+            <summary>
+            This is the response object from the PutPublicAccessBlock operation.
+            </summary>
+        </member>
+        <member name="T:Amazon.S3Control.Model.S3AccessControlList">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.S3AccessControlList.Grants">
+            <summary>
+            Gets and sets the property Grants.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.S3AccessControlList.Owner">
+            <summary>
+            Gets and sets the property Owner.
+            </summary>
+        </member>
+        <member name="T:Amazon.S3Control.Model.S3AccessControlPolicy">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.S3AccessControlPolicy.AccessControlList">
+            <summary>
+            Gets and sets the property AccessControlList.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.S3AccessControlPolicy.CannedAccessControlList">
+            <summary>
+            Gets and sets the property CannedAccessControlList.
+            </summary>
+        </member>
+        <member name="T:Amazon.S3Control.Model.S3CopyObjectOperation">
+            <summary>
+            Contains the configuration parameters for a PUT Copy object operation. Amazon S3 batch
+            operations passes each value through to the underlying PUT Copy object API. For more
+            information about the parameters for this operation, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectCOPY.html">PUT
+            Object - Copy</a>.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.S3CopyObjectOperation.AccessControlGrants">
+            <summary>
+            Gets and sets the property AccessControlGrants.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.S3CopyObjectOperation.CannedAccessControlList">
+            <summary>
+            Gets and sets the property CannedAccessControlList.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.S3CopyObjectOperation.MetadataDirective">
+            <summary>
+            Gets and sets the property MetadataDirective.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.S3CopyObjectOperation.ModifiedSinceConstraint">
+            <summary>
+            Gets and sets the property ModifiedSinceConstraint.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.S3CopyObjectOperation.NewObjectMetadata">
+            <summary>
+            Gets and sets the property NewObjectMetadata.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.S3CopyObjectOperation.NewObjectTagging">
+            <summary>
+            Gets and sets the property NewObjectTagging.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.S3CopyObjectOperation.ObjectLockLegalHoldStatus">
+            <summary>
+            Gets and sets the property ObjectLockLegalHoldStatus.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.S3CopyObjectOperation.ObjectLockMode">
+            <summary>
+            Gets and sets the property ObjectLockMode.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.S3CopyObjectOperation.ObjectLockRetainUntilDate">
+            <summary>
+            Gets and sets the property ObjectLockRetainUntilDate.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.S3CopyObjectOperation.RedirectLocation">
+            <summary>
+            Gets and sets the property RedirectLocation.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.S3CopyObjectOperation.RequesterPays">
+            <summary>
+            Gets and sets the property RequesterPays.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.S3CopyObjectOperation.SSEAwsKmsKeyId">
+            <summary>
+            Gets and sets the property SSEAwsKmsKeyId.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.S3CopyObjectOperation.StorageClass">
+            <summary>
+            Gets and sets the property StorageClass.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.S3CopyObjectOperation.TargetKeyPrefix">
+            <summary>
+            Gets and sets the property TargetKeyPrefix.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.S3CopyObjectOperation.TargetResource">
+            <summary>
+            Gets and sets the property TargetResource.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.S3CopyObjectOperation.UnModifiedSinceConstraint">
+            <summary>
+            Gets and sets the property UnModifiedSinceConstraint.
+            </summary>
+        </member>
+        <member name="T:Amazon.S3Control.Model.S3Grant">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.S3Grant.Grantee">
+            <summary>
+            Gets and sets the property Grantee.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.S3Grant.Permission">
+            <summary>
+            Gets and sets the property Permission.
+            </summary>
+        </member>
+        <member name="T:Amazon.S3Control.Model.S3Grantee">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.S3Grantee.DisplayName">
+            <summary>
+            Gets and sets the property DisplayName.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.S3Grantee.Identifier">
+            <summary>
+            Gets and sets the property Identifier.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.S3Grantee.TypeIdentifier">
+            <summary>
+            Gets and sets the property TypeIdentifier.
+            </summary>
+        </member>
+        <member name="T:Amazon.S3Control.Model.S3InitiateRestoreObjectOperation">
+            <summary>
+            Contains the configuration parameters for an Initiate Glacier Restore job. Amazon
+            S3 batch operations passes each value through to the underlying POST Object restore
+            API. For more information about the parameters for this operation, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPOSTrestore.html#RESTObjectPOSTrestore-restore-request">Restoring
+            Archives</a>.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.S3InitiateRestoreObjectOperation.ExpirationInDays">
+            <summary>
+            Gets and sets the property ExpirationInDays.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.S3InitiateRestoreObjectOperation.GlacierJobTier">
+            <summary>
+            Gets and sets the property GlacierJobTier.
+            </summary>
+        </member>
+        <member name="T:Amazon.S3Control.Model.S3ObjectMetadata">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.S3ObjectMetadata.CacheControl">
+            <summary>
+            Gets and sets the property CacheControl.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.S3ObjectMetadata.ContentDisposition">
+            <summary>
+            Gets and sets the property ContentDisposition.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.S3ObjectMetadata.ContentEncoding">
+            <summary>
+            Gets and sets the property ContentEncoding.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.S3ObjectMetadata.ContentLanguage">
+            <summary>
+            Gets and sets the property ContentLanguage.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.S3ObjectMetadata.ContentLength">
+            <summary>
+            Gets and sets the property ContentLength.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.S3ObjectMetadata.ContentMD5">
+            <summary>
+            Gets and sets the property ContentMD5.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.S3ObjectMetadata.ContentType">
+            <summary>
+            Gets and sets the property ContentType.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.S3ObjectMetadata.HttpExpiresDate">
+            <summary>
+            Gets and sets the property HttpExpiresDate.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.S3ObjectMetadata.RequesterCharged">
+            <summary>
+            Gets and sets the property RequesterCharged.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.S3ObjectMetadata.SSEAlgorithm">
+            <summary>
+            Gets and sets the property SSEAlgorithm.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.S3ObjectMetadata.UserMetadata">
+            <summary>
+            Gets and sets the property UserMetadata.
+            </summary>
+        </member>
+        <member name="T:Amazon.S3Control.Model.S3ObjectOwner">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.S3ObjectOwner.DisplayName">
+            <summary>
+            Gets and sets the property DisplayName.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.S3ObjectOwner.ID">
+            <summary>
+            Gets and sets the property ID.
+            </summary>
+        </member>
+        <member name="T:Amazon.S3Control.Model.S3SetObjectAclOperation">
+            <summary>
+            Contains the configuration parameters for a Set Object ACL operation. Amazon S3 batch
+            operations passes each value through to the underlying PUT Object acl API. For more
+            information about the parameters for this operation, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPUTacl.html">PUT
+            Object acl</a>.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.S3SetObjectAclOperation.AccessControlPolicy">
+            <summary>
+            Gets and sets the property AccessControlPolicy.
+            </summary>
+        </member>
+        <member name="T:Amazon.S3Control.Model.S3SetObjectTaggingOperation">
+            <summary>
+            Contains the configuration parameters for a Set Object Tagging operation. Amazon S3
+            batch operations passes each value through to the underlying PUT Object tagging API.
+            For more information about the parameters for this operation, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPUTtagging.html">PUT
+            Object tagging</a>.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.S3SetObjectTaggingOperation.TagSet">
+            <summary>
+            Gets and sets the property TagSet.
+            </summary>
+        </member>
+        <member name="T:Amazon.S3Control.Model.S3Tag">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.S3Tag.Key">
+            <summary>
+            Gets and sets the property Key.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.S3Tag.Value">
+            <summary>
+            Gets and sets the property Value.
+            </summary>
+        </member>
+        <member name="T:Amazon.S3Control.Model.TooManyRequestsException">
+            <summary>
+             S3Control exception
+             </summary>
+        </member>
+        <member name="M:Amazon.S3Control.Model.TooManyRequestsException.#ctor(System.String)">
+            <summary>
+            Constructs a new TooManyRequestsException with the specified error
+            message.
+            </summary>
+            <param name="message">
+            Describes the error encountered.
+            </param>
+        </member>
+        <member name="M:Amazon.S3Control.Model.TooManyRequestsException.#ctor(System.String,System.Exception)">
+            <summary>
+            Construct instance of TooManyRequestsException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.S3Control.Model.TooManyRequestsException.#ctor(System.Exception)">
+            <summary>
+            Construct instance of TooManyRequestsException
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.S3Control.Model.TooManyRequestsException.#ctor(System.String,System.Exception,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of TooManyRequestsException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="M:Amazon.S3Control.Model.TooManyRequestsException.#ctor(System.String,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of TooManyRequestsException
+            </summary>
+            <param name="message"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="T:Amazon.S3Control.Model.UpdateJobPriorityRequest">
+            <summary>
+            Container for the parameters to the UpdateJobPriority operation.
+            Updates an existing job's priority.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.UpdateJobPriorityRequest.AccountId">
+            <summary>
+            Gets and sets the property AccountId.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.UpdateJobPriorityRequest.JobId">
+            <summary>
+            Gets and sets the property JobId. 
+            <para>
+            The ID for the job whose priority you want to update.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.UpdateJobPriorityRequest.Priority">
+            <summary>
+            Gets and sets the property Priority. 
+            <para>
+            The priority you want to assign to this job.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.S3Control.Model.UpdateJobPriorityResponse">
+            <summary>
+            This is the response object from the UpdateJobPriority operation.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.UpdateJobPriorityResponse.JobId">
+            <summary>
+            Gets and sets the property JobId. 
+            <para>
+            The ID for the job whose priority Amazon S3 updated.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.UpdateJobPriorityResponse.Priority">
+            <summary>
+            Gets and sets the property Priority. 
+            <para>
+            The new priority assigned to the specified job.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.S3Control.Model.UpdateJobStatusRequest">
+            <summary>
+            Container for the parameters to the UpdateJobStatus operation.
+            Updates the status for the specified job. Use this operation to confirm that you want
+            to run a job or to cancel an existing job.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.UpdateJobStatusRequest.AccountId">
+            <summary>
+            Gets and sets the property AccountId.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.UpdateJobStatusRequest.JobId">
+            <summary>
+            Gets and sets the property JobId. 
+            <para>
+            The ID of the job whose status you want to update.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.UpdateJobStatusRequest.RequestedJobStatus">
+            <summary>
+            Gets and sets the property RequestedJobStatus. 
+            <para>
+            The status that you want to move the specified job to.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.UpdateJobStatusRequest.StatusUpdateReason">
+            <summary>
+            Gets and sets the property StatusUpdateReason. 
+            <para>
+            A description of the reason why you want to change the specified job's status. This
+            field can be any string up to the maximum length.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.S3Control.Model.UpdateJobStatusResponse">
+            <summary>
+            This is the response object from the UpdateJobStatus operation.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.UpdateJobStatusResponse.JobId">
+            <summary>
+            Gets and sets the property JobId. 
+            <para>
+            The ID for the job whose status was updated.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.UpdateJobStatusResponse.Status">
+            <summary>
+            Gets and sets the property Status. 
+            <para>
+            The current status for the specified job.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.S3Control.Model.UpdateJobStatusResponse.StatusUpdateReason">
+            <summary>
+            Gets and sets the property StatusUpdateReason. 
+            <para>
+            The reason that the specified job's status was updated.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.S3Control.JobManifestFieldName">
+            <summary>
+            Constants used for properties of type JobManifestFieldName.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3Control.JobManifestFieldName.Bucket">
+            <summary>
+            Constant Bucket for JobManifestFieldName
+            </summary>
+        </member>
+        <member name="F:Amazon.S3Control.JobManifestFieldName.Ignore">
+            <summary>
+            Constant Ignore for JobManifestFieldName
+            </summary>
+        </member>
+        <member name="F:Amazon.S3Control.JobManifestFieldName.Key">
+            <summary>
+            Constant Key for JobManifestFieldName
+            </summary>
+        </member>
+        <member name="F:Amazon.S3Control.JobManifestFieldName.VersionId">
+            <summary>
+            Constant VersionId for JobManifestFieldName
+            </summary>
+        </member>
+        <member name="M:Amazon.S3Control.JobManifestFieldName.#ctor(System.String)">
+            <summary>
+            This constant constructor does not need to be called if the constant
+            you are attempting to use is already defined as a static instance of 
+            this class.
+            This constructor should be used to construct constants that are not
+            defined as statics, for instance if attempting to use a feature that is
+            newer than the current version of the SDK.
+            </summary>
+        </member>
+        <member name="M:Amazon.S3Control.JobManifestFieldName.FindValue(System.String)">
+            <summary>
+            Finds the constant for the unique value.
+            </summary>
+            <param name="value">The unique value for the constant</param>
+            <returns>The constant for the unique value</returns>
+        </member>
+        <member name="M:Amazon.S3Control.JobManifestFieldName.op_Implicit(System.String)~Amazon.S3Control.JobManifestFieldName">
+            <summary>
+            Utility method to convert strings to the constant class.
+            </summary>
+            <param name="value">The string value to convert to the constant class.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.S3Control.JobManifestFormat">
+            <summary>
+            Constants used for properties of type JobManifestFormat.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3Control.JobManifestFormat.S3BatchOperations_CSV_20180820">
+            <summary>
+            Constant S3BatchOperations_CSV_20180820 for JobManifestFormat
+            </summary>
+        </member>
+        <member name="F:Amazon.S3Control.JobManifestFormat.S3InventoryReport_CSV_20161130">
+            <summary>
+            Constant S3InventoryReport_CSV_20161130 for JobManifestFormat
+            </summary>
+        </member>
+        <member name="M:Amazon.S3Control.JobManifestFormat.#ctor(System.String)">
+            <summary>
+            This constant constructor does not need to be called if the constant
+            you are attempting to use is already defined as a static instance of 
+            this class.
+            This constructor should be used to construct constants that are not
+            defined as statics, for instance if attempting to use a feature that is
+            newer than the current version of the SDK.
+            </summary>
+        </member>
+        <member name="M:Amazon.S3Control.JobManifestFormat.FindValue(System.String)">
+            <summary>
+            Finds the constant for the unique value.
+            </summary>
+            <param name="value">The unique value for the constant</param>
+            <returns>The constant for the unique value</returns>
+        </member>
+        <member name="M:Amazon.S3Control.JobManifestFormat.op_Implicit(System.String)~Amazon.S3Control.JobManifestFormat">
+            <summary>
+            Utility method to convert strings to the constant class.
+            </summary>
+            <param name="value">The string value to convert to the constant class.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.S3Control.JobReportFormat">
+            <summary>
+            Constants used for properties of type JobReportFormat.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3Control.JobReportFormat.Report_CSV_20180820">
+            <summary>
+            Constant Report_CSV_20180820 for JobReportFormat
+            </summary>
+        </member>
+        <member name="M:Amazon.S3Control.JobReportFormat.#ctor(System.String)">
+            <summary>
+            This constant constructor does not need to be called if the constant
+            you are attempting to use is already defined as a static instance of 
+            this class.
+            This constructor should be used to construct constants that are not
+            defined as statics, for instance if attempting to use a feature that is
+            newer than the current version of the SDK.
+            </summary>
+        </member>
+        <member name="M:Amazon.S3Control.JobReportFormat.FindValue(System.String)">
+            <summary>
+            Finds the constant for the unique value.
+            </summary>
+            <param name="value">The unique value for the constant</param>
+            <returns>The constant for the unique value</returns>
+        </member>
+        <member name="M:Amazon.S3Control.JobReportFormat.op_Implicit(System.String)~Amazon.S3Control.JobReportFormat">
+            <summary>
+            Utility method to convert strings to the constant class.
+            </summary>
+            <param name="value">The string value to convert to the constant class.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.S3Control.JobReportScope">
+            <summary>
+            Constants used for properties of type JobReportScope.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3Control.JobReportScope.AllTasks">
+            <summary>
+            Constant AllTasks for JobReportScope
+            </summary>
+        </member>
+        <member name="F:Amazon.S3Control.JobReportScope.FailedTasksOnly">
+            <summary>
+            Constant FailedTasksOnly for JobReportScope
+            </summary>
+        </member>
+        <member name="M:Amazon.S3Control.JobReportScope.#ctor(System.String)">
+            <summary>
+            This constant constructor does not need to be called if the constant
+            you are attempting to use is already defined as a static instance of 
+            this class.
+            This constructor should be used to construct constants that are not
+            defined as statics, for instance if attempting to use a feature that is
+            newer than the current version of the SDK.
+            </summary>
+        </member>
+        <member name="M:Amazon.S3Control.JobReportScope.FindValue(System.String)">
+            <summary>
+            Finds the constant for the unique value.
+            </summary>
+            <param name="value">The unique value for the constant</param>
+            <returns>The constant for the unique value</returns>
+        </member>
+        <member name="M:Amazon.S3Control.JobReportScope.op_Implicit(System.String)~Amazon.S3Control.JobReportScope">
+            <summary>
+            Utility method to convert strings to the constant class.
+            </summary>
+            <param name="value">The string value to convert to the constant class.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.S3Control.JobStatus">
+            <summary>
+            Constants used for properties of type JobStatus.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3Control.JobStatus.Active">
+            <summary>
+            Constant Active for JobStatus
+            </summary>
+        </member>
+        <member name="F:Amazon.S3Control.JobStatus.Cancelled">
+            <summary>
+            Constant Cancelled for JobStatus
+            </summary>
+        </member>
+        <member name="F:Amazon.S3Control.JobStatus.Cancelling">
+            <summary>
+            Constant Cancelling for JobStatus
+            </summary>
+        </member>
+        <member name="F:Amazon.S3Control.JobStatus.Complete">
+            <summary>
+            Constant Complete for JobStatus
+            </summary>
+        </member>
+        <member name="F:Amazon.S3Control.JobStatus.Completing">
+            <summary>
+            Constant Completing for JobStatus
+            </summary>
+        </member>
+        <member name="F:Amazon.S3Control.JobStatus.Failed">
+            <summary>
+            Constant Failed for JobStatus
+            </summary>
+        </member>
+        <member name="F:Amazon.S3Control.JobStatus.Failing">
+            <summary>
+            Constant Failing for JobStatus
+            </summary>
+        </member>
+        <member name="F:Amazon.S3Control.JobStatus.New">
+            <summary>
+            Constant New for JobStatus
+            </summary>
+        </member>
+        <member name="F:Amazon.S3Control.JobStatus.Paused">
+            <summary>
+            Constant Paused for JobStatus
+            </summary>
+        </member>
+        <member name="F:Amazon.S3Control.JobStatus.Pausing">
+            <summary>
+            Constant Pausing for JobStatus
+            </summary>
+        </member>
+        <member name="F:Amazon.S3Control.JobStatus.Preparing">
+            <summary>
+            Constant Preparing for JobStatus
+            </summary>
+        </member>
+        <member name="F:Amazon.S3Control.JobStatus.Ready">
+            <summary>
+            Constant Ready for JobStatus
+            </summary>
+        </member>
+        <member name="F:Amazon.S3Control.JobStatus.Suspended">
+            <summary>
+            Constant Suspended for JobStatus
+            </summary>
+        </member>
+        <member name="M:Amazon.S3Control.JobStatus.#ctor(System.String)">
+            <summary>
+            This constant constructor does not need to be called if the constant
+            you are attempting to use is already defined as a static instance of 
+            this class.
+            This constructor should be used to construct constants that are not
+            defined as statics, for instance if attempting to use a feature that is
+            newer than the current version of the SDK.
+            </summary>
+        </member>
+        <member name="M:Amazon.S3Control.JobStatus.FindValue(System.String)">
+            <summary>
+            Finds the constant for the unique value.
+            </summary>
+            <param name="value">The unique value for the constant</param>
+            <returns>The constant for the unique value</returns>
+        </member>
+        <member name="M:Amazon.S3Control.JobStatus.op_Implicit(System.String)~Amazon.S3Control.JobStatus">
+            <summary>
+            Utility method to convert strings to the constant class.
+            </summary>
+            <param name="value">The string value to convert to the constant class.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.S3Control.OperationName">
+            <summary>
+            Constants used for properties of type OperationName.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3Control.OperationName.LambdaInvoke">
+            <summary>
+            Constant LambdaInvoke for OperationName
+            </summary>
+        </member>
+        <member name="F:Amazon.S3Control.OperationName.S3InitiateRestoreObject">
+            <summary>
+            Constant S3InitiateRestoreObject for OperationName
+            </summary>
+        </member>
+        <member name="F:Amazon.S3Control.OperationName.S3PutObjectAcl">
+            <summary>
+            Constant S3PutObjectAcl for OperationName
+            </summary>
+        </member>
+        <member name="F:Amazon.S3Control.OperationName.S3PutObjectCopy">
+            <summary>
+            Constant S3PutObjectCopy for OperationName
+            </summary>
+        </member>
+        <member name="F:Amazon.S3Control.OperationName.S3PutObjectTagging">
+            <summary>
+            Constant S3PutObjectTagging for OperationName
+            </summary>
+        </member>
+        <member name="M:Amazon.S3Control.OperationName.#ctor(System.String)">
+            <summary>
+            This constant constructor does not need to be called if the constant
+            you are attempting to use is already defined as a static instance of 
+            this class.
+            This constructor should be used to construct constants that are not
+            defined as statics, for instance if attempting to use a feature that is
+            newer than the current version of the SDK.
+            </summary>
+        </member>
+        <member name="M:Amazon.S3Control.OperationName.FindValue(System.String)">
+            <summary>
+            Finds the constant for the unique value.
+            </summary>
+            <param name="value">The unique value for the constant</param>
+            <returns>The constant for the unique value</returns>
+        </member>
+        <member name="M:Amazon.S3Control.OperationName.op_Implicit(System.String)~Amazon.S3Control.OperationName">
+            <summary>
+            Utility method to convert strings to the constant class.
+            </summary>
+            <param name="value">The string value to convert to the constant class.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.S3Control.RequestedJobStatus">
+            <summary>
+            Constants used for properties of type RequestedJobStatus.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3Control.RequestedJobStatus.Cancelled">
+            <summary>
+            Constant Cancelled for RequestedJobStatus
+            </summary>
+        </member>
+        <member name="F:Amazon.S3Control.RequestedJobStatus.Ready">
+            <summary>
+            Constant Ready for RequestedJobStatus
+            </summary>
+        </member>
+        <member name="M:Amazon.S3Control.RequestedJobStatus.#ctor(System.String)">
+            <summary>
+            This constant constructor does not need to be called if the constant
+            you are attempting to use is already defined as a static instance of 
+            this class.
+            This constructor should be used to construct constants that are not
+            defined as statics, for instance if attempting to use a feature that is
+            newer than the current version of the SDK.
+            </summary>
+        </member>
+        <member name="M:Amazon.S3Control.RequestedJobStatus.FindValue(System.String)">
+            <summary>
+            Finds the constant for the unique value.
+            </summary>
+            <param name="value">The unique value for the constant</param>
+            <returns>The constant for the unique value</returns>
+        </member>
+        <member name="M:Amazon.S3Control.RequestedJobStatus.op_Implicit(System.String)~Amazon.S3Control.RequestedJobStatus">
+            <summary>
+            Utility method to convert strings to the constant class.
+            </summary>
+            <param name="value">The string value to convert to the constant class.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.S3Control.S3CannedAccessControlList">
+            <summary>
+            Constants used for properties of type S3CannedAccessControlList.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3Control.S3CannedAccessControlList.AuthenticatedRead">
+            <summary>
+            Constant AuthenticatedRead for S3CannedAccessControlList
+            </summary>
+        </member>
+        <member name="F:Amazon.S3Control.S3CannedAccessControlList.AwsExecRead">
+            <summary>
+            Constant AwsExecRead for S3CannedAccessControlList
+            </summary>
+        </member>
+        <member name="F:Amazon.S3Control.S3CannedAccessControlList.BucketOwnerFullControl">
+            <summary>
+            Constant BucketOwnerFullControl for S3CannedAccessControlList
+            </summary>
+        </member>
+        <member name="F:Amazon.S3Control.S3CannedAccessControlList.BucketOwnerRead">
+            <summary>
+            Constant BucketOwnerRead for S3CannedAccessControlList
+            </summary>
+        </member>
+        <member name="F:Amazon.S3Control.S3CannedAccessControlList.Private">
+            <summary>
+            Constant Private for S3CannedAccessControlList
+            </summary>
+        </member>
+        <member name="F:Amazon.S3Control.S3CannedAccessControlList.PublicRead">
+            <summary>
+            Constant PublicRead for S3CannedAccessControlList
+            </summary>
+        </member>
+        <member name="F:Amazon.S3Control.S3CannedAccessControlList.PublicReadWrite">
+            <summary>
+            Constant PublicReadWrite for S3CannedAccessControlList
+            </summary>
+        </member>
+        <member name="M:Amazon.S3Control.S3CannedAccessControlList.#ctor(System.String)">
+            <summary>
+            This constant constructor does not need to be called if the constant
+            you are attempting to use is already defined as a static instance of 
+            this class.
+            This constructor should be used to construct constants that are not
+            defined as statics, for instance if attempting to use a feature that is
+            newer than the current version of the SDK.
+            </summary>
+        </member>
+        <member name="M:Amazon.S3Control.S3CannedAccessControlList.FindValue(System.String)">
+            <summary>
+            Finds the constant for the unique value.
+            </summary>
+            <param name="value">The unique value for the constant</param>
+            <returns>The constant for the unique value</returns>
+        </member>
+        <member name="M:Amazon.S3Control.S3CannedAccessControlList.op_Implicit(System.String)~Amazon.S3Control.S3CannedAccessControlList">
+            <summary>
+            Utility method to convert strings to the constant class.
+            </summary>
+            <param name="value">The string value to convert to the constant class.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.S3Control.S3GlacierJobTier">
+            <summary>
+            Constants used for properties of type S3GlacierJobTier.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3Control.S3GlacierJobTier.BULK">
+            <summary>
+            Constant BULK for S3GlacierJobTier
+            </summary>
+        </member>
+        <member name="F:Amazon.S3Control.S3GlacierJobTier.STANDARD">
+            <summary>
+            Constant STANDARD for S3GlacierJobTier
+            </summary>
+        </member>
+        <member name="M:Amazon.S3Control.S3GlacierJobTier.#ctor(System.String)">
+            <summary>
+            This constant constructor does not need to be called if the constant
+            you are attempting to use is already defined as a static instance of 
+            this class.
+            This constructor should be used to construct constants that are not
+            defined as statics, for instance if attempting to use a feature that is
+            newer than the current version of the SDK.
+            </summary>
+        </member>
+        <member name="M:Amazon.S3Control.S3GlacierJobTier.FindValue(System.String)">
+            <summary>
+            Finds the constant for the unique value.
+            </summary>
+            <param name="value">The unique value for the constant</param>
+            <returns>The constant for the unique value</returns>
+        </member>
+        <member name="M:Amazon.S3Control.S3GlacierJobTier.op_Implicit(System.String)~Amazon.S3Control.S3GlacierJobTier">
+            <summary>
+            Utility method to convert strings to the constant class.
+            </summary>
+            <param name="value">The string value to convert to the constant class.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.S3Control.S3GranteeTypeIdentifier">
+            <summary>
+            Constants used for properties of type S3GranteeTypeIdentifier.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3Control.S3GranteeTypeIdentifier.EmailAddress">
+            <summary>
+            Constant EmailAddress for S3GranteeTypeIdentifier
+            </summary>
+        </member>
+        <member name="F:Amazon.S3Control.S3GranteeTypeIdentifier.Id">
+            <summary>
+            Constant Id for S3GranteeTypeIdentifier
+            </summary>
+        </member>
+        <member name="F:Amazon.S3Control.S3GranteeTypeIdentifier.Uri">
+            <summary>
+            Constant Uri for S3GranteeTypeIdentifier
+            </summary>
+        </member>
+        <member name="M:Amazon.S3Control.S3GranteeTypeIdentifier.#ctor(System.String)">
+            <summary>
+            This constant constructor does not need to be called if the constant
+            you are attempting to use is already defined as a static instance of 
+            this class.
+            This constructor should be used to construct constants that are not
+            defined as statics, for instance if attempting to use a feature that is
+            newer than the current version of the SDK.
+            </summary>
+        </member>
+        <member name="M:Amazon.S3Control.S3GranteeTypeIdentifier.FindValue(System.String)">
+            <summary>
+            Finds the constant for the unique value.
+            </summary>
+            <param name="value">The unique value for the constant</param>
+            <returns>The constant for the unique value</returns>
+        </member>
+        <member name="M:Amazon.S3Control.S3GranteeTypeIdentifier.op_Implicit(System.String)~Amazon.S3Control.S3GranteeTypeIdentifier">
+            <summary>
+            Utility method to convert strings to the constant class.
+            </summary>
+            <param name="value">The string value to convert to the constant class.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.S3Control.S3MetadataDirective">
+            <summary>
+            Constants used for properties of type S3MetadataDirective.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3Control.S3MetadataDirective.COPY">
+            <summary>
+            Constant COPY for S3MetadataDirective
+            </summary>
+        </member>
+        <member name="F:Amazon.S3Control.S3MetadataDirective.REPLACE">
+            <summary>
+            Constant REPLACE for S3MetadataDirective
+            </summary>
+        </member>
+        <member name="M:Amazon.S3Control.S3MetadataDirective.#ctor(System.String)">
+            <summary>
+            This constant constructor does not need to be called if the constant
+            you are attempting to use is already defined as a static instance of 
+            this class.
+            This constructor should be used to construct constants that are not
+            defined as statics, for instance if attempting to use a feature that is
+            newer than the current version of the SDK.
+            </summary>
+        </member>
+        <member name="M:Amazon.S3Control.S3MetadataDirective.FindValue(System.String)">
+            <summary>
+            Finds the constant for the unique value.
+            </summary>
+            <param name="value">The unique value for the constant</param>
+            <returns>The constant for the unique value</returns>
+        </member>
+        <member name="M:Amazon.S3Control.S3MetadataDirective.op_Implicit(System.String)~Amazon.S3Control.S3MetadataDirective">
+            <summary>
+            Utility method to convert strings to the constant class.
+            </summary>
+            <param name="value">The string value to convert to the constant class.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.S3Control.S3ObjectLockLegalHoldStatus">
+            <summary>
+            Constants used for properties of type S3ObjectLockLegalHoldStatus.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3Control.S3ObjectLockLegalHoldStatus.OFF">
+            <summary>
+            Constant OFF for S3ObjectLockLegalHoldStatus
+            </summary>
+        </member>
+        <member name="F:Amazon.S3Control.S3ObjectLockLegalHoldStatus.ON">
+            <summary>
+            Constant ON for S3ObjectLockLegalHoldStatus
+            </summary>
+        </member>
+        <member name="M:Amazon.S3Control.S3ObjectLockLegalHoldStatus.#ctor(System.String)">
+            <summary>
+            This constant constructor does not need to be called if the constant
+            you are attempting to use is already defined as a static instance of 
+            this class.
+            This constructor should be used to construct constants that are not
+            defined as statics, for instance if attempting to use a feature that is
+            newer than the current version of the SDK.
+            </summary>
+        </member>
+        <member name="M:Amazon.S3Control.S3ObjectLockLegalHoldStatus.FindValue(System.String)">
+            <summary>
+            Finds the constant for the unique value.
+            </summary>
+            <param name="value">The unique value for the constant</param>
+            <returns>The constant for the unique value</returns>
+        </member>
+        <member name="M:Amazon.S3Control.S3ObjectLockLegalHoldStatus.op_Implicit(System.String)~Amazon.S3Control.S3ObjectLockLegalHoldStatus">
+            <summary>
+            Utility method to convert strings to the constant class.
+            </summary>
+            <param name="value">The string value to convert to the constant class.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.S3Control.S3ObjectLockMode">
+            <summary>
+            Constants used for properties of type S3ObjectLockMode.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3Control.S3ObjectLockMode.COMPLIANCE">
+            <summary>
+            Constant COMPLIANCE for S3ObjectLockMode
+            </summary>
+        </member>
+        <member name="F:Amazon.S3Control.S3ObjectLockMode.GOVERNANCE">
+            <summary>
+            Constant GOVERNANCE for S3ObjectLockMode
+            </summary>
+        </member>
+        <member name="M:Amazon.S3Control.S3ObjectLockMode.#ctor(System.String)">
+            <summary>
+            This constant constructor does not need to be called if the constant
+            you are attempting to use is already defined as a static instance of 
+            this class.
+            This constructor should be used to construct constants that are not
+            defined as statics, for instance if attempting to use a feature that is
+            newer than the current version of the SDK.
+            </summary>
+        </member>
+        <member name="M:Amazon.S3Control.S3ObjectLockMode.FindValue(System.String)">
+            <summary>
+            Finds the constant for the unique value.
+            </summary>
+            <param name="value">The unique value for the constant</param>
+            <returns>The constant for the unique value</returns>
+        </member>
+        <member name="M:Amazon.S3Control.S3ObjectLockMode.op_Implicit(System.String)~Amazon.S3Control.S3ObjectLockMode">
+            <summary>
+            Utility method to convert strings to the constant class.
+            </summary>
+            <param name="value">The string value to convert to the constant class.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.S3Control.S3Permission">
+            <summary>
+            Constants used for properties of type S3Permission.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3Control.S3Permission.FULL_CONTROL">
+            <summary>
+            Constant FULL_CONTROL for S3Permission
+            </summary>
+        </member>
+        <member name="F:Amazon.S3Control.S3Permission.READ">
+            <summary>
+            Constant READ for S3Permission
+            </summary>
+        </member>
+        <member name="F:Amazon.S3Control.S3Permission.READ_ACP">
+            <summary>
+            Constant READ_ACP for S3Permission
+            </summary>
+        </member>
+        <member name="F:Amazon.S3Control.S3Permission.WRITE">
+            <summary>
+            Constant WRITE for S3Permission
+            </summary>
+        </member>
+        <member name="F:Amazon.S3Control.S3Permission.WRITE_ACP">
+            <summary>
+            Constant WRITE_ACP for S3Permission
+            </summary>
+        </member>
+        <member name="M:Amazon.S3Control.S3Permission.#ctor(System.String)">
+            <summary>
+            This constant constructor does not need to be called if the constant
+            you are attempting to use is already defined as a static instance of 
+            this class.
+            This constructor should be used to construct constants that are not
+            defined as statics, for instance if attempting to use a feature that is
+            newer than the current version of the SDK.
+            </summary>
+        </member>
+        <member name="M:Amazon.S3Control.S3Permission.FindValue(System.String)">
+            <summary>
+            Finds the constant for the unique value.
+            </summary>
+            <param name="value">The unique value for the constant</param>
+            <returns>The constant for the unique value</returns>
+        </member>
+        <member name="M:Amazon.S3Control.S3Permission.op_Implicit(System.String)~Amazon.S3Control.S3Permission">
+            <summary>
+            Utility method to convert strings to the constant class.
+            </summary>
+            <param name="value">The string value to convert to the constant class.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.S3Control.S3SSEAlgorithm">
+            <summary>
+            Constants used for properties of type S3SSEAlgorithm.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3Control.S3SSEAlgorithm.AES256">
+            <summary>
+            Constant AES256 for S3SSEAlgorithm
+            </summary>
+        </member>
+        <member name="F:Amazon.S3Control.S3SSEAlgorithm.KMS">
+            <summary>
+            Constant KMS for S3SSEAlgorithm
+            </summary>
+        </member>
+        <member name="M:Amazon.S3Control.S3SSEAlgorithm.#ctor(System.String)">
+            <summary>
+            This constant constructor does not need to be called if the constant
+            you are attempting to use is already defined as a static instance of 
+            this class.
+            This constructor should be used to construct constants that are not
+            defined as statics, for instance if attempting to use a feature that is
+            newer than the current version of the SDK.
+            </summary>
+        </member>
+        <member name="M:Amazon.S3Control.S3SSEAlgorithm.FindValue(System.String)">
+            <summary>
+            Finds the constant for the unique value.
+            </summary>
+            <param name="value">The unique value for the constant</param>
+            <returns>The constant for the unique value</returns>
+        </member>
+        <member name="M:Amazon.S3Control.S3SSEAlgorithm.op_Implicit(System.String)~Amazon.S3Control.S3SSEAlgorithm">
+            <summary>
+            Utility method to convert strings to the constant class.
+            </summary>
+            <param name="value">The string value to convert to the constant class.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.S3Control.S3StorageClass">
+            <summary>
+            Constants used for properties of type S3StorageClass.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3Control.S3StorageClass.DEEP_ARCHIVE">
+            <summary>
+            Constant DEEP_ARCHIVE for S3StorageClass
+            </summary>
+        </member>
+        <member name="F:Amazon.S3Control.S3StorageClass.GLACIER">
+            <summary>
+            Constant GLACIER for S3StorageClass
+            </summary>
+        </member>
+        <member name="F:Amazon.S3Control.S3StorageClass.INTELLIGENT_TIERING">
+            <summary>
+            Constant INTELLIGENT_TIERING for S3StorageClass
+            </summary>
+        </member>
+        <member name="F:Amazon.S3Control.S3StorageClass.ONEZONE_IA">
+            <summary>
+            Constant ONEZONE_IA for S3StorageClass
+            </summary>
+        </member>
+        <member name="F:Amazon.S3Control.S3StorageClass.STANDARD">
+            <summary>
+            Constant STANDARD for S3StorageClass
+            </summary>
+        </member>
+        <member name="F:Amazon.S3Control.S3StorageClass.STANDARD_IA">
+            <summary>
+            Constant STANDARD_IA for S3StorageClass
+            </summary>
+        </member>
+        <member name="M:Amazon.S3Control.S3StorageClass.#ctor(System.String)">
+            <summary>
+            This constant constructor does not need to be called if the constant
+            you are attempting to use is already defined as a static instance of 
+            this class.
+            This constructor should be used to construct constants that are not
+            defined as statics, for instance if attempting to use a feature that is
+            newer than the current version of the SDK.
+            </summary>
+        </member>
+        <member name="M:Amazon.S3Control.S3StorageClass.FindValue(System.String)">
+            <summary>
+            Finds the constant for the unique value.
+            </summary>
+            <param name="value">The unique value for the constant</param>
+            <returns>The constant for the unique value</returns>
+        </member>
+        <member name="M:Amazon.S3Control.S3StorageClass.op_Implicit(System.String)~Amazon.S3Control.S3StorageClass">
+            <summary>
+            Utility method to convert strings to the constant class.
+            </summary>
+            <param name="value">The string value to convert to the constant class.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.S3Control.AmazonS3ControlClient">
+             <summary>
+             Implementation for accessing S3Control
+            
+             AWS S3 Control provides access to Amazon S3 control plane operations.
+             </summary>
+        </member>
+        <member name="M:Amazon.S3Control.AmazonS3ControlClient.#ctor">
+             <summary>
+             Constructs AmazonS3ControlClient with the credentials loaded from the application's
+             default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+             
+             Example App.config with credentials set. 
+             <code>
+             &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+             &lt;configuration&gt;
+                 &lt;appSettings&gt;
+                     &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+                 &lt;/appSettings&gt;
+             &lt;/configuration&gt;
+             </code>
+            
+             </summary>
+        </member>
+        <member name="M:Amazon.S3Control.AmazonS3ControlClient.#ctor(Amazon.RegionEndpoint)">
+             <summary>
+             Constructs AmazonS3ControlClient with the credentials loaded from the application's
+             default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+             
+             Example App.config with credentials set. 
+             <code>
+             &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+             &lt;configuration&gt;
+                 &lt;appSettings&gt;
+                     &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+                 &lt;/appSettings&gt;
+             &lt;/configuration&gt;
+             </code>
+            
+             </summary>
+             <param name="region">The region to connect.</param>
+        </member>
+        <member name="M:Amazon.S3Control.AmazonS3ControlClient.#ctor(Amazon.S3Control.AmazonS3ControlConfig)">
+             <summary>
+             Constructs AmazonS3ControlClient with the credentials loaded from the application's
+             default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+             
+             Example App.config with credentials set. 
+             <code>
+             &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+             &lt;configuration&gt;
+                 &lt;appSettings&gt;
+                     &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+                 &lt;/appSettings&gt;
+             &lt;/configuration&gt;
+             </code>
+            
+             </summary>
+             <param name="config">The AmazonS3ControlClient Configuration Object</param>
+        </member>
+        <member name="M:Amazon.S3Control.AmazonS3ControlClient.#ctor(Amazon.Runtime.AWSCredentials)">
+            <summary>
+            Constructs AmazonS3ControlClient with AWS Credentials
+            </summary>
+            <param name="credentials">AWS Credentials</param>
+        </member>
+        <member name="M:Amazon.S3Control.AmazonS3ControlClient.#ctor(Amazon.Runtime.AWSCredentials,Amazon.RegionEndpoint)">
+            <summary>
+            Constructs AmazonS3ControlClient with AWS Credentials
+            </summary>
+            <param name="credentials">AWS Credentials</param>
+            <param name="region">The region to connect.</param>
+        </member>
+        <member name="M:Amazon.S3Control.AmazonS3ControlClient.#ctor(Amazon.Runtime.AWSCredentials,Amazon.S3Control.AmazonS3ControlConfig)">
+            <summary>
+            Constructs AmazonS3ControlClient with AWS Credentials and an
+            AmazonS3ControlClient Configuration object.
+            </summary>
+            <param name="credentials">AWS Credentials</param>
+            <param name="clientConfig">The AmazonS3ControlClient Configuration Object</param>
+        </member>
+        <member name="M:Amazon.S3Control.AmazonS3ControlClient.#ctor(System.String,System.String)">
+            <summary>
+            Constructs AmazonS3ControlClient with AWS Access Key ID and AWS Secret Key
+            </summary>
+            <param name="awsAccessKeyId">AWS Access Key ID</param>
+            <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        </member>
+        <member name="M:Amazon.S3Control.AmazonS3ControlClient.#ctor(System.String,System.String,Amazon.RegionEndpoint)">
+            <summary>
+            Constructs AmazonS3ControlClient with AWS Access Key ID and AWS Secret Key
+            </summary>
+            <param name="awsAccessKeyId">AWS Access Key ID</param>
+            <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+            <param name="region">The region to connect.</param>
+        </member>
+        <member name="M:Amazon.S3Control.AmazonS3ControlClient.#ctor(System.String,System.String,Amazon.S3Control.AmazonS3ControlConfig)">
+            <summary>
+            Constructs AmazonS3ControlClient with AWS Access Key ID, AWS Secret Key and an
+            AmazonS3ControlClient Configuration object. 
+            </summary>
+            <param name="awsAccessKeyId">AWS Access Key ID</param>
+            <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+            <param name="clientConfig">The AmazonS3ControlClient Configuration Object</param>
+        </member>
+        <member name="M:Amazon.S3Control.AmazonS3ControlClient.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Constructs AmazonS3ControlClient with AWS Access Key ID and AWS Secret Key
+            </summary>
+            <param name="awsAccessKeyId">AWS Access Key ID</param>
+            <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+            <param name="awsSessionToken">AWS Session Token</param>
+        </member>
+        <member name="M:Amazon.S3Control.AmazonS3ControlClient.#ctor(System.String,System.String,System.String,Amazon.RegionEndpoint)">
+            <summary>
+            Constructs AmazonS3ControlClient with AWS Access Key ID and AWS Secret Key
+            </summary>
+            <param name="awsAccessKeyId">AWS Access Key ID</param>
+            <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+            <param name="awsSessionToken">AWS Session Token</param>
+            <param name="region">The region to connect.</param>
+        </member>
+        <member name="M:Amazon.S3Control.AmazonS3ControlClient.#ctor(System.String,System.String,System.String,Amazon.S3Control.AmazonS3ControlConfig)">
+            <summary>
+            Constructs AmazonS3ControlClient with AWS Access Key ID, AWS Secret Key and an
+            AmazonS3ControlClient Configuration object. 
+            </summary>
+            <param name="awsAccessKeyId">AWS Access Key ID</param>
+            <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+            <param name="awsSessionToken">AWS Session Token</param>
+            <param name="clientConfig">The AmazonS3ControlClient Configuration Object</param>
+        </member>
+        <member name="M:Amazon.S3Control.AmazonS3ControlClient.CreateSigner">
+            <summary>
+            Creates the signer for the service.
+            </summary>
+        </member>
+        <member name="M:Amazon.S3Control.AmazonS3ControlClient.CustomizeRuntimePipeline(Amazon.Runtime.Internal.RuntimePipeline)">
+            <summary>
+            Customizes the runtime pipeline.
+            </summary>
+            <param name="pipeline">Runtime pipeline for the current client.</param>
+        </member>
+        <member name="P:Amazon.S3Control.AmazonS3ControlClient.ServiceMetadata">
+            <summary>
+            Capture metadata for the service.
+            </summary>
+        </member>
+        <member name="M:Amazon.S3Control.AmazonS3ControlClient.Dispose(System.Boolean)">
+            <summary>
+            Disposes the service client.
+            </summary>
+        </member>
+        <member name="M:Amazon.S3Control.AmazonS3ControlClient.CreateJobAsync(Amazon.S3Control.Model.CreateJobRequest,System.Threading.CancellationToken)">
+            <summary>
+            Creates an Amazon S3 batch operations job.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the CreateJob service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the CreateJob service method, as returned by S3Control.</returns>
+            <exception cref="T:Amazon.S3Control.Model.BadRequestException">
+            
+            </exception>
+            <exception cref="T:Amazon.S3Control.Model.IdempotencyException">
+            
+            </exception>
+            <exception cref="T:Amazon.S3Control.Model.InternalServiceException">
+            
+            </exception>
+            <exception cref="T:Amazon.S3Control.Model.TooManyRequestsException">
+            
+            </exception>
+        </member>
+        <member name="M:Amazon.S3Control.AmazonS3ControlClient.DeletePublicAccessBlockAsync(Amazon.S3Control.Model.DeletePublicAccessBlockRequest,System.Threading.CancellationToken)">
+            <summary>
+            Deletes the block public access configuration for the specified account.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the DeletePublicAccessBlock service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the DeletePublicAccessBlock service method, as returned by S3Control.</returns>
+        </member>
+        <member name="M:Amazon.S3Control.AmazonS3ControlClient.DescribeJobAsync(Amazon.S3Control.Model.DescribeJobRequest,System.Threading.CancellationToken)">
+            <summary>
+            Retrieves the configuration parameters and status for a batch operations job.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the DescribeJob service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the DescribeJob service method, as returned by S3Control.</returns>
+            <exception cref="T:Amazon.S3Control.Model.BadRequestException">
+            
+            </exception>
+            <exception cref="T:Amazon.S3Control.Model.InternalServiceException">
+            
+            </exception>
+            <exception cref="T:Amazon.S3Control.Model.NotFoundException">
+            
+            </exception>
+            <exception cref="T:Amazon.S3Control.Model.TooManyRequestsException">
+            
+            </exception>
+        </member>
+        <member name="M:Amazon.S3Control.AmazonS3ControlClient.GetPublicAccessBlockAsync(Amazon.S3Control.Model.GetPublicAccessBlockRequest,System.Threading.CancellationToken)">
+            <summary>
+            
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the GetPublicAccessBlock service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the GetPublicAccessBlock service method, as returned by S3Control.</returns>
+            <exception cref="T:Amazon.S3Control.Model.NoSuchPublicAccessBlockConfigurationException">
+            
+            </exception>
+        </member>
+        <member name="M:Amazon.S3Control.AmazonS3ControlClient.ListJobsAsync(Amazon.S3Control.Model.ListJobsRequest,System.Threading.CancellationToken)">
+            <summary>
+            Lists current jobs and jobs that have ended within the last 30 days for the AWS account
+            making the request.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the ListJobs service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the ListJobs service method, as returned by S3Control.</returns>
+            <exception cref="T:Amazon.S3Control.Model.InternalServiceException">
+            
+            </exception>
+            <exception cref="T:Amazon.S3Control.Model.InvalidNextTokenException">
+            
+            </exception>
+            <exception cref="T:Amazon.S3Control.Model.InvalidRequestException">
+            
+            </exception>
+        </member>
+        <member name="M:Amazon.S3Control.AmazonS3ControlClient.PutPublicAccessBlockAsync(Amazon.S3Control.Model.PutPublicAccessBlockRequest,System.Threading.CancellationToken)">
+            <summary>
+            
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the PutPublicAccessBlock service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the PutPublicAccessBlock service method, as returned by S3Control.</returns>
+        </member>
+        <member name="M:Amazon.S3Control.AmazonS3ControlClient.UpdateJobPriorityAsync(Amazon.S3Control.Model.UpdateJobPriorityRequest,System.Threading.CancellationToken)">
+            <summary>
+            Updates an existing job's priority.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the UpdateJobPriority service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the UpdateJobPriority service method, as returned by S3Control.</returns>
+            <exception cref="T:Amazon.S3Control.Model.BadRequestException">
+            
+            </exception>
+            <exception cref="T:Amazon.S3Control.Model.InternalServiceException">
+            
+            </exception>
+            <exception cref="T:Amazon.S3Control.Model.NotFoundException">
+            
+            </exception>
+            <exception cref="T:Amazon.S3Control.Model.TooManyRequestsException">
+            
+            </exception>
+        </member>
+        <member name="M:Amazon.S3Control.AmazonS3ControlClient.UpdateJobStatusAsync(Amazon.S3Control.Model.UpdateJobStatusRequest,System.Threading.CancellationToken)">
+            <summary>
+            Updates the status for the specified job. Use this operation to confirm that you want
+            to run a job or to cancel an existing job.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the UpdateJobStatus service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the UpdateJobStatus service method, as returned by S3Control.</returns>
+            <exception cref="T:Amazon.S3Control.Model.BadRequestException">
+            
+            </exception>
+            <exception cref="T:Amazon.S3Control.Model.InternalServiceException">
+            
+            </exception>
+            <exception cref="T:Amazon.S3Control.Model.JobStatusException">
+            
+            </exception>
+            <exception cref="T:Amazon.S3Control.Model.NotFoundException">
+            
+            </exception>
+            <exception cref="T:Amazon.S3Control.Model.TooManyRequestsException">
+            
+            </exception>
+        </member>
+        <member name="T:Amazon.S3Control.IAmazonS3Control">
+             <summary>
+             Interface for accessing S3Control
+            
+             AWS S3 Control provides access to Amazon S3 control plane operations.
+             </summary>
+        </member>
+        <member name="M:Amazon.S3Control.IAmazonS3Control.CreateJobAsync(Amazon.S3Control.Model.CreateJobRequest,System.Threading.CancellationToken)">
+            <summary>
+            Creates an Amazon S3 batch operations job.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the CreateJob service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the CreateJob service method, as returned by S3Control.</returns>
+            <exception cref="T:Amazon.S3Control.Model.BadRequestException">
+            
+            </exception>
+            <exception cref="T:Amazon.S3Control.Model.IdempotencyException">
+            
+            </exception>
+            <exception cref="T:Amazon.S3Control.Model.InternalServiceException">
+            
+            </exception>
+            <exception cref="T:Amazon.S3Control.Model.TooManyRequestsException">
+            
+            </exception>
+        </member>
+        <member name="M:Amazon.S3Control.IAmazonS3Control.DeletePublicAccessBlockAsync(Amazon.S3Control.Model.DeletePublicAccessBlockRequest,System.Threading.CancellationToken)">
+            <summary>
+            Deletes the block public access configuration for the specified account.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the DeletePublicAccessBlock service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the DeletePublicAccessBlock service method, as returned by S3Control.</returns>
+        </member>
+        <member name="M:Amazon.S3Control.IAmazonS3Control.DescribeJobAsync(Amazon.S3Control.Model.DescribeJobRequest,System.Threading.CancellationToken)">
+            <summary>
+            Retrieves the configuration parameters and status for a batch operations job.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the DescribeJob service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the DescribeJob service method, as returned by S3Control.</returns>
+            <exception cref="T:Amazon.S3Control.Model.BadRequestException">
+            
+            </exception>
+            <exception cref="T:Amazon.S3Control.Model.InternalServiceException">
+            
+            </exception>
+            <exception cref="T:Amazon.S3Control.Model.NotFoundException">
+            
+            </exception>
+            <exception cref="T:Amazon.S3Control.Model.TooManyRequestsException">
+            
+            </exception>
+        </member>
+        <member name="M:Amazon.S3Control.IAmazonS3Control.GetPublicAccessBlockAsync(Amazon.S3Control.Model.GetPublicAccessBlockRequest,System.Threading.CancellationToken)">
+            <summary>
+            
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the GetPublicAccessBlock service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the GetPublicAccessBlock service method, as returned by S3Control.</returns>
+            <exception cref="T:Amazon.S3Control.Model.NoSuchPublicAccessBlockConfigurationException">
+            
+            </exception>
+        </member>
+        <member name="M:Amazon.S3Control.IAmazonS3Control.ListJobsAsync(Amazon.S3Control.Model.ListJobsRequest,System.Threading.CancellationToken)">
+            <summary>
+            Lists current jobs and jobs that have ended within the last 30 days for the AWS account
+            making the request.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the ListJobs service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the ListJobs service method, as returned by S3Control.</returns>
+            <exception cref="T:Amazon.S3Control.Model.InternalServiceException">
+            
+            </exception>
+            <exception cref="T:Amazon.S3Control.Model.InvalidNextTokenException">
+            
+            </exception>
+            <exception cref="T:Amazon.S3Control.Model.InvalidRequestException">
+            
+            </exception>
+        </member>
+        <member name="M:Amazon.S3Control.IAmazonS3Control.PutPublicAccessBlockAsync(Amazon.S3Control.Model.PutPublicAccessBlockRequest,System.Threading.CancellationToken)">
+            <summary>
+            
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the PutPublicAccessBlock service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the PutPublicAccessBlock service method, as returned by S3Control.</returns>
+        </member>
+        <member name="M:Amazon.S3Control.IAmazonS3Control.UpdateJobPriorityAsync(Amazon.S3Control.Model.UpdateJobPriorityRequest,System.Threading.CancellationToken)">
+            <summary>
+            Updates an existing job's priority.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the UpdateJobPriority service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the UpdateJobPriority service method, as returned by S3Control.</returns>
+            <exception cref="T:Amazon.S3Control.Model.BadRequestException">
+            
+            </exception>
+            <exception cref="T:Amazon.S3Control.Model.InternalServiceException">
+            
+            </exception>
+            <exception cref="T:Amazon.S3Control.Model.NotFoundException">
+            
+            </exception>
+            <exception cref="T:Amazon.S3Control.Model.TooManyRequestsException">
+            
+            </exception>
+        </member>
+        <member name="M:Amazon.S3Control.IAmazonS3Control.UpdateJobStatusAsync(Amazon.S3Control.Model.UpdateJobStatusRequest,System.Threading.CancellationToken)">
+            <summary>
+            Updates the status for the specified job. Use this operation to confirm that you want
+            to run a job or to cancel an existing job.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the UpdateJobStatus service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the UpdateJobStatus service method, as returned by S3Control.</returns>
+            <exception cref="T:Amazon.S3Control.Model.BadRequestException">
+            
+            </exception>
+            <exception cref="T:Amazon.S3Control.Model.InternalServiceException">
+            
+            </exception>
+            <exception cref="T:Amazon.S3Control.Model.JobStatusException">
+            
+            </exception>
+            <exception cref="T:Amazon.S3Control.Model.NotFoundException">
+            
+            </exception>
+            <exception cref="T:Amazon.S3Control.Model.TooManyRequestsException">
+            
+            </exception>
+        </member>
+    </members>
+</doc>

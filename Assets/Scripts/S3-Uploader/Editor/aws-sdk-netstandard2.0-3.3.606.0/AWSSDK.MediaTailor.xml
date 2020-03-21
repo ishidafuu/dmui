@@ -1,0 +1,1721 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AWSSDK.MediaTailor</name>
+    </assembly>
+    <members>
+        <member name="T:Amazon.MediaTailor.AmazonMediaTailorConfig">
+            <summary>
+            Configuration for accessing Amazon MediaTailor service
+            </summary>
+        </member>
+        <member name="M:Amazon.MediaTailor.AmazonMediaTailorConfig.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="P:Amazon.MediaTailor.AmazonMediaTailorConfig.RegionEndpointServiceName">
+            <summary>
+            The constant used to lookup in the region hash the endpoint.
+            </summary>
+        </member>
+        <member name="P:Amazon.MediaTailor.AmazonMediaTailorConfig.ServiceVersion">
+            <summary>
+            Gets the ServiceVersion property.
+            </summary>
+        </member>
+        <member name="P:Amazon.MediaTailor.AmazonMediaTailorConfig.UserAgent">
+            <summary>
+            Gets the value of UserAgent property.
+            </summary>
+        </member>
+        <member name="T:Amazon.MediaTailor.AmazonMediaTailorException">
+            <summary>
+             Common exception for the MediaTailor service.
+             </summary>
+        </member>
+        <member name="M:Amazon.MediaTailor.AmazonMediaTailorException.#ctor(System.String)">
+            <summary>
+            Construct instance of AmazonMediaTailorException
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:Amazon.MediaTailor.AmazonMediaTailorException.#ctor(System.String,System.Exception)">
+            <summary>
+            Construct instance of AmazonMediaTailorException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.MediaTailor.AmazonMediaTailorException.#ctor(System.Exception)">
+            <summary>
+            Construct instance of AmazonMediaTailorException
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.MediaTailor.AmazonMediaTailorException.#ctor(System.String,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of AmazonMediaTailorException
+            </summary>
+            <param name="message"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="M:Amazon.MediaTailor.AmazonMediaTailorException.#ctor(System.String,System.Exception,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of AmazonMediaTailorException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="T:Amazon.MediaTailor.Internal.AmazonMediaTailorMetadata">
+            <summary>
+            Service metadata for  Amazon MediaTailor service
+            </summary>
+        </member>
+        <member name="P:Amazon.MediaTailor.Internal.AmazonMediaTailorMetadata.ServiceId">
+            <summary>
+            Gets the value of the Service Id.
+            </summary>
+        </member>
+        <member name="P:Amazon.MediaTailor.Internal.AmazonMediaTailorMetadata.OperationNameMapping">
+            <summary>
+            Gets the dictionary that gives mapping of renamed operations
+            </summary>
+        </member>
+        <member name="T:Amazon.MediaTailor.AmazonMediaTailorRequest">
+            <summary>
+            Base class for MediaTailor operation requests.
+            </summary>
+        </member>
+        <member name="T:Amazon.MediaTailor.Model.BadRequestException">
+            <summary>
+             MediaTailor exception
+             </summary>
+        </member>
+        <member name="M:Amazon.MediaTailor.Model.BadRequestException.#ctor(System.String)">
+            <summary>
+            Constructs a new BadRequestException with the specified error
+            message.
+            </summary>
+            <param name="message">
+            Describes the error encountered.
+            </param>
+        </member>
+        <member name="M:Amazon.MediaTailor.Model.BadRequestException.#ctor(System.String,System.Exception)">
+            <summary>
+            Construct instance of BadRequestException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.MediaTailor.Model.BadRequestException.#ctor(System.Exception)">
+            <summary>
+            Construct instance of BadRequestException
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.MediaTailor.Model.BadRequestException.#ctor(System.String,System.Exception,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of BadRequestException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="M:Amazon.MediaTailor.Model.BadRequestException.#ctor(System.String,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of BadRequestException
+            </summary>
+            <param name="message"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="T:Amazon.MediaTailor.Model.CdnConfiguration">
+            <summary>
+            The configuration for using a content delivery network (CDN), like Amazon CloudFront,
+            for content and ad segment management.
+            </summary>
+        </member>
+        <member name="P:Amazon.MediaTailor.Model.CdnConfiguration.AdSegmentUrlPrefix">
+            <summary>
+            Gets and sets the property AdSegmentUrlPrefix. 
+            <para>
+            A non-default content delivery network (CDN) to serve ad segments. By default, AWS
+            Elemental MediaTailor uses Amazon CloudFront with default cache settings as its CDN
+            for ad segments. To set up an alternate CDN, create a rule in your CDN for the following
+            origin: ads.mediatailor.&lt;region>.amazonaws.com. Then specify the rule's name in
+            this AdSegmentUrlPrefix. When AWS Elemental MediaTailor serves a manifest, it reports
+            your CDN as the source for ad segments.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.MediaTailor.Model.CdnConfiguration.ContentSegmentUrlPrefix">
+            <summary>
+            Gets and sets the property ContentSegmentUrlPrefix. 
+            <para>
+            A content delivery network (CDN) to cache content segments, so that content requests
+            don’t always have to go to the origin server. First, create a rule in your CDN for
+            the content segment origin server. Then specify the rule's name in this ContentSegmentUrlPrefix.
+            When AWS Elemental MediaTailor serves a manifest, it reports your CDN as the source
+            for content segments.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.MediaTailor.Model.DashConfiguration">
+            <summary>
+            The configuration for DASH content.
+            </summary>
+        </member>
+        <member name="P:Amazon.MediaTailor.Model.DashConfiguration.ManifestEndpointPrefix">
+            <summary>
+            Gets and sets the property ManifestEndpointPrefix. 
+            <para>
+            The URL generated by MediaTailor to initiate a playback session. The session uses
+            server-side reporting. This setting is ignored in PUT operations. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.MediaTailor.Model.DashConfiguration.MpdLocation">
+            <summary>
+            Gets and sets the property MpdLocation. 
+            <para>
+            The setting that controls whether MediaTailor includes the Location tag in DASH manifests.
+            MediaTailor populates the Location tag with the URL for manifest update requests,
+            to be used by players that don't support sticky redirects. Disable this if you have
+            CDN routing rules set up for accessing MediaTailor manifests, and you are either using
+            client-side reporting or your players support sticky HTTP redirects. Valid values
+            are DISABLED and EMT_DEFAULT. The EMT_DEFAULT setting enables the inclusion of the
+            tag and is the default value. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.MediaTailor.Model.DashConfiguration.OriginManifestType">
+            <summary>
+            Gets and sets the property OriginManifestType. 
+            <para>
+            The setting that controls whether MediaTailor handles manifests from the origin server
+            as multi-period manifests or single-period manifests. If your origin server produces
+            single-period manifests, set this to SINGLE_PERIOD. The default setting is MULTI_PERIOD.
+            For multi-period manifests, omit this setting or set it to MULTI_PERIOD. 
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.MediaTailor.Model.DashConfigurationForPut">
+            <summary>
+            The configuration for DASH PUT operations.
+            </summary>
+        </member>
+        <member name="P:Amazon.MediaTailor.Model.DashConfigurationForPut.MpdLocation">
+            <summary>
+            Gets and sets the property MpdLocation. 
+            <para>
+            The setting that controls whether MediaTailor includes the Location tag in DASH manifests.
+            MediaTailor populates the Location tag with the URL for manifest update requests,
+            to be used by players that don't support sticky redirects. Disable this if you have
+            CDN routing rules set up for accessing MediaTailor manifests, and you are either using
+            client-side reporting or your players support sticky HTTP redirects. Valid values
+            are DISABLED and EMT_DEFAULT. The EMT_DEFAULT setting enables the inclusion of the
+            tag and is the default value. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.MediaTailor.Model.DashConfigurationForPut.OriginManifestType">
+            <summary>
+            Gets and sets the property OriginManifestType. 
+            <para>
+            The setting that controls whether MediaTailor handles manifests from the origin server
+            as multi-period manifests or single-period manifests. If your origin server produces
+            single-period manifests, set this to SINGLE_PERIOD. The default setting is MULTI_PERIOD.
+            For multi-period manifests, omit this setting or set it to MULTI_PERIOD. 
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.MediaTailor.Model.DeletePlaybackConfigurationRequest">
+            <summary>
+            Container for the parameters to the DeletePlaybackConfiguration operation.
+            Deletes the playback configuration for the specified name.
+            </summary>
+        </member>
+        <member name="P:Amazon.MediaTailor.Model.DeletePlaybackConfigurationRequest.Name">
+            <summary>
+            Gets and sets the property Name. 
+            <para>
+            The identifier for the playback configuration.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.MediaTailor.Model.DeletePlaybackConfigurationResponse">
+            <summary>
+            This is the response object from the DeletePlaybackConfiguration operation.
+            </summary>
+        </member>
+        <member name="T:Amazon.MediaTailor.Model.GetPlaybackConfigurationRequest">
+            <summary>
+            Container for the parameters to the GetPlaybackConfiguration operation.
+            Returns the playback configuration for the specified name.
+            </summary>
+        </member>
+        <member name="P:Amazon.MediaTailor.Model.GetPlaybackConfigurationRequest.Name">
+            <summary>
+            Gets and sets the property Name. 
+            <para>
+            The identifier for the playback configuration.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.MediaTailor.Model.GetPlaybackConfigurationResponse">
+            <summary>
+            This is the response object from the GetPlaybackConfiguration operation.
+            </summary>
+        </member>
+        <member name="P:Amazon.MediaTailor.Model.GetPlaybackConfigurationResponse.AdDecisionServerUrl">
+            <summary>
+            Gets and sets the property AdDecisionServerUrl. 
+            <para>
+            The URL for the ad decision server (ADS). This includes the specification of static
+            parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes
+            player-specific and session-specific parameters as needed when calling the ADS. Alternately,
+            for testing, you can provide a static VAST URL. The maximum length is 25,000 characters.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.MediaTailor.Model.GetPlaybackConfigurationResponse.CdnConfiguration">
+            <summary>
+            Gets and sets the property CdnConfiguration. 
+            <para>
+            The configuration for using a content delivery network (CDN), like Amazon CloudFront,
+            for content and ad segment management. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.MediaTailor.Model.GetPlaybackConfigurationResponse.DashConfiguration">
+            <summary>
+            Gets and sets the property DashConfiguration. 
+            <para>
+            The configuration for DASH content. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.MediaTailor.Model.GetPlaybackConfigurationResponse.HlsConfiguration">
+            <summary>
+            Gets and sets the property HlsConfiguration. 
+            <para>
+            The configuration for HLS content. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.MediaTailor.Model.GetPlaybackConfigurationResponse.Name">
+            <summary>
+            Gets and sets the property Name. 
+            <para>
+            The identifier for the playback configuration.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.MediaTailor.Model.GetPlaybackConfigurationResponse.PlaybackConfigurationArn">
+            <summary>
+            Gets and sets the property PlaybackConfigurationArn. 
+            <para>
+            The Amazon Resource Name (ARN) for the playback configuration. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.MediaTailor.Model.GetPlaybackConfigurationResponse.PlaybackEndpointPrefix">
+            <summary>
+            Gets and sets the property PlaybackEndpointPrefix. 
+            <para>
+            The URL that the player accesses to get a manifest from AWS Elemental MediaTailor.
+            This session will use server-side reporting. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.MediaTailor.Model.GetPlaybackConfigurationResponse.SessionInitializationEndpointPrefix">
+            <summary>
+            Gets and sets the property SessionInitializationEndpointPrefix. 
+            <para>
+            The URL that the player uses to initialize a session that uses client-side reporting.
+            
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.MediaTailor.Model.GetPlaybackConfigurationResponse.SlateAdUrl">
+            <summary>
+            Gets and sets the property SlateAdUrl. 
+            <para>
+            The URL for a high-quality video asset to transcode and use to fill in time that's
+            not used by ads. AWS Elemental MediaTailor shows the slate to fill in gaps in media
+            content. Configuring the slate is optional for non-VPAID playback configurations.
+            For VPAID, the slate is required because MediaTailor provides it in the slots designated
+            for dynamic ad content. The slate must be a high-quality asset that contains both
+            audio and video. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.MediaTailor.Model.GetPlaybackConfigurationResponse.Tags">
+            <summary>
+            Gets and sets the property Tags. 
+            <para>
+            The tags assigned to the playback configuration. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.MediaTailor.Model.GetPlaybackConfigurationResponse.TranscodeProfileName">
+            <summary>
+            Gets and sets the property TranscodeProfileName. 
+            <para>
+            The name that is used to associate this playback configuration with a custom transcode
+            profile. This overrides the dynamic transcoding defaults of MediaTailor. Use this
+            only if you have already set up custom profiles with the help of AWS Support.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.MediaTailor.Model.GetPlaybackConfigurationResponse.VideoContentSourceUrl">
+            <summary>
+            Gets and sets the property VideoContentSourceUrl. 
+            <para>
+            The URL prefix for the master playlist for the stream, minus the asset ID. The maximum
+            length is 512 characters.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.MediaTailor.Model.HlsConfiguration">
+            <summary>
+            The configuration for HLS content.
+            </summary>
+        </member>
+        <member name="P:Amazon.MediaTailor.Model.HlsConfiguration.ManifestEndpointPrefix">
+            <summary>
+            Gets and sets the property ManifestEndpointPrefix. 
+            <para>
+            The URL that is used to initiate a playback session for devices that support Apple
+            HLS. The session uses server-side reporting.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.MediaTailor.Model.Internal.MarshallTransformations.CdnConfigurationMarshaller">
+            <summary>
+            CdnConfiguration Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.MediaTailor.Model.Internal.MarshallTransformations.CdnConfigurationMarshaller.Marshall(Amazon.MediaTailor.Model.CdnConfiguration,Amazon.Runtime.Internal.Transform.JsonMarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="requestObject"></param>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="F:Amazon.MediaTailor.Model.Internal.MarshallTransformations.CdnConfigurationMarshaller.Instance">
+            <summary>
+            Singleton Marshaller.
+            </summary>  
+        </member>
+        <member name="T:Amazon.MediaTailor.Model.Internal.MarshallTransformations.CdnConfigurationUnmarshaller">
+            <summary>
+            Response Unmarshaller for CdnConfiguration Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.MediaTailor.Model.Internal.MarshallTransformations.CdnConfigurationUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#MediaTailor#Model#CdnConfiguration,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.MediaTailor.Model.Internal.MarshallTransformations.CdnConfigurationUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.MediaTailor.Model.Internal.MarshallTransformations.CdnConfigurationUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.MediaTailor.Model.Internal.MarshallTransformations.DashConfigurationForPutMarshaller">
+            <summary>
+            DashConfigurationForPut Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.MediaTailor.Model.Internal.MarshallTransformations.DashConfigurationForPutMarshaller.Marshall(Amazon.MediaTailor.Model.DashConfigurationForPut,Amazon.Runtime.Internal.Transform.JsonMarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="requestObject"></param>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="F:Amazon.MediaTailor.Model.Internal.MarshallTransformations.DashConfigurationForPutMarshaller.Instance">
+            <summary>
+            Singleton Marshaller.
+            </summary>  
+        </member>
+        <member name="T:Amazon.MediaTailor.Model.Internal.MarshallTransformations.DashConfigurationUnmarshaller">
+            <summary>
+            Response Unmarshaller for DashConfiguration Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.MediaTailor.Model.Internal.MarshallTransformations.DashConfigurationUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#MediaTailor#Model#DashConfiguration,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.MediaTailor.Model.Internal.MarshallTransformations.DashConfigurationUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.MediaTailor.Model.Internal.MarshallTransformations.DashConfigurationUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.MediaTailor.Model.Internal.MarshallTransformations.DeletePlaybackConfigurationRequestMarshaller">
+            <summary>
+            DeletePlaybackConfiguration Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.MediaTailor.Model.Internal.MarshallTransformations.DeletePlaybackConfigurationRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.MediaTailor.Model.Internal.MarshallTransformations.DeletePlaybackConfigurationRequestMarshaller.Marshall(Amazon.MediaTailor.Model.DeletePlaybackConfigurationRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.MediaTailor.Model.Internal.MarshallTransformations.DeletePlaybackConfigurationRequestMarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.MediaTailor.Model.Internal.MarshallTransformations.DeletePlaybackConfigurationResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for DeletePlaybackConfiguration operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.MediaTailor.Model.Internal.MarshallTransformations.DeletePlaybackConfigurationResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.MediaTailor.Model.Internal.MarshallTransformations.DeletePlaybackConfigurationResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.MediaTailor.Model.Internal.MarshallTransformations.DeletePlaybackConfigurationResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.MediaTailor.Model.Internal.MarshallTransformations.GetPlaybackConfigurationRequestMarshaller">
+            <summary>
+            GetPlaybackConfiguration Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.MediaTailor.Model.Internal.MarshallTransformations.GetPlaybackConfigurationRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.MediaTailor.Model.Internal.MarshallTransformations.GetPlaybackConfigurationRequestMarshaller.Marshall(Amazon.MediaTailor.Model.GetPlaybackConfigurationRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.MediaTailor.Model.Internal.MarshallTransformations.GetPlaybackConfigurationRequestMarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.MediaTailor.Model.Internal.MarshallTransformations.GetPlaybackConfigurationResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for GetPlaybackConfiguration operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.MediaTailor.Model.Internal.MarshallTransformations.GetPlaybackConfigurationResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.MediaTailor.Model.Internal.MarshallTransformations.GetPlaybackConfigurationResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.MediaTailor.Model.Internal.MarshallTransformations.GetPlaybackConfigurationResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.MediaTailor.Model.Internal.MarshallTransformations.HlsConfigurationUnmarshaller">
+            <summary>
+            Response Unmarshaller for HlsConfiguration Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.MediaTailor.Model.Internal.MarshallTransformations.HlsConfigurationUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#MediaTailor#Model#HlsConfiguration,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.MediaTailor.Model.Internal.MarshallTransformations.HlsConfigurationUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.MediaTailor.Model.Internal.MarshallTransformations.HlsConfigurationUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.MediaTailor.Model.Internal.MarshallTransformations.ListPlaybackConfigurationsRequestMarshaller">
+            <summary>
+            ListPlaybackConfigurations Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.MediaTailor.Model.Internal.MarshallTransformations.ListPlaybackConfigurationsRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.MediaTailor.Model.Internal.MarshallTransformations.ListPlaybackConfigurationsRequestMarshaller.Marshall(Amazon.MediaTailor.Model.ListPlaybackConfigurationsRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.MediaTailor.Model.Internal.MarshallTransformations.ListPlaybackConfigurationsRequestMarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.MediaTailor.Model.Internal.MarshallTransformations.ListPlaybackConfigurationsResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for ListPlaybackConfigurations operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.MediaTailor.Model.Internal.MarshallTransformations.ListPlaybackConfigurationsResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.MediaTailor.Model.Internal.MarshallTransformations.ListPlaybackConfigurationsResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.MediaTailor.Model.Internal.MarshallTransformations.ListPlaybackConfigurationsResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.MediaTailor.Model.Internal.MarshallTransformations.ListTagsForResourceRequestMarshaller">
+            <summary>
+            ListTagsForResource Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.MediaTailor.Model.Internal.MarshallTransformations.ListTagsForResourceRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.MediaTailor.Model.Internal.MarshallTransformations.ListTagsForResourceRequestMarshaller.Marshall(Amazon.MediaTailor.Model.ListTagsForResourceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.MediaTailor.Model.Internal.MarshallTransformations.ListTagsForResourceRequestMarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.MediaTailor.Model.Internal.MarshallTransformations.ListTagsForResourceResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for ListTagsForResource operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.MediaTailor.Model.Internal.MarshallTransformations.ListTagsForResourceResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.MediaTailor.Model.Internal.MarshallTransformations.ListTagsForResourceResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.MediaTailor.Model.Internal.MarshallTransformations.ListTagsForResourceResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.MediaTailor.Model.Internal.MarshallTransformations.PlaybackConfigurationUnmarshaller">
+            <summary>
+            Response Unmarshaller for PlaybackConfiguration Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.MediaTailor.Model.Internal.MarshallTransformations.PlaybackConfigurationUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#MediaTailor#Model#PlaybackConfiguration,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.MediaTailor.Model.Internal.MarshallTransformations.PlaybackConfigurationUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.MediaTailor.Model.Internal.MarshallTransformations.PlaybackConfigurationUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.MediaTailor.Model.Internal.MarshallTransformations.PutPlaybackConfigurationRequestMarshaller">
+            <summary>
+            PutPlaybackConfiguration Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.MediaTailor.Model.Internal.MarshallTransformations.PutPlaybackConfigurationRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.MediaTailor.Model.Internal.MarshallTransformations.PutPlaybackConfigurationRequestMarshaller.Marshall(Amazon.MediaTailor.Model.PutPlaybackConfigurationRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.MediaTailor.Model.Internal.MarshallTransformations.PutPlaybackConfigurationRequestMarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.MediaTailor.Model.Internal.MarshallTransformations.PutPlaybackConfigurationResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for PutPlaybackConfiguration operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.MediaTailor.Model.Internal.MarshallTransformations.PutPlaybackConfigurationResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.MediaTailor.Model.Internal.MarshallTransformations.PutPlaybackConfigurationResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.MediaTailor.Model.Internal.MarshallTransformations.PutPlaybackConfigurationResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.MediaTailor.Model.Internal.MarshallTransformations.TagResourceRequestMarshaller">
+            <summary>
+            TagResource Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.MediaTailor.Model.Internal.MarshallTransformations.TagResourceRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.MediaTailor.Model.Internal.MarshallTransformations.TagResourceRequestMarshaller.Marshall(Amazon.MediaTailor.Model.TagResourceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.MediaTailor.Model.Internal.MarshallTransformations.TagResourceRequestMarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.MediaTailor.Model.Internal.MarshallTransformations.TagResourceResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for TagResource operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.MediaTailor.Model.Internal.MarshallTransformations.TagResourceResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.MediaTailor.Model.Internal.MarshallTransformations.TagResourceResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.MediaTailor.Model.Internal.MarshallTransformations.TagResourceResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.MediaTailor.Model.Internal.MarshallTransformations.UntagResourceRequestMarshaller">
+            <summary>
+            UntagResource Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.MediaTailor.Model.Internal.MarshallTransformations.UntagResourceRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.MediaTailor.Model.Internal.MarshallTransformations.UntagResourceRequestMarshaller.Marshall(Amazon.MediaTailor.Model.UntagResourceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.MediaTailor.Model.Internal.MarshallTransformations.UntagResourceRequestMarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.MediaTailor.Model.Internal.MarshallTransformations.UntagResourceResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for UntagResource operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.MediaTailor.Model.Internal.MarshallTransformations.UntagResourceResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.MediaTailor.Model.Internal.MarshallTransformations.UntagResourceResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.MediaTailor.Model.Internal.MarshallTransformations.UntagResourceResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.MediaTailor.Model.ListPlaybackConfigurationsRequest">
+            <summary>
+            Container for the parameters to the ListPlaybackConfigurations operation.
+            Returns a list of the playback configurations defined in AWS Elemental MediaTailor.
+            You can specify a maximum number of configurations to return at a time. The default
+            maximum is 50. Results are returned in pagefuls. If MediaTailor has more configurations
+            than the specified maximum, it provides parameters in the response that you can use
+            to retrieve the next pageful.
+            </summary>
+        </member>
+        <member name="P:Amazon.MediaTailor.Model.ListPlaybackConfigurationsRequest.MaxResults">
+            <summary>
+            Gets and sets the property MaxResults. 
+            <para>
+            Maximum number of records to return. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.MediaTailor.Model.ListPlaybackConfigurationsRequest.NextToken">
+            <summary>
+            Gets and sets the property NextToken. 
+            <para>
+            Pagination token returned by the GET list request when results exceed the maximum
+            allowed. Use the token to fetch the next page of results.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.MediaTailor.Model.ListPlaybackConfigurationsResponse">
+            <summary>
+            This is the response object from the ListPlaybackConfigurations operation.
+            </summary>
+        </member>
+        <member name="P:Amazon.MediaTailor.Model.ListPlaybackConfigurationsResponse.Items">
+            <summary>
+            Gets and sets the property Items. 
+            <para>
+            Array of playback configurations. This might be all the available configurations or
+            a subset, depending on the settings that you provide and the total number of configurations
+            stored. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.MediaTailor.Model.ListPlaybackConfigurationsResponse.NextToken">
+            <summary>
+            Gets and sets the property NextToken. 
+            <para>
+            Pagination token returned by the GET list request when results exceed the maximum
+            allowed. Use the token to fetch the next page of results.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.MediaTailor.Model.ListTagsForResourceRequest">
+            <summary>
+            Container for the parameters to the ListTagsForResource operation.
+            Returns a list of the tags assigned to the specified playback configuration resource.
+            </summary>
+        </member>
+        <member name="P:Amazon.MediaTailor.Model.ListTagsForResourceRequest.ResourceArn">
+            <summary>
+            Gets and sets the property ResourceArn. 
+            <para>
+            The Amazon Resource Name (ARN) for the playback configuration. You can get this from
+            the response to any playback configuration request. 
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.MediaTailor.Model.ListTagsForResourceResponse">
+            <summary>
+            This is the response object from the ListTagsForResource operation.
+            </summary>
+        </member>
+        <member name="P:Amazon.MediaTailor.Model.ListTagsForResourceResponse.Tags">
+            <summary>
+            Gets and sets the property Tags. 
+            <para>
+            A comma-separated list of tag key:value pairs. For example:  { "Key1": "Value1", "Key2":
+            "Value2" } 
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.MediaTailor.Model.PlaybackConfiguration">
+            <summary>
+            The AWSMediaTailor configuration.
+            </summary>
+        </member>
+        <member name="P:Amazon.MediaTailor.Model.PlaybackConfiguration.AdDecisionServerUrl">
+            <summary>
+            Gets and sets the property AdDecisionServerUrl. 
+            <para>
+            The URL for the ad decision server (ADS). This includes the specification of static
+            parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes
+            player-specific and session-specific parameters as needed when calling the ADS. Alternately,
+            for testing, you can provide a static VAST URL. The maximum length is 25,000 characters.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.MediaTailor.Model.PlaybackConfiguration.CdnConfiguration">
+            <summary>
+            Gets and sets the property CdnConfiguration. 
+            <para>
+            The configuration for using a content delivery network (CDN), like Amazon CloudFront,
+            for content and ad segment management. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.MediaTailor.Model.PlaybackConfiguration.DashConfiguration">
+            <summary>
+            Gets and sets the property DashConfiguration. 
+            <para>
+            The configuration for DASH content. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.MediaTailor.Model.PlaybackConfiguration.HlsConfiguration">
+            <summary>
+            Gets and sets the property HlsConfiguration. 
+            <para>
+            The configuration for HLS content. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.MediaTailor.Model.PlaybackConfiguration.Name">
+            <summary>
+            Gets and sets the property Name. 
+            <para>
+            The identifier for the playback configuration.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.MediaTailor.Model.PlaybackConfiguration.PlaybackConfigurationArn">
+            <summary>
+            Gets and sets the property PlaybackConfigurationArn. 
+            <para>
+            The Amazon Resource Name (ARN) for the playback configuration. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.MediaTailor.Model.PlaybackConfiguration.PlaybackEndpointPrefix">
+            <summary>
+            Gets and sets the property PlaybackEndpointPrefix. 
+            <para>
+            The URL that the player accesses to get a manifest from AWS Elemental MediaTailor.
+            This session will use server-side reporting. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.MediaTailor.Model.PlaybackConfiguration.SessionInitializationEndpointPrefix">
+            <summary>
+            Gets and sets the property SessionInitializationEndpointPrefix. 
+            <para>
+            The URL that the player uses to initialize a session that uses client-side reporting.
+            
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.MediaTailor.Model.PlaybackConfiguration.SlateAdUrl">
+            <summary>
+            Gets and sets the property SlateAdUrl. 
+            <para>
+            The URL for a high-quality video asset to transcode and use to fill in time that's
+            not used by ads. AWS Elemental MediaTailor shows the slate to fill in gaps in media
+            content. Configuring the slate is optional for non-VPAID playback configurations.
+            For VPAID, the slate is required because MediaTailor provides it in the slots designated
+            for dynamic ad content. The slate must be a high-quality asset that contains both
+            audio and video. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.MediaTailor.Model.PlaybackConfiguration.Tags">
+            <summary>
+            Gets and sets the property Tags. 
+            <para>
+            The tags assigned to the playback configuration. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.MediaTailor.Model.PlaybackConfiguration.TranscodeProfileName">
+            <summary>
+            Gets and sets the property TranscodeProfileName. 
+            <para>
+            The name that is used to associate this playback configuration with a custom transcode
+            profile. This overrides the dynamic transcoding defaults of MediaTailor. Use this
+            only if you have already set up custom profiles with the help of AWS Support.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.MediaTailor.Model.PlaybackConfiguration.VideoContentSourceUrl">
+            <summary>
+            Gets and sets the property VideoContentSourceUrl. 
+            <para>
+            The URL prefix for the master playlist for the stream, minus the asset ID. The maximum
+            length is 512 characters.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.MediaTailor.Model.PutPlaybackConfigurationRequest">
+            <summary>
+            Container for the parameters to the PutPlaybackConfiguration operation.
+            Adds a new playback configuration to AWS Elemental MediaTailor.
+            </summary>
+        </member>
+        <member name="P:Amazon.MediaTailor.Model.PutPlaybackConfigurationRequest.AdDecisionServerUrl">
+            <summary>
+            Gets and sets the property AdDecisionServerUrl. 
+            <para>
+            The URL for the ad decision server (ADS). This includes the specification of static
+            parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes
+            player-specific and session-specific parameters as needed when calling the ADS. Alternately,
+            for testing you can provide a static VAST URL. The maximum length is 25,000 characters.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.MediaTailor.Model.PutPlaybackConfigurationRequest.CdnConfiguration">
+            <summary>
+            Gets and sets the property CdnConfiguration. 
+            <para>
+            The configuration for using a content delivery network (CDN), like Amazon CloudFront,
+            for content and ad segment management. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.MediaTailor.Model.PutPlaybackConfigurationRequest.DashConfiguration">
+            <summary>
+            Gets and sets the property DashConfiguration. 
+            <para>
+            The configuration for DASH content. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.MediaTailor.Model.PutPlaybackConfigurationRequest.Name">
+            <summary>
+            Gets and sets the property Name. 
+            <para>
+            The identifier for the playback configuration.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.MediaTailor.Model.PutPlaybackConfigurationRequest.SlateAdUrl">
+            <summary>
+            Gets and sets the property SlateAdUrl. 
+            <para>
+            The URL for a high-quality video asset to transcode and use to fill in time that's
+            not used by ads. AWS Elemental MediaTailor shows the slate to fill in gaps in media
+            content. Configuring the slate is optional for non-VPAID configurations. For VPAID,
+            the slate is required because MediaTailor provides it in the slots that are designated
+            for dynamic ad content. The slate must be a high-quality asset that contains both
+            audio and video. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.MediaTailor.Model.PutPlaybackConfigurationRequest.Tags">
+            <summary>
+            Gets and sets the property Tags. 
+            <para>
+            The tags to assign to the playback configuration. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.MediaTailor.Model.PutPlaybackConfigurationRequest.TranscodeProfileName">
+            <summary>
+            Gets and sets the property TranscodeProfileName. 
+            <para>
+            The name that is used to associate this playback configuration with a custom transcode
+            profile. This overrides the dynamic transcoding defaults of MediaTailor. Use this
+            only if you have already set up custom profiles with the help of AWS Support.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.MediaTailor.Model.PutPlaybackConfigurationRequest.VideoContentSourceUrl">
+            <summary>
+            Gets and sets the property VideoContentSourceUrl. 
+            <para>
+            The URL prefix for the master playlist for the stream, minus the asset ID. The maximum
+            length is 512 characters.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.MediaTailor.Model.PutPlaybackConfigurationResponse">
+            <summary>
+            This is the response object from the PutPlaybackConfiguration operation.
+            </summary>
+        </member>
+        <member name="P:Amazon.MediaTailor.Model.PutPlaybackConfigurationResponse.AdDecisionServerUrl">
+            <summary>
+            Gets and sets the property AdDecisionServerUrl. 
+            <para>
+            The URL for the ad decision server (ADS). This includes the specification of static
+            parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes
+            player-specific and session-specific parameters as needed when calling the ADS. Alternately,
+            for testing, you can provide a static VAST URL. The maximum length is 25,000 characters.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.MediaTailor.Model.PutPlaybackConfigurationResponse.CdnConfiguration">
+            <summary>
+            Gets and sets the property CdnConfiguration. 
+            <para>
+            The configuration for using a content delivery network (CDN), like Amazon CloudFront,
+            for content and ad segment management. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.MediaTailor.Model.PutPlaybackConfigurationResponse.DashConfiguration">
+            <summary>
+            Gets and sets the property DashConfiguration. 
+            <para>
+            The configuration for DASH content. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.MediaTailor.Model.PutPlaybackConfigurationResponse.HlsConfiguration">
+            <summary>
+            Gets and sets the property HlsConfiguration. 
+            <para>
+            The configuration for HLS content. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.MediaTailor.Model.PutPlaybackConfigurationResponse.Name">
+            <summary>
+            Gets and sets the property Name. 
+            <para>
+            The identifier for the playback configuration.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.MediaTailor.Model.PutPlaybackConfigurationResponse.PlaybackConfigurationArn">
+            <summary>
+            Gets and sets the property PlaybackConfigurationArn. 
+            <para>
+            The Amazon Resource Name (ARN) for the playback configuration. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.MediaTailor.Model.PutPlaybackConfigurationResponse.PlaybackEndpointPrefix">
+            <summary>
+            Gets and sets the property PlaybackEndpointPrefix. 
+            <para>
+            The URL that the player accesses to get a manifest from AWS Elemental MediaTailor.
+            This session will use server-side reporting. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.MediaTailor.Model.PutPlaybackConfigurationResponse.SessionInitializationEndpointPrefix">
+            <summary>
+            Gets and sets the property SessionInitializationEndpointPrefix. 
+            <para>
+            The URL that the player uses to initialize a session that uses client-side reporting.
+            
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.MediaTailor.Model.PutPlaybackConfigurationResponse.SlateAdUrl">
+            <summary>
+            Gets and sets the property SlateAdUrl. 
+            <para>
+            The URL for a high-quality video asset to transcode and use to fill in time that's
+            not used by ads. AWS Elemental MediaTailor shows the slate to fill in gaps in media
+            content. Configuring the slate is optional for non-VPAID playback configurations.
+            For VPAID, the slate is required because MediaTailor provides it in the slots designated
+            for dynamic ad content. The slate must be a high-quality asset that contains both
+            audio and video. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.MediaTailor.Model.PutPlaybackConfigurationResponse.Tags">
+            <summary>
+            Gets and sets the property Tags. 
+            <para>
+            The tags assigned to the playback configuration. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.MediaTailor.Model.PutPlaybackConfigurationResponse.TranscodeProfileName">
+            <summary>
+            Gets and sets the property TranscodeProfileName. 
+            <para>
+            The name that is used to associate this playback configuration with a custom transcode
+            profile. This overrides the dynamic transcoding defaults of MediaTailor. Use this
+            only if you have already set up custom profiles with the help of AWS Support.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.MediaTailor.Model.PutPlaybackConfigurationResponse.VideoContentSourceUrl">
+            <summary>
+            Gets and sets the property VideoContentSourceUrl. 
+            <para>
+            The URL prefix for the master playlist for the stream, minus the asset ID. The maximum
+            length is 512 characters.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.MediaTailor.Model.TagResourceRequest">
+            <summary>
+            Container for the parameters to the TagResource operation.
+            Adds tags to the specified playback configuration resource. You can specify one or
+            more tags to add.
+            </summary>
+        </member>
+        <member name="P:Amazon.MediaTailor.Model.TagResourceRequest.ResourceArn">
+            <summary>
+            Gets and sets the property ResourceArn. 
+            <para>
+            The Amazon Resource Name (ARN) for the playback configuration. You can get this from
+            the response to any playback configuration request. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.MediaTailor.Model.TagResourceRequest.Tags">
+            <summary>
+            Gets and sets the property Tags. 
+            <para>
+            A comma-separated list of tag key:value pairs. For example:  { "Key1": "Value1", "Key2":
+            "Value2" } 
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.MediaTailor.Model.TagResourceResponse">
+            <summary>
+            This is the response object from the TagResource operation.
+            </summary>
+        </member>
+        <member name="T:Amazon.MediaTailor.Model.UntagResourceRequest">
+            <summary>
+            Container for the parameters to the UntagResource operation.
+            Removes tags from the specified playback configuration resource. You can specify one
+            or more tags to remove.
+            </summary>
+        </member>
+        <member name="P:Amazon.MediaTailor.Model.UntagResourceRequest.ResourceArn">
+            <summary>
+            Gets and sets the property ResourceArn. 
+            <para>
+            The Amazon Resource Name (ARN) for the playback configuration. You can get this from
+            the response to any playback configuration request. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.MediaTailor.Model.UntagResourceRequest.TagKeys">
+            <summary>
+            Gets and sets the property TagKeys. 
+            <para>
+            A comma-separated list of the tag keys to remove from the playback configuration.
+            
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.MediaTailor.Model.UntagResourceResponse">
+            <summary>
+            This is the response object from the UntagResource operation.
+            </summary>
+        </member>
+        <member name="T:Amazon.MediaTailor.OriginManifestType">
+            <summary>
+            Constants used for properties of type OriginManifestType.
+            </summary>
+        </member>
+        <member name="F:Amazon.MediaTailor.OriginManifestType.MULTI_PERIOD">
+            <summary>
+            Constant MULTI_PERIOD for OriginManifestType
+            </summary>
+        </member>
+        <member name="F:Amazon.MediaTailor.OriginManifestType.SINGLE_PERIOD">
+            <summary>
+            Constant SINGLE_PERIOD for OriginManifestType
+            </summary>
+        </member>
+        <member name="M:Amazon.MediaTailor.OriginManifestType.#ctor(System.String)">
+            <summary>
+            This constant constructor does not need to be called if the constant
+            you are attempting to use is already defined as a static instance of 
+            this class.
+            This constructor should be used to construct constants that are not
+            defined as statics, for instance if attempting to use a feature that is
+            newer than the current version of the SDK.
+            </summary>
+        </member>
+        <member name="M:Amazon.MediaTailor.OriginManifestType.FindValue(System.String)">
+            <summary>
+            Finds the constant for the unique value.
+            </summary>
+            <param name="value">The unique value for the constant</param>
+            <returns>The constant for the unique value</returns>
+        </member>
+        <member name="M:Amazon.MediaTailor.OriginManifestType.op_Implicit(System.String)~Amazon.MediaTailor.OriginManifestType">
+            <summary>
+            Utility method to convert strings to the constant class.
+            </summary>
+            <param name="value">The string value to convert to the constant class.</param>
+            <returns></returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:Amazon.MediaTailor.AmazonMediaTailorClient" -->
+        <member name="M:Amazon.MediaTailor.AmazonMediaTailorClient.#ctor">
+             <summary>
+             Constructs AmazonMediaTailorClient with the credentials loaded from the application's
+             default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+             
+             Example App.config with credentials set. 
+             <code>
+             &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+             &lt;configuration&gt;
+                 &lt;appSettings&gt;
+                     &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+                 &lt;/appSettings&gt;
+             &lt;/configuration&gt;
+             </code>
+            
+             </summary>
+        </member>
+        <member name="M:Amazon.MediaTailor.AmazonMediaTailorClient.#ctor(Amazon.RegionEndpoint)">
+             <summary>
+             Constructs AmazonMediaTailorClient with the credentials loaded from the application's
+             default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+             
+             Example App.config with credentials set. 
+             <code>
+             &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+             &lt;configuration&gt;
+                 &lt;appSettings&gt;
+                     &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+                 &lt;/appSettings&gt;
+             &lt;/configuration&gt;
+             </code>
+            
+             </summary>
+             <param name="region">The region to connect.</param>
+        </member>
+        <member name="M:Amazon.MediaTailor.AmazonMediaTailorClient.#ctor(Amazon.MediaTailor.AmazonMediaTailorConfig)">
+             <summary>
+             Constructs AmazonMediaTailorClient with the credentials loaded from the application's
+             default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+             
+             Example App.config with credentials set. 
+             <code>
+             &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+             &lt;configuration&gt;
+                 &lt;appSettings&gt;
+                     &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+                 &lt;/appSettings&gt;
+             &lt;/configuration&gt;
+             </code>
+            
+             </summary>
+             <param name="config">The AmazonMediaTailorClient Configuration Object</param>
+        </member>
+        <member name="M:Amazon.MediaTailor.AmazonMediaTailorClient.#ctor(Amazon.Runtime.AWSCredentials)">
+            <summary>
+            Constructs AmazonMediaTailorClient with AWS Credentials
+            </summary>
+            <param name="credentials">AWS Credentials</param>
+        </member>
+        <member name="M:Amazon.MediaTailor.AmazonMediaTailorClient.#ctor(Amazon.Runtime.AWSCredentials,Amazon.RegionEndpoint)">
+            <summary>
+            Constructs AmazonMediaTailorClient with AWS Credentials
+            </summary>
+            <param name="credentials">AWS Credentials</param>
+            <param name="region">The region to connect.</param>
+        </member>
+        <member name="M:Amazon.MediaTailor.AmazonMediaTailorClient.#ctor(Amazon.Runtime.AWSCredentials,Amazon.MediaTailor.AmazonMediaTailorConfig)">
+            <summary>
+            Constructs AmazonMediaTailorClient with AWS Credentials and an
+            AmazonMediaTailorClient Configuration object.
+            </summary>
+            <param name="credentials">AWS Credentials</param>
+            <param name="clientConfig">The AmazonMediaTailorClient Configuration Object</param>
+        </member>
+        <member name="M:Amazon.MediaTailor.AmazonMediaTailorClient.#ctor(System.String,System.String)">
+            <summary>
+            Constructs AmazonMediaTailorClient with AWS Access Key ID and AWS Secret Key
+            </summary>
+            <param name="awsAccessKeyId">AWS Access Key ID</param>
+            <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        </member>
+        <member name="M:Amazon.MediaTailor.AmazonMediaTailorClient.#ctor(System.String,System.String,Amazon.RegionEndpoint)">
+            <summary>
+            Constructs AmazonMediaTailorClient with AWS Access Key ID and AWS Secret Key
+            </summary>
+            <param name="awsAccessKeyId">AWS Access Key ID</param>
+            <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+            <param name="region">The region to connect.</param>
+        </member>
+        <member name="M:Amazon.MediaTailor.AmazonMediaTailorClient.#ctor(System.String,System.String,Amazon.MediaTailor.AmazonMediaTailorConfig)">
+            <summary>
+            Constructs AmazonMediaTailorClient with AWS Access Key ID, AWS Secret Key and an
+            AmazonMediaTailorClient Configuration object. 
+            </summary>
+            <param name="awsAccessKeyId">AWS Access Key ID</param>
+            <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+            <param name="clientConfig">The AmazonMediaTailorClient Configuration Object</param>
+        </member>
+        <member name="M:Amazon.MediaTailor.AmazonMediaTailorClient.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Constructs AmazonMediaTailorClient with AWS Access Key ID and AWS Secret Key
+            </summary>
+            <param name="awsAccessKeyId">AWS Access Key ID</param>
+            <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+            <param name="awsSessionToken">AWS Session Token</param>
+        </member>
+        <member name="M:Amazon.MediaTailor.AmazonMediaTailorClient.#ctor(System.String,System.String,System.String,Amazon.RegionEndpoint)">
+            <summary>
+            Constructs AmazonMediaTailorClient with AWS Access Key ID and AWS Secret Key
+            </summary>
+            <param name="awsAccessKeyId">AWS Access Key ID</param>
+            <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+            <param name="awsSessionToken">AWS Session Token</param>
+            <param name="region">The region to connect.</param>
+        </member>
+        <member name="M:Amazon.MediaTailor.AmazonMediaTailorClient.#ctor(System.String,System.String,System.String,Amazon.MediaTailor.AmazonMediaTailorConfig)">
+            <summary>
+            Constructs AmazonMediaTailorClient with AWS Access Key ID, AWS Secret Key and an
+            AmazonMediaTailorClient Configuration object. 
+            </summary>
+            <param name="awsAccessKeyId">AWS Access Key ID</param>
+            <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+            <param name="awsSessionToken">AWS Session Token</param>
+            <param name="clientConfig">The AmazonMediaTailorClient Configuration Object</param>
+        </member>
+        <member name="M:Amazon.MediaTailor.AmazonMediaTailorClient.CreateSigner">
+            <summary>
+            Creates the signer for the service.
+            </summary>
+        </member>
+        <member name="P:Amazon.MediaTailor.AmazonMediaTailorClient.ServiceMetadata">
+            <summary>
+            Capture metadata for the service.
+            </summary>
+        </member>
+        <member name="M:Amazon.MediaTailor.AmazonMediaTailorClient.Dispose(System.Boolean)">
+            <summary>
+            Disposes the service client.
+            </summary>
+        </member>
+        <member name="M:Amazon.MediaTailor.AmazonMediaTailorClient.DeletePlaybackConfigurationAsync(Amazon.MediaTailor.Model.DeletePlaybackConfigurationRequest,System.Threading.CancellationToken)">
+            <summary>
+            Deletes the playback configuration for the specified name.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the DeletePlaybackConfiguration service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the DeletePlaybackConfiguration service method, as returned by MediaTailor.</returns>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DeletePlaybackConfiguration">REST API Reference for DeletePlaybackConfiguration Operation</seealso>
+        </member>
+        <member name="M:Amazon.MediaTailor.AmazonMediaTailorClient.GetPlaybackConfigurationAsync(Amazon.MediaTailor.Model.GetPlaybackConfigurationRequest,System.Threading.CancellationToken)">
+            <summary>
+            Returns the playback configuration for the specified name.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the GetPlaybackConfiguration service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the GetPlaybackConfiguration service method, as returned by MediaTailor.</returns>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/GetPlaybackConfiguration">REST API Reference for GetPlaybackConfiguration Operation</seealso>
+        </member>
+        <member name="M:Amazon.MediaTailor.AmazonMediaTailorClient.ListPlaybackConfigurationsAsync(Amazon.MediaTailor.Model.ListPlaybackConfigurationsRequest,System.Threading.CancellationToken)">
+            <summary>
+            Returns a list of the playback configurations defined in AWS Elemental MediaTailor.
+            You can specify a maximum number of configurations to return at a time. The default
+            maximum is 50. Results are returned in pagefuls. If MediaTailor has more configurations
+            than the specified maximum, it provides parameters in the response that you can use
+            to retrieve the next pageful.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the ListPlaybackConfigurations service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the ListPlaybackConfigurations service method, as returned by MediaTailor.</returns>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListPlaybackConfigurations">REST API Reference for ListPlaybackConfigurations Operation</seealso>
+        </member>
+        <member name="M:Amazon.MediaTailor.AmazonMediaTailorClient.ListTagsForResourceAsync(Amazon.MediaTailor.Model.ListTagsForResourceRequest,System.Threading.CancellationToken)">
+            <summary>
+            Returns a list of the tags assigned to the specified playback configuration resource.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the ListTagsForResource service method, as returned by MediaTailor.</returns>
+            <exception cref="T:Amazon.MediaTailor.Model.BadRequestException">
+            Invalid request parameters.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        </member>
+        <member name="M:Amazon.MediaTailor.AmazonMediaTailorClient.PutPlaybackConfigurationAsync(Amazon.MediaTailor.Model.PutPlaybackConfigurationRequest,System.Threading.CancellationToken)">
+            <summary>
+            Adds a new playback configuration to AWS Elemental MediaTailor.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the PutPlaybackConfiguration service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the PutPlaybackConfiguration service method, as returned by MediaTailor.</returns>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/PutPlaybackConfiguration">REST API Reference for PutPlaybackConfiguration Operation</seealso>
+        </member>
+        <member name="M:Amazon.MediaTailor.AmazonMediaTailorClient.TagResourceAsync(Amazon.MediaTailor.Model.TagResourceRequest,System.Threading.CancellationToken)">
+            <summary>
+            Adds tags to the specified playback configuration resource. You can specify one or
+            more tags to add.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the TagResource service method, as returned by MediaTailor.</returns>
+            <exception cref="T:Amazon.MediaTailor.Model.BadRequestException">
+            Invalid request parameters.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/TagResource">REST API Reference for TagResource Operation</seealso>
+        </member>
+        <member name="M:Amazon.MediaTailor.AmazonMediaTailorClient.UntagResourceAsync(Amazon.MediaTailor.Model.UntagResourceRequest,System.Threading.CancellationToken)">
+            <summary>
+            Removes tags from the specified playback configuration resource. You can specify one
+            or more tags to remove.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the UntagResource service method, as returned by MediaTailor.</returns>
+            <exception cref="T:Amazon.MediaTailor.Model.BadRequestException">
+            Invalid request parameters.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:Amazon.MediaTailor.IAmazonMediaTailor" -->
+        <member name="M:Amazon.MediaTailor.IAmazonMediaTailor.DeletePlaybackConfigurationAsync(Amazon.MediaTailor.Model.DeletePlaybackConfigurationRequest,System.Threading.CancellationToken)">
+            <summary>
+            Deletes the playback configuration for the specified name.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the DeletePlaybackConfiguration service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the DeletePlaybackConfiguration service method, as returned by MediaTailor.</returns>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DeletePlaybackConfiguration">REST API Reference for DeletePlaybackConfiguration Operation</seealso>
+        </member>
+        <member name="M:Amazon.MediaTailor.IAmazonMediaTailor.GetPlaybackConfigurationAsync(Amazon.MediaTailor.Model.GetPlaybackConfigurationRequest,System.Threading.CancellationToken)">
+            <summary>
+            Returns the playback configuration for the specified name.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the GetPlaybackConfiguration service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the GetPlaybackConfiguration service method, as returned by MediaTailor.</returns>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/GetPlaybackConfiguration">REST API Reference for GetPlaybackConfiguration Operation</seealso>
+        </member>
+        <member name="M:Amazon.MediaTailor.IAmazonMediaTailor.ListPlaybackConfigurationsAsync(Amazon.MediaTailor.Model.ListPlaybackConfigurationsRequest,System.Threading.CancellationToken)">
+            <summary>
+            Returns a list of the playback configurations defined in AWS Elemental MediaTailor.
+            You can specify a maximum number of configurations to return at a time. The default
+            maximum is 50. Results are returned in pagefuls. If MediaTailor has more configurations
+            than the specified maximum, it provides parameters in the response that you can use
+            to retrieve the next pageful.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the ListPlaybackConfigurations service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the ListPlaybackConfigurations service method, as returned by MediaTailor.</returns>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListPlaybackConfigurations">REST API Reference for ListPlaybackConfigurations Operation</seealso>
+        </member>
+        <member name="M:Amazon.MediaTailor.IAmazonMediaTailor.ListTagsForResourceAsync(Amazon.MediaTailor.Model.ListTagsForResourceRequest,System.Threading.CancellationToken)">
+            <summary>
+            Returns a list of the tags assigned to the specified playback configuration resource.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the ListTagsForResource service method, as returned by MediaTailor.</returns>
+            <exception cref="T:Amazon.MediaTailor.Model.BadRequestException">
+            Invalid request parameters.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        </member>
+        <member name="M:Amazon.MediaTailor.IAmazonMediaTailor.PutPlaybackConfigurationAsync(Amazon.MediaTailor.Model.PutPlaybackConfigurationRequest,System.Threading.CancellationToken)">
+            <summary>
+            Adds a new playback configuration to AWS Elemental MediaTailor.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the PutPlaybackConfiguration service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the PutPlaybackConfiguration service method, as returned by MediaTailor.</returns>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/PutPlaybackConfiguration">REST API Reference for PutPlaybackConfiguration Operation</seealso>
+        </member>
+        <member name="M:Amazon.MediaTailor.IAmazonMediaTailor.TagResourceAsync(Amazon.MediaTailor.Model.TagResourceRequest,System.Threading.CancellationToken)">
+            <summary>
+            Adds tags to the specified playback configuration resource. You can specify one or
+            more tags to add.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the TagResource service method, as returned by MediaTailor.</returns>
+            <exception cref="T:Amazon.MediaTailor.Model.BadRequestException">
+            Invalid request parameters.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/TagResource">REST API Reference for TagResource Operation</seealso>
+        </member>
+        <member name="M:Amazon.MediaTailor.IAmazonMediaTailor.UntagResourceAsync(Amazon.MediaTailor.Model.UntagResourceRequest,System.Threading.CancellationToken)">
+            <summary>
+            Removes tags from the specified playback configuration resource. You can specify one
+            or more tags to remove.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the UntagResource service method, as returned by MediaTailor.</returns>
+            <exception cref="T:Amazon.MediaTailor.Model.BadRequestException">
+            Invalid request parameters.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        </member>
+    </members>
+</doc>

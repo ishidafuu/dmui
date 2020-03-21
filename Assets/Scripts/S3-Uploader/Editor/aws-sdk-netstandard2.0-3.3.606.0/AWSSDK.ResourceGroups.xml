@@ -1,0 +1,3194 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AWSSDK.ResourceGroups</name>
+    </assembly>
+    <members>
+        <member name="T:Amazon.ResourceGroups.AmazonResourceGroupsConfig">
+            <summary>
+            Configuration for accessing Amazon ResourceGroups service
+            </summary>
+        </member>
+        <member name="M:Amazon.ResourceGroups.AmazonResourceGroupsConfig.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="P:Amazon.ResourceGroups.AmazonResourceGroupsConfig.RegionEndpointServiceName">
+            <summary>
+            The constant used to lookup in the region hash the endpoint.
+            </summary>
+        </member>
+        <member name="P:Amazon.ResourceGroups.AmazonResourceGroupsConfig.ServiceVersion">
+            <summary>
+            Gets the ServiceVersion property.
+            </summary>
+        </member>
+        <member name="P:Amazon.ResourceGroups.AmazonResourceGroupsConfig.UserAgent">
+            <summary>
+            Gets the value of UserAgent property.
+            </summary>
+        </member>
+        <member name="T:Amazon.ResourceGroups.AmazonResourceGroupsException">
+            <summary>
+             Common exception for the ResourceGroups service.
+             </summary>
+        </member>
+        <member name="M:Amazon.ResourceGroups.AmazonResourceGroupsException.#ctor(System.String)">
+            <summary>
+            Construct instance of AmazonResourceGroupsException
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:Amazon.ResourceGroups.AmazonResourceGroupsException.#ctor(System.String,System.Exception)">
+            <summary>
+            Construct instance of AmazonResourceGroupsException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.ResourceGroups.AmazonResourceGroupsException.#ctor(System.Exception)">
+            <summary>
+            Construct instance of AmazonResourceGroupsException
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.ResourceGroups.AmazonResourceGroupsException.#ctor(System.String,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of AmazonResourceGroupsException
+            </summary>
+            <param name="message"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="M:Amazon.ResourceGroups.AmazonResourceGroupsException.#ctor(System.String,System.Exception,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of AmazonResourceGroupsException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="T:Amazon.ResourceGroups.Internal.AmazonResourceGroupsMetadata">
+            <summary>
+            Service metadata for  Amazon ResourceGroups service
+            </summary>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Internal.AmazonResourceGroupsMetadata.ServiceId">
+            <summary>
+            Gets the value of the Service Id.
+            </summary>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Internal.AmazonResourceGroupsMetadata.OperationNameMapping">
+            <summary>
+            Gets the dictionary that gives mapping of renamed operations
+            </summary>
+        </member>
+        <member name="T:Amazon.ResourceGroups.AmazonResourceGroupsRequest">
+            <summary>
+            Base class for ResourceGroups operation requests.
+            </summary>
+        </member>
+        <member name="T:Amazon.ResourceGroups.Model.BadRequestException">
+            <summary>
+             ResourceGroups exception
+             </summary>
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.BadRequestException.#ctor(System.String)">
+            <summary>
+            Constructs a new BadRequestException with the specified error
+            message.
+            </summary>
+            <param name="message">
+            Describes the error encountered.
+            </param>
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.BadRequestException.#ctor(System.String,System.Exception)">
+            <summary>
+            Construct instance of BadRequestException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.BadRequestException.#ctor(System.Exception)">
+            <summary>
+            Construct instance of BadRequestException
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.BadRequestException.#ctor(System.String,System.Exception,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of BadRequestException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.BadRequestException.#ctor(System.String,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of BadRequestException
+            </summary>
+            <param name="message"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="T:Amazon.ResourceGroups.Model.CreateGroupRequest">
+            <summary>
+            Container for the parameters to the CreateGroup operation.
+            Creates a group with a specified name, description, and resource query.
+            </summary>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Model.CreateGroupRequest.Description">
+            <summary>
+            Gets and sets the property Description. 
+            <para>
+            The description of the resource group. Descriptions can have a maximum of 511 characters,
+            including letters, numbers, hyphens, underscores, punctuation, and spaces.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Model.CreateGroupRequest.Name">
+            <summary>
+            Gets and sets the property Name. 
+            <para>
+            The name of the group, which is the identifier of the group in other operations. A
+            resource group name cannot be updated after it is created. A resource group name can
+            have a maximum of 128 characters, including letters, numbers, hyphens, dots, and underscores.
+            The name cannot start with <code>AWS</code> or <code>aws</code>; these are reserved.
+            A resource group name must be unique within your account.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Model.CreateGroupRequest.ResourceQuery">
+            <summary>
+            Gets and sets the property ResourceQuery. 
+            <para>
+            The resource query that determines which AWS resources are members of this group.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Model.CreateGroupRequest.Tags">
+            <summary>
+            Gets and sets the property Tags. 
+            <para>
+            The tags to add to the group. A tag is a string-to-string map of key-value pairs.
+            Tag keys can have a maximum character length of 128 characters, and tag values can
+            have a maximum length of 256 characters.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.ResourceGroups.Model.CreateGroupResponse">
+            <summary>
+            This is the response object from the CreateGroup operation.
+            </summary>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Model.CreateGroupResponse.Group">
+            <summary>
+            Gets and sets the property Group. 
+            <para>
+            A full description of the resource group after it is created.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Model.CreateGroupResponse.ResourceQuery">
+            <summary>
+            Gets and sets the property ResourceQuery. 
+            <para>
+            The resource query associated with the group.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Model.CreateGroupResponse.Tags">
+            <summary>
+            Gets and sets the property Tags. 
+            <para>
+            The tags associated with the group.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.ResourceGroups.Model.DeleteGroupRequest">
+            <summary>
+            Container for the parameters to the DeleteGroup operation.
+            Deletes a specified resource group. Deleting a resource group does not delete resources
+            that are members of the group; it only deletes the group structure.
+            </summary>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Model.DeleteGroupRequest.GroupName">
+            <summary>
+            Gets and sets the property GroupName. 
+            <para>
+            The name of the resource group to delete.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.ResourceGroups.Model.DeleteGroupResponse">
+            <summary>
+            This is the response object from the DeleteGroup operation.
+            </summary>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Model.DeleteGroupResponse.Group">
+            <summary>
+            Gets and sets the property Group. 
+            <para>
+            A full description of the deleted resource group.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.ResourceGroups.Model.ForbiddenException">
+            <summary>
+             ResourceGroups exception
+             </summary>
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.ForbiddenException.#ctor(System.String)">
+            <summary>
+            Constructs a new ForbiddenException with the specified error
+            message.
+            </summary>
+            <param name="message">
+            Describes the error encountered.
+            </param>
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.ForbiddenException.#ctor(System.String,System.Exception)">
+            <summary>
+            Construct instance of ForbiddenException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.ForbiddenException.#ctor(System.Exception)">
+            <summary>
+            Construct instance of ForbiddenException
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.ForbiddenException.#ctor(System.String,System.Exception,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of ForbiddenException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.ForbiddenException.#ctor(System.String,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of ForbiddenException
+            </summary>
+            <param name="message"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="T:Amazon.ResourceGroups.Model.GetGroupQueryRequest">
+            <summary>
+            Container for the parameters to the GetGroupQuery operation.
+            Returns the resource query associated with the specified resource group.
+            </summary>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Model.GetGroupQueryRequest.GroupName">
+            <summary>
+            Gets and sets the property GroupName. 
+            <para>
+            The name of the resource group.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.ResourceGroups.Model.GetGroupQueryResponse">
+            <summary>
+            This is the response object from the GetGroupQuery operation.
+            </summary>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Model.GetGroupQueryResponse.GroupQuery">
+            <summary>
+            Gets and sets the property GroupQuery. 
+            <para>
+            The resource query associated with the specified group.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.ResourceGroups.Model.GetGroupRequest">
+            <summary>
+            Container for the parameters to the GetGroup operation.
+            Returns information about a specified resource group.
+            </summary>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Model.GetGroupRequest.GroupName">
+            <summary>
+            Gets and sets the property GroupName. 
+            <para>
+            The name of the resource group.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.ResourceGroups.Model.GetGroupResponse">
+            <summary>
+            This is the response object from the GetGroup operation.
+            </summary>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Model.GetGroupResponse.Group">
+            <summary>
+            Gets and sets the property Group. 
+            <para>
+            A full description of the resource group.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.ResourceGroups.Model.GetTagsRequest">
+            <summary>
+            Container for the parameters to the GetTags operation.
+            Returns a list of tags that are associated with a resource group, specified by an
+            ARN.
+            </summary>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Model.GetTagsRequest.Arn">
+            <summary>
+            Gets and sets the property Arn. 
+            <para>
+            The ARN of the resource group for which you want a list of tags. The resource must
+            exist within the account you are using.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.ResourceGroups.Model.GetTagsResponse">
+            <summary>
+            This is the response object from the GetTags operation.
+            </summary>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Model.GetTagsResponse.Arn">
+            <summary>
+            Gets and sets the property Arn. 
+            <para>
+            The ARN of the tagged resource group.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Model.GetTagsResponse.Tags">
+            <summary>
+            Gets and sets the property Tags. 
+            <para>
+            The tags associated with the specified resource group.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.ResourceGroups.Model.Group">
+            <summary>
+            A resource group.
+            </summary>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Model.Group.Description">
+            <summary>
+            Gets and sets the property Description. 
+            <para>
+            The description of the resource group.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Model.Group.GroupArn">
+            <summary>
+            Gets and sets the property GroupArn. 
+            <para>
+            The ARN of a resource group.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Model.Group.Name">
+            <summary>
+            Gets and sets the property Name. 
+            <para>
+            The name of a resource group.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.ResourceGroups.Model.GroupFilter">
+            <summary>
+            A filter name and value pair that is used to obtain more specific results from a list
+            of groups.
+            </summary>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Model.GroupFilter.Name">
+            <summary>
+            Gets and sets the property Name. 
+            <para>
+            The name of the filter. Filter names are case-sensitive.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Model.GroupFilter.Values">
+            <summary>
+            Gets and sets the property Values. 
+            <para>
+            One or more filter values. Allowed filter values vary by group filter name, and are
+            case-sensitive.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.ResourceGroups.Model.GroupIdentifier">
+            <summary>
+            The ARN and group name of a group.
+            </summary>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Model.GroupIdentifier.GroupArn">
+            <summary>
+            Gets and sets the property GroupArn. 
+            <para>
+            The ARN of a resource group.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Model.GroupIdentifier.GroupName">
+            <summary>
+            Gets and sets the property GroupName. 
+            <para>
+            The name of a resource group.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.ResourceGroups.Model.GroupQuery">
+            <summary>
+            The underlying resource query of a resource group. Resources that match query results
+            are part of the group.
+            </summary>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Model.GroupQuery.GroupName">
+            <summary>
+            Gets and sets the property GroupName. 
+            <para>
+            The name of a resource group that is associated with a specific resource query.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Model.GroupQuery.ResourceQuery">
+            <summary>
+            Gets and sets the property ResourceQuery. 
+            <para>
+            The resource query which determines which AWS resources are members of the associated
+            resource group.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.ResourceGroups.Model.InternalServerErrorException">
+            <summary>
+             ResourceGroups exception
+             </summary>
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.InternalServerErrorException.#ctor(System.String)">
+            <summary>
+            Constructs a new InternalServerErrorException with the specified error
+            message.
+            </summary>
+            <param name="message">
+            Describes the error encountered.
+            </param>
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.InternalServerErrorException.#ctor(System.String,System.Exception)">
+            <summary>
+            Construct instance of InternalServerErrorException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.InternalServerErrorException.#ctor(System.Exception)">
+            <summary>
+            Construct instance of InternalServerErrorException
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.InternalServerErrorException.#ctor(System.String,System.Exception,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of InternalServerErrorException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.InternalServerErrorException.#ctor(System.String,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of InternalServerErrorException
+            </summary>
+            <param name="message"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="T:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.CreateGroupRequestMarshaller">
+            <summary>
+            CreateGroup Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.CreateGroupRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.CreateGroupRequestMarshaller.Marshall(Amazon.ResourceGroups.Model.CreateGroupRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.CreateGroupRequestMarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.CreateGroupResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for CreateGroup operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.CreateGroupResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.CreateGroupResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.CreateGroupResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.DeleteGroupRequestMarshaller">
+            <summary>
+            DeleteGroup Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.DeleteGroupRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.DeleteGroupRequestMarshaller.Marshall(Amazon.ResourceGroups.Model.DeleteGroupRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.DeleteGroupRequestMarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.DeleteGroupResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for DeleteGroup operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.DeleteGroupResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.DeleteGroupResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.DeleteGroupResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.GetGroupQueryRequestMarshaller">
+            <summary>
+            GetGroupQuery Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.GetGroupQueryRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.GetGroupQueryRequestMarshaller.Marshall(Amazon.ResourceGroups.Model.GetGroupQueryRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.GetGroupQueryRequestMarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.GetGroupQueryResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for GetGroupQuery operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.GetGroupQueryResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.GetGroupQueryResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.GetGroupQueryResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.GetGroupRequestMarshaller">
+            <summary>
+            GetGroup Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.GetGroupRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.GetGroupRequestMarshaller.Marshall(Amazon.ResourceGroups.Model.GetGroupRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.GetGroupRequestMarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.GetGroupResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for GetGroup operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.GetGroupResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.GetGroupResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.GetGroupResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.GetTagsRequestMarshaller">
+            <summary>
+            GetTags Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.GetTagsRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.GetTagsRequestMarshaller.Marshall(Amazon.ResourceGroups.Model.GetTagsRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.GetTagsRequestMarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.GetTagsResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for GetTags operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.GetTagsResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.GetTagsResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.GetTagsResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.GroupFilterMarshaller">
+            <summary>
+            GroupFilter Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.GroupFilterMarshaller.Marshall(Amazon.ResourceGroups.Model.GroupFilter,Amazon.Runtime.Internal.Transform.JsonMarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="requestObject"></param>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="F:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.GroupFilterMarshaller.Instance">
+            <summary>
+            Singleton Marshaller.
+            </summary>  
+        </member>
+        <member name="T:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.GroupIdentifierUnmarshaller">
+            <summary>
+            Response Unmarshaller for GroupIdentifier Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.GroupIdentifierUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#ResourceGroups#Model#GroupIdentifier,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.GroupIdentifierUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.GroupIdentifierUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.GroupQueryUnmarshaller">
+            <summary>
+            Response Unmarshaller for GroupQuery Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.GroupQueryUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#ResourceGroups#Model#GroupQuery,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.GroupQueryUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.GroupQueryUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.GroupUnmarshaller">
+            <summary>
+            Response Unmarshaller for Group Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.GroupUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#ResourceGroups#Model#Group,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.GroupUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.GroupUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.ListGroupResourcesRequestMarshaller">
+            <summary>
+            ListGroupResources Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.ListGroupResourcesRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.ListGroupResourcesRequestMarshaller.Marshall(Amazon.ResourceGroups.Model.ListGroupResourcesRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.ListGroupResourcesRequestMarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.ListGroupResourcesResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for ListGroupResources operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.ListGroupResourcesResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.ListGroupResourcesResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.ListGroupResourcesResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.ListGroupsRequestMarshaller">
+            <summary>
+            ListGroups Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.ListGroupsRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.ListGroupsRequestMarshaller.Marshall(Amazon.ResourceGroups.Model.ListGroupsRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.ListGroupsRequestMarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.ListGroupsResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for ListGroups operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.ListGroupsResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.ListGroupsResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.ListGroupsResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.QueryErrorUnmarshaller">
+            <summary>
+            Response Unmarshaller for QueryError Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.QueryErrorUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#ResourceGroups#Model#QueryError,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.QueryErrorUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.QueryErrorUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.ResourceFilterMarshaller">
+            <summary>
+            ResourceFilter Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.ResourceFilterMarshaller.Marshall(Amazon.ResourceGroups.Model.ResourceFilter,Amazon.Runtime.Internal.Transform.JsonMarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="requestObject"></param>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="F:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.ResourceFilterMarshaller.Instance">
+            <summary>
+            Singleton Marshaller.
+            </summary>  
+        </member>
+        <member name="T:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.ResourceIdentifierUnmarshaller">
+            <summary>
+            Response Unmarshaller for ResourceIdentifier Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.ResourceIdentifierUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#ResourceGroups#Model#ResourceIdentifier,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.ResourceIdentifierUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.ResourceIdentifierUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.ResourceQueryMarshaller">
+            <summary>
+            ResourceQuery Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.ResourceQueryMarshaller.Marshall(Amazon.ResourceGroups.Model.ResourceQuery,Amazon.Runtime.Internal.Transform.JsonMarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="requestObject"></param>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="F:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.ResourceQueryMarshaller.Instance">
+            <summary>
+            Singleton Marshaller.
+            </summary>  
+        </member>
+        <member name="T:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.ResourceQueryUnmarshaller">
+            <summary>
+            Response Unmarshaller for ResourceQuery Object
+            </summary>  
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.ResourceQueryUnmarshaller.Amazon#Runtime#Internal#Transform#IUnmarshaller{Amazon#ResourceGroups#Model#ResourceQuery,Amazon#Runtime#Internal#Transform#XmlUnmarshallerContext}#Unmarshall(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.ResourceQueryUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.ResourceQueryUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.SearchResourcesRequestMarshaller">
+            <summary>
+            SearchResources Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.SearchResourcesRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.SearchResourcesRequestMarshaller.Marshall(Amazon.ResourceGroups.Model.SearchResourcesRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.SearchResourcesRequestMarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.SearchResourcesResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for SearchResources operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.SearchResourcesResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.SearchResourcesResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.SearchResourcesResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.TagRequestMarshaller">
+            <summary>
+            Tag Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.TagRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.TagRequestMarshaller.Marshall(Amazon.ResourceGroups.Model.TagRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.TagRequestMarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.TagResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for Tag operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.TagResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.TagResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.TagResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.UntagRequestMarshaller">
+            <summary>
+            Untag Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.UntagRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.UntagRequestMarshaller.Marshall(Amazon.ResourceGroups.Model.UntagRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.UntagRequestMarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.UntagResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for Untag operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.UntagResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.UntagResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.UntagResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.UpdateGroupQueryRequestMarshaller">
+            <summary>
+            UpdateGroupQuery Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.UpdateGroupQueryRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.UpdateGroupQueryRequestMarshaller.Marshall(Amazon.ResourceGroups.Model.UpdateGroupQueryRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.UpdateGroupQueryRequestMarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.UpdateGroupQueryResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for UpdateGroupQuery operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.UpdateGroupQueryResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.UpdateGroupQueryResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.UpdateGroupQueryResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.UpdateGroupRequestMarshaller">
+            <summary>
+            UpdateGroup Request Marshaller
+            </summary>       
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.UpdateGroupRequestMarshaller.Marshall(Amazon.Runtime.AmazonWebServiceRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.UpdateGroupRequestMarshaller.Marshall(Amazon.ResourceGroups.Model.UpdateGroupRequest)">
+            <summary>
+            Marshaller the request object to the HTTP request.
+            </summary>  
+            <param name="publicRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.UpdateGroupRequestMarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.UpdateGroupResponseUnmarshaller">
+            <summary>
+            Response Unmarshaller for UpdateGroup operation
+            </summary>  
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.UpdateGroupResponseUnmarshaller.Unmarshall(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext)">
+            <summary>
+            Unmarshaller the response from the service to the response class.
+            </summary>  
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.UpdateGroupResponseUnmarshaller.UnmarshallException(Amazon.Runtime.Internal.Transform.JsonUnmarshallerContext,System.Exception,System.Net.HttpStatusCode)">
+            <summary>
+            Unmarshaller error response to exception.
+            </summary>  
+            <param name="context"></param>
+            <param name="innerException"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Model.Internal.MarshallTransformations.UpdateGroupResponseUnmarshaller.Instance">
+            <summary>
+            Gets the singleton.
+            </summary>  
+        </member>
+        <member name="T:Amazon.ResourceGroups.Model.ListGroupResourcesRequest">
+            <summary>
+            Container for the parameters to the ListGroupResources operation.
+            Returns a list of ARNs of resources that are members of a specified resource group.
+            </summary>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Model.ListGroupResourcesRequest.Filters">
+            <summary>
+            Gets and sets the property Filters. 
+            <para>
+            Filters, formatted as ResourceFilter objects, that you want to apply to a ListGroupResources
+            operation.
+            </para>
+             <ul> <li> 
+            <para>
+             <code>resource-type</code> - Filter resources by their type. Specify up to five resource
+            types in the format AWS::ServiceCode::ResourceType. For example, AWS::EC2::Instance,
+            or AWS::S3::Bucket.
+            </para>
+             </li> </ul>
+            </summary>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Model.ListGroupResourcesRequest.GroupName">
+            <summary>
+            Gets and sets the property GroupName. 
+            <para>
+            The name of the resource group.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Model.ListGroupResourcesRequest.MaxResults">
+            <summary>
+            Gets and sets the property MaxResults. 
+            <para>
+            The maximum number of group member ARNs that are returned in a single call by ListGroupResources,
+            in paginated output. By default, this number is 50.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Model.ListGroupResourcesRequest.NextToken">
+            <summary>
+            Gets and sets the property NextToken. 
+            <para>
+            The NextToken value that is returned in a paginated ListGroupResources request. To
+            get the next page of results, run the call again, add the NextToken parameter, and
+            specify the NextToken value.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.ResourceGroups.Model.ListGroupResourcesResponse">
+            <summary>
+            This is the response object from the ListGroupResources operation.
+            </summary>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Model.ListGroupResourcesResponse.NextToken">
+            <summary>
+            Gets and sets the property NextToken. 
+            <para>
+            The NextToken value to include in a subsequent <code>ListGroupResources</code> request,
+            to get more results.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Model.ListGroupResourcesResponse.QueryErrors">
+            <summary>
+            Gets and sets the property QueryErrors. 
+            <para>
+            A list of <code>QueryError</code> objects. Each error is an object that contains <code>ErrorCode</code>
+            and <code>Message</code> structures. Possible values for <code>ErrorCode</code> are
+            <code>CLOUDFORMATION_STACK_INACTIVE</code> and <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Model.ListGroupResourcesResponse.ResourceIdentifiers">
+            <summary>
+            Gets and sets the property ResourceIdentifiers. 
+            <para>
+            The ARNs and resource types of resources that are members of the group that you specified.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.ResourceGroups.Model.ListGroupsRequest">
+            <summary>
+            Container for the parameters to the ListGroups operation.
+            Returns a list of existing resource groups in your account.
+            </summary>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Model.ListGroupsRequest.Filters">
+            <summary>
+            Gets and sets the property Filters. 
+            <para>
+            Filters, formatted as GroupFilter objects, that you want to apply to a ListGroups
+            operation.
+            </para>
+             <ul> <li> 
+            <para>
+             <code>resource-type</code> - Filter groups by resource type. Specify up to five resource
+            types in the format AWS::ServiceCode::ResourceType. For example, AWS::EC2::Instance,
+            or AWS::S3::Bucket.
+            </para>
+             </li> </ul>
+            </summary>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Model.ListGroupsRequest.MaxResults">
+            <summary>
+            Gets and sets the property MaxResults. 
+            <para>
+            The maximum number of resource group results that are returned by ListGroups in paginated
+            output. By default, this number is 50.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Model.ListGroupsRequest.NextToken">
+            <summary>
+            Gets and sets the property NextToken. 
+            <para>
+            The NextToken value that is returned in a paginated <code>ListGroups</code> request.
+            To get the next page of results, run the call again, add the NextToken parameter,
+            and specify the NextToken value.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.ResourceGroups.Model.ListGroupsResponse">
+            <summary>
+            This is the response object from the ListGroups operation.
+            </summary>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Model.ListGroupsResponse.GroupIdentifiers">
+            <summary>
+            Gets and sets the property GroupIdentifiers. 
+            <para>
+            A list of GroupIdentifier objects. Each identifier is an object that contains both
+            the GroupName and the GroupArn.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Model.ListGroupsResponse.Groups">
+            <summary>
+            Gets and sets the property Groups. 
+            <para>
+            A list of resource groups.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Model.ListGroupsResponse.NextToken">
+            <summary>
+            Gets and sets the property NextToken. 
+            <para>
+            The NextToken value to include in a subsequent <code>ListGroups</code> request, to
+            get more results.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.ResourceGroups.Model.MethodNotAllowedException">
+            <summary>
+             ResourceGroups exception
+             </summary>
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.MethodNotAllowedException.#ctor(System.String)">
+            <summary>
+            Constructs a new MethodNotAllowedException with the specified error
+            message.
+            </summary>
+            <param name="message">
+            Describes the error encountered.
+            </param>
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.MethodNotAllowedException.#ctor(System.String,System.Exception)">
+            <summary>
+            Construct instance of MethodNotAllowedException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.MethodNotAllowedException.#ctor(System.Exception)">
+            <summary>
+            Construct instance of MethodNotAllowedException
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.MethodNotAllowedException.#ctor(System.String,System.Exception,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of MethodNotAllowedException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.MethodNotAllowedException.#ctor(System.String,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of MethodNotAllowedException
+            </summary>
+            <param name="message"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="T:Amazon.ResourceGroups.Model.NotFoundException">
+            <summary>
+             ResourceGroups exception
+             </summary>
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.NotFoundException.#ctor(System.String)">
+            <summary>
+            Constructs a new NotFoundException with the specified error
+            message.
+            </summary>
+            <param name="message">
+            Describes the error encountered.
+            </param>
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.NotFoundException.#ctor(System.String,System.Exception)">
+            <summary>
+            Construct instance of NotFoundException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.NotFoundException.#ctor(System.Exception)">
+            <summary>
+            Construct instance of NotFoundException
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.NotFoundException.#ctor(System.String,System.Exception,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of NotFoundException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.NotFoundException.#ctor(System.String,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of NotFoundException
+            </summary>
+            <param name="message"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="T:Amazon.ResourceGroups.Model.QueryError">
+            <summary>
+            A two-part error structure that can occur in <code>ListGroupResources</code> or <code>SearchResources</code>
+            operations on CloudFormation stack-based queries. The error occurs if the CloudFormation
+            stack on which the query is based either does not exist, or has a status that renders
+            the stack inactive. A <code>QueryError</code> occurrence does not necessarily mean
+            that AWS Resource Groups could not complete the operation, but the resulting group
+            might have no member resources.
+            </summary>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Model.QueryError.ErrorCode">
+            <summary>
+            Gets and sets the property ErrorCode. 
+            <para>
+            Possible values are <code>CLOUDFORMATION_STACK_INACTIVE</code> and <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Model.QueryError.Message">
+            <summary>
+            Gets and sets the property Message. 
+            <para>
+            A message that explains the <code>ErrorCode</code> value. Messages might state that
+            the specified CloudFormation stack does not exist (or no longer exists). For <code>CLOUDFORMATION_STACK_INACTIVE</code>,
+            the message typically states that the CloudFormation stack has a status that is not
+            (or no longer) active, such as <code>CREATE_FAILED</code>.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.ResourceGroups.Model.ResourceFilter">
+            <summary>
+            A filter name and value pair that is used to obtain more specific results from a list
+            of resources.
+            </summary>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Model.ResourceFilter.Name">
+            <summary>
+            Gets and sets the property Name. 
+            <para>
+            The name of the filter. Filter names are case-sensitive.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Model.ResourceFilter.Values">
+            <summary>
+            Gets and sets the property Values. 
+            <para>
+            One or more filter values. Allowed filter values vary by resource filter name, and
+            are case-sensitive.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.ResourceGroups.Model.ResourceIdentifier">
+            <summary>
+            The ARN of a resource, and its resource type.
+            </summary>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Model.ResourceIdentifier.ResourceArn">
+            <summary>
+            Gets and sets the property ResourceArn. 
+            <para>
+            The ARN of a resource.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Model.ResourceIdentifier.ResourceType">
+            <summary>
+            Gets and sets the property ResourceType. 
+            <para>
+            The resource type of a resource, such as <code>AWS::EC2::Instance</code>.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.ResourceGroups.Model.ResourceQuery">
+            <summary>
+            The query that is used to define a resource group or a search for resources.
+            </summary>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Model.ResourceQuery.Query">
+            <summary>
+            Gets and sets the property Query. 
+            <para>
+            The query that defines a group or a search.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Model.ResourceQuery.Type">
+            <summary>
+            Gets and sets the property Type. 
+            <para>
+            The type of the query. The valid values in this release are <code>TAG_FILTERS_1_0</code>
+            and <code>CLOUDFORMATION_STACK_1_0</code>.
+            </para>
+             
+            <para>
+             <i> <code>TAG_FILTERS_1_0:</code> </i> A JSON syntax that lets you specify a collection
+            of simple tag filters for resource types and tags, as supported by the AWS Tagging
+            API <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetResources.html">GetResources</a>
+            operation. If you specify more than one tag key, only resources that match all tag
+            keys, and at least one value of each specified tag key, are returned in your query.
+            If you specify more than one value for a tag key, a resource matches the filter if
+            it has a tag key value that matches <i>any</i> of the specified values.
+            </para>
+             
+            <para>
+            For example, consider the following sample query for resources that have two tags,
+            <code>Stage</code> and <code>Version</code>, with two values each. (<code>[{"Key":"Stage","Values":["Test","Deploy"]},{"Key":"Version","Values":["1","2"]}]</code>)
+            The results of this query might include the following.
+            </para>
+             <ul> <li> 
+            <para>
+            An EC2 instance that has the following two tags: <code>{"Key":"Stage","Value":"Deploy"}</code>,
+            and <code>{"Key":"Version","Value":"2"}</code> 
+            </para>
+             </li> <li> 
+            <para>
+            An S3 bucket that has the following two tags: {"Key":"Stage","Value":"Test"}, and
+            {"Key":"Version","Value":"1"}
+            </para>
+             </li> </ul> 
+            <para>
+            The query would not return the following results, however. The following EC2 instance
+            does not have all tag keys specified in the filter, so it is rejected. The RDS database
+            has all of the tag keys, but no values that match at least one of the specified tag
+            key values in the filter.
+            </para>
+             <ul> <li> 
+            <para>
+            An EC2 instance that has only the following tag: <code>{"Key":"Stage","Value":"Deploy"}</code>.
+            </para>
+             </li> <li> 
+            <para>
+            An RDS database that has the following two tags: <code>{"Key":"Stage","Value":"Archived"}</code>,
+            and <code>{"Key":"Version","Value":"4"}</code> 
+            </para>
+             </li> </ul> 
+            <para>
+             <i> <code>CLOUDFORMATION_STACK_1_0:</code> </i> A JSON syntax that lets you specify
+            a CloudFormation stack ARN.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.ResourceGroups.Model.SearchResourcesRequest">
+            <summary>
+            Container for the parameters to the SearchResources operation.
+            Returns a list of AWS resource identifiers that matches a specified query. The query
+            uses the same format as a resource query in a CreateGroup or UpdateGroupQuery operation.
+            </summary>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Model.SearchResourcesRequest.MaxResults">
+            <summary>
+            Gets and sets the property MaxResults. 
+            <para>
+            The maximum number of group member ARNs returned by <code>SearchResources</code> in
+            paginated output. By default, this number is 50.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Model.SearchResourcesRequest.NextToken">
+            <summary>
+            Gets and sets the property NextToken. 
+            <para>
+            The NextToken value that is returned in a paginated <code>SearchResources</code> request.
+            To get the next page of results, run the call again, add the NextToken parameter,
+            and specify the NextToken value.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Model.SearchResourcesRequest.ResourceQuery">
+            <summary>
+            Gets and sets the property ResourceQuery. 
+            <para>
+            The search query, using the same formats that are supported for resource group definition.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.ResourceGroups.Model.SearchResourcesResponse">
+            <summary>
+            This is the response object from the SearchResources operation.
+            </summary>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Model.SearchResourcesResponse.NextToken">
+            <summary>
+            Gets and sets the property NextToken. 
+            <para>
+            The NextToken value to include in a subsequent <code>SearchResources</code> request,
+            to get more results.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Model.SearchResourcesResponse.QueryErrors">
+            <summary>
+            Gets and sets the property QueryErrors. 
+            <para>
+            A list of <code>QueryError</code> objects. Each error is an object that contains <code>ErrorCode</code>
+            and <code>Message</code> structures. Possible values for <code>ErrorCode</code> are
+            <code>CLOUDFORMATION_STACK_INACTIVE</code> and <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Model.SearchResourcesResponse.ResourceIdentifiers">
+            <summary>
+            Gets and sets the property ResourceIdentifiers. 
+            <para>
+            The ARNs and resource types of resources that are members of the group that you specified.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.ResourceGroups.Model.TagRequest">
+            <summary>
+            Container for the parameters to the Tag operation.
+            Adds tags to a resource group with the specified ARN. Existing tags on a resource
+            group are not changed if they are not specified in the request parameters.
+            </summary>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Model.TagRequest.Arn">
+            <summary>
+            Gets and sets the property Arn. 
+            <para>
+            The ARN of the resource to which to add tags.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Model.TagRequest.Tags">
+            <summary>
+            Gets and sets the property Tags. 
+            <para>
+            The tags to add to the specified resource. A tag is a string-to-string map of key-value
+            pairs. Tag keys can have a maximum character length of 128 characters, and tag values
+            can have a maximum length of 256 characters.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.ResourceGroups.Model.TagResponse">
+            <summary>
+            This is the response object from the Tag operation.
+            </summary>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Model.TagResponse.Arn">
+            <summary>
+            Gets and sets the property Arn. 
+            <para>
+            The ARN of the tagged resource.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Model.TagResponse.Tags">
+            <summary>
+            Gets and sets the property Tags. 
+            <para>
+            The tags that have been added to the specified resource.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.ResourceGroups.Model.TooManyRequestsException">
+            <summary>
+             ResourceGroups exception
+             </summary>
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.TooManyRequestsException.#ctor(System.String)">
+            <summary>
+            Constructs a new TooManyRequestsException with the specified error
+            message.
+            </summary>
+            <param name="message">
+            Describes the error encountered.
+            </param>
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.TooManyRequestsException.#ctor(System.String,System.Exception)">
+            <summary>
+            Construct instance of TooManyRequestsException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.TooManyRequestsException.#ctor(System.Exception)">
+            <summary>
+            Construct instance of TooManyRequestsException
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.TooManyRequestsException.#ctor(System.String,System.Exception,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of TooManyRequestsException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.TooManyRequestsException.#ctor(System.String,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of TooManyRequestsException
+            </summary>
+            <param name="message"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="T:Amazon.ResourceGroups.Model.UnauthorizedException">
+            <summary>
+             ResourceGroups exception
+             </summary>
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.UnauthorizedException.#ctor(System.String)">
+            <summary>
+            Constructs a new UnauthorizedException with the specified error
+            message.
+            </summary>
+            <param name="message">
+            Describes the error encountered.
+            </param>
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.UnauthorizedException.#ctor(System.String,System.Exception)">
+            <summary>
+            Construct instance of UnauthorizedException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.UnauthorizedException.#ctor(System.Exception)">
+            <summary>
+            Construct instance of UnauthorizedException
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.UnauthorizedException.#ctor(System.String,System.Exception,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of UnauthorizedException
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="M:Amazon.ResourceGroups.Model.UnauthorizedException.#ctor(System.String,Amazon.Runtime.ErrorType,System.String,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Construct instance of UnauthorizedException
+            </summary>
+            <param name="message"></param>
+            <param name="errorType"></param>
+            <param name="errorCode"></param>
+            <param name="requestId"></param>
+            <param name="statusCode"></param>
+        </member>
+        <member name="T:Amazon.ResourceGroups.Model.UntagRequest">
+            <summary>
+            Container for the parameters to the Untag operation.
+            Deletes specified tags from a specified resource.
+            </summary>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Model.UntagRequest.Arn">
+            <summary>
+            Gets and sets the property Arn. 
+            <para>
+            The ARN of the resource from which to remove tags.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Model.UntagRequest.Keys">
+            <summary>
+            Gets and sets the property Keys. 
+            <para>
+            The keys of the tags to be removed.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.ResourceGroups.Model.UntagResponse">
+            <summary>
+            This is the response object from the Untag operation.
+            </summary>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Model.UntagResponse.Arn">
+            <summary>
+            Gets and sets the property Arn. 
+            <para>
+            The ARN of the resource from which tags have been removed.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Model.UntagResponse.Keys">
+            <summary>
+            Gets and sets the property Keys. 
+            <para>
+            The keys of tags that have been removed.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.ResourceGroups.Model.UpdateGroupQueryRequest">
+            <summary>
+            Container for the parameters to the UpdateGroupQuery operation.
+            Updates the resource query of a group.
+            </summary>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Model.UpdateGroupQueryRequest.GroupName">
+            <summary>
+            Gets and sets the property GroupName. 
+            <para>
+            The name of the resource group for which you want to edit the query.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Model.UpdateGroupQueryRequest.ResourceQuery">
+            <summary>
+            Gets and sets the property ResourceQuery. 
+            <para>
+            The resource query that determines which AWS resources are members of the resource
+            group.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.ResourceGroups.Model.UpdateGroupQueryResponse">
+            <summary>
+            This is the response object from the UpdateGroupQuery operation.
+            </summary>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Model.UpdateGroupQueryResponse.GroupQuery">
+            <summary>
+            Gets and sets the property GroupQuery. 
+            <para>
+            The resource query associated with the resource group after the update.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.ResourceGroups.Model.UpdateGroupRequest">
+            <summary>
+            Container for the parameters to the UpdateGroup operation.
+            Updates an existing group with a new or changed description. You cannot update the
+            name of a resource group.
+            </summary>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Model.UpdateGroupRequest.Description">
+            <summary>
+            Gets and sets the property Description. 
+            <para>
+            The description of the resource group. Descriptions can have a maximum of 511 characters,
+            including letters, numbers, hyphens, underscores, punctuation, and spaces.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Model.UpdateGroupRequest.GroupName">
+            <summary>
+            Gets and sets the property GroupName. 
+            <para>
+            The name of the resource group for which you want to update its description.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.ResourceGroups.Model.UpdateGroupResponse">
+            <summary>
+            This is the response object from the UpdateGroup operation.
+            </summary>
+        </member>
+        <member name="P:Amazon.ResourceGroups.Model.UpdateGroupResponse.Group">
+            <summary>
+            Gets and sets the property Group. 
+            <para>
+            The full description of the resource group after it has been updated.
+            </para>
+            </summary>
+        </member>
+        <member name="T:Amazon.ResourceGroups.GroupFilterName">
+            <summary>
+            Constants used for properties of type GroupFilterName.
+            </summary>
+        </member>
+        <member name="F:Amazon.ResourceGroups.GroupFilterName.ResourceType">
+            <summary>
+            Constant ResourceType for GroupFilterName
+            </summary>
+        </member>
+        <member name="M:Amazon.ResourceGroups.GroupFilterName.#ctor(System.String)">
+            <summary>
+            This constant constructor does not need to be called if the constant
+            you are attempting to use is already defined as a static instance of 
+            this class.
+            This constructor should be used to construct constants that are not
+            defined as statics, for instance if attempting to use a feature that is
+            newer than the current version of the SDK.
+            </summary>
+        </member>
+        <member name="M:Amazon.ResourceGroups.GroupFilterName.FindValue(System.String)">
+            <summary>
+            Finds the constant for the unique value.
+            </summary>
+            <param name="value">The unique value for the constant</param>
+            <returns>The constant for the unique value</returns>
+        </member>
+        <member name="M:Amazon.ResourceGroups.GroupFilterName.op_Implicit(System.String)~Amazon.ResourceGroups.GroupFilterName">
+            <summary>
+            Utility method to convert strings to the constant class.
+            </summary>
+            <param name="value">The string value to convert to the constant class.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.ResourceGroups.QueryErrorCode">
+            <summary>
+            Constants used for properties of type QueryErrorCode.
+            </summary>
+        </member>
+        <member name="F:Amazon.ResourceGroups.QueryErrorCode.CLOUDFORMATION_STACK_INACTIVE">
+            <summary>
+            Constant CLOUDFORMATION_STACK_INACTIVE for QueryErrorCode
+            </summary>
+        </member>
+        <member name="F:Amazon.ResourceGroups.QueryErrorCode.CLOUDFORMATION_STACK_NOT_EXISTING">
+            <summary>
+            Constant CLOUDFORMATION_STACK_NOT_EXISTING for QueryErrorCode
+            </summary>
+        </member>
+        <member name="M:Amazon.ResourceGroups.QueryErrorCode.#ctor(System.String)">
+            <summary>
+            This constant constructor does not need to be called if the constant
+            you are attempting to use is already defined as a static instance of 
+            this class.
+            This constructor should be used to construct constants that are not
+            defined as statics, for instance if attempting to use a feature that is
+            newer than the current version of the SDK.
+            </summary>
+        </member>
+        <member name="M:Amazon.ResourceGroups.QueryErrorCode.FindValue(System.String)">
+            <summary>
+            Finds the constant for the unique value.
+            </summary>
+            <param name="value">The unique value for the constant</param>
+            <returns>The constant for the unique value</returns>
+        </member>
+        <member name="M:Amazon.ResourceGroups.QueryErrorCode.op_Implicit(System.String)~Amazon.ResourceGroups.QueryErrorCode">
+            <summary>
+            Utility method to convert strings to the constant class.
+            </summary>
+            <param name="value">The string value to convert to the constant class.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.ResourceGroups.QueryType">
+            <summary>
+            Constants used for properties of type QueryType.
+            </summary>
+        </member>
+        <member name="F:Amazon.ResourceGroups.QueryType.CLOUDFORMATION_STACK_1_0">
+            <summary>
+            Constant CLOUDFORMATION_STACK_1_0 for QueryType
+            </summary>
+        </member>
+        <member name="F:Amazon.ResourceGroups.QueryType.TAG_FILTERS_1_0">
+            <summary>
+            Constant TAG_FILTERS_1_0 for QueryType
+            </summary>
+        </member>
+        <member name="M:Amazon.ResourceGroups.QueryType.#ctor(System.String)">
+            <summary>
+            This constant constructor does not need to be called if the constant
+            you are attempting to use is already defined as a static instance of 
+            this class.
+            This constructor should be used to construct constants that are not
+            defined as statics, for instance if attempting to use a feature that is
+            newer than the current version of the SDK.
+            </summary>
+        </member>
+        <member name="M:Amazon.ResourceGroups.QueryType.FindValue(System.String)">
+            <summary>
+            Finds the constant for the unique value.
+            </summary>
+            <param name="value">The unique value for the constant</param>
+            <returns>The constant for the unique value</returns>
+        </member>
+        <member name="M:Amazon.ResourceGroups.QueryType.op_Implicit(System.String)~Amazon.ResourceGroups.QueryType">
+            <summary>
+            Utility method to convert strings to the constant class.
+            </summary>
+            <param name="value">The string value to convert to the constant class.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.ResourceGroups.ResourceFilterName">
+            <summary>
+            Constants used for properties of type ResourceFilterName.
+            </summary>
+        </member>
+        <member name="F:Amazon.ResourceGroups.ResourceFilterName.ResourceType">
+            <summary>
+            Constant ResourceType for ResourceFilterName
+            </summary>
+        </member>
+        <member name="M:Amazon.ResourceGroups.ResourceFilterName.#ctor(System.String)">
+            <summary>
+            This constant constructor does not need to be called if the constant
+            you are attempting to use is already defined as a static instance of 
+            this class.
+            This constructor should be used to construct constants that are not
+            defined as statics, for instance if attempting to use a feature that is
+            newer than the current version of the SDK.
+            </summary>
+        </member>
+        <member name="M:Amazon.ResourceGroups.ResourceFilterName.FindValue(System.String)">
+            <summary>
+            Finds the constant for the unique value.
+            </summary>
+            <param name="value">The unique value for the constant</param>
+            <returns>The constant for the unique value</returns>
+        </member>
+        <member name="M:Amazon.ResourceGroups.ResourceFilterName.op_Implicit(System.String)~Amazon.ResourceGroups.ResourceFilterName">
+            <summary>
+            Utility method to convert strings to the constant class.
+            </summary>
+            <param name="value">The string value to convert to the constant class.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.ResourceGroups.AmazonResourceGroupsClient">
+             <summary>
+             Implementation for accessing ResourceGroups
+            
+             AWS Resource Groups 
+             <para>
+             AWS Resource Groups lets you organize AWS resources such as Amazon EC2 instances,
+             Amazon Relational Database Service databases, and Amazon S3 buckets into groups using
+             criteria that you define as tags. A resource group is a collection of resources that
+             match the resource types specified in a query, and share one or more tags or portions
+             of tags. You can create a group of resources based on their roles in your cloud infrastructure,
+             lifecycle stages, regions, application layers, or virtually any criteria. Resource
+             groups enable you to automate management tasks, such as those in AWS Systems Manager
+             Automation documents, on tag-related resources in AWS Systems Manager. Groups of tagged
+             resources also let you quickly view a custom console in AWS Systems Manager that shows
+             AWS Config compliance and other monitoring data about member resources.
+             </para>
+              
+             <para>
+             To create a resource group, build a resource query, and specify tags that identify
+             the criteria that members of the group have in common. Tags are key-value pairs.
+             </para>
+              
+             <para>
+             For more information about Resource Groups, see the <a href="https://docs.aws.amazon.com/ARG/latest/userguide/welcome.html">AWS
+             Resource Groups User Guide</a>.
+             </para>
+              
+             <para>
+             AWS Resource Groups uses a REST-compliant API that you can use to perform the following
+             types of operations.
+             </para>
+              <ul> <li> 
+             <para>
+             Create, Read, Update, and Delete (CRUD) operations on resource groups and resource
+             query entities
+             </para>
+              </li> <li> 
+             <para>
+             Applying, editing, and removing tags from resource groups
+             </para>
+              </li> <li> 
+             <para>
+             Resolving resource group member ARNs so they can be returned as search results
+             </para>
+              </li> <li> 
+             <para>
+             Getting data about resources that are members of a group
+             </para>
+              </li> <li> 
+             <para>
+             Searching AWS resources based on a resource query
+             </para>
+              </li> </ul>
+             </summary>
+        </member>
+        <member name="M:Amazon.ResourceGroups.AmazonResourceGroupsClient.#ctor">
+             <summary>
+             Constructs AmazonResourceGroupsClient with the credentials loaded from the application's
+             default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+             
+             Example App.config with credentials set. 
+             <code>
+             &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+             &lt;configuration&gt;
+                 &lt;appSettings&gt;
+                     &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+                 &lt;/appSettings&gt;
+             &lt;/configuration&gt;
+             </code>
+            
+             </summary>
+        </member>
+        <member name="M:Amazon.ResourceGroups.AmazonResourceGroupsClient.#ctor(Amazon.RegionEndpoint)">
+             <summary>
+             Constructs AmazonResourceGroupsClient with the credentials loaded from the application's
+             default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+             
+             Example App.config with credentials set. 
+             <code>
+             &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+             &lt;configuration&gt;
+                 &lt;appSettings&gt;
+                     &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+                 &lt;/appSettings&gt;
+             &lt;/configuration&gt;
+             </code>
+            
+             </summary>
+             <param name="region">The region to connect.</param>
+        </member>
+        <member name="M:Amazon.ResourceGroups.AmazonResourceGroupsClient.#ctor(Amazon.ResourceGroups.AmazonResourceGroupsConfig)">
+             <summary>
+             Constructs AmazonResourceGroupsClient with the credentials loaded from the application's
+             default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+             
+             Example App.config with credentials set. 
+             <code>
+             &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+             &lt;configuration&gt;
+                 &lt;appSettings&gt;
+                     &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+                 &lt;/appSettings&gt;
+             &lt;/configuration&gt;
+             </code>
+            
+             </summary>
+             <param name="config">The AmazonResourceGroupsClient Configuration Object</param>
+        </member>
+        <member name="M:Amazon.ResourceGroups.AmazonResourceGroupsClient.#ctor(Amazon.Runtime.AWSCredentials)">
+            <summary>
+            Constructs AmazonResourceGroupsClient with AWS Credentials
+            </summary>
+            <param name="credentials">AWS Credentials</param>
+        </member>
+        <member name="M:Amazon.ResourceGroups.AmazonResourceGroupsClient.#ctor(Amazon.Runtime.AWSCredentials,Amazon.RegionEndpoint)">
+            <summary>
+            Constructs AmazonResourceGroupsClient with AWS Credentials
+            </summary>
+            <param name="credentials">AWS Credentials</param>
+            <param name="region">The region to connect.</param>
+        </member>
+        <member name="M:Amazon.ResourceGroups.AmazonResourceGroupsClient.#ctor(Amazon.Runtime.AWSCredentials,Amazon.ResourceGroups.AmazonResourceGroupsConfig)">
+            <summary>
+            Constructs AmazonResourceGroupsClient with AWS Credentials and an
+            AmazonResourceGroupsClient Configuration object.
+            </summary>
+            <param name="credentials">AWS Credentials</param>
+            <param name="clientConfig">The AmazonResourceGroupsClient Configuration Object</param>
+        </member>
+        <member name="M:Amazon.ResourceGroups.AmazonResourceGroupsClient.#ctor(System.String,System.String)">
+            <summary>
+            Constructs AmazonResourceGroupsClient with AWS Access Key ID and AWS Secret Key
+            </summary>
+            <param name="awsAccessKeyId">AWS Access Key ID</param>
+            <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        </member>
+        <member name="M:Amazon.ResourceGroups.AmazonResourceGroupsClient.#ctor(System.String,System.String,Amazon.RegionEndpoint)">
+            <summary>
+            Constructs AmazonResourceGroupsClient with AWS Access Key ID and AWS Secret Key
+            </summary>
+            <param name="awsAccessKeyId">AWS Access Key ID</param>
+            <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+            <param name="region">The region to connect.</param>
+        </member>
+        <member name="M:Amazon.ResourceGroups.AmazonResourceGroupsClient.#ctor(System.String,System.String,Amazon.ResourceGroups.AmazonResourceGroupsConfig)">
+            <summary>
+            Constructs AmazonResourceGroupsClient with AWS Access Key ID, AWS Secret Key and an
+            AmazonResourceGroupsClient Configuration object. 
+            </summary>
+            <param name="awsAccessKeyId">AWS Access Key ID</param>
+            <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+            <param name="clientConfig">The AmazonResourceGroupsClient Configuration Object</param>
+        </member>
+        <member name="M:Amazon.ResourceGroups.AmazonResourceGroupsClient.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Constructs AmazonResourceGroupsClient with AWS Access Key ID and AWS Secret Key
+            </summary>
+            <param name="awsAccessKeyId">AWS Access Key ID</param>
+            <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+            <param name="awsSessionToken">AWS Session Token</param>
+        </member>
+        <member name="M:Amazon.ResourceGroups.AmazonResourceGroupsClient.#ctor(System.String,System.String,System.String,Amazon.RegionEndpoint)">
+            <summary>
+            Constructs AmazonResourceGroupsClient with AWS Access Key ID and AWS Secret Key
+            </summary>
+            <param name="awsAccessKeyId">AWS Access Key ID</param>
+            <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+            <param name="awsSessionToken">AWS Session Token</param>
+            <param name="region">The region to connect.</param>
+        </member>
+        <member name="M:Amazon.ResourceGroups.AmazonResourceGroupsClient.#ctor(System.String,System.String,System.String,Amazon.ResourceGroups.AmazonResourceGroupsConfig)">
+            <summary>
+            Constructs AmazonResourceGroupsClient with AWS Access Key ID, AWS Secret Key and an
+            AmazonResourceGroupsClient Configuration object. 
+            </summary>
+            <param name="awsAccessKeyId">AWS Access Key ID</param>
+            <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+            <param name="awsSessionToken">AWS Session Token</param>
+            <param name="clientConfig">The AmazonResourceGroupsClient Configuration Object</param>
+        </member>
+        <member name="M:Amazon.ResourceGroups.AmazonResourceGroupsClient.CreateSigner">
+            <summary>
+            Creates the signer for the service.
+            </summary>
+        </member>
+        <member name="P:Amazon.ResourceGroups.AmazonResourceGroupsClient.ServiceMetadata">
+            <summary>
+            Capture metadata for the service.
+            </summary>
+        </member>
+        <member name="M:Amazon.ResourceGroups.AmazonResourceGroupsClient.Dispose(System.Boolean)">
+            <summary>
+            Disposes the service client.
+            </summary>
+        </member>
+        <member name="M:Amazon.ResourceGroups.AmazonResourceGroupsClient.CreateGroupAsync(Amazon.ResourceGroups.Model.CreateGroupRequest,System.Threading.CancellationToken)">
+            <summary>
+            Creates a group with a specified name, description, and resource query.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the CreateGroup service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the CreateGroup service method, as returned by ResourceGroups.</returns>
+            <exception cref="T:Amazon.ResourceGroups.Model.BadRequestException">
+            The request does not comply with validation rules that are defined for the request
+            parameters.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.ForbiddenException">
+            The caller is not authorized to make the request.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.InternalServerErrorException">
+            An internal error occurred while processing the request.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.MethodNotAllowedException">
+            The request uses an HTTP method which is not allowed for the specified resource.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.TooManyRequestsException">
+            The caller has exceeded throttling limits.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/CreateGroup">REST API Reference for CreateGroup Operation</seealso>
+        </member>
+        <member name="M:Amazon.ResourceGroups.AmazonResourceGroupsClient.DeleteGroupAsync(Amazon.ResourceGroups.Model.DeleteGroupRequest,System.Threading.CancellationToken)">
+            <summary>
+            Deletes a specified resource group. Deleting a resource group does not delete resources
+            that are members of the group; it only deletes the group structure.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the DeleteGroup service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the DeleteGroup service method, as returned by ResourceGroups.</returns>
+            <exception cref="T:Amazon.ResourceGroups.Model.BadRequestException">
+            The request does not comply with validation rules that are defined for the request
+            parameters.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.ForbiddenException">
+            The caller is not authorized to make the request.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.InternalServerErrorException">
+            An internal error occurred while processing the request.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.MethodNotAllowedException">
+            The request uses an HTTP method which is not allowed for the specified resource.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.NotFoundException">
+            One or more resources specified in the request do not exist.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.TooManyRequestsException">
+            The caller has exceeded throttling limits.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/DeleteGroup">REST API Reference for DeleteGroup Operation</seealso>
+        </member>
+        <member name="M:Amazon.ResourceGroups.AmazonResourceGroupsClient.GetGroupAsync(Amazon.ResourceGroups.Model.GetGroupRequest,System.Threading.CancellationToken)">
+            <summary>
+            Returns information about a specified resource group.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the GetGroup service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the GetGroup service method, as returned by ResourceGroups.</returns>
+            <exception cref="T:Amazon.ResourceGroups.Model.BadRequestException">
+            The request does not comply with validation rules that are defined for the request
+            parameters.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.ForbiddenException">
+            The caller is not authorized to make the request.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.InternalServerErrorException">
+            An internal error occurred while processing the request.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.MethodNotAllowedException">
+            The request uses an HTTP method which is not allowed for the specified resource.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.NotFoundException">
+            One or more resources specified in the request do not exist.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.TooManyRequestsException">
+            The caller has exceeded throttling limits.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/GetGroup">REST API Reference for GetGroup Operation</seealso>
+        </member>
+        <member name="M:Amazon.ResourceGroups.AmazonResourceGroupsClient.GetGroupQueryAsync(Amazon.ResourceGroups.Model.GetGroupQueryRequest,System.Threading.CancellationToken)">
+            <summary>
+            Returns the resource query associated with the specified resource group.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the GetGroupQuery service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the GetGroupQuery service method, as returned by ResourceGroups.</returns>
+            <exception cref="T:Amazon.ResourceGroups.Model.BadRequestException">
+            The request does not comply with validation rules that are defined for the request
+            parameters.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.ForbiddenException">
+            The caller is not authorized to make the request.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.InternalServerErrorException">
+            An internal error occurred while processing the request.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.MethodNotAllowedException">
+            The request uses an HTTP method which is not allowed for the specified resource.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.NotFoundException">
+            One or more resources specified in the request do not exist.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.TooManyRequestsException">
+            The caller has exceeded throttling limits.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/GetGroupQuery">REST API Reference for GetGroupQuery Operation</seealso>
+        </member>
+        <member name="M:Amazon.ResourceGroups.AmazonResourceGroupsClient.GetTagsAsync(Amazon.ResourceGroups.Model.GetTagsRequest,System.Threading.CancellationToken)">
+            <summary>
+            Returns a list of tags that are associated with a resource group, specified by an
+            ARN.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the GetTags service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the GetTags service method, as returned by ResourceGroups.</returns>
+            <exception cref="T:Amazon.ResourceGroups.Model.BadRequestException">
+            The request does not comply with validation rules that are defined for the request
+            parameters.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.ForbiddenException">
+            The caller is not authorized to make the request.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.InternalServerErrorException">
+            An internal error occurred while processing the request.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.MethodNotAllowedException">
+            The request uses an HTTP method which is not allowed for the specified resource.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.NotFoundException">
+            One or more resources specified in the request do not exist.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.TooManyRequestsException">
+            The caller has exceeded throttling limits.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/GetTags">REST API Reference for GetTags Operation</seealso>
+        </member>
+        <member name="M:Amazon.ResourceGroups.AmazonResourceGroupsClient.ListGroupResourcesAsync(Amazon.ResourceGroups.Model.ListGroupResourcesRequest,System.Threading.CancellationToken)">
+            <summary>
+            Returns a list of ARNs of resources that are members of a specified resource group.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the ListGroupResources service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the ListGroupResources service method, as returned by ResourceGroups.</returns>
+            <exception cref="T:Amazon.ResourceGroups.Model.BadRequestException">
+            The request does not comply with validation rules that are defined for the request
+            parameters.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.ForbiddenException">
+            The caller is not authorized to make the request.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.InternalServerErrorException">
+            An internal error occurred while processing the request.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.MethodNotAllowedException">
+            The request uses an HTTP method which is not allowed for the specified resource.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.NotFoundException">
+            One or more resources specified in the request do not exist.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.TooManyRequestsException">
+            The caller has exceeded throttling limits.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.UnauthorizedException">
+            The request has not been applied because it lacks valid authentication credentials
+            for the target resource.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/ListGroupResources">REST API Reference for ListGroupResources Operation</seealso>
+        </member>
+        <member name="M:Amazon.ResourceGroups.AmazonResourceGroupsClient.ListGroupsAsync(Amazon.ResourceGroups.Model.ListGroupsRequest,System.Threading.CancellationToken)">
+            <summary>
+            Returns a list of existing resource groups in your account.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the ListGroups service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the ListGroups service method, as returned by ResourceGroups.</returns>
+            <exception cref="T:Amazon.ResourceGroups.Model.BadRequestException">
+            The request does not comply with validation rules that are defined for the request
+            parameters.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.ForbiddenException">
+            The caller is not authorized to make the request.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.InternalServerErrorException">
+            An internal error occurred while processing the request.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.MethodNotAllowedException">
+            The request uses an HTTP method which is not allowed for the specified resource.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.TooManyRequestsException">
+            The caller has exceeded throttling limits.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/ListGroups">REST API Reference for ListGroups Operation</seealso>
+        </member>
+        <member name="M:Amazon.ResourceGroups.AmazonResourceGroupsClient.SearchResourcesAsync(Amazon.ResourceGroups.Model.SearchResourcesRequest,System.Threading.CancellationToken)">
+            <summary>
+            Returns a list of AWS resource identifiers that matches a specified query. The query
+            uses the same format as a resource query in a CreateGroup or UpdateGroupQuery operation.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the SearchResources service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the SearchResources service method, as returned by ResourceGroups.</returns>
+            <exception cref="T:Amazon.ResourceGroups.Model.BadRequestException">
+            The request does not comply with validation rules that are defined for the request
+            parameters.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.ForbiddenException">
+            The caller is not authorized to make the request.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.InternalServerErrorException">
+            An internal error occurred while processing the request.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.MethodNotAllowedException">
+            The request uses an HTTP method which is not allowed for the specified resource.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.TooManyRequestsException">
+            The caller has exceeded throttling limits.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.UnauthorizedException">
+            The request has not been applied because it lacks valid authentication credentials
+            for the target resource.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/SearchResources">REST API Reference for SearchResources Operation</seealso>
+        </member>
+        <member name="M:Amazon.ResourceGroups.AmazonResourceGroupsClient.TagAsync(Amazon.ResourceGroups.Model.TagRequest,System.Threading.CancellationToken)">
+            <summary>
+            Adds tags to a resource group with the specified ARN. Existing tags on a resource
+            group are not changed if they are not specified in the request parameters.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the Tag service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the Tag service method, as returned by ResourceGroups.</returns>
+            <exception cref="T:Amazon.ResourceGroups.Model.BadRequestException">
+            The request does not comply with validation rules that are defined for the request
+            parameters.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.ForbiddenException">
+            The caller is not authorized to make the request.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.InternalServerErrorException">
+            An internal error occurred while processing the request.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.MethodNotAllowedException">
+            The request uses an HTTP method which is not allowed for the specified resource.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.NotFoundException">
+            One or more resources specified in the request do not exist.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.TooManyRequestsException">
+            The caller has exceeded throttling limits.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/Tag">REST API Reference for Tag Operation</seealso>
+        </member>
+        <member name="M:Amazon.ResourceGroups.AmazonResourceGroupsClient.UntagAsync(Amazon.ResourceGroups.Model.UntagRequest,System.Threading.CancellationToken)">
+            <summary>
+            Deletes specified tags from a specified resource.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the Untag service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the Untag service method, as returned by ResourceGroups.</returns>
+            <exception cref="T:Amazon.ResourceGroups.Model.BadRequestException">
+            The request does not comply with validation rules that are defined for the request
+            parameters.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.ForbiddenException">
+            The caller is not authorized to make the request.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.InternalServerErrorException">
+            An internal error occurred while processing the request.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.MethodNotAllowedException">
+            The request uses an HTTP method which is not allowed for the specified resource.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.NotFoundException">
+            One or more resources specified in the request do not exist.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.TooManyRequestsException">
+            The caller has exceeded throttling limits.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/Untag">REST API Reference for Untag Operation</seealso>
+        </member>
+        <member name="M:Amazon.ResourceGroups.AmazonResourceGroupsClient.UpdateGroupAsync(Amazon.ResourceGroups.Model.UpdateGroupRequest,System.Threading.CancellationToken)">
+            <summary>
+            Updates an existing group with a new or changed description. You cannot update the
+            name of a resource group.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the UpdateGroup service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the UpdateGroup service method, as returned by ResourceGroups.</returns>
+            <exception cref="T:Amazon.ResourceGroups.Model.BadRequestException">
+            The request does not comply with validation rules that are defined for the request
+            parameters.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.ForbiddenException">
+            The caller is not authorized to make the request.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.InternalServerErrorException">
+            An internal error occurred while processing the request.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.MethodNotAllowedException">
+            The request uses an HTTP method which is not allowed for the specified resource.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.NotFoundException">
+            One or more resources specified in the request do not exist.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.TooManyRequestsException">
+            The caller has exceeded throttling limits.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/UpdateGroup">REST API Reference for UpdateGroup Operation</seealso>
+        </member>
+        <member name="M:Amazon.ResourceGroups.AmazonResourceGroupsClient.UpdateGroupQueryAsync(Amazon.ResourceGroups.Model.UpdateGroupQueryRequest,System.Threading.CancellationToken)">
+            <summary>
+            Updates the resource query of a group.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the UpdateGroupQuery service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the UpdateGroupQuery service method, as returned by ResourceGroups.</returns>
+            <exception cref="T:Amazon.ResourceGroups.Model.BadRequestException">
+            The request does not comply with validation rules that are defined for the request
+            parameters.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.ForbiddenException">
+            The caller is not authorized to make the request.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.InternalServerErrorException">
+            An internal error occurred while processing the request.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.MethodNotAllowedException">
+            The request uses an HTTP method which is not allowed for the specified resource.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.NotFoundException">
+            One or more resources specified in the request do not exist.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.TooManyRequestsException">
+            The caller has exceeded throttling limits.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/UpdateGroupQuery">REST API Reference for UpdateGroupQuery Operation</seealso>
+        </member>
+        <member name="T:Amazon.ResourceGroups.IAmazonResourceGroups">
+             <summary>
+             Interface for accessing ResourceGroups
+            
+             AWS Resource Groups 
+             <para>
+             AWS Resource Groups lets you organize AWS resources such as Amazon EC2 instances,
+             Amazon Relational Database Service databases, and Amazon S3 buckets into groups using
+             criteria that you define as tags. A resource group is a collection of resources that
+             match the resource types specified in a query, and share one or more tags or portions
+             of tags. You can create a group of resources based on their roles in your cloud infrastructure,
+             lifecycle stages, regions, application layers, or virtually any criteria. Resource
+             groups enable you to automate management tasks, such as those in AWS Systems Manager
+             Automation documents, on tag-related resources in AWS Systems Manager. Groups of tagged
+             resources also let you quickly view a custom console in AWS Systems Manager that shows
+             AWS Config compliance and other monitoring data about member resources.
+             </para>
+              
+             <para>
+             To create a resource group, build a resource query, and specify tags that identify
+             the criteria that members of the group have in common. Tags are key-value pairs.
+             </para>
+              
+             <para>
+             For more information about Resource Groups, see the <a href="https://docs.aws.amazon.com/ARG/latest/userguide/welcome.html">AWS
+             Resource Groups User Guide</a>.
+             </para>
+              
+             <para>
+             AWS Resource Groups uses a REST-compliant API that you can use to perform the following
+             types of operations.
+             </para>
+              <ul> <li> 
+             <para>
+             Create, Read, Update, and Delete (CRUD) operations on resource groups and resource
+             query entities
+             </para>
+              </li> <li> 
+             <para>
+             Applying, editing, and removing tags from resource groups
+             </para>
+              </li> <li> 
+             <para>
+             Resolving resource group member ARNs so they can be returned as search results
+             </para>
+              </li> <li> 
+             <para>
+             Getting data about resources that are members of a group
+             </para>
+              </li> <li> 
+             <para>
+             Searching AWS resources based on a resource query
+             </para>
+              </li> </ul>
+             </summary>
+        </member>
+        <member name="M:Amazon.ResourceGroups.IAmazonResourceGroups.CreateGroupAsync(Amazon.ResourceGroups.Model.CreateGroupRequest,System.Threading.CancellationToken)">
+            <summary>
+            Creates a group with a specified name, description, and resource query.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the CreateGroup service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the CreateGroup service method, as returned by ResourceGroups.</returns>
+            <exception cref="T:Amazon.ResourceGroups.Model.BadRequestException">
+            The request does not comply with validation rules that are defined for the request
+            parameters.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.ForbiddenException">
+            The caller is not authorized to make the request.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.InternalServerErrorException">
+            An internal error occurred while processing the request.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.MethodNotAllowedException">
+            The request uses an HTTP method which is not allowed for the specified resource.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.TooManyRequestsException">
+            The caller has exceeded throttling limits.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/CreateGroup">REST API Reference for CreateGroup Operation</seealso>
+        </member>
+        <member name="M:Amazon.ResourceGroups.IAmazonResourceGroups.DeleteGroupAsync(Amazon.ResourceGroups.Model.DeleteGroupRequest,System.Threading.CancellationToken)">
+            <summary>
+            Deletes a specified resource group. Deleting a resource group does not delete resources
+            that are members of the group; it only deletes the group structure.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the DeleteGroup service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the DeleteGroup service method, as returned by ResourceGroups.</returns>
+            <exception cref="T:Amazon.ResourceGroups.Model.BadRequestException">
+            The request does not comply with validation rules that are defined for the request
+            parameters.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.ForbiddenException">
+            The caller is not authorized to make the request.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.InternalServerErrorException">
+            An internal error occurred while processing the request.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.MethodNotAllowedException">
+            The request uses an HTTP method which is not allowed for the specified resource.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.NotFoundException">
+            One or more resources specified in the request do not exist.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.TooManyRequestsException">
+            The caller has exceeded throttling limits.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/DeleteGroup">REST API Reference for DeleteGroup Operation</seealso>
+        </member>
+        <member name="M:Amazon.ResourceGroups.IAmazonResourceGroups.GetGroupAsync(Amazon.ResourceGroups.Model.GetGroupRequest,System.Threading.CancellationToken)">
+            <summary>
+            Returns information about a specified resource group.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the GetGroup service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the GetGroup service method, as returned by ResourceGroups.</returns>
+            <exception cref="T:Amazon.ResourceGroups.Model.BadRequestException">
+            The request does not comply with validation rules that are defined for the request
+            parameters.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.ForbiddenException">
+            The caller is not authorized to make the request.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.InternalServerErrorException">
+            An internal error occurred while processing the request.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.MethodNotAllowedException">
+            The request uses an HTTP method which is not allowed for the specified resource.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.NotFoundException">
+            One or more resources specified in the request do not exist.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.TooManyRequestsException">
+            The caller has exceeded throttling limits.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/GetGroup">REST API Reference for GetGroup Operation</seealso>
+        </member>
+        <member name="M:Amazon.ResourceGroups.IAmazonResourceGroups.GetGroupQueryAsync(Amazon.ResourceGroups.Model.GetGroupQueryRequest,System.Threading.CancellationToken)">
+            <summary>
+            Returns the resource query associated with the specified resource group.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the GetGroupQuery service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the GetGroupQuery service method, as returned by ResourceGroups.</returns>
+            <exception cref="T:Amazon.ResourceGroups.Model.BadRequestException">
+            The request does not comply with validation rules that are defined for the request
+            parameters.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.ForbiddenException">
+            The caller is not authorized to make the request.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.InternalServerErrorException">
+            An internal error occurred while processing the request.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.MethodNotAllowedException">
+            The request uses an HTTP method which is not allowed for the specified resource.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.NotFoundException">
+            One or more resources specified in the request do not exist.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.TooManyRequestsException">
+            The caller has exceeded throttling limits.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/GetGroupQuery">REST API Reference for GetGroupQuery Operation</seealso>
+        </member>
+        <member name="M:Amazon.ResourceGroups.IAmazonResourceGroups.GetTagsAsync(Amazon.ResourceGroups.Model.GetTagsRequest,System.Threading.CancellationToken)">
+            <summary>
+            Returns a list of tags that are associated with a resource group, specified by an
+            ARN.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the GetTags service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the GetTags service method, as returned by ResourceGroups.</returns>
+            <exception cref="T:Amazon.ResourceGroups.Model.BadRequestException">
+            The request does not comply with validation rules that are defined for the request
+            parameters.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.ForbiddenException">
+            The caller is not authorized to make the request.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.InternalServerErrorException">
+            An internal error occurred while processing the request.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.MethodNotAllowedException">
+            The request uses an HTTP method which is not allowed for the specified resource.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.NotFoundException">
+            One or more resources specified in the request do not exist.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.TooManyRequestsException">
+            The caller has exceeded throttling limits.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/GetTags">REST API Reference for GetTags Operation</seealso>
+        </member>
+        <member name="M:Amazon.ResourceGroups.IAmazonResourceGroups.ListGroupResourcesAsync(Amazon.ResourceGroups.Model.ListGroupResourcesRequest,System.Threading.CancellationToken)">
+            <summary>
+            Returns a list of ARNs of resources that are members of a specified resource group.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the ListGroupResources service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the ListGroupResources service method, as returned by ResourceGroups.</returns>
+            <exception cref="T:Amazon.ResourceGroups.Model.BadRequestException">
+            The request does not comply with validation rules that are defined for the request
+            parameters.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.ForbiddenException">
+            The caller is not authorized to make the request.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.InternalServerErrorException">
+            An internal error occurred while processing the request.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.MethodNotAllowedException">
+            The request uses an HTTP method which is not allowed for the specified resource.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.NotFoundException">
+            One or more resources specified in the request do not exist.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.TooManyRequestsException">
+            The caller has exceeded throttling limits.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.UnauthorizedException">
+            The request has not been applied because it lacks valid authentication credentials
+            for the target resource.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/ListGroupResources">REST API Reference for ListGroupResources Operation</seealso>
+        </member>
+        <member name="M:Amazon.ResourceGroups.IAmazonResourceGroups.ListGroupsAsync(Amazon.ResourceGroups.Model.ListGroupsRequest,System.Threading.CancellationToken)">
+            <summary>
+            Returns a list of existing resource groups in your account.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the ListGroups service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the ListGroups service method, as returned by ResourceGroups.</returns>
+            <exception cref="T:Amazon.ResourceGroups.Model.BadRequestException">
+            The request does not comply with validation rules that are defined for the request
+            parameters.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.ForbiddenException">
+            The caller is not authorized to make the request.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.InternalServerErrorException">
+            An internal error occurred while processing the request.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.MethodNotAllowedException">
+            The request uses an HTTP method which is not allowed for the specified resource.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.TooManyRequestsException">
+            The caller has exceeded throttling limits.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/ListGroups">REST API Reference for ListGroups Operation</seealso>
+        </member>
+        <member name="M:Amazon.ResourceGroups.IAmazonResourceGroups.SearchResourcesAsync(Amazon.ResourceGroups.Model.SearchResourcesRequest,System.Threading.CancellationToken)">
+            <summary>
+            Returns a list of AWS resource identifiers that matches a specified query. The query
+            uses the same format as a resource query in a CreateGroup or UpdateGroupQuery operation.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the SearchResources service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the SearchResources service method, as returned by ResourceGroups.</returns>
+            <exception cref="T:Amazon.ResourceGroups.Model.BadRequestException">
+            The request does not comply with validation rules that are defined for the request
+            parameters.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.ForbiddenException">
+            The caller is not authorized to make the request.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.InternalServerErrorException">
+            An internal error occurred while processing the request.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.MethodNotAllowedException">
+            The request uses an HTTP method which is not allowed for the specified resource.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.TooManyRequestsException">
+            The caller has exceeded throttling limits.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.UnauthorizedException">
+            The request has not been applied because it lacks valid authentication credentials
+            for the target resource.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/SearchResources">REST API Reference for SearchResources Operation</seealso>
+        </member>
+        <member name="M:Amazon.ResourceGroups.IAmazonResourceGroups.TagAsync(Amazon.ResourceGroups.Model.TagRequest,System.Threading.CancellationToken)">
+            <summary>
+            Adds tags to a resource group with the specified ARN. Existing tags on a resource
+            group are not changed if they are not specified in the request parameters.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the Tag service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the Tag service method, as returned by ResourceGroups.</returns>
+            <exception cref="T:Amazon.ResourceGroups.Model.BadRequestException">
+            The request does not comply with validation rules that are defined for the request
+            parameters.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.ForbiddenException">
+            The caller is not authorized to make the request.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.InternalServerErrorException">
+            An internal error occurred while processing the request.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.MethodNotAllowedException">
+            The request uses an HTTP method which is not allowed for the specified resource.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.NotFoundException">
+            One or more resources specified in the request do not exist.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.TooManyRequestsException">
+            The caller has exceeded throttling limits.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/Tag">REST API Reference for Tag Operation</seealso>
+        </member>
+        <member name="M:Amazon.ResourceGroups.IAmazonResourceGroups.UntagAsync(Amazon.ResourceGroups.Model.UntagRequest,System.Threading.CancellationToken)">
+            <summary>
+            Deletes specified tags from a specified resource.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the Untag service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the Untag service method, as returned by ResourceGroups.</returns>
+            <exception cref="T:Amazon.ResourceGroups.Model.BadRequestException">
+            The request does not comply with validation rules that are defined for the request
+            parameters.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.ForbiddenException">
+            The caller is not authorized to make the request.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.InternalServerErrorException">
+            An internal error occurred while processing the request.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.MethodNotAllowedException">
+            The request uses an HTTP method which is not allowed for the specified resource.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.NotFoundException">
+            One or more resources specified in the request do not exist.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.TooManyRequestsException">
+            The caller has exceeded throttling limits.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/Untag">REST API Reference for Untag Operation</seealso>
+        </member>
+        <member name="M:Amazon.ResourceGroups.IAmazonResourceGroups.UpdateGroupAsync(Amazon.ResourceGroups.Model.UpdateGroupRequest,System.Threading.CancellationToken)">
+            <summary>
+            Updates an existing group with a new or changed description. You cannot update the
+            name of a resource group.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the UpdateGroup service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the UpdateGroup service method, as returned by ResourceGroups.</returns>
+            <exception cref="T:Amazon.ResourceGroups.Model.BadRequestException">
+            The request does not comply with validation rules that are defined for the request
+            parameters.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.ForbiddenException">
+            The caller is not authorized to make the request.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.InternalServerErrorException">
+            An internal error occurred while processing the request.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.MethodNotAllowedException">
+            The request uses an HTTP method which is not allowed for the specified resource.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.NotFoundException">
+            One or more resources specified in the request do not exist.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.TooManyRequestsException">
+            The caller has exceeded throttling limits.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/UpdateGroup">REST API Reference for UpdateGroup Operation</seealso>
+        </member>
+        <member name="M:Amazon.ResourceGroups.IAmazonResourceGroups.UpdateGroupQueryAsync(Amazon.ResourceGroups.Model.UpdateGroupQueryRequest,System.Threading.CancellationToken)">
+            <summary>
+            Updates the resource query of a group.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the UpdateGroupQuery service method.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            
+            <returns>The response from the UpdateGroupQuery service method, as returned by ResourceGroups.</returns>
+            <exception cref="T:Amazon.ResourceGroups.Model.BadRequestException">
+            The request does not comply with validation rules that are defined for the request
+            parameters.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.ForbiddenException">
+            The caller is not authorized to make the request.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.InternalServerErrorException">
+            An internal error occurred while processing the request.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.MethodNotAllowedException">
+            The request uses an HTTP method which is not allowed for the specified resource.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.NotFoundException">
+            One or more resources specified in the request do not exist.
+            </exception>
+            <exception cref="T:Amazon.ResourceGroups.Model.TooManyRequestsException">
+            The caller has exceeded throttling limits.
+            </exception>
+            <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/UpdateGroupQuery">REST API Reference for UpdateGroupQuery Operation</seealso>
+        </member>
+    </members>
+</doc>
