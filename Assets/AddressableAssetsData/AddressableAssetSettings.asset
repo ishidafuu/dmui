@@ -43,7 +43,7 @@ MonoBehaviour:
       - m_Id: 8ddd3f3a3f72f9d46b874614a8ff2f9c
         m_Value: ServerData/[BuildTarget]
       - m_Id: a243f2c5dbb7623418a0601c000b64e9
-        m_Value: http://localhost/[BuildTarget]
+        m_Value: https://nm2ab.s3.amazonaws.com/[BuildTarget]
     m_ProfileEntryNames:
     - m_Id: 91cc3ebcf28067f4aa774ac1871fab86
       m_Name: BuildTarget

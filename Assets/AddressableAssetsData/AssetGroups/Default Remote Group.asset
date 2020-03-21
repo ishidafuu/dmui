@@ -17,12 +17,8 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 5ecb6b08476b6484d9135502af613309
   m_SerializeEntries:
-  - m_GUID: 44526fad250c6584e871dcbcd10b42a5
-    m_Address: Assets/OriginalAssets/EnhancedScroller_User_Manual.pdf
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: bf299b2c4cd0c4baa8b14574b4f611b4
-    m_Address: Assets/OriginalAssets/Terrain.asset
+  - m_GUID: 78e3ccdea4b85c54d92bfedeb4e9a2cd
+    m_Address: Assets/AssetBundle/nobi.png
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0
