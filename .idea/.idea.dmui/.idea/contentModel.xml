@@ -160,6 +160,8 @@
           <e p="AssetAddress.cs" t="Include" />
           <e p="AssetLabel.cs" t="Include" />
           <e p="Editor" t="Include">
+            <e p="AASUtility.cs" t="Include" />
+            <e p="FindReferencedAsset.cs" t="Include" />
             <e p="MasterDataBuiilder.cs" t="Include" />
             <e p="MasterMemoryCodeGenerator.cs" t="Include" />
             <e p="MessagePackCodeGenerator.cs" t="Include" />
