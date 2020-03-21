@@ -35,19 +35,35 @@ namespace DM
         private void OnGUI()
         {
             GUILayout.Label("Base Settings", EditorStyles.boldLabel);
+            if (GUILayout.Button("Upload content"))
+            {
+                UpdateValues();
+                Upload();
+            }
+            else if (GUILayout.Button("Upload content with Build"))
+            {
+                UpdateValues();
+                UnityEditor.AddressableAssets.Settings.AddressableAssetSettings.BuildPlayerContent();
+                Upload();
+            }
+        }
+
+        private void UpdateValues()
+        {
             m_Region = EditorGUILayout.TextField("Region", m_Region);
             m_BucketName = EditorGUILayout.TextField("Bucket name", m_BucketName);
             m_IamAccessKeyId = EditorGUILayout.TextField("IAM Access Key Id", m_IamAccessKeyId);
             m_IamSecretKey = EditorGUILayout.TextField("IAM Secret Key", m_IamSecretKey);
-            if (GUILayout.Button("Upload content"))
-            {
-                EditorPrefs.SetString("UploadToS3_region", m_Region);
-                EditorPrefs.SetString("UploadToS3_bucketName", m_BucketName);
-                EditorPrefs.SetString("UploadToS3_iamAccessKeyId", m_IamAccessKeyId);
-                EditorPrefs.SetString("UploadToS3_iamSecretKey", m_IamSecretKey);
-                m_BucketRegion = RegionEndpoint.GetBySystemName(m_Region);
-                InitiateTask();
-            }
+        }
+
+        private void Upload()
+        {
+            EditorPrefs.SetString("UploadToS3_region", m_Region);
+            EditorPrefs.SetString("UploadToS3_bucketName", m_BucketName);
+            EditorPrefs.SetString("UploadToS3_iamAccessKeyId", m_IamAccessKeyId);
+            EditorPrefs.SetString("UploadToS3_iamSecretKey", m_IamSecretKey);
+            m_BucketRegion = RegionEndpoint.GetBySystemName(m_Region);
+            InitiateTask();
         }
 
         private async Task InitiateTask()
