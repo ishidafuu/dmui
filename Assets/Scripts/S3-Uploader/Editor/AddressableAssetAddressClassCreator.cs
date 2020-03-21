@@ -59,7 +59,7 @@ public class AddressableAssetAddressClassCreator : AssetPostprocessor {
   //=================================================================================
 
   //定数クラス作成
-  [MenuItem("Tools/Create/AddressableAsset Constants Class")]
+  [MenuItem("Tools/AddressableAsset Constants Class")]
   private static void Create() {
     
     //アドレスとラベルをまとめるやつ
@@ -81,8 +81,8 @@ public class AddressableAssetAddressClassCreator : AssetPostprocessor {
     }
     
     //記録したDictionaryから定数クラスを生成
-    ConstantsClassCreator.Create("AddressableAssetAddress","AddressableAssetのAddressを管理する定数クラス", EXPORT_DIRECTORY_PATH, addressDict);
-    ConstantsClassCreator.Create("AddressableAssetLabel",  "AddressableAssetのLabelを管理する定数クラス",   EXPORT_DIRECTORY_PATH, labelDict);
+    ConstantsClassCreator.Create("AssetAddress","AddressableAssetのAddressを管理する定数クラス", EXPORT_DIRECTORY_PATH, addressDict);
+    ConstantsClassCreator.Create("AssetLabel",  "AddressableAssetのLabelを管理する定数クラス",   EXPORT_DIRECTORY_PATH, labelDict);
   }
   
   //ディレクトリのパス(Assetsから)と型を設定し、Objectを読み込む。存在しない場合は空のListを返す
