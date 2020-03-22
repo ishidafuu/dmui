@@ -1,0 +1,26 @@
+name: AddressableBuild
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  editorTestJob:
+    runs-on: ubuntu-latest
+    container: docker://gableroux/unity3d:${{ matrix.unity-tag }}
+    strategy:
+      matrix:
+        unity-tag: [2019.3.6f1]
+
+    steps:
+      - uses: actions/checkout@master
+      - run: openssl aes-256-cbc -d -in Unity_v2019.x.ulf-cipher -k ${CYPHER_KEY} >> /Unity_v2019.x.ulf
+        env:
+          CYPHER_KEY: ${{ secrets.CYPHER_KEY }}
+      - run: /opt/Unity/Editor/Unity -quit -batchmode -nographics -silent-crashes -logFile -manualLicenseFile /Unity_v2019.x.ulf || exit 0
+      - run: /opt/Unity/Editor/Unity -quit -batchmode -nographics -silent-crashes -logFile -projectPath . -executeMethod DM.AasUtility.Clean || exit 0
+      - uses: actions/upload-artifact@master
+        with:
+          name: serverData
+          path: ServerData
