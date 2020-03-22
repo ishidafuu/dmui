@@ -11,7 +11,6 @@ using UnityEngine;
 
 namespace DM
 {
-
     public class UploadToS3 : EditorWindow
     {
         private string m_Region;
@@ -38,12 +37,10 @@ namespace DM
             GUILayout.Label("Base Settings", EditorStyles.boldLabel);
             if (GUILayout.Button("Upload content"))
             {
-                UpdateValues();
                 Upload();
             }
             else if (GUILayout.Button("Upload content with Build"))
             {
-                UpdateValues();
                 UnityEditor.AddressableAssets.Settings.AddressableAssetSettings.BuildPlayerContent();
                 Upload();
             }
@@ -59,12 +56,45 @@ namespace DM
 
         private void Upload()
         {
+            UpdateValues();
             EditorPrefs.SetString("UploadToS3_region", m_Region);
             EditorPrefs.SetString("UploadToS3_bucketName", m_BucketName);
             EditorPrefs.SetString("UploadToS3_iamAccessKeyId", m_IamAccessKeyId);
             EditorPrefs.SetString("UploadToS3_iamSecretKey", m_IamSecretKey);
             m_BucketRegion = RegionEndpoint.GetBySystemName(m_Region);
             InitiateTask();
+        }        
+        
+        public static async void UploadCli()
+        {
+            string[] args = Environment.GetCommandLineArgs();
+            string region = string.Empty;
+            string bucketName = string.Empty;
+            string iamAccessKeyId= string.Empty;
+            string iamSecretKey = string.Empty;
+            
+            int len = args.Length;
+            for(int i = 0; i < len; ++i )
+            {
+                switch( args[i] )
+                {
+                    case "/region":
+                        region = args[i];
+                        break;
+                    case "/bucketName":
+                        bucketName = args[i];
+                        break;
+                    case "/iamAccessKeyId":
+                        iamAccessKeyId = args[i];
+                        break;
+                    case "/iamSecretKey":
+                        iamSecretKey = args[i];
+                        break;
+                }
+            }
+            
+            await UploadAsync(RegionEndpoint.GetBySystemName(region),
+                bucketName, iamAccessKeyId, iamSecretKey, m_ServerDataDir);
         }
 
         private async Task InitiateTask()
