@@ -20,7 +20,12 @@ jobs:
           CYPHER_KEY: ${{ secrets.CYPHER_KEY }}
       - run: /opt/Unity/Editor/Unity -quit -batchmode -nographics -silent-crashes -logFile -manualLicenseFile /Unity_v2019.x.ulf || exit 0
       - run: /opt/Unity/Editor/Unity -quit -batchmode -nographics -silent-crashes -logFile -projectPath . -executeMethod DM.AasUtility.Build || exit 0
-      - run: /opt/Unity/Editor/Unity -quit -batchmode -nographics -silent-crashes -logFile -projectPath . -executeMethod DM.UploadToS3.UploadCli || exit 0 
+      - run: /opt/Unity/Editor/Unity -quit -batchmode -nographics -silent-crashes -logFile -projectPath . -executeMethod DM.UploadToS3.UploadCli /region ${REGION} /bucketName ${BUCKET_NAME} /iamAccessKeyId ${IAM_ACCESS_KEY_ID} /iamSecretKey ${IAM_SECRET_KEY} || exit 0 
+        env:
+          REGION: ${{ secrets.REGION }}
+          BUCKET_NAME: ${{ secrets.BUCKET_NAME }}
+          IAM_ACCESS_KEY_ID: ${{ secrets.IAM_ACCESS_KEY_ID }}
+          IAM_SECRET_KEY: ${{ secrets.IAM_SECRET_KEY }}
       - uses: actions/upload-artifact@master
         with:
           name: serverData

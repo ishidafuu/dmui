@@ -7,6 +7,7 @@ using Amazon.Runtime;
 using Amazon.S3;
 using Amazon.S3.Transfer;
 using UnityEditor;
+using UnityEditor.AddressableAssets.Settings;
 using UnityEngine;
 
 namespace DM
@@ -34,6 +35,7 @@ namespace DM
 
         private void OnGUI()
         {
+            UpdateValues();
             GUILayout.Label("Base Settings", EditorStyles.boldLabel);
             if (GUILayout.Button("Upload content"))
             {
@@ -41,7 +43,7 @@ namespace DM
             }
             else if (GUILayout.Button("Upload content with Build"))
             {
-                UnityEditor.AddressableAssets.Settings.AddressableAssetSettings.BuildPlayerContent();
+                AddressableAssetSettings.BuildPlayerContent();
                 Upload();
             }
         }
@@ -56,43 +58,42 @@ namespace DM
 
         private void Upload()
         {
-            UpdateValues();
             EditorPrefs.SetString("UploadToS3_region", m_Region);
             EditorPrefs.SetString("UploadToS3_bucketName", m_BucketName);
             EditorPrefs.SetString("UploadToS3_iamAccessKeyId", m_IamAccessKeyId);
             EditorPrefs.SetString("UploadToS3_iamSecretKey", m_IamSecretKey);
             m_BucketRegion = RegionEndpoint.GetBySystemName(m_Region);
             InitiateTask();
-        }        
-        
+        }
+
         public static async void UploadCli()
         {
             string[] args = Environment.GetCommandLineArgs();
             string region = string.Empty;
             string bucketName = string.Empty;
-            string iamAccessKeyId= string.Empty;
+            string iamAccessKeyId = string.Empty;
             string iamSecretKey = string.Empty;
-            
+
             int len = args.Length;
-            for(int i = 0; i < len; ++i )
+            for (int i = 0; i < len; ++i)
             {
-                switch( args[i] )
+                switch (args[i])
                 {
                     case "/region":
-                        region = args[i];
+                        region = args[i + 1];
                         break;
                     case "/bucketName":
-                        bucketName = args[i];
+                        bucketName = args[i + 1];
                         break;
                     case "/iamAccessKeyId":
-                        iamAccessKeyId = args[i];
+                        iamAccessKeyId = args[i + 1];
                         break;
                     case "/iamSecretKey":
-                        iamSecretKey = args[i];
+                        iamSecretKey = args[i + 1];
                         break;
                 }
             }
-            
+
             await UploadAsync(RegionEndpoint.GetBySystemName(region),
                 bucketName, iamAccessKeyId, iamSecretKey, m_ServerDataDir);
         }
@@ -119,7 +120,7 @@ namespace DM
                     CannedACL = S3CannedACL.PublicRead,
                     SearchOption = SearchOption.AllDirectories,
                 };
-                
+
                 Debug.Log("Upload completed!");
                 await transferUtility.UploadDirectoryAsync(transferUtilityRequest);
                 Debug.Log("Upload completed!");
