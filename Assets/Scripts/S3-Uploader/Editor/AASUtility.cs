@@ -9,6 +9,7 @@ using UnityEngine;
 
 namespace DM
 {
+//C:\Program Files\Unity\Editor\Unity.exe -batchmode -quit -logFile .\build.log -projectPath D:\nkpb\dmui -executeMethod DM.AasUtility.Build
     public class AasUtility : Editor
     {
         private static readonly string s_AssetRoot =
@@ -20,7 +21,7 @@ namespace DM
         private const string EDITOR_DIR = "Editor";
         private const string DATA_ROOT = "Assets/AssetBundles/";
         private const string REMOTE_GROUP = "remote";
-        private const string SERVER_DATA_DIR = "SERVER_DATA";
+        private const string SERVER_DATA_DIR = "ServerData";
 
         /// <summary>
         /// データディレクトリのルートから全グループを作成する
@@ -147,7 +148,9 @@ namespace DM
         [MenuItem(MENU_NAME + "/Build")]
         public static void Build()
         {
+            Debug.Log("Build Start...");
             AddressableAssetSettings.BuildPlayerContent();
+            Debug.Log("Build Complete");
         }
 
         /// <summary>
@@ -159,7 +162,11 @@ namespace DM
             if (Directory.Exists(SERVER_DATA_DIR))
             {
                 Directory.Delete(SERVER_DATA_DIR, true);
-                Debug.Log("delete " + SERVER_DATA_DIR);
+                Debug.Log("Delete " + SERVER_DATA_DIR);
+            }
+            else
+            {
+                Debug.Log("Not Found " + SERVER_DATA_DIR);
             }
 
             AddressableAssetSettings.CleanPlayerContent();
