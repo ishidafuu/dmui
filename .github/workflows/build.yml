@@ -19,7 +19,7 @@ jobs:
         env:
           CYPHER_KEY: ${{ secrets.CYPHER_KEY }}
       - run: /opt/Unity/Editor/Unity -quit -batchmode -nographics -silent-crashes -logFile -manualLicenseFile /Unity_v2019.x.ulf || exit 0
-      - run: /opt/Unity/Editor/Unity -quit -batchmode -nographics -silent-crashes -logFile -projectPath . -executeMethod DM.AasUtility.Clean || exit 0
+      - run: /opt/Unity/Editor/Unity -quit -batchmode -nographics -silent-crashes -logFile -projectPath . -executeMethod DM.AasUtility.Build || exit 0
       - uses: actions/upload-artifact@master
         with:
           name: serverData
