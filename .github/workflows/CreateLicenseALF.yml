@@ -1,24 +1,21 @@
-name: Create ALF File
+name: UnityTestRunnerExampleSlack
 
-on: [push]
+on:
+  push:
+    branches:
+      - master
 
 jobs:
-  build:
-
+  editorTestJob:
     runs-on: ubuntu-latest
+    container: docker://gableroux/unity3d:${{ matrix.unity-tag }}
     strategy:
       matrix:
         unity-tag: [2019.3.6f1]
 
-    container: docker://gableroux/unity3d:${{ matrix.unity-tag }}
-
     steps:
-      - run: mkdir artifact
-      - run: /opt/Unity/Editor/Unity -quit -batchmode -nographics -logfile -createManualActivationFile || exit 0
-      - run: cp "Unity_v$UNITY_VERSION.alf" artifact
+      - uses: actions/checkout@master
+      - run: openssl aes-256-cbc -d -in Unity_v2019.x.ulf-cipher -k ${CYPHER_KEY} >> /Unity_v2019.x.ulf
         env:
-          UNITY_VERSION: ${{ matrix.unity-tag }}
-      - uses: actions/upload-artifact@master
-        with:
-          name: ${{ matrix.unity-tag }}
-          path: artifact
+          CYPHER_KEY: ${{ secrets.CYPHER_KEY }}
+      - run: /opt/Unity/Editor/Unity -quit -batchmode -nographics -silent-crashes -logFile -manualLicenseFile /Unity_v2019.x.ulf || exit 0
