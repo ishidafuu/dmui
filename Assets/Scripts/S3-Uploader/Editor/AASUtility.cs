@@ -20,6 +20,7 @@ namespace DM
         private const string EDITOR_DIR = "Editor";
         private const string DATA_ROOT = "Assets/AssetBundles/";
         private const string REMOTE_GROUP = "remote";
+        private const string SERVER_DATA_DIR = "SERVER_DATA";
 
         /// <summary>
         /// データディレクトリのルートから全グループを作成する
@@ -28,17 +29,17 @@ namespace DM
         public static void CreateGroup()
         {
             RemoveAllGroup();
-            
+
             List<string> dataPath = AssetDatabase.GetAllAssetPaths()
                 .Where(p => p.Contains(DATA_ROOT)).ToList();
-            
+
             foreach (string asset in dataPath)
             {
                 AddGroup(asset);
             }
 
             GetSettings().groups.Sort(new GroupCompare());
-            
+
             AddressableAssetAddressClassCreator.Create();
         }
 
@@ -56,7 +57,7 @@ namespace DM
             string group = asset.Replace(DATA_ROOT, "")
                 .Split('/')
                 .First();
-   
+
             string address = Path.GetFileNameWithoutExtension(
                 asset.Replace(DATA_ROOT, "")
                     .Replace(group + "/", "")
@@ -74,7 +75,7 @@ namespace DM
             {
                 return;
             }
-            
+
             List<AddressableAssetEntry> entries = new List<AddressableAssetEntry>();
             settings.GetAllAssets(entries, true);
             if (CheckAddress(entries, address))
@@ -125,14 +126,15 @@ namespace DM
         public static void CheckAllAddress()
         {
             AddressableAssetSettings assetSettings = GetSettings();
+
             List<AddressableAssetEntry> entries = new List<AddressableAssetEntry>();
             assetSettings.GetAllAssets(entries, true);
             List<string> checkedAddress = new List<string>();
 
-            foreach (var e in from e in entries 
-                where !checkedAddress.Contains(e.address) 
-                let ret = CheckAddress(entries, e.address) 
-                where !ret 
+            foreach (var e in from e in entries
+                where !checkedAddress.Contains(e.address)
+                let ret = CheckAddress(entries, e.address)
+                where !ret
                 select e)
             {
                 checkedAddress.Add(e.address);
@@ -154,6 +156,12 @@ namespace DM
         [MenuItem(MENU_NAME + "/Clean")]
         public static void Clean()
         {
+            if (Directory.Exists(SERVER_DATA_DIR))
+            {
+                Directory.Delete(SERVER_DATA_DIR, true);
+                Debug.Log("delete " + SERVER_DATA_DIR);
+            }
+
             AddressableAssetSettings.CleanPlayerContent();
         }
 
@@ -165,18 +173,15 @@ namespace DM
                 return true;
             }
 
+            string str = "Address=" + address + Environment.NewLine;
+            foreach (AddressableAssetEntry e in duplicateEntries)
             {
-                string str = "Address=" + address + Environment.NewLine;
-                foreach (AddressableAssetEntry e in duplicateEntries)
-                {
-                    string assetName = Path.GetFileName(e.AssetPath);
-                    str += "Group=" + e.parentGroup.Name + "," + "AssetName=" + assetName + Environment.NewLine;
-                }
-
-                Debug.LogAssertion("DuplicateAddress" + Environment.NewLine + str);
-                return false;
+                string assetName = Path.GetFileName(e.AssetPath);
+                str += "Group=" + e.parentGroup.Name + "," + "AssetName=" + assetName + Environment.NewLine;
             }
 
+            Debug.LogAssertion("DuplicateAddress" + Environment.NewLine + str);
+            return false;
         }
 
         private static AddressableAssetSettings GetSettings()
@@ -190,20 +195,20 @@ namespace DM
             //アドレサブルアセットセッティング取得
             AddressableAssetSettings assetSettings = GetSettings();
             BundledAssetGroupSchema assetGroupSchema = CreateInstance<BundledAssetGroupSchema>();
-            
+
             if (groupName.IndexOf(REMOTE_GROUP, StringComparison.OrdinalIgnoreCase) >= 0)
             {
                 assetGroupSchema.BuildPath.SetVariableByName(assetSettings, AddressableAssetSettings.kRemoteBuildPath);
                 assetGroupSchema.LoadPath.SetVariableByName(assetSettings, AddressableAssetSettings.kRemoteLoadPath);
             }
-            
+
             //スキーマ生成
             List<AddressableAssetGroupSchema> schema = new List<AddressableAssetGroupSchema>()
             {
                 CreateInstance<ContentUpdateGroupSchema>(),
                 assetGroupSchema,
             };
-            
+
             //グループの作成
             AddressableAssetGroup assetGroup = assetSettings.groups.Find((g) => g.name == groupName);
             return assetGroup == null

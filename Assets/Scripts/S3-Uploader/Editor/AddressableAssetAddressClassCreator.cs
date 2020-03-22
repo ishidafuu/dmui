@@ -73,21 +73,19 @@ namespace DM
             var labelDict = new Dictionary<string, string>();
 
             //対象のディレクトリ以下のアセットを全て取得し、アドレスとラベルを記録
-            foreach (var group in LoadAll<AddressableAssetGroup>(TARGET_DIRECTORY_PATH))
+            foreach (AddressableAssetEntry entry in LoadAll<AddressableAssetGroup>(TARGET_DIRECTORY_PATH)
+                .SelectMany(assetGroup => assetGroup.entries))
             {
-                foreach (var entry in group.entries)
+                if (addressDict.ContainsKey(entry.address))
                 {
-                    if (addressDict.ContainsKey(entry.address))
-                    {
-                        Debug.LogError($"{entry.address}というアドレスが重複しています！");
-                    }
+                    Debug.LogError($"{entry.address}というアドレスが重複しています！");
+                }
 
-                    addressDict[entry.address] = entry.address;
+                addressDict[entry.address] = entry.address;
 
-                    foreach (var label in entry.labels)
-                    {
-                        labelDict[label] = label;
-                    }
+                foreach (var label in entry.labels)
+                {
+                    labelDict[label] = label;
                 }
             }
 

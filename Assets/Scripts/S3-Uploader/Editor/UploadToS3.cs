@@ -11,13 +11,14 @@ using UnityEngine;
 
 namespace DM
 {
+
     public class UploadToS3 : EditorWindow
     {
         private string m_Region;
         private string m_BucketName;
         private string m_IamAccessKeyId;
         private string m_IamSecretKey;
-        private const string SERVER_DATA_DIR = "ServerData";
+        private const string m_ServerDataDir = "ServerData";
         private RegionEndpoint m_BucketRegion;
 
         [MenuItem("Tools/Addressable Content Uploader (S3)")]
@@ -68,7 +69,7 @@ namespace DM
 
         private async Task InitiateTask()
         {
-            await UploadAsync(m_BucketRegion, m_BucketName, m_IamAccessKeyId, m_IamSecretKey, SERVER_DATA_DIR);
+            await UploadAsync(m_BucketRegion, m_BucketName, m_IamAccessKeyId, m_IamSecretKey, m_ServerDataDir);
         }
 
         private static async Task UploadAsync(RegionEndpoint bucketRegion, string bucketName, string iamAccessKeyId,
@@ -88,6 +89,8 @@ namespace DM
                     CannedACL = S3CannedACL.PublicRead,
                     SearchOption = SearchOption.AllDirectories,
                 };
+                
+                Debug.Log("Upload completed!");
                 await transferUtility.UploadDirectoryAsync(transferUtilityRequest);
                 Debug.Log("Upload completed!");
             }
