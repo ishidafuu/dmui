@@ -15,3 +15,6 @@ jobs:
           args: '{\"channel\":\"C010J4E21CG\", \"text\":\"てすと5\"}'
         env:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+          
+
+                                                                         
