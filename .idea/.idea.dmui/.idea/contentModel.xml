@@ -461,6 +461,81 @@
               <e p="UITouchListener.cs" t="Include" />
             </e>
           </e>
+          <e p="Utf8Json" t="Include">
+            <e p="Attributes.cs" t="Include" />
+            <e p="Formatters" t="Include">
+              <e p="AnonymousFormatter.cs" t="Include" />
+              <e p="CollectionFormatters.cs" t="Include" />
+              <e p="DateTimeFormatter.cs" t="Include" />
+              <e p="DictionaryFormatter.cs" t="Include" />
+              <e p="DynamicObjectTypeFallbackFormatter.cs" t="Include" />
+              <e p="EnumFormatter.cs" t="Include" />
+              <e p="IgnoreFormatter.cs" t="Include" />
+              <e p="MultiDimentionalArrayFormatter.cs" t="Include" />
+              <e p="NullableFormatter.cs" t="Include" />
+              <e p="PrimitiveFormatter.cs" t="Include" />
+              <e p="PrimitiveObjectFormatter.cs" t="Include" />
+              <e p="StandardClassLibraryFormatters.cs" t="Include" />
+              <e p="TupleFormatter.cs" t="Include" />
+              <e p="ValueTupleFormatter.cs" t="Include" />
+            </e>
+            <e p="IJsonFormatter.cs" t="Include" />
+            <e p="IJsonFormatterResolver.cs" t="Include" />
+            <e p="Internal" t="Include">
+              <e p="ArrayBuffer.cs" t="Include" />
+              <e p="ArrayPool.cs" t="Include" />
+              <e p="AutomataDictionary.cs" t="Include" />
+              <e p="BinaryUtil.cs" t="Include" />
+              <e p="ByteArrayComparer.cs" t="Include" />
+              <e p="ByteArrayStringHashTable.cs" t="Include" />
+              <e p="DoubleConversion" t="Include">
+                <e p="DiyFp.cs" t="Include" />
+                <e p="DoubleToStringConverter.cs" t="Include" />
+                <e p="IEEE.cs" t="Include" />
+                <e p="PowersOfTenCache.cs" t="Include" />
+                <e p="StringToDouble.cs" t="Include" />
+                <e p="StringToDoubleConverter.cs" t="Include" />
+              </e>
+              <e p="Emit" t="Include">
+                <e p="DynamicAssembly.cs" t="Include" />
+                <e p="ExpressionUtility.cs" t="Include" />
+                <e p="ILGeneratorExtensions.cs" t="Include" />
+                <e p="ILViewer.cs" t="Include" />
+                <e p="MetaMember.cs" t="Include" />
+                <e p="MetaType.cs" t="Include" />
+              </e>
+              <e p="FarmHash.cs" t="Include" />
+              <e p="FuncExtensions.cs" t="Include" />
+              <e p="GuidBits.cs" t="Include" />
+              <e p="NumberConverter.cs" t="Include" />
+              <e p="ReflectionExtensions.cs" t="Include" />
+              <e p="StringEncoding.cs" t="Include" />
+              <e p="StringMutator.cs" t="Include" />
+              <e p="ThreadsafeTypeKeyHashTable.cs" t="Include" />
+              <e p="UnsafeMemory.cs" t="Include" />
+              <e p="UnsafeMemory.Low.cs" t="Include" />
+            </e>
+            <e p="JsonReader.cs" t="Include" />
+            <e p="JsonSerializer.cs" t="Include" />
+            <e p="JsonSerializer.NonGeneric.cs" t="Include" />
+            <e p="JsonToken.cs" t="Include" />
+            <e p="JsonWriter.cs" t="Include" />
+            <e p="Resolvers" t="Include">
+              <e p="AttributeFormatterResolver.cs" t="Include" />
+              <e p="BuiltinResolver.cs" t="Include" />
+              <e p="CompositeResolver.cs" t="Include" />
+              <e p="DynamicGenericResolver.cs" t="Include" />
+              <e p="DynamicObjectResolver.cs" t="Include" />
+              <e p="EnumResolver.cs" t="Include" />
+              <e p="StandardResolver.cs" t="Include" />
+            </e>
+            <e p="Shims" t="Include">
+              <e p="Reflection.cs" t="Include" />
+            </e>
+            <e p="Unity" t="Include">
+              <e p="ResolverAndFormatters.cs" t="Include" />
+            </e>
+          </e>
         </e>
         <e p="UI" t="Include">
           <e p="EnhancedScroller v2" t="Include">
