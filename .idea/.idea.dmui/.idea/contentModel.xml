@@ -197,10 +197,6 @@
             <e p="IHTTPClient.cs" t="Include" />
             <e p="MessagePackTest.cs" t="Include" />
             <e p="NoCommunicationHTTPClient.cs" t="Include" />
-            <e p="serializer" t="Include">
-              <e p="IJsonSerializer.cs" t="Include" />
-              <e p="JsonSerializer.cs" t="Include" />
-            </e>
           </e>
           <e p="Master" t="Include">
             <e p="ResolverRegister" t="Include">

@@ -5,6 +5,7 @@ using System.Diagnostics;
 using System.Text;
 using MessagePack;
 using UnityEngine.Networking;
+using Utf8Json;
 using Debug = UnityEngine.Debug;
 
 namespace DM
@@ -47,7 +48,7 @@ namespace DM
             InitRequestHeader();
 
             
-            string requestJson = Utf8Json.JsonSerializer.ToJsonString(param);
+            string requestJson = JsonSerializer.ToJsonString(param);
             
             MessagePackTest asdf = new MessagePackTest();
             var asdf2 = MessagePackSerializer.Serialize(asdf);

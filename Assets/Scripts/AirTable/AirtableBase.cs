@@ -4,6 +4,7 @@ using System.Net;
 using System.Net.Http;
 using System.Runtime.Serialization;
 using UniRx.Async;
+using Utf8Json;
 
 namespace DM
 {
@@ -49,7 +50,7 @@ namespace DM
                         case HttpStatusCode.RequestEntityTooLarge:
                             throw new AirTableRequestEntityTooLargeException();
                         case (HttpStatusCode)422:
-                            var error = Utf8Json.JsonSerializer.Deserialize<dynamic>(await message.Content.ReadAsByteArrayAsync());
+                            var error = JsonSerializer.Deserialize<dynamic>(await message.Content.ReadAsByteArrayAsync());
                             throw new AirTableInvalidRequestException(error?["error"]?["message"]);
                         case (HttpStatusCode)429:
                             throw new AirTableTooManyRequestsException();
@@ -58,7 +59,7 @@ namespace DM
                     }
                 }
 
-                var jsonBody = Utf8Json.JsonSerializer.Deserialize<JsonBody<T>>(await message.Content.ReadAsByteArrayAsync());
+                var jsonBody = JsonSerializer.Deserialize<JsonBody<T>>(await message.Content.ReadAsByteArrayAsync());
                 offset = jsonBody.m_Offset;
 
                 result.AddRange(jsonBody.m_Records.Select(x => x.m_Body));
