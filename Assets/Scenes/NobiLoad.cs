@@ -36,14 +36,14 @@ namespace DM
             image.sprite = asdf;
         }
 
-        public async UniTask LoadTableAsync()
+        private async UniTask LoadTableAsync()
         {
-            var client = new AirTableClient("key3NNedymjZdyPup");
-            var clientBase = client.GetBase("appsj9JjmBwaF3Hbz");
+            AirTableClient client = new AirTableClient("key3NNedymjZdyPup");
+            AirTableBase clientBase = client.GetBase("appsj9JjmBwaF3Hbz");
             try
             {
-                var allRows = await clientBase.LoadTableAsync<ActionTable>();
-                foreach (var row in allRows)
+                ActionTable[] allRows = await clientBase.LoadTableAsync<ActionTable>();
+                foreach (ActionTable row in allRows)
                 {
                     // 1レコードずつ取り出す処理 
                     Debug.Log(row.Name + ":" + row.Notes);
