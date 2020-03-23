@@ -11,7 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Send notification to Slack when master/docs has been updated
-        uses: pullreminders/slack-action@v1
+        uses: pullreminders/slack-action@master
         with:
           args: '{\"channel\":\"C010J4E21CG\", \"text\":\"てすと\"}'
         env:
