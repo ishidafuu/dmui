@@ -13,6 +13,6 @@ jobs:
       - name: Send notification to Slack when master/docs has been updated
         uses: pullreminders/slack-action@master
         with:
-          args: '{\"channel\":\"C010J4E21CG\", \"text\":\"てすと3\"}'
+          args: '{\"channel\":\"C010J4E21CG\", \"text\":\"てすと4\"}'
         env:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
