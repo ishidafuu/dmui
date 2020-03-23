@@ -157,6 +157,11 @@
           <e p="nobiload.cs" t="Include" />
         </e>
         <e p="Scripts" t="Include">
+          <e p="AirTable" t="Include">
+            <e p="AirtableApiException.cs" t="Include" />
+            <e p="AirtableBase.cs" t="Include" />
+            <e p="AirtableClient.cs" t="Include" />
+          </e>
           <e p="AssetAddress.cs" t="Include" />
           <e p="AssetLabel.cs" t="Include" />
           <e p="Editor" t="Include">
