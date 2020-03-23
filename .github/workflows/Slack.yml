@@ -1,0 +1,17 @@
+name: Slack
+
+on:
+  repository_dispatch:
+    types: [test_trigger]
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Send notification to Slack when master/docs has been updated
+        uses: pullreminders/slack-action@master
+        with:
+          args: '{\"channel\":\"C010J4E21CG\", \"text\":\"てすと5\"}'
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
