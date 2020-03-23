@@ -7,14 +7,14 @@ namespace DM
     {
         protected AirTableApiException(HttpStatusCode errorCode, string errorName, string errorMessage) : base($"{errorName} - {errorCode}: {errorMessage}")
         {
-            m_ErrorCode = errorCode;
-            m_ErrorName = errorName;
-            m_ErrorMessage = errorMessage;
+            ErrorCode = errorCode;
+            ErrorName = errorName;
+            ErrorMessage = errorMessage;
         }
 
-        private readonly HttpStatusCode m_ErrorCode;
-        private readonly string m_ErrorName;
-        private readonly string m_ErrorMessage;
+        public HttpStatusCode ErrorCode { get; private set; }
+        public string ErrorName{ get; private set; }
+        public string ErrorMessage{ get; private set; }
     }
 
     public class AirTableUnrecognizedException : AirTableApiException
