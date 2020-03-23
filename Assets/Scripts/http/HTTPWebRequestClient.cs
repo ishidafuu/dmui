@@ -27,14 +27,11 @@ namespace DM
         private string m_ApiUrl = null;
         private HttpResponseDataDelegate m_ResponseDataDelegate = null;
         private readonly IReadOnlyList<IRequestHeaderParam> m_RequestHeaderParams = null;
-        private readonly IJsonSerializer m_Serializer;
 
         public HttpWebRequestClient(
-            IJsonSerializer serializer,
             IReadOnlyList<IRequestHeaderParam> requestHeaders,
             int timeOut = 30)
         {
-            m_Serializer = serializer;
             m_RequestHeaderParams = requestHeaders;
             m_TimeOut = timeOut;
         }
@@ -49,7 +46,8 @@ namespace DM
 
             InitRequestHeader();
 
-            string requestJson = m_Serializer.Serialize(param);
+            
+            string requestJson = Utf8Json.JsonSerializer.ToJsonString(param);
             
             MessagePackTest asdf = new MessagePackTest();
             var asdf2 = MessagePackSerializer.Serialize(asdf);
