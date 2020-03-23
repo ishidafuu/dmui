@@ -1,4 +1,5 @@
-﻿using UniRx.Async;
+﻿using System;
+using UniRx.Async;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.UI;
@@ -34,19 +35,27 @@ namespace DM
             var asdf = await Addressables.LoadAssetAsync<Sprite>(AssetAddress.JPG_TETSUWO).Task;
             image.sprite = asdf;
         }
-        
+
         public async UniTask LoadTableAsync()
         {
             var client = new AirTableClient("key3NNedymjZdyPup");
             var clientBase = client.GetBase("appsj9JjmBwaF3Hbz");
-            var allRows =  await clientBase.LoadTableAsync<ActionTable>();
-            foreach (var row in allRows)
+            try
             {
-                // 1レコードずつ取り出す処理 
-                Debug.Log(row.Name + ":" +row.Notes);
+                var allRows = await clientBase.LoadTableAsync<ActionTable>();
+                foreach (var row in allRows)
+                {
+                    // 1レコードずつ取り出す処理 
+                    Debug.Log(row.Name + ":" + row.Notes);
+                }
+            }
+            catch (Exception e)
+            {
+                Debug.LogError(e);
+                throw;
             }
         }
-        
+
         public class ActionTable
         {
             public string Name;
