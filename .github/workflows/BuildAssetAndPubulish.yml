@@ -1,4 +1,4 @@
-name: AddressableBuild
+name: BuildAssetAndPubulish
 
 on:
   push:
