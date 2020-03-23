@@ -21,6 +21,10 @@ MonoBehaviour:
     m_Address: serval
     m_ReadOnly: 0
     m_SerializedLabels: []
+    m_mainAssetType: UnityEngine.Texture2D, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: da8cd0ac9134c874faaf35ae544f2057, type: 2}
   m_SchemaSet:

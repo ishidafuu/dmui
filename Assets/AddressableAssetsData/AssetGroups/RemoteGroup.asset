@@ -15,19 +15,27 @@ MonoBehaviour:
   m_GroupName: RemoteGroup
   m_Data:
     m_SerializedData: []
-  m_GUID: af5cd44c053c082469d5d296875e7615
+  m_GUID: 29394a83fed81f84e8ce5e4550434254
   m_SerializeEntries:
-  - m_GUID: 13fa39a1f571f084f8f95eb1cb1d757d
-    m_Address: jpg_tetsuwo2
+  - m_GUID: 12024c3e508684649947ed9bf8543ea8
+    m_Address: jpg_tetsuwo
     m_ReadOnly: 0
     m_SerializedLabels: []
+    m_mainAssetType: UnityEngine.Texture2D, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 78e3ccdea4b85c54d92bfedeb4e9a2cd
     m_Address: nobi
     m_ReadOnly: 0
     m_SerializedLabels: []
+    m_mainAssetType: UnityEngine.Texture2D, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: da8cd0ac9134c874faaf35ae544f2057, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: 9de1a309e06becb4b8da9a5e0f31f110, type: 2}
-    - {fileID: 11400000, guid: f8c4d2c2b3180a84888fde4c2798fb07, type: 2}
+    - {fileID: 11400000, guid: c5b2deb79f21edc4d9835fa70013c58d, type: 2}
+    - {fileID: 11400000, guid: cfadfa6a050abdc4ababfcddaa09ee47, type: 2}

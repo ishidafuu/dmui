@@ -4,13 +4,13 @@ using System.Threading.Tasks;
 
 namespace DM
 {
-    public abstract class AirTableClient : IDisposable
+    public class AirTableClient : IDisposable
     {
         internal string ApiKey { get; }
 
         private readonly HttpClient m_HttpClient = new HttpClient();
 
-        protected AirTableClient(string apiKey)
+        public AirTableClient(string apiKey)
         {
             ApiKey = apiKey;
         }
