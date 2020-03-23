@@ -26,21 +26,25 @@ namespace DM
             // };]
             // LoadAssetAsync();
 
-            var client = new AirTableClient("key3NNedymjZdyPup");
-            var clientBase = client.GetBase("appsj9JjmBwaF3Hbz");
-            var allRows = clientBase.LoadTableAsync<ActionTable>().Result;
-
-            foreach (var row in allRows)
-            {
-                // 1レコードずつ取り出す処理 
-                Debug.Log(row);
-            }
+            LoadTableAsync();
         }
 
         public async UniTask LoadAssetAsync()
         {
             var asdf = await Addressables.LoadAssetAsync<Sprite>(AssetAddress.JPG_TETSUWO).Task;
             image.sprite = asdf;
+        }
+        
+        public async UniTask LoadTableAsync()
+        {
+            var client = new AirTableClient("key3NNedymjZdyPup");
+            var clientBase = client.GetBase("appsj9JjmBwaF3Hbz");
+            var allRows =  await clientBase.LoadTableAsync<ActionTable>();
+            foreach (var row in allRows)
+            {
+                // 1レコードずつ取り出す処理 
+                Debug.Log(row.Name + ":" +row.Notes);
+            }
         }
         
         public class ActionTable

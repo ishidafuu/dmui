@@ -4,6 +4,7 @@ using System.Net;
 using System.Net.Http;
 using System.Runtime.Serialization;
 using System.Threading.Tasks;
+using UniRx.Async;
 
 namespace DM
 {
@@ -18,12 +19,12 @@ namespace DM
             m_BaseId = baseId;
         }
 
-        public Task<T[]> LoadTableAsync<T>()
+        public UniTask<T[]> LoadTableAsync<T>()
         {
             return LoadTableAsync<T>(typeof(T).Name);
         }
 
-        private async Task<T[]> LoadTableAsync<T>(string tableName)
+        private async UniTask<T[]> LoadTableAsync<T>(string tableName)
         {
             var result = new List<T>();
             var offset = "0";
