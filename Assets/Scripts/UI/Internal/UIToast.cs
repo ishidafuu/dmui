@@ -11,7 +11,8 @@ namespace DM
         private readonly string m_TextComponent;
         private int m_Count;
         
-        public UIToast(string path, string textComponent, string message) : base(path, EnumUIGroup.Loading, EnumUIPreset.SystemIndicator)
+        public UIToast(string path, string textComponent, string message) 
+            : base(path, EnumUIGroup.Loading, EnumUIPreset.SystemIndicator)
         {
             m_Message = message;
             m_TextComponent = textComponent;
