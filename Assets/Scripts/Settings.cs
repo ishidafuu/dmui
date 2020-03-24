@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System;
+using System.Linq;
 using UniRx.Async;
 using UnityEngine;
 
@@ -29,17 +30,28 @@ namespace DM
 
         private static readonly List<int> s_MyEnumData = new List<int>();
         private static readonly List<int> s_MyEnum2Data = new List<int>();
-        
         public static int Get(MyEnum key) => s_MyEnumData[(int)key];
         public static int Get(MyEnum2 key) => s_MyEnum2Data[(int)key];
+            
+        private static void InitMyEnum(IReadOnlyList<TableRow> rows) => InitList<MyEnum>(s_MyEnumData, rows);
         
-        private static void InitMyEnum(TableRow[] rows) => InitList<MyEnum>(s_MyEnumData, rows);
-        private static void InitMyEnum2(TableRow[] rows) => InitList<MyEnum2>(s_MyEnum2Data, rows);
-        private static void InitList<T>(ICollection<int> list, TableRow[] rows)
+        private static void InitMyEnum2(IReadOnlyList<TableRow> rows) => InitList<MyEnum2>(s_MyEnum2Data, rows);
+        
+        private static void InitList<T>(IList<int> list, IReadOnlyList<TableRow> rows)
         {
-            list.Clear();
-
+            if (Enum.GetValues(typeof(T)).Length != rows.Count)
+            {
+                Debug.LogError($"Unmatched count enum:{Enum.GetValues(typeof(T)).Length} rows:{rows.Count}");
+            }
+            
             int index = 0;
+            bool isUpdate = list.Count == rows.Count;
+            
+            if (!isUpdate)
+            {
+                list.Clear();
+            }
+            
             foreach (T value in Enum.GetValues(typeof(T)))
             {
                 string name = Enum.GetName(typeof(T), value);
@@ -49,19 +61,16 @@ namespace DM
                     break;
                 }
 
-                if (index >= rows.Length)
+                if (isUpdate)
                 {
-                    Debug.LogError($"Unmatched count under");
-                    break;
+                    list[index] = rows[index].Value;
                 }
-
-                list.Add(rows[index].Value);
+                else
+                {
+                    list.Add(rows[index].Value);
+                }
+                
                 index++;
-            }
-
-            if (index != rows.Length)
-            {
-                Debug.LogError($"Unmatched count over");
             }
         }
 
