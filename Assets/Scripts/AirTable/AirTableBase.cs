@@ -24,7 +24,7 @@ namespace DM
             return LoadTableAsync<T>(typeof(T).Name);
         }
 
-        private async UniTask<T[]> LoadTableAsync<T>(string tableName)
+        public async UniTask<T[]> LoadTableAsync<T>(string tableName)
         {
             var result = new List<T>();
             var offset = "0";

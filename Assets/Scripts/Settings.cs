@@ -78,15 +78,14 @@ namespace DM
         public static async UniTask LoadTableAsync()
         {
             AirTableClient client = new AirTableClient("key3NNedymjZdyPup");
-            AirTableBase clientBaseMyEnum = client.GetBase("appsj9JjmBwaF3Hbz");
-            AirTableBase clientBaseMyEnum2 = client.GetBase("appsj9JjmBwaF3Hbz");
+            AirTableBase clientBase = client.GetBase("appsj9JjmBwaF3Hbz");
             
             try
             {
-                TableRow[] allRows = await clientBaseMyEnum.LoadTableAsync<TableRow>();
+                TableRow[] allRows = await clientBase.LoadTableAsync<TableRow>("Setting1");
                 InitMyEnum(allRows);
                 
-                TableRow[] allRows2 = await clientBaseMyEnum2.LoadTableAsync<TableRow>();
+                TableRow[] allRows2 = await clientBase.LoadTableAsync<TableRow>("Setting2");
                 InitMyEnum2(allRows2);
             }
             catch (Exception e)
