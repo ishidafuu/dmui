@@ -53,6 +53,7 @@ namespace DM
         View3D = (1 << 6),
 
         SystemIndicator = (BackVisible | BackTouchable | SystemUntouchable | LoadingWithoutFade | ActiveWithoutFade),
+        Loading = (BackVisible | SystemUntouchable | LoadingWithoutFade | ActiveWithoutFade),
     }
 
     public enum EnumUIGroup
@@ -65,6 +66,7 @@ namespace DM
         Dialog,
         Debug,
         SystemFade,
+        Loading,
         System,
     }
 

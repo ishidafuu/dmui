@@ -50,4 +50,13 @@ namespace DMUIFramework.Samples {
             return new UIFade("BlackCurtainFade");
         }
     }
+    
+    public class LoadingCreator : ILoadingCreator
+    {
+        public UILoading Create()
+        {
+            // TODO
+            return new UILoading("BlackCurtainFade");
+        }
+    }
 }

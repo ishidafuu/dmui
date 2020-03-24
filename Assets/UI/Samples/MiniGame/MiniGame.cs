@@ -7,7 +7,7 @@ using DMUIFramework.Samples;
 public class MiniGame : MonoBehaviour {
 
 	void Start () {
-		UIController.SetImplement(new PrefabLoader(), null, new FadeCreator());
+		UIController.SetImplement(new PrefabLoader(), null, new FadeCreator(), null);
 		UIController.Instance.AddFront(new UIMiniGameTitle());
 	}
 }

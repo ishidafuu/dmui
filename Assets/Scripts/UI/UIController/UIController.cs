@@ -27,6 +27,7 @@ namespace DM
         private UIFadeController m_FadeController;
         private UIImplements m_Implements;
         private UITouchController m_TouchController;
+        private UILoadingController m_LoadingController;
 
         private Transform m_UILayers;
         public Transform m_UIView3D;
@@ -38,9 +39,10 @@ namespace DM
             m_Implements = implements;
         }
 
-        public static void SetImplement(IPrefabLoader prefabLoader, ISounder sounder, IFadeCreator fadeCreator)
+        public static void SetImplement(IPrefabLoader prefabLoader, ISounder sounder, IFadeCreator fadeCreator, 
+            ILoadingCreator loadingCreator)
         {
-            Instance.m_Implements = new UIImplements(prefabLoader, sounder, fadeCreator);
+            Instance.m_Implements = new UIImplements(prefabLoader, sounder, fadeCreator, loadingCreator);
         }
 
         private static UIController s_Instance;
@@ -70,6 +72,7 @@ namespace DM
             m_FadeController = new UIFadeController();
             m_TouchController = new UITouchController();
             m_DispatchController = new UIDispatchController();
+            m_LoadingController = new UILoadingController();
 
             if (m_RayCasterComponents == null
                 || m_UILayers == null
@@ -303,5 +306,18 @@ namespace DM
         {
             return m_LayerController.GetCountInGroup(group);
         }
+        
+        // ローディング開始
+        public void LoadingIn()
+        {
+            m_LoadingController.LoadingIn(Implements, m_AddingLayerList, AddFront);
+        }
+        
+        // ローディング終了
+        public void LoadingOut()
+        {
+            m_LoadingController.LoadingOut(Remove);
+        }
+
     }
 }

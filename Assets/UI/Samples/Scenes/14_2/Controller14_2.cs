@@ -29,9 +29,7 @@ namespace DM {
             for (var i = 0; i < 24; i++)
                 _data.Add(new Data() { hour = i });
         }
-
-        #region IEnhancedScrollerDelegate
-
+        
         public int GetNumberOfCells(EnhancedScroller scroller)
         {
             return _data.Count;
@@ -48,7 +46,5 @@ namespace DM {
             cellView142.SetData(_data[dataIndex]);
             return cellView142;
         }
-
-        #endregion
     }
 }
