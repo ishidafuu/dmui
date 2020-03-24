@@ -31,7 +31,7 @@ namespace DM
             {
                 return;
             }
-
+            
             remove.Invoke(m_ToastBaseLayer.Base);
             m_ToastBaseLayer = null;
         }

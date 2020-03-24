@@ -18,7 +18,10 @@ namespace DM {
         {
             // TouchListenerを継承してGetComponentせずに済むようなクラスを作ってもいいかも
             Debug.Log($"{m_cellView14_2.someTextText.text}");
+            UIController.Instance.ToastIn("みんみー");
             return true;
         }
+        
+        
     }
 }

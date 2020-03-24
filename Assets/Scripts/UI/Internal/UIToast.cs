@@ -6,16 +6,17 @@ namespace DM
 {
     public class UIToast : UIBase
     {
-        private const int TOAST_OUT_TIME = 120;
+        private const int TOAST_OUT_TIME = 180;
         private readonly string m_Message;
         private readonly string m_TextComponent;
         private int m_Count;
         
         public UIToast(string path, string textComponent, string message) 
-            : base(path, EnumUIGroup.Loading, EnumUIPreset.SystemIndicator)
+            : base(path, EnumUIGroup.Loading, EnumUIPreset.Toast)
         {
             m_Message = message;
             m_TextComponent = textComponent;
+            IsScheduleUpdate = true;
         }
 
         public override async UniTask OnLoadedBase()

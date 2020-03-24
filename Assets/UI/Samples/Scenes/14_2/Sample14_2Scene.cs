@@ -4,7 +4,12 @@ using UniRx.Async;
 namespace DM {
     class Sample14_2Scene : UIBase
     {
-        public Sample14_2Scene() : base("UISceneA_2", EnumUIGroup.Scene) { }
+        private int count = 0;
+
+        public Sample14_2Scene() : base("UISceneA_2", EnumUIGroup.Scene)
+        {
+            IsScheduleUpdate = true;
+        }
 
         public override async UniTask OnLoadedBase()
         {
@@ -17,6 +22,24 @@ namespace DM {
             };
 
             await UIController.Instance.YieldAttachParts(this, parts);
+        }
+
+        public override void OnUpdate()
+        {
+            base.OnUpdate();
+
+            if (UIController.Instance.IsLoading())
+            {
+                count++;
+                if (count > 120)
+                {
+                    UIController.Instance.LoadingOut();
+                }
+            }
+            else
+            {
+                count = 0;
+            }
         }
     }
 }

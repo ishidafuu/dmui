@@ -50,6 +50,8 @@ namespace DM {
         {
             Debug.Log("push Sample14_2Scroller: ");
             Debug.Log("Scene14 : All Right");
+            
+            
             return true;
         }
 

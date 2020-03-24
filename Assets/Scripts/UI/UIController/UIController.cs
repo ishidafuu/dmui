@@ -320,6 +320,12 @@ namespace DM
         {
             m_LoadingController.LoadingOut(Remove);
         }
+        
+        // ローディング中
+        public bool IsLoading()
+        {
+            return m_LoadingController.IsLoading();
+        }
 
         // トースト
         public void ToastIn(string message)
