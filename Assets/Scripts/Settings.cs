@@ -42,6 +42,7 @@ namespace DM
             if (Enum.GetValues(typeof(T)).Length != rows.Count)
             {
                 Debug.LogError($"Unmatched count enum:{Enum.GetValues(typeof(T)).Length} rows:{rows.Count}");
+                return;
             }
             
             int index = 0;
@@ -58,7 +59,7 @@ namespace DM
                 if (rows[index].Name != name)
                 {
                     Debug.LogError($"Unmatched Name rowName:{name} name:{rows[index].Name}");
-                    break;
+                    return;
                 }
 
                 if (isUpdate)
