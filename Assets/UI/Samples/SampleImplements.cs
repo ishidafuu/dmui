@@ -65,7 +65,7 @@ namespace DMUIFramework.Samples {
         public UIToast Create(string message)
         {
             // TODO
-            return new UIToast("BlackCurtainFade", message);
+            return new UIToast("BlackCurtainFade", "Layer/TextBox", message);
         }
     }
 }
