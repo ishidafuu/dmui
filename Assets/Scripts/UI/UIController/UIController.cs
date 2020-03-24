@@ -322,10 +322,15 @@ namespace DM
         }
 
         // トースト
-        public void PlayToast(string message)
+        public void ToastIn(string message)
         {
-            m_ToastController.PlayToast(Implements, m_AddingLayerList, AddFront, message);
+            m_ToastController.ToastIn(Implements, m_AddingLayerList, AddFront, message);
         }
         
+        public void ToastOut()
+        {
+            m_ToastController.ToastOut(Remove);
+        }
+
     }
 }

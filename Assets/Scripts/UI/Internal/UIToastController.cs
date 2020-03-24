@@ -7,7 +7,7 @@ namespace DM
     {
         private UIBaseLayer m_ToastBaseLayer;
 
-        public void PlayToast(UIImplements implements, List<UIBaseLayer> addingList, Action<UIBase> addFront, 
+        public void ToastIn(UIImplements implements, List<UIBaseLayer> addingList, Action<UIBase> addFront, 
             string message)
         {
             if (m_ToastBaseLayer != null)
