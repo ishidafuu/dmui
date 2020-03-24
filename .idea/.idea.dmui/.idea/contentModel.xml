@@ -432,6 +432,8 @@
               <e p="UIPartContainer.cs" t="Include" />
               <e p="UISound.cs" t="Include" />
               <e p="UiStateBehaviour.cs" t="Include" />
+              <e p="UIToast.cs" t="Include" />
+              <e p="UIToastController.cs" t="Include" />
               <e p="UITouchController.cs" t="Include" />
             </e>
             <e p="UIComponent" t="Include">
@@ -458,6 +460,7 @@
                 <e p="ILoadingCreator.cs" t="Include" />
                 <e p="IPrefabLoader.cs" t="Include" />
                 <e p="ISounder.cs" t="Include" />
+                <e p="IToastCreator.cs" t="Include" />
               </e>
               <e p="UIImplements.cs" t="Include" />
             </e>

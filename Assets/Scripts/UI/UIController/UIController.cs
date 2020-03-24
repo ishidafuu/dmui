@@ -28,6 +28,7 @@ namespace DM
         private UIImplements m_Implements;
         private UITouchController m_TouchController;
         private UILoadingController m_LoadingController;
+        private UIToastController m_ToastController;
 
         private Transform m_UILayers;
         public Transform m_UIView3D;
@@ -40,9 +41,9 @@ namespace DM
         }
 
         public static void SetImplement(IPrefabLoader prefabLoader, ISounder sounder, IFadeCreator fadeCreator, 
-            ILoadingCreator loadingCreator)
+            ILoadingCreator loadingCreator, IToastCreator toastCreator)
         {
-            Instance.m_Implements = new UIImplements(prefabLoader, sounder, fadeCreator, loadingCreator);
+            Instance.m_Implements = new UIImplements(prefabLoader, sounder, fadeCreator, loadingCreator, toastCreator);
         }
 
         private static UIController s_Instance;
@@ -73,6 +74,7 @@ namespace DM
             m_TouchController = new UITouchController();
             m_DispatchController = new UIDispatchController();
             m_LoadingController = new UILoadingController();
+            m_ToastController = new UIToastController();
 
             if (m_RayCasterComponents == null
                 || m_UILayers == null
@@ -319,5 +321,11 @@ namespace DM
             m_LoadingController.LoadingOut(Remove);
         }
 
+        // トースト
+        public void PlayToast(string message)
+        {
+            m_ToastController.PlayToast(Implements, m_AddingLayerList, AddFront, message);
+        }
+        
     }
 }

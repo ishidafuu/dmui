@@ -24,7 +24,7 @@ namespace DM {
 	public class Sample08 : MonoBehaviour {
 
 		void Start () {
-			UIController.SetImplement(new PrefabLoader(), new Sounder(), new FadeCreator(), new LoadingCreator());
+			UIController.SetImplement(new PrefabLoader(), new Sounder(), new FadeCreator(), new LoadingCreator(), new ToastCreator());
 			UIController.Instance.AddFront(new Sample08Scene());
 		}
 	}

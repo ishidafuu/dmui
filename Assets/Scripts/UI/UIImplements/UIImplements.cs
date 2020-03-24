@@ -6,14 +6,16 @@
         public ISounder Sounder { get; }
         public IFadeCreator FadeCreator { get; }
         public ILoadingCreator LoadingCreator { get; }
+        public IToastCreator ToastCreator { get; }
 
         public UIImplements(IPrefabLoader prefabLoader, ISounder sounder, IFadeCreator fadeCreator, 
-            ILoadingCreator loadingCreator)
+            ILoadingCreator loadingCreator, IToastCreator toastCreator)
         {
             PrefabLoader = prefabLoader;
             Sounder = sounder;
             FadeCreator = fadeCreator;
             LoadingCreator = loadingCreator;
+            ToastCreator = toastCreator;
         }
     }
 }

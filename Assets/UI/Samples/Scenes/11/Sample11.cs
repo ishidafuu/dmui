@@ -22,7 +22,7 @@ namespace DM {
 	public class Sample11 : MonoBehaviour {
 
 		void Start () {
-			UIController.SetImplement(new PrefabLoader(), new Sounder(), new FadeCreator(), new LoadingCreator());
+			UIController.SetImplement(new PrefabLoader(), new Sounder(), new FadeCreator(), new LoadingCreator(), new ToastCreator());
 			UIController.Instance.AddFront(new Sample11Scene());
 		}
 	}

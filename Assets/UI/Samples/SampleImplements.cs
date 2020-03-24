@@ -59,4 +59,13 @@ namespace DMUIFramework.Samples {
             return new UILoading("BlackCurtainFade");
         }
     }
+    
+    public class ToastCreator : IToastCreator
+    {
+        public UIToast Create()
+        {
+            // TODO
+            return new UIToast("BlackCurtainFade");
+        }
+    }
 }
