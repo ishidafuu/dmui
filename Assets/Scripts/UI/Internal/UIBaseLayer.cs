@@ -103,8 +103,7 @@ namespace DM
             Transform parent = Base.IsView3D() ? UIController.Instance.m_UIView3D : m_Origin.transform;
             Base.RootTransform.SetParent(parent, false);
             Base.RootTransform.gameObject.SetActive(false);
-
-            // await UniTask.DelayFrame(10);
+            
             await Base.OnLoadedBase();
             
             Setup();
@@ -191,7 +190,10 @@ namespace DM
             }
 
             ProgressState(EnumLayerState.InAnimation);
-            bool isPlay = Base.PlayAnimations(IN_ANIMATION_NAME, false, () => { ProgressState(EnumLayerState.Active); });
+            bool isPlay = Base.PlayAnimations(IN_ANIMATION_NAME, false, () =>
+            {
+                ProgressState(EnumLayerState.Active);
+            });
 
             if (!isPlay)
             {
@@ -291,11 +293,17 @@ namespace DM
             }
 
             State = nextEnumLayerState;
-            
-            bool isTouchable = StateFlags.IsTouchable(State);
-            if ((ScreenTouchOffCount == 0) != isTouchable)
+
+            // フェード不要で追加される(IsLoadingWithoutFade)はタッチ可能カウントを変化させない
+            if (Base.IsLoadingWithoutFade())
             {
-                UIController.Instance.SetScreenTouchableByLayer(this, isTouchable);
+                bool isTouchable = StateFlags.IsTouchable(State);
+                bool isScreenTouchable = (ScreenTouchOffCount == 0);
+                bool isNeedChangeTouchable = isScreenTouchable != isTouchable;
+                if (isNeedChangeTouchable && !Base.IsLoadingWithoutFade())
+                {
+                    UIController.Instance.SetScreenTouchableByLayer(this, isTouchable);
+                }
             }
 
             bool isVisible = StateFlags.IsVisible(State);
