@@ -13,9 +13,9 @@ namespace DM
             ErrorMessage = errorMessage;
         }
 
-        public HttpStatusCode ErrorCode { get; private set; }
-        public string ErrorName { get; private set; }
-        public string ErrorMessage { get; private set; }
+        public HttpStatusCode ErrorCode { get; }
+        public string ErrorName { get; }
+        public string ErrorMessage { get; }
     }
 
     public class AirTableUnrecognizedException : AirTableApiException
