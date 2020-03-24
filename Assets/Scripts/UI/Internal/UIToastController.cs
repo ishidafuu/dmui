@@ -20,7 +20,7 @@ namespace DM
                 return;
             }
 
-            UIToast toast = implements.ToastCreator.Create();
+            UIToast toast = implements.ToastCreator.Create(message);
             addFront.Invoke(toast);
             m_ToastBaseLayer = addingList.Find(layer => layer.Base == toast);
         }

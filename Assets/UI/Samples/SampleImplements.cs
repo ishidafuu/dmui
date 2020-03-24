@@ -62,10 +62,10 @@ namespace DMUIFramework.Samples {
     
     public class ToastCreator : IToastCreator
     {
-        public UIToast Create()
+        public UIToast Create(string message)
         {
             // TODO
-            return new UIToast("BlackCurtainFade");
+            return new UIToast("BlackCurtainFade", message);
         }
     }
 }

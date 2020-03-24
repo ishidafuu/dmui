@@ -2,6 +2,6 @@
 {
     public interface IToastCreator
     {
-        UIToast Create();
+        UIToast Create(string message);
     }
 }
