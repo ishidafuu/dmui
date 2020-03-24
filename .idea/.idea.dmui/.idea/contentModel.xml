@@ -202,13 +202,6 @@
             <e p="ResolverRegister" t="Include">
               <e p="Initializer.cs" t="Include" />
             </e>
-            <e p="Tables" t="Include">
-              <e p="MasterDataDB.cs" t="Include" />
-              <e p="Person.cs" t="Include" />
-              <e p="Skill.cs" t="Include" />
-              <e p="SkillParameter.cs" t="Include" />
-              <e p="TableTest.cs" t="Include" />
-            </e>
           </e>
           <e p="S3-Uploader" t="Include">
             <e p="Editor" t="Include">
@@ -411,6 +404,13 @@
               <e p="UploadToS3.cs" t="Include" />
             </e>
             <e p="ImageTaskLoad.cs" t="Include" />
+          </e>
+          <e p="Tables" t="Include">
+            <e p="MasterDataDB.cs" t="Include" />
+            <e p="Person.cs" t="Include" />
+            <e p="Skill.cs" t="Include" />
+            <e p="SkillParameter.cs" t="Include" />
+            <e p="TableTest.cs" t="Include" />
           </e>
           <e p="UI" t="Include">
             <e p="Define" t="Include">

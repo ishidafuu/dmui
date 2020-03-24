@@ -13,13 +13,13 @@ namespace DM
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
         public static void SetupMessagePackResolver()
         {
-            StaticCompositeResolver.Instance.Register(new[]{
-                MasterMemoryResolver.Instance, // set MasterMemory generated resolver
-                GeneratedResolver.Instance,    // set MessagePack generated resolver
-                StandardResolver.Instance      // set default MessagePack resolver
-            });
+            StaticCompositeResolver.Instance.Register(
+                MasterMemoryResolver.Instance,
+                GeneratedResolver.Instance,
+                StandardResolver.Instance);
 
-            var option = MessagePackSerializerOptions.Standard.WithResolver (StaticCompositeResolver.Instance);
+            MessagePackSerializerOptions option =
+                MessagePackSerializerOptions.Standard.WithResolver(StaticCompositeResolver.Instance);
             MessagePackSerializer.DefaultOptions = option;
         }
     }

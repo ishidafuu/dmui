@@ -8,6 +8,7 @@ namespace DM
 {
     public class MasterMemoryCodeGenerator : MonoBehaviour
     {
+        private static string srcPath = "Scripts/Tables";
         //  生成コードの出力先。Assetsフォルダ以降のパスを指定
         private static string outputPath = "Scripts/Generated/";
         
@@ -46,7 +47,7 @@ namespace DM
                 UseShellExecute = false,
                 FileName = filePath + exeFileName,
                 Arguments =
-                    $@"-i ""{Application.dataPath}/Scripts/Tables"" -o ""{Application.dataPath}/{outputPath}"" -n ""MasterData""",
+                    $@"-i ""{Application.dataPath}/{srcPath}"" -o ""{Application.dataPath}/{outputPath}"" -n ""MasterData""",
             };
 
             var p = Process.Start(psi);

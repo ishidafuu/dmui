@@ -10,15 +10,19 @@ namespace DM
     public static class MasterDataBuilder
     {
 
-        [MenuItem("MasterMemory/Build")]
+        // 事前にMasterMemoryで生成されたテーブル
+        [MenuItem("MasterDataBuilder/Build")]
         private static void BuildMasterData()
         {
             try
             {
                 Initializer.SetupMessagePackResolver();
             }
-            catch { }
-        
+            catch
+            {
+                // ignored
+            }
+
             var builder = new DatabaseBuilder();
             builder = BuildParson(builder);
             builder = BuildSkill(builder);
@@ -26,16 +30,16 @@ namespace DM
         
             byte[] data = builder.Build();
         
-            var resourcesDir = $"{Application.dataPath}/Resources";
+            string resourcesDir = $"{Application.dataPath}/Resources/";
+            string fileName = MasterDataDb.m_MasterData + ".bytes";
             Directory.CreateDirectory(resourcesDir);
-            var filename = "/master-data.bytes";
-        
-            using (var fs = new FileStream(resourcesDir + filename, FileMode.Create))
+
+            using (var fs = new FileStream(resourcesDir + fileName, FileMode.Create))
             {
                 fs.Write(data, 0, data.Length);
             }
         
-            Debug.Log($"Write byte[] to: {resourcesDir + filename}");
+            Debug.Log($"Write byte[] to: {resourcesDir + fileName}");
         
             AssetDatabase.Refresh();
         }
@@ -43,7 +47,7 @@ namespace DM
         private static DatabaseBuilder BuildParson(DatabaseBuilder builder)
         {
         
-            builder.Append(new Person[]
+            builder.Append(new[]
             {
                 new Person {PersonId = 0, Age = 13, Gender = Gender.Male, Name = "Dana Terry"},
                 new Person {PersonId = 1, Age = 17, Gender = Gender.Male, Name = "Kirk Obrien"},
@@ -61,7 +65,7 @@ namespace DM
         
         private static DatabaseBuilder BuildSkill(DatabaseBuilder builder)
         {
-            builder.Append(new Skill[]
+            builder.Append(new[]
             {
                 new Skill {SkillID = 0, SkillName = "スキル0"},
                 new Skill {SkillID = 1, SkillName = "スキル1"},
