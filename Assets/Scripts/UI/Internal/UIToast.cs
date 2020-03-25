@@ -8,27 +8,25 @@ namespace DM
     {
         private const int TOAST_OUT_TIME = 180;
         private readonly string m_Message;
-        private readonly string m_TextComponent;
         private int m_Count;
         
-        public UIToast(string path, string textComponent, string message) 
+        public UIToast(string path, string message) 
             : base(path, EnumUIGroup.Loading, EnumUIPreset.Toast)
         {
             m_Message = message;
-            m_TextComponent = textComponent;
             IsScheduleUpdate = true;
         }
 
         public override async UniTask OnLoadedBase()
         {
-            Text text = RootTransform.Find(m_TextComponent).gameObject.GetComponent<Text>();
+            Text text = RootTransform.gameObject.GetComponentInChildren<Text>();
             if (text != null)
             {
                 text.text = m_Message;
             }
             else
             {
-                Debug.LogError($"UIToast Notfound {m_TextComponent}");
+                Debug.LogError($"UIToast Notfound TextComponent");
             }
         }
 

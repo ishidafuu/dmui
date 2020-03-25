@@ -55,7 +55,6 @@ namespace DMUIFramework.Samples {
     {
         public UILoading Create()
         {
-            // TODO
             return new UILoading("Loading");
         }
     }
@@ -64,8 +63,7 @@ namespace DMUIFramework.Samples {
     {
         public UIToast Create(string message)
         {
-            // TODO
-            return new UIToast("Toast", "Image/Text", message);
+            return new UIToast("Toast", message);
         }
     }
 }
