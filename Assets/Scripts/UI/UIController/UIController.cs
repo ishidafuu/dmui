@@ -327,12 +327,13 @@ namespace DM
             return m_LoadingController.IsLoading();
         }
 
-        // トースト
+        // トースト開始
         public void ToastIn(string message)
         {
             m_ToastController.ToastIn(Implements, m_AddingLayerList, AddFront, message);
         }
         
+        // トースト終了
         public void ToastOut()
         {
             m_ToastController.ToastOut(Remove);
