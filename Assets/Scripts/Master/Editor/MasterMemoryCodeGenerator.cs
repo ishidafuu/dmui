@@ -8,15 +8,19 @@ namespace DM
 {
     public class MasterMemoryCodeGenerator : EditorWindow
     {
-        private const string SRC_PATH = "Scripts/Tables";
+        private const string SRC_PATH = "Scripts/Master/Tables";
+
         //  生成コードの出力先。Assetsフォルダ以降のパスを指定
         private static string s_OutputPath = "Scripts/Generated/";
+
         private static string ArgumentMasterMemory =>
             $@"-i ""{Application.dataPath}/{SRC_PATH}"" -o ""{Application.dataPath}/{s_OutputPath}"" -n ""MasterData""";
+
         private static string ArgumentMessagePack =>
             $@"-i ""{Application.dataPath}/../Assembly-CSharp.csproj"" -o ""{Application.dataPath}/{s_OutputPath}/MessagePack.Generated.cs""";
+
         private static readonly string s_GeneratorTools = $"{Application.dataPath}/../GeneratorTools";
-        
+
         [MenuItem("Tools/MessagePack")]
         private static void Open()
         {
@@ -35,29 +39,22 @@ namespace DM
             EditorGUILayout.Space(10);
             if (GUILayout.Button("MasterMemory CodeGenerator"))
             {
-                 ExecuteMasterMemoryCodeGenerator();
+                ExecuteMasterMemoryCodeGenerator();
                 AssetDatabase.Refresh();
             }
-            
+
             if (GUILayout.Button("MessagePack CodeGenerator"))
             {
                 ExecuteMessagePackCodeGenerator();
                 AssetDatabase.Refresh();
             }
-            
+
             if (GUILayout.Button("Build MasterData"))
             {
                 MasterDataBuilder.Build();
                 AssetDatabase.Refresh();
             }
         }
-        
-        // [MenuItem("CodeGenerate/MasterMemory")]
-        // private static void Generate()
-        // {
-        //     ExecuteMasterMemoryCodeGenerator();
-        //     // ExecuteMessagePackCodeGenerator();
-        // }
 
         private static void ExecuteMasterMemoryCodeGenerator()
         {
@@ -105,7 +102,7 @@ namespace DM
             Debug.Log($"{nameof(ExecuteMessagePackCodeGenerator)} : start");
 
             var exProcess = new Process();
-            
+
             var exeFileName = "";
 #if UNITY_EDITOR_WIN
             exeFileName = "/mpc.exe";

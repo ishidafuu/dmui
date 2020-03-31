@@ -1,14 +1,11 @@
-﻿// using MasterData;
-
-using MasterData;
+﻿using MasterData;
 using MessagePack;
 using MessagePack.Resolvers;
-using MessagePack.Unity;
 using UnityEngine;
 
 namespace DM
 {
-    public static class Initializer
+    public static class MessagePackResolver
     {
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
         public static void SetupMessagePackResolver()

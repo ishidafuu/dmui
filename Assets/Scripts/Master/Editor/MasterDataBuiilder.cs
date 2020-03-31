@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 using MasterData;
-using MessagePack.Resolvers;
 using UnityEditor;
 using UnityEngine;
 
@@ -9,13 +8,11 @@ namespace DM
 {
     public static class MasterDataBuilder
     {
-        // 事前にMasterMemoryで生成されたテーブル
-        // [MenuItem("Tools/MasterDataBuilder")]
         public static void Build()
         {
             try
             {
-                Initializer.SetupMessagePackResolver();
+                MessagePackResolver.SetupMessagePackResolver();
             }
             catch
             {
@@ -26,26 +23,25 @@ namespace DM
             builder = BuildParson(builder);
             builder = BuildSkill(builder);
             builder = BuildSkillParameter(builder);
-        
+
             byte[] data = builder.Build();
-        
+
             string resourcesDir = $"{Application.dataPath}/Resources/";
-            string fileName = MasterDataDb.m_MasterData + ".bytes";
+            string fileName = MasterDataDb.MASTER_RESOURCE_PATH + ".bytes";
             Directory.CreateDirectory(resourcesDir);
 
             using (var fs = new FileStream(resourcesDir + fileName, FileMode.Create))
             {
                 fs.Write(data, 0, data.Length);
             }
-        
+
             Debug.Log($"Write byte[] to: {resourcesDir + fileName}");
-        
+
             AssetDatabase.Refresh();
         }
-        
+
         private static DatabaseBuilder BuildParson(DatabaseBuilder builder)
         {
-        
             builder.Append(new[]
             {
                 new Person {PersonId = 0, Age = 13, Gender = Gender.Male, Name = "Dana Terry"},
@@ -61,7 +57,7 @@ namespace DM
             });
             return builder;
         }
-        
+
         private static DatabaseBuilder BuildSkill(DatabaseBuilder builder)
         {
             builder.Append(new[]
@@ -73,7 +69,7 @@ namespace DM
             });
             return builder;
         }
-        
+
         private static DatabaseBuilder BuildSkillParameter(DatabaseBuilder builder)
         {
             var skillParameters = new List<SkillParameter>();
@@ -89,7 +85,7 @@ namespace DM
                     });
                 }
             }
-        
+
             builder.Append(skillParameters);
             return builder;
         }

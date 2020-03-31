@@ -155,6 +155,7 @@
         </e>
         <e p="Scenes" t="Include">
           <e p="nobiload.cs" t="Include" />
+          <e p="TableTest.cs" t="Include" />
         </e>
         <e p="Scripts" t="Include">
           <e p="AirTable" t="Include">
@@ -164,10 +165,6 @@
           </e>
           <e p="AssetAddress.cs" t="Include" />
           <e p="AssetLabel.cs" t="Include" />
-          <e p="Editor" t="Include">
-            <e p="MasterDataBuiilder.cs" t="Include" />
-            <e p="MasterMemoryCodeGenerator.cs" t="Include" />
-          </e>
           <e p="Generated" t="Include">
             <e p="DatabaseBuilder.cs" t="Include" />
             <e p="ImmutableBuilder.cs" t="Include" />
@@ -198,8 +195,16 @@
             <e p="NoCommunicationHTTPClient.cs" t="Include" />
           </e>
           <e p="Master" t="Include">
-            <e p="ResolverRegister" t="Include">
-              <e p="Initializer.cs" t="Include" />
+            <e p="Editor" t="Include">
+              <e p="MasterDataBuiilder.cs" t="Include" />
+              <e p="MasterMemoryCodeGenerator.cs" t="Include" />
+            </e>
+            <e p="MasterDataDB.cs" t="Include" />
+            <e p="MessagePackResolver.cs" t="Include" />
+            <e p="Tables" t="Include">
+              <e p="Person.cs" t="Include" />
+              <e p="Skill.cs" t="Include" />
+              <e p="SkillParameter.cs" t="Include" />
             </e>
           </e>
           <e p="S3-Uploader" t="Include">
@@ -405,13 +410,6 @@
             <e p="ImageTaskLoad.cs" t="Include" />
           </e>
           <e p="Settings.cs" t="Include" />
-          <e p="Tables" t="Include">
-            <e p="MasterDataDB.cs" t="Include" />
-            <e p="Person.cs" t="Include" />
-            <e p="Skill.cs" t="Include" />
-            <e p="SkillParameter.cs" t="Include" />
-            <e p="TableTest.cs" t="Include" />
-          </e>
           <e p="UI" t="Include">
             <e p="Define" t="Include">
               <e p="UiDefine.cs" t="Include" />

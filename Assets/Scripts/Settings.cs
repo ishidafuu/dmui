@@ -36,6 +36,9 @@ namespace DM
             
         public static async UniTask LoadTableAsync()
         {
+            // DevでははAirTableから直接ロード
+            // 最終的にはMemoryMasterからロード
+            
             AirTableClient client = new AirTableClient("key3NNedymjZdyPup");
             AirTableBase clientBase = client.GetBase("appsj9JjmBwaF3Hbz");
             
