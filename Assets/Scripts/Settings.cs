@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System;
 using System.Linq;
+using System.Threading.Tasks;
 using UniRx.Async;
 using UnityEngine;
 
@@ -33,10 +34,35 @@ namespace DM
         public static int Get(MyEnum key) => s_MyEnumData[(int)key];
         public static int Get(MyEnum2 key) => s_MyEnum2Data[(int)key];
             
-        private static void InitMyEnum(IReadOnlyList<TableRow> rows) => InitList<MyEnum>(s_MyEnumData, rows);
+        public static async UniTask LoadTableAsync()
+        {
+            AirTableClient client = new AirTableClient("key3NNedymjZdyPup");
+            AirTableBase clientBase = client.GetBase("appsj9JjmBwaF3Hbz");
+            
+            try
+            {
+                await LoadMyEnumData(clientBase);
+                await LoadMyEnumData2(clientBase);
+            }
+            catch (Exception e)
+            {
+                Debug.LogError(e);
+                throw;
+            }
+        }
         
-        private static void InitMyEnum2(IReadOnlyList<TableRow> rows) => InitList<MyEnum2>(s_MyEnum2Data, rows);
-        
+        private static async Task LoadMyEnumData(AirTableBase clientBase)
+        {
+            TableRow[] allRows = await clientBase.LoadTableAsync<TableRow>("Setting1");
+            InitList<MyEnum>(s_MyEnumData, allRows);
+        }
+
+        private static async Task LoadMyEnumData2(AirTableBase clientBase)
+        {
+            TableRow[] allRows2 = await clientBase.LoadTableAsync<TableRow>("Setting2");
+            InitList<MyEnum2>(s_MyEnum2Data, allRows2);
+        }
+
         private static void InitList<T>(IList<int> list, IReadOnlyList<TableRow> rows)
         {
             if (Enum.GetValues(typeof(T)).Length != rows.Count)
@@ -72,26 +98,6 @@ namespace DM
                 }
                 
                 index++;
-            }
-        }
-
-        public static async UniTask LoadTableAsync()
-        {
-            AirTableClient client = new AirTableClient("key3NNedymjZdyPup");
-            AirTableBase clientBase = client.GetBase("appsj9JjmBwaF3Hbz");
-            
-            try
-            {
-                TableRow[] allRows = await clientBase.LoadTableAsync<TableRow>("Setting1");
-                InitMyEnum(allRows);
-                
-                TableRow[] allRows2 = await clientBase.LoadTableAsync<TableRow>("Setting2");
-                InitMyEnum2(allRows2);
-            }
-            catch (Exception e)
-            {
-                Debug.LogError(e);
-                throw;
             }
         }
     }
