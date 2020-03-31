@@ -9,10 +9,9 @@ namespace DM
 {
     public static class MasterDataBuilder
     {
-
         // 事前にMasterMemoryで生成されたテーブル
-        [MenuItem("MasterDataBuilder/Build")]
-        private static void BuildMasterData()
+        // [MenuItem("Tools/MasterDataBuilder")]
+        public static void Build()
         {
             try
             {

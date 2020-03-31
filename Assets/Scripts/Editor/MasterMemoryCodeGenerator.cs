@@ -17,13 +17,13 @@ namespace DM
             $@"-i ""{Application.dataPath}/../Assembly-CSharp.csproj"" -o ""{Application.dataPath}/{s_OutputPath}/MessagePack.Generated.cs""";
         private static readonly string s_GeneratorTools = $"{Application.dataPath}/../GeneratorTools";
         
-        [MenuItem("CodeGenerate/MessagePack")]
+        [MenuItem("Tools/MessagePack")]
         private static void Open()
         {
             var window = GetWindow<MasterMemoryCodeGenerator>();
             window.titleContent = new GUIContent()
             {
-                text = "MasterMemoryCodeGenerator"
+                text = "MessagePackCodeGenerator"
             };
         }
 
@@ -33,15 +33,21 @@ namespace DM
             EditorGUILayout.LabelField("最後に/を忘れずに");
             s_OutputPath = EditorGUILayout.TextField(s_OutputPath);
             EditorGUILayout.Space(10);
-            if (GUILayout.Button("MasterMemory"))
+            if (GUILayout.Button("MasterMemory CodeGenerator"))
             {
                  ExecuteMasterMemoryCodeGenerator();
                 AssetDatabase.Refresh();
             }
             
-            if (GUILayout.Button("MessagePack"))
+            if (GUILayout.Button("MessagePack CodeGenerator"))
             {
                 ExecuteMessagePackCodeGenerator();
+                AssetDatabase.Refresh();
+            }
+            
+            if (GUILayout.Button("Build MasterData"))
+            {
+                MasterDataBuilder.Build();
                 AssetDatabase.Refresh();
             }
         }
