@@ -6,18 +6,52 @@ using Debug = UnityEngine.Debug;
 
 namespace DM
 {
-    public class MasterMemoryCodeGenerator : MonoBehaviour
+    public class MasterMemoryCodeGenerator : EditorWindow
     {
-        private static string srcPath = "Scripts/Tables";
+        private const string SRC_PATH = "Scripts/Tables";
         //  生成コードの出力先。Assetsフォルダ以降のパスを指定
-        private static string outputPath = "Scripts/Generated/";
+        private static string s_OutputPath = "Scripts/Generated/";
+        private static string s_ArgumentMasterMemory =>
+            $@"-i ""{Application.dataPath}/{SRC_PATH}"" -o ""{Application.dataPath}/{s_OutputPath}"" -n ""MasterData""";
+        private static string s_ArgumentMessagePack =>
+            $@"-i ""{Application.dataPath}/../Assembly-CSharp.csproj"" -o ""{Application.dataPath}/{s_OutputPath}/MessagePack.Generated.cs""";
+        private static readonly string s_GeneratorTools = $"{Application.dataPath}/../GeneratorTools";
         
-        [MenuItem("CodeGenerate/MasterMemory")]
-        private static void Generate()
+        [MenuItem("CodeGenerate/MessagePack")]
+        private static void Open()
         {
-            ExecuteMasterMemoryCodeGenerator();
-            // ExecuteMessagePackCodeGenerator();
+            var window = GetWindow<MasterMemoryCodeGenerator>();
+            window.titleContent = new GUIContent()
+            {
+                text = "MasterMemoryCodeGenerator"
+            };
         }
+
+        private void OnGUI()
+        {
+            EditorGUILayout.LabelField("出力先。Assetsフォルダ以下のパス。");
+            EditorGUILayout.LabelField("最後に/を忘れずに");
+            s_OutputPath = EditorGUILayout.TextField(s_OutputPath);
+            EditorGUILayout.Space(10);
+            if (GUILayout.Button("MasterMemory"))
+            {
+                 ExecuteMasterMemoryCodeGenerator();
+                AssetDatabase.Refresh();
+            }
+            
+            if (GUILayout.Button("MessagePack"))
+            {
+                ExecuteMessagePackCodeGenerator();
+                AssetDatabase.Refresh();
+            }
+        }
+        
+        // [MenuItem("CodeGenerate/MasterMemory")]
+        // private static void Generate()
+        // {
+        //     ExecuteMasterMemoryCodeGenerator();
+        //     // ExecuteMessagePackCodeGenerator();
+        // }
 
         private static void ExecuteMasterMemoryCodeGenerator()
         {
@@ -25,8 +59,6 @@ namespace DM
 
             var exProcess = new Process();
 
-            var rootPath = Application.dataPath + "/..";
-            var filePath = rootPath + "/GeneratorTools";
             var exeFileName = "";
 #if UNITY_EDITOR_WIN
             exeFileName = "/MasterMemory.Generator.exe";
@@ -45,17 +77,16 @@ namespace DM
                 RedirectStandardOutput = true,
                 RedirectStandardError = true,
                 UseShellExecute = false,
-                FileName = filePath + exeFileName,
-                Arguments =
-                    $@"-i ""{Application.dataPath}/{srcPath}"" -o ""{Application.dataPath}/{outputPath}"" -n ""MasterData""",
+                FileName = s_GeneratorTools + exeFileName,
+                Arguments = s_ArgumentMasterMemory,
             };
 
-            var p = Process.Start(psi);
+            Process p = Process.Start(psi);
 
             p.EnableRaisingEvents = true;
             p.Exited += (object sender, EventArgs e) =>
             {
-                var data = p.StandardOutput.ReadToEnd();
+                string data = p.StandardOutput.ReadToEnd();
                 Debug.Log($"{data}");
                 Debug.Log($"{nameof(ExecuteMasterMemoryCodeGenerator)} : end");
                 p.Dispose();
@@ -68,9 +99,7 @@ namespace DM
             Debug.Log($"{nameof(ExecuteMessagePackCodeGenerator)} : start");
 
             var exProcess = new Process();
-
-            var rootPath = Application.dataPath + "/..";
-            var filePath = rootPath + "/GeneratorTools";
+            
             var exeFileName = "";
 #if UNITY_EDITOR_WIN
             exeFileName = "/mpc.exe";
@@ -89,17 +118,16 @@ namespace DM
                 RedirectStandardOutput = true,
                 RedirectStandardError = true,
                 UseShellExecute = false,
-                FileName = filePath + exeFileName,
-                Arguments =
-                    $@"-i ""{Application.dataPath}/../Assembly-CSharp.csproj"" -o ""{Application.dataPath}/{outputPath}/MessagePack.Generated.cs""",
+                FileName = s_GeneratorTools + exeFileName,
+                Arguments = s_ArgumentMessagePack,
             };
 
-            var p = Process.Start(psi);
+            Process p = Process.Start(psi);
 
             p.EnableRaisingEvents = true;
             p.Exited += (object sender, EventArgs e) =>
             {
-                var data = p.StandardOutput.ReadToEnd();
+                string data = p.StandardOutput.ReadToEnd();
                 Debug.Log($"{data}");
                 Debug.Log($"{nameof(ExecuteMessagePackCodeGenerator)} : end");
                 p.Dispose();

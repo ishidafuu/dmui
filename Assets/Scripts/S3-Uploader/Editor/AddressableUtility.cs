@@ -10,13 +10,13 @@ using UnityEngine;
 namespace DM
 {
 //C:\Program Files\Unity\Editor\Unity.exe -batchmode -quit -logFile .\build.log -projectPath D:\nkpb\dmui -executeMethod DM.AasUtility.Build
-    public class AasUtility : Editor
+    public class AddressableUtility : Editor
     {
         private static readonly string s_AssetRoot =
             "Assets" + Path.DirectorySeparatorChar + "Data" + Path.DirectorySeparatorChar;
 
         private const string ADDRESSABLE_ASSET_SETTINGS = "Assets/AddressableAssetsData/AddressableAssetSettings.asset";
-        private const string MENU_NAME = "AASUtility";
+        private const string MENU_NAME = "AddressableUtility";
 
         private const string EDITOR_DIR = "Editor";
         private const string DATA_ROOT = "Assets/AssetBundles/";
