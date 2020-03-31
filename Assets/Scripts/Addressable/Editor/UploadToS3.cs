@@ -21,7 +21,7 @@ namespace DM
         private const string m_ServerDataDir = "ServerData";
         private RegionEndpoint m_BucketRegion;
 
-        [MenuItem("Tools/Addressable Content Uploader (S3)")]
+        [MenuItem("Addressable/S3 Content Uploader")]
         private static void Init()
         {
             var window = (UploadToS3)GetWindow(typeof(UploadToS3));

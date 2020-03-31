@@ -65,7 +65,7 @@ namespace DM
         //=================================================================================
 
         //定数クラス作成
-        [MenuItem("Tools/AddressableAsset Constants Class")]
+        [MenuItem("Addressable/Generate Constants Class")]
         public static void Create()
         {
             //アドレスとラベルをまとめるやつ

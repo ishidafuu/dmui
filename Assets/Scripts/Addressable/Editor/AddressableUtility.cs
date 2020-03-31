@@ -16,7 +16,7 @@ namespace DM
             "Assets" + Path.DirectorySeparatorChar + "Data" + Path.DirectorySeparatorChar;
 
         private const string ADDRESSABLE_ASSET_SETTINGS = "Assets/AddressableAssetsData/AddressableAssetSettings.asset";
-        private const string MENU_NAME = "Addressable";
+        private const string MENU_NAME = "Addressable/AssetsData";
 
         private const string EDITOR_DIR = "Editor";
         private const string DATA_ROOT = "Assets/AssetBundles/";
@@ -92,7 +92,7 @@ namespace DM
         /// <summary>
         /// 空グループを削除
         /// </summary>
-        [MenuItem(MENU_NAME + "/Remove/EmptyGroup")]
+        [MenuItem(MENU_NAME + "/Remove EmptyGroup")]
         public static void DeleteEmptyGroup()
         {
             var s = GetSettings();
@@ -107,7 +107,7 @@ namespace DM
         /// <summary>
         /// 全グループを削除
         /// </summary>
-        [MenuItem(MENU_NAME + "/Remove/AllGroup")]
+        [MenuItem(MENU_NAME + "/Remove AllGroup")]
         public static void RemoveAllGroup()
         {
             AddressableAssetSettings settings = GetSettings();
