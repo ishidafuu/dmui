@@ -11,9 +11,9 @@ namespace DM
         private const string SRC_PATH = "Scripts/Tables";
         //  生成コードの出力先。Assetsフォルダ以降のパスを指定
         private static string s_OutputPath = "Scripts/Generated/";
-        private static string s_ArgumentMasterMemory =>
+        private static string ArgumentMasterMemory =>
             $@"-i ""{Application.dataPath}/{SRC_PATH}"" -o ""{Application.dataPath}/{s_OutputPath}"" -n ""MasterData""";
-        private static string s_ArgumentMessagePack =>
+        private static string ArgumentMessagePack =>
             $@"-i ""{Application.dataPath}/../Assembly-CSharp.csproj"" -o ""{Application.dataPath}/{s_OutputPath}/MessagePack.Generated.cs""";
         private static readonly string s_GeneratorTools = $"{Application.dataPath}/../GeneratorTools";
         
@@ -78,7 +78,7 @@ namespace DM
                 RedirectStandardError = true,
                 UseShellExecute = false,
                 FileName = s_GeneratorTools + exeFileName,
-                Arguments = s_ArgumentMasterMemory,
+                Arguments = ArgumentMasterMemory,
             };
 
             Process p = Process.Start(psi);
@@ -119,7 +119,7 @@ namespace DM
                 RedirectStandardError = true,
                 UseShellExecute = false,
                 FileName = s_GeneratorTools + exeFileName,
-                Arguments = s_ArgumentMessagePack,
+                Arguments = ArgumentMessagePack,
             };
 
             Process p = Process.Start(psi);

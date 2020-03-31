@@ -167,7 +167,6 @@
           <e p="Editor" t="Include">
             <e p="MasterDataBuiilder.cs" t="Include" />
             <e p="MasterMemoryCodeGenerator.cs" t="Include" />
-            <e p="MessagePackCodeGenerator.cs" t="Include" />
           </e>
           <e p="Generated" t="Include">
             <e p="DatabaseBuilder.cs" t="Include" />
