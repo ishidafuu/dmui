@@ -158,56 +158,7 @@
           <e p="TableTest.cs" t="Include" />
         </e>
         <e p="Scripts" t="Include">
-          <e p="AirTable" t="Include">
-            <e p="AirtableApiException.cs" t="Include" />
-            <e p="AirtableBase.cs" t="Include" />
-            <e p="AirtableClient.cs" t="Include" />
-          </e>
-          <e p="AssetAddress.cs" t="Include" />
-          <e p="AssetLabel.cs" t="Include" />
-          <e p="Generated" t="Include">
-            <e p="DatabaseBuilder.cs" t="Include" />
-            <e p="ImmutableBuilder.cs" t="Include" />
-            <e p="MasterMemoryResolver.cs" t="Include" />
-            <e p="MemoryDatabase.cs" t="Include" />
-            <e p="MessagePack_Formatters_DM_GenderFormatter.cs" t="Include" />
-            <e p="MessagePack_Formatters_DM_MessagePackTestFormatter.cs" t="Include" />
-            <e p="MessagePack_Formatters_DM_PersonFormatter.cs" t="Include" />
-            <e p="MessagePack_Formatters_DM_SkillFormatter.cs" t="Include" />
-            <e p="MessagePack_Formatters_DM_SkillParameterFormatter.cs" t="Include" />
-            <e p="MessagePack_Resolvers_GeneratedResolver.cs" t="Include" />
-            <e p="Tables" t="Include">
-              <e p="PersonTable.cs" t="Include" />
-              <e p="SkillParameterTable.cs" t="Include" />
-              <e p="SkillTable.cs" t="Include" />
-            </e>
-          </e>
-          <e p="http" t="Include">
-            <e p="CryptographicProtection.cs" t="Include" />
-            <e p="header_param" t="Include">
-              <e p="AppIdHeaderParam.cs" t="Include" />
-              <e p="IRequestHeaderParam.cs" t="Include" />
-              <e p="IRequestNoCacheHeaderParam.cs" t="Include" />
-            </e>
-            <e p="HTTPWebRequestClient.cs" t="Include" />
-            <e p="IHTTPClient.cs" t="Include" />
-            <e p="MessagePackTest.cs" t="Include" />
-            <e p="NoCommunicationHTTPClient.cs" t="Include" />
-          </e>
-          <e p="Master" t="Include">
-            <e p="Editor" t="Include">
-              <e p="MasterDataBuiilder.cs" t="Include" />
-              <e p="MasterMemoryCodeGenerator.cs" t="Include" />
-            </e>
-            <e p="MasterDataDB.cs" t="Include" />
-            <e p="MessagePackResolver.cs" t="Include" />
-            <e p="Tables" t="Include">
-              <e p="Person.cs" t="Include" />
-              <e p="Skill.cs" t="Include" />
-              <e p="SkillParameter.cs" t="Include" />
-            </e>
-          </e>
-          <e p="S3-Uploader" t="Include">
+          <e p="Addressable" t="Include">
             <e p="Editor" t="Include">
               <e p="AddressableAssetAddressClassCreator.cs" t="Include" />
               <e p="AddressableUtility.cs" t="Include" />
@@ -408,6 +359,55 @@
               <e p="UploadToS3.cs" t="Include" />
             </e>
             <e p="ImageTaskLoad.cs" t="Include" />
+          </e>
+          <e p="AirTable" t="Include">
+            <e p="AirtableApiException.cs" t="Include" />
+            <e p="AirtableBase.cs" t="Include" />
+            <e p="AirtableClient.cs" t="Include" />
+          </e>
+          <e p="AssetAddress.cs" t="Include" />
+          <e p="AssetLabel.cs" t="Include" />
+          <e p="Generated" t="Include">
+            <e p="DatabaseBuilder.cs" t="Include" />
+            <e p="ImmutableBuilder.cs" t="Include" />
+            <e p="MasterMemoryResolver.cs" t="Include" />
+            <e p="MemoryDatabase.cs" t="Include" />
+            <e p="MessagePack_Formatters_DM_GenderFormatter.cs" t="Include" />
+            <e p="MessagePack_Formatters_DM_MessagePackTestFormatter.cs" t="Include" />
+            <e p="MessagePack_Formatters_DM_PersonFormatter.cs" t="Include" />
+            <e p="MessagePack_Formatters_DM_SkillFormatter.cs" t="Include" />
+            <e p="MessagePack_Formatters_DM_SkillParameterFormatter.cs" t="Include" />
+            <e p="MessagePack_Resolvers_GeneratedResolver.cs" t="Include" />
+            <e p="Tables" t="Include">
+              <e p="PersonTable.cs" t="Include" />
+              <e p="SkillParameterTable.cs" t="Include" />
+              <e p="SkillTable.cs" t="Include" />
+            </e>
+          </e>
+          <e p="http" t="Include">
+            <e p="CryptographicProtection.cs" t="Include" />
+            <e p="header_param" t="Include">
+              <e p="AppIdHeaderParam.cs" t="Include" />
+              <e p="IRequestHeaderParam.cs" t="Include" />
+              <e p="IRequestNoCacheHeaderParam.cs" t="Include" />
+            </e>
+            <e p="HTTPWebRequestClient.cs" t="Include" />
+            <e p="IHTTPClient.cs" t="Include" />
+            <e p="MessagePackTest.cs" t="Include" />
+            <e p="NoCommunicationHTTPClient.cs" t="Include" />
+          </e>
+          <e p="Master" t="Include">
+            <e p="Editor" t="Include">
+              <e p="MasterDataBuiilder.cs" t="Include" />
+              <e p="MasterMemoryCodeGenerator.cs" t="Include" />
+            </e>
+            <e p="MasterDataDB.cs" t="Include" />
+            <e p="MessagePackResolver.cs" t="Include" />
+            <e p="Tables" t="Include">
+              <e p="Person.cs" t="Include" />
+              <e p="Skill.cs" t="Include" />
+              <e p="SkillParameter.cs" t="Include" />
+            </e>
           </e>
           <e p="Settings.cs" t="Include" />
           <e p="UI" t="Include">

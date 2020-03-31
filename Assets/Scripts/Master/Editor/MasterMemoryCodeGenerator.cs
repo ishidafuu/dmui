@@ -21,7 +21,7 @@ namespace DM
 
         private static readonly string s_GeneratorTools = $"{Application.dataPath}/../GeneratorTools";
 
-        [MenuItem("Tools/MessagePack")]
+        [MenuItem("Master/MessagePack")]
         private static void Open()
         {
             var window = GetWindow<MasterMemoryCodeGenerator>();

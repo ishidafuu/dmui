@@ -16,7 +16,7 @@ namespace DM
             "Assets" + Path.DirectorySeparatorChar + "Data" + Path.DirectorySeparatorChar;
 
         private const string ADDRESSABLE_ASSET_SETTINGS = "Assets/AddressableAssetsData/AddressableAssetSettings.asset";
-        private const string MENU_NAME = "AddressableUtility";
+        private const string MENU_NAME = "Addressable";
 
         private const string EDITOR_DIR = "Editor";
         private const string DATA_ROOT = "Assets/AssetBundles/";
