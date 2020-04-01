@@ -7,6 +7,6 @@
         /// <summary>
         /// Cacheなし
         /// </summary>
-        public override void Reset() => cacheHeaderValue = HeaderValue();
+        public override void Reset() => m_CacheHeaderValue = HeaderValue();
     }
 }

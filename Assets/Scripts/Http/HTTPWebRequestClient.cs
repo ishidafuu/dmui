@@ -27,17 +27,6 @@ namespace DM
         private HttpResponseDataDelegate m_ResponseDataDelegate = null;
         private readonly IReadOnlyList<IRequestHeaderParam> m_RequestHeaderParams = null;
 
-//         var requestHeaderParams = new List<IRequestHeaderParam>() { 
-//             new AppIdHeaderParam(),			// ユーザー情報
-//             new AppTokenHeaderParam(),		// 多重Request対策
-//             new AppDayToDayHeaderParam(),	// 日跨ぎ検知
-// #if OUTSIDE_DEV
-//                 new AuthorizationHeaderParam(),	// basic認証
-// #endif
-//         };
-        // ユーザー情報
-        // 多重Request対策
-        
         public HttpWebRequestClient(IReadOnlyList<IRequestHeaderParam> requestHeaders, int timeOut = 30)
         {
             m_RequestHeaderParams = requestHeaders;
@@ -62,7 +51,7 @@ namespace DM
 
             foreach (IRequestHeaderParam item in m_RequestHeaderParams)
             {
-                Debug.Log($"<color=blue>requestHeaderParam:{item.cacheHeaderValue}</color>");
+                Debug.Log($"<color=blue>requestHeaderParam:{item.m_CacheHeaderValue}</color>");
                 Debug.Log($"<color=blue>requestJson:{requestJson}</color>");
             }
 
@@ -107,7 +96,7 @@ namespace DM
                 // Headerデータをセットする
                 foreach (IRequestHeaderParam item in m_RequestHeaderParams)
                 {
-                    www.SetRequestHeader(item.valueName, item.cacheHeaderValue);
+                    www.SetRequestHeader(item.m_ValueName, item.m_CacheHeaderValue);
                 }
 
                 Stopwatch stop = new Stopwatch();

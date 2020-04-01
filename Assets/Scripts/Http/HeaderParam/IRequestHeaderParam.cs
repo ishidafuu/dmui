@@ -6,10 +6,10 @@
     public abstract class IRequestHeaderParam
     {
         // headerValueの名前
-        public readonly string valueName = null;
+        public readonly string m_ValueName = null;
         
         // retry時に同じ値を送る必要があるため
-        public string cacheHeaderValue = null;        
+        public string m_CacheHeaderValue = null;        
 
         /// <summary>
         /// 実際の取得処理を抽象化
@@ -17,16 +17,16 @@
         /// <returns></returns>
         protected abstract string HeaderValue();
 
-        public IRequestHeaderParam(string _valueName)
+        public IRequestHeaderParam(string valueName)
         {
-            valueName = _valueName;
+            m_ValueName = valueName;
         }
 
         /// <summary>
         /// 初期化
         /// ※Cacheしたいものもあるため、別途retry用のResetも用意する
         /// </summary>
-        public virtual void Init() => cacheHeaderValue = HeaderValue();
+        public void Init() => m_CacheHeaderValue = HeaderValue();
 
         /// <summary>
         /// Retry時に呼ぶ
