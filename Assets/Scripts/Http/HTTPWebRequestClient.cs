@@ -49,7 +49,7 @@ namespace DM
             // var asdf2 = MessagePackSerializer.Serialize(asdf);
             // asdf = MessagePackSerializer.Deserialize<MessagePackTest>(asdf2);
 
-            foreach (var item in m_RequestHeaderParams)
+            foreach (IRequestHeaderParam item in m_RequestHeaderParams)
             {
                 Debug.Log($"<color=blue>requestHeaderParam:{item.cacheHeaderValue}</color>");
                 Debug.Log($"<color=blue>requestJson:{requestJson}</color>");
@@ -94,8 +94,10 @@ namespace DM
                 www.timeout = m_TimeOut;
 
                 // Headerデータをセットする
-                foreach (var item in m_RequestHeaderParams)
+                foreach (IRequestHeaderParam item in m_RequestHeaderParams)
+                {
                     www.SetRequestHeader(item.valueName, item.cacheHeaderValue);
+                }
 
                 Stopwatch stop = new Stopwatch();
                 stop.Start();
