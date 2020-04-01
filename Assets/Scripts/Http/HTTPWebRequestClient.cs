@@ -46,14 +46,12 @@ namespace DM
             m_ResponseDataDelegate = action;
 
             InitRequestHeader();
-
             
             string requestJson = JsonSerializer.ToJsonString(param);
             
-            MessagePackTest asdf = new MessagePackTest();
-            var asdf2 = MessagePackSerializer.Serialize(asdf);
-            asdf = MessagePackSerializer.Deserialize<MessagePackTest>(asdf2);
-            
+            // MessagePackTest asdf = new MessagePackTest();
+            // var asdf2 = MessagePackSerializer.Serialize(asdf);
+            // asdf = MessagePackSerializer.Deserialize<MessagePackTest>(asdf2);
 
             foreach (var item in m_RequestHeaderParams)
             {
