@@ -20,8 +20,8 @@ namespace DM
         private UIBaseLayer m_FrontLayer;
         private UIBaseLayer m_BackLayer;
         private readonly List<UIPartContainer> m_PartContainers = new List<UIPartContainer>();
-        private string m_LinkedBackName = "";
-        private string m_LinkedFrontName = "";
+        private string m_BackLinkedName = "";
+        private string m_FrontLinkedName = "";
 
         public UIBase Base => (UIBase)Part;
         public EnumLayerState State { get; private set; }
@@ -481,21 +481,21 @@ namespace DM
 
         private void CallSwitchBack()
         {
-            string pre = m_LinkedBackName;
-            m_LinkedBackName = (m_BackLayer != null) ? m_BackLayer.Base.Name : string.Empty;
-            if (pre != m_LinkedBackName)
+            string pre = m_BackLinkedName;
+            m_BackLinkedName = (m_BackLayer != null) ? m_BackLayer.Base.Name : string.Empty;
+            if (pre != m_BackLinkedName)
             {
-                Base.OnSwitchBackUI(m_LinkedBackName);
+                Base.OnSwitchBackUI(m_BackLinkedName);
             }
         }
 
         private void CallSwitchFront()
         {
-            string pre = m_LinkedFrontName;
-            m_LinkedFrontName = (m_FrontLayer != null) ? m_FrontLayer.Base.Name : string.Empty;
-            if (pre != m_LinkedFrontName)
+            string pre = m_FrontLinkedName;
+            m_FrontLinkedName = (m_FrontLayer != null) ? m_FrontLayer.Base.Name : string.Empty;
+            if (pre != m_FrontLinkedName)
             {
-                Base.OnSwitchFrontUI(m_LinkedFrontName);
+                Base.OnSwitchFrontUI(m_FrontLinkedName);
             }
         }
     }
