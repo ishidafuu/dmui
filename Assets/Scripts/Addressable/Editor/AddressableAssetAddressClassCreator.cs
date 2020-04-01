@@ -21,8 +21,7 @@ namespace DM
         private const string TARGET_DIRECTORY_PATH = "Assets/AddressableAssetsData/AssetGroups";
 
         //定数クラスを生成するディレクトリのパス
-        private const string EXPORT_DIRECTORY_PATH = "Assets/Scripts";
-        private const string DATA_ROOT = "Assets/AssetBundles/";
+        private const string EXPORT_DIRECTORY_PATH = "Assets/Scripts/Generated";
 
         //=================================================================================
         //変更の監視
