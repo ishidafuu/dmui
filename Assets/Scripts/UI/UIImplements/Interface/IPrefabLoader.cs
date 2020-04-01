@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using UniRx.Async;
+﻿using UniRx.Async;
 using UnityEngine;
 
 namespace DM

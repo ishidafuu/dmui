@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UniRx.Async;
 using UnityEngine;
 using UnityEngine.UI;
@@ -83,12 +82,12 @@ namespace DM
         {
             VisibleControllers.Add(new UIRendererController());
         }
-        
+
         protected void AddVisibleBehaviourController<T>() where T : Behaviour
         {
             VisibleControllers.Add(new UIBehaviourController<T>());
         }
-        
+
         // -----------------------------------------------------------------------------------------------------------------------------------------
         // Viewから呼ばれるPublicメソッド
         // -----------------------------------------------------------------------------------------------------------------------------------------

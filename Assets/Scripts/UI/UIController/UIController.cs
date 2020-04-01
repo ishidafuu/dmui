@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using UniRx.Async;
 using UnityEngine;
@@ -18,7 +17,7 @@ namespace DM
             EnumUIGroup.MainScene,
             EnumUIGroup.View3D,
         };
-        
+
         private List<BaseRaycaster> m_RayCasterComponents;
         private List<UIBaseLayer> m_AddingLayerList;
         private List<UIBaseLayer> m_RemovingLayerList;
@@ -40,7 +39,7 @@ namespace DM
             m_Implements = implements;
         }
 
-        public static void SetImplement(IPrefabLoader prefabLoader, ISounder sounder, IFadeCreator fadeCreator, 
+        public static void SetImplement(IPrefabLoader prefabLoader, ISounder sounder, IFadeCreator fadeCreator,
             ILoadingCreator loadingCreator, IToastCreator toastCreator)
         {
             Instance.m_Implements = new UIImplements(prefabLoader, sounder, fadeCreator, loadingCreator, toastCreator);
@@ -103,7 +102,7 @@ namespace DM
             {
                 Debug.Log("found UILayers");
             }
-            
+
             m_UIView3D = FindObjectOfType<UIView3D>()?.transform;
             if (m_UIView3D == null)
             {
@@ -115,14 +114,14 @@ namespace DM
             {
                 Debug.Log("found UIView3D");
             }
-            
+
             BaseRaycaster[] rayCasters = FindObjectsOfType<BaseRaycaster>();
             m_RayCasterComponents = new List<BaseRaycaster>();
             foreach (BaseRaycaster item in rayCasters)
             {
                 m_RayCasterComponents.Add(item);
             }
-            
+
             Debug.Log("Complete FindUIControllerItems");
         }
 
@@ -135,7 +134,7 @@ namespace DM
         {
             m_TouchController.Enqueue(listener, type, pointer);
         }
-        
+
         public void SetScreenTouchableByLayer(UIBaseLayer layer, bool enable)
         {
             m_TouchController.SetScreenTouchable(layer, enable, m_RayCasterComponents);
@@ -157,7 +156,7 @@ namespace DM
 
             if (layer.Base.IsLoadingWithoutFade())
             {
-                layer?.Load();    
+                layer?.Load();
             }
 
             if (m_FadeController.IsShouldFadeByAdding(layerUIBase, m_LayerController))
@@ -180,7 +179,7 @@ namespace DM
             UIBaseLayer layer = m_LayerController.Find(uiBase);
 
             bool isInactive = false;
-            
+
             if (layer != null)
             {
                 isInactive = layer.SetInactive();
@@ -223,7 +222,7 @@ namespace DM
                 AddFront(uiBase);
             }
         }
-        
+
         // UIパーツ追加（完了待ち（OnLoadedBase内で呼ばれる））
         public async UniTask YieldAttachParts(UIBase targetUIBase, IEnumerable<UIPart> parts)
         {
@@ -232,7 +231,7 @@ namespace DM
             {
                 return;
             }
-            
+
             await layer.AttachParts(parts);
         }
 
@@ -251,13 +250,13 @@ namespace DM
 
             layer?.DetachParts(parts);
         }
-        
+
         // イベント発行
         public void Dispatch(string eventName, object param)
         {
             m_DispatchController.Dispatch(eventName, param);
         }
-        
+
         // Backボタン
         public void Back()
         {
@@ -282,14 +281,14 @@ namespace DM
                 Remove(layer.Base);
             }
         }
-        
+
         // タッチON／OFF切り替え（UIBase指定）
         public void SetScreenTouchable(UIBase uiBase, bool enable)
         {
             UIBaseLayer layer = m_LayerController.Find(uiBase);
             SetScreenTouchableByLayer(layer, enable);
         }
-        
+
         // レイヤの存在チェック
         public bool HasUIBase(string baseName)
         {
@@ -308,19 +307,19 @@ namespace DM
         {
             return m_LayerController.GetCountInGroup(group);
         }
-        
+
         // ローディング開始
         public void LoadingIn()
         {
             m_LoadingController.LoadingIn(Implements, m_AddingLayerList, AddFront);
         }
-        
+
         // ローディング終了
         public void LoadingOut()
         {
             m_LoadingController.LoadingOut(Remove);
         }
-        
+
         // ローディング中
         public bool IsLoading()
         {
@@ -332,12 +331,11 @@ namespace DM
         {
             m_ToastController.ToastIn(Implements, m_AddingLayerList, AddFront, message);
         }
-        
+
         // トースト終了
         public void ToastOut()
         {
             m_ToastController.ToastOut(Remove);
         }
-
     }
 }
