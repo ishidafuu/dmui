@@ -365,9 +365,9 @@
             <e p="AirtableBase.cs" t="Include" />
             <e p="AirtableClient.cs" t="Include" />
           </e>
-          <e p="AssetAddress.cs" t="Include" />
-          <e p="AssetLabel.cs" t="Include" />
           <e p="Generated" t="Include">
+            <e p="AssetAddress.cs" t="Include" />
+            <e p="AssetLabel.cs" t="Include" />
             <e p="DatabaseBuilder.cs" t="Include" />
             <e p="ImmutableBuilder.cs" t="Include" />
             <e p="MasterMemoryResolver.cs" t="Include" />
