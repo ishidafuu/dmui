@@ -386,7 +386,7 @@
           </e>
           <e p="http" t="Include">
             <e p="CryptographicProtection.cs" t="Include" />
-            <e p="header_param" t="Include">
+            <e p="HeaderParam" t="Include">
               <e p="AppIdHeaderParam.cs" t="Include" />
               <e p="IRequestHeaderParam.cs" t="Include" />
               <e p="IRequestNoCacheHeaderParam.cs" t="Include" />
