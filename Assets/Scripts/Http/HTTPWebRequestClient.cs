@@ -1,9 +1,8 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
-using MessagePack;
+using UniRx.Async;
 using UnityEngine.Networking;
 using Utf8Json;
 using Debug = UnityEngine.Debug;
@@ -22,22 +21,19 @@ namespace DM
         }
 
         public delegate void HttpResponseDataDelegate(HttpWebRequestClient client, ref HttpResponsePack pack);
-
         private readonly int m_TimeOut;
         private readonly List<IMultipartFormSection> m_FormSection = new List<IMultipartFormSection>();
         private string m_ApiUrl = null;
         private HttpResponseDataDelegate m_ResponseDataDelegate = null;
         private readonly IReadOnlyList<IRequestHeaderParam> m_RequestHeaderParams = null;
 
-        public HttpWebRequestClient(
-            IReadOnlyList<IRequestHeaderParam> requestHeaders,
-            int timeOut = 30)
+        public HttpWebRequestClient(IReadOnlyList<IRequestHeaderParam> requestHeaders, int timeOut = 30)
         {
             m_RequestHeaderParams = requestHeaders;
             m_TimeOut = timeOut;
         }
 
-        public IEnumerator Request<T>(string url, T param, HttpResponseDataDelegate action)
+        public async UniTask Request<T>(string url, T param, HttpResponseDataDelegate action)
         {
             Debug.Log($"<color=blue>{url}</color>");
 
@@ -46,9 +42,9 @@ namespace DM
             m_ResponseDataDelegate = action;
 
             InitRequestHeader();
-            
+
             string requestJson = JsonSerializer.ToJsonString(param);
-            
+
             // MessagePackTest asdf = new MessagePackTest();
             // var asdf2 = MessagePackSerializer.Serialize(asdf);
             // asdf = MessagePackSerializer.Deserialize<MessagePackTest>(asdf2);
@@ -60,7 +56,8 @@ namespace DM
             }
 
             SetInnerApiParam(requestJson);
-            yield return InnerRetry();
+
+            await InnerRequest();
         }
 
         private void InitRequestHeader()
@@ -89,20 +86,10 @@ namespace DM
 
             m_FormSection.Add(dataSection);
         }
-
-        public IEnumerator Retry()
+        
+        private async UniTask InnerRequest()
         {
-            foreach (IRequestHeaderParam item in m_RequestHeaderParams)
-            {
-                item.Reset();
-            }
-
-            yield return InnerRetry();
-        }
-
-        private IEnumerator InnerRetry()
-        {
-            using (var www = UnityWebRequest.Post(m_ApiUrl, m_FormSection))
+            using (UnityWebRequest www = UnityWebRequest.Post(m_ApiUrl, m_FormSection))
             {
                 www.timeout = m_TimeOut;
 
@@ -113,7 +100,7 @@ namespace DM
                 Stopwatch stop = new Stopwatch();
                 stop.Start();
 
-                yield return www.SendWebRequest();
+                await www.SendWebRequest();
 
                 int responseTime = (int)stop.ElapsedMilliseconds;
 
@@ -132,6 +119,16 @@ namespace DM
 
                 m_ResponseDataDelegate(this, ref res);
             }
+        }
+
+        public async UniTask Retry()
+        {
+            foreach (IRequestHeaderParam item in m_RequestHeaderParams)
+            {
+                item.Reset();
+            }
+
+            await InnerRequest();
         }
     }
 }
