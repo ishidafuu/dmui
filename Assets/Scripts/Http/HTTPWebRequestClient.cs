@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
+using MessagePack;
 using UniRx.Async;
 using UnityEngine.Networking;
 using Utf8Json;
@@ -46,7 +47,7 @@ namespace DM
             string requestJson = JsonSerializer.ToJsonString(param);
 
             // MessagePackTest asdf = new MessagePackTest();
-            // var asdf2 = MessagePackSerializer.Serialize(asdf);
+            // byte[] asdf2 = MessagePackSerializer.Serialize(asdf);
             // asdf = MessagePackSerializer.Deserialize<MessagePackTest>(asdf2);
 
             foreach (IRequestHeaderParam item in m_RequestHeaderParams)
@@ -112,11 +113,12 @@ namespace DM
                     m_IsNetworkError = www.isNetworkError,
                     m_ResponseCode = (int)www.responseCode,
                     m_Data = www.downloadHandler?.text,
+                    // m_Data = www.downloadHandler?.data,
                     m_ResponseTime = responseTime,
                 };
 
                 Debug.Log(
-                    $"<color=blue>SEND_RECEIVE:{responseTime}milli, httpCode:{www.responseCode}, error:{www.error}</color>");
+                    $"<color=blue>responseTime:{responseTime}ms, httpCode:{www.responseCode}, error:{www.error}</color>");
                 Debug.Log($"<color=blue>responseJson:{res.m_Data}</color>");
 
                 m_ResponseDataDelegate(this, ref res);
