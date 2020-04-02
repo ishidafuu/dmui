@@ -23,7 +23,7 @@ namespace DM
             Zxcv,
         }
 
-        public class TableRow
+        private class TableRow
         {
             public string Name;
             public int Value;
