@@ -16,6 +16,18 @@ jobs:
         unity-tag: [2019.3.6f1]
 
     steps:
+      - name: slack notification
+        uses: 8398a7/action-slack@v2
+        if: always()
+        with:
+          status: ${{ job.status }}
+          username: github-functions
+          icon_emoji: ':octocat:'
+          text: "ビルドはじまるよ :parrot:"
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        
       - uses: actions/checkout@master
       - run: openssl aes-256-cbc -d -in Unity_v2019.x.ulf-cipher -k ${CYPHER_KEY} >> /Unity_v2019.x.ulf
         env:
@@ -23,14 +35,49 @@ jobs:
       - run: /opt/Unity/Editor/Unity -quit -batchmode -nographics -silent-crashes -logFile -manualLicenseFile /Unity_v2019.x.ulf || exit 0
       - run: /opt/Unity/Editor/Unity -quit -batchmode -nographics -silent-crashes -logFile -projectPath . -executeMethod DM.AasUtility.Build || exit 0
       
-      - name: Publish to AWS S3
-        uses: opspresso/action-s3-sync@master
+  #      - name: Publish to AWS S3
+  #        uses: opspresso/action-s3-sync@master
+  #        env:
+  #          AWS_ACCESS_KEY_ID: ${{ secrets.IAM_ACCESS_KEY_ID }}
+  #          AWS_SECRET_ACCESS_KEY: ${{ secrets.IAM_SECRET_KEY}}
+  #          AWS_REGION: ${{ secrets.REGION }}
+  #          FROM_PATH: "./ServerData"
+  #          DEST_PATH: ${{ secrets.BUCKET_PATH }}
+          
+      - uses: actions-hub/gcloud@master
         env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.IAM_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.IAM_SECRET_KEY}}
-          AWS_REGION: ${{ secrets.REGION }}
-          FROM_PATH: "./ServerData"
-          DEST_PATH: ${{ secrets.BUCKET_PATH }}
+          PROJECT_ID: isdf-git
+          APPLICATION_CREDENTIALS: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
+          CLI: gsutil
+        with:
+          args: cp ./ServerData gs://isdf-git-ab/
+          
+      - name: slack notification
+        uses: 8398a7/action-slack@v2
+        if: success()
+        with:
+          type: success
+          status: ${{ job.status }}
+          username: github-functions
+          icon_emoji: ':octocat:'
+          text: "デプロイせいこう :wave1parrot::wave2parrot::wave3parrot::wave4parrot::wave5parrot::wave6parrot::wave7parrot::wave8parrot::wave9parrot:"
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: slack notification
+        uses: 8398a7/action-slack@v2
+        if: failure()
+        with:
+          type: failure
+          status: ${{ job.status }}
+          username: github-functions
+          icon_emoji: ':octocat:'
+          text: "デプロイしっぱい :ripparrot:"
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
           
       - uses: actions/upload-artifact@master
         with:
