@@ -50,7 +50,7 @@ jobs:
           APPLICATION_CREDENTIALS: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
           CLI: gsutil
         with:
-          args: cp ./ServerData gs://isdf-git-ab/
+          args: cp -r ServerData gs://isdf-git-ab/
           
       - name: slack notification
         uses: 8398a7/action-slack@v2
