@@ -44,3 +44,6 @@ sysinfo.txt #Unity3D Generated File On Crash Reports
 
 *.exe
 #*.dll
+*.so
+google-services.json
+google-services-desktop.json
