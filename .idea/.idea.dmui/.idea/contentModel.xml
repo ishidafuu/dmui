@@ -22,12 +22,6 @@
             <e p="readme.txt" t="Include" />
           </e>
         </e>
-        <e p="ExternalDependencyManager" t="Include">
-          <e p="Editor" t="Include">
-            <e p="external-dependency-manager_v1.2.144.txt" t="Include" />
-            <e p="GoogleRegistries.xml" t="Include" />
-          </e>
-        </e>
         <e p="MessagePack" t="Include">
           <e p="Annotations" t="Include">
             <e p="Attributes.cs" t="Include" />
@@ -220,9 +214,6 @@
             <e p="AirtableBase.cs" t="Include" />
             <e p="AirtableClient.cs" t="Include" />
           </e>
-          <e p="Editor" t="Include">
-            <e p="FontReplacer.cs" t="Include" />
-          </e>
           <e p="Generated" t="Include">
             <e p="AssetAddress.cs" t="Include" />
             <e p="AssetLabel.cs" t="Include" />
@@ -273,6 +264,9 @@
             <e p="Define" t="Include">
               <e p="UiDefine.cs" t="Include" />
             </e>
+            <e p="Editor" t="Include">
+              <e p="FontReplacer.cs" t="Include" />
+            </e>
             <e p="Internal" t="Include">
               <e p="DispatchedEvent.cs" t="Include" />
               <e p="PrefabReceiver.cs" t="Include" />
@@ -292,7 +286,6 @@
               <e p="UIToastController.cs" t="Include" />
               <e p="UITouchController.cs" t="Include" />
             </e>
-            <e p="UIAnimation.cs" t="Include" />
             <e p="UIComponent" t="Include">
               <e p="UIBase.cs" t="Include" />
               <e p="UIPart.cs" t="Include" />
@@ -310,6 +303,9 @@
                 <e p="UIView3D.cs" t="Include" />
               </e>
               <e p="UIControllerEditor.cs" t="Include" />
+            </e>
+            <e p="UIEffect" t="Include">
+              <e p="ButtonEffect.cs" t="Include" />
             </e>
             <e p="UIImplements" t="Include">
               <e p="Interface" t="Include">

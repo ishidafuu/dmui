@@ -8,14 +8,14 @@ using UnityEngine.EventSystems;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 
-public class UIAnimation : MonoBehaviour,
-    IMoveHandler,
+public class ButtonEffect : MonoBehaviour,
+    // IMoveHandler,
     IPointerDownHandler,
-    IPointerUpHandler,
-    IPointerEnterHandler,
-    IPointerExitHandler,
-    ISelectHandler,
-    IDeselectHandler
+    IPointerUpHandler
+    // IPointerEnterHandler,
+    // IPointerExitHandler,
+    // ISelectHandler,
+    // IDeselectHandler
 {
     [SerializeField] private ProceduralImage m_Base;
     [SerializeField] private ProceduralImage m_Effect;
@@ -46,27 +46,51 @@ public class UIAnimation : MonoBehaviour,
         m_EffectRect = (m_Effect.transform as RectTransform);
     }
 
-    // public void OnPointerClick(PointerEventData eventData)
-    // {
-    //     button.OnPointerClick(eventData);
-    // }
-    // public void OnSubmit(BaseEventData eventData)
-    // {
-    //     button.OnSubmit(eventData);
-    // }
-
-    public void OnDeselect(BaseEventData eventData)
+    public void SetIntractable(bool isActive)
     {
-        Debug.Log("OnDeselect");
-    }
+        m_Button.interactable = isActive;
 
-    public void OnMove(AxisEventData eventData)
+        float endValue = (isActive)
+            ? 0
+            : 0.25f;
+        m_TweenShadow?.Kill();
+        m_TweenShadow = DOTween.ToAlpha(() => m_Shadow.color,
+                (x) => m_Shadow.color = x, endValue, 0.2f)
+            .SetEase(Ease.InQuart);
+        
+    }
+    
+    public void OnPointerUp(PointerEventData eventData)
     {
-        Debug.Log("OnMove");
+        Debug.Log("OnPointerUp");
+        if (!m_Button.IsInteractable())
+        {
+            return;
+        }
+        
+        m_TweenEffect?.Kill();
+        m_TweenEffect = DOTween.ToAlpha(() => m_Effect.color,
+                (x) => m_Effect.color = x, 0, 0.2f)
+            .SetEase(Ease.InQuart);
+        
+        // m_Sequence?.Kill();
+        // m_Sequence = DOTween.Sequence();
+        // m_Sequence.Append
+        // (
+        //     DOTween.ToAlpha(() => m_Effect.color,
+        //             (x) => m_Effect.color = x, 0, 0.2f)
+        //         .SetEase(Ease.InQuart) 
+        // );
+        // m_Sequence.Play();
     }
-
+    
     public void OnPointerDown(PointerEventData eventData)
     {
+        if (!m_Button.IsInteractable())
+        {
+            return;
+        }
+        
         Debug.Log("OnPointerDown");
         // transform
         //     .DOScale(endValue: new Vector3(2.0f, 1f, 1), duration: 0.5f)
@@ -79,7 +103,6 @@ public class UIAnimation : MonoBehaviour,
         
         m_Effect.color = new Color(1,1,1,0.5f);
         m_Effect.BorderWidth = m_BaseRect.sizeDelta.y;
-        m_Sequence.Pause();
         m_TweenEffect?.Kill();
         m_Sequence?.Kill();
         m_Sequence = DOTween.Sequence();
@@ -108,38 +131,40 @@ public class UIAnimation : MonoBehaviour,
         m_Sequence.Play();
     }
 
-    public void OnPointerEnter(PointerEventData eventData)
-    {
-        Debug.Log("OnPointerEnter");
-    }
+    
+    // public void OnPointerClick(PointerEventData eventData)
+    // {
+    //     button.OnPointerClick(eventData);
+    // }
+    // public void OnSubmit(BaseEventData eventData)
+    // {
+    //     button.OnSubmit(eventData);
+    // }
 
-    public void OnPointerExit(PointerEventData eventData)
-    {
-        Debug.Log("OnPointerExit");
-    }
+    // public void OnDeselect(BaseEventData eventData)
+    // {
+    //     Debug.Log("OnDeselect");
+    // }
+    //
+    // public void OnMove(AxisEventData eventData)
+    // {
+    //     Debug.Log("OnMove");
+    // }
+    
 
-    public void OnPointerUp(PointerEventData eventData)
-    {
-        Debug.Log("OnPointerUp");
-        m_TweenEffect?.Pause();
-        m_TweenEffect?.Kill();
-        m_TweenEffect = DOTween.ToAlpha(() => m_Effect.color,
-                (x) => m_Effect.color = x, 0, 0.2f)
-            .SetEase(Ease.InQuart);
-        
-        // m_Sequence?.Kill();
-        // m_Sequence = DOTween.Sequence();
-        // m_Sequence.Append
-        // (
-        //     DOTween.ToAlpha(() => m_Effect.color,
-        //             (x) => m_Effect.color = x, 0, 0.2f)
-        //         .SetEase(Ease.InQuart) 
-        // );
-        // m_Sequence.Play();
-    }
+    // public void OnPointerEnter(PointerEventData eventData)
+    // {
+    //     Debug.Log("OnPointerEnter");
+    // }
+    //
+    // public void OnPointerExit(PointerEventData eventData)
+    // {
+    //     Debug.Log("OnPointerExit");
+    // }
 
-    public void OnSelect(BaseEventData eventData)
-    {
-        Debug.Log("OnSelect");
-    }
+
+    // public void OnSelect(BaseEventData eventData)
+    // {
+    //     Debug.Log("OnSelect");
+    // }
 }
