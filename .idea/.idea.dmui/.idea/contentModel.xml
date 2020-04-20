@@ -307,6 +307,8 @@
             <e p="UIEffect" t="Include">
               <e p="ButtonEffect.cs" t="Include" />
               <e p="MenuButtonEffect.cs" t="Include" />
+              <e p="NoneDrawingGraphic.cs" t="Include" />
+              <e p="SwitchEffect.cs" t="Include" />
               <e p="TabEffect.cs" t="Include" />
             </e>
             <e p="UIImplements" t="Include">

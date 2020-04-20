@@ -13,6 +13,15 @@ public class TabEffect : MonoBehaviour
     {
         m_Selector = transform.Find("Selector")?.GetComponent<ProceduralImage>();
         m_Buttons = GetComponentsInChildren<Button>();
+        
+        if (m_Buttons.Length <= 0)
+        {
+            return;
+        }
+
+        var selectorRect = (m_Selector.transform as RectTransform);
+        var buttonRect = (m_Buttons[0].transform as RectTransform);
+        selectorRect.sizeDelta = new Vector2(buttonRect.sizeDelta.x, selectorRect.sizeDelta.y);
     }
 
     public void SetIndex(int index)
