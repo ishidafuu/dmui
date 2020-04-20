@@ -10,10 +10,10 @@ using UnityEngine.UI;
 
 public class ButtonEffect : MonoBehaviour,
     // IMoveHandler,
+    // IPointerExitHandler,
     IPointerDownHandler,
     IPointerUpHandler
     // IPointerEnterHandler,
-    // IPointerExitHandler,
     // ISelectHandler,
     // IDeselectHandler
 {
@@ -84,6 +84,16 @@ public class ButtonEffect : MonoBehaviour,
         // m_Sequence.Play();
     }
     
+    // public void OnPointerExit(PointerEventData eventData)
+    // {
+    //     Debug.Log("OnPointerExit");
+    //     
+    //     m_TweenEffect?.Kill();
+    //     m_TweenEffect = DOTween.ToAlpha(() => m_Effect.color,
+    //             (x) => m_Effect.color = x, 0, 0.2f)
+    //         .SetEase(Ease.InQuart);
+    // }
+    //
     public void OnPointerDown(PointerEventData eventData)
     {
         if (!m_Button.IsInteractable())
@@ -157,10 +167,7 @@ public class ButtonEffect : MonoBehaviour,
     //     Debug.Log("OnPointerEnter");
     // }
     //
-    // public void OnPointerExit(PointerEventData eventData)
-    // {
-    //     Debug.Log("OnPointerExit");
-    // }
+
 
 
     // public void OnSelect(BaseEventData eventData)
