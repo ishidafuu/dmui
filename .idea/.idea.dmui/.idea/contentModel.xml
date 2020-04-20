@@ -28,27 +28,6 @@
             <e p="GoogleRegistries.xml" t="Include" />
           </e>
         </e>
-        <e p="Firebase" t="Include">
-          <e p="Editor" t="Include">
-            <e p="AppDependencies.xml" t="Include" />
-            <e p="FirebaseFunctions_version-6.13.0_manifest.txt" t="Include" />
-            <e p="FunctionsDependencies.xml" t="Include" />
-          </e>
-          <e p="m2repository" t="Include">
-            <e p="com" t="Include">
-              <e p="google" t="Include">
-                <e p="Firebase" t="Include">
-                  <e p="firebase-app-unity" t="Include">
-                    <e p="maven-metadata.xml" t="Include" />
-                  </e>
-                  <e p="firebase-functions-unity" t="Include">
-                    <e p="maven-metadata.xml" t="Include" />
-                  </e>
-                </e>
-              </e>
-            </e>
-          </e>
-        </e>
         <e p="MessagePack" t="Include">
           <e p="Annotations" t="Include">
             <e p="Attributes.cs" t="Include" />
@@ -224,7 +203,6 @@
           </e>
         </e>
         <e p="Scenes" t="Include">
-          <e p="FIrebaseTest.cs" t="Include" />
           <e p="nobiload.cs" t="Include" />
           <e p="TableTest.cs" t="Include" />
         </e>
@@ -244,9 +222,6 @@
           </e>
           <e p="Editor" t="Include">
             <e p="FontReplacer.cs" t="Include" />
-          </e>
-          <e p="Firebase" t="Include">
-            <e p="FBConstants.cs" t="Include" />
           </e>
           <e p="Generated" t="Include">
             <e p="AssetAddress.cs" t="Include" />
