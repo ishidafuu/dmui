@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System.Collections;
 using System;
+using UnityEngine.Serialization;
 
 namespace EnhancedUI.EnhancedScroller
 {
@@ -208,7 +209,10 @@ namespace EnhancedUI.EnhancedScroller
         /// the underlying data or views. This allows a true MVC process.
         /// </summary>
         public IEnhancedScrollerDelegate Delegate { get { return _delegate; } set { _delegate = value; _reloadData = true; } }
-
+        
+        public OnBeginDragDelegate scrollerBeginDrag;
+        public OnEndDragDelegate scrollerEndDrag;
+        
         /// <summary>
         /// The absolute position in pixels from the start of the scroller
         /// </summary>
@@ -1738,7 +1742,9 @@ namespace EnhancedUI.EnhancedScroller
 			{
 				loop = false;
 			}
-		}
+
+            scrollerBeginDrag?.Invoke(this, data);
+        }
 
 		/// <summary>
         /// This event is fired when the user ends dragging on the scroller.
@@ -1750,6 +1756,8 @@ namespace EnhancedUI.EnhancedScroller
 			// reset the snapping and looping to what it was before the drag
 			snapping = _snapBeforeDrag;
 			loop = _loopBeforeDrag;
+            
+            scrollerEndDrag?.Invoke(this, data);
 		}
 
         public void Update()
@@ -2414,4 +2422,6 @@ namespace EnhancedUI.EnhancedScroller
     /// <param name="cellView">The cell view that was resused</param>
     public delegate void CellViewReused(EnhancedScroller scroller, EnhancedScrollerCellView cellView);
 
+    public delegate void OnBeginDragDelegate(EnhancedScroller scroller, PointerEventData data);
+    public delegate void OnEndDragDelegate(EnhancedScroller scroller, PointerEventData data);
 }

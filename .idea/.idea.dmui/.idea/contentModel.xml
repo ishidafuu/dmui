@@ -568,14 +568,6 @@
               <e p="14" t="Include">
                 <e p="Sample14.cs" t="Include" />
               </e>
-              <e p="14_2" t="Include">
-                <e p="CellView14_2.cs" t="Include" />
-                <e p="Controller14_2.cs" t="Include" />
-                <e p="Sample14_2.cs" t="Include" />
-                <e p="Sample14_2CellViewButton.cs" t="Include" />
-                <e p="Sample14_2Scene.cs" t="Include" />
-                <e p="Sample14_2Scroller.cs" t="Include" />
-              </e>
               <e p="15" t="Include">
                 <e p="Sample15.cs" t="Include" />
               </e>
@@ -593,6 +585,17 @@
               </e>
               <e p="20" t="Include">
                 <e p="Sample20.cs" t="Include" />
+              </e>
+              <e p="Main" t="Include">
+                <e p="CellView14_2.cs" t="Include" />
+                <e p="CellViewScroller.cs" t="Include" />
+                <e p="Controller14_2.cs" t="Include" />
+                <e p="DMUICanvas.cs" t="Include" />
+                <e p="HomeCellView.cs" t="Include" />
+                <e p="HomeScene.cs" t="Include" />
+                <e p="HomeScroller.cs" t="Include" />
+                <e p="HomeScrollerController.cs" t="Include" />
+                <e p="Sample14_2CellViewButton.cs" t="Include" />
               </e>
             </e>
           </e>

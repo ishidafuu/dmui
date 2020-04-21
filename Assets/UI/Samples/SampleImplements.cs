@@ -47,7 +47,7 @@ namespace DMUIFramework.Samples {
     {
         public UIFade Create()
         {
-            return new UIFade("BlackCurtainFade");
+            return new UIFade("Fade");
         }
     }
     

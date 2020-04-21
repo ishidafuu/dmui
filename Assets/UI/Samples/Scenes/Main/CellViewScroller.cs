@@ -4,11 +4,11 @@ using UniRx.Async;
 using UnityEngine;
 
 namespace DM {
-    class Sample14_2Scroller : UIPart
+    class CellViewScroller : UIPart
     {
         private UIBase m_TargetLayer;
 
-        public Sample14_2Scroller() : base("Scroller") { }
+        public CellViewScroller() : base("CellViewScroller") { }
 
         public override async UniTask OnLoadedPart(UIBase targetLayer)
         {
