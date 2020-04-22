@@ -23,35 +23,17 @@
                 }
             });
 
-            m_TouchController.CallTouchEvents(FindUntouchableIndex(), IsScreenTouchable(), Implements.Sounder);
+            int untouchableIndex = m_LayerController.FindUntouchableIndex();
+            m_TouchController.CallTouchEvents(untouchableIndex, IsScreenTouchable(), Implements.Sounder);
             m_DispatchController.CallDispatchedEvents(m_LayerController);
-
+            
             bool isInsert = RunAddLayer();
             bool isEject = RunRemoveLayer();
-
+            
             if (isEject || isInsert)
             {
                 RunRefresh(isEject);
             }
-        }
-
-        private int FindUntouchableIndex()
-        {
-            int index = -1;
-            m_LayerController.ForEachOnlyActive(layer =>
-            {
-                if (index >= 0)
-                {
-                    return;
-                }
-
-                if (layer.Base.IsSystemUntouchable())
-                {
-                    index = layer.SiblingIndex - 1;
-                }
-            });
-
-            return index;
         }
 
         private bool IsScreenTouchable()

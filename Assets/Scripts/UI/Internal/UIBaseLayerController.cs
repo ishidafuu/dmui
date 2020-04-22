@@ -60,6 +60,30 @@ namespace DM
                 action(item);
             }
         }
+        
+        public int FindUntouchableIndex()
+        {
+            int index = -1;
+            foreach (UIBaseLayer item in m_List)
+            {
+                if (item.State != EnumLayerState.Active)
+                {
+                    continue;
+                }
+
+                if (index >= 0)
+                {
+                    break;
+                }
+
+                if (item.Base.IsSystemUntouchable())
+                {
+                    index = item.SiblingIndex - 1;
+                }
+            }
+
+            return index;
+        }
 
         public void ForEachAnything(Action<UIBaseLayer> action)
         {
