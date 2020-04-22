@@ -16,9 +16,10 @@ namespace DM {
             // RootTransform.Find("Layer/ButtonTop").gameObject.SetActive(false);
             // RootTransform.Find("Layer/ButtonCenter").gameObject.SetActive(false);
             // RootTransform.Find("Layer/ButtonBottom").gameObject.SetActive(false);
+            
             List<UIPart> parts = new List<UIPart>
             {
-                new HomeScroller()
+                new HomeScroller(RootTransform.Find("Layer/HomeScroller"))
             };
 
             await UIController.Instance.YieldAttachParts(this, parts);

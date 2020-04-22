@@ -14,6 +14,7 @@ namespace DM
         private HomeScrollerController m_HomeScrollerController;
 
         public HomeScroller() : base("HomeScroller") { }
+        public HomeScroller(Transform rootTransform) : base(rootTransform) { }
 
         public override async UniTask OnLoadedPart(UIBase targetLayer)
         {
