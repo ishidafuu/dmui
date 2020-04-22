@@ -12,7 +12,7 @@ namespace DM {
         private List<Data> m_Data;
         public EnhancedScroller m_Scroller;
         // ヒエラルキー上ではなく、Resourceフォルダ内のPrefabを指定
-        public EnhancedScrollerCellView m_CellViewPrefab;
+        public EnhancedScrollerCellView[] m_CellViewPrefabs;
         public float m_CellSize;
 
         public void Init(EnhancedScroller scroller)
@@ -26,7 +26,7 @@ namespace DM {
         {
             m_Data = new List<Data>();
 
-            for (var i = 0; i < 24; i++)
+            for (var i = 0; i < m_CellViewPrefabs.Length; i++)
                 m_Data.Add(new Data() { hour = i });
         }
         
@@ -42,9 +42,42 @@ namespace DM {
 
         public EnhancedScrollerCellView GetCellView(EnhancedScroller scroller, int dataIndex, int cellIndex)
         {
-            HomeCellView cellView = scroller.GetCellView(m_CellViewPrefab) as HomeCellView;
-            cellView.SetData(m_Data[dataIndex]);
-            return cellView;
+            Debug.Log($"dataindex{dataIndex} cellIndex{cellIndex}");
+            switch (cellIndex)
+            {
+                case 0:
+                {
+                    var cellView = scroller.GetCellView(m_CellViewPrefabs[cellIndex]) as HomeCell0ShopView;
+                    cellView.SetData(m_Data[dataIndex]);
+                    return cellView;  
+                }
+                case 1:
+                {
+                    var cellView = scroller.GetCellView(m_CellViewPrefabs[cellIndex]) as HomeCell1LaboratoryView;
+                    cellView.SetData(m_Data[dataIndex]);
+                    return cellView;
+                }
+                case 2:
+                {
+                    var cellView = scroller.GetCellView(m_CellViewPrefabs[cellIndex]) as HomeCell2BattleView;
+                    cellView.SetData(m_Data[dataIndex]);
+                    return cellView;
+                }
+                case 3:
+                {
+                    var cellView = scroller.GetCellView(m_CellViewPrefabs[cellIndex]) as HomeCell3SocialView;
+                    cellView.SetData(m_Data[dataIndex]);
+                    return cellView;
+                }
+                case 4:
+                {
+                    var cellView = scroller.GetCellView(m_CellViewPrefabs[cellIndex]) as HomeCell4EventView;
+                    cellView.SetData(m_Data[dataIndex]);
+                    return cellView;
+                }
+            }
+
+            return null;
         }
     }
 }

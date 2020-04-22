@@ -591,7 +591,11 @@
                 <e p="CellViewScroller.cs" t="Include" />
                 <e p="Controller14_2.cs" t="Include" />
                 <e p="DMUICanvas.cs" t="Include" />
-                <e p="HomeCellView.cs" t="Include" />
+                <e p="HomeCell0ShopView.cs" t="Include" />
+                <e p="HomeCell1LaboratoryView.cs" t="Include" />
+                <e p="HomeCell2BattleView.cs" t="Include" />
+                <e p="HomeCell3SocialView.cs" t="Include" />
+                <e p="HomeCell4EventView.cs" t="Include" />
                 <e p="HomeScene.cs" t="Include" />
                 <e p="HomeScroller.cs" t="Include" />
                 <e p="HomeScrollerController.cs" t="Include" />

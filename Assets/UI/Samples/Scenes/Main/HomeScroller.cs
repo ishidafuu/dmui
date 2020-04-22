@@ -78,20 +78,20 @@ namespace DM
         // 新規セルビュー追加時デリゲート
         private void CellViewInstantiated(EnhancedScroller scroller, EnhancedScrollerCellView cellView)
         {
-            CellView14_2 cell = cellView as CellView14_2;
-            if (cell == null)
-            {
-                return;
-            }
-
-            List<UIPart> parts = new List<UIPart>
-            {
-                new Sample14_2CellViewButton(cell, cell.textButton),
-                new Sample14_2CellViewButton(cell, cell.fixedIntegerButton),
-                new Sample14_2CellViewButton(cell, cell.dataIntegerButton)
-            };
-            // 即時追加
-            UIController.Instance.AttachParts(m_TargetLayer, parts);
+            // CellView14_2 cell = cellView as CellView14_2;
+            // if (cell == null)
+            // {
+            //     return;
+            // }
+            //
+            // List<UIPart> parts = new List<UIPart>
+            // {
+            //     new Sample14_2CellViewButton(cell, cell.textButton),
+            //     new Sample14_2CellViewButton(cell, cell.fixedIntegerButton),
+            //     new Sample14_2CellViewButton(cell, cell.dataIntegerButton)
+            // };
+            // // 即時追加
+            // UIController.Instance.AttachParts(m_TargetLayer, parts);
         }
         
         // 新規セルビュー追加時デリゲート
