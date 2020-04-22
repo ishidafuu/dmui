@@ -109,7 +109,7 @@ MonoBehaviour:
   maxVelocity: 0
   scrollbarVisibility: 0
   snapping: 0
-  snapVelocityThreshold: 10000
+  snapVelocityThreshold: 0
   snapWatchOffset: 0
   snapJumpToOffset: 0
   snapCellCenterOffset: 0
@@ -135,7 +135,7 @@ MonoBehaviour:
   m_Vertical: 0
   m_MovementType: 1
   m_Elasticity: 0.1
-  m_Inertia: 1
+  m_Inertia: 0
   m_DecelerationRate: 0.135
   m_ScrollSensitivity: 20
   m_Viewport: {fileID: 0}

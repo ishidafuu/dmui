@@ -431,6 +431,12 @@ namespace EnhancedUI.EnhancedScroller
             get; private set;
         }
 
+        private bool isTweeningCancel = false;
+        public void CancelTweening()
+        {
+            isTweeningCancel = true;
+        }
+
         /// <summary>
         /// This is the first cell view index showing in the scroller's visible area
         /// </summary>
@@ -1977,13 +1983,14 @@ namespace EnhancedUI.EnhancedScroller
 
                 // fire the delegate for the tween start
                 IsTweening = true;
+                isTweeningCancel = false;
                 if (scrollerTweeningChanged != null) scrollerTweeningChanged(this, true);
 
                 _tweenTimeLeft = 0;
                 var newPosition = 0f;
 
                 // while the tween has time left, use an easing function
-                while (_tweenTimeLeft < time)
+                while (_tweenTimeLeft < time && !isTweeningCancel)
                 {
                     switch (tweenType)
                     {
@@ -2031,18 +2038,26 @@ namespace EnhancedUI.EnhancedScroller
                 }
             }
 
-            // the time has expired, so we make sure the final scroll position
-            // is the actual end position.
-            ScrollPosition = end;
+            if (isTweeningCancel)
+            {
+                IsTweening = false;
+                _RefreshActive();
+            }
+            else
+            {
+                // the time has expired, so we make sure the final scroll position
+                // is the actual end position.
+                ScrollPosition = end;
 
-            _RefreshActive();
+                _RefreshActive();
 
-            // the tween jump is complete, so we fire the delegate
-            if (tweenComplete != null) tweenComplete();
+                // the tween jump is complete, so we fire the delegate
+                if (tweenComplete != null) tweenComplete();
 
-            // fire the delegate for the tween ending
-            IsTweening = false;
-            if (scrollerTweeningChanged != null) scrollerTweeningChanged(this, false);
+                // fire the delegate for the tween ending
+                IsTweening = false;
+                if (scrollerTweeningChanged != null) scrollerTweeningChanged(this, false);           
+            }
         }
 
 
