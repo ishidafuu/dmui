@@ -12,7 +12,7 @@ namespace DM
         // 追加先のレイヤ
         private UIBase m_TargetLayer;
         private HomeScrollerController m_HomeScrollerController;
-
+ 
         public HomeScroller() : base("HomeScroller") { }
         public HomeScroller(Transform rootTransform) : base(rootTransform) { }
 
@@ -24,6 +24,8 @@ namespace DM
 
             InitRootTransform();
 
+            
+            
             // cellview
             List<UIPart> parts = new List<UIPart>();
             // int cellCount = controller.m_Scroller.GetActiveCellViewsCount();

@@ -1,4 +1,5 @@
-﻿using DG.Tweening;
+﻿using System;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UI.ProceduralImage;
@@ -21,7 +22,19 @@ public class TabEffect : MonoBehaviour
 
         var selectorRect = (m_Selector.transform as RectTransform);
         var buttonRect = (m_Buttons[0].transform as RectTransform);
-        selectorRect.sizeDelta = new Vector2(buttonRect.sizeDelta.x, selectorRect.sizeDelta.y);
+        selectorRect.sizeDelta = new Vector3(buttonRect.sizeDelta.x, selectorRect.sizeDelta.y, 0);
+    }
+
+    public void Init(int width)
+    {
+        m_Index = 2;
+        var selectorRect = (m_Selector.transform as RectTransform);
+        selectorRect.sizeDelta = new Vector3(width, selectorRect.sizeDelta.y, 0);
+        
+        m_Selector.transform.localPosition = new Vector3(
+            m_Buttons[2].transform.position.x, 
+            m_Selector.transform.localPosition.y, 
+            0);
     }
 
     public void SetIndex(int index)
@@ -37,5 +50,6 @@ public class TabEffect : MonoBehaviour
 
         m_Selector.transform.DOMoveX(m_Buttons[index].transform.position.x, 0.25f)
             .SetEase(Ease.OutQuad);
+        Debug.Log(m_Buttons[index].transform.position.x);
     }
 }

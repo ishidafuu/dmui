@@ -597,8 +597,10 @@
                 <e p="HomeCell3SocialView.cs" t="Include" />
                 <e p="HomeCell4EventView.cs" t="Include" />
                 <e p="HomeScene.cs" t="Include" />
+                <e p="HomeSceneView.cs" t="Include" />
                 <e p="HomeScroller.cs" t="Include" />
                 <e p="HomeScrollerController.cs" t="Include" />
+                <e p="HomeTabControl.cs" t="Include" />
                 <e p="Sample14_2CellViewButton.cs" t="Include" />
               </e>
             </e>
