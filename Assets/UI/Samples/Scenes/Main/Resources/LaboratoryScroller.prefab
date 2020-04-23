@@ -51,7 +51,7 @@ GameObject:
   - component: {fileID: 4094411740583804161}
   - component: {fileID: 4094411740583804173}
   m_Layer: 5
-  m_Name: Scroller
+  m_Name: LaboratoryScroller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

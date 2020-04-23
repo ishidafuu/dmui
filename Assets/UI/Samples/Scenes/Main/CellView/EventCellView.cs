@@ -5,7 +5,7 @@ using EnhancedUI.EnhancedScroller;
 
 namespace DM
 {
-    public class HomeCell3SocialView : EnhancedScrollerCellView
+    public class EventCellView : EnhancedScrollerCellView
     {
         private Data _data;
 

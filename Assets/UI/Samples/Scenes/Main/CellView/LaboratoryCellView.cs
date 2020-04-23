@@ -5,7 +5,7 @@ using EnhancedUI.EnhancedScroller;
 
 namespace DM
 {
-    public class HomeCell0ShopView : EnhancedScrollerCellView
+    public class LaboratoryCellView : EnhancedScrollerCellView
     {
         private Data _data;
 
@@ -14,7 +14,8 @@ namespace DM
         public GameObject textButton;
         public GameObject fixedIntegerButton;
         public GameObject dataIntegerButton;
-        
+
+        [SerializeField] public CellView14_2 m_CellView142;
         
         public void SetData(Data data)
         {

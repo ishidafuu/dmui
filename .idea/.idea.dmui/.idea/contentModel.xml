@@ -588,35 +588,32 @@
               </e>
               <e p="Main" t="Include">
                 <e p="CellView" t="Include">
+                  <e p="BattleCellView.cs" t="Include" />
                   <e p="CellView14_2.cs" t="Include" />
-                  <e p="HomeCell0ShopView.cs" t="Include" />
-                  <e p="HomeCell1LaboratoryView.cs" t="Include" />
-                  <e p="HomeCell2BattleView.cs" t="Include" />
-                  <e p="HomeCell3SocialView.cs" t="Include" />
-                  <e p="HomeCell4EventView.cs" t="Include" />
+                  <e p="EventCellView.cs" t="Include" />
+                  <e p="LaboratoryCellView.cs" t="Include" />
+                  <e p="ShopCellView.cs" t="Include" />
+                  <e p="SocialCellView.cs" t="Include" />
                 </e>
-                <e p="Controller14_2.cs" t="Include" />
                 <e p="DMUICanvas.cs" t="Include" />
                 <e p="HomeSceneBase.cs" t="Include" />
-                <e p="HomeSceneView.cs" t="Include" />
                 <e p="HomeScrollerController.cs" t="Include" />
-                <e p="HomeScrollerView.cs" t="Include" />
                 <e p="UIParts" t="Include">
                   <e p="0Shop" t="Include">
                     <e p="HomeCell0ShopPart.cs" t="Include" />
                   </e>
                   <e p="1Laboratory" t="Include">
                     <e p="CellViewScrollerPart.cs" t="Include" />
-                    <e p="HomeCell1LaboratoryPart.cs" t="Include" />
+                    <e p="LaboratoryPart.cs" t="Include" />
                   </e>
                   <e p="2Battle" t="Include">
-                    <e p="HomeCell2BattlePart.cs" t="Include" />
+                    <e p="BattlePart.cs" t="Include" />
                   </e>
                   <e p="3Social" t="Include">
-                    <e p="HomeCell3SocialPart.cs" t="Include" />
+                    <e p="SocialPart.cs" t="Include" />
                   </e>
                   <e p="4Event" t="Include">
-                    <e p="HomeCell4EventPart.cs" t="Include" />
+                    <e p="EventPart.cs" t="Include" />
                   </e>
                   <e p="Common" t="Include">
                     <e p="ButtonPart.cs" t="Include" />
@@ -624,6 +621,11 @@
                   <e p="HomeScrollerPart.cs" t="Include" />
                   <e p="HomeTabPart.cs" t="Include" />
                   <e p="Sample14_2CellViewButton.cs" t="Include" />
+                </e>
+                <e p="View" t="Include">
+                  <e p="Controller14_2.cs" t="Include" />
+                  <e p="HomeSceneView.cs" t="Include" />
+                  <e p="HomeScrollerView.cs" t="Include" />
                 </e>
               </e>
             </e>

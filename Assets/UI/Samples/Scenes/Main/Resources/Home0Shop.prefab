@@ -429,7 +429,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd5daf53f924aac4c8e88484056792e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellIdentifier: HomeCell0ShopView
+  cellIdentifier: Shop
   someTextText: {fileID: 1841863022036786783}
   textButton: {fileID: 1841863022042268451}
   fixedIntegerButton: {fileID: 1841863022042340257}

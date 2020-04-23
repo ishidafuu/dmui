@@ -46,6 +46,7 @@ GameObject:
   - component: {fileID: 4094411740583804172}
   - component: {fileID: 4094411740583804175}
   - component: {fileID: 1643196580809116193}
+  - component: {fileID: 1140982528343189885}
   - component: {fileID: 4094411740583804160}
   - component: {fileID: 4094411740583804174}
   - component: {fileID: 4094411740583804161}
@@ -100,6 +101,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_EnhancedScroller: {fileID: 4094411740583804160}
   m_TabView: {fileID: 3732845594952473824}
+--- !u!114 &1140982528343189885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4094411740583804163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e9a86111570dbf49aece310389e15e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Scroller: {fileID: 4094411740583804160}
+  m_CellViewPrefabs:
+  - {fileID: 7476509133128213390, guid: ddec7b5b392808d45a60b7e71357c259, type: 3}
+  - {fileID: 4735627574524816537, guid: 029c392baacf1de47a0bad950a99cdd3, type: 3}
+  - {fileID: 1279850576534510454, guid: b53898cf3c37004469a2808c2a0420dd, type: 3}
+  - {fileID: 4618828751612580314, guid: 79f94f30a0860694291d48245aaefd1f, type: 3}
+  - {fileID: 3798748928122149656, guid: c7e2dbe82ad78974e8f1816326a081a1, type: 3}
 --- !u!114 &4094411740583804160
 MonoBehaviour:
   m_ObjectHideFlags: 0

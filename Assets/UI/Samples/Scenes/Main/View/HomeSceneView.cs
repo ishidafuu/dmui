@@ -8,5 +8,6 @@ namespace DM
     public class HomeSceneView : MonoBehaviour
     {
         [SerializeField] public HomeScrollerView m_HomeScrollerView;
+        [SerializeField] public HomeScrollerController m_HomeScrollerController;
     }
 }

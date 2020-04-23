@@ -1,28 +1,39 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.Collections.Generic;
 using EnhancedScrollerDemos.CellEvents;
 using EnhancedUI;
 using EnhancedUI.EnhancedScroller;
+using UnityEngine.EventSystems;
 using UnityEngine.Serialization;
 
-namespace DM {
-
+namespace DM
+{
     public class HomeScrollerController : MonoBehaviour, IEnhancedScrollerDelegate
     {
         private List<Data> m_Data;
-        public EnhancedScroller m_Scroller;
+
+        [SerializeField] public EnhancedScroller m_Scroller;
+
         // ヒエラルキー上ではなく、Resourceフォルダ内のPrefabを指定
         public EnhancedScrollerCellView[] m_CellViewPrefabs;
-        [FormerlySerializedAs("m_HomeTabControl")] public HomeTabPart m_HomeTabPart;
-        
+
         public float CellSize { get; private set; }
 
-        public void Init(EnhancedScroller scroller)
+        public void Init(CellViewInstantiated cellViewInstantiated,
+            ScrollerScrollingChangedDelegate scrollerScrollingChanged,
+            OnBeginDragDelegate scrollerBeginDrag,
+            OnEndDragDelegate scrollerEndDrag)
         {
-            m_Scroller = scroller;
             m_Scroller.Delegate = this;
+            m_Scroller.cellViewInstantiated = cellViewInstantiated;
+            m_Scroller.scrollerScrollingChanged = scrollerScrollingChanged;
+            m_Scroller.scrollerBeginDrag = scrollerBeginDrag;
+            m_Scroller.scrollerEndDrag = scrollerEndDrag;
+            
             CellSize = UIController.Instance.m_CanvasScaler.referenceResolution.x;
             LoadData();
+            m_Scroller.ReloadData();
         }
 
         private void LoadData()
@@ -30,9 +41,9 @@ namespace DM {
             m_Data = new List<Data>();
 
             for (var i = 0; i < m_CellViewPrefabs.Length; i++)
-                m_Data.Add(new Data() { hour = i });
+                m_Data.Add(new Data() {hour = i});
         }
-        
+
         public int GetNumberOfCells(EnhancedScroller scroller)
         {
             return m_Data.Count;
@@ -50,31 +61,31 @@ namespace DM {
             {
                 case 0:
                 {
-                    var cellView = scroller.GetCellView(m_CellViewPrefabs[cellIndex]) as HomeCell0ShopView;
+                    var cellView = scroller.GetCellView(m_CellViewPrefabs[cellIndex]) as ShopCellView;
                     cellView.SetData(m_Data[dataIndex]);
-                    return cellView;  
+                    return cellView;
                 }
                 case 1:
                 {
-                    var cellView = scroller.GetCellView(m_CellViewPrefabs[cellIndex]) as HomeCell1LaboratoryView;
+                    var cellView = scroller.GetCellView(m_CellViewPrefabs[cellIndex]) as LaboratoryCellView;
                     cellView.SetData(m_Data[dataIndex]);
                     return cellView;
                 }
                 case 2:
                 {
-                    var cellView = scroller.GetCellView(m_CellViewPrefabs[cellIndex]) as HomeCell2BattleView;
+                    var cellView = scroller.GetCellView(m_CellViewPrefabs[cellIndex]) as BattleCellView;
                     cellView.SetData(m_Data[dataIndex]);
                     return cellView;
                 }
                 case 3:
                 {
-                    var cellView = scroller.GetCellView(m_CellViewPrefabs[cellIndex]) as HomeCell3SocialView;
+                    var cellView = scroller.GetCellView(m_CellViewPrefabs[cellIndex]) as SocialCellView;
                     cellView.SetData(m_Data[dataIndex]);
                     return cellView;
                 }
                 case 4:
                 {
-                    var cellView = scroller.GetCellView(m_CellViewPrefabs[cellIndex]) as HomeCell4EventView;
+                    var cellView = scroller.GetCellView(m_CellViewPrefabs[cellIndex]) as EventCellView;
                     cellView.SetData(m_Data[dataIndex]);
                     return cellView;
                 }

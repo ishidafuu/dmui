@@ -4,12 +4,12 @@ namespace DM
 {
     class HomeCell0ShopPart : UIPart
     {
-        private readonly HomeCell0ShopView m_HomeCell0ShopView;
+        private readonly ShopCellView m_ShopCellView;
 
-        public HomeCell0ShopPart(HomeCell0ShopView homeCell0ShopView)
-            : base(homeCell0ShopView.transform)
+        public HomeCell0ShopPart(ShopCellView shopCellView)
+            : base(shopCellView.transform)
         {
-            m_HomeCell0ShopView = homeCell0ShopView;
+            m_ShopCellView = shopCellView;
         }
 
         public override async UniTask OnLoadedPart(UIBase targetLayer) { }

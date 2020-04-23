@@ -18,8 +18,7 @@ namespace DM {
 
             List<UIPart> parts = new List<UIPart>
             {
-                new HomeScrollerPart(m_HomeSceneView.m_HomeScrollerView),
-                // new HomeTabControl(m_HomeSceneView.m_TabControl.transform),
+                new HomeScrollerPart(m_HomeSceneView.m_HomeScrollerView, m_HomeSceneView.m_HomeScrollerController),
             };
             
             await UIController.Instance.YieldAttachParts(this, parts);

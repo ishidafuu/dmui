@@ -352,7 +352,7 @@ GameObject:
   - component: {fileID: 1841863022036799341}
   - component: {fileID: 3798748928122149656}
   m_Layer: 5
-  m_Name: HomeCell4EventView
+  m_Name: Home4Event
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -429,7 +429,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7411b7c26e8c69b4c8576cbc1d7fba51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellIdentifier: HomeCell4EventView
+  cellIdentifier: Event
   someTextText: {fileID: 1841863022036786783}
   textButton: {fileID: 1841863022042268451}
   fixedIntegerButton: {fileID: 1841863022042340257}

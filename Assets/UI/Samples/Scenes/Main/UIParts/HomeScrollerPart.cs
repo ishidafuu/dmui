@@ -11,26 +11,28 @@ namespace DM
     {
         // 追加先のレイヤ
         private UIBase m_TargetLayer;
-        private HomeScrollerController m_HomeScrollerController;
+        private readonly HomeScrollerController m_HomeScrollerController;
         private readonly HomeScrollerView m_HomeScrollerView;
 
         // public HomeScrollerPart() : base("HomeScroller") { }
-        public HomeScrollerPart(HomeScrollerView homeScrollerView) : base(homeScrollerView.transform)
+        public HomeScrollerPart(HomeScrollerView homeScrollerView, HomeScrollerController homeScrollerController)
+            : base(homeScrollerView.transform)
         {
             m_HomeScrollerView = homeScrollerView;
+            m_HomeScrollerController = homeScrollerController;
         }
 
         public override async UniTask OnLoadedPart(UIBase targetLayer)
         {
             m_TargetLayer = targetLayer;
             InitRootTransform();
-            m_HomeScrollerController = InitHomeScrollerController();
+            InitHomeScrollerController();
 
             List<UIPart> parts = new List<UIPart>
             {
                 new HomeTabPart(m_HomeScrollerView.m_TabView, JumpToDataIndex)
             };
-            
+
             // 追加待ち
             await UIController.Instance.YieldAttachParts(targetLayer, parts);
 
@@ -47,18 +49,10 @@ namespace DM
             RootTransform.localScale = Vector3.one;
         }
 
-        private HomeScrollerController InitHomeScrollerController()
+        private void InitHomeScrollerController()
         {
-            HomeScrollerController controller = m_TargetLayer.RootTransform.GetComponent<HomeScrollerController>();
-            controller.Init(RootTransform.GetComponent<EnhancedScroller>());
-            controller.m_Scroller.ReloadData();
-            // 新規セルビュー追加時デリゲート
-            controller.m_Scroller.cellViewInstantiated = CellViewInstantiated;
-            controller.m_Scroller.scrollerScrollingChanged = ScrollerScrollingChanged;
-            controller.m_Scroller.scrollerBeginDrag = ScrollerBeginDrag;
-            controller.m_Scroller.scrollerEndDrag = ScrollerEndDrag;
-            // controller.m_Scroller.scrollerSnapped = ScrollerSnapped;
-            return controller;
+            m_HomeScrollerController.Init(CellViewInstantiated, ScrollerScrollingChanged,
+                ScrollerBeginDrag, ScrollerEndDrag);
         }
 
         // 新規セルビュー追加時デリゲート
@@ -67,31 +61,31 @@ namespace DM
             UIPart part = null;
             switch (cellView.cellIdentifier)
             {
-                case "HomeCell0ShopView":
-                    part = new HomeCell0ShopPart(cellView as HomeCell0ShopView);
+                case "Shop":
+                    part = new HomeCell0ShopPart(cellView as ShopCellView);
                     break;
-                case "HomeCell1LaboratoryView":
-                    part = new HomeCell1LaboratoryPart(cellView as HomeCell1LaboratoryView);
+                case "Laboratory":
+                    part = new LaboratoryPart(cellView as LaboratoryCellView);
                     break;
-                case "HomeCell2BattleView":
-                    part = new HomeCell2BattlePart(cellView as HomeCell2BattleView);
+                case "Battle":
+                    part = new BattlePart(cellView as BattleCellView);
                     break;
-                case "HomeCell3SocialView":
-                    part = new HomeCell3SocialPart(cellView as HomeCell3SocialView);
+                case "Social":
+                    part = new SocialPart(cellView as SocialCellView);
                     break;
-                case "HomeCell4EventView":
-                    part = new HomeCell4EventPart(cellView as HomeCell4EventView);
+                case "Event":
+                    part = new EventPart(cellView as EventCellView);
                     break;
                 default:
                     Debug.LogError($"CellViewInstantiated Error cellIdentifier:{cellView.cellIdentifier}");
                     return;
             }
-            
+
             List<UIPart> parts = new List<UIPart>
             {
                 part
             };
-            
+
             // 即時追加
             UIController.Instance.AttachParts(m_TargetLayer, parts);
         }
@@ -132,7 +126,7 @@ namespace DM
             {
                 return;
             }
-            
+
             m_HomeScrollerView.m_EnhancedScroller.JumpToDataIndex(index, 0, 0, true,
                 EnhancedScroller.TweenType.easeOutQuart, 0.5f,
                 () => m_HomeScrollerView.m_EnhancedScroller.Velocity = Vector2.zero);
