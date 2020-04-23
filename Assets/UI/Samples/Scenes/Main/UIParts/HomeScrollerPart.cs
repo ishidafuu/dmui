@@ -86,34 +86,35 @@ namespace DM
         private void CellViewInstantiated(EnhancedScroller scroller, EnhancedScrollerCellView cellView)
         {
             UIPart part = null;
-
-            Debug.Log($"CellViewInstantiated{cellView.cellIndex}");
-            // switch (cellView.cellIndex)
-            // {
-            //     case 0:
-            //         part = new HomeCell0ShopPart(cellView.GetComponent<HomeCell0ShopView>());
-            //         break;
-            //     case 1:
-            //         part = new HomeCell1LaboratoryPart(cellView.GetComponent<HomeCell1LaboratoryView>());
-            //         break;
-            //     case 2:
-            //         part = new HomeCell2BattlePart(cellView.GetComponent<HomeCell2BattleView>());
-            //         break;
-            //     case 3:
-            //         part = new HomeCell3SocialPart(cellView.GetComponent<HomeCell3SocialView>());
-            //         break;
-            //     case 4:
-            //         part = new HomeCell4EventPart(cellView.GetComponent<HomeCell4EventView>());
-            //         break;
-            // }
-            //
-            // List<UIPart> parts = new List<UIPart>
-            // {
-            //     part
-            // };
-            //
-            // // 即時追加
-            // UIController.Instance.AttachParts(m_TargetLayer, parts);
+            switch (cellView.cellIdentifier)
+            {
+                case "HomeCell0ShopView":
+                    part = new HomeCell0ShopPart(cellView as HomeCell0ShopView);
+                    break;
+                case "HomeCell1LaboratoryView":
+                    part = new HomeCell1LaboratoryPart(cellView as HomeCell1LaboratoryView);
+                    break;
+                case "HomeCell2BattleView":
+                    part = new HomeCell2BattlePart(cellView as HomeCell2BattleView);
+                    break;
+                case "HomeCell3SocialView":
+                    part = new HomeCell3SocialPart(cellView as HomeCell3SocialView);
+                    break;
+                case "HomeCell4EventView":
+                    part = new HomeCell4EventPart(cellView as HomeCell4EventView);
+                    break;
+                default:
+                    Debug.LogError($"CellViewInstantiated Error cellIdentifier:{cellView.cellIdentifier}");
+                    return;
+            }
+            
+            List<UIPart> parts = new List<UIPart>
+            {
+                part
+            };
+            
+            // 即時追加
+            UIController.Instance.AttachParts(m_TargetLayer, parts);
         }
 
 
