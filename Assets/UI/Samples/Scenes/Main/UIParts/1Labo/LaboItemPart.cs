@@ -4,21 +4,21 @@ using UniRx.Async;
 using UnityEngine;
 
 namespace DM {
-    class CellViewScrollerPart : UIPart
+    class LaboItemPart : UIPart
     {
         private UIBase m_TargetLayer;
 
-        public CellViewScrollerPart() : base("CellViewScroller") { }
+        public LaboItemPart() : base("LaboItem") { }
 
         public override async UniTask OnLoadedPart(UIBase targetLayer)
         {
             m_TargetLayer = targetLayer;
-            Controller14_2 controller14_2 = targetLayer.RootTransform.GetComponent<Controller14_2>();
-            controller14_2.scroller = RootTransform.GetComponent<EnhancedScroller>();
-            controller14_2.Init();
-            controller14_2.scroller.ReloadData();
+            LaboScrollerController laboScrollerController = targetLayer.RootTransform.GetComponent<LaboScrollerController>();
+            laboScrollerController.m_Scroller = RootTransform.GetComponent<EnhancedScroller>();
+            laboScrollerController.Init();
+            laboScrollerController.m_Scroller.ReloadData();
             // 新規セルビュー追加時デリゲート
-            controller14_2.scroller.cellViewInstantiated = CellViewInstantiated;
+            laboScrollerController.m_Scroller.cellViewInstantiated = CellViewInstantiated;
 
             // UIPartの追加先を決定する
             Transform layer = targetLayer.RootTransform.Find("Layer");
@@ -28,18 +28,18 @@ namespace DM {
 
             // cellview
             List<UIPart> parts = new List<UIPart>();
-            int cellCount = controller14_2.scroller.GetActiveCellViewsCount();
+            int cellCount = laboScrollerController.m_Scroller.GetActiveCellViewsCount();
             for (int i = 0; i < cellCount; i++)
             {
-                CellView14_2 cell = controller14_2.scroller.GetCellViewAtDataIndex(i) as CellView14_2;
-                if (cell == null)
+                LaboItemCellView laboItemCell = laboScrollerController.m_Scroller.GetCellViewAtDataIndex(i) as LaboItemCellView;
+                if (laboItemCell == null)
                 {
                     continue;
                 }
 
-                parts.Add(new Sample14_2CellViewButton(cell, cell.textButton));
-                parts.Add(new Sample14_2CellViewButton(cell, cell.fixedIntegerButton));
-                parts.Add(new Sample14_2CellViewButton(cell, cell.dataIntegerButton));
+                parts.Add(new LaboItemButtonPart(laboItemCell, laboItemCell.textButton));
+                parts.Add(new LaboItemButtonPart(laboItemCell, laboItemCell.fixedIntegerButton));
+                parts.Add(new LaboItemButtonPart(laboItemCell, laboItemCell.dataIntegerButton));
             }
 
             // 追加待ち
@@ -58,17 +58,17 @@ namespace DM {
         // 新規セルビュー追加時デリゲート
         private void CellViewInstantiated(EnhancedScroller scroller, EnhancedScrollerCellView cellView)
         {
-            CellView14_2 cell = cellView as CellView14_2;
-            if (cell == null)
+            LaboItemCellView laboItemCell = cellView as LaboItemCellView;
+            if (laboItemCell == null)
             {
                 return;
             }
 
             List<UIPart> parts = new List<UIPart>
             {
-                new Sample14_2CellViewButton(cell, cell.textButton),
-                new Sample14_2CellViewButton(cell, cell.fixedIntegerButton),
-                new Sample14_2CellViewButton(cell, cell.dataIntegerButton)
+                new LaboItemButtonPart(laboItemCell, laboItemCell.textButton),
+                new LaboItemButtonPart(laboItemCell, laboItemCell.fixedIntegerButton),
+                new LaboItemButtonPart(laboItemCell, laboItemCell.dataIntegerButton)
             };
             // 即時追加
             UIController.Instance.AttachParts(m_TargetLayer, parts);

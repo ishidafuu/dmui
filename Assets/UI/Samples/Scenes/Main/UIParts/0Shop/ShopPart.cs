@@ -2,11 +2,11 @@
 
 namespace DM
 {
-    class HomeCell0ShopPart : UIPart
+    class ShopPart : UIPart
     {
         private readonly ShopCellView m_ShopCellView;
 
-        public HomeCell0ShopPart(ShopCellView shopCellView)
+        public ShopPart(ShopCellView shopCellView)
             : base(shopCellView.transform)
         {
             m_ShopCellView = shopCellView;

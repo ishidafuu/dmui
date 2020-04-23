@@ -589,22 +589,27 @@
               <e p="Main" t="Include">
                 <e p="CellView" t="Include">
                   <e p="BattleCellView.cs" t="Include" />
-                  <e p="CellView14_2.cs" t="Include" />
                   <e p="EventCellView.cs" t="Include" />
-                  <e p="LaboratoryCellView.cs" t="Include" />
+                  <e p="LaboCellView.cs" t="Include" />
+                  <e p="LaboItemCellView.cs" t="Include" />
                   <e p="ShopCellView.cs" t="Include" />
                   <e p="SocialCellView.cs" t="Include" />
                 </e>
+                <e p="Controller" t="Include">
+                  <e p="HomeScrollerController.cs" t="Include" />
+                  <e p="LaboScrollerController.cs" t="Include" />
+                </e>
                 <e p="DMUICanvas.cs" t="Include" />
                 <e p="HomeSceneBase.cs" t="Include" />
-                <e p="HomeScrollerController.cs" t="Include" />
                 <e p="UIParts" t="Include">
                   <e p="0Shop" t="Include">
-                    <e p="HomeCell0ShopPart.cs" t="Include" />
+                    <e p="ShopPart.cs" t="Include" />
                   </e>
-                  <e p="1Laboratory" t="Include">
-                    <e p="CellViewScrollerPart.cs" t="Include" />
-                    <e p="LaboratoryPart.cs" t="Include" />
+                  <e p="1Labo" t="Include">
+                    <e p="LaboItemButtonPart.cs" t="Include" />
+                    <e p="LaboItemPart.cs" t="Include" />
+                    <e p="LaboPart.cs" t="Include" />
+                    <e p="LaboScrollerPart.cs" t="Include" />
                   </e>
                   <e p="2Battle" t="Include">
                     <e p="BattlePart.cs" t="Include" />
@@ -620,12 +625,11 @@
                   </e>
                   <e p="HomeScrollerPart.cs" t="Include" />
                   <e p="HomeTabPart.cs" t="Include" />
-                  <e p="Sample14_2CellViewButton.cs" t="Include" />
                 </e>
                 <e p="View" t="Include">
-                  <e p="Controller14_2.cs" t="Include" />
                   <e p="HomeSceneView.cs" t="Include" />
                   <e p="HomeScrollerView.cs" t="Include" />
+                  <e p="LaboScrollerView.cs" t="Include" />
                 </e>
               </e>
             </e>

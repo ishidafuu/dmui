@@ -7,19 +7,21 @@ using UnityEngine.UI;
 
 namespace DM
 {
-    public class HomeScrollerPart : UIPart
+    public class LaboScrollerPart : UIPart
     {
         // 追加先のレイヤ
         private UIBase m_TargetLayer;
-        private readonly HomeScrollerController m_HomeScrollerController;
-        private readonly HomeScrollerView m_HomeScrollerView;
+        private UIPart m_TargetPart;
+        private readonly LaboScrollerController m_LaboScrollerController;
+        private readonly LaboScrollerView m_LaboScrollerView;
 
-        // public HomeScrollerPart() : base("HomeScroller") { }
-        public HomeScrollerPart(HomeScrollerView homeScrollerView, HomeScrollerController homeScrollerController)
-            : base(homeScrollerView.transform)
+        // public LaboScrollerPart() : base("HomeScroller") { }
+        public LaboScrollerPart(UIPart targetPart, LaboScrollerView laboScrollerView, LaboScrollerController laboScrollerController)
+            : base(laboScrollerView.transform)
         {
-            m_HomeScrollerView = homeScrollerView;
-            m_HomeScrollerController = homeScrollerController;
+            m_TargetPart = targetPart;
+            m_LaboScrollerView = laboScrollerView;
+            m_LaboScrollerController = laboScrollerController;
         }
 
         public override async UniTask OnLoadedPart(UIBase targetLayer)
@@ -28,22 +30,22 @@ namespace DM
             InitRootTransform();
             InitHomeScrollerController();
 
-            List<UIPart> parts = new List<UIPart>
-            {
-                new HomeTabPart(m_HomeScrollerView.m_TabView, JumpToDataIndex)
-            };
-
-            // 追加待ち
-            await UIController.Instance.YieldAttachParts(targetLayer, parts);
-
-            const int FIRST_INDEX = 2;
-            m_HomeScrollerView.m_EnhancedScroller.JumpToDataIndex(FIRST_INDEX);
+            // List<UIPart> parts = new List<UIPart>
+            // {
+            //     new HomeTabPart(m_LaboScrollerView.m_TabView, JumpToDataIndex)
+            // };
+            //
+            // // 追加待ち
+            // await UIController.Instance.YieldAttachParts(targetLayer, parts);
+            //
+            // const int FIRST_INDEX = 2;
+            // m_LaboScrollerView.m_EnhancedScroller.JumpToDataIndex(FIRST_INDEX);
         }
 
         private void InitRootTransform()
         {
             // UIPartの追加先を決定する
-            Transform layer = m_TargetLayer.RootTransform.Find("Layer");
+            Transform layer = m_TargetPart.RootTransform.Find("Layer");
             RootTransform.SetParent(layer);
             RootTransform.localPosition = new Vector3(0, 0, 0);
             RootTransform.localScale = Vector3.one;
@@ -51,8 +53,9 @@ namespace DM
 
         private void InitHomeScrollerController()
         {
-            m_HomeScrollerController.Init(CellViewInstantiated, ScrollerScrollingChanged,
-                ScrollerBeginDrag, ScrollerEndDrag);
+            m_LaboScrollerController.Init();
+            // m_LaboScrollerController.Init(CellViewInstantiated, ScrollerScrollingChanged,
+            //     ScrollerBeginDrag, ScrollerEndDrag);
         }
 
         // 新規セルビュー追加時デリゲート
@@ -103,33 +106,33 @@ namespace DM
             // ScrollRectのInertiaはFalseにしておく
             // TweenはEaseInQuad
 
-            const float BORDER = 0.01f;
-            int index = (int)(scroller.ScrollPosition / m_HomeScrollerController.CellSize + 0.5f);
-            bool isPrevShift = (int)scroller.ScrollPosition % (int)m_HomeScrollerController.CellSize
-                               > m_HomeScrollerController.CellSize / 2;
-
-            if (data.delta.x < -BORDER && !isPrevShift)
-            {
-                index += 1;
-            }
-            else if (data.delta.x > BORDER && isPrevShift)
-            {
-                index -= 1;
-            }
-
-            JumpToDataIndex(index);
+            // const float BORDER = 0.01f;
+            // int index = (int)(scroller.ScrollPosition / m_LaboScrollerController.CellSize + 0.5f);
+            // bool isPrevShift = (int)scroller.ScrollPosition % (int)m_LaboScrollerController.CellSize
+            //                    > m_LaboScrollerController.CellSize / 2;
+            //
+            // if (data.delta.x < -BORDER && !isPrevShift)
+            // {
+            //     index += 1;
+            // }
+            // else if (data.delta.x > BORDER && isPrevShift)
+            // {
+            //     index -= 1;
+            // }
+            //
+            // JumpToDataIndex(index);
         }
 
         private void JumpToDataIndex(int index)
         {
-            if (m_HomeScrollerView.m_EnhancedScroller.IsTweening)
+            if (m_LaboScrollerView.m_EnhancedScroller.IsTweening)
             {
                 return;
             }
 
-            m_HomeScrollerView.m_EnhancedScroller.JumpToDataIndex(index, 0, 0, true,
+            m_LaboScrollerView.m_EnhancedScroller.JumpToDataIndex(index, 0, 0, true,
                 EnhancedScroller.TweenType.easeOutQuart, 0.5f,
-                () => m_HomeScrollerView.m_EnhancedScroller.Velocity = Vector2.zero);
+                () => m_LaboScrollerView.m_EnhancedScroller.Velocity = Vector2.zero);
         }
     }
 }

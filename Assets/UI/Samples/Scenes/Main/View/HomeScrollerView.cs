@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using EnhancedUI.EnhancedScroller;
 using UnityEngine;
 
@@ -13,12 +11,12 @@ namespace DM
 
         private float m_ScrollWidth;
         private Transform m_CursorTransform;
+
         private void Start()
         {
             m_ScrollWidth = (m_TabView.transform as RectTransform).rect.width / 5 * 4;
             m_CursorTransform = m_TabView.m_Cursor.transform;
-        } 
-
+        }
         
         private void Update()
         {
