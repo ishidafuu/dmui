@@ -860,8 +860,16 @@ namespace EnhancedUI.EnhancedScroller
                 return;
             }
 
-            // start tweening
-            StartCoroutine(TweenPosition(tweenType, tweenTime, ScrollPosition, newScrollPosition, jumpComplete));
+            if (tweenType == TweenType.immediate || tweenTime == 0)
+            {
+                // immediate
+                EndTweenPosition(newScrollPosition, jumpComplete);
+            }
+            else
+            {
+                // start tweening
+                StartCoroutine(TweenPosition(tweenType, tweenTime, ScrollPosition, newScrollPosition, jumpComplete));
+            }
         }
 
         /// <summary>
@@ -2045,19 +2053,24 @@ namespace EnhancedUI.EnhancedScroller
             }
             else
             {
-                // the time has expired, so we make sure the final scroll position
-                // is the actual end position.
-                ScrollPosition = end;
-
-                _RefreshActive();
-
-                // the tween jump is complete, so we fire the delegate
-                if (tweenComplete != null) tweenComplete();
-
-                // fire the delegate for the tween ending
-                IsTweening = false;
-                if (scrollerTweeningChanged != null) scrollerTweeningChanged(this, false);           
+                EndTweenPosition(end, tweenComplete);
             }
+        }
+
+        private void EndTweenPosition(float end, Action tweenComplete)
+        {
+            // the time has expired, so we make sure the final scroll position
+            // is the actual end position.
+            ScrollPosition = end;
+
+            _RefreshActive();
+
+            // the tween jump is complete, so we fire the delegate
+            if (tweenComplete != null) tweenComplete();
+
+            // fire the delegate for the tween ending
+            IsTweening = false;
+            if (scrollerTweeningChanged != null) scrollerTweeningChanged(this, false);
         }
 
 

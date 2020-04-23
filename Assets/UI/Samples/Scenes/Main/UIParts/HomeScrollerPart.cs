@@ -12,7 +12,7 @@ namespace DM
         // 追加先のレイヤ
         private UIBase m_TargetLayer;
         private HomeScrollerController m_HomeScrollerController;
-        private HomeScrollerView m_HomeScrollerView;
+        private readonly HomeScrollerView m_HomeScrollerView;
 
         // public HomeScrollerPart() : base("HomeScroller") { }
         public HomeScrollerPart(HomeScrollerView homeScrollerView) : base(homeScrollerView.transform)
@@ -24,30 +24,17 @@ namespace DM
         {
             m_TargetLayer = targetLayer;
             InitRootTransform();
-
             m_HomeScrollerController = InitHomeScrollerController();
-            // m_HomeScrollerController.m_HomeTabControl.Init((int)UIController.Instance.m_CanvasScaler.referenceResolution.x / 5);
 
             List<UIPart> parts = new List<UIPart>
             {
                 new HomeTabPart(m_HomeScrollerView.m_TabView, JumpToDataIndex)
             };
-            // int cellCount = m_HomeScrollerController.m_Scroller.GetActiveCellViewsCount();
-            // for (int i = 0; i < cellCount; i++)
-            // {
-            //     HomeCellView cell = controller.m_Scroller.GetCellViewAtDataIndex(i) as HomeCellView;
-            //     if (cell == null)
-            //     {
-            //         continue;
-            //     }
-            //
-            //     parts.Add(new Sample14_2CellViewButton(cell, cell.textButton));
-            //     parts.Add(new Sample14_2CellViewButton(cell, cell.fixedIntegerButton));
-            //     parts.Add(new Sample14_2CellViewButton(cell, cell.dataIntegerButton));
-            // }
-
+            
             // 追加待ち
             await UIController.Instance.YieldAttachParts(targetLayer, parts);
+            m_HomeScrollerView.m_EnhancedScroller.JumpToDataIndex(2, 0, 0, true,
+                EnhancedScroller.TweenType.immediate,0);
         }
 
         private void InitRootTransform()
@@ -71,15 +58,6 @@ namespace DM
             controller.m_Scroller.scrollerEndDrag = ScrollerEndDrag;
             // controller.m_Scroller.scrollerSnapped = ScrollerSnapped;
             return controller;
-        }
-        
-        public override bool OnClick(TouchEvent touch, UISound uiSound)
-        {
-            Debug.Log("push Sample14_2Scroller: ");
-            Debug.Log("Scene14 : All Right");
-
-
-            return true;
         }
 
         // 新規セルビュー追加時デリゲート
