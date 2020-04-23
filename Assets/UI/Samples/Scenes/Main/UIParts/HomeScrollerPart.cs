@@ -33,8 +33,9 @@ namespace DM
             
             // 追加待ち
             await UIController.Instance.YieldAttachParts(targetLayer, parts);
-            m_HomeScrollerView.m_EnhancedScroller.JumpToDataIndex(2, 0, 0, true,
-                EnhancedScroller.TweenType.immediate,0);
+
+            const int FIRST_INDEX = 2;
+            m_HomeScrollerView.m_EnhancedScroller.JumpToDataIndex(FIRST_INDEX);
         }
 
         private void InitRootTransform()
