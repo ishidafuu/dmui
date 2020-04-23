@@ -9,7 +9,7 @@ public class TabView : MonoBehaviour
 {
     [SerializeField] public ButtonView[] m_ButtonViews;
     [SerializeField] public ProceduralImage m_Selector;
-    private int m_Index = 0;
+    // private int m_Index = 0;
 
     private void Reset()
     {
@@ -28,29 +28,29 @@ public class TabView : MonoBehaviour
 
     public void Init(int width)
     {
-        m_Index = 2;
+        // m_Index = 2;
         var selectorRect = (m_Selector.transform as RectTransform);
         selectorRect.sizeDelta = new Vector3(width, selectorRect.sizeDelta.y, 0);
         
-        m_Selector.transform.localPosition = new Vector3(
-            m_ButtonViews[2].transform.position.x, 
-            m_Selector.transform.localPosition.y, 
-            0);
+        // m_Selector.transform.localPosition = new Vector3(
+        //     m_ButtonViews[2].transform.position.x, 
+        //     m_Selector.transform.localPosition.y, 
+        //     0);
     }
 
     public void SetIndex(int index)
     {
-        if (index < 0
-            || index >= m_ButtonViews.Length
-            || m_Index == index)
-        {
-            return;
-        }
-
-        m_Index = index;
-
-        m_Selector.transform.DOMoveX(m_ButtonViews[index].transform.position.x, 0.25f)
-            .SetEase(Ease.OutQuad);
-        Debug.Log(m_ButtonViews[index].transform.position.x);
+        // if (index < 0
+        //     || index >= m_ButtonViews.Length
+        //     || m_Index == index)
+        // {
+        //     return;
+        // }
+        //
+        // m_Index = index;
+        //
+        // m_Selector.transform.DOMoveX(m_ButtonViews[index].transform.position.x, 0.25f)
+        //     .SetEase(Ease.OutQuad);
+        // Debug.Log(m_ButtonViews[index].transform.position.x);
     }
 }
