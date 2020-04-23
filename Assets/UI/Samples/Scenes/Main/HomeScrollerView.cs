@@ -22,8 +22,7 @@ namespace DM
         
         private void Update()
         {
-            
-            // タブカーソル位置調整
+            // カーソル位置調整
             var localPosition = m_CursorTransform.localPosition;
             var horizontalNormalizedPosition = m_EnhancedScroller.ScrollRect.horizontalNormalizedPosition;
             float newX = (horizontalNormalizedPosition - 0.5f) * m_ScrollWidth;

@@ -30,7 +30,7 @@ namespace DM
 
             List<UIPart> parts = new List<UIPart>
             {
-                new HomeTabPart(m_HomeScrollerView.m_TabView)
+                new HomeTabPart(m_HomeScrollerView.m_TabView, JumpToDataIndex)
             };
             // int cellCount = m_HomeScrollerController.m_Scroller.GetActiveCellViewsCount();
             // for (int i = 0; i < cellCount; i++)
@@ -72,7 +72,7 @@ namespace DM
             // controller.m_Scroller.scrollerSnapped = ScrollerSnapped;
             return controller;
         }
-
+        
         public override bool OnClick(TouchEvent touch, UISound uiSound)
         {
             Debug.Log("push Sample14_2Scroller: ");
@@ -130,11 +130,8 @@ namespace DM
             // ScrollRectのInertiaはFalseにしておく
             // TweenはEaseInQuad
 
-            if (scroller.IsTweening)
-                return;
-
-            const int BORDER = 0;
-            var index = (int)(scroller.ScrollPosition / m_HomeScrollerController.CellSize + 0.5f);
+            const float BORDER = 0.01f;
+            int index = (int)(scroller.ScrollPosition / m_HomeScrollerController.CellSize + 0.5f);
             bool isPrevShift = (int)scroller.ScrollPosition % (int)m_HomeScrollerController.CellSize
                                > m_HomeScrollerController.CellSize / 2;
 
@@ -147,15 +144,19 @@ namespace DM
                 index -= 1;
             }
 
-            scroller.JumpToDataIndex(index, 0, 0, true,
-                EnhancedScroller.TweenType.easeOutQuart, 0.5f,
-                () => scroller.Velocity = Vector2.zero);
+            JumpToDataIndex(index);
         }
 
-        // private void ScrollerSnapped(EnhancedScroller scroller, int cellIndex, int dataIndex,
-        //     EnhancedScrollerCellView cellView)
-        // {
-        //     scroller.snapping = false;
-        // }
+        private void JumpToDataIndex(int index)
+        {
+            if (m_HomeScrollerView.m_EnhancedScroller.IsTweening)
+            {
+                return;
+            }
+            
+            m_HomeScrollerView.m_EnhancedScroller.JumpToDataIndex(index, 0, 0, true,
+                EnhancedScroller.TweenType.easeOutQuart, 0.5f,
+                () => m_HomeScrollerView.m_EnhancedScroller.Velocity = Vector2.zero);
+        }
     }
 }

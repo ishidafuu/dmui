@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using EnhancedUI.EnhancedScroller;
 using UniRx.Async;
 using UnityEngine;
@@ -12,10 +13,12 @@ namespace DM
         // 追加先のレイヤ
         private UIBase m_TargetLayer;
         private TabView m_TabView;
+        private Action<int> m_ActionClick;
 
-        public HomeTabPart(TabView tabView) : base(tabView.transform)
+        public HomeTabPart(TabView tabView, Action<int> actionClick) : base(tabView.transform)
         {
             m_TabView = tabView;
+            m_ActionClick = actionClick;
         }
 
         public override async UniTask OnLoadedPart(UIBase targetLayer)
@@ -46,6 +49,7 @@ namespace DM
         private void OnClickButton(int index)
         {
             Debug.Log($"OnClickButton{index}");
+            m_ActionClick?.Invoke(index);
         }
         
     }
