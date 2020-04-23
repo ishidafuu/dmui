@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UniRx.Async;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 namespace DM
 {
@@ -31,7 +32,8 @@ namespace DM
 
         private Transform m_UILayers;
         public Transform m_UIView3D;
-
+        public CanvasScaler m_CanvasScaler;
+        public Camera m_Camera;
         public static UIImplements Implements => Instance.m_Implements;
 
         public UIController(UIImplements implements)
@@ -114,6 +116,8 @@ namespace DM
             {
                 Debug.Log("found UIView3D");
             }
+            
+            m_CanvasScaler = FindObjectOfType<CanvasScaler>();
 
             BaseRaycaster[] rayCasters = FindObjectsOfType<BaseRaycaster>();
             m_RayCasterComponents = new List<BaseRaycaster>();
@@ -121,6 +125,8 @@ namespace DM
             {
                 m_RayCasterComponents.Add(item);
             }
+            
+            m_Camera = GameObject.Find("Camera").GetComponent<Camera>();
 
             Debug.Log("Complete FindUIControllerItems");
         }

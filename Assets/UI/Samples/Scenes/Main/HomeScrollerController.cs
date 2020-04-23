@@ -13,12 +13,15 @@ namespace DM {
         public EnhancedScroller m_Scroller;
         // ヒエラルキー上ではなく、Resourceフォルダ内のPrefabを指定
         public EnhancedScrollerCellView[] m_CellViewPrefabs;
-        public float m_CellSize;
+        [FormerlySerializedAs("m_HomeTabControl")] public HomeTabPart m_HomeTabPart;
+        
+        public float CellSize { get; private set; }
 
         public void Init(EnhancedScroller scroller)
         {
             m_Scroller = scroller;
             m_Scroller.Delegate = this;
+            CellSize = UIController.Instance.m_CanvasScaler.referenceResolution.x;
             LoadData();
         }
 
@@ -37,12 +40,12 @@ namespace DM {
 
         public float GetCellViewSize(EnhancedScroller scroller, int dataIndex)
         {
-            return m_CellSize;
+            return CellSize;
         }
 
         public EnhancedScrollerCellView GetCellView(EnhancedScroller scroller, int dataIndex, int cellIndex)
         {
-            Debug.Log($"dataindex{dataIndex} cellIndex{cellIndex}");
+            // Debug.Log($"dataindex{dataIndex} cellIndex{cellIndex}");
             switch (cellIndex)
             {
                 case 0:

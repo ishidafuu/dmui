@@ -8,7 +8,7 @@ namespace DM
         private void Start()
         {
             UIController.SetImplement(new PrefabLoader(), new Sounder(), new FadeCreator(), new LoadingCreator(), new ToastCreator());
-            UIController.Instance.AddFront(new HomeScene());
+            UIController.Instance.AddFront(new HomeSceneBase());
         }
     }
 }

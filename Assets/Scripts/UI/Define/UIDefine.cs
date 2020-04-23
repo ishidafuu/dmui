@@ -78,5 +78,7 @@ namespace DM
         Down,
         Up,
         Drag,
+        BeginDrag,
+        EndDrag,
     }
 }

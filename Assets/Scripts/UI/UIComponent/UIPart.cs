@@ -144,7 +144,19 @@ namespace DM
         {
             return false;
         }
-
+        
+        // ドラッグ開始
+        public virtual bool OnBeginDrag(TouchEvent touch)
+        {
+            return false;
+        }
+        
+        // ドラッグ終了
+        public virtual bool OnEndDrag(TouchEvent touch)
+        {
+            return false;
+        }
+        
         // 破棄
         protected virtual void OnDestroy() { }
     }

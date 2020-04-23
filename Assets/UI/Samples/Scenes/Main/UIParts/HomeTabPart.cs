@@ -7,22 +7,31 @@ using UnityEngine.UI;
 
 namespace DM 
 {
-    public class HomeTabControl : UIPart
+    public class HomeTabPart : UIPart
     {
         // 追加先のレイヤ
         private UIBase m_TargetLayer;
-        private HomeScrollerController m_HomeScrollerController;
-        
-        public HomeTabControl(Transform rootTransform) : base(rootTransform) { }
+        private TabView m_TabView;
+
+        public HomeTabPart(TabView tabView) : base(tabView.transform)
+        {
+            m_TabView = tabView;
+        }
 
         public override async UniTask OnLoadedPart(UIBase targetLayer)
         {
             m_TargetLayer = targetLayer;
             
-            // InitRootTransform();
+            List<UIPart> parts = new List<UIPart>();
+            for (int i = 0; i < m_TabView.m_ButtonViews.Length; i++)
+            {
+                int index = i;
+                parts.Add(new ButtonPart(m_TabView.m_ButtonViews[i], () => OnClickButton(index)));
+                Debug.Log($"Add ButtonPart{index}");
+            }
 
-            // // 追加待ち
-            // await UIController.Instance.YieldAttachParts(targetLayer, parts);
+            // 追加待ち
+            await UIController.Instance.YieldAttachParts(targetLayer, parts);
         }
 
         // private void InitRootTransform()
@@ -33,6 +42,11 @@ namespace DM
         //     // RootTransform.localPosition = new Vector3(0, -400, 0);
         //     RootTransform.localScale = Vector3.one;
         // }
+
+        private void OnClickButton(int index)
+        {
+            Debug.Log($"OnClickButton{index}");
+        }
         
     }
 }

@@ -4,7 +4,8 @@ using UnityEngine.EventSystems;
 namespace DM
 {
     public class UITouchListener : MonoBehaviour,
-        IPointerClickHandler, IPointerDownHandler, IPointerUpHandler, IDragHandler
+        IPointerClickHandler, IPointerDownHandler, IPointerUpHandler,
+        IDragHandler, IBeginDragHandler, IEndDragHandler
     {
         public UIBaseLayer Layer { get; private set; }
         public UIPart Part { get; private set; }
@@ -69,6 +70,16 @@ namespace DM
         public void OnDrag(PointerEventData pointer)
         {
             UIController.Instance.ListenTouch(this, EnumTouchType.Drag, pointer);
+        }
+        
+        public void OnBeginDrag(PointerEventData pointer)
+        {
+            UIController.Instance.ListenTouch(this, EnumTouchType.BeginDrag, pointer);
+        }
+        
+        public void OnEndDrag(PointerEventData pointer)
+        {
+            UIController.Instance.ListenTouch(this, EnumTouchType.EndDrag, pointer);
         }
     }
 }

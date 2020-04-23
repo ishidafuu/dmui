@@ -2,12 +2,12 @@
 using UniRx.Async;
 
 namespace DM {
-    public class HomeScene : UIBase
+    public class HomeSceneBase : UIBase
     {
         private int count = 0;
         private HomeSceneView m_HomeSceneView;
 
-        public HomeScene() : base("HomeScene", EnumUIGroup.Scene)
+        public HomeSceneBase() : base("HomeScene", EnumUIGroup.Scene)
         {
             IsScheduleUpdate = true;
         }
@@ -15,17 +15,14 @@ namespace DM {
         public override async UniTask OnLoadedBase()
         {
             m_HomeSceneView = RootTransform.GetComponent<HomeSceneView>();
-            // RootTransform.Find("Layer/ButtonCenter").gameObject.SetActive(false);
-            // RootTransform.Find("Layer/ButtonBottom").gameObject.SetActive(false);
-            
+
             List<UIPart> parts = new List<UIPart>
             {
-                new HomeScroller(m_HomeSceneView.m_HomeScroller.transform),
-                new HomeTabControl(m_HomeSceneView.m_TabControl.transform),
+                new HomeScrollerPart(m_HomeSceneView.m_HomeScrollerView),
+                // new HomeTabControl(m_HomeSceneView.m_TabControl.transform),
             };
             
             await UIController.Instance.YieldAttachParts(this, parts);
-            m_HomeSceneView.m_TabControl.Init(852 / 5);
         }
 
         public override void OnUpdate()

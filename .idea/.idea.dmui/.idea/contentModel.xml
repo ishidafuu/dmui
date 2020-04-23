@@ -305,12 +305,12 @@
               <e p="UIControllerEditor.cs" t="Include" />
             </e>
             <e p="UIEffect" t="Include">
-              <e p="ButtonEffect.cs" t="Include" />
+              <e p="ButtonView.cs" t="Include" />
               <e p="CheckEffect.cs" t="Include" />
               <e p="MenuButtonEffect.cs" t="Include" />
               <e p="NoneDrawingGraphic.cs" t="Include" />
               <e p="SwitchEffect.cs" t="Include" />
-              <e p="TabEffect.cs" t="Include" />
+              <e p="TabView.cs" t="Include" />
             </e>
             <e p="UIImplements" t="Include">
               <e p="Interface" t="Include">
@@ -587,21 +587,32 @@
                 <e p="Sample20.cs" t="Include" />
               </e>
               <e p="Main" t="Include">
-                <e p="CellView14_2.cs" t="Include" />
-                <e p="CellViewScroller.cs" t="Include" />
+                <e p="CellView" t="Include">
+                  <e p="CellView14_2.cs" t="Include" />
+                  <e p="HomeCell0ShopView.cs" t="Include" />
+                  <e p="HomeCell1LaboratoryView.cs" t="Include" />
+                  <e p="HomeCell2BattleView.cs" t="Include" />
+                  <e p="HomeCell3SocialView.cs" t="Include" />
+                  <e p="HomeCell4EventView.cs" t="Include" />
+                </e>
                 <e p="Controller14_2.cs" t="Include" />
                 <e p="DMUICanvas.cs" t="Include" />
-                <e p="HomeCell0ShopView.cs" t="Include" />
-                <e p="HomeCell1LaboratoryView.cs" t="Include" />
-                <e p="HomeCell2BattleView.cs" t="Include" />
-                <e p="HomeCell3SocialView.cs" t="Include" />
-                <e p="HomeCell4EventView.cs" t="Include" />
-                <e p="HomeScene.cs" t="Include" />
+                <e p="HomeSceneBase.cs" t="Include" />
                 <e p="HomeSceneView.cs" t="Include" />
-                <e p="HomeScroller.cs" t="Include" />
                 <e p="HomeScrollerController.cs" t="Include" />
-                <e p="HomeTabControl.cs" t="Include" />
-                <e p="Sample14_2CellViewButton.cs" t="Include" />
+                <e p="HomeScrollerView.cs" t="Include" />
+                <e p="UIParts" t="Include">
+                  <e p="ButtonPart.cs" t="Include" />
+                  <e p="CellViewScroller.cs" t="Include" />
+                  <e p="HomeCell0ShopPart.cs" t="Include" />
+                  <e p="HomeCell1LaboratoryPart.cs" t="Include" />
+                  <e p="HomeCell2BattlePart.cs" t="Include" />
+                  <e p="HomeCell3SocialPart.cs" t="Include" />
+                  <e p="HomeCell4EventPart.cs" t="Include" />
+                  <e p="HomeScrollerPart.cs" t="Include" />
+                  <e p="HomeTabPart.cs" t="Include" />
+                  <e p="Sample14_2CellViewButton.cs" t="Include" />
+                </e>
               </e>
             </e>
           </e>

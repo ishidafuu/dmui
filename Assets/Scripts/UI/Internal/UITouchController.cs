@@ -42,6 +42,12 @@ namespace DM
                     case EnumTouchType.Drag:
                         ret = touch.Listener.Part.OnDrag(touch);
                         break;
+                    case EnumTouchType.BeginDrag:
+                        ret = touch.Listener.Part.OnBeginDrag(touch);
+                        break;
+                    case EnumTouchType.EndDrag:
+                        ret = touch.Listener.Part.OnEndDrag(touch);
+                        break;
                     case EnumTouchType.None:
                         break;
                     default: break;
