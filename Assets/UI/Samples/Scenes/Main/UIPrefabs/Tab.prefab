@@ -254,7 +254,6 @@ GameObject:
   - component: {fileID: 1707880618163327104}
   - component: {fileID: 1707880618163327105}
   - component: {fileID: 1707880618163327355}
-  - component: {fileID: 1707880618163327110}
   - component: {fileID: 1707880618163327106}
   - component: {fileID: 1707880618163327107}
   - component: {fileID: 1707880618163327109}
@@ -339,57 +338,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &1707880618163327110
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1707880618163327357}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e68f7d540fbfa754e91fff56d9bd2af1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  blendMode: 1
-  intensity: 0
-  gradientType: 0
-  linearColor1: {r: 1, g: 1, b: 1, a: 1}
-  linearColor2: {r: 0.745283, g: 0.745283, b: 0.745283, a: 1}
-  cornerColorUpperLeft: {r: 1, g: 0, b: 0, a: 1}
-  cornerColorUpperRight: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-  cornerColorLowerRight: {r: 0, g: 1, b: 0, a: 1}
-  cornerColorLowerLeft: {r: 0, g: 0, b: 1, a: 1}
-  linearGradient:
-    serializedVersion: 2
-    key0: {r: 0.5137255, g: 0.227451, b: 0.7058824, a: 1}
-    key1: {r: 0.9921569, g: 0.1137255, b: 0.1137255, a: 1}
-    key2: {r: 0.9882353, g: 0.6901961, b: 0.2705882, a: 0}
-    key3: {r: 0, g: 0, b: 0, a: 0}
-    key4: {r: 0, g: 0, b: 0, a: 0}
-    key5: {r: 0, g: 0, b: 0, a: 0}
-    key6: {r: 0, g: 0, b: 0, a: 0}
-    key7: {r: 0, g: 0, b: 0, a: 0}
-    ctime0: 0
-    ctime1: 32768
-    ctime2: 65535
-    ctime3: 0
-    ctime4: 0
-    ctime5: 0
-    ctime6: 0
-    ctime7: 0
-    atime0: 0
-    atime1: 65535
-    atime2: 0
-    atime3: 0
-    atime4: 0
-    atime5: 0
-    atime6: 0
-    atime7: 0
-    m_Mode: 0
-    m_NumColorKeys: 3
-    m_NumAlphaKeys: 2
-  angle: 0
 --- !u!114 &1707880618163327106
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1246,9 +1194,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blendMode: 1
-  intensity: 0
+  intensity: 0.658
   gradientType: 0
-  linearColor1: {r: 1, g: 1, b: 1, a: 1}
+  linearColor1: {r: 1, g: 0, b: 0, a: 1}
   linearColor2: {r: 0.745283, g: 0.745283, b: 0.745283, a: 1}
   cornerColorUpperLeft: {r: 1, g: 0, b: 0, a: 1}
   cornerColorUpperRight: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
@@ -2047,7 +1995,7 @@ GameObject:
   - component: {fileID: 8024517225023594114}
   - component: {fileID: 8024517225023594115}
   m_Layer: 5
-  m_Name: Selector
+  m_Name: Cursor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2070,7 +2018,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 170.40001, y: 4}
+  m_SizeDelta: {x: 128, y: 4}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &8024517225023594112
 CanvasRenderer:
@@ -2155,7 +2103,7 @@ GameObject:
   - component: {fileID: 8024517226255361351}
   - component: {fileID: 8024517226255361350}
   m_Layer: 5
-  m_Name: TabControl
+  m_Name: Tab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2229,7 +2177,7 @@ MonoBehaviour:
   - {fileID: 7581451971383056500}
   - {fileID: 145372482200948221}
   - {fileID: 2529959977543382991}
-  m_Selector: {fileID: 8024517225023594113}
+  m_Cursor: {fileID: 8024517225023594113}
 --- !u!1 &8159204581029728085
 GameObject:
   m_ObjectHideFlags: 0

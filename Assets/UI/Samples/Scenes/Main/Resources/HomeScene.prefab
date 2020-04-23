@@ -186,6 +186,11 @@ PrefabInstance:
       propertyPath: m_EnhancedScroller
       value: 
       objectReference: {fileID: 224137878435833397}
+    - target: {fileID: 3732845596017092387, guid: 727669cb501bd2143b79dc867c5246df,
+        type: 3}
+      propertyPath: m_Name
+      value: Cursor
+      objectReference: {fileID: 0}
     - target: {fileID: 4089659769905302143, guid: 727669cb501bd2143b79dc867c5246df,
         type: 3}
       propertyPath: m_AnchorMin.y

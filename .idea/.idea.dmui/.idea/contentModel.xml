@@ -304,14 +304,6 @@
               </e>
               <e p="UIControllerEditor.cs" t="Include" />
             </e>
-            <e p="UIEffect" t="Include">
-              <e p="ButtonView.cs" t="Include" />
-              <e p="CheckEffect.cs" t="Include" />
-              <e p="MenuButtonEffect.cs" t="Include" />
-              <e p="NoneDrawingGraphic.cs" t="Include" />
-              <e p="SwitchEffect.cs" t="Include" />
-              <e p="TabView.cs" t="Include" />
-            </e>
             <e p="UIImplements" t="Include">
               <e p="Interface" t="Include">
                 <e p="IFadeCreator.cs" t="Include" />
@@ -325,6 +317,14 @@
             <e p="UIListener" t="Include">
               <e p="UILayerTouchListener.cs" t="Include" />
               <e p="UITouchListener.cs" t="Include" />
+            </e>
+            <e p="UIView" t="Include">
+              <e p="ButtonView.cs" t="Include" />
+              <e p="CheckEffect.cs" t="Include" />
+              <e p="MenuButtonEffect.cs" t="Include" />
+              <e p="NoneDrawingGraphic.cs" t="Include" />
+              <e p="SwitchEffect.cs" t="Include" />
+              <e p="TabView.cs" t="Include" />
             </e>
           </e>
           <e p="Utf8Json" t="Include">

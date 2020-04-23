@@ -12,16 +12,19 @@ namespace DM
         [SerializeField] public TabView m_TabView;
 
         private float m_ScrollWidth;
-        private Transform m_SelectorTransform;
+        private Transform m_CursorTransform;
         private void Start()
         {
             m_ScrollWidth = (m_TabView.transform as RectTransform).rect.width / 5 * 4;
-            m_SelectorTransform = m_TabView.m_Selector.transform;
+            m_CursorTransform = m_TabView.m_Cursor.transform;
         } 
 
+        
         private void Update()
         {
-            var localPosition = m_SelectorTransform.localPosition;
+            
+            // タブカーソル位置調整
+            var localPosition = m_CursorTransform.localPosition;
             var horizontalNormalizedPosition = m_EnhancedScroller.ScrollRect.horizontalNormalizedPosition;
             float newX = (horizontalNormalizedPosition - 0.5f) * m_ScrollWidth;
 
@@ -32,8 +35,7 @@ namespace DM
 
             Vector3 newPosition = localPosition;
             newPosition.x = newX;
-            m_SelectorTransform.localPosition = newPosition;
-
+            m_CursorTransform.localPosition = newPosition;
         }
     }
 }
