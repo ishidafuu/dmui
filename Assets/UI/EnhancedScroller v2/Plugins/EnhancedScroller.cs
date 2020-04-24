@@ -13,7 +13,7 @@ namespace EnhancedUI.EnhancedScroller
     /// power in your application.
     /// </summary>
     [RequireComponent(typeof(ScrollRect))]
-    public class EnhancedScroller : MonoBehaviour, IBeginDragHandler, IEndDragHandler
+    public class EnhancedScroller : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler
     {
         #region Public
 
@@ -212,6 +212,7 @@ namespace EnhancedUI.EnhancedScroller
         
         public OnBeginDragDelegate scrollerBeginDrag;
         public OnEndDragDelegate scrollerEndDrag;
+        public OnDragDelegate scrollerDrag;
         
         /// <summary>
         /// The absolute position in pixels from the start of the scroller
@@ -1774,6 +1775,11 @@ namespace EnhancedUI.EnhancedScroller
             scrollerEndDrag?.Invoke(this, data);
 		}
 
+        public void OnDrag(PointerEventData data)
+        {
+            scrollerDrag?.Invoke(this, data);
+        }
+
         public void Update()
         {
             if (_updateSpacing)
@@ -2452,4 +2458,5 @@ namespace EnhancedUI.EnhancedScroller
 
     public delegate void OnBeginDragDelegate(EnhancedScroller scroller, PointerEventData data);
     public delegate void OnEndDragDelegate(EnhancedScroller scroller, PointerEventData data);
+    public delegate void OnDragDelegate(EnhancedScroller scroller, PointerEventData data);
 }

@@ -17,9 +17,14 @@ namespace DM {
         public EnhancedScrollerCellView m_CellViewPrefab;
         public float m_CellSize;
 
-        public void Init()
+        public void Init(OnDragDelegate scrollerDrag,
+            OnBeginDragDelegate scrollerBeginDrag,
+            OnEndDragDelegate scrollerEndDrag)
         {
             m_Scroller.Delegate = this;
+            m_Scroller.scrollerDrag = scrollerDrag;
+            m_Scroller.scrollerBeginDrag = scrollerBeginDrag;
+            m_Scroller.scrollerEndDrag = scrollerEndDrag;
             LoadData();
         }
 
@@ -43,9 +48,9 @@ namespace DM {
 
         public EnhancedScrollerCellView GetCellView(EnhancedScroller scroller, int dataIndex, int cellIndex)
         {
-            LaboItemCellView laboItemCellView142 = scroller.GetCellView(m_CellViewPrefab) as LaboItemCellView;
-            laboItemCellView142.SetData(m_Data[dataIndex]);
-            return laboItemCellView142;
+            LaboItemCellView laboItemCellView = scroller.GetCellView(m_CellViewPrefab) as LaboItemCellView;
+            laboItemCellView.SetData(m_Data[dataIndex]);
+            return laboItemCellView;
         }
     }
 }

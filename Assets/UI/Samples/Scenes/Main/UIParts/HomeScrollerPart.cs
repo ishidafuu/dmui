@@ -65,7 +65,7 @@ namespace DM
                     part = new ShopPart(cellView as ShopCellView);
                     break;
                 case "Labo":
-                    part = new LaboPart(cellView as LaboCellView);
+                    part = new LaboPart(cellView as LaboCellView, m_HomeScrollerView);
                     break;
                 case "Battle":
                     part = new BattlePart(cellView as BattleCellView);

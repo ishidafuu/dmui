@@ -11,24 +11,26 @@ namespace DM
     {
         // 追加先のレイヤ
         private UIBase m_TargetLayer;
-        private UIPart m_TargetPart;
+        private readonly UIPart m_TargetPart;
         private readonly LaboScrollerController m_LaboScrollerController;
         private readonly LaboScrollerView m_LaboScrollerView;
+        private readonly HomeScrollerView m_HomeScrollerView;
 
         // public LaboScrollerPart() : base("HomeScroller") { }
-        public LaboScrollerPart(UIPart targetPart, LaboScrollerView laboScrollerView, LaboScrollerController laboScrollerController)
-            : base(laboScrollerView.transform)
+        public LaboScrollerPart(UIPart targetPart,LaboCellView laboCellView)
+            : base(laboCellView.m_LaboScrollerView.transform)
         {
             m_TargetPart = targetPart;
-            m_LaboScrollerView = laboScrollerView;
-            m_LaboScrollerController = laboScrollerController;
+            m_LaboScrollerView = laboCellView.m_LaboScrollerView;
+            m_LaboScrollerController = laboCellView.m_LaboScrollerController;
+            m_HomeScrollerView = laboCellView.m_HomeScrollerView;
         }
 
         public override async UniTask OnLoadedPart(UIBase targetLayer)
         {
             m_TargetLayer = targetLayer;
             InitRootTransform();
-            InitHomeScrollerController();
+            InitLaboScrollerController();
 
             // List<UIPart> parts = new List<UIPart>
             // {
@@ -51,88 +53,29 @@ namespace DM
             RootTransform.localScale = Vector3.one;
         }
 
-        private void InitHomeScrollerController()
+        private void InitLaboScrollerController()
         {
-            m_LaboScrollerController.Init();
+            m_LaboScrollerController.Init(ScrollerDrag, ScrollerBeginDrag, ScrollerEndDrag);
             // m_LaboScrollerController.Init(CellViewInstantiated, ScrollerScrollingChanged,
             //     ScrollerBeginDrag, ScrollerEndDrag);
         }
-
-        // 新規セルビュー追加時デリゲート
-        private void CellViewInstantiated(EnhancedScroller scroller, EnhancedScrollerCellView cellView)
+        
+        private void ScrollerDrag(EnhancedScroller scroller, PointerEventData data)
         {
-            UIPart part = null;
-            switch (cellView.cellIdentifier)
-            {
-                case "Shop":
-                    part = new ShopPart(cellView as ShopCellView);
-                    break;
-                case "Labo":
-                    part = new LaboPart(cellView as LaboCellView);
-                    break;
-                case "Battle":
-                    part = new BattlePart(cellView as BattleCellView);
-                    break;
-                case "Social":
-                    part = new SocialPart(cellView as SocialCellView);
-                    break;
-                case "Event":
-                    part = new EventPart(cellView as EventCellView);
-                    break;
-                default:
-                    Debug.LogError($"CellViewInstantiated Error cellIdentifier:{cellView.cellIdentifier}");
-                    return;
-            }
-
-            List<UIPart> parts = new List<UIPart>
-            {
-                part
-            };
-
-            // 即時追加
-            UIController.Instance.AttachParts(m_TargetLayer, parts);
+            m_HomeScrollerView.m_EnhancedScroller.OnDrag(data);
+            m_HomeScrollerView.m_EnhancedScroller.ScrollRect.OnDrag(data);
         }
-
-
-        private void ScrollerScrollingChanged(EnhancedScroller scroller, bool scrolling) { }
-
+        
         private void ScrollerBeginDrag(EnhancedScroller scroller, PointerEventData data)
         {
-            scroller.CancelTweening();
+            m_HomeScrollerView.m_EnhancedScroller.OnBeginDrag(data);
+            m_HomeScrollerView.m_EnhancedScroller.ScrollRect.OnBeginDrag(data);
         }
-
+        
         private void ScrollerEndDrag(EnhancedScroller scroller, PointerEventData data)
         {
-            // ScrollRectのInertiaはFalseにしておく
-            // TweenはEaseInQuad
-
-            // const float BORDER = 0.01f;
-            // int index = (int)(scroller.ScrollPosition / m_LaboScrollerController.CellSize + 0.5f);
-            // bool isPrevShift = (int)scroller.ScrollPosition % (int)m_LaboScrollerController.CellSize
-            //                    > m_LaboScrollerController.CellSize / 2;
-            //
-            // if (data.delta.x < -BORDER && !isPrevShift)
-            // {
-            //     index += 1;
-            // }
-            // else if (data.delta.x > BORDER && isPrevShift)
-            // {
-            //     index -= 1;
-            // }
-            //
-            // JumpToDataIndex(index);
-        }
-
-        private void JumpToDataIndex(int index)
-        {
-            if (m_LaboScrollerView.m_EnhancedScroller.IsTweening)
-            {
-                return;
-            }
-
-            m_LaboScrollerView.m_EnhancedScroller.JumpToDataIndex(index, 0, 0, true,
-                EnhancedScroller.TweenType.easeOutQuart, 0.5f,
-                () => m_LaboScrollerView.m_EnhancedScroller.Velocity = Vector2.zero);
+            m_HomeScrollerView.m_EnhancedScroller.OnEndDrag(data);
+            m_HomeScrollerView.m_EnhancedScroller.ScrollRect.OnEndDrag(data);
         }
     }
 }

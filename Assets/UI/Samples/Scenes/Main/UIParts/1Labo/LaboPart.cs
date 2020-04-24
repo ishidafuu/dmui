@@ -7,17 +7,18 @@ namespace DM
     {
         private readonly LaboCellView m_LaboCellView;
 
-        public LaboPart(LaboCellView laboCellView)
+        public LaboPart(LaboCellView laboCellView, HomeScrollerView homeScrollerView)
             : base(laboCellView.transform)
         {
             m_LaboCellView = laboCellView;
+            m_LaboCellView.m_HomeScrollerView = homeScrollerView;
         }
 
         public override async UniTask OnLoadedPart(UIBase targetLayer)
         {
             List<UIPart> parts = new List<UIPart>
-            {
-                new LaboScrollerPart(this, m_LaboCellView.m_LaboScrollerView, m_LaboCellView.m_LaboScrollerController)
+            {    
+                new LaboScrollerPart(this, m_LaboCellView)
             };
 
             // 追加待ち
