@@ -109,6 +109,7 @@ public class ButtonView : MonoBehaviour
         m_Sequence?.Kill();
         m_Sequence = DOTween.Sequence();
         
+        // 座標変換
         RectTransformUtility.ScreenPointToLocalPointInRectangle(m_EffectRectParent,
             eventData.pressPosition, UIController.Instance.m_Camera, out Vector2 effectLocalPosition);
         m_EffectRect.localPosition = effectLocalPosition;

@@ -321,6 +321,9 @@
             <e p="UIView" t="Include">
               <e p="ButtonView.cs" t="Include" />
               <e p="CheckEffect.cs" t="Include" />
+              <e p="DragObject.cs" t="Include" />
+              <e p="DropObject.cs" t="Include" />
+              <e p="IgnoreTouch.cs" t="Include" />
               <e p="MenuButtonEffect.cs" t="Include" />
               <e p="NoneDrawingGraphic.cs" t="Include" />
               <e p="SwitchEffect.cs" t="Include" />
