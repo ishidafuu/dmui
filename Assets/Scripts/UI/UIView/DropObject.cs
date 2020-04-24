@@ -14,7 +14,7 @@ public class DropObject : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPo
 
     public void OnPointerEnter(PointerEventData pointerEventData)
     {
-        Debug.Log($"DropObject OnPointerEnter");
+        Debug.Log($"---DropObject OnPointerEnter");
         // if(pointerEventData.pointerDrag == null) return;
         // Image droppedImage = pointerEventData.pointerDrag.GetComponent<Image>();
         // iconImage.sprite = droppedImage.sprite;
@@ -23,7 +23,7 @@ public class DropObject : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPo
 
     public void OnPointerExit(PointerEventData pointerEventData)
     {
-        Debug.Log($"DropObject OnPointerExit");
+        Debug.Log($"---DropObject OnPointerExit");
         // if(pointerEventData.pointerDrag == null) return;
         // iconImage.sprite = nowSprite;
         // if(nowSprite == null)
@@ -33,7 +33,7 @@ public class DropObject : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPo
     }
     public void OnDrop(PointerEventData pointerEventData)
     {
-        Debug.Log($"DropObject OnDrop");
+        Debug.Log($"---DropObject OnDrop");
         // Image droppedImage = pointerEventData.pointerDrag.GetComponent<Image>();
         // iconImage.sprite = droppedImage.sprite;
         // nowSprite = droppedImage.sprite;

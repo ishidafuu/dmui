@@ -7,7 +7,7 @@ using UnityEngine.EventSystems;
 public class DragObject : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     private Transform canvasTran;
-    private GameObject draggingObject;
+    [ SerializeField]private GameObject draggingObject;
 
     void Awake()
     {
@@ -16,6 +16,7 @@ public class DragObject : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 
     public void OnBeginDrag(PointerEventData pointerEventData)
     {
+        Debug.Log($"+++ OnBeginDrag");
         // CreateDragObject();
         // draggingObject.transform.position = pointerEventData.position;
         NewMethod(pointerEventData);
@@ -24,21 +25,23 @@ public class DragObject : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     public void OnDrag(PointerEventData pointerEventData)
     {
         // draggingObject.transform.position = pointerEventData.position;
+        Debug.Log($"+++ OnDrag");
         // 座標変換
         NewMethod(pointerEventData);
     }
 
     private void NewMethod(PointerEventData pointerEventData)
     {
-        RectTransformUtility.ScreenPointToLocalPointInRectangle(transform.parent as RectTransform,
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(draggingObject.transform.parent as RectTransform,
             pointerEventData.position,
             UIController.Instance.m_Camera,
             out Vector2 effectLocalPosition);
-        transform.localPosition = effectLocalPosition;
+        draggingObject.transform.localPosition = effectLocalPosition;
     }
 
     public void OnEndDrag(PointerEventData pointerEventData)
     {
+        Debug.Log($"+++ OnEndDrag");
         // gameObject.GetComponent<Image>().color = Vector4.one;
         // Destroy(draggingObject);
         NewMethod(pointerEventData);
