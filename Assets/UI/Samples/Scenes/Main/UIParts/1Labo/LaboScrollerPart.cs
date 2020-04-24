@@ -16,6 +16,15 @@ namespace DM
         private readonly LaboScrollerView m_LaboScrollerView;
         private readonly HomeScrollerView m_HomeScrollerView;
 
+        enum ScrollAngle
+        {
+            None,
+            X,
+            Y,
+        }
+
+        private ScrollAngle m_ScrollAngle = ScrollAngle.None;
+
         // public LaboScrollerPart() : base("HomeScroller") { }
         public LaboScrollerPart(UIPart targetPart,LaboCellView laboCellView)
             : base(laboCellView.m_LaboScrollerView.transform)
@@ -62,20 +71,53 @@ namespace DM
         
         private void ScrollerDrag(EnhancedScroller scroller, PointerEventData data)
         {
-            m_HomeScrollerView.m_EnhancedScroller.OnDrag(data);
-            m_HomeScrollerView.m_EnhancedScroller.ScrollRect.OnDrag(data);
+            switch (m_ScrollAngle)
+            {
+                case ScrollAngle.X:
+                    m_HomeScrollerView.m_EnhancedScroller.OnDrag(data);
+                    m_HomeScrollerView.m_EnhancedScroller.ScrollRect.OnDrag(data);
+                    break;
+                case ScrollAngle.Y:
+                    m_LaboScrollerView.m_EnhancedScroller.ScrollRect.OnDrag(data);
+                    break;
+            }
         }
         
         private void ScrollerBeginDrag(EnhancedScroller scroller, PointerEventData data)
         {
-            m_HomeScrollerView.m_EnhancedScroller.OnBeginDrag(data);
-            m_HomeScrollerView.m_EnhancedScroller.ScrollRect.OnBeginDrag(data);
+            if (m_ScrollAngle == ScrollAngle.None)
+            {
+                if (Mathf.Abs(data.position.y - data.pressPosition.y) > 1)
+                {
+                    m_ScrollAngle = ScrollAngle.Y;
+                    m_LaboScrollerView.m_EnhancedScroller.ScrollRect.enabled = true;
+                    m_LaboScrollerView.m_EnhancedScroller.ScrollRect.OnBeginDrag(data);
+                }
+                else if (Mathf.Abs(data.position.x - data.pressPosition.x) > 1)
+                {
+                    m_ScrollAngle = ScrollAngle.X;
+                    m_LaboScrollerView.m_EnhancedScroller.ScrollRect.enabled = false;
+                    m_HomeScrollerView.m_EnhancedScroller.OnBeginDrag(data);
+                    m_HomeScrollerView.m_EnhancedScroller.ScrollRect.OnBeginDrag(data);
+                }
+            }
+            
         }
         
         private void ScrollerEndDrag(EnhancedScroller scroller, PointerEventData data)
         {
-            m_HomeScrollerView.m_EnhancedScroller.OnEndDrag(data);
-            m_HomeScrollerView.m_EnhancedScroller.ScrollRect.OnEndDrag(data);
+            switch (m_ScrollAngle)
+            {
+                case ScrollAngle.X:
+                    m_HomeScrollerView.m_EnhancedScroller.OnEndDrag(data);
+                    m_HomeScrollerView.m_EnhancedScroller.ScrollRect.OnEndDrag(data);
+                    break;
+                case ScrollAngle.Y:
+                    m_LaboScrollerView.m_EnhancedScroller.ScrollRect.OnEndDrag(data);
+                    break;
+            }
+
+            m_ScrollAngle = ScrollAngle.None;
         }
     }
 }

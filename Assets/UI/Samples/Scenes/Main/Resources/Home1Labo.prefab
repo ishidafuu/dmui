@@ -433,6 +433,7 @@ MonoBehaviour:
   cellIdentifier: Labo
   m_LaboScrollerView: {fileID: 3654020553147988898}
   m_LaboScrollerController: {fileID: 1710450068603811378}
+  m_HomeScrollerView: {fileID: 0}
 --- !u!1 &1841863022042298555
 GameObject:
   m_ObjectHideFlags: 0
@@ -947,6 +948,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4094411740583804174, guid: 2993035afceed5249aee65bd0c6b312e,
+        type: 3}
+      propertyPath: m_ScrollSensitivity
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 4094411740583804174, guid: 2993035afceed5249aee65bd0c6b312e,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2993035afceed5249aee65bd0c6b312e, type: 3}
