@@ -41,5 +41,19 @@ namespace DM
                 count = 0;
             }
         }
+        
+        public override bool OnClick(TouchEvent touch, UISound uiSound)
+        {
+            switch (touch.Listener.name)
+            {
+                case "LaboButton":
+                {
+                    UIController.Instance.Replace(new UIBase[] {new LaboSceneBase()});
+                    return true;
+                }
+            }
+
+            return true;
+        }
     }
 }

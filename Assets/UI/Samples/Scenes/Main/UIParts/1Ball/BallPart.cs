@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UniRx.Async;
+using UnityEngine;
 
 namespace DM
 {
@@ -17,12 +18,19 @@ namespace DM
         public override async UniTask OnLoadedPart(UIBase targetLayer)
         {
             List<UIPart> parts = new List<UIPart>
-            {    
-                new BallScrollerPart(this, m_BallCellView)
+            {
+                new BallScrollerPart(this, m_BallCellView),
+                new ButtonPart(m_BallCellView.m_LaboButtonView, ClickLaboButton)
             };
+
 
             // 追加待ち
             await UIController.Instance.YieldAttachParts(targetLayer, parts);
+        }
+
+        private static void ClickLaboButton()
+        {
+            UIController.Instance.Replace(new UIBase[] {new LaboSceneBase()});
         }
     }
 }

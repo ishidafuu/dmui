@@ -21,14 +21,14 @@ namespace DM
             for (int i = 0; i < m_TabView.m_ButtonViews.Length; i++)
             {
                 int index = i;
-                parts.Add(new ButtonPart(m_TabView.m_ButtonViews[i], () => OnClickButton(index)));
+                parts.Add(new ButtonPart(m_TabView.m_ButtonViews[i], () => ClickTabButton(index)));
             }
 
             // 追加待ち
             await UIController.Instance.YieldAttachParts(targetLayer, parts);
         }
 
-        private void OnClickButton(int index)
+        private void ClickTabButton(int index)
         {
             m_ActionClick?.Invoke(index);
         }

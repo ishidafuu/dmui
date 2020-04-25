@@ -14,7 +14,8 @@ namespace DM
         private readonly ButtonView m_ButtonView;
         private readonly Action m_ActionClick;
 
-        public ButtonPart(ButtonView buttonView, Action actionClick) : base(buttonView.transform)
+        public ButtonPart(ButtonView buttonView, Action actionClick = null) 
+            : base(buttonView.transform)
         {
             m_ButtonView = buttonView;
             m_ActionClick = actionClick;
@@ -46,13 +47,13 @@ namespace DM
 
         public override bool OnTouchUp(TouchEvent touch)
         {
-            m_ButtonView.PointerUp(touch.Pointer);
+            m_ButtonView?.PointerUp(touch.Pointer);
             return base.OnTouchUp(touch);
         }
 
         public override bool OnTouchDown(TouchEvent touch)
         {
-            m_ButtonView.PointerDown(touch.Pointer);
+            m_ButtonView?.PointerDown(touch.Pointer);
             return base.OnTouchDown(touch);
         }
     }
