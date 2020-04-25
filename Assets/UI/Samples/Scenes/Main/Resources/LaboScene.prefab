@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 224013385036992596}
-  - component: {fileID: 3305732898200189611}
+  - component: {fileID: 4025897156969426840}
   m_Layer: 0
   m_Name: LaboScene
   m_TagString: Untagged
@@ -37,7 +37,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &3305732898200189611
+--- !u!114 &4025897156969426840
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -46,11 +46,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1074777267911938}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1926cc2baafa1e4180c0e5d401f8767, type: 3}
+  m_Script: {fileID: 11500000, guid: faead4352bdf64347a718d2b1c95041d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_HomeScrollerView: {fileID: 3243655423274553620}
-  m_HomeScrollerController: {fileID: 3754766710765105736}
+  m_HomeScrollerView: {fileID: 0}
+  m_HomeScrollerController: {fileID: 0}
 --- !u!1 &1362877353300282
 GameObject:
   m_ObjectHideFlags: 0
@@ -405,27 +405,3 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 4309392881867496245}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &3243655423274553620 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1643196580809116193, guid: 727669cb501bd2143b79dc867c5246df,
-    type: 3}
-  m_PrefabInstance: {fileID: 4309392881867496245}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e6d9ae46bd95674497673711ac0d33f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &3754766710765105736 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1140982528343189885, guid: 727669cb501bd2143b79dc867c5246df,
-    type: 3}
-  m_PrefabInstance: {fileID: 4309392881867496245}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e9a86111570dbf49aece310389e15e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
