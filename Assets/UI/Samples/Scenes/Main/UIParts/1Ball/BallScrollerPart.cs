@@ -7,13 +7,13 @@ using UnityEngine.UI;
 
 namespace DM
 {
-    public class LaboScrollerPart : UIPart
+    public class BallScrollerPart : UIPart
     {
         // 追加先のレイヤ
         private UIBase m_TargetLayer;
         private readonly UIPart m_TargetPart;
-        private readonly LaboScrollerController m_LaboScrollerController;
-        private readonly LaboScrollerView m_LaboScrollerView;
+        private readonly BallScrollerController m_BallScrollerController;
+        private readonly BallScrollerView m_BallScrollerView;
         private readonly HomeScrollerView m_HomeScrollerView;
 
         enum ScrollAngle
@@ -24,33 +24,21 @@ namespace DM
         }
 
         private ScrollAngle m_ScrollAngle = ScrollAngle.None;
-
-        // public LaboScrollerPart() : base("HomeScroller") { }
-        public LaboScrollerPart(UIPart targetPart,LaboCellView laboCellView)
-            : base(laboCellView.m_LaboScrollerView.transform)
+        
+        public BallScrollerPart(UIPart targetPart,BallCellView ballCellView)
+            : base(ballCellView.m_BallScrollerView.transform)
         {
             m_TargetPart = targetPart;
-            m_LaboScrollerView = laboCellView.m_LaboScrollerView;
-            m_LaboScrollerController = laboCellView.m_LaboScrollerController;
-            m_HomeScrollerView = laboCellView.m_HomeScrollerView;
+            m_BallScrollerView = ballCellView.m_BallScrollerView;
+            m_BallScrollerController = ballCellView.m_BallScrollerController;
+            m_HomeScrollerView = ballCellView.m_HomeScrollerView;
         }
 
         public override async UniTask OnLoadedPart(UIBase targetLayer)
         {
             m_TargetLayer = targetLayer;
             InitRootTransform();
-            InitLaboScrollerController();
-
-            // List<UIPart> parts = new List<UIPart>
-            // {
-            //     new HomeTabPart(m_LaboScrollerView.m_TabView, JumpToDataIndex)
-            // };
-            //
-            // // 追加待ち
-            // await UIController.Instance.YieldAttachParts(targetLayer, parts);
-            //
-            // const int FIRST_INDEX = 2;
-            // m_LaboScrollerView.m_EnhancedScroller.JumpToDataIndex(FIRST_INDEX);
+            InitBallScrollerController();
         }
 
         private void InitRootTransform()
@@ -62,11 +50,9 @@ namespace DM
             RootTransform.localScale = Vector3.one;
         }
 
-        private void InitLaboScrollerController()
+        private void InitBallScrollerController()
         {
-            m_LaboScrollerController.Init(ScrollerDrag, ScrollerBeginDrag, ScrollerEndDrag);
-            // m_LaboScrollerController.Init(CellViewInstantiated, ScrollerScrollingChanged,
-            //     ScrollerBeginDrag, ScrollerEndDrag);
+            m_BallScrollerController.Init(ScrollerDrag, ScrollerBeginDrag, ScrollerEndDrag);
         }
         
         private void ScrollerDrag(EnhancedScroller scroller, PointerEventData data)
@@ -78,7 +64,7 @@ namespace DM
                     m_HomeScrollerView.m_EnhancedScroller.ScrollRect.OnDrag(data);
                     break;
                 case ScrollAngle.Y:
-                    m_LaboScrollerView.m_EnhancedScroller.ScrollRect.OnDrag(data);
+                    m_BallScrollerView.m_EnhancedScroller.ScrollRect.OnDrag(data);
                     break;
             }
         }
@@ -90,13 +76,13 @@ namespace DM
                 if (Mathf.Abs(data.position.y - data.pressPosition.y) > 1)
                 {
                     m_ScrollAngle = ScrollAngle.Y;
-                    m_LaboScrollerView.m_EnhancedScroller.ScrollRect.enabled = true;
-                    m_LaboScrollerView.m_EnhancedScroller.ScrollRect.OnBeginDrag(data);
+                    m_BallScrollerView.m_EnhancedScroller.ScrollRect.enabled = true;
+                    m_BallScrollerView.m_EnhancedScroller.ScrollRect.OnBeginDrag(data);
                 }
                 else if (Mathf.Abs(data.position.x - data.pressPosition.x) > 1)
                 {
                     m_ScrollAngle = ScrollAngle.X;
-                    m_LaboScrollerView.m_EnhancedScroller.ScrollRect.enabled = false;
+                    m_BallScrollerView.m_EnhancedScroller.ScrollRect.enabled = false;
                     m_HomeScrollerView.m_EnhancedScroller.OnBeginDrag(data);
                     m_HomeScrollerView.m_EnhancedScroller.ScrollRect.OnBeginDrag(data);
                 }
@@ -113,7 +99,7 @@ namespace DM
                     m_HomeScrollerView.m_EnhancedScroller.ScrollRect.OnEndDrag(data);
                     break;
                 case ScrollAngle.Y:
-                    m_LaboScrollerView.m_EnhancedScroller.ScrollRect.OnEndDrag(data);
+                    m_BallScrollerView.m_EnhancedScroller.ScrollRect.OnEndDrag(data);
                     break;
             }
 

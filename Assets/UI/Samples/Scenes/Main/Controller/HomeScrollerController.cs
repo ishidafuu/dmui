@@ -67,7 +67,7 @@ namespace DM
                 }
                 case 1:
                 {
-                    var cellView = scroller.GetCellView(m_CellViewPrefabs[cellIndex]) as LaboCellView;
+                    var cellView = scroller.GetCellView(m_CellViewPrefabs[cellIndex]) as BallCellView;
                     cellView.SetData(m_Data[dataIndex]);
                     return cellView;
                 }

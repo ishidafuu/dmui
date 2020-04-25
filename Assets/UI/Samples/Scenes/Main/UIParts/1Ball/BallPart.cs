@@ -3,22 +3,22 @@ using UniRx.Async;
 
 namespace DM
 {
-    class LaboPart : UIPart
+    class BallPart : UIPart
     {
-        private readonly LaboCellView m_LaboCellView;
+        private readonly BallCellView m_BallCellView;
 
-        public LaboPart(LaboCellView laboCellView, HomeScrollerView homeScrollerView)
-            : base(laboCellView.transform)
+        public BallPart(BallCellView ballCellView, HomeScrollerView homeScrollerView)
+            : base(ballCellView.transform)
         {
-            m_LaboCellView = laboCellView;
-            m_LaboCellView.m_HomeScrollerView = homeScrollerView;
+            m_BallCellView = ballCellView;
+            m_BallCellView.m_HomeScrollerView = homeScrollerView;
         }
 
         public override async UniTask OnLoadedPart(UIBase targetLayer)
         {
             List<UIPart> parts = new List<UIPart>
             {    
-                new LaboScrollerPart(this, m_LaboCellView)
+                new BallScrollerPart(this, m_BallCellView)
             };
 
             // 追加待ち

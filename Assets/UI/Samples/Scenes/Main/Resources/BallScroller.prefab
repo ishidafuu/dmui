@@ -53,7 +53,7 @@ GameObject:
   - component: {fileID: 4094411740583804161}
   - component: {fileID: 4094411740583804173}
   m_Layer: 5
-  m_Name: LaboScroller
+  m_Name: BallScroller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -335,7 +335,7 @@ PrefabInstance:
     - target: {fileID: 1841863022042295035, guid: 2927dbbfbe764ab47baa90d4c322ef49,
         type: 3}
       propertyPath: m_Name
-      value: LaboItem
+      value: BallItem
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2927dbbfbe764ab47baa90d4c322ef49, type: 3}

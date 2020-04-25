@@ -352,7 +352,7 @@ GameObject:
   - component: {fileID: 6162149969060950876}
   - component: {fileID: 1841863022036799341}
   m_Layer: 5
-  m_Name: LaboItem
+  m_Name: BallItem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -401,7 +401,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc333a389f5bd954ab6da37edeea6f1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellIdentifier: LaboItem
+  cellIdentifier: BalItem
   someTextText: {fileID: 1841863022036786783}
   textButton: {fileID: 1841863022042268451}
   fixedIntegerButton: {fileID: 1841863022042340257}

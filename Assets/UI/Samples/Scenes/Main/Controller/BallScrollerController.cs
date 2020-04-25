@@ -9,7 +9,7 @@ namespace DM {
     /// <summary>
     /// This demo shows how you can respond to events from your cells views using delegates
     /// </summary>
-    public class LaboScrollerController : MonoBehaviour, IEnhancedScrollerDelegate
+    public class BallScrollerController : MonoBehaviour, IEnhancedScrollerDelegate
     {
         private List<Data> m_Data;
         public EnhancedScroller m_Scroller;
@@ -48,9 +48,9 @@ namespace DM {
 
         public EnhancedScrollerCellView GetCellView(EnhancedScroller scroller, int dataIndex, int cellIndex)
         {
-            LaboItemCellView laboItemCellView = scroller.GetCellView(m_CellViewPrefab) as LaboItemCellView;
-            laboItemCellView.SetData(m_Data[dataIndex]);
-            return laboItemCellView;
+            BallItemCellView ballItemCellView = scroller.GetCellView(m_CellViewPrefab) as BallItemCellView;
+            ballItemCellView.SetData(m_Data[dataIndex]);
+            return ballItemCellView;
         }
     }
 }

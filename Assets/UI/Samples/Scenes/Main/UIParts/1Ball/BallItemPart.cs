@@ -3,17 +3,19 @@ using EnhancedUI.EnhancedScroller;
 using UniRx.Async;
 using UnityEngine;
 
-namespace DM {
-    class LaboItemPart : UIPart
+namespace DM
+{
+    class BallItemPart : UIPart
     {
         private UIBase m_TargetLayer;
 
-        public LaboItemPart() : base("LaboItem") { }
+        public BallItemPart() : base("BallItem") { }
 
         public override async UniTask OnLoadedPart(UIBase targetLayer)
         {
             m_TargetLayer = targetLayer;
-            LaboScrollerController laboScrollerController = targetLayer.RootTransform.GetComponent<LaboScrollerController>();
+            BallScrollerController ballScrollerController =
+                targetLayer.RootTransform.GetComponent<BallScrollerController>();
             // laboScrollerController.m_Scroller = RootTransform.GetComponent<EnhancedScroller>();
             // laboScrollerController.Init();
             // laboScrollerController.m_Scroller.ReloadData();
@@ -50,25 +52,25 @@ namespace DM {
         {
             Debug.Log("push Sample14_2Scroller: ");
             Debug.Log("Scene14 : All Right");
-            
-            
+
+
             return true;
         }
 
         // 新規セルビュー追加時デリゲート
         private void CellViewInstantiated(EnhancedScroller scroller, EnhancedScrollerCellView cellView)
         {
-            LaboItemCellView laboItemCell = cellView as LaboItemCellView;
-            if (laboItemCell == null)
+            BallItemCellView ballItemCell = cellView as BallItemCellView;
+            if (ballItemCell == null)
             {
                 return;
             }
 
             List<UIPart> parts = new List<UIPart>
             {
-                new LaboItemButtonPart(laboItemCell, laboItemCell.textButton),
-                new LaboItemButtonPart(laboItemCell, laboItemCell.fixedIntegerButton),
-                new LaboItemButtonPart(laboItemCell, laboItemCell.dataIntegerButton)
+                new BallItemButtonPart(ballItemCell, ballItemCell.textButton),
+                new BallItemButtonPart(ballItemCell, ballItemCell.fixedIntegerButton),
+                new BallItemButtonPart(ballItemCell, ballItemCell.dataIntegerButton)
             };
             // 即時追加
             UIController.Instance.AttachParts(m_TargetLayer, parts);

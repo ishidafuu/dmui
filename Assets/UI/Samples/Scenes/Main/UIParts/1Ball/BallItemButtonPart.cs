@@ -1,15 +1,16 @@
 ﻿using UniRx.Async;
 using UnityEngine;
 
-namespace DM {
-    class LaboItemButtonPart : UIPart
+namespace DM
+{
+    class BallItemButtonPart : UIPart
     {
-        private readonly LaboItemCellView m_LaboItemCellView;
+        private readonly BallItemCellView m_BallItemCellView;
 
-        public LaboItemButtonPart(LaboItemCellView laboItemCellView, GameObject buttonObject)
+        public BallItemButtonPart(BallItemCellView ballItemCellView, GameObject buttonObject)
             : base(buttonObject.transform)
         {
-            m_LaboItemCellView = laboItemCellView;
+            m_BallItemCellView = ballItemCellView;
         }
 
         public override async UniTask OnLoadedPart(UIBase targetLayer) { }
@@ -17,11 +18,9 @@ namespace DM {
         public override bool OnClick(TouchEvent touch, UISound uiSound)
         {
             // TouchListenerを継承してGetComponentせずに済むようなクラスを作ってもいいかも
-            Debug.Log($"{m_LaboItemCellView.someTextText.text}");
+            Debug.Log($"{m_BallItemCellView.someTextText.text}");
             UIController.Instance.ToastIn("みんみー");
             return true;
         }
-        
-        
     }
 }

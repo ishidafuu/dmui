@@ -591,16 +591,16 @@
               </e>
               <e p="Main" t="Include">
                 <e p="CellView" t="Include">
+                  <e p="BallCellView.cs" t="Include" />
+                  <e p="BallItemCellView.cs" t="Include" />
                   <e p="BattleCellView.cs" t="Include" />
                   <e p="EventCellView.cs" t="Include" />
-                  <e p="LaboCellView.cs" t="Include" />
-                  <e p="LaboItemCellView.cs" t="Include" />
                   <e p="ShopCellView.cs" t="Include" />
                   <e p="SocialCellView.cs" t="Include" />
                 </e>
                 <e p="Controller" t="Include">
+                  <e p="BallScrollerController.cs" t="Include" />
                   <e p="HomeScrollerController.cs" t="Include" />
-                  <e p="LaboScrollerController.cs" t="Include" />
                 </e>
                 <e p="DMUICanvas.cs" t="Include" />
                 <e p="HomeSceneBase.cs" t="Include" />
@@ -608,11 +608,11 @@
                   <e p="0Shop" t="Include">
                     <e p="ShopPart.cs" t="Include" />
                   </e>
-                  <e p="1Labo" t="Include">
-                    <e p="LaboItemButtonPart.cs" t="Include" />
-                    <e p="LaboItemPart.cs" t="Include" />
-                    <e p="LaboPart.cs" t="Include" />
-                    <e p="LaboScrollerPart.cs" t="Include" />
+                  <e p="1Ball" t="Include">
+                    <e p="BallItemButtonPart.cs" t="Include" />
+                    <e p="BallItemPart.cs" t="Include" />
+                    <e p="BallPart.cs" t="Include" />
+                    <e p="BallScrollerPart.cs" t="Include" />
                   </e>
                   <e p="2Battle" t="Include">
                     <e p="BattlePart.cs" t="Include" />
@@ -630,9 +630,10 @@
                   <e p="HomeTabPart.cs" t="Include" />
                 </e>
                 <e p="View" t="Include">
+                  <e p="BallScrollerView.cs" t="Include" />
                   <e p="HomeSceneView.cs" t="Include" />
                   <e p="HomeScrollerView.cs" t="Include" />
-                  <e p="LaboScrollerView.cs" t="Include" />
+                  <e p="LaboSceneView.cs" t="Include" />
                 </e>
               </e>
             </e>

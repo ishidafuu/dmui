@@ -430,9 +430,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3a9a400a0c18e14192b8759a61b7a54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellIdentifier: Labo
-  m_LaboScrollerView: {fileID: 3654020553147988898}
-  m_LaboScrollerController: {fileID: 1710450068603811378}
+  cellIdentifier: Ball
+  m_BallScrollerView: {fileID: 3654020553147988898}
+  m_BallScrollerController: {fileID: 1710450068603811378}
   m_HomeScrollerView: {fileID: 0}
 --- !u!1 &1841863022042298555
 GameObject:
@@ -842,7 +842,7 @@ PrefabInstance:
     - target: {fileID: 4094411740583804163, guid: 2993035afceed5249aee65bd0c6b312e,
         type: 3}
       propertyPath: m_Name
-      value: LaboScroller
+      value: BallScroller
       objectReference: {fileID: 0}
     - target: {fileID: 4094411740583804172, guid: 2993035afceed5249aee65bd0c6b312e,
         type: 3}

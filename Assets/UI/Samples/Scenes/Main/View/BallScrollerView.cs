@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 
 namespace DM
 {
-    public class LaboScrollerView : MonoBehaviour
+    public class BallScrollerView : MonoBehaviour
     {
         [SerializeField] public EnhancedScroller m_EnhancedScroller;
         // [SerializeField] private IDragHandler[] m_ParentDragHandlers;

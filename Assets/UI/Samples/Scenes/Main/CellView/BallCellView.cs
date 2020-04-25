@@ -6,10 +6,10 @@ using UnityEngine.Serialization;
 
 namespace DM
 {
-    public class LaboCellView : EnhancedScrollerCellView
+    public class BallCellView : EnhancedScrollerCellView
     {
-        [SerializeField] public LaboScrollerView m_LaboScrollerView;
-        [SerializeField] public LaboScrollerController m_LaboScrollerController;
+        [SerializeField] public BallScrollerView m_BallScrollerView;
+        [SerializeField] public BallScrollerController m_BallScrollerController;
         [HideInInspector] public HomeScrollerView m_HomeScrollerView;
         public void SetData(Data data)
         {

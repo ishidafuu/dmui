@@ -5,7 +5,7 @@ using EnhancedUI.EnhancedScroller;
 
 namespace DM
 {
-    public class LaboItemCellView : EnhancedScrollerCellView
+    public class BallItemCellView : EnhancedScrollerCellView
     {
         private Data _data;
 
