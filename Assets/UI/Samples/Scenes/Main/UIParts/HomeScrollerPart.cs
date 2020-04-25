@@ -64,7 +64,7 @@ namespace DM
                 case "Shop":
                     part = new ShopPart(cellView as ShopCellView);
                     break;
-                case "Labo":
+                case "Ball":
                     part = new BallPart(cellView as BallCellView, m_HomeScrollerView);
                     break;
                 case "Battle":
