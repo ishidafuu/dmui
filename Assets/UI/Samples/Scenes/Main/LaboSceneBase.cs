@@ -1,27 +1,26 @@
 ﻿using System.Collections.Generic;
 using UniRx.Async;
 
-namespace DM
-{
-    public class HomeSceneBase : UIBase
+namespace DM {
+    public class LaboSceneBase : UIBase
     {
         private int count = 0;
-        private HomeSceneView m_HomeSceneView;
+        private LaboSceneView m_LaboSceneView;
 
-        public HomeSceneBase() : base("HomeScene", EnumUIGroup.Scene)
+        public LaboSceneBase() : base("LaboScene", EnumUIGroup.Scene)
         {
             IsScheduleUpdate = true;
         }
 
         public override async UniTask OnLoadedBase()
         {
-            m_HomeSceneView = RootTransform.GetComponent<HomeSceneView>();
+            m_LaboSceneView = RootTransform.GetComponent<LaboSceneView>();
 
             List<UIPart> parts = new List<UIPart>
             {
-                new HomeScrollerPart(m_HomeSceneView),
+                // new HomeScrollerPart(m_LaboSceneView),
             };
-
+            
             await UIController.Instance.YieldAttachParts(this, parts);
         }
 

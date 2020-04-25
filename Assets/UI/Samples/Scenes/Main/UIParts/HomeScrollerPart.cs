@@ -15,11 +15,11 @@ namespace DM
         private readonly HomeScrollerView m_HomeScrollerView;
 
         // public HomeScrollerPart() : base("HomeScroller") { }
-        public HomeScrollerPart(HomeScrollerView homeScrollerView, HomeScrollerController homeScrollerController)
-            : base(homeScrollerView.transform)
+        public HomeScrollerPart(HomeSceneView homeSceneView)
+            : base(homeSceneView.m_HomeScrollerView.transform)
         {
-            m_HomeScrollerView = homeScrollerView;
-            m_HomeScrollerController = homeScrollerController;
+            m_HomeScrollerView = homeSceneView.m_HomeScrollerView;
+            m_HomeScrollerController = homeSceneView.m_HomeScrollerController;
         }
 
         public override async UniTask OnLoadedPart(UIBase targetLayer)

@@ -596,6 +596,7 @@
                 </e>
                 <e p="DMUICanvas.cs" t="Include" />
                 <e p="HomeSceneBase.cs" t="Include" />
+                <e p="LaboSceneBase.cs" t="Include" />
                 <e p="UIParts" t="Include">
                   <e p="0Shop" t="Include">
                     <e p="ShopPart.cs" t="Include" />
