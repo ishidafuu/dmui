@@ -61,19 +61,19 @@ namespace DM
             UIPart part = null;
             switch (cellView.cellIdentifier)
             {
-                case "Shop":
+                case "ShopCellView":
                     part = new ShopPart(cellView as ShopCellView);
                     break;
-                case "Ball":
+                case "BallCellView":
                     part = new BallPart(cellView as BallCellView, m_HomeScrollerView);
                     break;
-                case "Battle":
+                case "BattleCellView":
                     part = new BattlePart(cellView as BattleCellView);
                     break;
-                case "Social":
+                case "SocialCellView":
                     part = new SocialPart(cellView as SocialCellView);
                     break;
-                case "Event":
+                case "EventCellView":
                     part = new EventPart(cellView as EventCellView);
                     break;
                 default:

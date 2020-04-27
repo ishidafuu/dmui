@@ -15,7 +15,7 @@ namespace EnhancedUI.EnhancedScroller
         /// of cell should have its own identifier
         /// </summary>
         public string cellIdentifier;
-
+        
         /// <summary>
         /// The cell index of the cell view
         /// This will differ from the dataIndex if the list is looping
@@ -40,5 +40,10 @@ namespace EnhancedUI.EnhancedScroller
         /// You can override it to update your cell's view UID
         /// </summary>
         public virtual void RefreshCellView() { }
+        
+        protected virtual void Reset()
+        {
+            cellIdentifier = GetType().Name;
+        }
     }
 }

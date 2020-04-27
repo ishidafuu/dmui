@@ -112,6 +112,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0.69411767, b: 0.41960785, a: 1}
   m_RaycastTarget: 0
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -392,7 +393,8 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4094411740583804173, guid: 727669cb501bd2143b79dc867c5246df, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 727669cb501bd2143b79dc867c5246df, type: 3}
 --- !u!224 &224137878435833401 stripped
 RectTransform:

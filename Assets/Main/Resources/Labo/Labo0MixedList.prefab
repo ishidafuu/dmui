@@ -433,7 +433,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48efdc8bdd494bf41abf508938055c93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellIdentifier: MixedList
+  cellIdentifier: MixedListCellView
   someTextText: {fileID: 1841863022036786783}
   textButton: {fileID: 1841863022042268451}
   fixedIntegerButton: {fileID: 1841863022042340257}

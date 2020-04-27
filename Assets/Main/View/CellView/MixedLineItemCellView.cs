@@ -1,11 +1,12 @@
-﻿using EnhancedScrollerDemos.CellEvents;
+﻿using System;
+using EnhancedScrollerDemos.CellEvents;
 using UnityEngine;
 using UnityEngine.UI;
 using EnhancedUI.EnhancedScroller;
 
 namespace DM
 {
-    public class BattleCellView : EnhancedScrollerCellView
+    public class MixedLineItemCellView : EnhancedScrollerCellView
     {
         private Data _data;
 
@@ -14,7 +15,6 @@ namespace DM
         public GameObject textButton;
         public GameObject fixedIntegerButton;
         public GameObject dataIntegerButton;
-        [SerializeField] public ButtonObject m_LaboButtonObject;
         
         public void SetData(Data data)
         {

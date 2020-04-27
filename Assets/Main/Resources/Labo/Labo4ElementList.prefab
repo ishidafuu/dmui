@@ -404,7 +404,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58af8efd0dba28f41a47ae5da712b808, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellIdentifier: ElementList
+  cellIdentifier: ElementListCellView
   someTextText: {fileID: 0}
   textButton: {fileID: 0}
   fixedIntegerButton: {fileID: 0}

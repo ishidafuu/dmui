@@ -352,10 +352,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1841863022022629409}
   - component: {fileID: 1841863022022483417}
+  - component: {fileID: 7737907451144307739}
   - component: {fileID: 1841863022036799341}
-  - component: {fileID: 3798748928122149656}
   m_Layer: 5
-  m_Name: Home4Event
+  m_Name: MixedLineItem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -379,11 +379,11 @@ RectTransform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_SizeDelta: {x: 300, y: 1136}
+  m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &1841863022022483417
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -392,6 +392,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1841863022042295035}
   m_CullTransparentMesh: 0
+--- !u!114 &7737907451144307739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1841863022042295035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 609c3e4cd8c5c904089ae82b21524ab8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cellIdentifier: MixedLineItemCellView
+  someTextText: {fileID: 0}
+  textButton: {fileID: 0}
+  fixedIntegerButton: {fileID: 0}
+  dataIntegerButton: {fileID: 0}
 --- !u!114 &1841863022036799341
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -405,8 +422,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.42491072, g: 0.40392157, b: 0.8745098, a: 1}
-  m_RaycastTarget: 1
+  m_Color: {r: 0.40392157, g: 0.73333335, b: 0.8745098, a: 1}
+  m_RaycastTarget: 0
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -421,23 +438,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &3798748928122149656
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1841863022042295035}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7411b7c26e8c69b4c8576cbc1d7fba51, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cellIdentifier: EventCellView
-  someTextText: {fileID: 1841863022036786783}
-  textButton: {fileID: 1841863022042268451}
-  fixedIntegerButton: {fileID: 1841863022042340257}
-  dataIntegerButton: {fileID: 1841863022042292679}
 --- !u!1 &1841863022042298555
 GameObject:
   m_ObjectHideFlags: 0
@@ -709,7 +709,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000006914139, y: -10.600006}
+  m_AnchoredPosition: {x: 0, y: -10.600006}
   m_SizeDelta: {x: 83.3, y: 51.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1841863022022514019

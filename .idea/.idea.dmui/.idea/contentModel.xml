@@ -27,6 +27,7 @@
             <e p="BallScrollerController.cs" t="Include" />
             <e p="HomeScrollerController.cs" t="Include" />
             <e p="LaboScrollerController.cs" t="Include" />
+            <e p="MixedLineScrollerController.cs" t="Include" />
           </e>
           <e p="DMUICanvas.cs" t="Include" />
           <e p="HomeSceneBase.cs" t="Include" />
@@ -39,7 +40,8 @@
             <e p="MenuButtonObject.cs" t="Include" />
             <e p="MixedBallObject.cs" t="Include" />
             <e p="MixedBallTabObject.cs" t="Include" />
-            <e p="NoneDrawingGraphic.cs" t="Include" />
+            <e p="NoneGraphicRaycaster.cs" t="Include" />
+            <e p="PreviewFieldObject.cs" t="Include" />
             <e p="SwitchObject.cs" t="Include" />
             <e p="TabObject.cs" t="Include" />
           </e>
@@ -107,6 +109,7 @@
                 <e p="MixedListCellView.cs" t="Include" />
                 <e p="PreviewCellView.cs" t="Include" />
               </e>
+              <e p="MixedLineItemCellView.cs" t="Include" />
             </e>
             <e p="SceneView" t="Include">
               <e p="HomeSceneView.cs" t="Include" />
@@ -116,6 +119,7 @@
               <e p="BallScrollerView.cs" t="Include" />
               <e p="HomeScrollerView.cs" t="Include" />
               <e p="LaboScrollerView.cs" t="Include" />
+              <e p="MixedLineScrollerView.cs" t="Include" />
             </e>
           </e>
         </e>

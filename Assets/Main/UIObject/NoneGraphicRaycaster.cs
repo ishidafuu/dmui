@@ -3,7 +3,7 @@ using UnityEditor.UI;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class NoneDrawingGraphic : Graphic
+public class NoneGraphicRaycaster : Graphic
 {
     public override void SetMaterialDirty()
     { }
@@ -17,8 +17,8 @@ public class NoneDrawingGraphic : Graphic
     }
 }
 
-[CanEditMultipleObjects, CustomEditor(typeof(NoneDrawingGraphic), false)]
-public class NoneDrawingGraphicEditor : GraphicEditor
+[CanEditMultipleObjects, CustomEditor(typeof(NoneGraphicRaycaster), false)]
+public class NoneGraphicRaycasterEditor : GraphicEditor
 {
     public override void OnInspectorGUI()
     {

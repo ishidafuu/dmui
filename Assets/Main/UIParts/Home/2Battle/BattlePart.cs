@@ -1,4 +1,5 @@
-﻿using UniRx.Async;
+﻿using System.Collections.Generic;
+using UniRx.Async;
 
 namespace DM
 {
@@ -12,6 +13,20 @@ namespace DM
             m_BattleCellView = battleCellView;
         }
 
-        public override async UniTask OnLoadedPart(UIBase targetLayer) { }
+        public override async UniTask OnLoadedPart(UIBase targetLayer)
+        {
+            List<UIPart> parts = new List<UIPart>
+            {
+                new ButtonPart(m_BattleCellView.m_LaboButtonObject, ClickLaboButton)
+            };
+
+            // 追加待ち
+            await UIController.Instance.YieldAttachParts(targetLayer, parts);
+        }
+        
+        private static void ClickLaboButton()
+        {
+            UIController.Instance.Replace(new UIBase[] {new LaboSceneBase()});
+        }
     }
 }
