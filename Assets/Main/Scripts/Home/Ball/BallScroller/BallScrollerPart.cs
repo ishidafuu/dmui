@@ -12,7 +12,7 @@ namespace DM
         // 追加先のレイヤ
         private UIBase m_TargetLayer;
         private readonly UIPart m_TargetPart;
-        private readonly BallScrollerController m_BallScrollerController;
+        private readonly BallScrollerController m_MixedLineScrollerController;
         private readonly BallScrollerView m_BallScrollerView;
         private readonly HomeScrollerView m_HomeScrollerView;
 
@@ -30,7 +30,7 @@ namespace DM
         {
             m_TargetPart = targetPart;
             m_BallScrollerView = ballCellView.m_BallScrollerView;
-            m_BallScrollerController = ballCellView.m_BallScrollerController;
+            m_MixedLineScrollerController = ballCellView.m_MixedLineScrollerController;
             m_HomeScrollerView = ballCellView.m_HomeScrollerView;
         }
 
@@ -52,7 +52,7 @@ namespace DM
 
         private void InitBallScrollerController()
         {
-            m_BallScrollerController.Init(ScrollerDrag, ScrollerBeginDrag, ScrollerEndDrag);
+            m_MixedLineScrollerController.Init(ScrollerDrag, ScrollerBeginDrag, ScrollerEndDrag);
         }
         
         private void ScrollerDrag(EnhancedScroller scroller, PointerEventData data)

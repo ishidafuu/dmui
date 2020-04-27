@@ -27,13 +27,13 @@
           <e p="Scripts" t="Include">
             <e p="Common" t="Include">
               <e p="ButtonPart.cs" t="Include" />
+              <e p="NoneGraphicRaycaster.cs" t="Include" />
               <e p="UIObject" t="Include">
                 <e p="ButtonObject.cs" t="Include" />
                 <e p="CheckObject.cs" t="Include" />
                 <e p="DragObject.cs" t="Include" />
                 <e p="DropObject.cs" t="Include" />
                 <e p="MenuButtonObject.cs" t="Include" />
-                <e p="NoneGraphicRaycaster.cs" t="Include" />
                 <e p="SwitchObject.cs" t="Include" />
                 <e p="TabObject.cs" t="Include" />
               </e>

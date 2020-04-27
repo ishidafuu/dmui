@@ -9,7 +9,7 @@ namespace DM
     public class BallCellView : EnhancedScrollerCellView
     {
         [SerializeField] public BallScrollerView m_BallScrollerView;
-        [SerializeField] public BallScrollerController m_BallScrollerController;
+        [FormerlySerializedAs("m_BallScrollerController")] [SerializeField] public BallScrollerController m_MixedLineScrollerController;
         [SerializeField] public ButtonObject m_LaboButtonObject;
         [HideInInspector] public HomeScrollerView m_HomeScrollerView;
        
