@@ -61,6 +61,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 0
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -98,13 +99,13 @@ GameObject:
   m_Component:
   - component: {fileID: 2518346586650748360}
   - component: {fileID: 2518346586650747956}
-  - component: {fileID: 3514255544196931767}
+  - component: {fileID: 2422548090676890731}
   - component: {fileID: 2518346586650747957}
-  - component: {fileID: 2518346586650747955}
+  - component: {fileID: 5512547159059725936}
   - component: {fileID: 2518346586650747959}
   - component: {fileID: 2518346586650747953}
   m_Layer: 0
-  m_Name: Drop
+  m_Name: MixedBall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -130,7 +131,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -92.96001}
-  m_SizeDelta: {x: 84.78, y: 32}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2518346586650747956
 CanvasRenderer:
@@ -140,7 +141,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2518346586650748361}
   m_CullTransparentMesh: 0
---- !u!114 &3514255544196931767
+--- !u!114 &2422548090676890731
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -149,7 +150,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2518346586650748361}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21aca0d17b88bb7489dcde56d7e5bc84, type: 3}
+  m_Script: {fileID: 11500000, guid: 9ac2278f9ead53a4f8b1eb88a6dadc92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   iconImage: {fileID: 0}
@@ -168,6 +169,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0.11449814, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -183,7 +185,7 @@ MonoBehaviour:
   m_PixelsPerUnitMultiplier: 1
   borderWidth: 0
   falloffDistance: 1
---- !u!114 &2518346586650747955
+--- !u!114 &5512547159059725936
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -192,9 +194,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2518346586650748361}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ffade7edb5b1df45a6c3642149606c6, type: 3}
+  m_Script: {fileID: 11500000, guid: 68356c3764ad390429ddad9e48ce8c31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  radius: {x: 0, y: 0, z: 0, w: 0}
 --- !u!114 &2518346586650747959
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -312,6 +315,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_RaycastTarget: 0
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -400,6 +404,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -416,4 +421,4 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u30C9\u30ED\u30C3\u30D7"
+  m_Text: mixedball

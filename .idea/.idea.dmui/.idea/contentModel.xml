@@ -22,6 +22,58 @@
             <e p="readme.txt" t="Include" />
           </e>
         </e>
+        <e p="Main" t="Include">
+          <e p="Controller" t="Include">
+            <e p="BallScrollerController.cs" t="Include" />
+            <e p="HomeScrollerController.cs" t="Include" />
+          </e>
+          <e p="DMUICanvas.cs" t="Include" />
+          <e p="HomeSceneBase.cs" t="Include" />
+          <e p="LaboSceneBase.cs" t="Include" />
+          <e p="UIParts" t="Include">
+            <e p="0Shop" t="Include">
+              <e p="ShopPart.cs" t="Include" />
+            </e>
+            <e p="1Ball" t="Include">
+              <e p="BallItemButtonPart.cs" t="Include" />
+              <e p="BallItemPart.cs" t="Include" />
+              <e p="BallPart.cs" t="Include" />
+              <e p="BallScrollerPart.cs" t="Include" />
+            </e>
+            <e p="2Battle" t="Include">
+              <e p="BattlePart.cs" t="Include" />
+            </e>
+            <e p="3Social" t="Include">
+              <e p="SocialPart.cs" t="Include" />
+            </e>
+            <e p="4Event" t="Include">
+              <e p="EventPart.cs" t="Include" />
+            </e>
+            <e p="Common" t="Include">
+              <e p="ButtonPart.cs" t="Include" />
+            </e>
+            <e p="HomeScrollerPart.cs" t="Include" />
+            <e p="HomeTabPart.cs" t="Include" />
+          </e>
+          <e p="View" t="Include">
+            <e p="CellView" t="Include">
+              <e p="BallCellView.cs" t="Include" />
+              <e p="BallItemCellView.cs" t="Include" />
+              <e p="BattleCellView.cs" t="Include" />
+              <e p="EventCellView.cs" t="Include" />
+              <e p="ShopCellView.cs" t="Include" />
+              <e p="SocialCellView.cs" t="Include" />
+            </e>
+            <e p="SceneView" t="Include">
+              <e p="HomeSceneView.cs" t="Include" />
+              <e p="LaboSceneView.cs" t="Include" />
+            </e>
+            <e p="ScrollerView" t="Include">
+              <e p="BallScrollerView.cs" t="Include" />
+              <e p="HomeScrollerView.cs" t="Include" />
+            </e>
+          </e>
+        </e>
         <e p="MessagePack" t="Include">
           <e p="Annotations" t="Include">
             <e p="Attributes.cs" t="Include" />
@@ -323,8 +375,9 @@
               <e p="CheckEffect.cs" t="Include" />
               <e p="DragObject.cs" t="Include" />
               <e p="DropObject.cs" t="Include" />
-              <e p="IgnoreTouch.cs" t="Include" />
               <e p="MenuButtonEffect.cs" t="Include" />
+              <e p="MixedBallObject.cs" t="Include" />
+              <e p="MixedBallTabView.cs" t="Include" />
               <e p="NoneDrawingGraphic.cs" t="Include" />
               <e p="SwitchEffect.cs" t="Include" />
               <e p="TabView.cs" t="Include" />
@@ -588,58 +641,6 @@
               </e>
               <e p="20" t="Include">
                 <e p="Sample20.cs" t="Include" />
-              </e>
-              <e p="Main" t="Include">
-                <e p="Controller" t="Include">
-                  <e p="BallScrollerController.cs" t="Include" />
-                  <e p="HomeScrollerController.cs" t="Include" />
-                </e>
-                <e p="DMUICanvas.cs" t="Include" />
-                <e p="HomeSceneBase.cs" t="Include" />
-                <e p="LaboSceneBase.cs" t="Include" />
-                <e p="UIParts" t="Include">
-                  <e p="0Shop" t="Include">
-                    <e p="ShopPart.cs" t="Include" />
-                  </e>
-                  <e p="1Ball" t="Include">
-                    <e p="BallItemButtonPart.cs" t="Include" />
-                    <e p="BallItemPart.cs" t="Include" />
-                    <e p="BallPart.cs" t="Include" />
-                    <e p="BallScrollerPart.cs" t="Include" />
-                  </e>
-                  <e p="2Battle" t="Include">
-                    <e p="BattlePart.cs" t="Include" />
-                  </e>
-                  <e p="3Social" t="Include">
-                    <e p="SocialPart.cs" t="Include" />
-                  </e>
-                  <e p="4Event" t="Include">
-                    <e p="EventPart.cs" t="Include" />
-                  </e>
-                  <e p="Common" t="Include">
-                    <e p="ButtonPart.cs" t="Include" />
-                  </e>
-                  <e p="HomeScrollerPart.cs" t="Include" />
-                  <e p="HomeTabPart.cs" t="Include" />
-                </e>
-                <e p="View" t="Include">
-                  <e p="CellView" t="Include">
-                    <e p="BallCellView.cs" t="Include" />
-                    <e p="BallItemCellView.cs" t="Include" />
-                    <e p="BattleCellView.cs" t="Include" />
-                    <e p="EventCellView.cs" t="Include" />
-                    <e p="ShopCellView.cs" t="Include" />
-                    <e p="SocialCellView.cs" t="Include" />
-                  </e>
-                  <e p="SceneView" t="Include">
-                    <e p="HomeSceneView.cs" t="Include" />
-                    <e p="LaboSceneView.cs" t="Include" />
-                  </e>
-                  <e p="ScrollerView" t="Include">
-                    <e p="BallScrollerView.cs" t="Include" />
-                    <e p="HomeScrollerView.cs" t="Include" />
-                  </e>
-                </e>
               </e>
             </e>
           </e>
