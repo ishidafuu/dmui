@@ -4,7 +4,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using UnityEngine.UI.ProceduralImage;
 
-public class CheckEffect : MonoBehaviour,
+public class CheckObject : MonoBehaviour,
     IPointerDownHandler,
     IPointerUpHandler
 {

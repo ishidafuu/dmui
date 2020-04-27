@@ -31,6 +31,18 @@
           <e p="DMUICanvas.cs" t="Include" />
           <e p="HomeSceneBase.cs" t="Include" />
           <e p="LaboSceneBase.cs" t="Include" />
+          <e p="UIObject" t="Include">
+            <e p="ButtonObject.cs" t="Include" />
+            <e p="CheckObject.cs" t="Include" />
+            <e p="DragObject.cs" t="Include" />
+            <e p="DropObject.cs" t="Include" />
+            <e p="MenuButtonObject.cs" t="Include" />
+            <e p="MixedBallObject.cs" t="Include" />
+            <e p="MixedBallTabObject.cs" t="Include" />
+            <e p="NoneDrawingGraphic.cs" t="Include" />
+            <e p="SwitchObject.cs" t="Include" />
+            <e p="TabObject.cs" t="Include" />
+          </e>
           <e p="UIParts" t="Include">
             <e p="Common" t="Include">
               <e p="ButtonPart.cs" t="Include" />
@@ -75,18 +87,6 @@
               </e>
             </e>
             <e p="LaboScrollerPart.cs" t="Include" />
-          </e>
-          <e p="UIView" t="Include">
-            <e p="ButtonView.cs" t="Include" />
-            <e p="CheckEffect.cs" t="Include" />
-            <e p="DragObject.cs" t="Include" />
-            <e p="DropObject.cs" t="Include" />
-            <e p="MenuButtonEffect.cs" t="Include" />
-            <e p="MixedBallObject.cs" t="Include" />
-            <e p="MixedBallTabView.cs" t="Include" />
-            <e p="NoneDrawingGraphic.cs" t="Include" />
-            <e p="SwitchEffect.cs" t="Include" />
-            <e p="TabView.cs" t="Include" />
           </e>
           <e p="View" t="Include">
             <e p="CellView" t="Include">

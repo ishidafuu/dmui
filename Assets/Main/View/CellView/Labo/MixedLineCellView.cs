@@ -10,7 +10,7 @@ namespace DM
     {
         [SerializeField] public BallScrollerView m_BallScrollerView;
         [SerializeField] public BallScrollerController m_BallScrollerController;
-        [SerializeField] public ButtonView m_LaboButtonView;
+        [FormerlySerializedAs("m_LaboButtonView")] [SerializeField] public ButtonObject m_LaboButtonObject;
         [HideInInspector] public HomeScrollerView m_HomeScrollerView;
        
         public void SetData(Data data)

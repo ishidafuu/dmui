@@ -1,21 +1,22 @@
 ﻿using System;
 using EnhancedUI.EnhancedScroller;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace DM
 {
     public class HomeScrollerView : MonoBehaviour
     {
         [SerializeField] public EnhancedScroller m_EnhancedScroller;
-        [SerializeField] public TabView m_TabView;
+        [FormerlySerializedAs("m_TabView")] [SerializeField] public TabObject m_TabObject;
 
         private float m_ScrollWidth;
         private Transform m_CursorTransform;
 
         private void Start()
         {
-            m_ScrollWidth = (m_TabView.transform as RectTransform).rect.width / 5 * 4;
-            m_CursorTransform = m_TabView.m_Cursor.transform;
+            m_ScrollWidth = (m_TabObject.transform as RectTransform).rect.width / 5 * 4;
+            m_CursorTransform = m_TabObject.m_Cursor.transform;
         }
         
         private void Update()

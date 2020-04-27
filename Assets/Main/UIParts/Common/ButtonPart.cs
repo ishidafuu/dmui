@@ -11,13 +11,13 @@ namespace DM
     public class ButtonPart : UIPart
     {
         private UIBase m_TargetLayer;
-        private readonly ButtonView m_ButtonView;
+        private readonly ButtonObject m_ButtonObject;
         private readonly Action m_ActionClick;
 
-        public ButtonPart(ButtonView buttonView, Action actionClick = null) 
-            : base(buttonView.transform)
+        public ButtonPart(ButtonObject buttonObject, Action actionClick = null) 
+            : base(buttonObject.transform)
         {
-            m_ButtonView = buttonView;
+            m_ButtonObject = buttonObject;
             m_ActionClick = actionClick;
         }
 
@@ -47,13 +47,13 @@ namespace DM
 
         public override bool OnTouchUp(TouchEvent touch)
         {
-            m_ButtonView?.PointerUp(touch.Pointer);
+            m_ButtonObject?.PointerUp(touch.Pointer);
             return base.OnTouchUp(touch);
         }
 
         public override bool OnTouchDown(TouchEvent touch)
         {
-            m_ButtonView?.PointerDown(touch.Pointer);
+            m_ButtonObject?.PointerDown(touch.Pointer);
             return base.OnTouchDown(touch);
         }
     }

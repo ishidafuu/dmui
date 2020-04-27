@@ -8,7 +8,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 
-public class SwitchEffect : MonoBehaviour,
+public class SwitchObject : MonoBehaviour,
         // IMoveHandler,
         // IPointerExitHandler,
         IPointerDownHandler,

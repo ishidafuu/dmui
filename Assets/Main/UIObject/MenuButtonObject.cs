@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI.ProceduralImage;
 
-public class MenuButtonEffect : MonoBehaviour,
+public class MenuButtonObject : MonoBehaviour,
     IPointerDownHandler,
     IPointerUpHandler
 {

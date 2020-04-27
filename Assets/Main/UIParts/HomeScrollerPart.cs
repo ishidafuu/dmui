@@ -30,7 +30,7 @@ namespace DM
 
             List<UIPart> parts = new List<UIPart>
             {
-                new HomeTabPart(m_HomeScrollerView.m_TabView, JumpToDataIndex)
+                new HomeTabPart(m_HomeScrollerView.m_TabObject, JumpToDataIndex)
             };
 
             // 追加待ち

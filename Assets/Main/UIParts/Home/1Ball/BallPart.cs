@@ -21,7 +21,7 @@ namespace DM
             List<UIPart> parts = new List<UIPart>
             {
                 new BallScrollerPart(this, m_BallCellView),
-                new ButtonPart(m_BallCellView.m_LaboButtonView, ClickLaboButton)
+                new ButtonPart(m_BallCellView.m_LaboButtonObject, ClickLaboButton)
             };
 
 

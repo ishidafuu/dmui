@@ -9,7 +9,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 
-public class ButtonView : MonoBehaviour
+public class ButtonObject : MonoBehaviour
 {
     [SerializeField] private ProceduralImage m_Base;
     [SerializeField] private ProceduralImage m_Effect;

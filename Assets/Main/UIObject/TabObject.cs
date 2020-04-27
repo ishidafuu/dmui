@@ -5,15 +5,15 @@ using UnityEngine.Serialization;
 using UnityEngine.UI;
 using UnityEngine.UI.ProceduralImage;
 
-public class TabView : MonoBehaviour
+public class TabObject : MonoBehaviour
 {
-    [SerializeField] public ButtonView[] m_ButtonViews;
+    [SerializeField] public ButtonObject[] m_ButtonViews;
     [SerializeField] public ProceduralImage m_Cursor;
 
     private void Reset()
     {
         m_Cursor = transform.Find("Cursor")?.GetComponent<ProceduralImage>();
-        m_ButtonViews = GetComponentsInChildren<ButtonView>();
+        m_ButtonViews = GetComponentsInChildren<ButtonObject>();
         
         if (m_ButtonViews.Length <= 0)
         {

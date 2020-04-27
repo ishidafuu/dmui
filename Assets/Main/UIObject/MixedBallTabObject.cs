@@ -5,7 +5,7 @@ using UnityEngine.Serialization;
 using UnityEngine.UI;
 using UnityEngine.UI.ProceduralImage;
 
-public class MixedBallTabView : MonoBehaviour
+public class MixedBallTabObject : MonoBehaviour
 {
     [SerializeField] public MixedBallObject[] m_ButtonViews;
     [SerializeField] public ProceduralImage m_Cursor;
