@@ -7,7 +7,7 @@ namespace DM
 {
     public class LaboSceneView : MonoBehaviour
     {
-        // [SerializeField] public HomeScrollerView m_HomeScrollerView;
-        // [SerializeField] public HomeScrollerController m_HomeScrollerController;
+        [SerializeField] public LaboScrollerView m_LaboScrollerView;
+        [SerializeField] public LaboScrollerController m_LaboScrollerController;
     }
 }

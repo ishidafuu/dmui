@@ -26,43 +26,87 @@
           <e p="Controller" t="Include">
             <e p="BallScrollerController.cs" t="Include" />
             <e p="HomeScrollerController.cs" t="Include" />
+            <e p="LaboScrollerController.cs" t="Include" />
           </e>
           <e p="DMUICanvas.cs" t="Include" />
           <e p="HomeSceneBase.cs" t="Include" />
           <e p="LaboSceneBase.cs" t="Include" />
           <e p="UIParts" t="Include">
-            <e p="0Shop" t="Include">
-              <e p="ShopPart.cs" t="Include" />
-            </e>
-            <e p="1Ball" t="Include">
-              <e p="BallItemButtonPart.cs" t="Include" />
-              <e p="BallItemPart.cs" t="Include" />
-              <e p="BallPart.cs" t="Include" />
-              <e p="BallScrollerPart.cs" t="Include" />
-            </e>
-            <e p="2Battle" t="Include">
-              <e p="BattlePart.cs" t="Include" />
-            </e>
-            <e p="3Social" t="Include">
-              <e p="SocialPart.cs" t="Include" />
-            </e>
-            <e p="4Event" t="Include">
-              <e p="EventPart.cs" t="Include" />
-            </e>
             <e p="Common" t="Include">
               <e p="ButtonPart.cs" t="Include" />
             </e>
+            <e p="Home" t="Include">
+              <e p="0Shop" t="Include">
+                <e p="ShopPart.cs" t="Include" />
+              </e>
+              <e p="1Ball" t="Include">
+                <e p="BallItemButtonPart.cs" t="Include" />
+                <e p="BallItemPart.cs" t="Include" />
+                <e p="BallPart.cs" t="Include" />
+                <e p="BallScrollerPart.cs" t="Include" />
+              </e>
+              <e p="2Battle" t="Include">
+                <e p="BattlePart.cs" t="Include" />
+              </e>
+              <e p="3Social" t="Include">
+                <e p="SocialPart.cs" t="Include" />
+              </e>
+              <e p="4Event" t="Include">
+                <e p="EventPart.cs" t="Include" />
+              </e>
+            </e>
             <e p="HomeScrollerPart.cs" t="Include" />
             <e p="HomeTabPart.cs" t="Include" />
+            <e p="Labo" t="Include">
+              <e p="0MixedList" t="Include">
+                <e p="MixedListPart.cs" t="Include" />
+              </e>
+              <e p="1MixedLine" t="Include">
+                <e p="MixedLinePart.cs" t="Include" />
+              </e>
+              <e p="2Preview" t="Include">
+                <e p="PreviewPart.cs" t="Include" />
+              </e>
+              <e p="3ElementLine" t="Include">
+                <e p="ElementLinePart.cs" t="Include" />
+              </e>
+              <e p="4ElementList" t="Include">
+                <e p="ElementListPart.cs" t="Include" />
+              </e>
+            </e>
+            <e p="LaboScrollerPart.cs" t="Include" />
+          </e>
+          <e p="UIView" t="Include">
+            <e p="ButtonView.cs" t="Include" />
+            <e p="CheckEffect.cs" t="Include" />
+            <e p="DragObject.cs" t="Include" />
+            <e p="DropObject.cs" t="Include" />
+            <e p="MenuButtonEffect.cs" t="Include" />
+            <e p="MixedBallObject.cs" t="Include" />
+            <e p="MixedBallTabView.cs" t="Include" />
+            <e p="NoneDrawingGraphic.cs" t="Include" />
+            <e p="SwitchEffect.cs" t="Include" />
+            <e p="TabView.cs" t="Include" />
           </e>
           <e p="View" t="Include">
             <e p="CellView" t="Include">
-              <e p="BallCellView.cs" t="Include" />
-              <e p="BallItemCellView.cs" t="Include" />
-              <e p="BattleCellView.cs" t="Include" />
-              <e p="EventCellView.cs" t="Include" />
-              <e p="ShopCellView.cs" t="Include" />
-              <e p="SocialCellView.cs" t="Include" />
+              <e p="Ball" t="Include">
+                <e p="BallItemCellView.cs" t="Include" />
+              </e>
+              <e p="Home" t="Include">
+                <e p="BallCellView.cs" t="Include" />
+                <e p="BattleCellView.cs" t="Include" />
+                <e p="EventCellView.cs" t="Include" />
+                <e p="ShopCellView.cs" t="Include" />
+                <e p="SocialCellView.cs" t="Include" />
+              </e>
+              <e p="Labo" t="Include">
+                <e p="ElementLineCellView.cs" t="Include" />
+                <e p="ElementListCellView.cs" t="Include" />
+                <e p="MixedLineCellView.cs" t="Include" />
+                <e p="MixedListCellView.cs" t="Include" />
+                <e p="PreviewCellView.cs" t="Include" />
+              </e>
             </e>
             <e p="SceneView" t="Include">
               <e p="HomeSceneView.cs" t="Include" />
@@ -71,6 +115,7 @@
             <e p="ScrollerView" t="Include">
               <e p="BallScrollerView.cs" t="Include" />
               <e p="HomeScrollerView.cs" t="Include" />
+              <e p="LaboScrollerView.cs" t="Include" />
             </e>
           </e>
         </e>
@@ -266,53 +311,7 @@
             <e p="AirtableBase.cs" t="Include" />
             <e p="AirtableClient.cs" t="Include" />
           </e>
-          <e p="Generated" t="Include">
-            <e p="AssetAddress.cs" t="Include" />
-            <e p="AssetLabel.cs" t="Include" />
-            <e p="DatabaseBuilder.cs" t="Include" />
-            <e p="ImmutableBuilder.cs" t="Include" />
-            <e p="MasterMemoryResolver.cs" t="Include" />
-            <e p="MemoryDatabase.cs" t="Include" />
-            <e p="MessagePack_Formatters_DM_GenderFormatter.cs" t="Include" />
-            <e p="MessagePack_Formatters_DM_MessagePackTestFormatter.cs" t="Include" />
-            <e p="MessagePack_Formatters_DM_PersonFormatter.cs" t="Include" />
-            <e p="MessagePack_Formatters_DM_SkillFormatter.cs" t="Include" />
-            <e p="MessagePack_Formatters_DM_SkillParameterFormatter.cs" t="Include" />
-            <e p="MessagePack_Resolvers_GeneratedResolver.cs" t="Include" />
-            <e p="Tables" t="Include">
-              <e p="PersonTable.cs" t="Include" />
-              <e p="SkillParameterTable.cs" t="Include" />
-              <e p="SkillTable.cs" t="Include" />
-            </e>
-          </e>
-          <e p="http" t="Include">
-            <e p="CryptographicProtection.cs" t="Include" />
-            <e p="HeaderParam" t="Include">
-              <e p="AppIdHeaderParam.cs" t="Include" />
-              <e p="AppTokenHeaderParam.cs" t="Include" />
-              <e p="IRequestHeaderParam.cs" t="Include" />
-              <e p="IRequestNoCacheHeaderParam.cs" t="Include" />
-            </e>
-            <e p="HTTPWebRequestClient.cs" t="Include" />
-            <e p="IHTTPClient.cs" t="Include" />
-            <e p="MessagePackTest.cs" t="Include" />
-            <e p="NoCommunicationHTTPClient.cs" t="Include" />
-          </e>
-          <e p="Master" t="Include">
-            <e p="Editor" t="Include">
-              <e p="MasterDataBuiilder.cs" t="Include" />
-              <e p="MasterMemoryCodeGenerator.cs" t="Include" />
-            </e>
-            <e p="MasterDataDB.cs" t="Include" />
-            <e p="MessagePackResolver.cs" t="Include" />
-            <e p="Tables" t="Include">
-              <e p="Person.cs" t="Include" />
-              <e p="Skill.cs" t="Include" />
-              <e p="SkillParameter.cs" t="Include" />
-            </e>
-          </e>
-          <e p="Settings.cs" t="Include" />
-          <e p="UI" t="Include">
+          <e p="dmui" t="Include">
             <e p="Define" t="Include">
               <e p="UiDefine.cs" t="Include" />
             </e>
@@ -370,19 +369,53 @@
               <e p="UILayerTouchListener.cs" t="Include" />
               <e p="UITouchListener.cs" t="Include" />
             </e>
-            <e p="UIView" t="Include">
-              <e p="ButtonView.cs" t="Include" />
-              <e p="CheckEffect.cs" t="Include" />
-              <e p="DragObject.cs" t="Include" />
-              <e p="DropObject.cs" t="Include" />
-              <e p="MenuButtonEffect.cs" t="Include" />
-              <e p="MixedBallObject.cs" t="Include" />
-              <e p="MixedBallTabView.cs" t="Include" />
-              <e p="NoneDrawingGraphic.cs" t="Include" />
-              <e p="SwitchEffect.cs" t="Include" />
-              <e p="TabView.cs" t="Include" />
+          </e>
+          <e p="Generated" t="Include">
+            <e p="AssetAddress.cs" t="Include" />
+            <e p="AssetLabel.cs" t="Include" />
+            <e p="DatabaseBuilder.cs" t="Include" />
+            <e p="ImmutableBuilder.cs" t="Include" />
+            <e p="MasterMemoryResolver.cs" t="Include" />
+            <e p="MemoryDatabase.cs" t="Include" />
+            <e p="MessagePack_Formatters_DM_GenderFormatter.cs" t="Include" />
+            <e p="MessagePack_Formatters_DM_MessagePackTestFormatter.cs" t="Include" />
+            <e p="MessagePack_Formatters_DM_PersonFormatter.cs" t="Include" />
+            <e p="MessagePack_Formatters_DM_SkillFormatter.cs" t="Include" />
+            <e p="MessagePack_Formatters_DM_SkillParameterFormatter.cs" t="Include" />
+            <e p="MessagePack_Resolvers_GeneratedResolver.cs" t="Include" />
+            <e p="Tables" t="Include">
+              <e p="PersonTable.cs" t="Include" />
+              <e p="SkillParameterTable.cs" t="Include" />
+              <e p="SkillTable.cs" t="Include" />
             </e>
           </e>
+          <e p="http" t="Include">
+            <e p="CryptographicProtection.cs" t="Include" />
+            <e p="HeaderParam" t="Include">
+              <e p="AppIdHeaderParam.cs" t="Include" />
+              <e p="AppTokenHeaderParam.cs" t="Include" />
+              <e p="IRequestHeaderParam.cs" t="Include" />
+              <e p="IRequestNoCacheHeaderParam.cs" t="Include" />
+            </e>
+            <e p="HTTPWebRequestClient.cs" t="Include" />
+            <e p="IHTTPClient.cs" t="Include" />
+            <e p="MessagePackTest.cs" t="Include" />
+            <e p="NoCommunicationHTTPClient.cs" t="Include" />
+          </e>
+          <e p="Master" t="Include">
+            <e p="Editor" t="Include">
+              <e p="MasterDataBuiilder.cs" t="Include" />
+              <e p="MasterMemoryCodeGenerator.cs" t="Include" />
+            </e>
+            <e p="MasterDataDB.cs" t="Include" />
+            <e p="MessagePackResolver.cs" t="Include" />
+            <e p="Tables" t="Include">
+              <e p="Person.cs" t="Include" />
+              <e p="Skill.cs" t="Include" />
+              <e p="SkillParameter.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Settings.cs" t="Include" />
           <e p="Utf8Json" t="Include">
             <e p="Attributes.cs" t="Include" />
             <e p="Formatters" t="Include">

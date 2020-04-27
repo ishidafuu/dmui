@@ -7,13 +7,13 @@ using UnityEngine.UI.ProceduralImage;
 
 public class MixedBallTabView : MonoBehaviour
 {
-    [SerializeField] public ButtonView[] m_ButtonViews;
+    [SerializeField] public MixedBallObject[] m_ButtonViews;
     [SerializeField] public ProceduralImage m_Cursor;
 
     private void Reset()
     {
         m_Cursor = transform.Find("Cursor")?.GetComponent<ProceduralImage>();
-        m_ButtonViews = GetComponentsInChildren<ButtonView>();
+        m_ButtonViews = GetComponentsInChildren<MixedBallObject>();
         
         if (m_ButtonViews.Length <= 0)
         {

@@ -1,26 +1,27 @@
 ﻿using System.Collections.Generic;
+using EnhancedUI.EnhancedScroller;
 using UniRx.Async;
 using UnityEngine;
 
 namespace DM
 {
-    class BallPart : UIPart
+    class MixedLinePart : UIPart
     {
-        private readonly BallCellView m_BallCellView;
+        private readonly MixedLineCellView m_MixedLineCellView;
 
-        public BallPart(BallCellView ballCellView, HomeScrollerView homeScrollerView)
-            : base(ballCellView.transform)
+        public MixedLinePart(MixedLineCellView mixedLineCellView)
+            : base(mixedLineCellView.transform)
         {
-            m_BallCellView = ballCellView;
-            m_BallCellView.m_HomeScrollerView = homeScrollerView;
+            m_MixedLineCellView = mixedLineCellView;
+            // m_MixedLineCellView.m_HomeScrollerView = homeScrollerView;
         }
 
         public override async UniTask OnLoadedPart(UIBase targetLayer)
         {
             List<UIPart> parts = new List<UIPart>
             {
-                new BallScrollerPart(this, m_BallCellView),
-                new ButtonPart(m_BallCellView.m_LaboButtonView, ClickLaboButton)
+                // new BallScrollerPart(this, m_MixedLineCellView),
+                // new ButtonPart(m_MixedLineCellView.m_LaboButtonView, ClickLaboButton)
             };
 
 
