@@ -23,104 +23,100 @@
           </e>
         </e>
         <e p="Main" t="Include">
-          <e p="Controller" t="Include">
-            <e p="BallScrollerController.cs" t="Include" />
-            <e p="HomeScrollerController.cs" t="Include" />
-            <e p="LaboScrollerController.cs" t="Include" />
-            <e p="MixedLineScrollerController.cs" t="Include" />
-          </e>
           <e p="DMUICanvas.cs" t="Include" />
           <e p="HomeSceneBase.cs" t="Include" />
           <e p="LaboSceneBase.cs" t="Include" />
+          <e p="Scripts" t="Include">
+            <e p="Common" t="Include">
+              <e p="ButtonPart.cs" t="Include" />
+            </e>
+            <e p="Home" t="Include">
+              <e p="Ball" t="Include">
+                <e p="BallCellView.cs" t="Include" />
+                <e p="BallItemButtonPart.cs" t="Include" />
+                <e p="BallItemCellView.cs" t="Include" />
+                <e p="BallItemPart.cs" t="Include" />
+                <e p="BallPart.cs" t="Include" />
+                <e p="BallScroller" t="Include">
+                  <e p="BallScrollerController.cs" t="Include" />
+                  <e p="BallScrollerView.cs" t="Include" />
+                </e>
+                <e p="BallScrollerPart.cs" t="Include" />
+              </e>
+              <e p="Battle" t="Include">
+                <e p="BattleCellView.cs" t="Include" />
+                <e p="BattlePart.cs" t="Include" />
+              </e>
+              <e p="Event" t="Include">
+                <e p="EventCellView.cs" t="Include" />
+                <e p="EventPart.cs" t="Include" />
+              </e>
+              <e p="HomeSceneView.cs" t="Include" />
+              <e p="HomeScroller" t="Include">
+                <e p="HomeScrollerController.cs" t="Include" />
+                <e p="HomeScrollerPart.cs" t="Include" />
+                <e p="HomeScrollerView.cs" t="Include" />
+              </e>
+              <e p="HomeTabPart.cs" t="Include" />
+              <e p="Shop" t="Include">
+                <e p="ShopCellView.cs" t="Include" />
+                <e p="ShopPart.cs" t="Include" />
+              </e>
+              <e p="Social" t="Include">
+                <e p="SocialCellView.cs" t="Include" />
+                <e p="SocialPart.cs" t="Include" />
+              </e>
+            </e>
+            <e p="Labo" t="Include">
+              <e p="ElementLine" t="Include">
+                <e p="ElementLineCellView.cs" t="Include" />
+                <e p="ElementLinePart.cs" t="Include" />
+              </e>
+              <e p="ElementList" t="Include">
+                <e p="ElementListCellView.cs" t="Include" />
+                <e p="ElementListPart.cs" t="Include" />
+              </e>
+              <e p="LaboSceneView.cs" t="Include" />
+              <e p="LaboScroller" t="Include">
+                <e p="LaboScrollerController.cs" t="Include" />
+                <e p="LaboScrollerPart.cs" t="Include" />
+                <e p="LaboScrollerView.cs" t="Include" />
+              </e>
+              <e p="MixedBallTab" t="Include">
+                <e p="MixedBallObject.cs" t="Include" />
+                <e p="MixedBallTabObject.cs" t="Include" />
+              </e>
+              <e p="MixedLine" t="Include">
+                <e p="MixedLineCellView.cs" t="Include" />
+                <e p="MixedLineItem" t="Include">
+                  <e p="MixedLineItemCellView.cs" t="Include" />
+                </e>
+                <e p="MixedLinePart.cs" t="Include" />
+                <e p="MixedLineScroller" t="Include">
+                  <e p="MixedLineScrollerController.cs" t="Include" />
+                  <e p="MixedLineScrollerView.cs" t="Include" />
+                </e>
+              </e>
+              <e p="MixedList" t="Include">
+                <e p="MixedListCellView.cs" t="Include" />
+                <e p="MixedListPart.cs" t="Include" />
+              </e>
+              <e p="Preview" t="Include">
+                <e p="PreviewCellView.cs" t="Include" />
+                <e p="PreviewFieldObject.cs" t="Include" />
+                <e p="PreviewPart.cs" t="Include" />
+              </e>
+            </e>
+          </e>
           <e p="UIObject" t="Include">
             <e p="ButtonObject.cs" t="Include" />
             <e p="CheckObject.cs" t="Include" />
             <e p="DragObject.cs" t="Include" />
             <e p="DropObject.cs" t="Include" />
             <e p="MenuButtonObject.cs" t="Include" />
-            <e p="MixedBallObject.cs" t="Include" />
-            <e p="MixedBallTabObject.cs" t="Include" />
             <e p="NoneGraphicRaycaster.cs" t="Include" />
-            <e p="PreviewFieldObject.cs" t="Include" />
             <e p="SwitchObject.cs" t="Include" />
             <e p="TabObject.cs" t="Include" />
-          </e>
-          <e p="UIParts" t="Include">
-            <e p="Common" t="Include">
-              <e p="ButtonPart.cs" t="Include" />
-            </e>
-            <e p="Home" t="Include">
-              <e p="0Shop" t="Include">
-                <e p="ShopPart.cs" t="Include" />
-              </e>
-              <e p="1Ball" t="Include">
-                <e p="BallItemButtonPart.cs" t="Include" />
-                <e p="BallItemPart.cs" t="Include" />
-                <e p="BallPart.cs" t="Include" />
-                <e p="BallScrollerPart.cs" t="Include" />
-              </e>
-              <e p="2Battle" t="Include">
-                <e p="BattlePart.cs" t="Include" />
-              </e>
-              <e p="3Social" t="Include">
-                <e p="SocialPart.cs" t="Include" />
-              </e>
-              <e p="4Event" t="Include">
-                <e p="EventPart.cs" t="Include" />
-              </e>
-            </e>
-            <e p="HomeScrollerPart.cs" t="Include" />
-            <e p="HomeTabPart.cs" t="Include" />
-            <e p="Labo" t="Include">
-              <e p="0MixedList" t="Include">
-                <e p="MixedListPart.cs" t="Include" />
-              </e>
-              <e p="1MixedLine" t="Include">
-                <e p="MixedLinePart.cs" t="Include" />
-              </e>
-              <e p="2Preview" t="Include">
-                <e p="PreviewPart.cs" t="Include" />
-              </e>
-              <e p="3ElementLine" t="Include">
-                <e p="ElementLinePart.cs" t="Include" />
-              </e>
-              <e p="4ElementList" t="Include">
-                <e p="ElementListPart.cs" t="Include" />
-              </e>
-            </e>
-            <e p="LaboScrollerPart.cs" t="Include" />
-          </e>
-          <e p="View" t="Include">
-            <e p="CellView" t="Include">
-              <e p="Ball" t="Include">
-                <e p="BallItemCellView.cs" t="Include" />
-              </e>
-              <e p="Home" t="Include">
-                <e p="BallCellView.cs" t="Include" />
-                <e p="BattleCellView.cs" t="Include" />
-                <e p="EventCellView.cs" t="Include" />
-                <e p="ShopCellView.cs" t="Include" />
-                <e p="SocialCellView.cs" t="Include" />
-              </e>
-              <e p="Labo" t="Include">
-                <e p="ElementLineCellView.cs" t="Include" />
-                <e p="ElementListCellView.cs" t="Include" />
-                <e p="MixedLineCellView.cs" t="Include" />
-                <e p="MixedListCellView.cs" t="Include" />
-                <e p="PreviewCellView.cs" t="Include" />
-              </e>
-              <e p="MixedLineItemCellView.cs" t="Include" />
-            </e>
-            <e p="SceneView" t="Include">
-              <e p="HomeSceneView.cs" t="Include" />
-              <e p="LaboSceneView.cs" t="Include" />
-            </e>
-            <e p="ScrollerView" t="Include">
-              <e p="BallScrollerView.cs" t="Include" />
-              <e p="HomeScrollerView.cs" t="Include" />
-              <e p="LaboScrollerView.cs" t="Include" />
-              <e p="MixedLineScrollerView.cs" t="Include" />
-            </e>
           </e>
         </e>
         <e p="MessagePack" t="Include">
