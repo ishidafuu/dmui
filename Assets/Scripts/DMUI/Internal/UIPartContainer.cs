@@ -27,7 +27,7 @@ namespace DM
             {
                 Part.RootTransform = new GameObject(NONE_ROOT_OBJECT_NAME).transform;
             }
-
+    
             GameObject rootGameObject = Part.RootTransform.gameObject;
             rootGameObject.SetActive(false);
             CollectComponents(rootGameObject, targetLayer);
@@ -46,6 +46,7 @@ namespace DM
             m_Prefab = receiver.m_Prefab;
             if (m_Prefab == null)
             {
+                Debug.LogError($"UIPartContainer Error LoadPrefab {Part.PrefabPath}");
                 return;
             }
 

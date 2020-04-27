@@ -1,26 +1,27 @@
 ﻿using System.Collections.Generic;
 using UniRx.Async;
 
-namespace DM {
-    public class LaboSceneBase : UIBase
+namespace DM
+{
+    public class HomeSceneBase : UIBase
     {
         private int count = 0;
-        private LaboSceneView m_LaboSceneView;
+        private HomeSceneView m_HomeSceneView;
 
-        public LaboSceneBase() : base("LaboScene", EnumUIGroup.Scene)
+        public HomeSceneBase() : base("Home/HomeScene", EnumUIGroup.Scene)
         {
             IsScheduleUpdate = true;
         }
 
         public override async UniTask OnLoadedBase()
         {
-            m_LaboSceneView = RootTransform.GetComponent<LaboSceneView>();
+            m_HomeSceneView = RootTransform.GetComponent<HomeSceneView>();
 
             List<UIPart> parts = new List<UIPart>
             {
-                new LaboScrollerPart(m_LaboSceneView),
+                new HomeScrollerPart(m_HomeSceneView),
             };
-            
+
             await UIController.Instance.YieldAttachParts(this, parts);
         }
 
@@ -39,6 +40,20 @@ namespace DM {
             {
                 count = 0;
             }
+        }
+        
+        public override bool OnClick(TouchEvent touch, UISound uiSound)
+        {
+            switch (touch.Listener.name)
+            {
+                case "LaboButton":
+                {
+                    UIController.Instance.Replace(new UIBase[] {new LaboSceneBase()});
+                    return true;
+                }
+            }
+
+            return true;
         }
     }
 }

@@ -144,10 +144,13 @@ namespace DM
             }
 
             PrefabReceiver receiver = new PrefabReceiver();
-            
             await UIController.Implements.PrefabLoader.Load(Base.PrefabPath, receiver);
             
             m_Prefab = receiver.m_Prefab;
+            if (m_Prefab == null)
+            {
+                Debug.LogError($"UIBaseLayer Error LoadPrefab {Part.PrefabPath}");
+            }
         }
 
 

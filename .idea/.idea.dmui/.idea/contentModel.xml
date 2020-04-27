@@ -24,24 +24,34 @@
         </e>
         <e p="Main" t="Include">
           <e p="DMUICanvas.cs" t="Include" />
-          <e p="HomeSceneBase.cs" t="Include" />
-          <e p="LaboSceneBase.cs" t="Include" />
           <e p="Scripts" t="Include">
             <e p="Common" t="Include">
               <e p="ButtonPart.cs" t="Include" />
+              <e p="UIObject" t="Include">
+                <e p="ButtonObject.cs" t="Include" />
+                <e p="CheckObject.cs" t="Include" />
+                <e p="DragObject.cs" t="Include" />
+                <e p="DropObject.cs" t="Include" />
+                <e p="MenuButtonObject.cs" t="Include" />
+                <e p="NoneGraphicRaycaster.cs" t="Include" />
+                <e p="SwitchObject.cs" t="Include" />
+                <e p="TabObject.cs" t="Include" />
+              </e>
             </e>
             <e p="Home" t="Include">
               <e p="Ball" t="Include">
                 <e p="BallCellView.cs" t="Include" />
-                <e p="BallItemButtonPart.cs" t="Include" />
-                <e p="BallItemCellView.cs" t="Include" />
-                <e p="BallItemPart.cs" t="Include" />
+                <e p="BallItem" t="Include">
+                  <e p="BallItemButtonPart.cs" t="Include" />
+                  <e p="BallItemCellView.cs" t="Include" />
+                  <e p="BallItemPart.cs" t="Include" />
+                </e>
                 <e p="BallPart.cs" t="Include" />
                 <e p="BallScroller" t="Include">
                   <e p="BallScrollerController.cs" t="Include" />
+                  <e p="BallScrollerPart.cs" t="Include" />
                   <e p="BallScrollerView.cs" t="Include" />
                 </e>
-                <e p="BallScrollerPart.cs" t="Include" />
               </e>
               <e p="Battle" t="Include">
                 <e p="BattleCellView.cs" t="Include" />
@@ -51,6 +61,7 @@
                 <e p="EventCellView.cs" t="Include" />
                 <e p="EventPart.cs" t="Include" />
               </e>
+              <e p="HomeSceneBase.cs" t="Include" />
               <e p="HomeSceneView.cs" t="Include" />
               <e p="HomeScroller" t="Include">
                 <e p="HomeScrollerController.cs" t="Include" />
@@ -76,6 +87,7 @@
                 <e p="ElementListCellView.cs" t="Include" />
                 <e p="ElementListPart.cs" t="Include" />
               </e>
+              <e p="LaboSceneBase.cs" t="Include" />
               <e p="LaboSceneView.cs" t="Include" />
               <e p="LaboScroller" t="Include">
                 <e p="LaboScrollerController.cs" t="Include" />
@@ -107,16 +119,6 @@
                 <e p="PreviewPart.cs" t="Include" />
               </e>
             </e>
-          </e>
-          <e p="UIObject" t="Include">
-            <e p="ButtonObject.cs" t="Include" />
-            <e p="CheckObject.cs" t="Include" />
-            <e p="DragObject.cs" t="Include" />
-            <e p="DropObject.cs" t="Include" />
-            <e p="MenuButtonObject.cs" t="Include" />
-            <e p="NoneGraphicRaycaster.cs" t="Include" />
-            <e p="SwitchObject.cs" t="Include" />
-            <e p="TabObject.cs" t="Include" />
           </e>
         </e>
         <e p="MessagePack" t="Include">

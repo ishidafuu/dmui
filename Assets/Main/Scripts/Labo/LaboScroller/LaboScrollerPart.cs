@@ -61,19 +61,19 @@ namespace DM
             UIPart part = null;
             switch (cellView.cellIdentifier)
             {
-                case "MixedList":
+                case "MixedListCellView":
                     part = new MixedListPart(cellView as MixedListCellView);
                     break;
-                case "MixedLine":
+                case "MixedLineCellView":
                     part = new MixedLinePart(cellView as MixedLineCellView);
                     break;
-                case "Preview":    
+                case "PreviewCellView":    
                     part = new PreviewPart(cellView as PreviewCellView);
                     break;
-                case "ElementLine":
+                case "ElementLineCellView":
                     part = new ElementLinePart(cellView as ElementLineCellView);
                     break;
-                case "ElementList":
+                case "ElementListCellView":
                     part = new ElementListPart(cellView as ElementListCellView);
                     break;
                 default:
