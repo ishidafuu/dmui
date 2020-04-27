@@ -18,7 +18,7 @@ namespace DM {
 
             List<UIPart> parts = new List<UIPart>
             {
-                // new HomeScrollerPart(m_LaboSceneView),
+                new LaboScrollerPart(m_LaboSceneView),
             };
             
             await UIController.Instance.YieldAttachParts(this, parts);
