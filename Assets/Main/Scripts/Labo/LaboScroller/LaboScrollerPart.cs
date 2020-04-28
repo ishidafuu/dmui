@@ -11,7 +11,6 @@ namespace DM
     {
         // 追加先のレイヤ
         private UIBase m_TargetLayer;
-        private readonly LaboScrollerController m_LaboScrollerController;
         private readonly LaboScrollerView m_LaboScrollerView;
 
         // public LaboScrollerPart() : base("HomeScroller") { }
@@ -19,7 +18,6 @@ namespace DM
             : base(laboSceneView.m_LaboScrollerView.transform)
         {
             m_LaboScrollerView = laboSceneView.m_LaboScrollerView;
-            m_LaboScrollerController = laboSceneView.m_LaboScrollerController;
         }
 
         public override async UniTask OnLoadedPart(UIBase targetLayer)
@@ -37,7 +35,7 @@ namespace DM
             await UIController.Instance.YieldAttachParts(targetLayer, parts);
 
             const int FIRST_INDEX = 2;
-            m_LaboScrollerView.m_EnhancedScroller.JumpToDataIndex(FIRST_INDEX);
+            m_LaboScrollerView.m_Scroller.JumpToDataIndex(FIRST_INDEX);
         }
 
         private void InitRootTransform()
@@ -51,7 +49,7 @@ namespace DM
 
         private void InitLaboScrollerController()
         {
-            m_LaboScrollerController.Init(CellViewInstantiated, ScrollerScrollingChanged,
+            m_LaboScrollerView.Init(CellViewInstantiated, ScrollerScrollingChanged,
                 ScrollerBeginDrag, ScrollerEndDrag);
         }
 
@@ -112,7 +110,7 @@ namespace DM
             for (int i = 0; i < PAGE_NUM ; i++)
             {
                 index = i;
-                float cellSize = m_LaboScrollerController.GetCellSize(i);
+                float cellSize = m_LaboScrollerView.GetCellSize(i);
                 if (scroller.ScrollPosition < pagePosition + (cellSize / 2))
                 {
                     isPrevShift = scroller.ScrollPosition - pagePosition < 0;
@@ -135,14 +133,14 @@ namespace DM
 
         private void JumpToDataIndex(int index)
         {
-            if (m_LaboScrollerView.m_EnhancedScroller.IsTweening)
+            if (m_LaboScrollerView.m_Scroller.IsTweening)
             {
                 return;
             }
 
-            m_LaboScrollerView.m_EnhancedScroller.JumpToDataIndex(index, 0, 0, true,
+            m_LaboScrollerView.m_Scroller.JumpToDataIndex(index, 0, 0, true,
                 EnhancedScroller.TweenType.easeOutQuart, 0.5f,
-                () => m_LaboScrollerView.m_EnhancedScroller.Velocity = Vector2.zero);
+                () => m_LaboScrollerView.m_Scroller.Velocity = Vector2.zero);
         }
     }
 }

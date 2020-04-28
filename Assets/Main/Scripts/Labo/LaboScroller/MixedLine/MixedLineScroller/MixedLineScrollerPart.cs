@@ -12,7 +12,6 @@ namespace DM
         // 追加先のレイヤ
         private UIBase m_TargetLayer;
         private readonly UIPart m_TargetPart;
-        private readonly MixedLineScrollerController m_MixedLineScrollerController;
         private readonly MixedLineScrollerView m_MixedLineScrollerView;
         private readonly LaboScrollerView m_LaboScrollerView;
 
@@ -30,7 +29,6 @@ namespace DM
         {
             m_TargetPart = targetPart;
             m_MixedLineScrollerView = mixedLineCellView.m_MixedLineScrollerView;
-            m_MixedLineScrollerController = mixedLineCellView.m_MixedLineScrollerController;
             m_LaboScrollerView = mixedLineCellView.m_LaboScrollerView;
         }
 
@@ -52,7 +50,7 @@ namespace DM
 
         private void InitMixedLineScrollerController()
         {
-            m_MixedLineScrollerController.Init(CellViewInstantiated, ScrollerDrag, ScrollerBeginDrag, ScrollerEndDrag);
+            m_MixedLineScrollerView.Init(CellViewInstantiated, ScrollerDrag, ScrollerBeginDrag, ScrollerEndDrag);
         }
 
         // 新規セルビュー追加時デリゲート
@@ -73,11 +71,11 @@ namespace DM
             switch (m_ScrollAngle)
             {
                 case ScrollAngle.X:
-                    m_LaboScrollerView.m_EnhancedScroller.OnDrag(data);
-                    m_LaboScrollerView.m_EnhancedScroller.ScrollRect.OnDrag(data);
+                    m_LaboScrollerView.m_Scroller.OnDrag(data);
+                    m_LaboScrollerView.m_Scroller.ScrollRect.OnDrag(data);
                     break;
                 case ScrollAngle.Y:
-                    m_MixedLineScrollerView.m_EnhancedScroller.ScrollRect.OnDrag(data);
+                    m_MixedLineScrollerView.m_Scroller.ScrollRect.OnDrag(data);
                     break;
             }
         }
@@ -89,15 +87,15 @@ namespace DM
                 if (Mathf.Abs(data.position.y - data.pressPosition.y) > 1)
                 {
                     m_ScrollAngle = ScrollAngle.Y;
-                    m_MixedLineScrollerView.m_EnhancedScroller.ScrollRect.enabled = true;
-                    m_MixedLineScrollerView.m_EnhancedScroller.ScrollRect.OnBeginDrag(data);
+                    m_MixedLineScrollerView.m_Scroller.ScrollRect.enabled = true;
+                    m_MixedLineScrollerView.m_Scroller.ScrollRect.OnBeginDrag(data);
                 }
                 else if (Mathf.Abs(data.position.x - data.pressPosition.x) > 1)
                 {
                     m_ScrollAngle = ScrollAngle.X;
-                    m_MixedLineScrollerView.m_EnhancedScroller.ScrollRect.enabled = false;
-                    m_LaboScrollerView.m_EnhancedScroller.OnBeginDrag(data);
-                    m_LaboScrollerView.m_EnhancedScroller.ScrollRect.OnBeginDrag(data);
+                    m_MixedLineScrollerView.m_Scroller.ScrollRect.enabled = false;
+                    m_LaboScrollerView.m_Scroller.OnBeginDrag(data);
+                    m_LaboScrollerView.m_Scroller.ScrollRect.OnBeginDrag(data);
                 }
             }
         }
@@ -107,11 +105,11 @@ namespace DM
             switch (m_ScrollAngle)
             {
                 case ScrollAngle.X:
-                    m_LaboScrollerView.m_EnhancedScroller.OnEndDrag(data);
-                    m_LaboScrollerView.m_EnhancedScroller.ScrollRect.OnEndDrag(data);
+                    m_LaboScrollerView.m_Scroller.OnEndDrag(data);
+                    m_LaboScrollerView.m_Scroller.ScrollRect.OnEndDrag(data);
                     break;
                 case ScrollAngle.Y:
-                    m_MixedLineScrollerView.m_EnhancedScroller.ScrollRect.OnEndDrag(data);
+                    m_MixedLineScrollerView.m_Scroller.ScrollRect.OnEndDrag(data);
                     break;
             }
 

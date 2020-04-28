@@ -45,12 +45,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4094411740583804172}
   - component: {fileID: 4094411740583804175}
-  - component: {fileID: 1643196580809116193}
   - component: {fileID: 1140982528343189885}
   - component: {fileID: 4094411740583804160}
   - component: {fileID: 4094411740583804174}
   - component: {fileID: 4094411740583804161}
-  - component: {fileID: 4094411740583804173}
   m_Layer: 5
   m_Name: HomeScroller
   m_TagString: Untagged
@@ -87,20 +85,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4094411740583804163}
   m_CullTransparentMesh: 0
---- !u!114 &1643196580809116193
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4094411740583804163}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e6d9ae46bd95674497673711ac0d33f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_EnhancedScroller: {fileID: 4094411740583804160}
-  m_TabView: {fileID: 3732845594952473824}
 --- !u!114 &1140982528343189885
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,6 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Scroller: {fileID: 4094411740583804160}
+  m_TabObject: {fileID: 3732845594952473824}
   m_CellViewPrefabs:
   - {fileID: 7476509133128213390, guid: ddec7b5b392808d45a60b7e71357c259, type: 3}
   - {fileID: 4735627574524816537, guid: 029c392baacf1de47a0bad950a99cdd3, type: 3}
@@ -198,6 +183,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0.392}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -211,19 +197,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &4094411740583804173
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4094411740583804163}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31a19414c41e5ae4aae2af33fee712f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ShowMaskGraphic: 1
 --- !u!1001 &6670240806343948710
 PrefabInstance:
   m_ObjectHideFlags: 0

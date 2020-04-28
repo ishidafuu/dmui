@@ -60,7 +60,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cellIdentifier: MixedLineCellView
-  m_MixedLineScrollerView: {fileID: 1459193423439344514}
+  m_MixedLineScrollerView: {fileID: 0}
   m_MixedLineScrollerController: {fileID: 575879286778536049}
   m_LaboButtonObject: {fileID: 0}
   m_LaboScrollerView: {fileID: 0}
@@ -257,7 +257,8 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5990807528611304706, guid: 06e799491496e5541b69d7a4223a5013, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 06e799491496e5541b69d7a4223a5013, type: 3}
 --- !u!224 &9201349729139776396 stripped
 RectTransform:
@@ -265,18 +266,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 5144103749860255360}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1459193423439344514 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5990807528611304706, guid: 06e799491496e5541b69d7a4223a5013,
-    type: 3}
-  m_PrefabInstance: {fileID: 5144103749860255360}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e6f1cdb890ae3e43b18657eb9c9cec0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &575879286778536049 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4656273629172745969, guid: 06e799491496e5541b69d7a4223a5013,

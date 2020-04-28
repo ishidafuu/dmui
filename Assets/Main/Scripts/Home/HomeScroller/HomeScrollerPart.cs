@@ -11,7 +11,6 @@ namespace DM
     {
         // 追加先のレイヤ
         private UIBase m_TargetLayer;
-        private readonly HomeScrollerController m_HomeScrollerController;
         private readonly HomeScrollerView m_HomeScrollerView;
 
         // public HomeScrollerPart() : base("HomeScroller") { }
@@ -19,7 +18,6 @@ namespace DM
             : base(homeSceneView.m_HomeScrollerView.transform)
         {
             m_HomeScrollerView = homeSceneView.m_HomeScrollerView;
-            m_HomeScrollerController = homeSceneView.m_HomeScrollerController;
         }
 
         public override async UniTask OnLoadedPart(UIBase targetLayer)
@@ -37,7 +35,7 @@ namespace DM
             await UIController.Instance.YieldAttachParts(targetLayer, parts);
 
             const int FIRST_INDEX = 2;
-            m_HomeScrollerView.m_EnhancedScroller.JumpToDataIndex(FIRST_INDEX);
+            m_HomeScrollerView.m_Scroller.JumpToDataIndex(FIRST_INDEX);
         }
 
         private void InitRootTransform()
@@ -51,7 +49,7 @@ namespace DM
 
         private void InitHomeScrollerController()
         {
-            m_HomeScrollerController.Init(CellViewInstantiated, ScrollerScrollingChanged,
+            m_HomeScrollerView.Init(CellViewInstantiated, ScrollerScrollingChanged,
                 ScrollerBeginDrag, ScrollerEndDrag);
         }
 
@@ -104,9 +102,9 @@ namespace DM
             // TweenはEaseInQuad
 
             const float BORDER = 0.01f;
-            int index = (int)(scroller.ScrollPosition / m_HomeScrollerController.CellSize + 0.5f);
-            bool isPrevShift = (int)scroller.ScrollPosition % (int)m_HomeScrollerController.CellSize
-                               > m_HomeScrollerController.CellSize / 2;
+            int index = (int)(scroller.ScrollPosition / m_HomeScrollerView.CellSize + 0.5f);
+            bool isPrevShift = (int)scroller.ScrollPosition % (int)m_HomeScrollerView.CellSize
+                               > m_HomeScrollerView.CellSize / 2;
 
             if (data.delta.x < -BORDER && !isPrevShift)
             {
@@ -122,14 +120,14 @@ namespace DM
 
         private void JumpToDataIndex(int index)
         {
-            if (m_HomeScrollerView.m_EnhancedScroller.IsTweening)
+            if (m_HomeScrollerView.m_Scroller.IsTweening)
             {
                 return;
             }
 
-            m_HomeScrollerView.m_EnhancedScroller.JumpToDataIndex(index, 0, 0, true,
+            m_HomeScrollerView.m_Scroller.JumpToDataIndex(index, 0, 0, true,
                 EnhancedScroller.TweenType.easeOutQuart, 0.5f,
-                () => m_HomeScrollerView.m_EnhancedScroller.Velocity = Vector2.zero);
+                () => m_HomeScrollerView.m_Scroller.Velocity = Vector2.zero);
         }
     }
 }

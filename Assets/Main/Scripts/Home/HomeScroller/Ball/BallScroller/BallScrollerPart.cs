@@ -72,8 +72,8 @@ namespace DM
             switch (m_ScrollAngle)
             {
                 case ScrollAngle.X:
-                    m_HomeScrollerView.m_EnhancedScroller.OnDrag(data);
-                    m_HomeScrollerView.m_EnhancedScroller.ScrollRect.OnDrag(data);
+                    m_HomeScrollerView.m_Scroller.OnDrag(data);
+                    m_HomeScrollerView.m_Scroller.ScrollRect.OnDrag(data);
                     break;
                 case ScrollAngle.Y:
                     m_BallScrollerView.m_EnhancedScroller.ScrollRect.OnDrag(data);
@@ -95,8 +95,8 @@ namespace DM
                 {
                     m_ScrollAngle = ScrollAngle.X;
                     m_BallScrollerView.m_EnhancedScroller.ScrollRect.enabled = false;
-                    m_HomeScrollerView.m_EnhancedScroller.OnBeginDrag(data);
-                    m_HomeScrollerView.m_EnhancedScroller.ScrollRect.OnBeginDrag(data);
+                    m_HomeScrollerView.m_Scroller.OnBeginDrag(data);
+                    m_HomeScrollerView.m_Scroller.ScrollRect.OnBeginDrag(data);
                 }
             }
             
@@ -107,8 +107,8 @@ namespace DM
             switch (m_ScrollAngle)
             {
                 case ScrollAngle.X:
-                    m_HomeScrollerView.m_EnhancedScroller.OnEndDrag(data);
-                    m_HomeScrollerView.m_EnhancedScroller.ScrollRect.OnEndDrag(data);
+                    m_HomeScrollerView.m_Scroller.OnEndDrag(data);
+                    m_HomeScrollerView.m_Scroller.ScrollRect.OnEndDrag(data);
                     break;
                 case ScrollAngle.Y:
                     m_BallScrollerView.m_EnhancedScroller.ScrollRect.OnEndDrag(data);

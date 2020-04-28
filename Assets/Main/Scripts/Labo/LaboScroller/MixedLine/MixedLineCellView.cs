@@ -8,8 +8,7 @@ namespace DM
 {
     public class MixedLineCellView : EnhancedScrollerCellView
     {
-        [SerializeField] public MixedLineScrollerView m_MixedLineScrollerView;
-        [SerializeField] public MixedLineScrollerController m_MixedLineScrollerController;
+        [FormerlySerializedAs("m_MixedLineScrollerController")] [SerializeField] public MixedLineScrollerView m_MixedLineScrollerView;
         [SerializeField] public ButtonObject m_LaboButtonObject;
         [HideInInspector] public LaboScrollerView m_LaboScrollerView;
        

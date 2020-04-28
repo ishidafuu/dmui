@@ -64,7 +64,6 @@
                   <e p="EventCellView.cs" t="Include" />
                   <e p="EventPart.cs" t="Include" />
                 </e>
-                <e p="HomeScrollerController.cs" t="Include" />
                 <e p="HomeScrollerPart.cs" t="Include" />
                 <e p="HomeScrollerView.cs" t="Include" />
                 <e p="Shop" t="Include">
@@ -90,7 +89,6 @@
                   <e p="ElementListCellView.cs" t="Include" />
                   <e p="ElementListPart.cs" t="Include" />
                 </e>
-                <e p="LaboScrollerController.cs" t="Include" />
                 <e p="LaboScrollerPart.cs" t="Include" />
                 <e p="LaboScrollerView.cs" t="Include" />
                 <e p="MixedLine" t="Include">
@@ -102,7 +100,6 @@
                       <e p="MixedLineItemCellView.cs" t="Include" />
                       <e p="MixedLineItemPart.cs" t="Include" />
                     </e>
-                    <e p="MixedLineScrollerController.cs" t="Include" />
                     <e p="MixedLineScrollerPart.cs" t="Include" />
                     <e p="MixedLineScrollerView.cs" t="Include" />
                   </e>

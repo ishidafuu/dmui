@@ -1,15 +1,15 @@
-﻿using System.Collections;
-using DM;
+﻿using DM;
 using UniRx.Async;
 using UnityEngine;
 
-namespace DMUIFramework.Samples {
+namespace DMUIFramework.Samples
+{
     public class PrefabLoader : IPrefabLoader
     {
         public async UniTask Load(string path, PrefabReceiver receiver)
         {
             ResourceRequest req = Resources.LoadAsync(path);
-            
+
             await req;
 
             receiver.m_Prefab = req.asset;
@@ -50,7 +50,7 @@ namespace DMUIFramework.Samples {
             return new UIFade("Fade");
         }
     }
-    
+
     public class LoadingCreator : ILoadingCreator
     {
         public UILoading Create()
@@ -58,7 +58,7 @@ namespace DMUIFramework.Samples {
             return new UILoading("Loading");
         }
     }
-    
+
     public class ToastCreator : IToastCreator
     {
         public UIToast Create(string message)
