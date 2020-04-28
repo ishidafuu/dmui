@@ -9,9 +9,9 @@ namespace DM
     public class MixedLineCellView : EnhancedScrollerCellView
     {
         [SerializeField] public MixedLineScrollerView m_MixedLineScrollerView;
-        [SerializeField] public BallScrollerController m_MixedLineScrollerController;
+        [SerializeField] public MixedLineScrollerController m_MixedLineScrollerController;
         [SerializeField] public ButtonObject m_LaboButtonObject;
-        [HideInInspector] public HomeScrollerView m_HomeScrollerView;
+        [HideInInspector] public LaboScrollerView m_LaboScrollerView;
        
         public void SetData(Data data)
         {

@@ -20,7 +20,7 @@ namespace DM
         {
             List<UIPart> parts = new List<UIPart>
             {
-                // new BallScrollerPart(this, m_MixedLineCellView),
+                new MixedLineScrollerPart(this, m_MixedLineCellView),
                 // new ButtonPart(m_MixedLineCellView.m_LaboButtonView, ClickLaboButton)
             };
 

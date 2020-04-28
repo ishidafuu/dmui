@@ -5,11 +5,15 @@ using UnityEngine;
 
 namespace DM
 {
-    class BallItemPart : UIPart
+    class MixedLineItemPart : UIPart
     {
         private UIBase m_TargetLayer;
 
-        public BallItemPart() : base("BallItem") { }
+        public MixedLineItemPart(EnhancedScrollerCellView cellView)
+            : base(cellView.transform)
+        {
+            
+        }
 
         public override async UniTask OnLoadedPart(UIBase targetLayer)
         {
