@@ -15,11 +15,13 @@ namespace DM
         public EnhancedScrollerCellView m_CellViewPrefab;
         public float m_CellSize;
 
-        public void Init(OnDragDelegate scrollerDrag,
+        public void Init(CellViewInstantiated cellViewInstantiated,
+            OnDragDelegate scrollerDrag,
             OnBeginDragDelegate scrollerBeginDrag,
             OnEndDragDelegate scrollerEndDrag)
         {
             m_Scroller.Delegate = this;
+            m_Scroller.cellViewInstantiated = cellViewInstantiated;
             m_Scroller.scrollerDrag = scrollerDrag;
             m_Scroller.scrollerBeginDrag = scrollerBeginDrag;
             m_Scroller.scrollerEndDrag = scrollerEndDrag;

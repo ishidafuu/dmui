@@ -52,9 +52,22 @@ namespace DM
 
         private void InitMixedLineScrollerController()
         {
-            m_MixedLineScrollerController.Init(ScrollerDrag, ScrollerBeginDrag, ScrollerEndDrag);
+            m_MixedLineScrollerController.Init(CellViewInstantiated, ScrollerDrag, ScrollerBeginDrag, ScrollerEndDrag);
         }
 
+        // 新規セルビュー追加時デリゲート
+        private void CellViewInstantiated(EnhancedScroller scroller, EnhancedScrollerCellView cellView)
+        {
+            List<UIPart> parts = new List<UIPart>
+            {
+                new MixedLineItemPart(cellView)
+            };
+
+            // 即時追加
+            UIController.Instance.AttachParts(m_TargetLayer, parts);
+        }
+
+        
         private void ScrollerDrag(EnhancedScroller scroller, PointerEventData data)
         {
             switch (m_ScrollAngle)
