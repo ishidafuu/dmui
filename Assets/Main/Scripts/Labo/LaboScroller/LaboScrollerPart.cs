@@ -104,10 +104,23 @@ namespace DM
             // TweenはEaseInQuad
 
             const float BORDER = 0.01f;
-            int index = (int)(scroller.ScrollPosition / m_LaboScrollerController.CellSize + 0.5f);
-            bool isPrevShift = (int)scroller.ScrollPosition % (int)m_LaboScrollerController.CellSize
-                               > m_LaboScrollerController.CellSize / 2;
+            const int PAGE_NUM = 5;
 
+            int index = 0;
+            float pagePosition = 0;
+            bool isPrevShift = false;
+            for (int i = 0; i < PAGE_NUM ; i++)
+            {
+                index = i;
+                float cellSize = m_LaboScrollerController.GetCellSize(i);
+                if (scroller.ScrollPosition < pagePosition + (cellSize / 2))
+                {
+                    isPrevShift = scroller.ScrollPosition - pagePosition < 0;
+                    break;    
+                }
+                pagePosition += cellSize;
+            }
+            
             if (data.delta.x < -BORDER && !isPrevShift)
             {
                 index += 1;

@@ -18,7 +18,15 @@ namespace DM
         // ヒエラルキー上ではなく、Resourceフォルダ内のPrefabを指定
         public EnhancedScrollerCellView[] m_CellViewPrefabs;
 
-        public float CellSize { get; private set; }
+        private float m_CellSize;
+
+        public float GetCellSize(int index)
+        {
+            // スクロールライン表示
+            return (index == 1 || index == 2)
+                ? m_CellSize / 4
+                : m_CellSize;
+        }
 
         public void Init(CellViewInstantiated cellViewInstantiated,
             ScrollerScrollingChangedDelegate scrollerScrollingChanged,
@@ -31,7 +39,7 @@ namespace DM
             m_Scroller.scrollerBeginDrag = scrollerBeginDrag;
             m_Scroller.scrollerEndDrag = scrollerEndDrag;
             
-            CellSize = UIController.Instance.m_CanvasScaler.referenceResolution.x;
+            m_CellSize = UIController.Instance.m_CanvasScaler.referenceResolution.x;
             LoadData();
             m_Scroller.ReloadData();
         }
@@ -51,7 +59,7 @@ namespace DM
 
         public float GetCellViewSize(EnhancedScroller scroller, int dataIndex)
         {
-            return CellSize;
+            return GetCellSize(dataIndex);
         }
 
         public EnhancedScrollerCellView GetCellView(EnhancedScroller scroller, int dataIndex, int cellIndex)
