@@ -51,7 +51,6 @@
                       <e p="BallItemCellView.cs" t="Include" />
                       <e p="BallItemPart.cs" t="Include" />
                     </e>
-                    <e p="BallScrollerController.cs" t="Include" />
                     <e p="BallScrollerPart.cs" t="Include" />
                     <e p="BallScrollerView.cs" t="Include" />
                   </e>

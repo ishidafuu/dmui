@@ -303,8 +303,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cellIdentifier: BallCellView
-  m_BallScrollerView: {fileID: 3654020553147988898}
-  m_BallScrollerController: {fileID: 1710450068603811378}
+  m_MixedLineScrollerView: {fileID: 1710450068603811378}
   m_LaboButtonObject: {fileID: 8762127307610841935}
   m_HomeScrollerView: {fileID: 0}
 --- !u!1 &1841863022042298555
@@ -768,18 +767,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 2611078621453275463}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &3654020553147988898 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1624069354944096997, guid: 2993035afceed5249aee65bd0c6b312e,
-    type: 3}
-  m_PrefabInstance: {fileID: 2611078621453275463}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 749937245d0d2604ba159bb3b9ef3c7a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1710450068603811378 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3711202945257891701, guid: 2993035afceed5249aee65bd0c6b312e,

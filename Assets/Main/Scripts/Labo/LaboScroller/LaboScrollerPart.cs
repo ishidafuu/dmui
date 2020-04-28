@@ -63,7 +63,7 @@ namespace DM
                     part = new MixedListPart(cellView as MixedListCellView);
                     break;
                 case "MixedLineCellView":
-                    part = new MixedLinePart(cellView as MixedLineCellView);
+                    part = new MixedLinePart(cellView as MixedLineCellView, m_LaboScrollerView);
                     break;
                 case "PreviewCellView":    
                     part = new PreviewPart(cellView as PreviewCellView);

@@ -18,8 +18,8 @@ namespace DM
         public override async UniTask OnLoadedPart(UIBase targetLayer)
         {
             m_TargetLayer = targetLayer;
-            BallScrollerController mixedLineScrollerController =
-                targetLayer.RootTransform.GetComponent<BallScrollerController>();
+            BallScrollerView mixedLineScrollerView =
+                targetLayer.RootTransform.GetComponent<BallScrollerView>();
             // laboScrollerController.m_Scroller = RootTransform.GetComponent<EnhancedScroller>();
             // laboScrollerController.Init();
             // laboScrollerController.m_Scroller.ReloadData();

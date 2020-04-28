@@ -9,11 +9,11 @@ namespace DM
     {
         private readonly MixedLineCellView m_MixedLineCellView;
 
-        public MixedLinePart(MixedLineCellView mixedLineCellView)
+        public MixedLinePart(MixedLineCellView mixedLineCellView, LaboScrollerView laboScrollerView)
             : base(mixedLineCellView.transform)
         {
             m_MixedLineCellView = mixedLineCellView;
-            // m_MixedLineCellView.m_HomeScrollerView = homeScrollerView;
+            m_MixedLineCellView.m_LaboScrollerView = laboScrollerView;
         }
 
         public override async UniTask OnLoadedPart(UIBase targetLayer)

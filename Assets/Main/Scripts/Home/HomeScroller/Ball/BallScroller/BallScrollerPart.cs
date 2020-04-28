@@ -12,7 +12,6 @@ namespace DM
         // 追加先のレイヤ
         private UIBase m_TargetLayer;
         private readonly UIPart m_TargetPart;
-        private readonly BallScrollerController m_MixedLineScrollerController;
         private readonly BallScrollerView m_BallScrollerView;
         private readonly HomeScrollerView m_HomeScrollerView;
 
@@ -26,11 +25,10 @@ namespace DM
         private ScrollAngle m_ScrollAngle = ScrollAngle.None;
         
         public BallScrollerPart(UIPart targetPart,BallCellView ballCellView)
-            : base(ballCellView.m_BallScrollerView.transform)
+            : base(ballCellView.m_MixedLineScrollerView.transform)
         {
             m_TargetPart = targetPart;
-            m_BallScrollerView = ballCellView.m_BallScrollerView;
-            m_MixedLineScrollerController = ballCellView.m_MixedLineScrollerController;
+            m_BallScrollerView = ballCellView.m_MixedLineScrollerView;
             m_HomeScrollerView = ballCellView.m_HomeScrollerView;
         }
 
@@ -52,7 +50,7 @@ namespace DM
 
         private void InitBallScrollerController()
         {
-            m_MixedLineScrollerController.Init(CellViewInstantiated, ScrollerDrag, ScrollerBeginDrag, ScrollerEndDrag);
+            m_BallScrollerView.Init(CellViewInstantiated, ScrollerDrag, ScrollerBeginDrag, ScrollerEndDrag);
         }
         
         // 新規セルビュー追加時デリゲート
@@ -76,7 +74,7 @@ namespace DM
                     m_HomeScrollerView.m_Scroller.ScrollRect.OnDrag(data);
                     break;
                 case ScrollAngle.Y:
-                    m_BallScrollerView.m_EnhancedScroller.ScrollRect.OnDrag(data);
+                    m_BallScrollerView.m_Scroller.ScrollRect.OnDrag(data);
                     break;
             }
         }
@@ -88,13 +86,13 @@ namespace DM
                 if (Mathf.Abs(data.position.y - data.pressPosition.y) > 1)
                 {
                     m_ScrollAngle = ScrollAngle.Y;
-                    m_BallScrollerView.m_EnhancedScroller.ScrollRect.enabled = true;
-                    m_BallScrollerView.m_EnhancedScroller.ScrollRect.OnBeginDrag(data);
+                    m_BallScrollerView.m_Scroller.ScrollRect.enabled = true;
+                    m_BallScrollerView.m_Scroller.ScrollRect.OnBeginDrag(data);
                 }
                 else if (Mathf.Abs(data.position.x - data.pressPosition.x) > 1)
                 {
                     m_ScrollAngle = ScrollAngle.X;
-                    m_BallScrollerView.m_EnhancedScroller.ScrollRect.enabled = false;
+                    m_BallScrollerView.m_Scroller.ScrollRect.enabled = false;
                     m_HomeScrollerView.m_Scroller.OnBeginDrag(data);
                     m_HomeScrollerView.m_Scroller.ScrollRect.OnBeginDrag(data);
                 }
@@ -111,7 +109,7 @@ namespace DM
                     m_HomeScrollerView.m_Scroller.ScrollRect.OnEndDrag(data);
                     break;
                 case ScrollAngle.Y:
-                    m_BallScrollerView.m_EnhancedScroller.ScrollRect.OnEndDrag(data);
+                    m_BallScrollerView.m_Scroller.ScrollRect.OnEndDrag(data);
                     break;
             }
 

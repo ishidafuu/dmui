@@ -8,8 +8,7 @@ namespace DM
 {
     public class BallCellView : EnhancedScrollerCellView
     {
-        [SerializeField] public BallScrollerView m_BallScrollerView;
-        [SerializeField] public BallScrollerController m_MixedLineScrollerController;
+        [FormerlySerializedAs("m_MixedLineScrollerController")] [SerializeField] public BallScrollerView m_MixedLineScrollerView;
         [SerializeField] public ButtonObject m_LaboButtonObject;
         [HideInInspector] public HomeScrollerView m_HomeScrollerView;
        

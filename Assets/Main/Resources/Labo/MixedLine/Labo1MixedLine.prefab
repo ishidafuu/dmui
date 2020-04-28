@@ -60,8 +60,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cellIdentifier: MixedLineCellView
-  m_MixedLineScrollerView: {fileID: 0}
-  m_MixedLineScrollerController: {fileID: 575879286778536049}
+  m_MixedLineScrollerView: {fileID: 575879286778536049}
   m_LaboButtonObject: {fileID: 0}
   m_LaboScrollerView: {fileID: 0}
 --- !u!114 &249139913027618654

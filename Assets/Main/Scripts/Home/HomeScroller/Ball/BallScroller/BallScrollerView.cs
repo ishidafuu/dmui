@@ -1,25 +1,56 @@
-﻿using System;
-using System.Linq;
+﻿using System.Collections.Generic;
+using EnhancedScrollerDemos.CellEvents;
 using EnhancedUI.EnhancedScroller;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 namespace DM
 {
-    public class BallScrollerView : MonoBehaviour
+    public class BallScrollerView : MonoBehaviour, IEnhancedScrollerDelegate
     {
-        [SerializeField] public EnhancedScroller m_EnhancedScroller;
-        // [SerializeField] private IDragHandler[] m_ParentDragHandlers;
-        // [SerializeField] private IBeginDragHandler[] m_ParentBeginDragHandlers;
-        // [SerializeField] private IEndDragHandler[] m_ParentEndDragHandlers;
+        private List<Data> m_Data;
 
-        private bool isSelf = false;
-        void Start () 
+        public EnhancedScroller m_Scroller;
+
+        // ヒエラルキー上ではなく、Resourceフォルダ内のPrefabを指定
+        public EnhancedScrollerCellView m_CellViewPrefab;
+        public float m_CellSize;
+
+        public void Init(CellViewInstantiated cellViewInstantiated,
+            OnDragDelegate scrollerDrag,
+            OnBeginDragDelegate scrollerBeginDrag,
+            OnEndDragDelegate scrollerEndDrag)
         {
-            // m_EnhancedScroller = GetComponentInParent<EnhancedScroller>();
-            // m_ParentDragHandlers = GetComponentsInParent<IDragHandler>().ToArray();
-            // m_ParentBeginDragHandlers = GetComponentsInParent<IBeginDragHandler>().ToArray();
-            // m_ParentEndDragHandlers = GetComponentsInParent<IEndDragHandler>().ToArray();
+            m_Scroller.Delegate = this;
+            m_Scroller.cellViewInstantiated = cellViewInstantiated;
+            m_Scroller.scrollerDrag = scrollerDrag;
+            m_Scroller.scrollerBeginDrag = scrollerBeginDrag;
+            m_Scroller.scrollerEndDrag = scrollerEndDrag;
+            LoadData();
+        }
+
+        private void LoadData()
+        {
+            m_Data = new List<Data>();
+
+            for (var i = 0; i < 24; i++)
+                m_Data.Add(new Data() {hour = i});
+        }
+
+        public int GetNumberOfCells(EnhancedScroller scroller)
+        {
+            return m_Data.Count;
+        }
+
+        public float GetCellViewSize(EnhancedScroller scroller, int dataIndex)
+        {
+            return m_CellSize;
+        }
+
+        public EnhancedScrollerCellView GetCellView(EnhancedScroller scroller, int dataIndex, int cellIndex)
+        {
+            BallItemCellView ballItemCellView = scroller.GetCellView(m_CellViewPrefab) as BallItemCellView;
+            ballItemCellView.SetData(m_Data[dataIndex]);
+            return ballItemCellView;
         }
     }
 }
