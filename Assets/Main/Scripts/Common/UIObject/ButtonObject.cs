@@ -54,7 +54,7 @@ public class ButtonObject : MonoBehaviour
 
     public void PointerUp(PointerEventData eventData)
     {
-        Debug.Log("OnPointerUp");
+        // Debug.Log("OnPointerUp");
         if (!m_Button.IsInteractable())
         {
             return;
@@ -93,7 +93,7 @@ public class ButtonObject : MonoBehaviour
             return;
         }
 
-        Debug.Log("OnPointerDown");
+        // Debug.Log("OnPointerDown");
         // transform
         //     .DOScale(endValue: new Vector3(2.0f, 1f, 1), duration: 0.5f)
         //     .SetEase(Ease.OutQuart);

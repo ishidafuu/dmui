@@ -95,7 +95,6 @@
                   <e p="MixedLinePart.cs" t="Include" />
                   <e p="MixedLineScroller" t="Include">
                     <e p="MixedLineItem" t="Include">
-                      <e p="MixedLineItemButtonPart.cs" t="Include" />
                       <e p="MixedLineItemCellView.cs" t="Include" />
                       <e p="MixedLineItemPart.cs" t="Include" />
                     </e>
@@ -114,7 +113,9 @@
                 </e>
               </e>
               <e p="MixedBallTab" t="Include">
-                <e p="MixedBallObject.cs" t="Include" />
+                <e p="MixedBallItem" t="Include">
+                  <e p="MixedBallItemObject.cs" t="Include" />
+                </e>
                 <e p="MixedBallTabObject.cs" t="Include" />
               </e>
             </e>

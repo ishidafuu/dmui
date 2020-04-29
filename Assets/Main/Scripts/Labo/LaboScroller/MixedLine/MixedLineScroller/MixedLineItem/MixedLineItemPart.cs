@@ -28,9 +28,11 @@ namespace DM
             await UIController.Instance.YieldAttachParts(targetLayer, parts);
         }
 
-        private static void ClickButton()
+        private void ClickButton()
         {
-            Debug.Log("OnClick MixedLineItemPart");
+            
+            
+            Debug.Log($"OnClick MixedLineItemPart {m_MixedLineItemCellView.GetHour()}");
         }
     }
 }

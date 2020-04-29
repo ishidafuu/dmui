@@ -310,7 +310,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: MixedLineItem
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5562270693499595502, guid: 4297f0854522cac49a3f64872f792fa7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4297f0854522cac49a3f64872f792fa7, type: 3}
 --- !u!224 &1849185683395103821 stripped
 RectTransform:

@@ -61,7 +61,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cellIdentifier: MixedLineCellView
   m_MixedLineScrollerView: {fileID: 575879286778536049}
-  m_LaboButtonObject: {fileID: 0}
   m_LaboScrollerView: {fileID: 0}
 --- !u!114 &249139913027618654
 MonoBehaviour:
@@ -256,8 +255,7 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 5990807528611304706, guid: 06e799491496e5541b69d7a4223a5013, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 06e799491496e5541b69d7a4223a5013, type: 3}
 --- !u!224 &9201349729139776396 stripped
 RectTransform:

@@ -18,5 +18,10 @@ namespace DM
             _data = data;
             // someTextText.text = (_data.hour == 0 ? "Midnight" : string.Format("{0} 'o clock", _data.hour.ToString()));
         }
+
+        public int GetHour()
+        {
+            return _data.hour;
+        }
     }
 }

@@ -2,7 +2,7 @@
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class MixedBallObject : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerExitHandler
+public class MixedBallItemObject : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerExitHandler
 {
     public Image iconImage;
     private Sprite nowSprite;
