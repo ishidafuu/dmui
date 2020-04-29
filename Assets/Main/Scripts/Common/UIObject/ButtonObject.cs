@@ -111,7 +111,7 @@ public class ButtonObject : MonoBehaviour
         
         // 座標変換
         RectTransformUtility.ScreenPointToLocalPointInRectangle(m_EffectRectParent,
-            eventData.pressPosition, UIController.Instance.m_Camera, out Vector2 effectLocalPosition);
+            eventData.position, UIController.Instance.m_Camera, out Vector2 effectLocalPosition);
         m_EffectRect.localPosition = effectLocalPosition;
         m_EffectRect.localScale = Vector3.one;
         var endValue = new Vector3(12, 12, 1);

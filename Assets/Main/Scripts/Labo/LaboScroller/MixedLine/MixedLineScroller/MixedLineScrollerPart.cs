@@ -58,14 +58,13 @@ namespace DM
         {
             List<UIPart> parts = new List<UIPart>
             {
-                new MixedLineItemPart(cellView)
+                new MixedLineItemPart(cellView as MixedLineItemCellView)
             };
 
             // 即時追加
             UIController.Instance.AttachParts(m_TargetLayer, parts);
         }
 
-        
         private void ScrollerDrag(EnhancedScroller scroller, PointerEventData data)
         {
             switch (m_ScrollAngle)

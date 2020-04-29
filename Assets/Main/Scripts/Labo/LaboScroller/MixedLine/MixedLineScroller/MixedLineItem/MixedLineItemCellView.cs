@@ -11,10 +11,7 @@ namespace DM
         private Data _data;
 
         public Text someTextText;
-
-        public GameObject textButton;
-        public GameObject fixedIntegerButton;
-        public GameObject dataIntegerButton;
+        public ButtonObject m_MixedBallButton;
         
         public void SetData(Data data)
         {

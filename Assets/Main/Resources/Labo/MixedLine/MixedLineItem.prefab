@@ -61,10 +61,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cellIdentifier: MixedLineItemCellView
-  someTextText: {fileID: 0}
-  textButton: {fileID: 0}
-  fixedIntegerButton: {fileID: 0}
-  dataIntegerButton: {fileID: 0}
+  someTextText: {fileID: 1841863022036786783}
+  m_MixedBallButton: {fileID: 4454096099003591776}
 --- !u!114 &1841863022036799341
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -172,6 +170,18 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Something 'o clock
+--- !u!114 &5562270693499595502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4454096099003592095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33ee88df1ea9545aba370046e5d694b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2243591053517867094
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -291,9 +301,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00512767898255648b1b0026a8ce47c2, type: 3}
+--- !u!1 &4454096099003592095 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2518346586650748361, guid: 00512767898255648b1b0026a8ce47c2,
+    type: 3}
+  m_PrefabInstance: {fileID: 2243591053517867094}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &4454096099003592094 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2518346586650748360, guid: 00512767898255648b1b0026a8ce47c2,
     type: 3}
   m_PrefabInstance: {fileID: 2243591053517867094}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4454096099003591776 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2518346586650747958, guid: 00512767898255648b1b0026a8ce47c2,
+    type: 3}
+  m_PrefabInstance: {fileID: 2243591053517867094}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4454096099003592095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10c119ee70d099344be0bebd707f522c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

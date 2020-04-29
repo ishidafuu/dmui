@@ -58,7 +58,7 @@ namespace DM
         {
             List<UIPart> parts = new List<UIPart>
             {
-                new BallItemPart(cellView)
+                new BallItemPart(cellView as BallItemCellView)
             };
 
             // 即時追加
