@@ -98,6 +98,11 @@ namespace DM
         {
             return m_List.Find(layer => (layer.Base == uiBase));
         }
+        
+        public UIBaseLayer Find(Type type)
+        {
+            return m_List.Find(layer => (layer.Base.GetType() == type));
+        }
 
         public IEnumerable<UIBaseLayer> FindLayers(EnumUIGroup enumUIGroup)
         {

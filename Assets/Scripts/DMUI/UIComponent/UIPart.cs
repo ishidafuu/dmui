@@ -57,14 +57,12 @@ namespace DM
                 return false;
             }
 
-            if (callback == null)
+            if (callback != null)
             {
-                return true;
+                m_PlayCount = count;
+                m_StopCallback = callback;
             }
-
-            m_PlayCount = count;
-            m_StopCallback = callback;
-
+            
             return true;
         }
 

@@ -3,37 +3,32 @@ using EnhancedUI.EnhancedScroller;
 using UniRx.Async;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.UI;
 
 namespace DM
 {
-    public class HomeScrollerPart : UIPart
+    public class HomeScrollerBase : UIBase
     {
-        // 追加先のレイヤ
-        private UIBase m_TargetLayer;
-        private readonly HomeScrollerView m_HomeScrollerView;
+        public HomeScrollerView m_HomeScrollerView;
 
-        // public HomeScrollerPart() : base("HomeScroller") { }
-        public HomeScrollerPart(HomeSceneView homeSceneView)
-            : base(homeSceneView.m_HomeScrollerView.transform)
+        public HomeScrollerBase() : base("Home/HomeScrollerBase", EnumUIGroup.Scene)
         {
-            m_HomeScrollerView = homeSceneView.m_HomeScrollerView;
+            IsScheduleUpdate = true;
         }
 
-        public override async UniTask OnLoadedPart(UIBase targetLayer)
+        public override async UniTask OnLoadedBase()
         {
-            m_TargetLayer = targetLayer;
+            m_HomeScrollerView = RootTransform.GetComponent<HomeScrollerView>();
             InitRootTransform();
             InitHomeScrollerController();
-
+            
             List<UIPart> parts = new List<UIPart>
             {
-                new HomeTabPart(m_HomeScrollerView.m_TabObject, JumpToDataIndex)
+                // new HomeTabPart(m_HomeScrollerView.m_TabObject, JumpToDataIndex)
             };
-
+            
             // 追加待ち
-            await UIController.Instance.YieldAttachParts(targetLayer, parts);
-
+            await UIController.Instance.YieldAttachParts(this, parts);
+            
             const int FIRST_INDEX = 2;
             m_HomeScrollerView.m_Scroller.JumpToDataIndex(FIRST_INDEX);
         }
@@ -41,10 +36,10 @@ namespace DM
         private void InitRootTransform()
         {
             // UIPartの追加先を決定する
-            Transform layer = m_TargetLayer.RootTransform.Find("Layer");
-            RootTransform.SetParent(layer);
-            RootTransform.localPosition = new Vector3(0, 0, 0);
-            RootTransform.localScale = Vector3.one;
+            // Transform layer = m_TargetLayer.RootTransform.Find("Layer");
+            // RootTransform.SetParent(layer);
+            // RootTransform.localPosition = new Vector3(0, 0, 0);
+            // RootTransform.localScale = Vector3.one;
         }
 
         private void InitHomeScrollerController()
@@ -85,7 +80,7 @@ namespace DM
             };
 
             // 即時追加
-            UIController.Instance.AttachParts(m_TargetLayer, parts);
+            UIController.Instance.AttachParts(this, parts);
         }
 
 
@@ -118,7 +113,7 @@ namespace DM
             JumpToDataIndex(index);
         }
 
-        private void JumpToDataIndex(int index)
+        public void JumpToDataIndex(int index)
         {
             if (m_HomeScrollerView.m_Scroller.IsTweening)
             {

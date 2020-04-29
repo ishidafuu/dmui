@@ -39,8 +39,6 @@
               </e>
             </e>
             <e p="Home" t="Include">
-              <e p="HomeSceneBase.cs" t="Include" />
-              <e p="HomeSceneView.cs" t="Include" />
               <e p="HomeScroller" t="Include">
                 <e p="Ball" t="Include">
                   <e p="BallCellView.cs" t="Include" />
@@ -63,7 +61,7 @@
                   <e p="EventCellView.cs" t="Include" />
                   <e p="EventPart.cs" t="Include" />
                 </e>
-                <e p="HomeScrollerPart.cs" t="Include" />
+                <e p="HomeScrollerBase.cs" t="Include" />
                 <e p="HomeScrollerView.cs" t="Include" />
                 <e p="Shop" t="Include">
                   <e p="ShopCellView.cs" t="Include" />
@@ -74,7 +72,10 @@
                   <e p="SocialPart.cs" t="Include" />
                 </e>
               </e>
-              <e p="HomeTabPart.cs" t="Include" />
+              <e p="HomeTab" t="Include">
+                <e p="HomeTabBase.cs" t="Include" />
+                <e p="HomeTabView.cs" t="Include" />
+              </e>
             </e>
             <e p="Labo" t="Include">
               <e p="LaboSceneBase.cs" t="Include" />

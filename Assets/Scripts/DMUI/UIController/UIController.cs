@@ -313,6 +313,12 @@ namespace DM
         {
             return m_LayerController.GetCountInGroup(group);
         }
+        
+        // レイヤ取得
+        public UIBaseLayer GetBaseLayer(Type type)
+        {
+            return m_LayerController.Find(type);
+        }
 
         // ローディング開始
         public void LoadingIn()

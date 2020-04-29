@@ -1,11 +1,7 @@
-﻿using System;
-using UnityEngine;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using EnhancedScrollerDemos.CellEvents;
-using EnhancedUI;
 using EnhancedUI.EnhancedScroller;
-using UnityEngine.EventSystems;
-using UnityEngine.Serialization;
+using UnityEngine;
 
 namespace DM
 {
@@ -13,11 +9,10 @@ namespace DM
     {
         private List<Data> m_Data;
         [SerializeField] public EnhancedScroller m_Scroller;
-        [SerializeField] public TabObject m_TabObject;
 
         private float m_ScrollWidth;
         private Transform m_CursorTransform;
-        
+
         // ヒエラルキー上ではなく、Resourceフォルダ内のPrefabを指定
         public EnhancedScrollerCellView[] m_CellViewPrefabs;
 
@@ -33,33 +28,10 @@ namespace DM
             m_Scroller.scrollerScrollingChanged = scrollerScrollingChanged;
             m_Scroller.scrollerBeginDrag = scrollerBeginDrag;
             m_Scroller.scrollerEndDrag = scrollerEndDrag;
-            
+
             CellSize = UIController.Instance.m_CanvasScaler.referenceResolution.x;
             LoadData();
             m_Scroller.ReloadData();
-        }
-        
-        private void Start()
-        {
-            m_ScrollWidth = (m_TabObject.transform as RectTransform).rect.width / 5 * 4;
-            m_CursorTransform = m_TabObject.m_Cursor.transform;
-        }
-        
-        private void Update()
-        {
-            // カーソル位置調整
-            var localPosition = m_CursorTransform.localPosition;
-            var horizontalNormalizedPosition = m_Scroller.ScrollRect.horizontalNormalizedPosition;
-            float newX = (horizontalNormalizedPosition - 0.5f) * m_ScrollWidth;
-
-            if (Math.Abs(newX - localPosition.x) < 0.01f)
-            {
-                return;
-            }
-
-            Vector3 newPosition = localPosition;
-            newPosition.x = newX;
-            m_CursorTransform.localPosition = newPosition;
         }
 
         private void LoadData()
