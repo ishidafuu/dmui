@@ -27,6 +27,9 @@ namespace DM
 
             // 追加待ち
             await UIController.Instance.YieldAttachParts(this, parts);
+            
+            const int FIRST_INDEX = 2;
+            m_LaboScrollerView.m_Scroller.JumpToDataIndex(FIRST_INDEX);
         }
 
         private void InitLaboScrollerController()
