@@ -31,7 +31,7 @@ namespace DM
 
         private static void ClickLaboButton()
         {
-            UIController.Instance.Replace(new UIBase[] {new LaboSceneBase()});
+            // UIController.Instance.Replace(new UIBase[] {new LaboSceneBase()});
         }
     }
 }

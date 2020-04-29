@@ -2,7 +2,7 @@
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class PreviewFieldObject : MonoBehaviour
+public class MixedBallItemView : ButtonObject
 {
     public Image iconImage;
     private Sprite nowSprite;

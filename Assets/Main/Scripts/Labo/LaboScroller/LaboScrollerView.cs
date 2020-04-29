@@ -1,11 +1,7 @@
-﻿using System;
-using UnityEngine;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using EnhancedScrollerDemos.CellEvents;
-using EnhancedUI;
 using EnhancedUI.EnhancedScroller;
-using UnityEngine.EventSystems;
-using UnityEngine.Serialization;
+using UnityEngine;
 
 namespace DM
 {
@@ -38,7 +34,7 @@ namespace DM
             m_Scroller.scrollerScrollingChanged = scrollerScrollingChanged;
             m_Scroller.scrollerBeginDrag = scrollerBeginDrag;
             m_Scroller.scrollerEndDrag = scrollerEndDrag;
-            
+
             m_CellSize = UIController.Instance.m_CanvasScaler.referenceResolution.x;
             LoadData();
             m_Scroller.ReloadData();

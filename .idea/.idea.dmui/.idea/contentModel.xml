@@ -78,8 +78,6 @@
               </e>
             </e>
             <e p="Labo" t="Include">
-              <e p="LaboSceneBase.cs" t="Include" />
-              <e p="LaboSceneView.cs" t="Include" />
               <e p="LaboScroller" t="Include">
                 <e p="ElementLine" t="Include">
                   <e p="ElementLineCellView.cs" t="Include" />
@@ -89,7 +87,7 @@
                   <e p="ElementListCellView.cs" t="Include" />
                   <e p="ElementListPart.cs" t="Include" />
                 </e>
-                <e p="LaboScrollerPart.cs" t="Include" />
+                <e p="LaboScrollerBase.cs" t="Include" />
                 <e p="LaboScrollerView.cs" t="Include" />
                 <e p="MixedLine" t="Include">
                   <e p="MixedLineCellView.cs" t="Include" />
@@ -109,15 +107,20 @@
                 </e>
                 <e p="Preview" t="Include">
                   <e p="PreviewCellView.cs" t="Include" />
-                  <e p="PreviewFieldObject.cs" t="Include" />
                   <e p="PreviewPart.cs" t="Include" />
                 </e>
               </e>
               <e p="MixedBallTab" t="Include">
                 <e p="MixedBallItem" t="Include">
-                  <e p="MixedBallItemObject.cs" t="Include" />
+                  <e p="MixedBallItemPart.cs" t="Include" />
+                  <e p="MixedBallItemView.cs" t="Include" />
                 </e>
-                <e p="MixedBallTabObject.cs" t="Include" />
+                <e p="MixedBallTabBase.cs" t="Include" />
+                <e p="MixedBallTabView.cs" t="Include" />
+              </e>
+              <e p="PreviewField" t="Include">
+                <e p="PreviewFieldBase.cs" t="Include" />
+                <e p="PreviewFieldView.cs" t="Include" />
               </e>
             </e>
           </e>

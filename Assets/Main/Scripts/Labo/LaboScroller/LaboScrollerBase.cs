@@ -3,27 +3,21 @@ using EnhancedUI.EnhancedScroller;
 using UniRx.Async;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.UI;
 
 namespace DM
 {
-    public class LaboScrollerPart : UIPart
+    public class LaboScrollerBase : UIBase
     {
-        // 追加先のレイヤ
-        private UIBase m_TargetLayer;
-        private readonly LaboScrollerView m_LaboScrollerView;
+        private LaboScrollerView m_LaboScrollerView;
 
-        // public LaboScrollerPart() : base("HomeScroller") { }
-        public LaboScrollerPart(LaboSceneView laboSceneView)
-            : base(laboSceneView.m_LaboScrollerView.transform)
+        public LaboScrollerBase() : base("Labo/LaboScrollerBase", EnumUIGroup.Floater, EnumUIPreset.Header)
         {
-            m_LaboScrollerView = laboSceneView.m_LaboScrollerView;
+            IsScheduleUpdate = true;
         }
 
-        public override async UniTask OnLoadedPart(UIBase targetLayer)
+        public override async UniTask OnLoadedBase()
         {
-            m_TargetLayer = targetLayer;
-            InitRootTransform();
+            m_LaboScrollerView = RootTransform.GetComponent<LaboScrollerView>();
             InitLaboScrollerController();
 
             List<UIPart> parts = new List<UIPart>
@@ -32,19 +26,7 @@ namespace DM
             };
 
             // 追加待ち
-            await UIController.Instance.YieldAttachParts(targetLayer, parts);
-
-            const int FIRST_INDEX = 2;
-            m_LaboScrollerView.m_Scroller.JumpToDataIndex(FIRST_INDEX);
-        }
-
-        private void InitRootTransform()
-        {
-            // UIPartの追加先を決定する
-            Transform layer = m_TargetLayer.RootTransform.Find("Layer");
-            RootTransform.SetParent(layer);
-            RootTransform.localPosition = new Vector3(0, 0, 0);
-            RootTransform.localScale = Vector3.one;
+            await UIController.Instance.YieldAttachParts(this, parts);
         }
 
         private void InitLaboScrollerController()
@@ -65,7 +47,7 @@ namespace DM
                 case "MixedLineCellView":
                     part = new MixedLinePart(cellView as MixedLineCellView, m_LaboScrollerView);
                     break;
-                case "PreviewCellView":    
+                case "PreviewCellView":
                     part = new PreviewPart(cellView as PreviewCellView);
                     break;
                 case "ElementLineCellView":
@@ -85,7 +67,7 @@ namespace DM
             };
 
             // 即時追加
-            UIController.Instance.AttachParts(m_TargetLayer, parts);
+            UIController.Instance.AttachParts(this, parts);
         }
 
 
@@ -107,18 +89,19 @@ namespace DM
             int index = 0;
             float pagePosition = 0;
             bool isPrevShift = false;
-            for (int i = 0; i < PAGE_NUM ; i++)
+            for (int i = 0; i < PAGE_NUM; i++)
             {
                 index = i;
                 float cellSize = m_LaboScrollerView.GetCellSize(i);
                 if (scroller.ScrollPosition < pagePosition + (cellSize / 2))
                 {
                     isPrevShift = scroller.ScrollPosition - pagePosition < 0;
-                    break;    
+                    break;
                 }
+
                 pagePosition += cellSize;
             }
-            
+
             if (data.delta.x < -BORDER && !isPrevShift)
             {
                 index += 1;

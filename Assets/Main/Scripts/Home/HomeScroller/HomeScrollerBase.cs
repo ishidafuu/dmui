@@ -10,7 +10,7 @@ namespace DM
     {
         public HomeScrollerView m_HomeScrollerView;
 
-        public HomeScrollerBase() : base("Home/HomeScrollerBase", EnumUIGroup.Scene)
+        public HomeScrollerBase() : base("Home/HomeScrollerBase", EnumUIGroup.MainScene)
         {
             IsScheduleUpdate = true;
         }
@@ -18,7 +18,6 @@ namespace DM
         public override async UniTask OnLoadedBase()
         {
             m_HomeScrollerView = RootTransform.GetComponent<HomeScrollerView>();
-            InitRootTransform();
             InitHomeScrollerController();
             
             List<UIPart> parts = new List<UIPart>
@@ -32,16 +31,7 @@ namespace DM
             const int FIRST_INDEX = 2;
             m_HomeScrollerView.m_Scroller.JumpToDataIndex(FIRST_INDEX);
         }
-
-        private void InitRootTransform()
-        {
-            // UIPartの追加先を決定する
-            // Transform layer = m_TargetLayer.RootTransform.Find("Layer");
-            // RootTransform.SetParent(layer);
-            // RootTransform.localPosition = new Vector3(0, 0, 0);
-            // RootTransform.localScale = Vector3.one;
-        }
-
+        
         private void InitHomeScrollerController()
         {
             m_HomeScrollerView.Init(CellViewInstantiated, ScrollerScrollingChanged,
