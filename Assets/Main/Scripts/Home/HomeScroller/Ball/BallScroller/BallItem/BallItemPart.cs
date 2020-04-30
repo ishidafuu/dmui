@@ -7,7 +7,6 @@ namespace DM
 {
     class BallItemPart : UIPart
     {
-        private UIBase m_TargetLayer;
         private BallItemCellView m_BallItemCellView;
 
         public BallItemPart(BallItemCellView ballItemCellView)
@@ -18,7 +17,6 @@ namespace DM
 
         public override async UniTask OnLoadedPart(UIBase targetLayer)
         {
-            m_TargetLayer = targetLayer;
             BallScrollerView mixedLineScrollerView =
                 targetLayer.RootTransform.GetComponent<BallScrollerView>();
             
@@ -56,7 +54,7 @@ namespace DM
                 new BallItemButtonPart(ballItemCell, ballItemCell.dataIntegerButton)
             };
             // 即時追加
-            UIController.Instance.AttachParts(m_TargetLayer, parts);
+            UIController.Instance.AttachParts(TargetLayer, parts);
         }
     }
 }

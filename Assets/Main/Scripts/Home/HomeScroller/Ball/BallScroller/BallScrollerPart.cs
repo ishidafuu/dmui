@@ -10,7 +10,6 @@ namespace DM
     public class BallScrollerPart : UIPart
     {
         // 追加先のレイヤ
-        private UIBase m_TargetLayer;
         private readonly UIPart m_TargetPart;
         private readonly BallScrollerView m_BallScrollerView;
         private readonly HomeScrollerView m_HomeScrollerView;
@@ -34,7 +33,6 @@ namespace DM
 
         public override async UniTask OnLoadedPart(UIBase targetLayer)
         {
-            m_TargetLayer = targetLayer;
             InitRootTransform();
             InitBallScrollerController();
         }
@@ -62,7 +60,7 @@ namespace DM
             };
 
             // 即時追加
-            UIController.Instance.AttachParts(m_TargetLayer, parts);
+            UIController.Instance.AttachParts(TargetLayer, parts);
         }
         
         private void ScrollerDrag(EnhancedScroller scroller, PointerEventData data)

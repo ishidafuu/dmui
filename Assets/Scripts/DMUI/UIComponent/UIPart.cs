@@ -14,6 +14,7 @@ namespace DM
         public Animator[] Animators { get; set; }
         public Transform RootTransform { get; set; }
         public string PrefabPath { get; }
+        public UIBase TargetLayer { get; set; }
 
         // 生成済みオブジェクトを渡して生成
         protected UIPart(Transform rootTransform)
@@ -117,7 +118,7 @@ namespace DM
         // -----------------------------------------------------------------------------------------------------------------------------------------
 
         // ロード完了
-        public virtual async UniTask OnLoadedPart(UIBase targetLayer) { }
+        public virtual async UniTask OnLoadedPart(UIBase targetLayer) {}
 
         // クリック
         public virtual bool OnClick(TouchEvent touch, UISound uiSound)

@@ -7,7 +7,6 @@ namespace DM
 {
     public class MixedLineItemPart : UIPart
     {
-        private UIBase m_TargetLayer;
         private readonly MixedLineItemCellView m_MixedLineItemCellView;
 
         public MixedLineItemPart(MixedLineItemCellView mixedLineItemCellView)
@@ -18,7 +17,6 @@ namespace DM
 
         public override async UniTask OnLoadedPart(UIBase targetLayer)
         {
-            m_TargetLayer = targetLayer;
             List<UIPart> parts = new List<UIPart>()
             {
                 new ButtonPart(m_MixedLineItemCellView.m_MixedBallButton, ClickButton)

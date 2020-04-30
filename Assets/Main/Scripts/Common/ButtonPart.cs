@@ -10,7 +10,6 @@ namespace DM
 {
     public class ButtonPart : UIPart
     {
-        private UIBase m_TargetLayer;
         private readonly ButtonObject m_ButtonObject;
         private readonly Action m_ActionClick;
 
@@ -23,10 +22,7 @@ namespace DM
 
         public override async UniTask OnLoadedPart(UIBase targetLayer)
         {
-            m_TargetLayer = targetLayer;
-            
             // InitRootTransform();
-
             // // 追加待ち
             // await UIController.Instance.YieldAttachParts(targetLayer, parts);
         }

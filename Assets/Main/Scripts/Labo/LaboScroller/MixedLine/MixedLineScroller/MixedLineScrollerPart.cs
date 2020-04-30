@@ -10,7 +10,6 @@ namespace DM
     public class MixedLineScrollerPart : UIPart
     {
         // 追加先のレイヤ
-        private UIBase m_TargetLayer;
         private readonly UIPart m_TargetPart;
         private readonly MixedLineScrollerView m_MixedLineScrollerView;
         private readonly LaboScrollerView m_LaboScrollerView;
@@ -34,7 +33,6 @@ namespace DM
 
         public override async UniTask OnLoadedPart(UIBase targetLayer)
         {
-            m_TargetLayer = targetLayer;
             InitRootTransform();
             InitMixedLineScrollerController();
         }
@@ -62,7 +60,7 @@ namespace DM
             };
 
             // 即時追加
-            UIController.Instance.AttachParts(m_TargetLayer, parts);
+            UIController.Instance.AttachParts(TargetLayer, parts);
         }
 
         private void ScrollerDrag(EnhancedScroller scroller, PointerEventData data)

@@ -31,7 +31,8 @@ namespace DM
             GameObject rootGameObject = Part.RootTransform.gameObject;
             rootGameObject.SetActive(false);
             CollectComponents(rootGameObject, targetLayer);
-
+            Part.TargetLayer = targetLayer.Base;
+            
             await Part.OnLoadedPart(targetLayer.Base);
 
             rootGameObject.SetActive(true);
