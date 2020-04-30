@@ -13,7 +13,7 @@ namespace DM
 
         public override async UniTask OnLoadedBase()
         {
-            var laboScrollerBase = UIController.Instance.GetBaseLayer(typeof(LaboScrollerBase));
+            // var laboScrollerLayer = UIController.Instance.GetBaseLayer(typeof(LaboScrollerBase));
             m_PreviewFieldView = RootTransform.GetComponent<PreviewFieldView>();
             List<UIPart> parts = new List<UIPart>();
 

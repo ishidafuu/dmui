@@ -5,10 +5,10 @@ namespace DM
 {
     public class MixedBallTabBase : UIBase
     {
-        private LaboScrollerBase m_LaboScrollerBase;
         private MixedBallTabView m_MixedBallTabView;
+        private LaboScrollerBase m_LaboScrollerBase;
 
-        public MixedBallTabBase() : base("Labo/MixedBallTabBase", EnumUIGroup.Floater, EnumUIPreset.Header)
+        public MixedBallTabBase() : base("Labo/MixedBallTabBase", EnumUIGroup.Floater, EnumUIPreset.Frame)
         {
             IsScheduleUpdate = true;
         }

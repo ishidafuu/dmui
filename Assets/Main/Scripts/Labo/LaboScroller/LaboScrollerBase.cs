@@ -9,14 +9,22 @@ namespace DM
     public class LaboScrollerBase : UIBase
     {
         private LaboScrollerView m_LaboScrollerView;
-
-        public LaboScrollerBase() : base("Labo/LaboScrollerBase", EnumUIGroup.Floater, EnumUIPreset.Header)
+        private PreviewFieldBase m_PreviewFieldBase;
+        private MixedBallTabBase m_MixedBallTabBase;
+        
+        public LaboScrollerBase() : base("Labo/LaboScrollerBase", EnumUIGroup.Floater, EnumUIPreset.Frame)
         {
             IsScheduleUpdate = true;
         }
 
         public override async UniTask OnLoadedBase()
         {
+            UIBaseLayer previewFieldLayer = UIController.Instance.GetBaseLayer(typeof(PreviewFieldBase));
+            m_PreviewFieldBase = previewFieldLayer.Base as PreviewFieldBase;
+            
+            UIBaseLayer mixedBallTabBase = UIController.Instance.GetBaseLayer(typeof(MixedBallTabBase));
+            m_MixedBallTabBase = mixedBallTabBase.Base as MixedBallTabBase;
+            
             m_LaboScrollerView = RootTransform.GetComponent<LaboScrollerView>();
             InitLaboScrollerController();
 

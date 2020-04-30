@@ -55,7 +55,7 @@ namespace DM
         SystemIndicator = (BackVisible | BackTouchable | SystemUntouchable | LoadingWithoutFade | ActiveWithoutFade),
         Loading = (BackVisible | SystemUntouchable | LoadingWithoutFade | ActiveWithoutFade),
         Toast = (BackVisible | BackTouchable |TouchEventCallable| LoadingWithoutFade | ActiveWithoutFade),
-        Header = (BackVisible | BackTouchable | ActiveWithoutFade),
+        Frame = (BackVisible | BackTouchable | ActiveWithoutFade),
     }
 
     public enum EnumUIGroup

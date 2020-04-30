@@ -8,15 +8,15 @@ namespace DM
         private HomeScrollerBase m_HomeScrollerBase;
         private HomeTabView m_HomeTabView;
 
-        public HomeTabBase() : base("Home/HomeTabBase", EnumUIGroup.Floater, EnumUIPreset.Header)
+        public HomeTabBase() : base("Home/HomeTabBase", EnumUIGroup.Floater, EnumUIPreset.Frame)
         {
             IsScheduleUpdate = true;
         }
 
         public override async UniTask OnLoadedBase()
         {
-            var homeScrollerBase = UIController.Instance.GetBaseLayer(typeof(HomeScrollerBase));
-            m_HomeScrollerBase = homeScrollerBase.Base as HomeScrollerBase;
+            UIBaseLayer homeScrollerLayer = UIController.Instance.GetBaseLayer(typeof(HomeScrollerBase));
+            m_HomeScrollerBase = homeScrollerLayer.Base as HomeScrollerBase;
             m_HomeTabView = RootTransform.GetComponent<HomeTabView>();
 
             List<UIPart> parts = new List<UIPart>();
