@@ -4,12 +4,18 @@ using UnityEngine.EventSystems;
 
 public class MixedBallItemView : ButtonObject
 {
-    public Image iconImage;
-    private Sprite nowSprite;
+    [SerializeField] private Text m_Text;
+    public int Slot { get; set; }
 
-    void Start()
+    protected override void Reset()
     {
-        nowSprite = null;
+        base.Reset();
+        m_Text = transform.Find("Text")?.GetComponent<Text>();
     }
     
+    public void SetText(int ballNo)
+    {
+        m_Text.text = $"BallNo:{ballNo}\nSlot:{Slot}";
+    }
+
 }

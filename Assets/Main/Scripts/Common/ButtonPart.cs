@@ -38,19 +38,20 @@ namespace DM
         public override bool OnClick(TouchEvent touch, UISound uiSound)
         {
             m_ActionClick?.Invoke();
-            return base.OnClick(touch, uiSound);
+            return true;
         }
 
         public override bool OnTouchUp(TouchEvent touch)
         {
             m_ButtonObject?.PointerUp(touch.Pointer);
-            return base.OnTouchUp(touch);
+            // Trueにするとそこで止まってOnClickが呼ばれなくなる
+            return false;
         }
 
         public override bool OnTouchDown(TouchEvent touch)
         {
             m_ButtonObject?.PointerDown(touch.Pointer);
-            return base.OnTouchDown(touch);
+            return false;
         }
         
     }

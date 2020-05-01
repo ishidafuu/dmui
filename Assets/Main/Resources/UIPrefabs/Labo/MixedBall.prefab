@@ -153,7 +153,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ac2278f9ead53a4f8b1eb88a6dadc92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  iconImage: {fileID: 0}
+  m_Base: {fileID: 2518346586650747957}
+  m_Effect: {fileID: 2518346586431600436}
+  m_Shadow: {fileID: 2518346586829805630}
+  m_Button: {fileID: 2518346586650747959}
+  m_Text: {fileID: 2518346586934983028}
 --- !u!114 &2518346586650747957
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -21,7 +21,7 @@ namespace DM
 
         public int GetHour()
         {
-            return _data.hour;
+            return _data.index;
         }
     }
 }

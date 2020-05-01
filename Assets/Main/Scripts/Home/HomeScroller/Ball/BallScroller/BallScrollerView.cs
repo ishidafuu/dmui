@@ -33,7 +33,7 @@ namespace DM
             m_Data = new List<Data>();
 
             for (var i = 0; i < 24; i++)
-                m_Data.Add(new Data() {hour = i});
+                m_Data.Add(new Data() {index = i});
         }
 
         public int GetNumberOfCells(EnhancedScroller scroller)

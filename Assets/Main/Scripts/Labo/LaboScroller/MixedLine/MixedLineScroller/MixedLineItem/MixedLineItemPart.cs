@@ -8,7 +8,8 @@ namespace DM
     public class MixedLineItemPart : UIPart
     {
         private readonly MixedLineItemCellView m_MixedLineItemCellView;
-
+        private LaboScrollerBase m_LaboScrollerBase;
+        
         public MixedLineItemPart(MixedLineItemCellView mixedLineItemCellView)
             : base(mixedLineItemCellView.transform)
         {
@@ -17,6 +18,7 @@ namespace DM
 
         public override async UniTask OnLoadedPart(UIBase targetLayer)
         {
+            m_LaboScrollerBase = targetLayer as LaboScrollerBase;
             List<UIPart> parts = new List<UIPart>()
             {
                 new ButtonPart(m_MixedLineItemCellView.m_MixedBallButton, ClickButton)
@@ -28,9 +30,7 @@ namespace DM
 
         private void ClickButton()
         {
-            
-            
-            Debug.Log($"OnClick MixedLineItemPart {m_MixedLineItemCellView.GetHour()}");
+            m_LaboScrollerBase.ClickMixedLineItem(m_MixedLineItemCellView.dataIndex);
         }
     }
 }

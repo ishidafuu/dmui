@@ -19,7 +19,7 @@ namespace DM
         public void SetData(Data data)
         {
             _data = data;
-            someTextText.text = (_data.hour == 0 ? "Midnight" : string.Format("{0} 'o clock", _data.hour.ToString()));
+            someTextText.text = (_data.index == 0 ? "Midnight" : string.Format("{0} 'o clock", _data.index.ToString()));
         }
     }
 }

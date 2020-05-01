@@ -24,7 +24,7 @@ public class ButtonObject : MonoBehaviour
     private RectTransform m_EffectRect;
     private RectTransform m_EffectRectParent;
 
-    private void Reset()
+    protected virtual void Reset()
     {
         m_Base = GetComponent<ProceduralImage>();
         m_Effect = transform.Find("Effect")?.GetComponent<ProceduralImage>();

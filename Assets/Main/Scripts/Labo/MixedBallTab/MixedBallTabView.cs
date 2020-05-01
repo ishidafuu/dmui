@@ -13,4 +13,21 @@ public class MixedBallTabView : MonoBehaviour
     {
         m_ButtonViews = GetComponentsInChildren<MixedBallItemView>();
     }
+    
+    private void Start()
+    {
+        for (int i = 0; i < m_ButtonViews.Length; i++)
+        {
+            m_ButtonViews[i].Slot = i;
+            m_ButtonViews[i].SetText(0);
+        }
+    }
+    
+    public void ChangeMixedBall(int index)
+    {
+        foreach (var item in m_ButtonViews)
+        {
+            item.SetText(index);
+        }
+    }
 }

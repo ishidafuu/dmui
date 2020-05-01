@@ -123,6 +123,8 @@ namespace DM
         // クリック
         public virtual bool OnClick(TouchEvent touch, UISound uiSound)
         {
+            // return Trueを返した段階で、他のOnClickは発火しない
+            // base.OnClickを呼ぶ必要はない
             return false;
         }
 

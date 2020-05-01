@@ -27,7 +27,9 @@ namespace DM
                 }
 
                 bool ret = false;
-
+                
+                // Trueが帰ってきたらTargetLayerにも伝播
+                // 一旦無し
                 switch (touch.Type)
                 {
                     case EnumTouchType.Click:
@@ -35,18 +37,23 @@ namespace DM
                         break;
                     case EnumTouchType.Down:
                         ret = touch.Listener.Part.OnTouchDown(touch);
+                        // if (ret) touch.Listener.Part.TargetLayer?.OnTouchDown(touch);
                         break;
                     case EnumTouchType.Up:
                         ret = touch.Listener.Part.OnTouchUp(touch);
+                        // if (ret) touch.Listener.Part.TargetLayer?.OnTouchUp(touch);
                         break;
                     case EnumTouchType.Drag:
                         ret = touch.Listener.Part.OnDrag(touch);
+                        // if (ret) touch.Listener.Part.TargetLayer?.OnDrag(touch);
                         break;
                     case EnumTouchType.BeginDrag:
                         ret = touch.Listener.Part.OnBeginDrag(touch);
+                        // if (ret) touch.Listener.Part.TargetLayer?.OnBeginDrag(touch);
                         break;
                     case EnumTouchType.EndDrag:
                         ret = touch.Listener.Part.OnEndDrag(touch);
+                        // if (ret) touch.Listener.Part.TargetLayer?.OnEndDrag(touch);
                         break;
                     case EnumTouchType.None:
                         break;
@@ -67,7 +74,9 @@ namespace DM
         {
             UISound se = new UISound();
             bool ret = touch.Listener.Part.OnClick(touch, se);
-
+            
+            // if (ret) touch.Listener.Part.TargetLayer?.OnClick(touch, se);
+            
             if (!ret || sounder == null)
             {
                 return ret;

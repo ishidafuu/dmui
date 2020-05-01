@@ -136,5 +136,10 @@ namespace DM
                 EnhancedScroller.TweenType.easeOutQuart, 0.5f,
                 () => m_LaboScrollerView.m_Scroller.Velocity = Vector2.zero);
         }
+        
+        public void ClickMixedLineItem(int index)
+        {
+            m_MixedBallTabBase.ChangeMixedBall(index);
+        }
     }
 }

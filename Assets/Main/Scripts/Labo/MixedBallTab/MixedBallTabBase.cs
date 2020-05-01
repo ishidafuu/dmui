@@ -59,5 +59,10 @@ namespace DM
 
             return true;
         }
+        
+        public void ChangeMixedBall(int index)
+        {
+            m_MixedBallTabView.ChangeMixedBall(index);
+        }
     }
 }
