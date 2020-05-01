@@ -82,6 +82,14 @@
                 <e p="ElementLine" t="Include">
                   <e p="ElementLineCellView.cs" t="Include" />
                   <e p="ElementLinePart.cs" t="Include" />
+                  <e p="ElementLineScroller" t="Include">
+                    <e p="ElementLineItem" t="Include">
+                      <e p="ElementLineItemCellView.cs" t="Include" />
+                      <e p="ElementLineItemPart.cs" t="Include" />
+                    </e>
+                    <e p="ElementLineScrollerPart.cs" t="Include" />
+                    <e p="ElementLineScrollerView.cs" t="Include" />
+                  </e>
                 </e>
                 <e p="ElementList" t="Include">
                   <e p="ElementListCellView.cs" t="Include" />

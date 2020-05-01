@@ -1,4 +1,5 @@
-﻿using UniRx.Async;
+﻿using System.Collections.Generic;
+using UniRx.Async;
 
 namespace DM
 {
@@ -12,6 +13,17 @@ namespace DM
             m_ElementLineCellView = elementLineCellView;
         }
 
-        public override async UniTask OnLoadedPart(UIBase targetLayer) { }
+        public override async UniTask OnLoadedPart(UIBase targetLayer)
+        {
+            List<UIPart> parts = new List<UIPart>
+            {
+                new ElementLineScrollerPart(this, m_ElementLineCellView),
+                // new ButtonPart(m_MixedLineCellView.m_LaboButtonView, ClickLaboButton)
+            };
+
+
+            // 追加待ち
+            await UIController.Instance.YieldAttachParts(targetLayer, parts);
+        }
     }
 }

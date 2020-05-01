@@ -7,11 +7,11 @@ using UnityEngine.UI;
 
 namespace DM
 {
-    public class MixedLineScrollerPart : UIPart
+    public class ElementLineScrollerPart : UIPart
     {
         // 追加先のレイヤ
         private readonly UIPart m_TargetPart;
-        private readonly MixedLineScrollerView m_MixedLineScrollerView;
+        private readonly ElementLineScrollerView m_ElementLineScrollerView;
         private readonly LaboScrollerView m_LaboScrollerView;
 
         enum ScrollAngle
@@ -23,22 +23,22 @@ namespace DM
 
         private ScrollAngle m_ScrollAngle = ScrollAngle.None;
 
-        public MixedLineScrollerPart(UIPart targetPart, MixedLineCellView mixedLineCellView)
-            : base(mixedLineCellView.m_MixedLineScrollerView.transform)
+        public ElementLineScrollerPart(UIPart targetPart, ElementLineCellView elementLineCellView)
+            : base(elementLineCellView.m_ElementLineScrollerView.transform)
         {
             m_TargetPart = targetPart;
-            m_MixedLineScrollerView = mixedLineCellView.m_MixedLineScrollerView;
-            m_LaboScrollerView = mixedLineCellView.m_LaboScrollerView;
+            m_ElementLineScrollerView = elementLineCellView.m_ElementLineScrollerView;
+            m_LaboScrollerView = elementLineCellView.m_LaboScrollerView;
         }
 
         public override async UniTask OnLoadedPart(UIBase targetLayer)
         {
-            InitMixedLineScrollerController();
+            InitElementLineScrollerController();
         }
 
-        private void InitMixedLineScrollerController()
+        private void InitElementLineScrollerController()
         {
-            m_MixedLineScrollerView.Init(CellViewInstantiated, ScrollerDrag, ScrollerBeginDrag, ScrollerEndDrag);
+            m_ElementLineScrollerView.Init(CellViewInstantiated, ScrollerDrag, ScrollerBeginDrag, ScrollerEndDrag);
         }
 
         // 新規セルビュー追加時デリゲート
@@ -46,7 +46,7 @@ namespace DM
         {
             List<UIPart> parts = new List<UIPart>
             {
-                new MixedLineItemPart(cellView as MixedLineItemCellView)
+                new ElementLineItemPart(cellView as ElementLineItemCellView)
             };
 
             // 即時追加
@@ -62,7 +62,7 @@ namespace DM
                     m_LaboScrollerView.m_Scroller.ScrollRect.OnDrag(data);
                     break;
                 case ScrollAngle.Y:
-                    m_MixedLineScrollerView.m_Scroller.ScrollRect.OnDrag(data);
+                    m_ElementLineScrollerView.m_Scroller.ScrollRect.OnDrag(data);
                     break;
             }
         }
@@ -74,13 +74,13 @@ namespace DM
                 if (Mathf.Abs(data.position.y - data.pressPosition.y) > 1)
                 {
                     m_ScrollAngle = ScrollAngle.Y;
-                    m_MixedLineScrollerView.m_Scroller.ScrollRect.enabled = true;
-                    m_MixedLineScrollerView.m_Scroller.ScrollRect.OnBeginDrag(data);
+                    m_ElementLineScrollerView.m_Scroller.ScrollRect.enabled = true;
+                    m_ElementLineScrollerView.m_Scroller.ScrollRect.OnBeginDrag(data);
                 }
                 else if (Mathf.Abs(data.position.x - data.pressPosition.x) > 1)
                 {
                     m_ScrollAngle = ScrollAngle.X;
-                    m_MixedLineScrollerView.m_Scroller.ScrollRect.enabled = false;
+                    m_ElementLineScrollerView.m_Scroller.ScrollRect.enabled = false;
                     m_LaboScrollerView.m_Scroller.OnBeginDrag(data);
                     m_LaboScrollerView.m_Scroller.ScrollRect.OnBeginDrag(data);
                 }
@@ -96,7 +96,7 @@ namespace DM
                     m_LaboScrollerView.m_Scroller.ScrollRect.OnEndDrag(data);
                     break;
                 case ScrollAngle.Y:
-                    m_MixedLineScrollerView.m_Scroller.ScrollRect.OnEndDrag(data);
+                    m_ElementLineScrollerView.m_Scroller.ScrollRect.OnEndDrag(data);
                     break;
             }
 
