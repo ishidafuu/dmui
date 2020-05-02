@@ -29,17 +29,7 @@ namespace DM
             // 追加待ち
             await UIController.Instance.YieldAttachParts(this, parts);
         }
-
-        // public override void OnUpdate()
-        // {
-        //     if (m_LaboScrollerBase.m_LaboScrollerView == null)
-        //     {
-        //         return;
-        //     }
-        //
-        //     m_MixedBallTabView.UpdateCursorPosition(
-        //         m_LaboScrollerBase.m_LaboScrollerView.m_Scroller.ScrollRect.horizontalNormalizedPosition);
-        // }
+        
 
         private void ClickTabButton(int index)
         {

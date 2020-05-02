@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using EnhancedUI.EnhancedScroller;
 using UniRx.Async;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.UI;
 
-namespace DM 
+namespace DM
 {
     public class MixedBallItemPart : UIPart
     {
@@ -15,7 +13,7 @@ namespace DM
         private readonly Action m_ActionDrop;
 
         public MixedBallItemPart(MixedBallItemView mixedBallItemView, Action actionClick = null,
-            Action actionDrop = null) 
+            Action actionDrop = null)
             : base(mixedBallItemView.transform)
         {
             m_MixedBallItemView = mixedBallItemView;
@@ -33,9 +31,11 @@ namespace DM
 
             await UIController.Instance.YieldAttachParts(targetLayer, parts);
         }
-        
+
         private void Drop(PointerEventData pointerEventData)
         {
+            m_MixedBallItemView.Drop(pointerEventData);
+
             Debug.Log($"Drop{m_MixedBallItemView.Slot}");
             Debug.Log(ElementLineItemPart.s_DraggingItem != null
                 ? $"Element Index:{ElementLineItemPart.s_DraggingItem.m_ElementLineItemCellView.GetHour()}"
