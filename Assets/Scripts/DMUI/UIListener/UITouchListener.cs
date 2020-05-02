@@ -5,7 +5,8 @@ namespace DM
 {
     public class UITouchListener : MonoBehaviour,
         IPointerClickHandler, IPointerDownHandler, IPointerUpHandler,
-        IDragHandler, IBeginDragHandler, IEndDragHandler
+        IDragHandler, IDropHandler, 
+        IBeginDragHandler, IEndDragHandler
     {
         public UIBaseLayer Layer { get; private set; }
         public UIPart Part { get; private set; }
@@ -70,6 +71,11 @@ namespace DM
         public void OnDrag(PointerEventData pointer)
         {
             UIController.Instance.ListenTouch(this, EnumTouchType.Drag, pointer);
+        }
+        
+        public void OnDrop(PointerEventData pointer)
+        {
+            UIController.Instance.ListenTouch(this, EnumTouchType.Drop, pointer);
         }
         
         public void OnBeginDrag(PointerEventData pointer)

@@ -158,6 +158,12 @@ namespace DM
             return false;
         }
         
+        // ドロップ
+        public virtual bool OnDrop(TouchEvent touch)
+        {
+            return false;
+        }
+
         // 破棄
         protected virtual void OnDestroy() { }
     }

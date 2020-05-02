@@ -2,14 +2,14 @@
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class MixedBallItemView : ButtonObject
+public class MixedBallItemView : DropObject
 {
     [SerializeField] private Text m_Text;
     public int Slot { get; set; }
 
-    protected override void Reset()
+    protected void Reset()
     {
-        base.Reset();
+        // base.Reset();
         m_Text = transform.Find("Text")?.GetComponent<Text>();
     }
     

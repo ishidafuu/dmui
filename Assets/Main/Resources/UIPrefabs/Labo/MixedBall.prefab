@@ -104,6 +104,7 @@ GameObject:
   - component: {fileID: 5512547159059725936}
   - component: {fileID: 2518346586650747959}
   - component: {fileID: 2518346586650747953}
+  - component: {fileID: 5035346296421550622}
   m_Layer: 0
   m_Name: MixedBall
   m_TagString: Untagged
@@ -153,10 +154,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ac2278f9ead53a4f8b1eb88a6dadc92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Base: {fileID: 2518346586650747957}
-  m_Effect: {fileID: 2518346586431600436}
-  m_Shadow: {fileID: 2518346586829805630}
-  m_Button: {fileID: 2518346586650747959}
   m_Text: {fileID: 2518346586934983028}
 --- !u!114 &2518346586650747957
 MonoBehaviour:
@@ -258,6 +255,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ShowMaskGraphic: 1
+--- !u!114 &5035346296421550622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2518346586650748361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 206d76c844e984740874e4258f07ac87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2518346586829805617
 GameObject:
   m_ObjectHideFlags: 0

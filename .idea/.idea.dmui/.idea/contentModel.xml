@@ -28,6 +28,7 @@
             <e p="Common" t="Include">
               <e p="ButtonPart.cs" t="Include" />
               <e p="DragPart.cs" t="Include" />
+              <e p="DropPart.cs" t="Include" />
               <e p="NoneGraphicRaycaster.cs" t="Include" />
               <e p="UIObject" t="Include">
                 <e p="ButtonObject.cs" t="Include" />

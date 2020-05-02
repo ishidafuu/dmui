@@ -55,6 +55,10 @@ namespace DM
                         ret = touch.Listener.Part.OnEndDrag(touch);
                         // if (ret) touch.Listener.Part.TargetLayer?.OnEndDrag(touch);
                         break;
+                    case EnumTouchType.Drop:
+                        ret = touch.Listener.Part.OnDrop(touch);
+                        // if (ret) touch.Listener.Part.TargetLayer?.OnDrop(touch);
+                        break;
                     case EnumTouchType.None:
                         break;
                     default: break;

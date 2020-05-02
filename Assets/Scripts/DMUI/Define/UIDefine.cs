@@ -81,5 +81,6 @@ namespace DM
         Drag,
         BeginDrag,
         EndDrag,
+        Drop,
     }
 }

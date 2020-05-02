@@ -12,46 +12,36 @@ namespace DM
     {
         private readonly MixedBallItemView m_MixedBallItemView;
         private readonly Action m_ActionClick;
+        private readonly Action m_ActionDrop;
 
-        public MixedBallItemPart(MixedBallItemView mixedBallItemView, Action actionClick = null) 
+        public MixedBallItemPart(MixedBallItemView mixedBallItemView, Action actionClick = null,
+            Action actionDrop = null) 
             : base(mixedBallItemView.transform)
         {
             m_MixedBallItemView = mixedBallItemView;
             m_ActionClick = actionClick;
+            m_ActionDrop = actionDrop;
         }
 
         public override async UniTask OnLoadedPart(UIBase targetLayer)
         {
-            // InitRootTransform();
             // // 追加待ち
-            // await UIController.Instance.YieldAttachParts(targetLayer, parts);
-        }
+            List<UIPart> parts = new List<UIPart>()
+            {
+                new DropPart(m_MixedBallItemView, Drop),
+            };
 
-        // private void InitRootTransform()
-        // {
-        //     // UIPartの追加先を決定する
-        //     Transform layer = m_TargetLayer.RootTransform.Find("Layer");
-        //     RootTransform.SetParent(layer);
-        //     // RootTransform.localPosition = new Vector3(0, -400, 0);
-        //     RootTransform.localScale = Vector3.one;
-        // }
-        public override bool OnClick(TouchEvent touch, UISound uiSound)
-        {
-            m_ActionClick?.Invoke();
-            return base.OnClick(touch, uiSound);
-        }
-
-        public override bool OnTouchUp(TouchEvent touch)
-        {
-            m_MixedBallItemView?.PointerUp(touch.Pointer);
-            return base.OnTouchUp(touch);
-        }
-
-        public override bool OnTouchDown(TouchEvent touch)
-        {
-            m_MixedBallItemView?.PointerDown(touch.Pointer);
-            return base.OnTouchDown(touch);
+            await UIController.Instance.YieldAttachParts(targetLayer, parts);
         }
         
+        private void Drop(PointerEventData pointerEventData)
+        {
+            Debug.Log($"Drop{m_MixedBallItemView.Slot}");
+            Debug.Log(ElementLineItemPart.s_DraggingItem != null
+                ? $"Element Index:{ElementLineItemPart.s_DraggingItem.m_ElementLineItemCellView.GetHour()}"
+                : $"Element null");
+
+            ElementLineItemPart.s_DraggingItem = null;
+        }
     }
 }

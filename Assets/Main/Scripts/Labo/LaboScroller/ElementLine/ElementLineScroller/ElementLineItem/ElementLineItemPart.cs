@@ -8,8 +8,10 @@ namespace DM
 {
     public class ElementLineItemPart : UIPart
     {
-        private readonly ElementLineItemCellView m_ElementLineItemCellView;
+        public readonly ElementLineItemCellView m_ElementLineItemCellView;
         private LaboScrollerBase m_LaboScrollerBase;
+
+        public static ElementLineItemPart s_DraggingItem;
 
         public ElementLineItemPart(ElementLineItemCellView elementLineItemCellView)
             : base(elementLineItemCellView.transform)
@@ -36,10 +38,13 @@ namespace DM
         }
 
         private void BeginDrag(PointerEventData pointerEventData)
-        {
+        {    
             m_ElementLineItemCellView.m_ElementDragObject.SetDraggingParent(
-                m_LaboScrollerBase.m_MixedBallTabBase.m_MixedBallTabView.transform);
+                m_LaboScrollerBase.m_MixedBallTabBase.m_MixedBallTabView.m_DraggingLayer.transform);
+            
             m_ElementLineItemCellView.m_ElementDragObject.BeginDrag(pointerEventData);
+
+            s_DraggingItem = this;
         }
 
         private void Drag(PointerEventData pointerEventData)
