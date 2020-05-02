@@ -9,7 +9,7 @@ namespace DM
     {
         [SerializeField] public ElementLineScrollerView m_ElementLineScrollerView;
         [HideInInspector] public LaboScrollerView m_LaboScrollerView;
-        
+
         public void SetData(Data data)
         {
             // _data = data;

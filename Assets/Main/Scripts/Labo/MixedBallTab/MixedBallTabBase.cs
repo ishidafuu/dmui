@@ -5,7 +5,7 @@ namespace DM
 {
     public class MixedBallTabBase : UIBase
     {
-        private MixedBallTabView m_MixedBallTabView;
+        public MixedBallTabView m_MixedBallTabView;
         private LaboScrollerBase m_LaboScrollerBase;
 
         public MixedBallTabBase() : base("Labo/MixedBallTabBase", EnumUIGroup.Floater, EnumUIPreset.Frame)

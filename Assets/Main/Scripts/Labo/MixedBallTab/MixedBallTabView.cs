@@ -8,6 +8,7 @@ using UnityEngine.UI.ProceduralImage;
 public class MixedBallTabView : MonoBehaviour
 {
     [SerializeField] public MixedBallItemView[] m_ButtonViews;
+    [SerializeField] public GameObject m_DraggingLayer;
     
     private void Reset()
     {

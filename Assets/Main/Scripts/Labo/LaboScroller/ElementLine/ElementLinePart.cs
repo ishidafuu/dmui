@@ -3,14 +3,16 @@ using UniRx.Async;
 
 namespace DM
 {
-    class ElementLinePart : UIPart
+    public class ElementLinePart : UIPart
     {
         private readonly ElementLineCellView m_ElementLineCellView;
 
-        public ElementLinePart(ElementLineCellView elementLineCellView)
+        public ElementLinePart(ElementLineCellView elementLineCellView, LaboScrollerView laboScrollerView,
+            MixedBallTabView mixedBallTabView)
             : base(elementLineCellView.transform)
         {
             m_ElementLineCellView = elementLineCellView;
+            m_ElementLineCellView.m_LaboScrollerView = laboScrollerView;
         }
 
         public override async UniTask OnLoadedPart(UIBase targetLayer)

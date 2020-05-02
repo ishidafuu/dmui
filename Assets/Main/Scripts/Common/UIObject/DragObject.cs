@@ -2,71 +2,49 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.Serialization;
 
-[RequireComponent(typeof(Image))]
-public class DragObject : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+public class DragObject : MonoBehaviour
 {
-    private Transform canvasTran;
-    [SerializeField] private GameObject draggingObject;
+    [SerializeField] private GameObject m_DraggingObject;
+    [HideInInspector] public Transform m_DraggingParentTransform;
 
-    void Awake()
+    public void SetDraggingParent(Transform draggingParentTransform)
     {
-        canvasTran = transform.parent.parent;
+        if (m_DraggingParentTransform == null)
+        {
+            m_DraggingParentTransform = draggingParentTransform;
+        }
+    }
+    
+    public void BeginDrag(PointerEventData pointerEventData)
+    {
+        if (m_DraggingParentTransform != null)
+        {
+            m_DraggingObject.transform.SetParent(m_DraggingParentTransform);
+        }
+        m_DraggingObject.SetActive(true);
+        MoveDraggingObject(pointerEventData);
     }
 
-    public void OnBeginDrag(PointerEventData pointerEventData)
+    public void Drag(PointerEventData pointerEventData)
     {
-        Debug.Log($"+++ OnBeginDrag");
-        // CreateDragObject();
-        // draggingObject.transform.position = pointerEventData.position;
-        NewMethod(pointerEventData);
+        MoveDraggingObject(pointerEventData);
     }
 
-    public void OnDrag(PointerEventData pointerEventData)
+    public void EndDrag(PointerEventData pointerEventData)
     {
-        // draggingObject.transform.position = pointerEventData.position;
-        Debug.Log($"+++ OnDrag");
-        // 座標変換
-        NewMethod(pointerEventData);
+        Debug.Log($"+++ OnEndDrag");
+        m_DraggingObject.SetActive(false);
+        MoveDraggingObject(pointerEventData);
     }
 
-    private void NewMethod(PointerEventData pointerEventData)
+    private void MoveDraggingObject(PointerEventData pointerEventData)
     {
-        RectTransformUtility.ScreenPointToLocalPointInRectangle(draggingObject.transform.parent as RectTransform,
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(m_DraggingObject.transform.parent as RectTransform,
             pointerEventData.position,
             UIController.Instance.m_Camera,
             out Vector2 effectLocalPosition);
-        draggingObject.transform.localPosition = effectLocalPosition;
+        m_DraggingObject.transform.localPosition = effectLocalPosition;
     }
-
-    public void OnEndDrag(PointerEventData pointerEventData)
-    {
-        Debug.Log($"+++ OnEndDrag");
-        // gameObject.GetComponent<Image>().color = Vector4.one;
-        // Destroy(draggingObject);
-        NewMethod(pointerEventData);
-    }
-
-    // // ドラッグオブジェクト作成
-    // private void CreateDragObject()
-    // {
-    //     draggingObject = new GameObject("Dragging Object");
-    //     draggingObject.transform.SetParent(canvasTran);
-    //     draggingObject.transform.SetAsLastSibling();
-    //     draggingObject.transform.localScale = Vector3.one;
-    //
-    //     // レイキャストがブロックされないように
-    //     CanvasGroup canvasGroup = draggingObject.AddComponent<CanvasGroup>();
-    //     canvasGroup.blocksRaycasts = false;
-    //
-    //     Image draggingImage = draggingObject.AddComponent<Image>();
-    //     Image sourceImage = GetComponent<Image>();
-    //
-    //     draggingImage.sprite = sourceImage.sprite;
-    //     draggingImage.rectTransform.sizeDelta = sourceImage.rectTransform.sizeDelta;
-    //     draggingImage.color = sourceImage.color;
-    //     draggingImage.material = sourceImage.material;
-    //
-    //     gameObject.GetComponent<Image>().color = Vector4.one * 0.6f;
-    // }
 }

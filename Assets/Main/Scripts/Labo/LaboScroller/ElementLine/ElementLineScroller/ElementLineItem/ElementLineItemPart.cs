@@ -2,6 +2,7 @@
 using EnhancedUI.EnhancedScroller;
 using UniRx.Async;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace DM
 {
@@ -9,7 +10,7 @@ namespace DM
     {
         private readonly ElementLineItemCellView m_ElementLineItemCellView;
         private LaboScrollerBase m_LaboScrollerBase;
-        
+
         public ElementLineItemPart(ElementLineItemCellView elementLineItemCellView)
             : base(elementLineItemCellView.transform)
         {
@@ -21,7 +22,8 @@ namespace DM
             m_LaboScrollerBase = targetLayer as LaboScrollerBase;
             List<UIPart> parts = new List<UIPart>()
             {
-                new ButtonPart(m_ElementLineItemCellView.m_ElementButton, ClickButton)
+                new ButtonPart(m_ElementLineItemCellView.m_ElementButton, ClickButton),
+                new DragPart(m_ElementLineItemCellView.m_ElementDragObject, Drag, BeginDrag, EndDrag),
             };
 
             // 追加待ち
@@ -31,6 +33,23 @@ namespace DM
         private void ClickButton()
         {
             m_LaboScrollerBase.ClickMixedLineItem(m_ElementLineItemCellView.dataIndex);
+        }
+
+        private void BeginDrag(PointerEventData pointerEventData)
+        {
+            m_ElementLineItemCellView.m_ElementDragObject.SetDraggingParent(
+                m_LaboScrollerBase.m_MixedBallTabBase.m_MixedBallTabView.transform);
+            m_ElementLineItemCellView.m_ElementDragObject.BeginDrag(pointerEventData);
+        }
+
+        private void Drag(PointerEventData pointerEventData)
+        {
+            m_ElementLineItemCellView.m_ElementDragObject.Drag(pointerEventData);
+        }
+
+        private void EndDrag(PointerEventData pointerEventData)
+        {
+            m_ElementLineItemCellView.m_ElementDragObject.EndDrag(pointerEventData);
         }
     }
 }

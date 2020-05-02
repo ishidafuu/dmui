@@ -45,7 +45,7 @@ namespace DM
         private void CellViewInstantiated(EnhancedScroller scroller, EnhancedScrollerCellView cellView)
         {
             List<UIPart> parts = new List<UIPart>
-            {
+            {                                
                 new ElementLineItemPart(cellView as ElementLineItemCellView)
             };
 

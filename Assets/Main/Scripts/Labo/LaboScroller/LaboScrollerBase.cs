@@ -10,7 +10,7 @@ namespace DM
     {
         private LaboScrollerView m_LaboScrollerView;
         private PreviewFieldBase m_PreviewFieldBase;
-        private MixedBallTabBase m_MixedBallTabBase;
+        public MixedBallTabBase m_MixedBallTabBase;
         
         public LaboScrollerBase() : base("Labo/LaboScrollerBase", EnumUIGroup.Floater, EnumUIPreset.Frame)
         {
@@ -62,7 +62,7 @@ namespace DM
                     part = new PreviewPart(cellView as PreviewCellView);
                     break;
                 case "ElementLineCellView":
-                    part = new ElementLinePart(cellView as ElementLineCellView);
+                    part = new ElementLinePart(cellView as ElementLineCellView, m_LaboScrollerView, m_MixedBallTabBase.m_MixedBallTabView);
                     break;
                 case "ElementListCellView":
                     part = new ElementListPart(cellView as ElementListCellView);
