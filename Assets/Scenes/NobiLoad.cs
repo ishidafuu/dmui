@@ -39,11 +39,11 @@ namespace DM
         private async UniTask LoadTableAsync()
         {
             AirTableClient client = new AirTableClient("key3NNedymjZdyPup");
-            AirTableBase clientBase = client.GetBase("appsj9JjmBwaF3Hbz");
+            AirTableBase clientBase = client.GetBase("applzeJ39lPimqZgv");
             try
             {
-                ActionTable[] allRows = await clientBase.LoadTableAsync<ActionTable>();
-                foreach (ActionTable row in allRows)
+                Common[] allRows = await clientBase.LoadTableAsync<Common>();
+                foreach (Common row in allRows)
                 {
                     // 1レコードずつ取り出す処理 
                     Debug.Log(row.Name + ":" + row.Notes);
@@ -56,7 +56,7 @@ namespace DM
             }
         }
 
-        public class ActionTable
+        public class Common
         {
             public string Name;
             public string Notes;
